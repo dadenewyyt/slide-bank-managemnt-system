@@ -45,7 +45,6 @@ namespace SBMS
         private void Donors_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sbmsDataSet.donors' table. You can move, or remove it, as needed.
-            this.donorsTableAdapter.Fill(this.sbmsDataSet.donors);
 
         }
 

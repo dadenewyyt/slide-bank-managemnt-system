@@ -117,6 +117,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,6 +154,10 @@
   <ItemGroup>
     <Content Include="assets\27332741_1426914380750443_3640997397741266774_n.png" />
     <Content Include="assets\icap logo.png" />
+    <Content Include="Resources\download.png" />
+    <Content Include="Resources\output-onlinepngtools.png" />
+    <None Include="Resources\wadan.png" />
+    <None Include="Resources\lock-4441691_960_720.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

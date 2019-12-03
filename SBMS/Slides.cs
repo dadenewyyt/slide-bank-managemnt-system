@@ -16,5 +16,10 @@ namespace SBMS
         {
             InitializeComponent();
         }
+
+        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 }
