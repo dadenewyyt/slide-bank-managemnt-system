@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Borrowers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrowers.Designer.cs">
+      <DependentUpon>Borrowers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Donors.cs">
       <SubType>Form</SubType>
     </Compile>
