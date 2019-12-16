@@ -73,6 +73,16 @@ namespace SBMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icap_logo {
+            get {
+                object obj = ResourceManager.GetObject("icap logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_4441691_960_720 {
             get {
                 object obj = ResourceManager.GetObject("lock-4441691_960_720", resourceCulture);

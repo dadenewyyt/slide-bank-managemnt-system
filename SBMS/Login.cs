@@ -60,7 +60,7 @@ namespace SBMS
         {
             panel_progress.Show();
             timer1.Enabled = true;
-            login_flag = true;
+            login_flag = false;
 
 
         }
@@ -71,6 +71,7 @@ namespace SBMS
             if (progressBar1.Value <= 99)
             {
                 progressBar1.Value = progressBar1.Value + 1;
+              
             }
             else
             {
@@ -78,22 +79,31 @@ namespace SBMS
 
                 if (progressBar1.Value ==100 && login_flag==true)
                 {
-                    panel_progress.Hide();    
+                    panel_progress.Hide();
+                  
                     MDIParent1 mdiParent1 = new MDIParent1();
                     mdiParent1.ShowDialog();
-                    this.Hide();
+                    Visible = false;
+                    TopMost = false;
                 }
 
                 if (progressBar1.Value == 100 && login_flag == false)
                 {
                     panel_progress.Hide();
+              
                     MessageBox.Show("Inorrect , Could you please make sure you type a correct username and password", "Security", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    Visible = false;
+                    TopMost = false;
                     MDIParent1 mdiParent1 = new MDIParent1();
                     mdiParent1.ShowDialog();
-                    this.Hide();
+                    
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

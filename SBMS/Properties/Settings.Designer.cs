@@ -32,5 +32,15 @@ namespace SBMS.Properties {
                 return ((string)(this["sbmsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ICAP-ENGINEER\\SQLEXPRESS;Initial Catalog=sbms;User ID=daniel")]
+        public string sbmsConnectionStringDaniel {
+            get {
+                return ((string)(this["sbmsConnectionStringDaniel"]));
+            }
+        }
     }
 }

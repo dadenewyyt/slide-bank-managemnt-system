@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -79,6 +79,33 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsSlideDataSet = new SBMS.sbmsSlideDataSet();
+            this.slidesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.slidesTableAdapter = new SBMS.sbmsSlideDataSetTableAdapters.slidesTableAdapter();
+            this.sbmsDataSet1 = new SBMS.sbmsDataSet();
+            this.sbmsDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet11 = new SBMS.sbmsDataSet1();
+            this.sbmsDataSet11BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.slidesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.slidesTableAdapter1 = new SBMS.sbmsDataSet1TableAdapters.slidesTableAdapter();
+            this.speciectypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.speciec_typeTableAdapter = new SBMS.sbmsDataSet1TableAdapters.speciec_typeTableAdapter();
+            this.speciectypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.speciectypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speciestypeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.label26 = new System.Windows.Forms.Label();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,6 +115,18 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsSlideDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -122,7 +161,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(351, 20);
+            this.label7.Location = new System.Drawing.Point(351, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(257, 33);
             this.label7.TabIndex = 0;
@@ -216,7 +255,13 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.richTextBox1);
+            this.splitContainer2.Panel1.Controls.Add(this.radioButton6);
+            this.splitContainer2.Panel1.Controls.Add(this.radioButton5);
+            this.splitContainer2.Panel1.Controls.Add(this.label27);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox9);
+            this.splitContainer2.Panel1.Controls.Add(this.radioButton3);
+            this.splitContainer2.Panel1.Controls.Add(this.radioButton4);
+            this.splitContainer2.Panel1.Controls.Add(this.label26);
             this.splitContainer2.Panel1.Controls.Add(this.label18);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton2);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton1);
@@ -257,23 +302,16 @@
             this.splitContainer2.Panel2.Controls.Add(this.textBox11);
             this.splitContainer2.Panel2.Controls.Add(this.label22);
             this.splitContainer2.Panel2.Controls.Add(this.label6);
-            this.splitContainer2.Size = new System.Drawing.Size(1248, 426);
-            this.splitContainer2.SplitterDistance = 406;
+            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
+            this.splitContainer2.Size = new System.Drawing.Size(1248, 447);
+            this.splitContainer2.SplitterDistance = 372;
             this.splitContainer2.TabIndex = 17;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(155, 323);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(210, 75);
-            this.richTextBox1.TabIndex = 45;
-            this.richTextBox1.Text = "";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(84, 326);
+            this.label18.Location = new System.Drawing.Point(75, 287);
             this.label18.Name = "label18";
             this.label18.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label18.Size = new System.Drawing.Size(54, 13);
@@ -283,7 +321,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(222, 298);
+            this.radioButton2.Location = new System.Drawing.Point(204, 260);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(39, 17);
             this.radioButton2.TabIndex = 43;
@@ -294,7 +332,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(155, 298);
+            this.radioButton1.Location = new System.Drawing.Point(155, 260);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(43, 17);
             this.radioButton1.TabIndex = 42;
@@ -305,7 +343,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(56, 303);
+            this.label17.Location = new System.Drawing.Point(76, 262);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 13);
             this.label17.TabIndex = 41;
@@ -313,7 +351,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(155, 269);
+            this.dateTimePicker1.Location = new System.Drawing.Point(155, 234);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
             this.dateTimePicker1.TabIndex = 40;
@@ -321,7 +359,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(60, 275);
+            this.label16.Location = new System.Drawing.Point(60, 238);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 13);
             this.label16.TabIndex = 39;
@@ -330,7 +368,7 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(155, 238);
+            this.comboBox4.Location = new System.Drawing.Point(155, 207);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(210, 21);
             this.comboBox4.TabIndex = 38;
@@ -338,7 +376,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(87, 246);
+            this.label15.Location = new System.Drawing.Point(88, 215);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 13);
             this.label15.TabIndex = 37;
@@ -347,7 +385,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(155, 206);
+            this.comboBox3.Location = new System.Drawing.Point(155, 180);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(210, 21);
             this.comboBox3.TabIndex = 36;
@@ -355,7 +393,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(48, 214);
+            this.label14.Location = new System.Drawing.Point(48, 188);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 13);
             this.label14.TabIndex = 35;
@@ -363,7 +401,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(155, 177);
+            this.textBox8.Location = new System.Drawing.Point(155, 154);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(210, 20);
             this.textBox8.TabIndex = 34;
@@ -371,7 +409,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(31, 184);
+            this.label13.Location = new System.Drawing.Point(31, 161);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(107, 13);
             this.label13.TabIndex = 33;
@@ -379,7 +417,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(155, 145);
+            this.textBox7.Location = new System.Drawing.Point(155, 128);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(210, 20);
             this.textBox7.TabIndex = 32;
@@ -387,7 +425,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(20, 152);
+            this.label12.Location = new System.Drawing.Point(20, 135);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(118, 13);
             this.label12.TabIndex = 31;
@@ -396,7 +434,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(31, 117);
+            this.label11.Location = new System.Drawing.Point(31, 106);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(107, 13);
             this.label11.TabIndex = 30;
@@ -404,7 +442,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 114);
+            this.textBox1.Location = new System.Drawing.Point(155, 102);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(210, 20);
             this.textBox1.TabIndex = 29;
@@ -412,7 +450,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(155, 81);
+            this.comboBox2.Location = new System.Drawing.Point(155, 73);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(210, 21);
             this.comboBox2.TabIndex = 4;
@@ -420,16 +458,16 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(38, 84);
+            this.label10.Location = new System.Drawing.Point(38, 76);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 13);
+            this.label10.Size = new System.Drawing.Size(79, 13);
             this.label10.TabIndex = 3;
-            this.label10.Text = "Speciece Category:";
+            this.label10.Text = "Parasite Stage:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 51);
+            this.comboBox1.Location = new System.Drawing.Point(155, 46);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 21);
             this.comboBox1.TabIndex = 2;
@@ -446,13 +484,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(11, 14);
+            this.label5.Location = new System.Drawing.Point(20, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(445, 18);
+            this.label5.Size = new System.Drawing.Size(341, 17);
             this.label5.TabIndex = 0;
-            this.label5.Text = "The Slide Information as per the Donor Initial Registration.";
+            this.label5.Text = "Slide Information as per the Donor Initial Registration.";
             // 
             // label25
             // 
@@ -495,11 +533,21 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 180);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.barcodeDataGridViewTextBoxColumn,
+            this.countrycodeDataGridViewTextBoxColumn,
+            this.donorcodeDataGridViewTextBoxColumn,
+            this.sequenceDataGridViewTextBoxColumn,
+            this.speciestypeidDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.slidesBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 181);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(820, 239);
+            this.dataGridView1.Size = new System.Drawing.Size(862, 239);
             this.dataGridView1.TabIndex = 48;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button3
             // 
@@ -522,11 +570,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.Color.Blue;
-            this.label19.Location = new System.Drawing.Point(8, 152);
+            this.label19.Location = new System.Drawing.Point(14, 161);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(228, 18);
+            this.label19.Size = new System.Drawing.Size(182, 17);
             this.label19.TabIndex = 46;
             this.label19.Text = "Most Recent Slides Entered :";
             // 
@@ -592,13 +640,190 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Blue;
             this.label6.Location = new System.Drawing.Point(8, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(453, 18);
+            this.label6.Size = new System.Drawing.Size(370, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Where would you like to place the slide under the Cabinet ?";
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sbmsDataSetBindingSource
+            // 
+            this.sbmsDataSetBindingSource.DataSource = this.sbmsDataSet;
+            this.sbmsDataSetBindingSource.Position = 0;
+            // 
+            // sbmsSlideDataSet
+            // 
+            this.sbmsSlideDataSet.DataSetName = "sbmsSlideDataSet";
+            this.sbmsSlideDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // slidesBindingSource
+            // 
+            this.slidesBindingSource.DataMember = "slides";
+            this.slidesBindingSource.DataSource = this.sbmsSlideDataSet;
+            // 
+            // slidesTableAdapter
+            // 
+            this.slidesTableAdapter.ClearBeforeFill = true;
+            // 
+            // sbmsDataSet1
+            // 
+            this.sbmsDataSet1.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sbmsDataSet1BindingSource
+            // 
+            this.sbmsDataSet1BindingSource.DataSource = this.sbmsDataSet1;
+            this.sbmsDataSet1BindingSource.Position = 0;
+            // 
+            // sbmsDataSet11
+            // 
+            this.sbmsDataSet11.DataSetName = "sbmsDataSet1";
+            this.sbmsDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sbmsDataSet11BindingSource
+            // 
+            this.sbmsDataSet11BindingSource.DataSource = this.sbmsDataSet11;
+            this.sbmsDataSet11BindingSource.Position = 0;
+            // 
+            // slidesBindingSource1
+            // 
+            this.slidesBindingSource1.DataMember = "slides";
+            this.slidesBindingSource1.DataSource = this.sbmsDataSet11BindingSource;
+            // 
+            // slidesTableAdapter1
+            // 
+            this.slidesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // speciectypeBindingSource
+            // 
+            this.speciectypeBindingSource.DataMember = "speciec_type";
+            this.speciectypeBindingSource.DataSource = this.sbmsDataSet11BindingSource;
+            // 
+            // speciec_typeTableAdapter
+            // 
+            this.speciec_typeTableAdapter.ClearBeforeFill = true;
+            // 
+            // speciectypeBindingSource1
+            // 
+            this.speciectypeBindingSource1.DataMember = "speciec_type";
+            this.speciectypeBindingSource1.DataSource = this.sbmsDataSet11BindingSource;
+            // 
+            // speciectypeBindingSource2
+            // 
+            this.speciectypeBindingSource2.DataMember = "speciec_type";
+            this.speciectypeBindingSource2.DataSource = this.sbmsDataSet11BindingSource;
+            // 
+            // barcodeDataGridViewTextBoxColumn
+            // 
+            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "bar_code";
+            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Bar Code";
+            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
+            // 
+            // countrycodeDataGridViewTextBoxColumn
+            // 
+            this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
+            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "Country_Code";
+            this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
+            // 
+            // donorcodeDataGridViewTextBoxColumn
+            // 
+            this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
+            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "Donor_Code";
+            this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
+            // 
+            // sequenceDataGridViewTextBoxColumn
+            // 
+            this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
+            this.sequenceDataGridViewTextBoxColumn.HeaderText = "Sequence";
+            this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
+            // 
+            // speciestypeidDataGridViewTextBoxColumn
+            // 
+            this.speciestypeidDataGridViewTextBoxColumn.DataPropertyName = "species_type_id";
+            this.speciestypeidDataGridViewTextBoxColumn.DataSource = this.speciectypeBindingSource2;
+            this.speciestypeidDataGridViewTextBoxColumn.DisplayMember = "speciece_name";
+            this.speciestypeidDataGridViewTextBoxColumn.HeaderText = "Species_Type";
+            this.speciestypeidDataGridViewTextBoxColumn.Name = "speciestypeidDataGridViewTextBoxColumn";
+            this.speciestypeidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.speciestypeidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.speciestypeidDataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(63, 341);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(66, 13);
+            this.label26.TabIndex = 46;
+            this.label26.Text = "is Damaged:";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(204, 341);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(39, 17);
+            this.radioButton3.TabIndex = 48;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "No";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(152, 341);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(43, 17);
+            this.radioButton4.TabIndex = 47;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Yes";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(155, 283);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(210, 49);
+            this.textBox9.TabIndex = 49;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(47, 373);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(82, 13);
+            this.label27.TabIndex = 50;
+            this.label27.Text = "Reserved Slide:";
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(152, 369);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(43, 17);
+            this.radioButton5.TabIndex = 51;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Yes";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(206, 369);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(39, 17);
+            this.radioButton6.TabIndex = 52;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "No";
+            this.radioButton6.UseVisualStyleBackColor = true;
             // 
             // Slides
             // 
@@ -610,6 +835,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "Slides";
             this.Text = "Slides";
+            this.Load += new System.EventHandler(this.Slides_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -623,6 +849,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsSlideDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -642,7 +880,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -679,5 +916,32 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
+        private sbmsDataSet sbmsDataSet;
+        private System.Windows.Forms.BindingSource sbmsDataSetBindingSource;
+        private sbmsSlideDataSet sbmsSlideDataSet;
+        private System.Windows.Forms.BindingSource slidesBindingSource;
+        private sbmsSlideDataSetTableAdapters.slidesTableAdapter slidesTableAdapter;
+        private System.Windows.Forms.BindingSource sbmsDataSet1BindingSource;
+        private sbmsDataSet sbmsDataSet1;
+        private System.Windows.Forms.BindingSource sbmsDataSet11BindingSource;
+        private sbmsDataSet1 sbmsDataSet11;
+        private System.Windows.Forms.BindingSource slidesBindingSource1;
+        private sbmsDataSet1TableAdapters.slidesTableAdapter slidesTableAdapter1;
+        private System.Windows.Forms.BindingSource speciectypeBindingSource;
+        private sbmsDataSet1TableAdapters.speciec_typeTableAdapter speciec_typeTableAdapter;
+        private System.Windows.Forms.BindingSource speciectypeBindingSource1;
+        private System.Windows.Forms.BindingSource speciectypeBindingSource2;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countrycodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorcodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn speciestypeidDataGridViewTextBoxColumn;
     }
 }

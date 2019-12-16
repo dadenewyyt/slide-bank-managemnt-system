@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -55,17 +56,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllSlides.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllSlides.Designer.cs">
+      <DependentUpon>AllSlides.cs</DependentUpon>
+    </Compile>
     <Compile Include="Borrowers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Borrowers.Designer.cs">
       <DependentUpon>Borrowers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Checkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkin.Designer.cs">
+      <DependentUpon>Checkin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Donors.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Donors.Designer.cs">
       <DependentUpon>Donors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lending.Designer.cs">
+      <DependentUpon>Lending.cs</DependentUpon>
     </Compile>
     <Compile Include="MDIChild.cs">
       <SubType>Form</SubType>
@@ -97,14 +122,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sbmsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="sbmsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sbmsSlideDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sbmsSlideDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DatabaseServices.cs" />
     <Compile Include="Slides.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Slides.Designer.cs">
       <DependentUpon>Slides.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AllSlides.resx">
+      <DependentUpon>AllSlides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrowers.resx">
+      <DependentUpon>Borrowers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkin.resx">
+      <DependentUpon>Checkin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Donors.resx">
       <DependentUpon>Donors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lending.resx">
+      <DependentUpon>Lending.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -153,6 +204,28 @@
     <None Include="sbmsDataSet.xss">
       <DependentUpon>sbmsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="sbmsDataSet1.xsc">
+      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sbmsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sbmsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sbmsDataSet1.xss">
+      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sbmsSlideDataSet.xsc">
+      <DependentUpon>sbmsSlideDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sbmsSlideDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sbmsSlideDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sbmsSlideDataSet.xss">
+      <DependentUpon>sbmsSlideDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -160,6 +233,7 @@
   <ItemGroup>
     <Content Include="assets\27332741_1426914380750443_3640997397741266774_n.png" />
     <Content Include="assets\icap logo.png" />
+    <None Include="assets\xfn1X.jpg" />
     <Content Include="Resources\download.png" />
     <Content Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\wadan.png" />
