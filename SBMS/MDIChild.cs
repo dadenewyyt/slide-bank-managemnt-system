@@ -87,5 +87,11 @@ namespace SBMS
             AllSlides allSlides = new AllSlides();
             allSlides.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ArchiveSummary archiveSummary = new ArchiveSummary();
+            archiveSummary.ShowDialog();
+        }
     }
 }

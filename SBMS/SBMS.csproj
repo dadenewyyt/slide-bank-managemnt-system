@@ -62,6 +62,12 @@
     <Compile Include="AllSlides.Designer.cs">
       <DependentUpon>AllSlides.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArchiveSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchiveSummary.Designer.cs">
+      <DependentUpon>ArchiveSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Borrowers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="AllSlides.resx">
       <DependentUpon>AllSlides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArchiveSummary.resx">
+      <DependentUpon>ArchiveSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Borrowers.resx">
       <DependentUpon>Borrowers.cs</DependentUpon>

@@ -230,8 +230,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.textBox7);
             this.splitContainer2.Panel2.Controls.Add(this.label16);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer2.Size = new System.Drawing.Size(1316, 478);
-            this.splitContainer2.SplitterDistance = 428;
+            this.splitContainer2.Size = new System.Drawing.Size(1248, 478);
+            this.splitContainer2.SplitterDistance = 405;
             this.splitContainer2.TabIndex = 3;
             // 
             // button6
@@ -520,7 +520,7 @@
             this.dataGridView1.DataSource = this.donorsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(802, 377);
+            this.dataGridView1.Size = new System.Drawing.Size(811, 420);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

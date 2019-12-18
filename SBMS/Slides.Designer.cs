@@ -42,15 +42,35 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label25 = new System.Windows.Forms.Label();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.label24 = new System.Windows.Forms.Label();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label21 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -63,49 +83,11 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsSlideDataSet = new SBMS.sbmsSlideDataSet();
-            this.slidesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.slidesTableAdapter = new SBMS.sbmsSlideDataSetTableAdapters.slidesTableAdapter();
-            this.sbmsDataSet1 = new SBMS.sbmsDataSet();
-            this.sbmsDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet11 = new SBMS.sbmsDataSet1();
-            this.sbmsDataSet11BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.slidesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.slidesTableAdapter1 = new SBMS.sbmsDataSet1TableAdapters.slidesTableAdapter();
-            this.speciectypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciec_typeTableAdapter = new SBMS.sbmsDataSet1TableAdapters.speciec_typeTableAdapter();
-            this.speciectypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.speciectypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciestypeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.label26 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -115,17 +97,6 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsSlideDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,7 +132,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(351, 16);
+            this.label7.Location = new System.Drawing.Point(462, 4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(257, 33);
             this.label7.TabIndex = 0;
@@ -255,22 +226,35 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.label25);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton6);
+            this.splitContainer2.Panel1.Controls.Add(this.label24);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton5);
+            this.splitContainer2.Panel1.Controls.Add(this.button1);
+            this.splitContainer2.Panel1.Controls.Add(this.label23);
+            this.splitContainer2.Panel1.Controls.Add(this.button2);
+            this.splitContainer2.Panel1.Controls.Add(this.button3);
             this.splitContainer2.Panel1.Controls.Add(this.label27);
             this.splitContainer2.Panel1.Controls.Add(this.textBox9);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton3);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton4);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox12);
             this.splitContainer2.Panel1.Controls.Add(this.label26);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox10);
             this.splitContainer2.Panel1.Controls.Add(this.label18);
+            this.splitContainer2.Panel1.Controls.Add(this.label20);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton2);
+            this.splitContainer2.Panel1.Controls.Add(this.label21);
             this.splitContainer2.Panel1.Controls.Add(this.radioButton1);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox11);
             this.splitContainer2.Panel1.Controls.Add(this.label17);
+            this.splitContainer2.Panel1.Controls.Add(this.label22);
             this.splitContainer2.Panel1.Controls.Add(this.dateTimePicker1);
             this.splitContainer2.Panel1.Controls.Add(this.label16);
             this.splitContainer2.Panel1.Controls.Add(this.comboBox4);
             this.splitContainer2.Panel1.Controls.Add(this.label15);
             this.splitContainer2.Panel1.Controls.Add(this.comboBox3);
+            this.splitContainer2.Panel1.Controls.Add(this.label6);
             this.splitContainer2.Panel1.Controls.Add(this.label14);
             this.splitContainer2.Panel1.Controls.Add(this.textBox8);
             this.splitContainer2.Panel1.Controls.Add(this.label13);
@@ -286,27 +270,158 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.label25);
-            this.splitContainer2.Panel2.Controls.Add(this.label24);
-            this.splitContainer2.Panel2.Controls.Add(this.label23);
+            this.splitContainer2.Panel2.Controls.Add(this.button7);
             this.splitContainer2.Panel2.Controls.Add(this.button4);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer2.Panel2.Controls.Add(this.button3);
-            this.splitContainer2.Panel2.Controls.Add(this.button2);
             this.splitContainer2.Panel2.Controls.Add(this.label19);
-            this.splitContainer2.Panel2.Controls.Add(this.button1);
-            this.splitContainer2.Panel2.Controls.Add(this.textBox12);
-            this.splitContainer2.Panel2.Controls.Add(this.textBox10);
-            this.splitContainer2.Panel2.Controls.Add(this.label20);
-            this.splitContainer2.Panel2.Controls.Add(this.label21);
-            this.splitContainer2.Panel2.Controls.Add(this.textBox11);
-            this.splitContainer2.Panel2.Controls.Add(this.label22);
-            this.splitContainer2.Panel2.Controls.Add(this.label6);
             this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
-            this.splitContainer2.Size = new System.Drawing.Size(1248, 447);
-            this.splitContainer2.SplitterDistance = 372;
+            this.splitContainer2.Size = new System.Drawing.Size(1248, 559);
+            this.splitContainer2.SplitterDistance = 391;
             this.splitContainer2.TabIndex = 17;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(240, 485);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(79, 13);
+            this.label25.TabIndex = 63;
+            this.label25.Text = "* numbers only!";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(206, 369);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(39, 17);
+            this.radioButton6.TabIndex = 52;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "No";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Location = new System.Drawing.Point(240, 462);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(79, 13);
+            this.label24.TabIndex = 62;
+            this.label24.Text = "* numbers only!";
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(152, 369);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(43, 17);
+            this.radioButton5.TabIndex = 51;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Yes";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.button1.Location = new System.Drawing.Point(104, 520);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 58;
+            this.button1.Text = "Save!";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(240, 436);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(79, 13);
+            this.label23.TabIndex = 61;
+            this.label23.Text = "* numbers only!";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(195, 520);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 59;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(276, 520);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 60;
+            this.button3.Text = "Clear";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(47, 373);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(82, 13);
+            this.label27.TabIndex = 50;
+            this.label27.Text = "Reserved Slide:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(155, 283);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(210, 49);
+            this.textBox9.TabIndex = 49;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(204, 341);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(39, 17);
+            this.radioButton3.TabIndex = 48;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "No";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(152, 341);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(43, 17);
+            this.radioButton4.TabIndex = 47;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Yes";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(157, 433);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(75, 20);
+            this.textBox12.TabIndex = 57;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(63, 341);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(66, 13);
+            this.label26.TabIndex = 46;
+            this.label26.Text = "is Damaged:";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(156, 485);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(75, 20);
+            this.textBox10.TabIndex = 56;
             // 
             // label18
             // 
@@ -317,6 +432,15 @@
             this.label18.Size = new System.Drawing.Size(54, 13);
             this.label18.TabIndex = 44;
             this.label18.Text = "Comment:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(68, 488);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(68, 13);
+            this.label20.TabIndex = 55;
+            this.label20.Text = "Box Number:";
             // 
             // radioButton2
             // 
@@ -329,6 +453,15 @@
             this.radioButton2.Text = "No";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(52, 462);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(84, 13);
+            this.label21.TabIndex = 54;
+            this.label21.Text = "Drawer Number:";
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -340,6 +473,13 @@
             this.radioButton1.Text = "Yes";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(157, 459);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(74, 20);
+            this.textBox11.TabIndex = 53;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -348,6 +488,15 @@
             this.label17.Size = new System.Drawing.Size(53, 13);
             this.label17.TabIndex = 41;
             this.label17.Text = "Validation";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(52, 440);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(86, 13);
+            this.label22.TabIndex = 52;
+            this.label22.Text = "Cabinet Number:";
             // 
             // dateTimePicker1
             // 
@@ -389,6 +538,17 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(210, 21);
             this.comboBox3.TabIndex = 36;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(11, 400);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(370, 17);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Where would you like to place the slide under the Cabinet ?";
             // 
             // label14
             // 
@@ -492,39 +652,19 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Slide Information as per the Donor Initial Registration.";
             // 
-            // label25
+            // button7
             // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(207, 99);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(79, 13);
-            this.label25.TabIndex = 51;
-            this.label25.Text = "* numbers only!";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Location = new System.Drawing.Point(207, 76);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(79, 13);
-            this.label24.TabIndex = 50;
-            this.label24.Text = "* numbers only!";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(207, 50);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(79, 13);
-            this.label23.TabIndex = 49;
-            this.label23.Text = "* numbers only!";
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(733, 66);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(97, 33);
+            this.button7.TabIndex = 31;
+            this.button7.Text = "PrintOut!";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(742, 151);
+            this.button4.Location = new System.Drawing.Point(652, 74);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 47;
@@ -534,303 +674,30 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.barcodeDataGridViewTextBoxColumn,
-            this.countrycodeDataGridViewTextBoxColumn,
-            this.donorcodeDataGridViewTextBoxColumn,
-            this.sequenceDataGridViewTextBoxColumn,
-            this.speciestypeidDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.slidesBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 181);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 106);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(862, 239);
+            this.dataGridView1.Size = new System.Drawing.Size(838, 446);
             this.dataGridView1.TabIndex = 48;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(285, 125);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 46;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(204, 125);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.label19.ForeColor = System.Drawing.Color.Blue;
-            this.label19.Location = new System.Drawing.Point(14, 161);
+            this.label19.Location = new System.Drawing.Point(14, 77);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(182, 17);
             this.label19.TabIndex = 46;
             this.label19.Text = "Most Recent Slides Entered :";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button1.Location = new System.Drawing.Point(121, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Save!";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(124, 47);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(75, 20);
-            this.textBox12.TabIndex = 43;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(123, 99);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(75, 20);
-            this.textBox10.TabIndex = 40;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(48, 102);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 13);
-            this.label20.TabIndex = 39;
-            this.label20.Text = "Box Number:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(32, 76);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(84, 13);
-            this.label21.TabIndex = 38;
-            this.label21.Text = "Drawer Number:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(124, 73);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(74, 20);
-            this.textBox11.TabIndex = 37;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(32, 54);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 13);
-            this.label22.TabIndex = 35;
-            this.label22.Text = "Cabinet Number:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(8, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(370, 17);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Where would you like to place the slide under the Cabinet ?";
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sbmsDataSetBindingSource
-            // 
-            this.sbmsDataSetBindingSource.DataSource = this.sbmsDataSet;
-            this.sbmsDataSetBindingSource.Position = 0;
-            // 
-            // sbmsSlideDataSet
-            // 
-            this.sbmsSlideDataSet.DataSetName = "sbmsSlideDataSet";
-            this.sbmsSlideDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // slidesBindingSource
-            // 
-            this.slidesBindingSource.DataMember = "slides";
-            this.slidesBindingSource.DataSource = this.sbmsSlideDataSet;
-            // 
-            // slidesTableAdapter
-            // 
-            this.slidesTableAdapter.ClearBeforeFill = true;
-            // 
-            // sbmsDataSet1
-            // 
-            this.sbmsDataSet1.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sbmsDataSet1BindingSource
-            // 
-            this.sbmsDataSet1BindingSource.DataSource = this.sbmsDataSet1;
-            this.sbmsDataSet1BindingSource.Position = 0;
-            // 
-            // sbmsDataSet11
-            // 
-            this.sbmsDataSet11.DataSetName = "sbmsDataSet1";
-            this.sbmsDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sbmsDataSet11BindingSource
-            // 
-            this.sbmsDataSet11BindingSource.DataSource = this.sbmsDataSet11;
-            this.sbmsDataSet11BindingSource.Position = 0;
-            // 
-            // slidesBindingSource1
-            // 
-            this.slidesBindingSource1.DataMember = "slides";
-            this.slidesBindingSource1.DataSource = this.sbmsDataSet11BindingSource;
-            // 
-            // slidesTableAdapter1
-            // 
-            this.slidesTableAdapter1.ClearBeforeFill = true;
-            // 
-            // speciectypeBindingSource
-            // 
-            this.speciectypeBindingSource.DataMember = "speciec_type";
-            this.speciectypeBindingSource.DataSource = this.sbmsDataSet11BindingSource;
-            // 
-            // speciec_typeTableAdapter
-            // 
-            this.speciec_typeTableAdapter.ClearBeforeFill = true;
-            // 
-            // speciectypeBindingSource1
-            // 
-            this.speciectypeBindingSource1.DataMember = "speciec_type";
-            this.speciectypeBindingSource1.DataSource = this.sbmsDataSet11BindingSource;
-            // 
-            // speciectypeBindingSource2
-            // 
-            this.speciectypeBindingSource2.DataMember = "speciec_type";
-            this.speciectypeBindingSource2.DataSource = this.sbmsDataSet11BindingSource;
-            // 
-            // barcodeDataGridViewTextBoxColumn
-            // 
-            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "bar_code";
-            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Bar Code";
-            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
-            // 
-            // countrycodeDataGridViewTextBoxColumn
-            // 
-            this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
-            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "Country_Code";
-            this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
-            // 
-            // donorcodeDataGridViewTextBoxColumn
-            // 
-            this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
-            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "Donor_Code";
-            this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
-            // 
-            // sequenceDataGridViewTextBoxColumn
-            // 
-            this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
-            this.sequenceDataGridViewTextBoxColumn.HeaderText = "Sequence";
-            this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
-            // 
-            // speciestypeidDataGridViewTextBoxColumn
-            // 
-            this.speciestypeidDataGridViewTextBoxColumn.DataPropertyName = "species_type_id";
-            this.speciestypeidDataGridViewTextBoxColumn.DataSource = this.speciectypeBindingSource2;
-            this.speciestypeidDataGridViewTextBoxColumn.DisplayMember = "speciece_name";
-            this.speciestypeidDataGridViewTextBoxColumn.HeaderText = "Species_Type";
-            this.speciestypeidDataGridViewTextBoxColumn.Name = "speciestypeidDataGridViewTextBoxColumn";
-            this.speciestypeidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.speciestypeidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.speciestypeidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(63, 341);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(66, 13);
-            this.label26.TabIndex = 46;
-            this.label26.Text = "is Damaged:";
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(204, 341);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(39, 17);
-            this.radioButton3.TabIndex = 48;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "No";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(152, 341);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(43, 17);
-            this.radioButton4.TabIndex = 47;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Yes";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(155, 283);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(210, 49);
-            this.textBox9.TabIndex = 49;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(47, 373);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(82, 13);
-            this.label27.TabIndex = 50;
-            this.label27.Text = "Reserved Slide:";
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(152, 369);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(43, 17);
-            this.radioButton5.TabIndex = 51;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Yes";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(206, 369);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(39, 17);
-            this.radioButton6.TabIndex = 52;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "No";
-            this.radioButton6.UseVisualStyleBackColor = true;
             // 
             // Slides
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1261, 638);
+            this.ClientSize = new System.Drawing.Size(1261, 750);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Slides";
@@ -849,17 +716,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsSlideDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet11BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
@@ -900,36 +756,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private sbmsDataSet sbmsDataSet;
-        private System.Windows.Forms.BindingSource sbmsDataSetBindingSource;
-        private sbmsSlideDataSet sbmsSlideDataSet;
-        private System.Windows.Forms.BindingSource slidesBindingSource;
-        private sbmsSlideDataSetTableAdapters.slidesTableAdapter slidesTableAdapter;
-        private System.Windows.Forms.BindingSource sbmsDataSet1BindingSource;
-        private sbmsDataSet sbmsDataSet1;
-        private System.Windows.Forms.BindingSource sbmsDataSet11BindingSource;
-        private sbmsDataSet1 sbmsDataSet11;
-        private System.Windows.Forms.BindingSource slidesBindingSource1;
-        private sbmsDataSet1TableAdapters.slidesTableAdapter slidesTableAdapter1;
-        private System.Windows.Forms.BindingSource speciectypeBindingSource;
-        private sbmsDataSet1TableAdapters.speciec_typeTableAdapter speciec_typeTableAdapter;
-        private System.Windows.Forms.BindingSource speciectypeBindingSource1;
         private System.Windows.Forms.BindingSource speciectypeBindingSource2;
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton5;
@@ -938,10 +768,18 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countrycodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donorcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn speciestypeidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
