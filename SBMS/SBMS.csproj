@@ -39,12 +39,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -123,22 +125,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="sbmsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sbmsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="sbmsDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="sbmsSlideDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sbmsSlideDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Services\DatabaseServices.cs" />
+    <Compile Include="Services\LookUpServives.cs" />
     <Compile Include="Slides.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,39 +190,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="sbmsDataSet.xsc">
-      <DependentUpon>sbmsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="sbmsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sbmsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="sbmsDataSet.xss">
-      <DependentUpon>sbmsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="sbmsDataSet1.xsc">
-      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="sbmsDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sbmsDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="sbmsDataSet1.xss">
-      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="sbmsSlideDataSet.xsc">
-      <DependentUpon>sbmsSlideDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="sbmsSlideDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sbmsSlideDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="sbmsSlideDataSet.xss">
-      <DependentUpon>sbmsSlideDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
