@@ -88,11 +88,21 @@
     <Compile Include="Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="desnityCat_bindingDataSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>desnityCat_bindingDataSource.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Donors.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Donors.Designer.cs">
       <DependentUpon>Donors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="donorsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>donorsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Lending.cs">
       <SubType>Form</SubType>
@@ -118,12 +128,22 @@
     <Compile Include="MDIParent1.Designer.cs">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ownerDataBindingSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ownerDataBindingSource.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="sbmsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sbmsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Services\DatabaseServices.cs" />
     <Compile Include="Services\LookUpServives.cs" />
@@ -132,6 +152,36 @@
     </Compile>
     <Compile Include="Slides.Designer.cs">
       <DependentUpon>Slides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="speciceCatgeroyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>speciceCatgeroyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="speciceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>speciceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="specieCatgeoryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>specieCatgeoryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="speciece_specifics_dataBindingSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>speciece_specifics_dataBindingSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="stage_dataBindingSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>stage_dataBindingSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="validationDataBindingSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>validationDataBindingSource.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AllSlides.resx">
       <DependentUpon>AllSlides.cs</DependentUpon>
@@ -180,6 +230,39 @@
     <EmbeddedResource Include="Slides.resx">
       <DependentUpon>Slides.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="desnityCat_bindingDataSource.xsc">
+      <DependentUpon>desnityCat_bindingDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="desnityCat_bindingDataSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>desnityCat_bindingDataSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="desnityCat_bindingDataSource.xss">
+      <DependentUpon>desnityCat_bindingDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="donorsDataSet.xsc">
+      <DependentUpon>donorsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="donorsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>donorsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="donorsDataSet.xss">
+      <DependentUpon>donorsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ownerDataBindingSource.xsc">
+      <DependentUpon>ownerDataBindingSource.xsd</DependentUpon>
+    </None>
+    <None Include="ownerDataBindingSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ownerDataBindingSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ownerDataBindingSource.xss">
+      <DependentUpon>ownerDataBindingSource.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -190,6 +273,84 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sbmsDataSet.xsc">
+      <DependentUpon>sbmsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sbmsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sbmsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sbmsDataSet.xss">
+      <DependentUpon>sbmsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="speciceCatgeroyDataSet.xsc">
+      <DependentUpon>speciceCatgeroyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="speciceCatgeroyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>speciceCatgeroyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="speciceCatgeroyDataSet.xss">
+      <DependentUpon>speciceCatgeroyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="speciceDataSet.xsc">
+      <DependentUpon>speciceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="speciceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>speciceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="speciceDataSet.xss">
+      <DependentUpon>speciceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="specieCatgeoryDataSet.xsc">
+      <DependentUpon>specieCatgeoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="specieCatgeoryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>specieCatgeoryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="specieCatgeoryDataSet.xss">
+      <DependentUpon>specieCatgeoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="speciece_specifics_dataBindingSource.xsc">
+      <DependentUpon>speciece_specifics_dataBindingSource.xsd</DependentUpon>
+    </None>
+    <None Include="speciece_specifics_dataBindingSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>speciece_specifics_dataBindingSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="speciece_specifics_dataBindingSource.xss">
+      <DependentUpon>speciece_specifics_dataBindingSource.xsd</DependentUpon>
+    </None>
+    <None Include="SQL\sbms_dec_25_19.bak" />
+    <None Include="stage_dataBindingSource.xsc">
+      <DependentUpon>stage_dataBindingSource.xsd</DependentUpon>
+    </None>
+    <None Include="stage_dataBindingSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>stage_dataBindingSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="stage_dataBindingSource.xss">
+      <DependentUpon>stage_dataBindingSource.xsd</DependentUpon>
+    </None>
+    <None Include="validationDataBindingSource.xsc">
+      <DependentUpon>validationDataBindingSource.xsd</DependentUpon>
+    </None>
+    <None Include="validationDataBindingSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>validationDataBindingSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="validationDataBindingSource.xss">
+      <DependentUpon>validationDataBindingSource.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
