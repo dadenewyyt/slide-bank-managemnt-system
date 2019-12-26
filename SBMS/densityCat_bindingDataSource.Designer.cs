@@ -22,7 +22,7 @@ namespace SBMS {
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("desnityCat_bindingDataSource")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class desnityCat_bindingDataSource : global::System.Data.DataSet {
+    public partial class densityCat_bindingDataSource : global::System.Data.DataSet {
         
         private density_categoryDataTable tabledensity_category;
         
@@ -30,7 +30,7 @@ namespace SBMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public desnityCat_bindingDataSource() {
+        public densityCat_bindingDataSource() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace SBMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected desnityCat_bindingDataSource(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected densityCat_bindingDataSource(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace SBMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            desnityCat_bindingDataSource cln = ((desnityCat_bindingDataSource)(base.Clone()));
+            densityCat_bindingDataSource cln = ((densityCat_bindingDataSource)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -225,7 +225,7 @@ namespace SBMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            desnityCat_bindingDataSource ds = new desnityCat_bindingDataSource();
+            densityCat_bindingDataSource ds = new densityCat_bindingDataSource();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -505,7 +505,7 @@ namespace SBMS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                desnityCat_bindingDataSource ds = new desnityCat_bindingDataSource();
+                densityCat_bindingDataSource ds = new densityCat_bindingDataSource();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -859,7 +859,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(desnityCat_bindingDataSource.density_categoryDataTable dataTable) {
+        public virtual int Fill(densityCat_bindingDataSource.density_categoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -872,9 +872,9 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual desnityCat_bindingDataSource.density_categoryDataTable GetData() {
+        public virtual densityCat_bindingDataSource.density_categoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            desnityCat_bindingDataSource.density_categoryDataTable dataTable = new desnityCat_bindingDataSource.density_categoryDataTable();
+            densityCat_bindingDataSource.density_categoryDataTable dataTable = new densityCat_bindingDataSource.density_categoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -882,14 +882,14 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(desnityCat_bindingDataSource.density_categoryDataTable dataTable) {
+        public virtual int Update(densityCat_bindingDataSource.density_categoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(desnityCat_bindingDataSource dataSet) {
+        public virtual int Update(densityCat_bindingDataSource dataSet) {
             return this.Adapter.Update(dataSet, "density_category");
         }
         
@@ -1114,7 +1114,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(desnityCat_bindingDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(densityCat_bindingDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._density_categoryTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.density_category.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1133,7 +1133,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(desnityCat_bindingDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(densityCat_bindingDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._density_categoryTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.density_category.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1151,7 +1151,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(desnityCat_bindingDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(densityCat_bindingDataSource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._density_categoryTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.density_category.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1193,7 +1193,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(desnityCat_bindingDataSource dataSet) {
+        public virtual int UpdateAll(densityCat_bindingDataSource dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

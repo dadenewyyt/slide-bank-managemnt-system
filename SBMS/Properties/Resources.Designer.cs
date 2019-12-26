@@ -63,6 +63,26 @@ namespace SBMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2000px_Flag_of_Ethiopia_svg {
+            get {
+                object obj = ResourceManager.GetObject("2000px-Flag_of_Ethiopia.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27332741_1426914380750443_3640997397741266774_n {
+            get {
+                object obj = ResourceManager.GetObject("27332741_1426914380750443_3640997397741266774_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);

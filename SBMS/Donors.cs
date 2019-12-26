@@ -191,8 +191,8 @@ namespace SBMS
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-            if (Id_update != -1)
-            {
+           
+           
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
 
@@ -203,9 +203,9 @@ namespace SBMS
                     {
                         command.Connection = connection;
                         string insertDonorQuery = "INSERT into donors" +
-                            "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,density_category_id,lower_density," +
+                            "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,species_catgeroy_id,density_category_id,lower_density," +
                              "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,updated_by,created_date,updated_date) " +
-                             "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@density_category_id,@lower_density," +
+                             "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
                              "@average_density,@upper_density,@owner_id,@acquired_date," +
                              "@validation_id,@comment,@created_by,@updated_by,@created_date,@updated_date)";
                         command.CommandType = CommandType.Text;
@@ -214,6 +214,7 @@ namespace SBMS
                         command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
                         command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
                         command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
+                        command.Parameters.AddWithValue("@species_catgeroy_id", cmb_specice_category.SelectedIndex.ToString());
                         command.Parameters.AddWithValue("@species_stage_id", cmb_specice_stage.SelectedIndex.ToString());
                         command.Parameters.AddWithValue("@density_category_id", cmb_density_category.SelectedIndex.ToString());
                         command.Parameters.AddWithValue("@lower_density", txt_lower_density.Text.ToString());
@@ -246,16 +247,15 @@ namespace SBMS
                         }
                         finally
                         {
-                            MessageBox.Show("Donor Information Saved Succefully", "Success");
-                            dgr_donors.Update();
-                            dgr_donors.Refresh();
-                            
-
+                            MessageBox.Show("Donor Information Saved Successfully", "Success");
+                            clear();
+                            this.btn_reload_Click(null,null);
+                            this.btn_reload_Click(null,null);
                             connection.Close();
                         }
 
                     }
-                }
+              
             }
         }
 
@@ -301,7 +301,7 @@ namespace SBMS
         private void btn_find_Click(object sender, EventArgs e)
         {
             string searchValue = txt_search_box.Text;
-
+            bool found = false;
            dgr_donors.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             try
             {
@@ -310,7 +310,8 @@ namespace SBMS
                     if (row.Cells[2].Value.ToString().Equals(searchValue))
                     {
                         row.Selected = true;
-                        MessageBox.Show("Donor has been found. See hightligthed","Find");
+                        found = true;
+                        MessageBox.Show("Donor is found. See hightligthed","Find Result");
                         break;
                     }
                 }
@@ -318,6 +319,10 @@ namespace SBMS
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
+            }
+
+            if (found==false) {
+                MessageBox.Show("Donor is not found. With a Donor Code : " + searchValue.ToString(), "Find Result");
             }
         }
 
@@ -373,15 +378,12 @@ namespace SBMS
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show(ex.Message, "ERROR Updating Record");
+                            MessageBox.Show(ex.Message, "ERROR: Updating Record");
                      
                         }
                         finally
                         {
-                            MessageBox.Show("Donor Information Updated Succefully", "Success");
-                            dgr_donors.Update();
-                            dgr_donors.Refresh();
-
+                            MessageBox.Show("Donor's Information Updated Successfully", "Success");
                             clear();
                             this.btn_reload_Click(null,null);
                             this.btn_reload_Click(null, null);
@@ -389,8 +391,6 @@ namespace SBMS
                            // btn_deactivate.Enabled = false;
                             btn_save.Enabled = true;
                             btn_save_edit.Enabled = false;
-
-
                             connection.Close();
                         }
 
@@ -399,6 +399,11 @@ namespace SBMS
             }
 
         }
-     }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
  }
 

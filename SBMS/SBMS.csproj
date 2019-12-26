@@ -88,10 +88,10 @@
     <Compile Include="Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
-    <Compile Include="desnityCat_bindingDataSource.Designer.cs">
+    <Compile Include="densityCat_bindingDataSource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>desnityCat_bindingDataSource.xsd</DependentUpon>
+      <DependentUpon>densityCat_bindingDataSource.xsd</DependentUpon>
     </Compile>
     <Compile Include="Donors.cs">
       <SubType>Form</SubType>
@@ -144,6 +144,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sbmsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sbmsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Services\DatabaseServices.cs" />
     <Compile Include="Services\LookUpServives.cs" />
@@ -230,16 +235,16 @@
     <EmbeddedResource Include="Slides.resx">
       <DependentUpon>Slides.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="desnityCat_bindingDataSource.xsc">
-      <DependentUpon>desnityCat_bindingDataSource.xsd</DependentUpon>
+    <None Include="densityCat_bindingDataSource.xsc">
+      <DependentUpon>densityCat_bindingDataSource.xsd</DependentUpon>
     </None>
-    <None Include="desnityCat_bindingDataSource.xsd">
+    <None Include="densityCat_bindingDataSource.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>desnityCat_bindingDataSource.Designer.cs</LastGenOutput>
+      <LastGenOutput>densityCat_bindingDataSource.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="desnityCat_bindingDataSource.xss">
-      <DependentUpon>desnityCat_bindingDataSource.xsd</DependentUpon>
+    <None Include="densityCat_bindingDataSource.xss">
+      <DependentUpon>densityCat_bindingDataSource.xsd</DependentUpon>
     </None>
     <None Include="donorsDataSet.xsc">
       <DependentUpon>donorsDataSet.xsd</DependentUpon>
@@ -283,6 +288,17 @@
     </None>
     <None Include="sbmsDataSet.xss">
       <DependentUpon>sbmsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sbmsDataSet1.xsc">
+      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="sbmsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sbmsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sbmsDataSet1.xss">
+      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="speciceCatgeroyDataSet.xsc">
       <DependentUpon>speciceCatgeroyDataSet.xsd</DependentUpon>
@@ -359,6 +375,8 @@
     <Content Include="assets\27332741_1426914380750443_3640997397741266774_n.png" />
     <Content Include="assets\icap logo.png" />
     <None Include="assets\xfn1X.jpg" />
+    <None Include="Resources\27332741_1426914380750443_3640997397741266774_n.png" />
+    <None Include="Resources\2000px-Flag_of_Ethiopia.svg.png" />
     <Content Include="Resources\download.png" />
     <Content Include="Resources\output-onlinepngtools.png" />
     <None Include="Resources\wadan.png" />
