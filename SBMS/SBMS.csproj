@@ -173,6 +173,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>specieCatgeoryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="speciece_specifics_dataBindingSource.cs">
+      <DependentUpon>speciece_specifics_dataBindingSource.xsd</DependentUpon>
+    </Compile>
     <Compile Include="speciece_specifics_dataBindingSource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

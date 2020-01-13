@@ -31,7 +31,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = SCOPE_ID
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id, density_category, code FROM dbo.density_category</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -67,7 +67,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)</Co
   <xs:element name="desnityCat_bindingDataSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="desnityCat_bindingDataSource" msprop:Generator_UserDSName="desnityCat_bindingDataSource">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="density_category" msprop:Generator_TableClassName="density_categoryDataTable" msprop:Generator_TableVarName="tabledensity_category" msprop:Generator_TablePropName="density_category" msprop:Generator_RowDeletingName="density_categoryRowDeleting" msprop:Generator_RowChangingName="density_categoryRowChanging" msprop:Generator_RowEvHandlerName="density_categoryRowChangeEventHandler" msprop:Generator_RowDeletedName="density_categoryRowDeleted" msprop:Generator_UserTableName="density_category" msprop:Generator_RowChangedName="density_categoryRowChanged" msprop:Generator_RowEvArgName="density_categoryRowChangeEvent" msprop:Generator_RowClassName="density_categoryRow">
+        <xs:element name="density_category" msprop:Generator_TableClassName="density_categoryDataTable" msprop:Generator_TableVarName="tabledensity_category" msprop:Generator_RowChangedName="density_categoryRowChanged" msprop:Generator_TablePropName="density_category" msprop:Generator_RowDeletingName="density_categoryRowDeleting" msprop:Generator_RowChangingName="density_categoryRowChanging" msprop:Generator_RowEvHandlerName="density_categoryRowChangeEventHandler" msprop:Generator_RowDeletedName="density_categoryRowDeleted" msprop:Generator_RowClassName="density_categoryRow" msprop:Generator_UserTableName="density_category" msprop:Generator_RowEvArgName="density_categoryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
