@@ -35,6 +35,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbl_notes = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -133,6 +134,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.button13);
             this.splitContainer1.Panel2.Controls.Add(this.button14);
             this.splitContainer1.Panel2.Controls.Add(this.button12);
@@ -162,6 +164,16 @@
             this.lbl_notes.Size = new System.Drawing.Size(275, 26);
             this.lbl_notes.TabIndex = 0;
             this.lbl_notes.Text = "Click a button to continue";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.Location = new System.Drawing.Point(912, 471);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(332, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Developed by Daniel Adenew, Lead Software Engineer MDTA,ICAP.";
             // 
             // button13
             // 
@@ -208,7 +220,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(247, 85);
             this.button15.TabIndex = 24;
-            this.button15.Text = "Reports";
+            this.button15.Text = "Slide Set Generator";
             this.button15.UseVisualStyleBackColor = false;
             // 
             // button11
@@ -367,6 +379,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -397,5 +410,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bn_borrowers;
         private System.Windows.Forms.Label lbl_notes;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -1,0 +1,116 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace SBMS.Services
+{
+    class DataFetchService
+    {
+
+        public DataFetchService() { DatabaseServices.GetConnection(); }
+
+        public DataTable FecthSlideByDonorCode(string donorCode)
+        {
+
+            DataTable slideFromDonorDataTable = new DataTable();
+            if (String.IsNullOrEmpty(donorCode) == false)
+            {
+                string selectquery = "select * from donors where donor_code=" + donorCode.Trim();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(selectquery, DatabaseServices.con))
+                {
+
+                    try
+                    {
+                        
+                        adapter.Fill(slideFromDonorDataTable);
+                        return slideFromDonorDataTable;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return slideFromDonorDataTable;
+                    }
+
+                }
+            }
+            return slideFromDonorDataTable;
+        }
+        public int CheckDuplicateDonorCode(string donorCode)
+        {
+
+            if (String.IsNullOrEmpty(donorCode) == false)
+            {
+                string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim();
+                using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+                {
+
+                    try
+                    {
+                        //con.Open();
+                        SqlDataReader cr = command2.ExecuteReader();
+                        while (cr.Read())
+                        {
+                            if (cr.HasRows == true)
+                            {
+
+                                return 1;
+                            }
+
+                        }
+                        cr.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return -1;
+                    }
+
+                }
+            }
+            return -1;
+        }
+
+
+        public int CheckDuplicateSlideInfo(string sequence)
+        {
+
+            if (String.IsNullOrEmpty(sequence) == false)
+            {
+                string selectquery = "select sequence from slides where sequence=" + sequence.Trim();
+                using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+                {
+
+                    try
+                    {
+                        //con.Open();
+                        SqlDataReader cr = command2.ExecuteReader();
+                        while (cr.Read())
+                        {
+                            if (cr.HasRows == true)
+                            {
+
+                                return 1;
+                            }
+
+                        }
+                        cr.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return -1;
+                    }
+
+                }
+            }
+            return -1;
+        }
+
+
+    }
+}

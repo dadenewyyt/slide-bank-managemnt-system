@@ -140,18 +140,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="sbmsDataSet.cs">
+      <DependentUpon>sbmsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sbmsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>sbmsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="sbmsDataSet1.Designer.cs">
+    <Compile Include="sbmsDataSetAll.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
+      <DependentUpon>sbmsDataSetAll.xsd</DependentUpon>
     </Compile>
     <Compile Include="Services\DatabaseServices.cs" />
-    <Compile Include="Services\LookUpServives.cs" />
+    <Compile Include="Services\DataFetchService.cs" />
+    <Compile Include="Services\HelperServices.cs" />
+    <Compile Include="Services\LookUpServices.cs" />
     <Compile Include="Slides.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,16 +297,16 @@
     <None Include="sbmsDataSet.xss">
       <DependentUpon>sbmsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="sbmsDataSet1.xsc">
-      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
+    <None Include="sbmsDataSetAll.xsc">
+      <DependentUpon>sbmsDataSetAll.xsd</DependentUpon>
     </None>
-    <None Include="sbmsDataSet1.xsd">
+    <None Include="sbmsDataSetAll.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sbmsDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>sbmsDataSetAll.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="sbmsDataSet1.xss">
-      <DependentUpon>sbmsDataSet1.xsd</DependentUpon>
+    <None Include="sbmsDataSetAll.xss">
+      <DependentUpon>sbmsDataSetAll.xsd</DependentUpon>
     </None>
     <None Include="speciceCatgeroyDataSet.xsc">
       <DependentUpon>speciceCatgeroyDataSet.xsd</DependentUpon>

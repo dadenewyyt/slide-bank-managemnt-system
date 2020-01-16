@@ -18,11 +18,13 @@ namespace SBMS
     {
         
         private int id_update = -1;
+        DataFetchService dataFetchService;
+        LookUpServices lookUpServices;
 
         public int Id_update { get => id_update; set => id_update = value; }
 
         public void clear() {
-            txt_barcode.Text = string.Empty;
+            txt_barcode_scan_in.Text = string.Empty;
             txt_country_code.Text = string.Empty;
             txt_donor_code.Text = string.Empty;
             cmb_specice_specifics.SelectedIndex = 0;
@@ -190,11 +192,33 @@ namespace SBMS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+            bool isValid = ValidateBeforeSave();
+
+            if (isValid == false)
+            {
+                MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+
+            //first  validate
+
+            dataFetchService = new DataFetchService();
+            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+
+            if (donorFoundDuplicate == 1)
+            {
+
+                MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                clear();
+            }
 
            
-           
-                // MessageBox.Show("Saving");
-                DateTime dt = DateTime.Now;
+
+
+            // MessageBox.Show("Saving");
+            DateTime dt = DateTime.Now;
 
                 using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
                 {
@@ -210,7 +234,7 @@ namespace SBMS
                              "@validation_id,@comment,@created_by,@updated_by,@created_date,@updated_date)";
                         command.CommandType = CommandType.Text;
                         command.CommandText = insertDonorQuery;
-                        command.Parameters.AddWithValue("@bar_code", txt_barcode.Text.ToString());
+                        command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
                         command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
                         command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
                         command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
@@ -265,12 +289,14 @@ namespace SBMS
 
             int rowIndex;
             rowIndex = e.RowIndex; 
+
+
           
             if (dgr_donors.SelectedRows.Count > 0)
             {
                 MessageBox.Show("you selected row:" + (rowIndex+1).ToString());
                
-                txt_barcode.Text = dgr_donors.Rows[e.RowIndex].Cells["barcodeDataGridViewTextBoxColumn"].Value + string.Empty;
+                txt_barcode_scan_in.Text = dgr_donors.Rows[e.RowIndex].Cells["barcodeDataGridViewTextBoxColumn"].Value + string.Empty;
                 txt_country_code.Text = dgr_donors.Rows[e.RowIndex].Cells["countrycodeDataGridViewTextBoxColumn"].Value + string.Empty;
                 txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
                 cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesspecificidDataGridViewTextBoxColumn"].Value);
@@ -293,7 +319,7 @@ namespace SBMS
             }
             else
             {
-                MessageBox.Show("NOData to Select");
+                MessageBox.Show("NO Data to Select");
             }
 
         }
@@ -329,6 +355,26 @@ namespace SBMS
         private void btn_save_edit_Click(object sender, EventArgs e)
         {
 
+            dataFetchService = new DataFetchService();
+            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+
+            if (donorFoundDuplicate == 1)
+            {
+
+                MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                clear();
+            }
+
+            bool isValid = ValidateBeforeSave();
+
+            if (isValid == false)
+            {
+                MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+
             if (Id_update != -1)
             {
                 // MessageBox.Show("Saving");
@@ -348,7 +394,7 @@ namespace SBMS
                         command.CommandType = CommandType.Text;
                         command.CommandText = updateDonorQuery;
                         command.Parameters.AddWithValue("@id", Id_update);
-                        command.Parameters.AddWithValue("@bar_code", txt_barcode.Text.ToString());
+                        command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
                         command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
                         command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
                         command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
@@ -403,6 +449,105 @@ namespace SBMS
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void enter_pressed(object sender, KeyPressEventArgs e)
+        {
+           
+            if (e.KeyChar == (char)13)
+            {
+
+                if (txt_barcode_scan_in.TextLength != 8)
+                {
+                    MessageBox.Show("The barcode scan or typed length should be 8 digits", "Error");
+                    return ;
+                }
+
+                if (int.TryParse(txt_barcode_scan_in.Text, out int n)==false)
+                {
+                    MessageBox.Show("The barcode scan should only be digits", "Error");
+                    return;
+                }
+
+                HelperServices helperService = new HelperServices();
+                Dictionary<string, string> separated = helperService.SeperateBarCodeIntoCodes(txt_barcode_scan_in.Text.ToString());
+
+                txt_country_code.Text = separated["CC"];
+                txt_donor_code.Text = separated["DC"];
+
+                dataFetchService = new DataFetchService();
+                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+
+                if (donorFoundDuplicate == 1)
+                {
+
+                    MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                    txt_country_code.Text = "";
+                    txt_donor_code.Text = "";
+                    txt_barcode_scan_in.Text = "";
+                }
+            }
+            
+
+        }
+
+        private void click_pressed(object sender, MouseEventArgs e)
+        {
+            txt_country_code.Text = "";
+            txt_donor_code.Text = "";
+            txt_barcode_scan_in.Text = "";
+        }
+
+        private bool ValidateBeforeSave() {
+
+           
+            if (String.IsNullOrEmpty(txt_barcode_scan_in.Text) || String.IsNullOrEmpty(txt_country_code.Text) || String.IsNullOrEmpty(txt_donor_code.Text)) {
+              
+                MessageBox.Show("Barcode , Donor code , Country code should not be empty to save new Donor Information. Press enter after you entered scan in barcode or enter a valida barcode number.", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
+
+            if (String.IsNullOrEmpty(txt_lower_density.Text) || String.IsNullOrEmpty(txt_average_density.Text) || String.IsNullOrEmpty(txt_upper_density.Text))
+            {
+
+                MessageBox.Show("Density Values Should not be Empty.", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
+
+            if (cmb_specice_specifics.SelectedIndex == 0 || cmb_density_category.SelectedIndex == 0 || cmb_specice_category.SelectedIndex == 0 || cmb_specice_stage.SelectedIndex == 0 || cmb_validation.SelectedIndex == 0 || cmb_owners.SelectedIndex == 0)
+            {
+                MessageBox.Show("You can not save a data with the value --Select-- choice?", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool isValid = ValidateBeforeSave();
+
+            if (isValid == false)
+            {
+                MessageBox.Show("Data is not saved. Please enter valid value for all Data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dgr_donors.ClearSelection();
+            Id_update =-1; //invalid is save query is not possible :(
+            btn_save.Enabled = true;
+            btn_save_edit.Enabled = false;
+            lbl_editing_status.Visible = false;
+            clear(); 
         }
     }
  }

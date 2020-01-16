@@ -35,9 +35,8 @@ namespace SBMS
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txt_barcode = new System.Windows.Forms.TextBox();
+            this.txt_barcode_scan_in = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_donor_code = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,6 +55,9 @@ namespace SBMS
             this.label13 = new System.Windows.Forms.Label();
             this.txt_lower_density = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.cmb_density_category = new System.Windows.Forms.ComboBox();
+            this.densitycategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_acquired_date = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,23 +71,44 @@ namespace SBMS
             this.label6 = new System.Windows.Forms.Label();
             this.btn_deactivate = new System.Windows.Forms.Button();
             this.dgr_donors = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speciesspecificidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
+            this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stage_dataBindingSource = new SBMS.stage_dataBindingSource();
+            this.SCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.speciceDataSet = new SBMS.speciceDataSet();
-            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lowerdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.averagedensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.upperdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.densitycategoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.owneridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
+            this.acquireddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.validationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.validationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.validationDataBindingSource = new SBMS.validationDataBindingSource();
+            this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.donorsDataSet = new SBMS.donorsDataSet();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_find = new System.Windows.Forms.Button();
             this.txt_search_box = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.donorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSet = new SBMS.sbmsDataSet();
             this.donorsTableAdapter = new SBMS.sbmsDataSetTableAdapters.donorsTableAdapter();
@@ -98,30 +121,8 @@ namespace SBMS
             this.donorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.donorsTableAdapter1 = new SBMS.donorsDataSetTableAdapters.donorsTableAdapter();
             this.species_categoryTableAdapter = new SBMS.speciceDataSetTableAdapters.species_categoryTableAdapter();
-            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
-            this.cmb_density_category = new System.Windows.Forms.ComboBox();
-            this.densitycategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.densitycategoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciesspecificidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.SCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.lowerdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.averagedensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upperdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.owneridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.acquireddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.validationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -130,6 +131,8 @@ namespace SBMS
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_donors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).BeginInit();
@@ -137,21 +140,19 @@ namespace SBMS
             ((System.ComponentModel.ISupportInitialize)(this.stage_dataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciceDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -177,9 +178,8 @@ namespace SBMS
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label17);
-            this.splitContainer1.Panel2.Controls.Add(this.txt_barcode);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_barcode_scan_in);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.txt_donor_code);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
@@ -199,20 +199,6 @@ namespace SBMS
             this.label3.TabIndex = 0;
             this.label3.Text = "Donor Management";
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Honeydew;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox1.Location = new System.Drawing.Point(347, 25);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(885, 72);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Extarcting donor and country code from barcode automatically , adding validation " +
-    "for duplicate save for donot code or country code , deactivating  a donor or not" +
-    " ? ";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -223,13 +209,16 @@ namespace SBMS
             this.label17.TabIndex = 7;
             this.label17.Text = "TODO:";
             // 
-            // txt_barcode
+            // txt_barcode_scan_in
             // 
-            this.txt_barcode.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_barcode.Location = new System.Drawing.Point(147, 12);
-            this.txt_barcode.Name = "txt_barcode";
-            this.txt_barcode.Size = new System.Drawing.Size(178, 25);
-            this.txt_barcode.TabIndex = 6;
+            this.txt_barcode_scan_in.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_barcode_scan_in.Location = new System.Drawing.Point(147, 12);
+            this.txt_barcode_scan_in.MaxLength = 8;
+            this.txt_barcode_scan_in.Name = "txt_barcode_scan_in";
+            this.txt_barcode_scan_in.Size = new System.Drawing.Size(178, 25);
+            this.txt_barcode_scan_in.TabIndex = 6;
+            this.txt_barcode_scan_in.MouseClick += new System.Windows.Forms.MouseEventHandler(this.click_pressed);
+            this.txt_barcode_scan_in.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_pressed);
             // 
             // label5
             // 
@@ -308,6 +297,8 @@ namespace SBMS
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.button1);
+            this.splitContainer2.Panel2.Controls.Add(this.button2);
             this.splitContainer2.Panel2.Controls.Add(this.dgr_donors);
             this.splitContainer2.Panel2.Controls.Add(this.button4);
             this.splitContainer2.Panel2.Controls.Add(this.btn_find);
@@ -455,6 +446,28 @@ namespace SBMS
             this.label12.Size = new System.Drawing.Size(97, 17);
             this.label12.TabIndex = 29;
             this.label12.Text = "Lower Density:";
+            // 
+            // cmb_density_category
+            // 
+            this.cmb_density_category.DataSource = this.densitycategoryBindingSource1;
+            this.cmb_density_category.DisplayMember = "density_category";
+            this.cmb_density_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_density_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.cmb_density_category.Location = new System.Drawing.Point(147, 183);
+            this.cmb_density_category.Name = "cmb_density_category";
+            this.cmb_density_category.Size = new System.Drawing.Size(239, 25);
+            this.cmb_density_category.TabIndex = 39;
+            this.cmb_density_category.ValueMember = "id";
+            // 
+            // densitycategoryBindingSource1
+            // 
+            this.densitycategoryBindingSource1.DataMember = "density_category";
+            this.densitycategoryBindingSource1.DataSource = this.desnityCat_bindingDataSource;
+            // 
+            // desnityCat_bindingDataSource
+            // 
+            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
+            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label15
             // 
@@ -636,6 +649,49 @@ namespace SBMS
             this.dgr_donors.TabIndex = 30;
             this.dgr_donors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgr_donors_CellClick);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "pk_id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // barcodeDataGridViewTextBoxColumn
+            // 
+            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "bar_code";
+            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Bar Code";
+            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
+            this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // countrycodeDataGridViewTextBoxColumn
+            // 
+            this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
+            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "Country Code";
+            this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
+            this.countrycodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // donorcodeDataGridViewTextBoxColumn
+            // 
+            this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
+            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "Donor_Code";
+            this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
+            this.donorcodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // speciesspecificidDataGridViewTextBoxColumn
+            // 
+            this.speciesspecificidDataGridViewTextBoxColumn.DataPropertyName = "species_specific_id";
+            this.speciesspecificidDataGridViewTextBoxColumn.DataSource = this.speciesspecificsBindingSource;
+            this.speciesspecificidDataGridViewTextBoxColumn.DisplayMember = "specifics";
+            this.speciesspecificidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.speciesspecificidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.speciesspecificidDataGridViewTextBoxColumn.HeaderText = "Specific";
+            this.speciesspecificidDataGridViewTextBoxColumn.Name = "speciesspecificidDataGridViewTextBoxColumn";
+            this.speciesspecificidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.speciesspecificidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.speciesspecificidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.speciesspecificidDataGridViewTextBoxColumn.ValueMember = "id";
+            // 
             // speciesspecificsBindingSource
             // 
             this.speciesspecificsBindingSource.DataMember = "species_specifics";
@@ -645,6 +701,20 @@ namespace SBMS
             // 
             this.speciece_specifics_dataBindingSource.DataSetName = "speciece_specifics_dataBindingSource";
             this.speciece_specifics_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // speciesstageidDataGridViewTextBoxColumn
+            // 
+            this.speciesstageidDataGridViewTextBoxColumn.DataPropertyName = "species_stage_id";
+            this.speciesstageidDataGridViewTextBoxColumn.DataSource = this.speciesstagesBindingSource;
+            this.speciesstageidDataGridViewTextBoxColumn.DisplayMember = "stage";
+            this.speciesstageidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.speciesstageidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.speciesstageidDataGridViewTextBoxColumn.HeaderText = "Stage";
+            this.speciesstageidDataGridViewTextBoxColumn.Name = "speciesstageidDataGridViewTextBoxColumn";
+            this.speciesstageidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.speciesstageidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.speciesstageidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.speciesstageidDataGridViewTextBoxColumn.ValueMember = "id";
             // 
             // speciesstagesBindingSource
             // 
@@ -656,6 +726,18 @@ namespace SBMS
             this.stage_dataBindingSource.DataSetName = "stage_dataBindingSource";
             this.stage_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // SCategory
+            // 
+            this.SCategory.DataPropertyName = "species_catgeroy_id";
+            this.SCategory.DataSource = this.speciescategoryBindingSource;
+            this.SCategory.DisplayMember = "species_category";
+            this.SCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.SCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SCategory.HeaderText = "Category";
+            this.SCategory.Name = "SCategory";
+            this.SCategory.ReadOnly = true;
+            this.SCategory.ValueMember = "id";
+            // 
             // speciescategoryBindingSource
             // 
             this.speciescategoryBindingSource.DataMember = "species_category";
@@ -665,6 +747,65 @@ namespace SBMS
             // 
             this.speciceDataSet.DataSetName = "speciceDataSet";
             this.speciceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lowerdensityDataGridViewTextBoxColumn
+            // 
+            this.lowerdensityDataGridViewTextBoxColumn.DataPropertyName = "lower_density";
+            this.lowerdensityDataGridViewTextBoxColumn.HeaderText = "Lower";
+            this.lowerdensityDataGridViewTextBoxColumn.Name = "lowerdensityDataGridViewTextBoxColumn";
+            this.lowerdensityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // averagedensityDataGridViewTextBoxColumn
+            // 
+            this.averagedensityDataGridViewTextBoxColumn.DataPropertyName = "average_density";
+            this.averagedensityDataGridViewTextBoxColumn.HeaderText = "Average";
+            this.averagedensityDataGridViewTextBoxColumn.Name = "averagedensityDataGridViewTextBoxColumn";
+            this.averagedensityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // upperdensityDataGridViewTextBoxColumn
+            // 
+            this.upperdensityDataGridViewTextBoxColumn.DataPropertyName = "upper_density";
+            this.upperdensityDataGridViewTextBoxColumn.HeaderText = "Upper";
+            this.upperdensityDataGridViewTextBoxColumn.Name = "upperdensityDataGridViewTextBoxColumn";
+            this.upperdensityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // densitycategoryidDataGridViewTextBoxColumn
+            // 
+            this.densitycategoryidDataGridViewTextBoxColumn.DataPropertyName = "density_category_id";
+            this.densitycategoryidDataGridViewTextBoxColumn.DataSource = this.densitycategoryBindingSource2;
+            this.densitycategoryidDataGridViewTextBoxColumn.DisplayMember = "density_category";
+            this.densitycategoryidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.densitycategoryidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.densitycategoryidDataGridViewTextBoxColumn.HeaderText = "Density";
+            this.densitycategoryidDataGridViewTextBoxColumn.Name = "densitycategoryidDataGridViewTextBoxColumn";
+            this.densitycategoryidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.densitycategoryidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.densitycategoryidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.densitycategoryidDataGridViewTextBoxColumn.ValueMember = "id";
+            // 
+            // densitycategoryBindingSource2
+            // 
+            this.densitycategoryBindingSource2.DataMember = "density_category";
+            this.densitycategoryBindingSource2.DataSource = this.desnityCatbindingDataSourceBindingSource;
+            // 
+            // desnityCatbindingDataSourceBindingSource
+            // 
+            this.desnityCatbindingDataSourceBindingSource.DataSource = this.desnityCat_bindingDataSource;
+            this.desnityCatbindingDataSourceBindingSource.Position = 0;
+            // 
+            // owneridDataGridViewTextBoxColumn
+            // 
+            this.owneridDataGridViewTextBoxColumn.DataPropertyName = "owner_id";
+            this.owneridDataGridViewTextBoxColumn.DataSource = this.ownersBindingSource;
+            this.owneridDataGridViewTextBoxColumn.DisplayMember = "owner";
+            this.owneridDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.owneridDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.owneridDataGridViewTextBoxColumn.HeaderText = "Owner";
+            this.owneridDataGridViewTextBoxColumn.Name = "owneridDataGridViewTextBoxColumn";
+            this.owneridDataGridViewTextBoxColumn.ReadOnly = true;
+            this.owneridDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.owneridDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.owneridDataGridViewTextBoxColumn.ValueMember = "id";
             // 
             // ownersBindingSource
             // 
@@ -676,6 +817,27 @@ namespace SBMS
             this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
             this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // acquireddateDataGridViewTextBoxColumn
+            // 
+            this.acquireddateDataGridViewTextBoxColumn.DataPropertyName = "acquired_date";
+            this.acquireddateDataGridViewTextBoxColumn.HeaderText = "Acquired";
+            this.acquireddateDataGridViewTextBoxColumn.Name = "acquireddateDataGridViewTextBoxColumn";
+            this.acquireddateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // validationidDataGridViewTextBoxColumn
+            // 
+            this.validationidDataGridViewTextBoxColumn.DataPropertyName = "validation_id";
+            this.validationidDataGridViewTextBoxColumn.DataSource = this.validationsBindingSource;
+            this.validationidDataGridViewTextBoxColumn.DisplayMember = "validation";
+            this.validationidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.validationidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.validationidDataGridViewTextBoxColumn.HeaderText = "Validated?";
+            this.validationidDataGridViewTextBoxColumn.Name = "validationidDataGridViewTextBoxColumn";
+            this.validationidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.validationidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.validationidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.validationidDataGridViewTextBoxColumn.ValueMember = "id";
+            // 
             // validationsBindingSource
             // 
             this.validationsBindingSource.DataMember = "validations";
@@ -685,6 +847,41 @@ namespace SBMS
             // 
             this.validationDataBindingSource.DataSetName = "validationDataBindingSource";
             this.validationDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // createdbyDataGridViewTextBoxColumn
+            // 
+            this.createdbyDataGridViewTextBoxColumn.DataPropertyName = "created_by";
+            this.createdbyDataGridViewTextBoxColumn.HeaderText = "Created";
+            this.createdbyDataGridViewTextBoxColumn.Name = "createdbyDataGridViewTextBoxColumn";
+            this.createdbyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // updatedbyDataGridViewTextBoxColumn
+            // 
+            this.updatedbyDataGridViewTextBoxColumn.DataPropertyName = "updated_by";
+            this.updatedbyDataGridViewTextBoxColumn.HeaderText = "Updated";
+            this.updatedbyDataGridViewTextBoxColumn.Name = "updatedbyDataGridViewTextBoxColumn";
+            this.updatedbyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // createddateDataGridViewTextBoxColumn
+            // 
+            this.createddateDataGridViewTextBoxColumn.DataPropertyName = "created_date";
+            this.createddateDataGridViewTextBoxColumn.HeaderText = "CreatedDate";
+            this.createddateDataGridViewTextBoxColumn.Name = "createddateDataGridViewTextBoxColumn";
+            this.createddateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // updateddateDataGridViewTextBoxColumn
+            // 
+            this.updateddateDataGridViewTextBoxColumn.DataPropertyName = "updated_date";
+            this.updateddateDataGridViewTextBoxColumn.HeaderText = "LastUpdatedDate";
+            this.updateddateDataGridViewTextBoxColumn.Name = "updateddateDataGridViewTextBoxColumn";
+            this.updateddateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            this.commentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // donorsBindingSource2
             // 
@@ -700,9 +897,9 @@ namespace SBMS
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(635, 10);
+            this.button4.Location = new System.Drawing.Point(753, 9);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(188, 25);
+            this.button4.Size = new System.Drawing.Size(70, 26);
             this.button4.TabIndex = 29;
             this.button4.Text = "Fetch from server";
             this.button4.UseVisualStyleBackColor = false;
@@ -790,211 +987,29 @@ namespace SBMS
             // 
             this.species_categoryTableAdapter.ClearBeforeFill = true;
             // 
-            // desnityCat_bindingDataSource
+            // button1
             // 
-            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
-            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(546, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 26);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Validate";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // cmb_density_category
+            // button2
             // 
-            this.cmb_density_category.DataSource = this.densitycategoryBindingSource1;
-            this.cmb_density_category.DisplayMember = "density_category";
-            this.cmb_density_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_density_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.cmb_density_category.Location = new System.Drawing.Point(147, 183);
-            this.cmb_density_category.Name = "cmb_density_category";
-            this.cmb_density_category.Size = new System.Drawing.Size(239, 25);
-            this.cmb_density_category.TabIndex = 39;
-            this.cmb_density_category.ValueMember = "id";
-            // 
-            // densitycategoryBindingSource1
-            // 
-            this.densitycategoryBindingSource1.DataMember = "density_category";
-            this.densitycategoryBindingSource1.DataSource = this.desnityCat_bindingDataSource;
-            // 
-            // desnityCatbindingDataSourceBindingSource
-            // 
-            this.desnityCatbindingDataSourceBindingSource.DataSource = this.desnityCat_bindingDataSource;
-            this.desnityCatbindingDataSourceBindingSource.Position = 0;
-            // 
-            // densitycategoryBindingSource2
-            // 
-            this.densitycategoryBindingSource2.DataMember = "density_category";
-            this.densitycategoryBindingSource2.DataSource = this.desnityCatbindingDataSourceBindingSource;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "pk_id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // barcodeDataGridViewTextBoxColumn
-            // 
-            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "bar_code";
-            this.barcodeDataGridViewTextBoxColumn.HeaderText = "Bar Code";
-            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
-            this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // countrycodeDataGridViewTextBoxColumn
-            // 
-            this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
-            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "Country Code";
-            this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
-            this.countrycodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // donorcodeDataGridViewTextBoxColumn
-            // 
-            this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
-            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "Donor_Code";
-            this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
-            this.donorcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // speciesspecificidDataGridViewTextBoxColumn
-            // 
-            this.speciesspecificidDataGridViewTextBoxColumn.DataPropertyName = "species_specific_id";
-            this.speciesspecificidDataGridViewTextBoxColumn.DataSource = this.speciesspecificsBindingSource;
-            this.speciesspecificidDataGridViewTextBoxColumn.DisplayMember = "specifics";
-            this.speciesspecificidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.speciesspecificidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.speciesspecificidDataGridViewTextBoxColumn.HeaderText = "Specific";
-            this.speciesspecificidDataGridViewTextBoxColumn.Name = "speciesspecificidDataGridViewTextBoxColumn";
-            this.speciesspecificidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.speciesspecificidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.speciesspecificidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.speciesspecificidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // speciesstageidDataGridViewTextBoxColumn
-            // 
-            this.speciesstageidDataGridViewTextBoxColumn.DataPropertyName = "species_stage_id";
-            this.speciesstageidDataGridViewTextBoxColumn.DataSource = this.speciesstagesBindingSource;
-            this.speciesstageidDataGridViewTextBoxColumn.DisplayMember = "stage";
-            this.speciesstageidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.speciesstageidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.speciesstageidDataGridViewTextBoxColumn.HeaderText = "Stage";
-            this.speciesstageidDataGridViewTextBoxColumn.Name = "speciesstageidDataGridViewTextBoxColumn";
-            this.speciesstageidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.speciesstageidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.speciesstageidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.speciesstageidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // SCategory
-            // 
-            this.SCategory.DataPropertyName = "species_catgeroy_id";
-            this.SCategory.DataSource = this.speciescategoryBindingSource;
-            this.SCategory.DisplayMember = "species_category";
-            this.SCategory.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.SCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SCategory.HeaderText = "Category";
-            this.SCategory.Name = "SCategory";
-            this.SCategory.ReadOnly = true;
-            this.SCategory.ValueMember = "id";
-            // 
-            // lowerdensityDataGridViewTextBoxColumn
-            // 
-            this.lowerdensityDataGridViewTextBoxColumn.DataPropertyName = "lower_density";
-            this.lowerdensityDataGridViewTextBoxColumn.HeaderText = "Lower";
-            this.lowerdensityDataGridViewTextBoxColumn.Name = "lowerdensityDataGridViewTextBoxColumn";
-            this.lowerdensityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // averagedensityDataGridViewTextBoxColumn
-            // 
-            this.averagedensityDataGridViewTextBoxColumn.DataPropertyName = "average_density";
-            this.averagedensityDataGridViewTextBoxColumn.HeaderText = "Average";
-            this.averagedensityDataGridViewTextBoxColumn.Name = "averagedensityDataGridViewTextBoxColumn";
-            this.averagedensityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // upperdensityDataGridViewTextBoxColumn
-            // 
-            this.upperdensityDataGridViewTextBoxColumn.DataPropertyName = "upper_density";
-            this.upperdensityDataGridViewTextBoxColumn.HeaderText = "Upper";
-            this.upperdensityDataGridViewTextBoxColumn.Name = "upperdensityDataGridViewTextBoxColumn";
-            this.upperdensityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // densitycategoryidDataGridViewTextBoxColumn
-            // 
-            this.densitycategoryidDataGridViewTextBoxColumn.DataPropertyName = "density_category_id";
-            this.densitycategoryidDataGridViewTextBoxColumn.DataSource = this.densitycategoryBindingSource2;
-            this.densitycategoryidDataGridViewTextBoxColumn.DisplayMember = "density_category";
-            this.densitycategoryidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.densitycategoryidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.densitycategoryidDataGridViewTextBoxColumn.HeaderText = "Density";
-            this.densitycategoryidDataGridViewTextBoxColumn.Name = "densitycategoryidDataGridViewTextBoxColumn";
-            this.densitycategoryidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.densitycategoryidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.densitycategoryidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.densitycategoryidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // owneridDataGridViewTextBoxColumn
-            // 
-            this.owneridDataGridViewTextBoxColumn.DataPropertyName = "owner_id";
-            this.owneridDataGridViewTextBoxColumn.DataSource = this.ownersBindingSource;
-            this.owneridDataGridViewTextBoxColumn.DisplayMember = "owner";
-            this.owneridDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.owneridDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.owneridDataGridViewTextBoxColumn.HeaderText = "Owner";
-            this.owneridDataGridViewTextBoxColumn.Name = "owneridDataGridViewTextBoxColumn";
-            this.owneridDataGridViewTextBoxColumn.ReadOnly = true;
-            this.owneridDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.owneridDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.owneridDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // acquireddateDataGridViewTextBoxColumn
-            // 
-            this.acquireddateDataGridViewTextBoxColumn.DataPropertyName = "acquired_date";
-            this.acquireddateDataGridViewTextBoxColumn.HeaderText = "Acquired";
-            this.acquireddateDataGridViewTextBoxColumn.Name = "acquireddateDataGridViewTextBoxColumn";
-            this.acquireddateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // validationidDataGridViewTextBoxColumn
-            // 
-            this.validationidDataGridViewTextBoxColumn.DataPropertyName = "validation_id";
-            this.validationidDataGridViewTextBoxColumn.DataSource = this.validationsBindingSource;
-            this.validationidDataGridViewTextBoxColumn.DisplayMember = "validation";
-            this.validationidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.validationidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.validationidDataGridViewTextBoxColumn.HeaderText = "Validated?";
-            this.validationidDataGridViewTextBoxColumn.Name = "validationidDataGridViewTextBoxColumn";
-            this.validationidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.validationidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.validationidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.validationidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // createdbyDataGridViewTextBoxColumn
-            // 
-            this.createdbyDataGridViewTextBoxColumn.DataPropertyName = "created_by";
-            this.createdbyDataGridViewTextBoxColumn.HeaderText = "Created";
-            this.createdbyDataGridViewTextBoxColumn.Name = "createdbyDataGridViewTextBoxColumn";
-            this.createdbyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // updatedbyDataGridViewTextBoxColumn
-            // 
-            this.updatedbyDataGridViewTextBoxColumn.DataPropertyName = "updated_by";
-            this.updatedbyDataGridViewTextBoxColumn.HeaderText = "Updated";
-            this.updatedbyDataGridViewTextBoxColumn.Name = "updatedbyDataGridViewTextBoxColumn";
-            this.updatedbyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // createddateDataGridViewTextBoxColumn
-            // 
-            this.createddateDataGridViewTextBoxColumn.DataPropertyName = "created_date";
-            this.createddateDataGridViewTextBoxColumn.HeaderText = "CreatedDate";
-            this.createddateDataGridViewTextBoxColumn.Name = "createddateDataGridViewTextBoxColumn";
-            this.createddateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // updateddateDataGridViewTextBoxColumn
-            // 
-            this.updateddateDataGridViewTextBoxColumn.DataPropertyName = "updated_date";
-            this.updateddateDataGridViewTextBoxColumn.HeaderText = "LastUpdatedDate";
-            this.updateddateDataGridViewTextBoxColumn.Name = "updateddateDataGridViewTextBoxColumn";
-            this.updateddateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            this.commentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(634, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 27);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Clear selection";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Donors
             // 
@@ -1023,6 +1038,8 @@ namespace SBMS
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_donors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).EndInit();
@@ -1030,21 +1047,19 @@ namespace SBMS
             ((System.ComponentModel.ISupportInitialize)(this.stage_dataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciceDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1057,7 +1072,7 @@ namespace SBMS
         private System.Windows.Forms.TextBox txt_donor_code;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_barcode;
+        private System.Windows.Forms.TextBox txt_barcode_scan_in;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ComboBox cmb_specice_stage;
         private System.Windows.Forms.Label label7;
@@ -1117,7 +1132,6 @@ namespace SBMS
         private speciceDataSetTableAdapters.species_categoryTableAdapter species_categoryTableAdapter;
         private Button btn_deactivate;
         private Label lbl_editing_status;
-        private TextBox textBox1;
         private Label label17;
         private desnityCat_bindingDataSource desnityCat_bindingDataSource;
         private ComboBox cmb_density_category;
@@ -1143,6 +1157,8 @@ namespace SBMS
         private DataGridViewTextBoxColumn createddateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn updateddateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private Button button1;
+        private Button button2;
     }
 
 
