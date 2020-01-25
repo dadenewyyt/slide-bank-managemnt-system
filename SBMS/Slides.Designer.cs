@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
+            this.lbl_editing_status = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_slide_sequence = new System.Windows.Forms.TextBox();
             this.txt_donor_code = new System.Windows.Forms.TextBox();
@@ -100,20 +101,46 @@
             this.btn_clear_selection = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lbl_editing_status = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.txt_search_slide_recent = new System.Windows.Forms.TextBox();
             this.dgr_recentslides = new System.Windows.Forms.DataGridView();
+            this.idrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcoderecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorcodrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sequencerecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ssrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.screcentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.strecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dcrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ldrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.udrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ownerrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ownerDataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
+            this.cabinetrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawerrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adaterecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.validationrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.commentrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDamagedrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isResevedrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isBorrowedrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isActiverecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.udaterecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdaterecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbyrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubyrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recentslidedatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSet = new SBMS.sbmsDataSet();
             this.button7 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btn_find_all = new System.Windows.Forms.Button();
             this.txt_search_all = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -159,33 +186,6 @@
             this.speciece_specifics_dataBindingSource1 = new SBMS.speciece_specifics_dataBindingSource();
             this.speciectypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.recentslidedatasetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcoderecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorcodrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sequencerecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ssrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.screcentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.strecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dcrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ldrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.udrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cabinetrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drawerrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adaterecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.validationrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.commentrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDamagedrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isResevedrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isBorrowedrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isActiverecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.udaterecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdaterecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbyrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ubyrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -267,6 +267,18 @@
             this.label7.Size = new System.Drawing.Size(257, 33);
             this.label7.TabIndex = 0;
             this.label7.Text = "Slide Management";
+            // 
+            // lbl_editing_status
+            // 
+            this.lbl_editing_status.AutoSize = true;
+            this.lbl_editing_status.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_editing_status.ForeColor = System.Drawing.Color.Brown;
+            this.lbl_editing_status.Location = new System.Drawing.Point(756, 43);
+            this.lbl_editing_status.Name = "lbl_editing_status";
+            this.lbl_editing_status.Size = new System.Drawing.Size(169, 21);
+            this.lbl_editing_status.TabIndex = 94;
+            this.lbl_editing_status.Text = "Data is being Edited. ";
+            this.lbl_editing_status.Visible = false;
             // 
             // label8
             // 
@@ -981,18 +993,6 @@
             this.tabPage1.Text = "100 Recent Slides";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // lbl_editing_status
-            // 
-            this.lbl_editing_status.AutoSize = true;
-            this.lbl_editing_status.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_editing_status.ForeColor = System.Drawing.Color.Brown;
-            this.lbl_editing_status.Location = new System.Drawing.Point(756, 43);
-            this.lbl_editing_status.Name = "lbl_editing_status";
-            this.lbl_editing_status.Size = new System.Drawing.Size(169, 21);
-            this.lbl_editing_status.TabIndex = 94;
-            this.lbl_editing_status.Text = "Data is being Edited. ";
-            this.lbl_editing_status.Visible = false;
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -1011,6 +1011,7 @@
             this.button2.TabIndex = 49;
             this.button2.Text = "Refresh!";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_search_slide_recent
             // 
@@ -1068,6 +1069,112 @@
             this.dgr_recentslides.TabIndex = 0;
             this.dgr_recentslides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selected_row);
             // 
+            // idrecentslidesGridViewColumn
+            // 
+            this.idrecentslidesGridViewColumn.DataPropertyName = "id";
+            this.idrecentslidesGridViewColumn.HeaderText = "id";
+            this.idrecentslidesGridViewColumn.Name = "idrecentslidesGridViewColumn";
+            this.idrecentslidesGridViewColumn.ReadOnly = true;
+            this.idrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idrecentslidesGridViewColumn.Visible = false;
+            // 
+            // barcoderecentslidesGridViewColumn
+            // 
+            this.barcoderecentslidesGridViewColumn.DataPropertyName = "bar_code";
+            this.barcoderecentslidesGridViewColumn.HeaderText = "BarCode";
+            this.barcoderecentslidesGridViewColumn.Name = "barcoderecentslidesGridViewColumn";
+            // 
+            // donorcodrecentslidesGridViewColumn
+            // 
+            this.donorcodrecentslidesGridViewColumn.DataPropertyName = "donor_code";
+            this.donorcodrecentslidesGridViewColumn.HeaderText = "Donor";
+            this.donorcodrecentslidesGridViewColumn.Name = "donorcodrecentslidesGridViewColumn";
+            // 
+            // sequencerecentslidesGridViewColumn
+            // 
+            this.sequencerecentslidesGridViewColumn.DataPropertyName = "sequence";
+            this.sequencerecentslidesGridViewColumn.HeaderText = "Sequemce";
+            this.sequencerecentslidesGridViewColumn.Name = "sequencerecentslidesGridViewColumn";
+            // 
+            // ccrecentslidesGridViewColumn
+            // 
+            this.ccrecentslidesGridViewColumn.DataPropertyName = "country_code";
+            this.ccrecentslidesGridViewColumn.HeaderText = "CCode";
+            this.ccrecentslidesGridViewColumn.Name = "ccrecentslidesGridViewColumn";
+            // 
+            // ssrecentslidesGridViewColumn
+            // 
+            this.ssrecentslidesGridViewColumn.DataPropertyName = "species_specific_id";
+            this.ssrecentslidesGridViewColumn.DataSource = this.speciesspecificsBindingSource;
+            this.ssrecentslidesGridViewColumn.DisplayMember = "specifics";
+            this.ssrecentslidesGridViewColumn.HeaderText = "Specifics";
+            this.ssrecentslidesGridViewColumn.Name = "ssrecentslidesGridViewColumn";
+            this.ssrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ssrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ssrecentslidesGridViewColumn.ValueMember = "id";
+            // 
+            // screcentslidesGridViewColumn
+            // 
+            this.screcentslidesGridViewColumn.DataPropertyName = "species_catgeroy_id";
+            this.screcentslidesGridViewColumn.DataSource = this.speciescategoryBindingSource;
+            this.screcentslidesGridViewColumn.DisplayMember = "species_category";
+            this.screcentslidesGridViewColumn.HeaderText = "SCategory";
+            this.screcentslidesGridViewColumn.Name = "screcentslidesGridViewColumn";
+            this.screcentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.screcentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.screcentslidesGridViewColumn.ValueMember = "id";
+            // 
+            // strecentslidesGridViewColumn
+            // 
+            this.strecentslidesGridViewColumn.DataPropertyName = "species_stage_id";
+            this.strecentslidesGridViewColumn.DataSource = this.speciesstagesBindingSource;
+            this.strecentslidesGridViewColumn.DisplayMember = "stage";
+            this.strecentslidesGridViewColumn.HeaderText = "Stage";
+            this.strecentslidesGridViewColumn.Name = "strecentslidesGridViewColumn";
+            this.strecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.strecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.strecentslidesGridViewColumn.ValueMember = "id";
+            // 
+            // dcrecentslidesGridViewColumn
+            // 
+            this.dcrecentslidesGridViewColumn.DataPropertyName = "density_category_id";
+            this.dcrecentslidesGridViewColumn.DataSource = this.densitycategoryBindingSource;
+            this.dcrecentslidesGridViewColumn.DisplayMember = "density_category";
+            this.dcrecentslidesGridViewColumn.HeaderText = "Density";
+            this.dcrecentslidesGridViewColumn.Name = "dcrecentslidesGridViewColumn";
+            this.dcrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dcrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dcrecentslidesGridViewColumn.ValueMember = "id";
+            // 
+            // ldrecentslidesGridViewColumn
+            // 
+            this.ldrecentslidesGridViewColumn.DataPropertyName = "lower_density";
+            this.ldrecentslidesGridViewColumn.HeaderText = "LD";
+            this.ldrecentslidesGridViewColumn.Name = "ldrecentslidesGridViewColumn";
+            // 
+            // adrecentslidesGridViewColumn
+            // 
+            this.adrecentslidesGridViewColumn.DataPropertyName = "average_density";
+            this.adrecentslidesGridViewColumn.HeaderText = "AD";
+            this.adrecentslidesGridViewColumn.Name = "adrecentslidesGridViewColumn";
+            // 
+            // udrecentslidesGridViewColumn
+            // 
+            this.udrecentslidesGridViewColumn.DataPropertyName = "upper_density";
+            this.udrecentslidesGridViewColumn.HeaderText = "UD";
+            this.udrecentslidesGridViewColumn.Name = "udrecentslidesGridViewColumn";
+            // 
+            // ownerrecentslidesGridViewColumn
+            // 
+            this.ownerrecentslidesGridViewColumn.DataPropertyName = "owner_id";
+            this.ownerrecentslidesGridViewColumn.DataSource = this.ownersBindingSource;
+            this.ownerrecentslidesGridViewColumn.DisplayMember = "owner";
+            this.ownerrecentslidesGridViewColumn.HeaderText = "Owner";
+            this.ownerrecentslidesGridViewColumn.Name = "ownerrecentslidesGridViewColumn";
+            this.ownerrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ownerrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ownerrecentslidesGridViewColumn.ValueMember = "id";
+            // 
             // ownersBindingSource
             // 
             this.ownersBindingSource.DataMember = "owners";
@@ -1082,6 +1189,95 @@
             // 
             this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
             this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cabinetrecentslidesGridViewColumn
+            // 
+            this.cabinetrecentslidesGridViewColumn.DataPropertyName = "cabinet_number";
+            this.cabinetrecentslidesGridViewColumn.HeaderText = "Cabinet#";
+            this.cabinetrecentslidesGridViewColumn.Name = "cabinetrecentslidesGridViewColumn";
+            // 
+            // boxrecentslidesGridViewColumn
+            // 
+            this.boxrecentslidesGridViewColumn.DataPropertyName = "box_number";
+            this.boxrecentslidesGridViewColumn.HeaderText = "Box#";
+            this.boxrecentslidesGridViewColumn.Name = "boxrecentslidesGridViewColumn";
+            // 
+            // drawerrecentslidesGridViewColumn
+            // 
+            this.drawerrecentslidesGridViewColumn.DataPropertyName = "drawer_number";
+            this.drawerrecentslidesGridViewColumn.HeaderText = "Drawer#";
+            this.drawerrecentslidesGridViewColumn.Name = "drawerrecentslidesGridViewColumn";
+            // 
+            // adaterecentslidesGridViewColumn
+            // 
+            this.adaterecentslidesGridViewColumn.DataPropertyName = "acquired_date";
+            this.adaterecentslidesGridViewColumn.HeaderText = "ADate";
+            this.adaterecentslidesGridViewColumn.Name = "adaterecentslidesGridViewColumn";
+            // 
+            // validationrecentslidesGridViewColumn
+            // 
+            this.validationrecentslidesGridViewColumn.DataPropertyName = "validation_id";
+            this.validationrecentslidesGridViewColumn.DataSource = this.validationsBindingSource;
+            this.validationrecentslidesGridViewColumn.DisplayMember = "validation";
+            this.validationrecentslidesGridViewColumn.HeaderText = "Validation";
+            this.validationrecentslidesGridViewColumn.Name = "validationrecentslidesGridViewColumn";
+            this.validationrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.validationrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.validationrecentslidesGridViewColumn.ValueMember = "id";
+            // 
+            // commentrecentslidesGridViewColumn
+            // 
+            this.commentrecentslidesGridViewColumn.DataPropertyName = "comment";
+            this.commentrecentslidesGridViewColumn.HeaderText = "Comment";
+            this.commentrecentslidesGridViewColumn.Name = "commentrecentslidesGridViewColumn";
+            // 
+            // isDamagedrecentslidesGridViewColumn
+            // 
+            this.isDamagedrecentslidesGridViewColumn.DataPropertyName = "isDamaged";
+            this.isDamagedrecentslidesGridViewColumn.HeaderText = "Damaged?";
+            this.isDamagedrecentslidesGridViewColumn.Name = "isDamagedrecentslidesGridViewColumn";
+            // 
+            // isResevedrecentslidesGridViewColumn
+            // 
+            this.isResevedrecentslidesGridViewColumn.DataPropertyName = "isReserved";
+            this.isResevedrecentslidesGridViewColumn.HeaderText = "Reserved?";
+            this.isResevedrecentslidesGridViewColumn.Name = "isResevedrecentslidesGridViewColumn";
+            // 
+            // isBorrowedrecentslidesGridViewColumn
+            // 
+            this.isBorrowedrecentslidesGridViewColumn.DataPropertyName = "isBorrowed";
+            this.isBorrowedrecentslidesGridViewColumn.HeaderText = "Borrowed?";
+            this.isBorrowedrecentslidesGridViewColumn.Name = "isBorrowedrecentslidesGridViewColumn";
+            // 
+            // isActiverecentslidesGridViewColumn
+            // 
+            this.isActiverecentslidesGridViewColumn.DataPropertyName = "isActive";
+            this.isActiverecentslidesGridViewColumn.HeaderText = "Active?";
+            this.isActiverecentslidesGridViewColumn.Name = "isActiverecentslidesGridViewColumn";
+            // 
+            // udaterecentslidesGridViewColumn
+            // 
+            this.udaterecentslidesGridViewColumn.DataPropertyName = "updated_date";
+            this.udaterecentslidesGridViewColumn.HeaderText = "UDate";
+            this.udaterecentslidesGridViewColumn.Name = "udaterecentslidesGridViewColumn";
+            // 
+            // cdaterecentslidesGridViewColumn
+            // 
+            this.cdaterecentslidesGridViewColumn.DataPropertyName = "created_date";
+            this.cdaterecentslidesGridViewColumn.HeaderText = "CDate";
+            this.cdaterecentslidesGridViewColumn.Name = "cdaterecentslidesGridViewColumn";
+            // 
+            // cbyrecentslidesGridViewColumn
+            // 
+            this.cbyrecentslidesGridViewColumn.DataPropertyName = "created_by";
+            this.cbyrecentslidesGridViewColumn.HeaderText = "Cby";
+            this.cbyrecentslidesGridViewColumn.Name = "cbyrecentslidesGridViewColumn";
+            // 
+            // ubyrecentslidesGridViewColumn
+            // 
+            this.ubyrecentslidesGridViewColumn.DataPropertyName = "last_updated_by";
+            this.ubyrecentslidesGridViewColumn.HeaderText = "UpdatedBy";
+            this.ubyrecentslidesGridViewColumn.Name = "ubyrecentslidesGridViewColumn";
             // 
             // recentslidedatasetBindingSource
             // 
@@ -1106,7 +1302,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label24);
-            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.btn_find_all);
             this.tabPage2.Controls.Add(this.txt_search_all);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.button4);
@@ -1129,15 +1325,16 @@
             this.label24.TabIndex = 48;
             this.label24.Text = "Search";
             // 
-            // button8
+            // btn_find_all
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(278, 13);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 27);
-            this.button8.TabIndex = 50;
-            this.button8.Text = "Find ";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_find_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_find_all.Location = new System.Drawing.Point(278, 13);
+            this.btn_find_all.Name = "btn_find_all";
+            this.btn_find_all.Size = new System.Drawing.Size(100, 27);
+            this.btn_find_all.TabIndex = 50;
+            this.btn_find_all.Text = "Find ";
+            this.btn_find_all.UseVisualStyleBackColor = true;
+            this.btn_find_all.Click += new System.EventHandler(this.btn_find_all_Click);
             // 
             // txt_search_all
             // 
@@ -1460,201 +1657,6 @@
             this.recentslidedatasetBindingSource1.DataMember = "recent_slide_dataset";
             this.recentslidedatasetBindingSource1.DataSource = this.sbmsDataSetBindingSource;
             // 
-            // idrecentslidesGridViewColumn
-            // 
-            this.idrecentslidesGridViewColumn.DataPropertyName = "id";
-            this.idrecentslidesGridViewColumn.HeaderText = "id";
-            this.idrecentslidesGridViewColumn.Name = "idrecentslidesGridViewColumn";
-            this.idrecentslidesGridViewColumn.ReadOnly = true;
-            this.idrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idrecentslidesGridViewColumn.Visible = false;
-            // 
-            // barcoderecentslidesGridViewColumn
-            // 
-            this.barcoderecentslidesGridViewColumn.DataPropertyName = "bar_code";
-            this.barcoderecentslidesGridViewColumn.HeaderText = "BarCode";
-            this.barcoderecentslidesGridViewColumn.Name = "barcoderecentslidesGridViewColumn";
-            // 
-            // donorcodrecentslidesGridViewColumn
-            // 
-            this.donorcodrecentslidesGridViewColumn.DataPropertyName = "donor_code";
-            this.donorcodrecentslidesGridViewColumn.HeaderText = "Donor";
-            this.donorcodrecentslidesGridViewColumn.Name = "donorcodrecentslidesGridViewColumn";
-            // 
-            // sequencerecentslidesGridViewColumn
-            // 
-            this.sequencerecentslidesGridViewColumn.DataPropertyName = "sequence";
-            this.sequencerecentslidesGridViewColumn.HeaderText = "Sequemce";
-            this.sequencerecentslidesGridViewColumn.Name = "sequencerecentslidesGridViewColumn";
-            // 
-            // ccrecentslidesGridViewColumn
-            // 
-            this.ccrecentslidesGridViewColumn.DataPropertyName = "country_code";
-            this.ccrecentslidesGridViewColumn.HeaderText = "CCode";
-            this.ccrecentslidesGridViewColumn.Name = "ccrecentslidesGridViewColumn";
-            // 
-            // ssrecentslidesGridViewColumn
-            // 
-            this.ssrecentslidesGridViewColumn.DataPropertyName = "species_specific_id";
-            this.ssrecentslidesGridViewColumn.DataSource = this.speciesspecificsBindingSource;
-            this.ssrecentslidesGridViewColumn.DisplayMember = "specifics";
-            this.ssrecentslidesGridViewColumn.HeaderText = "Specifics";
-            this.ssrecentslidesGridViewColumn.Name = "ssrecentslidesGridViewColumn";
-            this.ssrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ssrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ssrecentslidesGridViewColumn.ValueMember = "id";
-            // 
-            // screcentslidesGridViewColumn
-            // 
-            this.screcentslidesGridViewColumn.DataPropertyName = "species_catgeroy_id";
-            this.screcentslidesGridViewColumn.DataSource = this.speciescategoryBindingSource;
-            this.screcentslidesGridViewColumn.DisplayMember = "species_category";
-            this.screcentslidesGridViewColumn.HeaderText = "SCategory";
-            this.screcentslidesGridViewColumn.Name = "screcentslidesGridViewColumn";
-            this.screcentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.screcentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.screcentslidesGridViewColumn.ValueMember = "id";
-            // 
-            // strecentslidesGridViewColumn
-            // 
-            this.strecentslidesGridViewColumn.DataPropertyName = "species_stage_id";
-            this.strecentslidesGridViewColumn.DataSource = this.speciesstagesBindingSource;
-            this.strecentslidesGridViewColumn.DisplayMember = "stage";
-            this.strecentslidesGridViewColumn.HeaderText = "Stage";
-            this.strecentslidesGridViewColumn.Name = "strecentslidesGridViewColumn";
-            this.strecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.strecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.strecentslidesGridViewColumn.ValueMember = "id";
-            // 
-            // dcrecentslidesGridViewColumn
-            // 
-            this.dcrecentslidesGridViewColumn.DataPropertyName = "density_category_id";
-            this.dcrecentslidesGridViewColumn.DataSource = this.densitycategoryBindingSource;
-            this.dcrecentslidesGridViewColumn.DisplayMember = "density_category";
-            this.dcrecentslidesGridViewColumn.HeaderText = "Density";
-            this.dcrecentslidesGridViewColumn.Name = "dcrecentslidesGridViewColumn";
-            this.dcrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dcrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dcrecentslidesGridViewColumn.ValueMember = "id";
-            // 
-            // ldrecentslidesGridViewColumn
-            // 
-            this.ldrecentslidesGridViewColumn.DataPropertyName = "lower_density";
-            this.ldrecentslidesGridViewColumn.HeaderText = "LD";
-            this.ldrecentslidesGridViewColumn.Name = "ldrecentslidesGridViewColumn";
-            // 
-            // adrecentslidesGridViewColumn
-            // 
-            this.adrecentslidesGridViewColumn.DataPropertyName = "average_density";
-            this.adrecentslidesGridViewColumn.HeaderText = "AD";
-            this.adrecentslidesGridViewColumn.Name = "adrecentslidesGridViewColumn";
-            // 
-            // udrecentslidesGridViewColumn
-            // 
-            this.udrecentslidesGridViewColumn.DataPropertyName = "upper_density";
-            this.udrecentslidesGridViewColumn.HeaderText = "UD";
-            this.udrecentslidesGridViewColumn.Name = "udrecentslidesGridViewColumn";
-            // 
-            // ownerrecentslidesGridViewColumn
-            // 
-            this.ownerrecentslidesGridViewColumn.DataPropertyName = "owner_id";
-            this.ownerrecentslidesGridViewColumn.DataSource = this.ownersBindingSource;
-            this.ownerrecentslidesGridViewColumn.DisplayMember = "owner";
-            this.ownerrecentslidesGridViewColumn.HeaderText = "Owner";
-            this.ownerrecentslidesGridViewColumn.Name = "ownerrecentslidesGridViewColumn";
-            this.ownerrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ownerrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ownerrecentslidesGridViewColumn.ValueMember = "id";
-            // 
-            // cabinetrecentslidesGridViewColumn
-            // 
-            this.cabinetrecentslidesGridViewColumn.DataPropertyName = "cabinet_number";
-            this.cabinetrecentslidesGridViewColumn.HeaderText = "Cabinet#";
-            this.cabinetrecentslidesGridViewColumn.Name = "cabinetrecentslidesGridViewColumn";
-            // 
-            // boxrecentslidesGridViewColumn
-            // 
-            this.boxrecentslidesGridViewColumn.DataPropertyName = "box_number";
-            this.boxrecentslidesGridViewColumn.HeaderText = "Box#";
-            this.boxrecentslidesGridViewColumn.Name = "boxrecentslidesGridViewColumn";
-            // 
-            // drawerrecentslidesGridViewColumn
-            // 
-            this.drawerrecentslidesGridViewColumn.DataPropertyName = "drawer_number";
-            this.drawerrecentslidesGridViewColumn.HeaderText = "Drawer#";
-            this.drawerrecentslidesGridViewColumn.Name = "drawerrecentslidesGridViewColumn";
-            // 
-            // adaterecentslidesGridViewColumn
-            // 
-            this.adaterecentslidesGridViewColumn.DataPropertyName = "acquired_date";
-            this.adaterecentslidesGridViewColumn.HeaderText = "ADate";
-            this.adaterecentslidesGridViewColumn.Name = "adaterecentslidesGridViewColumn";
-            // 
-            // validationrecentslidesGridViewColumn
-            // 
-            this.validationrecentslidesGridViewColumn.DataPropertyName = "validation_id";
-            this.validationrecentslidesGridViewColumn.DataSource = this.validationsBindingSource;
-            this.validationrecentslidesGridViewColumn.DisplayMember = "validation";
-            this.validationrecentslidesGridViewColumn.HeaderText = "Validation";
-            this.validationrecentslidesGridViewColumn.Name = "validationrecentslidesGridViewColumn";
-            this.validationrecentslidesGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.validationrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.validationrecentslidesGridViewColumn.ValueMember = "id";
-            // 
-            // commentrecentslidesGridViewColumn
-            // 
-            this.commentrecentslidesGridViewColumn.DataPropertyName = "comment";
-            this.commentrecentslidesGridViewColumn.HeaderText = "Comment";
-            this.commentrecentslidesGridViewColumn.Name = "commentrecentslidesGridViewColumn";
-            // 
-            // isDamagedrecentslidesGridViewColumn
-            // 
-            this.isDamagedrecentslidesGridViewColumn.DataPropertyName = "isDamaged";
-            this.isDamagedrecentslidesGridViewColumn.HeaderText = "Damaged?";
-            this.isDamagedrecentslidesGridViewColumn.Name = "isDamagedrecentslidesGridViewColumn";
-            // 
-            // isResevedrecentslidesGridViewColumn
-            // 
-            this.isResevedrecentslidesGridViewColumn.DataPropertyName = "isReserved";
-            this.isResevedrecentslidesGridViewColumn.HeaderText = "Reserved?";
-            this.isResevedrecentslidesGridViewColumn.Name = "isResevedrecentslidesGridViewColumn";
-            // 
-            // isBorrowedrecentslidesGridViewColumn
-            // 
-            this.isBorrowedrecentslidesGridViewColumn.DataPropertyName = "isBorrowed";
-            this.isBorrowedrecentslidesGridViewColumn.HeaderText = "Borrowed?";
-            this.isBorrowedrecentslidesGridViewColumn.Name = "isBorrowedrecentslidesGridViewColumn";
-            // 
-            // isActiverecentslidesGridViewColumn
-            // 
-            this.isActiverecentslidesGridViewColumn.DataPropertyName = "isActive";
-            this.isActiverecentslidesGridViewColumn.HeaderText = "Active?";
-            this.isActiverecentslidesGridViewColumn.Name = "isActiverecentslidesGridViewColumn";
-            // 
-            // udaterecentslidesGridViewColumn
-            // 
-            this.udaterecentslidesGridViewColumn.DataPropertyName = "updated_date";
-            this.udaterecentslidesGridViewColumn.HeaderText = "UDate";
-            this.udaterecentslidesGridViewColumn.Name = "udaterecentslidesGridViewColumn";
-            // 
-            // cdaterecentslidesGridViewColumn
-            // 
-            this.cdaterecentslidesGridViewColumn.DataPropertyName = "created_date";
-            this.cdaterecentslidesGridViewColumn.HeaderText = "CDate";
-            this.cdaterecentslidesGridViewColumn.Name = "cdaterecentslidesGridViewColumn";
-            // 
-            // cbyrecentslidesGridViewColumn
-            // 
-            this.cbyrecentslidesGridViewColumn.DataPropertyName = "created_by";
-            this.cbyrecentslidesGridViewColumn.HeaderText = "Cby";
-            this.cbyrecentslidesGridViewColumn.Name = "cbyrecentslidesGridViewColumn";
-            // 
-            // ubyrecentslidesGridViewColumn
-            // 
-            this.ubyrecentslidesGridViewColumn.DataPropertyName = "last_updated_by";
-            this.ubyrecentslidesGridViewColumn.HeaderText = "UpdatedBy";
-            this.ubyrecentslidesGridViewColumn.Name = "ubyrecentslidesGridViewColumn";
-            // 
             // Slides
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1846,7 +1848,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txt_search_slide_recent;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_find_all;
         private System.Windows.Forms.TextBox txt_search_all;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeallslidesGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donorallslidesGridViewTextBoxColumn;

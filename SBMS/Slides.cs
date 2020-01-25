@@ -503,8 +503,12 @@ namespace SBMS
                             int recordsAffected = command.ExecuteNonQuery();
                             MessageBox.Show(recordsAffected.ToString());
 
-                            if (recordsAffected>0)
+                            if (recordsAffected > 0)
+                            {
                                 MessageBox.Show("Slide's Information Updated Successfully", "Success");
+                                reload_data();
+
+                            }
 
                         }
                         catch (SqlException ex)
@@ -586,6 +590,23 @@ namespace SBMS
             }
 
             return true;
+        }
+
+        private void reload_data() {
+
+            this.recent_slide_datasetTableAdapter.Fill(this.sbmsDataSet.recent_slide_dataset);
+            this.slidesTableAdapter.Fill(this.sbmsDataSet.slides);
+
+        }
+
+        private void btn_find_all_Click(object sender, EventArgs e)
+        {
+            //search here
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            reload_data();
         }
     }
 }
