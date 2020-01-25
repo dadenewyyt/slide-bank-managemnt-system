@@ -26,13 +26,13 @@ namespace SBMS.Services
 
                     try
                     {
-                        
+
                         adapter.Fill(slideFromDonorDataTable);
                         return slideFromDonorDataTable;
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message,"Donor Fetch Slide Page");
                         return slideFromDonorDataTable;
                     }
 
@@ -112,5 +112,69 @@ namespace SBMS.Services
         }
 
 
+        public int CheckDuplicateLocation(int cabinet, int drawer, int box)
+        {
+
+
+            string selectquery = "select sequence from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box;
+            using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+            {
+
+                try
+                {
+                    //con.Open();
+                    SqlDataReader cr = command2.ExecuteReader();
+                    while (cr.Read())
+                    {
+                        if (cr.HasRows == true)
+                        {
+
+                            return 1;
+                        }
+
+                    }
+                    cr.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return -1;
+                }
+        }
+            return -1;
+        }
+
+        public int CheckDuplicateLocationUpdate(int cabinet, int drawer, int box,int slide_id)
+        {
+
+
+            string selectquery = "select sequence from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box +
+                " and id =" + slide_id; ;
+            using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+            {
+
+                try
+                {
+                    //con.Open();
+                    SqlDataReader cr = command2.ExecuteReader();
+                    while (cr.Read())
+                    {
+                        if (cr.HasRows == true)
+                        {
+
+                            return -1;
+                        }
+
+                    }
+                    cr.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return -1;
+                }
+            }
+            return 1;
+        }
     }
 }

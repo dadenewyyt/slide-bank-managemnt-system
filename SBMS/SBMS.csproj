@@ -191,6 +191,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>stage_dataBindingSource.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="validationDataBindingSource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Slides.resx">
       <DependentUpon>Slides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="densityCat_bindingDataSource.xsc">
       <DependentUpon>densityCat_bindingDataSource.xsd</DependentUpon>

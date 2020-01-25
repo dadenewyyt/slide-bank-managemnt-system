@@ -547,7 +547,8 @@ namespace SBMS
             btn_save.Enabled = true;
             btn_save_edit.Enabled = false;
             lbl_editing_status.Visible = false;
-            clear(); 
+            clear();
+
         }
     }
  }

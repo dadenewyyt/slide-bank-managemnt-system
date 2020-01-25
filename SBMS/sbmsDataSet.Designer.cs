@@ -4717,7 +4717,7 @@ SELECT id, bar_code, country_code, donor_code, species_specific_id, species_stag
                          d.country_code, d.comment, d.validation_id
 FROM              dbo.slides AS s INNER JOIN
                          dbo.donors AS d ON d.id = s.donor_id
-WHERE        (d.isActive = 1)
+WHERE        (d.isActive = 1) AND (s.isActive=1) AND  (s.isBorrowed = 0)  
 ORDER BY s.created_date DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -4919,7 +4919,7 @@ ORDER BY s.created_date DESC";
 FROM            dbo.slides AS s INNER JOIN
                          dbo.donors AS d ON d.id = s.donor_id
 WHERE        (d.isActive = 1)
-ORDER BY s.created_date DESC";
+ORDER BY s.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

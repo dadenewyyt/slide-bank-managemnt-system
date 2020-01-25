@@ -14,8 +14,19 @@ namespace SBMS
 {
     public partial class Slides : Form
     {
+       private int slide_id = -1;
         DataFetchService dataFetchService;
-        private int Donor_Id_Slide = -1;
+        public int donor_id = -1;
+
+        //LookUpServices lookUpServices;
+
+        public int Slides_Id_Update { get => slide_id; set => slide_id = value; }
+
+       
+        //fetched id when a bardcode is entered =>scan in
+        private int Donor_Id_Slide { get => slide_id; set => slide_id = value; }
+        
+
         public Slides()
         {
             
@@ -42,6 +53,34 @@ namespace SBMS
             txt_acquired_date.Text = "";
             cmb_validation.SelectedIndex = 0;
             txt_comment.Text = "";
+            txt_drawer_number.Text = "";
+            txt_cabinet_number.Text = "";
+            txt_box_number.Text = "";
+            txt_bar_code.Text = "";
+
+
+        }
+
+        public void enable_disable_inputs(bool flag)
+        {
+         
+            cmb_specice_specifics.Enabled = flag;
+            cmb_specice_category.Enabled = flag;
+            cmb_specice_stage.Enabled = flag;
+            txt_lower_density.ReadOnly = flag;
+            txt_average_density.ReadOnly = flag;
+            txt_upper_density.ReadOnly = flag;
+            cmb_density_category.Enabled = flag;
+            cmb_owners.Enabled = flag;
+            txt_acquired_date.Enabled = flag;
+            cmb_validation.Enabled = flag;
+            txt_comment.ReadOnly = flag; ;
+            txt_drawer_number.ReadOnly = !flag;
+            txt_cabinet_number.ReadOnly = !flag;
+            txt_box_number.ReadOnly = !flag;
+            //txt_bar_code.Enabled = flag;
+
+
         }
 
         private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
@@ -52,11 +91,8 @@ namespace SBMS
         private void Slides_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sbmsDataSet1.slides' table. You can move, or remove it, as needed.
-            this.slidesTableAdapter.Fill(this.sbmsDataSet1.slides);
-            // TODO: This line of code loads data into the 'sbmsDataSet.slides' table. You can move, or remove it, as needed.
             this.slidesTableAdapter.Fill(this.sbmsDataSet.slides);
-            // TODO: This line of code loads data into the 'sbmsDataSet1.slides' table. You can move, or remove it, as needed.
-            this.slidesTableAdapter.Fill(this.sbmsDataSet1.slides);
+          
             // TODO: This line of code loads data into the 'speciceDataSet.species_category' table. You can move, or remove it, as needed.
             this.species_categoryTableAdapter.Fill(this.specieCatgeoryDataSet.species_category);
             // TODO: This line of code loads data into the 'ownerDataBindingSource.owners' table. You can move, or remove it, as needed.
@@ -181,21 +217,14 @@ namespace SBMS
                         txt_comment.Text = row["comment"].ToString();
                         Donor_Id_Slide = Convert.ToInt32(row["id"].ToString());
                     }
-
                     // txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
-                   
-
-
-
+                    txt_donor_code.BackColor = Color.Green;
                 }
                 else {
-
-                    MessageBox.Show("The Entered Donor Code is New! System could not found any record on the database. Register the donor first and come back.", "ERROR", MessageBoxButtons.OK);
-                }
-                
+                    txt_donor_code.BackColor = Color.Red;
+                     MessageBox.Show("The Entered Donor Code is New! System not found any record associted with the donor code. Register the donor first and come back.", "INFORMATION", MessageBoxButtons.OK);
+                }         
             }
-
-
         }
 
         private void clicked_on(object sender, MouseEventArgs e)
@@ -233,7 +262,13 @@ namespace SBMS
                 return false;
             }
 
-           
+            if (String.IsNullOrEmpty(txt_cabinet_number.Text) || String.IsNullOrEmpty(txt_drawer_number.Text) || String.IsNullOrEmpty(txt_box_number.Text))
+            {
+
+                MessageBox.Show("Location Data is empty or not valid. Please , correct", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
 
             return true;
         }
@@ -260,6 +295,23 @@ namespace SBMS
             }
 
             //TODO:check location data if occupied or not
+
+            //convert to int
+            int cabinet = Convert.ToInt32(txt_cabinet_number.Text.ToString());
+            int drawer = Convert.ToInt32(txt_drawer_number.Text.ToString());
+            int box = Convert.ToInt32(txt_box_number.Text.ToString());
+
+            int isLocationOccupied = 0;
+            if (cabinet > 0 &&drawer>0 && box> 0) 
+                isLocationOccupied = dataFetchService.CheckDuplicateLocation(cabinet, drawer, box);
+
+            if (isLocationOccupied==1) {
+                
+                MessageBox.Show("Slide exisit at [Cabinet = "+cabinet +" , Drawer = "+drawer+" , Box = "+ box+"]. Please check for unoccupied slide location.", "Duplicate Location", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Slide has is not saved!", "Slide Not Saved! ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clear();
+                return;
+            }
 
             if (Donor_Id_Slide != -1)
             {
@@ -326,16 +378,214 @@ namespace SBMS
                             clear();
                            // this.btn_reload_Click(null, null);
                             //this.btn_reload_Click(null, null);
-                          //  lbl_editing_status.Visible = false;
-                            // btn_deactivate.Enabled = false;
-                          //  btn_save.Enabled = true;
-                           // btn_save_edit.Enabled = false;
-                            connection.Close();
+                           lbl_editing_status.Visible = false;
+                           // btn_deactivate.Enabled = false;
+                          btn_save.Enabled = true;
+                          btn_edit_update.Enabled = false;
+                          connection.Close();
                         }
 
                     }
                 }
             }
+        }
+
+        private void selected_row(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex;
+            rowIndex = e.RowIndex;
+
+
+
+            if (dgr_recentslides.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
+
+                txt_bar_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["barcoderecentslidesGridViewColumn"].Value + string.Empty;
+                txt_slide_sequence.Text = dgr_recentslides.Rows[e.RowIndex].Cells["sequencerecentslidesGridViewColumn"].Value + string.Empty;
+                txt_country_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["ccrecentslidesGridViewColumn"].Value + string.Empty;
+                txt_donor_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["donorcodrecentslidesGridViewColumn"].Value.ToString();
+                cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["ssrecentslidesGridViewColumn"].Value);
+                cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["screcentslidesGridViewColumn"].Value);
+                cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["strecentslidesGridViewColumn"].Value);
+                txt_lower_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["ldrecentslidesGridViewColumn"].Value + string.Empty;
+                txt_average_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["adrecentslidesGridViewColumn"].Value + string.Empty;
+                txt_upper_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["udrecentslidesGridViewColumn"].Value.ToString();
+                cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["dcrecentslidesGridViewColumn"].Value);
+                cmb_owners.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["ownerrecentslidesGridViewColumn"].Value);
+                txt_acquired_date.Text = dgr_recentslides.Rows[e.RowIndex].Cells["adaterecentslidesGridViewColumn"].Value.ToString();
+                cmb_validation.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["validationrecentslidesGridViewColumn"].Value);
+                txt_comment.Text = dgr_recentslides.Rows[e.RowIndex].Cells["commentrecentslidesGridViewColumn"].Value.ToString();
+
+                if (Convert.ToBoolean(dgr_recentslides.Rows[e.RowIndex].Cells["isDamagedrecentslidesGridViewColumn"].Value))
+                    rdoDamagedYes.Checked = true;
+                else
+                    rdoDamagedNo.Checked = true;
+
+                if (Convert.ToBoolean(dgr_recentslides.Rows[e.RowIndex].Cells["isResevedrecentslidesGridViewColumn"].Value))
+                    rdoResevedYes.Checked = true;
+                else
+                    rdoResevedNo.Checked = true;
+                txt_cabinet_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["cabinetrecentslidesGridViewColumn"].Value.ToString();
+                txt_drawer_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["drawerrecentslidesGridViewColumn"].Value.ToString();
+                txt_box_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["boxrecentslidesGridViewColumn"].Value.ToString();
+
+                enable_disable_inputs(true); //enable for select
+               
+                btn_edit_update.Enabled = true;
+               lbl_editing_status.Visible = true;
+                btn_save.Enabled = false;
+                Slides_Id_Update = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["idrecentslidesGridViewColumn"].Value.ToString());
+            }
+            else
+            {
+                enable_disable_inputs(false); //disabble for select
+                MessageBox.Show("NO Data to Select");
+            }
+        }
+
+        private void btn_edit_update_Click(object sender, EventArgs e)
+        {
+
+            bool isValidated = ValidateSlideLocationData();
+
+            if (isValidated == false)
+            {
+                btn_clear_selection_Click(null, null);
+                return;
+            }
+
+            if (isValidated == true && Slides_Id_Update != -1)
+            {
+                // MessageBox.Show("Saving");
+                DateTime dt = DateTime.Now;
+
+                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                {
+
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        string updateDonorQuery = "UPDATE slides " +
+                            "SET last_updated_by=@updated_by,isDamaged=@isDamaged,isReserved=@isReserved,cabinet_number=@cabinet,drawer_number=@drawer,box_number=@box WHERE id=@id";
+
+                        command.CommandType = CommandType.Text;
+                        command.CommandText = updateDonorQuery;
+                        command.Parameters.AddWithValue("@id", Slides_Id_Update);
+                        command.Parameters.AddWithValue("@cabinet", Convert.ToInt32(txt_cabinet_number.Text.ToString()));
+                        command.Parameters.AddWithValue("@box", Convert.ToInt32(txt_box_number.Text.ToString()));
+                        command.Parameters.AddWithValue("@drawer", Convert.ToInt32(txt_drawer_number.Text.ToString()));
+                        
+
+
+                        if (rdoDamagedYes.Checked==true)
+                            command.Parameters.AddWithValue("@isDamaged", true);
+                        if (rdoDamagedNo.Checked == true)
+                            command.Parameters.AddWithValue("@isDamaged", false);
+                       
+                        if (rdoResevedYes.Checked==true)
+                            command.Parameters.AddWithValue("@isReserved", true);
+                        if (rdoResevedNo.Checked == true)
+                            command.Parameters.AddWithValue("@isReserved", false);
+                     
+
+
+                        command.Parameters.AddWithValue("@updated_by", "Update User");
+                       
+
+                        try
+                        {
+
+                            if (connection.State == ConnectionState.Closed)
+                            {
+                                connection.Open();
+                            }
+                            int recordsAffected = command.ExecuteNonQuery();
+                            MessageBox.Show(recordsAffected.ToString());
+
+                            if (recordsAffected>0)
+                                MessageBox.Show("Slide's Information Updated Successfully", "Success");
+
+                        }
+                        catch (SqlException ex)
+                        {
+                            MessageBox.Show(ex.Message, "ERROR: Updating Slide");
+                            return;
+                        }
+                        finally
+                        {
+                            
+                            connection.Close();
+                            btn_clear_selection_Click(null,null);
+                            clear();
+                            enable_disable_inputs(false);
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void btn_clear_selection_Click(object sender, EventArgs e)
+        {
+            btn_edit_update.Enabled = false;
+            btn_save.Enabled = true;
+            enable_disable_inputs(false); //diable inputs them
+            dgr_recentslides.ClearSelection();
+            Donor_Id_Slide = -1;
+            Slides_Id_Update = -1;
+            dgr_allslides.ClearSelection();
+
+        }
+
+        private bool ValidateSlideLocationData() {
+            int n;
+
+            if (String.IsNullOrEmpty(txt_cabinet_number.Text) || String.IsNullOrEmpty(txt_drawer_number.Text) || String.IsNullOrEmpty(txt_box_number.Text))
+            {
+
+                MessageBox.Show("Location of Slide data is empty or not valid. Please , correct", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
+
+            if (int.TryParse(txt_cabinet_number.Text, out n) == false)
+            {
+                MessageBox.Show("The cabinet number scan should only be digits", "Error");
+                return false;
+            }
+
+            if (int.TryParse(txt_box_number.Text, out n) == false)
+            {
+                MessageBox.Show("The box number should only be digits", "Error");
+                return false;
+            }
+
+            if (int.TryParse(txt_drawer_number.Text, out n) == false)
+            {
+                MessageBox.Show("The drawer number should only be digits", "Error");
+                return false;
+
+            }
+
+            //convert to int
+            int cabinet = Convert.ToInt32(txt_cabinet_number.Text.ToString());
+            int drawer = Convert.ToInt32(txt_drawer_number.Text.ToString());
+            int box = Convert.ToInt32(txt_box_number.Text.ToString());
+
+            int isLocationOccupied = 0;
+            dataFetchService = new DataFetchService();
+            if (cabinet > 0 && drawer > 0 && box > 0)
+                isLocationOccupied = dataFetchService.CheckDuplicateLocationUpdate(cabinet, drawer, box,Slides_Id_Update);
+
+            if (isLocationOccupied == 1)
+            {
+
+                MessageBox.Show("Slide exisit at [Cabinet = " + cabinet + " , Drawer = " + drawer + " , Box = " + box + "]. Please check for unoccupied slide location.", "Duplicate Location", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
+            return true;
         }
     }
 }

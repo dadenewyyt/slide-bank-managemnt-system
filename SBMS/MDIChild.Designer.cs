@@ -37,7 +37,7 @@
             this.lbl_notes = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btn_user_account = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -136,7 +136,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.button13);
-            this.splitContainer1.Panel2.Controls.Add(this.button14);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_user_account);
             this.splitContainer1.Panel2.Controls.Add(this.button12);
             this.splitContainer1.Panel2.Controls.Add(this.button15);
             this.splitContainer1.Panel2.Controls.Add(this.button11);
@@ -187,17 +187,18 @@
             this.button13.Text = "Help ";
             this.button13.UseVisualStyleBackColor = false;
             // 
-            // button14
+            // btn_user_account
             // 
-            this.button14.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button14.Location = new System.Drawing.Point(727, 287);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(247, 85);
-            this.button14.TabIndex = 25;
-            this.button14.Text = "User Account";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btn_user_account.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_user_account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_user_account.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_user_account.Location = new System.Drawing.Point(727, 287);
+            this.btn_user_account.Name = "btn_user_account";
+            this.btn_user_account.Size = new System.Drawing.Size(247, 85);
+            this.btn_user_account.TabIndex = 25;
+            this.btn_user_account.Text = "User Account";
+            this.btn_user_account.UseVisualStyleBackColor = false;
+            this.btn_user_account.Click += new System.EventHandler(this.btn_user_account_Click);
             // 
             // button12
             // 
@@ -394,7 +395,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btn_user_account;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button11;
