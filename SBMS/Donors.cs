@@ -116,10 +116,15 @@ namespace SBMS
 
         private void Donors_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'speciceCatgeroyDataSet.species_category' table. You can move, or remove it, as needed.
+            this.species_categoryTableAdapter.Fill(this.speciceCatgeroyDataSet.species_category);
+            // TODO: This line of code loads data into the 'sbmsDataSet.species_specifics' table. You can move, or remove it, as needed.
+            this.species_specificsTableAdapter1.Fill(this.sbmsDataSet.species_specifics);
+            // TODO: This line of code loads data into the 'sbmsDataSet.species_category' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'speciceDataSet.species_category' table. You can move, or remove it, as needed.
-            this.species_categoryTableAdapter.Fill(this.speciceDataSet.species_category);
+            this.species_categoryTableAdapter1.Fill(this.sbmsDataSet.species_category);
             // TODO: This line of code loads data into the 'donorsDataSet.donors' table. You can move, or remove it, as needed.
-            this.donorsTableAdapter1.Fill(this.donorsDataSet.donors);
+            this.donorsTableAdapter.Fill(this.sbmsDataSet.donors);
             // TODO: This line of code loads data into the 'ownerDataBindingSource.owners' table. You can move, or remove it, as needed.
             this.ownersTableAdapter.Fill(this.ownerDataBindingSource.owners);
             // TODO: This line of code loads data into the 'validationDataBindingSource.validations' table. You can move, or remove it, as needed.
@@ -185,9 +190,9 @@ namespace SBMS
            
         private void btn_reload_Click(object sender, EventArgs e)
         {
-           
-            dgr_donors.DataSource = donorsBindingSource.DataSource;
-            GetData("select * from donors;");
+
+            this.donorsTableAdapter.Fill(this.sbmsDataSet.donors);
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)

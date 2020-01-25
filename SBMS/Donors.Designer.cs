@@ -56,8 +56,6 @@ namespace SBMS
             this.txt_lower_density = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cmb_density_category = new System.Windows.Forms.ComboBox();
-            this.densitycategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_acquired_date = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -70,59 +68,65 @@ namespace SBMS
             this.cmb_specice_specifics = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_deactivate = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dgr_donors = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btn_find = new System.Windows.Forms.Button();
+            this.txt_search_box = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.donorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.donorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.species_categoryTableAdapter1 = new SBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
+            this.speciescategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.donorsTableAdapter1 = new SBMS.donorsDataSetTableAdapters.donorsTableAdapter();
+            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
+            this.validationsTableAdapter = new SBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
+            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
+            this.species_stagesTableAdapter = new SBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
+            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
+            this.donorsTableAdapter = new SBMS.sbmsDataSetTableAdapters.donorsTableAdapter();
+            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.speciceDataSet = new SBMS.speciceDataSet();
+            this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.validationDataBindingSource = new SBMS.validationDataBindingSource();
+            this.validationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
+            this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.densitycategoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.stage_dataBindingSource = new SBMS.stage_dataBindingSource();
+            this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
+            this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
+            this.densitycategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.donorsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.species_specificsTableAdapter1 = new SBMS.sbmsDataSetTableAdapters.species_specificsTableAdapter();
+            this.donorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.speciesspecificsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.speciceCatgeroyDataSet = new SBMS.speciceCatgeroyDataSet();
+            this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.species_categoryTableAdapter = new SBMS.speciceCatgeroyDataSetTableAdapters.species_categoryTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.speciesspecificidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
             this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stage_dataBindingSource = new SBMS.stage_dataBindingSource();
             this.SCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciceDataSet = new SBMS.speciceDataSet();
             this.lowerdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.averagedensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.upperdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.densitycategoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.owneridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
             this.acquireddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.validationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.validationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.validationDataBindingSource = new SBMS.validationDataBindingSource();
             this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.donorsDataSet = new SBMS.donorsDataSet();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btn_find = new System.Windows.Forms.Button();
-            this.txt_search_box = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.donorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.donorsTableAdapter = new SBMS.sbmsDataSetTableAdapters.donorsTableAdapter();
-            this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
-            this.species_stagesTableAdapter = new SBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
-            this.validationsTableAdapter = new SBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
-            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
-            this.donorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.donorsTableAdapter1 = new SBMS.donorsDataSetTableAdapters.donorsTableAdapter();
-            this.species_categoryTableAdapter = new SBMS.speciceDataSetTableAdapters.species_categoryTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -131,28 +135,31 @@ namespace SBMS
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_donors)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stage_dataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciceDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.donorsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage_dataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciceCatgeroyDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -297,7 +304,6 @@ namespace SBMS
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.button1);
             this.splitContainer2.Panel2.Controls.Add(this.button2);
             this.splitContainer2.Panel2.Controls.Add(this.dgr_donors);
             this.splitContainer2.Panel2.Controls.Add(this.button4);
@@ -450,7 +456,6 @@ namespace SBMS
             // cmb_density_category
             // 
             this.cmb_density_category.DataSource = this.densitycategoryBindingSource1;
-            this.cmb_density_category.DisplayMember = "density_category";
             this.cmb_density_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_density_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
             this.cmb_density_category.Location = new System.Drawing.Point(147, 183);
@@ -458,16 +463,6 @@ namespace SBMS
             this.cmb_density_category.Size = new System.Drawing.Size(239, 25);
             this.cmb_density_category.TabIndex = 39;
             this.cmb_density_category.ValueMember = "id";
-            // 
-            // densitycategoryBindingSource1
-            // 
-            this.densitycategoryBindingSource1.DataMember = "density_category";
-            this.densitycategoryBindingSource1.DataSource = this.desnityCat_bindingDataSource;
-            // 
-            // desnityCat_bindingDataSource
-            // 
-            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
-            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label15
             // 
@@ -610,6 +605,18 @@ namespace SBMS
             this.btn_deactivate.Text = "Deactivate?";
             this.btn_deactivate.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(634, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 27);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Clear selection";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // dgr_donors
             // 
             this.dgr_donors.AllowUserToAddRows = false;
@@ -639,7 +646,7 @@ namespace SBMS
             this.createddateDataGridViewTextBoxColumn,
             this.updateddateDataGridViewTextBoxColumn,
             this.commentDataGridViewTextBoxColumn});
-            this.dgr_donors.DataSource = this.donorsBindingSource2;
+            this.dgr_donors.DataSource = this.donorsBindingSource;
             this.dgr_donors.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgr_donors.Location = new System.Drawing.Point(12, 41);
             this.dgr_donors.Name = "dgr_donors";
@@ -648,6 +655,182 @@ namespace SBMS
             this.dgr_donors.Size = new System.Drawing.Size(811, 377);
             this.dgr_donors.TabIndex = 30;
             this.dgr_donors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgr_donors_CellClick);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(753, 9);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(70, 26);
+            this.button4.TabIndex = 29;
+            this.button4.Text = "Refersh";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btn_reload_Click);
+            // 
+            // btn_find
+            // 
+            this.btn_find.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_find.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_find.Location = new System.Drawing.Point(239, 7);
+            this.btn_find.Name = "btn_find";
+            this.btn_find.Size = new System.Drawing.Size(75, 27);
+            this.btn_find.TabIndex = 9;
+            this.btn_find.Text = "Find";
+            this.btn_find.UseVisualStyleBackColor = false;
+            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
+            // 
+            // txt_search_box
+            // 
+            this.txt_search_box.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_search_box.Location = new System.Drawing.Point(99, 9);
+            this.txt_search_box.Name = "txt_search_box";
+            this.txt_search_box.Size = new System.Drawing.Size(134, 25);
+            this.txt_search_box.TabIndex = 28;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.label16.Location = new System.Drawing.Point(9, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(93, 17);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Search Donor:";
+            // 
+            // donorsBindingSource
+            // 
+            this.donorsBindingSource.DataMember = "donors";
+            this.donorsBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // species_categoryTableAdapter1
+            // 
+            this.species_categoryTableAdapter1.ClearBeforeFill = true;
+            // 
+            // donorsTableAdapter1
+            // 
+            this.donorsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // ownersTableAdapter
+            // 
+            this.ownersTableAdapter.ClearBeforeFill = true;
+            // 
+            // validationsTableAdapter
+            // 
+            this.validationsTableAdapter.ClearBeforeFill = true;
+            // 
+            // density_categoryTableAdapter
+            // 
+            this.density_categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_stagesTableAdapter
+            // 
+            this.species_stagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_specificsTableAdapter
+            // 
+            this.species_specificsTableAdapter.ClearBeforeFill = true;
+            // 
+            // donorsTableAdapter
+            // 
+            this.donorsTableAdapter.ClearBeforeFill = true;
+            // 
+            // speciceDataSet
+            // 
+            this.speciceDataSet.DataSetName = "speciceDataSet";
+            this.speciceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // validationDataBindingSource
+            // 
+            this.validationDataBindingSource.DataSetName = "validationDataBindingSource";
+            this.validationDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // validationsBindingSource
+            // 
+            this.validationsBindingSource.DataMember = "validations";
+            this.validationsBindingSource.DataSource = this.validationDataBindingSource;
+            // 
+            // ownerDataBindingSource
+            // 
+            this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
+            this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ownersBindingSource
+            // 
+            this.ownersBindingSource.DataMember = "owners";
+            this.ownersBindingSource.DataSource = this.ownerDataBindingSource;
+            // 
+            // densitycategoryBindingSource2
+            // 
+            this.densitycategoryBindingSource2.DataSource = this.desnityCatbindingDataSourceBindingSource;
+            // 
+            // stage_dataBindingSource
+            // 
+            this.stage_dataBindingSource.DataSetName = "stage_dataBindingSource";
+            this.stage_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // speciesstagesBindingSource
+            // 
+            this.speciesstagesBindingSource.DataMember = "species_stages";
+            this.speciesstagesBindingSource.DataSource = this.stage_dataBindingSource;
+            // 
+            // speciece_specifics_dataBindingSource
+            // 
+            this.speciece_specifics_dataBindingSource.DataSetName = "speciece_specifics_dataBindingSource";
+            this.speciece_specifics_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // speciesspecificsBindingSource
+            // 
+            this.speciesspecificsBindingSource.DataMember = "species_specifics";
+            this.speciesspecificsBindingSource.DataSource = this.speciece_specifics_dataBindingSource;
+            // 
+            // desnityCat_bindingDataSource
+            // 
+            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
+            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // densitycategoryBindingSource1
+            // 
+            this.densitycategoryBindingSource1.DataMember = "density_category";
+            this.densitycategoryBindingSource1.DataSource = this.desnityCat_bindingDataSource;
+            // 
+            // donorsBindingSource3
+            // 
+            this.donorsBindingSource3.DataMember = "donors";
+            this.donorsBindingSource3.DataSource = this.sbmsDataSet;
+            // 
+            // species_specificsTableAdapter1
+            // 
+            this.species_specificsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // donorsBindingSource1
+            // 
+            this.donorsBindingSource1.DataMember = "donors";
+            this.donorsBindingSource1.DataSource = this.sbmsDataSet;
+            // 
+            // speciesspecificsBindingSource1
+            // 
+            this.speciesspecificsBindingSource1.DataMember = "species_specifics";
+            this.speciesspecificsBindingSource1.DataSource = this.sbmsDataSet;
+            // 
+            // speciceCatgeroyDataSet
+            // 
+            this.speciceCatgeroyDataSet.DataSetName = "speciceCatgeroyDataSet";
+            this.speciceCatgeroyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // speciescategoryBindingSource
+            // 
+            this.speciescategoryBindingSource.DataMember = "species_category";
+            this.speciescategoryBindingSource.DataSource = this.speciceCatgeroyDataSet;
+            // 
+            // species_categoryTableAdapter
+            // 
+            this.species_categoryTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -692,16 +875,6 @@ namespace SBMS
             this.speciesspecificidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.speciesspecificidDataGridViewTextBoxColumn.ValueMember = "id";
             // 
-            // speciesspecificsBindingSource
-            // 
-            this.speciesspecificsBindingSource.DataMember = "species_specifics";
-            this.speciesspecificsBindingSource.DataSource = this.speciece_specifics_dataBindingSource;
-            // 
-            // speciece_specifics_dataBindingSource
-            // 
-            this.speciece_specifics_dataBindingSource.DataSetName = "speciece_specifics_dataBindingSource";
-            this.speciece_specifics_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // speciesstageidDataGridViewTextBoxColumn
             // 
             this.speciesstageidDataGridViewTextBoxColumn.DataPropertyName = "species_stage_id";
@@ -716,16 +889,6 @@ namespace SBMS
             this.speciesstageidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.speciesstageidDataGridViewTextBoxColumn.ValueMember = "id";
             // 
-            // speciesstagesBindingSource
-            // 
-            this.speciesstagesBindingSource.DataMember = "species_stages";
-            this.speciesstagesBindingSource.DataSource = this.stage_dataBindingSource;
-            // 
-            // stage_dataBindingSource
-            // 
-            this.stage_dataBindingSource.DataSetName = "stage_dataBindingSource";
-            this.stage_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // SCategory
             // 
             this.SCategory.DataPropertyName = "species_catgeroy_id";
@@ -737,16 +900,6 @@ namespace SBMS
             this.SCategory.Name = "SCategory";
             this.SCategory.ReadOnly = true;
             this.SCategory.ValueMember = "id";
-            // 
-            // speciescategoryBindingSource
-            // 
-            this.speciescategoryBindingSource.DataMember = "species_category";
-            this.speciescategoryBindingSource.DataSource = this.speciceDataSet;
-            // 
-            // speciceDataSet
-            // 
-            this.speciceDataSet.DataSetName = "speciceDataSet";
-            this.speciceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lowerdensityDataGridViewTextBoxColumn
             // 
@@ -772,7 +925,7 @@ namespace SBMS
             // densitycategoryidDataGridViewTextBoxColumn
             // 
             this.densitycategoryidDataGridViewTextBoxColumn.DataPropertyName = "density_category_id";
-            this.densitycategoryidDataGridViewTextBoxColumn.DataSource = this.densitycategoryBindingSource2;
+            this.densitycategoryidDataGridViewTextBoxColumn.DataSource = this.densitycategoryBindingSource1;
             this.densitycategoryidDataGridViewTextBoxColumn.DisplayMember = "density_category";
             this.densitycategoryidDataGridViewTextBoxColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.densitycategoryidDataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -782,16 +935,6 @@ namespace SBMS
             this.densitycategoryidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.densitycategoryidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.densitycategoryidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // densitycategoryBindingSource2
-            // 
-            this.densitycategoryBindingSource2.DataMember = "density_category";
-            this.densitycategoryBindingSource2.DataSource = this.desnityCatbindingDataSourceBindingSource;
-            // 
-            // desnityCatbindingDataSourceBindingSource
-            // 
-            this.desnityCatbindingDataSourceBindingSource.DataSource = this.desnityCat_bindingDataSource;
-            this.desnityCatbindingDataSourceBindingSource.Position = 0;
             // 
             // owneridDataGridViewTextBoxColumn
             // 
@@ -806,16 +949,6 @@ namespace SBMS
             this.owneridDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.owneridDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.owneridDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // ownersBindingSource
-            // 
-            this.ownersBindingSource.DataMember = "owners";
-            this.ownersBindingSource.DataSource = this.ownerDataBindingSource;
-            // 
-            // ownerDataBindingSource
-            // 
-            this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
-            this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // acquireddateDataGridViewTextBoxColumn
             // 
@@ -837,16 +970,6 @@ namespace SBMS
             this.validationidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.validationidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.validationidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // validationsBindingSource
-            // 
-            this.validationsBindingSource.DataMember = "validations";
-            this.validationsBindingSource.DataSource = this.validationDataBindingSource;
-            // 
-            // validationDataBindingSource
-            // 
-            this.validationDataBindingSource.DataSetName = "validationDataBindingSource";
-            this.validationDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // createdbyDataGridViewTextBoxColumn
             // 
@@ -883,134 +1006,6 @@ namespace SBMS
             this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
             this.commentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // donorsBindingSource2
-            // 
-            this.donorsBindingSource2.DataMember = "donors";
-            this.donorsBindingSource2.DataSource = this.donorsDataSet;
-            // 
-            // donorsDataSet
-            // 
-            this.donorsDataSet.DataSetName = "donorsDataSet";
-            this.donorsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(753, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 26);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Fetch from server";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.btn_reload_Click);
-            // 
-            // btn_find
-            // 
-            this.btn_find.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_find.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_find.Location = new System.Drawing.Point(239, 7);
-            this.btn_find.Name = "btn_find";
-            this.btn_find.Size = new System.Drawing.Size(75, 27);
-            this.btn_find.TabIndex = 9;
-            this.btn_find.Text = "Find";
-            this.btn_find.UseVisualStyleBackColor = false;
-            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
-            // 
-            // txt_search_box
-            // 
-            this.txt_search_box.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_search_box.Location = new System.Drawing.Point(99, 9);
-            this.txt_search_box.Name = "txt_search_box";
-            this.txt_search_box.Size = new System.Drawing.Size(134, 25);
-            this.txt_search_box.TabIndex = 28;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label16.Location = new System.Drawing.Point(9, 14);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 17);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Search Donor:";
-            // 
-            // donorsBindingSource
-            // 
-            this.donorsBindingSource.DataMember = "donors";
-            this.donorsBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // donorsTableAdapter
-            // 
-            this.donorsTableAdapter.ClearBeforeFill = true;
-            // 
-            // sbmsDataSetBindingSource
-            // 
-            this.sbmsDataSetBindingSource.DataSource = this.sbmsDataSet;
-            this.sbmsDataSetBindingSource.Position = 0;
-            // 
-            // species_specificsTableAdapter
-            // 
-            this.species_specificsTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_stagesTableAdapter
-            // 
-            this.species_stagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // density_categoryTableAdapter
-            // 
-            this.density_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // validationsTableAdapter
-            // 
-            this.validationsTableAdapter.ClearBeforeFill = true;
-            // 
-            // ownersTableAdapter
-            // 
-            this.ownersTableAdapter.ClearBeforeFill = true;
-            // 
-            // donorsBindingSource1
-            // 
-            this.donorsBindingSource1.DataMember = "donors";
-            this.donorsBindingSource1.DataSource = this.sbmsDataSet;
-            // 
-            // donorsTableAdapter1
-            // 
-            this.donorsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // species_categoryTableAdapter
-            // 
-            this.species_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(546, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 26);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Validate";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(634, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 27);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Clear selection";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Donors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1038,28 +1033,31 @@ namespace SBMS
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_donors)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stage_dataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciceDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.donorsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciceDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stage_dataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.donorsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciceCatgeroyDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1105,37 +1103,45 @@ namespace SBMS
         private System.Windows.Forms.DataGridView dgr_donors;
         private BindingSource bindingSourceDonorsDataGrid;
         private SqlDataAdapter dataAdapterDonorsDataGridview;
-        private sbmsDataSet sbmsDataSet;
-        private BindingSource donorsBindingSource;
-        private sbmsDataSetTableAdapters.donorsTableAdapter donorsTableAdapter;
-        private BindingSource sbmsDataSetBindingSource;
-        private speciece_specifics_dataBindingSource speciece_specifics_dataBindingSource;
-        private BindingSource speciesspecificsBindingSource;
-        private speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter species_specificsTableAdapter;
-        private stage_dataBindingSource stage_dataBindingSource;
-        private BindingSource speciesstagesBindingSource;
-        private stage_dataBindingSourceTableAdapters.species_stagesTableAdapter species_stagesTableAdapter;
-        private BindingSource densitycategoryBindingSource;
-        private desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter density_categoryTableAdapter;
-        private validationDataBindingSource validationDataBindingSource;
-        private BindingSource validationsBindingSource;
-        private validationDataBindingSourceTableAdapters.validationsTableAdapter validationsTableAdapter;
-        private ownerDataBindingSource ownerDataBindingSource;
-        private BindingSource ownersBindingSource;
-        private ownerDataBindingSourceTableAdapters.ownersTableAdapter ownersTableAdapter;
-        private BindingSource donorsBindingSource1;
-        private donorsDataSet donorsDataSet;
-        private BindingSource donorsBindingSource2;
-        private donorsDataSetTableAdapters.donorsTableAdapter donorsTableAdapter1;
-        private speciceDataSet speciceDataSet;
-        private BindingSource speciescategoryBindingSource;
-        private speciceDataSetTableAdapters.species_categoryTableAdapter species_categoryTableAdapter;
         private Button btn_deactivate;
         private Label lbl_editing_status;
         private Label label17;
-        private desnityCat_bindingDataSource desnityCat_bindingDataSource;
         private ComboBox cmb_density_category;
+        private Button button2;
         private BindingSource densitycategoryBindingSource1;
+        private desnityCat_bindingDataSource desnityCat_bindingDataSource;
+        private BindingSource speciesspecificsBindingSource;
+        private speciece_specifics_dataBindingSource speciece_specifics_dataBindingSource;
+        private BindingSource speciesstagesBindingSource;
+        private stage_dataBindingSource stage_dataBindingSource;
+        private BindingSource densitycategoryBindingSource2;
+        private BindingSource desnityCatbindingDataSourceBindingSource;
+        private BindingSource ownersBindingSource;
+        private ownerDataBindingSource ownerDataBindingSource;
+        private BindingSource validationsBindingSource;
+        private validationDataBindingSource validationDataBindingSource;
+        private BindingSource donorsBindingSource;
+        private sbmsDataSet sbmsDataSet;
+        private BindingSource donorsBindingSource2;
+        private sbmsDataSetTableAdapters.species_categoryTableAdapter species_categoryTableAdapter1;
+        private BindingSource speciescategoryBindingSource1;
+        private donorsDataSetTableAdapters.donorsTableAdapter donorsTableAdapter1;
+        private ownerDataBindingSourceTableAdapters.ownersTableAdapter ownersTableAdapter;
+        private validationDataBindingSourceTableAdapters.validationsTableAdapter validationsTableAdapter;
+        private desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter density_categoryTableAdapter;
+        private stage_dataBindingSourceTableAdapters.species_stagesTableAdapter species_stagesTableAdapter;
+        private speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter species_specificsTableAdapter;
+        private sbmsDataSetTableAdapters.donorsTableAdapter donorsTableAdapter;
+        private BindingSource densitycategoryBindingSource;
+        private speciceDataSet speciceDataSet;
+        private BindingSource sbmsDataSetBindingSource;
+        private BindingSource donorsBindingSource3;
+        private sbmsDataSetTableAdapters.species_specificsTableAdapter species_specificsTableAdapter1;
+        private BindingSource donorsBindingSource1;
+        private BindingSource speciesspecificsBindingSource1;
+        private speciceCatgeroyDataSet speciceCatgeroyDataSet;
+        private BindingSource speciescategoryBindingSource;
+        private speciceCatgeroyDataSetTableAdapters.species_categoryTableAdapter species_categoryTableAdapter;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn countrycodeDataGridViewTextBoxColumn;
@@ -1147,8 +1153,6 @@ namespace SBMS
         private DataGridViewTextBoxColumn averagedensityDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn upperdensityDataGridViewTextBoxColumn;
         private DataGridViewComboBoxColumn densitycategoryidDataGridViewTextBoxColumn;
-        private BindingSource densitycategoryBindingSource2;
-        private BindingSource desnityCatbindingDataSourceBindingSource;
         private DataGridViewComboBoxColumn owneridDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn acquireddateDataGridViewTextBoxColumn;
         private DataGridViewComboBoxColumn validationidDataGridViewTextBoxColumn;
@@ -1157,8 +1161,6 @@ namespace SBMS
         private DataGridViewTextBoxColumn createddateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn updateddateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
-        private Button button1;
-        private Button button2;
     }
 
 
