@@ -75,6 +75,41 @@ namespace SBMS.Services
             return -1;
         }
 
+        public int CheckDuplicateDonorCodeUpdate(string donorCode, int DonorId)
+        {
+
+            if (String.IsNullOrEmpty(donorCode) == false)
+            {
+                string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim()+"and id="+DonorId;
+                using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+                {
+
+                    try
+                    {
+                        //con.Open();
+                        SqlDataReader cr = command2.ExecuteReader();
+                        while (cr.Read())
+                        {
+                            if (cr.HasRows == true)
+                            {
+
+                                return -1;
+                            }
+
+                        }
+                        cr.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return -1;
+                    }
+
+                }
+            }
+            return 1;
+        }
+
 
         public int CheckDuplicateSlideInfo(string sequence)
         {

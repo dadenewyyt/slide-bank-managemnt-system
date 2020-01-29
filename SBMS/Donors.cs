@@ -187,11 +187,15 @@ namespace SBMS
         }
 
 
-           
+        private void reload_data()
+        {
+            this.donorsTableAdapter.Fill(this.sbmsDataSet.donors);
+        }
+
         private void btn_reload_Click(object sender, EventArgs e)
         {
 
-            this.donorsTableAdapter.Fill(this.sbmsDataSet.donors);
+            reload_data();
 
         }
 
@@ -267,19 +271,22 @@ namespace SBMS
                             }
                             int recordsAffected = command.ExecuteNonQuery();
 
-
-
+                        if (recordsAffected > 0)
+                        {
+                            MessageBox.Show("Slide's Information Updated !", "Success");
+                            reload_data();
                         }
+
+                    }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show(ex.Message.ToString(), "ERROR SAVING");
+                            MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Donor");
                         }
                         finally
                         {
-                            MessageBox.Show("Donor Information Saved Successfully", "Success");
+                          
                             clear();
-                            this.btn_reload_Click(null,null);
-                            this.btn_reload_Click(null,null);
+                           
                             connection.Close();
                         }
 
@@ -361,14 +368,14 @@ namespace SBMS
         {
 
             dataFetchService = new DataFetchService();
-            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCodeUpdate(txt_donor_code.Text,Id_update);
 
             if (donorFoundDuplicate == 1)
             {
 
                 MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                clear();
+                return;
             }
 
             bool isValid = ValidateBeforeSave();
@@ -423,21 +430,22 @@ namespace SBMS
                                 connection.Open();
                             }
                             int recordsAffected = command.ExecuteNonQuery();
-
-
+                            if (recordsAffected > 0)
+                            {
+                                MessageBox.Show("Donor's Information Updated!", "Success");
+                                reload_data();
+                            }
 
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show(ex.Message, "ERROR: Updating Record");
-                     
+                            MessageBox.Show(ex.Message.ToString(), "ERROR Updating Donor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
                         finally
                         {
-                            MessageBox.Show("Donor's Information Updated Successfully", "Success");
                             clear();
-                            this.btn_reload_Click(null,null);
-                            this.btn_reload_Click(null, null);
+                            reload_data();
                             lbl_editing_status.Visible = false;
                            // btn_deactivate.Enabled = false;
                             btn_save.Enabled = true;

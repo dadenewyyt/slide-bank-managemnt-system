@@ -364,17 +364,24 @@ namespace SBMS
                             {
                                 connection.Open();
                             }
+
                             int recordsAffected = command.ExecuteNonQuery();
+
+                            if (recordsAffected > 0)
+                            {
+                                MessageBox.Show("Slide's Information Updated !", "Success");
+                                reload_data();
+
+                            }
 
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show("System has found error. Sorry We are not able to save this time","System Error");
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Slides", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
                         }
                         finally
                         {
-                            MessageBox.Show("Slide's Information Has been Saved Successfully", "Success");
                             clear();
                            // this.btn_reload_Click(null, null);
                             //this.btn_reload_Click(null, null);
@@ -475,9 +482,7 @@ namespace SBMS
                         command.Parameters.AddWithValue("@cabinet", Convert.ToInt32(txt_cabinet_number.Text.ToString()));
                         command.Parameters.AddWithValue("@box", Convert.ToInt32(txt_box_number.Text.ToString()));
                         command.Parameters.AddWithValue("@drawer", Convert.ToInt32(txt_drawer_number.Text.ToString()));
-                        
-
-
+              
                         if (rdoDamagedYes.Checked==true)
                             command.Parameters.AddWithValue("@isDamaged", true);
                         if (rdoDamagedNo.Checked == true)
@@ -487,12 +492,9 @@ namespace SBMS
                             command.Parameters.AddWithValue("@isReserved", true);
                         if (rdoResevedNo.Checked == true)
                             command.Parameters.AddWithValue("@isReserved", false);
-                     
-
-
+      
                         command.Parameters.AddWithValue("@updated_by", "Update User");
                        
-
                         try
                         {
 
@@ -501,11 +503,10 @@ namespace SBMS
                                 connection.Open();
                             }
                             int recordsAffected = command.ExecuteNonQuery();
-                            MessageBox.Show(recordsAffected.ToString());
 
                             if (recordsAffected > 0)
                             {
-                                MessageBox.Show("Slide's Information Updated Successfully", "Success");
+                                MessageBox.Show("Slide's Information Updated !", "Success");
                                 reload_data();
 
                             }
