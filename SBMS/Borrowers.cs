@@ -53,9 +53,7 @@ namespace SBMS
         private void reload_data()
         {
 
-            //  this..Fill(this.sbmsDataSet.recent_slide_dataset);
-            // this.slidesTableAdapter.Fill(this.sbmsDataSet.slides);
-
+            this.borrowersTableAdapter.Fill(this.sbmsDataSet.borrowers);
         }
 
         private void dgr_borrower_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -346,7 +344,7 @@ namespace SBMS
 
             if (found == false)
             {
-                MessageBox.Show("Donor is not found. With a Donor Code : " + searchValue.ToString(), "Find Result");
+                MessageBox.Show("Borrower is not found. With a organisation name : " + searchValue.ToString(), "Find Result");
             }
         }
 
