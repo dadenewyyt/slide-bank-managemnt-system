@@ -215,9 +215,9 @@ namespace SBMS
             MessageBox.Show("You have selected invalid value for density catgeroy", "Invalid Search Criteria");
             return false;
         }
-            return true;
 
 
+         return true;
         }
 
     //cmb_specice_specifics.SelectedIndex == -1 || cmb_specice_stage.SelectedIndex==-1 || cmb_density_category.SelectedIndex==-1) {
@@ -225,15 +225,11 @@ namespace SBMS
 
     private void btn_search_Click(object sender, EventArgs e)
         {
-            filterService = new FilterService();
-            filterService.SCID = cmb_specice_category.SelectedIndex;
-            filterService.SSID = cmb_specice_specifics.SelectedIndex;
-            filterService.SID = cmb_specice_stage.SelectedIndex;
-            filterService.DCID = cmb_density_category.SelectedIndex;
-            filterService.qunatity = Convert.ToInt32(txt_quantity.Text);
-
-            DataTable dt = filterService.FilterSlides();
-            grd_slides_for_checkout.DataSource = dt;
+            progressBar1.Visible = true;
+            timer1.Enabled = true;
+           
+         
+           
 
         }
 
@@ -241,8 +237,36 @@ namespace SBMS
         {
             DateTime d1 = txt_from_date.Value;
             DateTime d2 = txt_due_date.Value;
-            TimeSpan days = d2 - d1;
+            TimeSpan days =  d2 - d1;
             txt_days.Text = Convert.ToString(days.TotalDays);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value = progressBar1.Value + 1;
+            if (progressBar1.Value > 99)
+            {
+                progressBar1.Value = 0;
+                progressBar1.Visible = false;
+                timer1.Enabled = false;
+
+                bool isValid = ValidateSearch();
+
+                if (isValid == true)
+                {
+
+                    filterService = new FilterService();
+                    filterService.SCID = cmb_specice_category.SelectedIndex;
+                    filterService.SSID = cmb_specice_specifics.SelectedIndex;
+                    filterService.SID = cmb_specice_stage.SelectedIndex;
+                    filterService.DCID = cmb_density_category.SelectedIndex;
+                    filterService.qunatity = Convert.ToInt32(numeric_qunaity_txt.Value);
+
+                    DataTable dt = filterService.FilterSlides();
+                    grd_slides_for_checkout.DataSource = dt;
+
+                }
+            }
         }
     }
 }

@@ -194,9 +194,7 @@ namespace SBMS
 
         private void btn_reload_Click(object sender, EventArgs e)
         {
-
             reload_data();
-
         }
 
         private void btn_save_Click(object sender, EventArgs e)

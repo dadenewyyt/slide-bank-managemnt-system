@@ -66,16 +66,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_fname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_clear_selection = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_find = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dgr_borrower = new System.Windows.Forms.DataGridView();
+            this.borrowersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.borrowersTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrowersTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobtitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.organisationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobtitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.officalemailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personalemailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mobilephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,10 +95,6 @@
             this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.upatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isdeletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.borrowersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.borrowersTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrowersTableAdapter();
-            this.btn_clear_selection = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -121,24 +121,24 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1259, 94);
-            this.splitContainer1.SplitterDistance = 53;
+            this.splitContainer1.Size = new System.Drawing.Size(1259, 78);
+            this.splitContainer1.SplitterDistance = 41;
             this.splitContainer1.TabIndex = 0;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(418, 6);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(403, 6);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(511, 33);
+            this.label18.Size = new System.Drawing.Size(445, 31);
             this.label18.TabIndex = 11;
             this.label18.Text = "Borrowers Information Management";
             // 
             // splitContainer2
             // 
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer2.Location = new System.Drawing.Point(2, 101);
+            this.splitContainer2.Location = new System.Drawing.Point(2, 85);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -516,6 +516,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "First Name:";
             // 
+            // btn_clear_selection
+            // 
+            this.btn_clear_selection.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_clear_selection.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear_selection.Location = new System.Drawing.Point(643, 17);
+            this.btn_clear_selection.Name = "btn_clear_selection";
+            this.btn_clear_selection.Size = new System.Drawing.Size(110, 26);
+            this.btn_clear_selection.TabIndex = 43;
+            this.btn_clear_selection.Text = "Clear selection";
+            this.btn_clear_selection.UseVisualStyleBackColor = false;
+            this.btn_clear_selection.Click += new System.EventHandler(this.btn_clear_selection_Click);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -565,8 +577,8 @@
             this.idDataGridViewTextBoxColumn,
             this.fnameDataGridViewTextBoxColumn,
             this.lnameDataGridViewTextBoxColumn,
-            this.jobtitleDataGridViewTextBoxColumn,
             this.organisationDataGridViewTextBoxColumn,
+            this.jobtitleDataGridViewTextBoxColumn,
             this.officalemailDataGridViewTextBoxColumn,
             this.personalemailDataGridViewTextBoxColumn,
             this.mobilephoneDataGridViewTextBoxColumn,
@@ -593,6 +605,20 @@
             this.dgr_borrower.TabIndex = 0;
             this.dgr_borrower.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgr_borrower_CellClick);
             // 
+            // borrowersBindingSource
+            // 
+            this.borrowersBindingSource.DataMember = "borrowers";
+            this.borrowersBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // borrowersTableAdapter
+            // 
+            this.borrowersTableAdapter.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -604,85 +630,85 @@
             // fnameDataGridViewTextBoxColumn
             // 
             this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
-            this.fnameDataGridViewTextBoxColumn.HeaderText = "fname";
+            this.fnameDataGridViewTextBoxColumn.HeaderText = "FName";
             this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
             // 
             // lnameDataGridViewTextBoxColumn
             // 
             this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
-            this.lnameDataGridViewTextBoxColumn.HeaderText = "lname";
+            this.lnameDataGridViewTextBoxColumn.HeaderText = "LName";
             this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
-            // 
-            // jobtitleDataGridViewTextBoxColumn
-            // 
-            this.jobtitleDataGridViewTextBoxColumn.DataPropertyName = "job_title";
-            this.jobtitleDataGridViewTextBoxColumn.HeaderText = "job_title";
-            this.jobtitleDataGridViewTextBoxColumn.Name = "jobtitleDataGridViewTextBoxColumn";
             // 
             // organisationDataGridViewTextBoxColumn
             // 
             this.organisationDataGridViewTextBoxColumn.DataPropertyName = "organisation";
-            this.organisationDataGridViewTextBoxColumn.HeaderText = "organisation";
+            this.organisationDataGridViewTextBoxColumn.HeaderText = "Organisation";
             this.organisationDataGridViewTextBoxColumn.Name = "organisationDataGridViewTextBoxColumn";
+            // 
+            // jobtitleDataGridViewTextBoxColumn
+            // 
+            this.jobtitleDataGridViewTextBoxColumn.DataPropertyName = "job_title";
+            this.jobtitleDataGridViewTextBoxColumn.HeaderText = "Position";
+            this.jobtitleDataGridViewTextBoxColumn.Name = "jobtitleDataGridViewTextBoxColumn";
             // 
             // officalemailDataGridViewTextBoxColumn
             // 
             this.officalemailDataGridViewTextBoxColumn.DataPropertyName = "offical_email";
-            this.officalemailDataGridViewTextBoxColumn.HeaderText = "offical_email";
+            this.officalemailDataGridViewTextBoxColumn.HeaderText = "Office";
             this.officalemailDataGridViewTextBoxColumn.Name = "officalemailDataGridViewTextBoxColumn";
             // 
             // personalemailDataGridViewTextBoxColumn
             // 
             this.personalemailDataGridViewTextBoxColumn.DataPropertyName = "personal_email";
-            this.personalemailDataGridViewTextBoxColumn.HeaderText = "personal_email";
+            this.personalemailDataGridViewTextBoxColumn.HeaderText = "Personal";
             this.personalemailDataGridViewTextBoxColumn.Name = "personalemailDataGridViewTextBoxColumn";
             // 
             // mobilephoneDataGridViewTextBoxColumn
             // 
             this.mobilephoneDataGridViewTextBoxColumn.DataPropertyName = "mobile_phone";
-            this.mobilephoneDataGridViewTextBoxColumn.HeaderText = "mobile_phone";
+            this.mobilephoneDataGridViewTextBoxColumn.HeaderText = "MPhone";
             this.mobilephoneDataGridViewTextBoxColumn.Name = "mobilephoneDataGridViewTextBoxColumn";
             // 
             // officephoneDataGridViewTextBoxColumn
             // 
             this.officephoneDataGridViewTextBoxColumn.DataPropertyName = "office_phone";
-            this.officephoneDataGridViewTextBoxColumn.HeaderText = "office_phone";
+            this.officephoneDataGridViewTextBoxColumn.HeaderText = "OfficePhone";
             this.officephoneDataGridViewTextBoxColumn.Name = "officephoneDataGridViewTextBoxColumn";
             // 
             // faxnumberDataGridViewTextBoxColumn
             // 
             this.faxnumberDataGridViewTextBoxColumn.DataPropertyName = "fax_number";
-            this.faxnumberDataGridViewTextBoxColumn.HeaderText = "fax_number";
+            this.faxnumberDataGridViewTextBoxColumn.HeaderText = "Fax";
             this.faxnumberDataGridViewTextBoxColumn.Name = "faxnumberDataGridViewTextBoxColumn";
             // 
             // countryDataGridViewTextBoxColumn
             // 
             this.countryDataGridViewTextBoxColumn.DataPropertyName = "country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "country";
+            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
             this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
             // 
             // cityDataGridViewTextBoxColumn
             // 
             this.cityDataGridViewTextBoxColumn.DataPropertyName = "city";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "city";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
             // 
             // hnoDataGridViewTextBoxColumn
             // 
             this.hnoDataGridViewTextBoxColumn.DataPropertyName = "hno";
-            this.hnoDataGridViewTextBoxColumn.HeaderText = "hno";
+            this.hnoDataGridViewTextBoxColumn.HeaderText = "H.No";
             this.hnoDataGridViewTextBoxColumn.Name = "hnoDataGridViewTextBoxColumn";
             // 
             // postcodeDataGridViewTextBoxColumn
             // 
             this.postcodeDataGridViewTextBoxColumn.DataPropertyName = "postcode";
-            this.postcodeDataGridViewTextBoxColumn.HeaderText = "postcode";
+            this.postcodeDataGridViewTextBoxColumn.HeaderText = "PoBox";
             this.postcodeDataGridViewTextBoxColumn.Name = "postcodeDataGridViewTextBoxColumn";
             // 
             // noteDataGridViewTextBoxColumn
             // 
             this.noteDataGridViewTextBoxColumn.DataPropertyName = "note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "note";
+            this.noteDataGridViewTextBoxColumn.HeaderText = "Remark";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
             // 
             // createddateDataGridViewTextBoxColumn
@@ -716,32 +742,6 @@
             this.isdeletedDataGridViewCheckBoxColumn.Name = "isdeletedDataGridViewCheckBoxColumn";
             this.isdeletedDataGridViewCheckBoxColumn.Visible = false;
             // 
-            // borrowersBindingSource
-            // 
-            this.borrowersBindingSource.DataMember = "borrowers";
-            this.borrowersBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // borrowersTableAdapter
-            // 
-            this.borrowersTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_clear_selection
-            // 
-            this.btn_clear_selection.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_clear_selection.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear_selection.Location = new System.Drawing.Point(643, 17);
-            this.btn_clear_selection.Name = "btn_clear_selection";
-            this.btn_clear_selection.Size = new System.Drawing.Size(110, 26);
-            this.btn_clear_selection.TabIndex = 43;
-            this.btn_clear_selection.Text = "Clear selection";
-            this.btn_clear_selection.UseVisualStyleBackColor = false;
-            this.btn_clear_selection.Click += new System.EventHandler(this.btn_clear_selection_Click);
-            // 
             // Borrowers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -753,6 +753,7 @@
             this.MaximizeBox = false;
             this.Name = "Borrowers";
             this.Text = "Borrowers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Borrowers_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -818,11 +819,12 @@
         private sbmsDataSet sbmsDataSet;
         private System.Windows.Forms.BindingSource borrowersBindingSource;
         private sbmsDataSetTableAdapters.borrowersTableAdapter borrowersTableAdapter;
+        private System.Windows.Forms.Button btn_clear_selection;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn organisationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn officalemailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalemailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobilephoneDataGridViewTextBoxColumn;
@@ -838,6 +840,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updateddateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn upatedbyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isdeletedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.Button btn_clear_selection;
     }
 }
