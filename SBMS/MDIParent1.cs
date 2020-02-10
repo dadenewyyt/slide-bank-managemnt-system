@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SBMS.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -73,12 +74,10 @@ namespace SBMS
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+          
         }
 
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e) { 
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,6 +106,35 @@ namespace SBMS
             {
                 childForm.Close();
             }
+        }
+
+        private void MDIParent1_Load(object sender, EventArgs e)
+        {
+            string full_name = UserAccountServices.Full_name;
+            //lbl_welcom.Text = " Welcome , " + full_name + "  system is logging update and save logs.";
+            toolStripStatusLabel1.Text = " Welcome , " + full_name + "  system is logging update and save logs.";
+        }
+
+        private void btn_lgout_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+            Login log = new Login();
+            log.Show();
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure ?","Logout",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                foreach (Form childForm in MdiChildren)
+                {
+                    childForm.Close();
+                }
+                Dispose();
+                this.Close();
+            }
+            
         }
     }
 }

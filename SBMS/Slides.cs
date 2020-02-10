@@ -587,6 +587,9 @@ namespace SBMS
             {
 
                 MessageBox.Show("Slide exisit at [Cabinet = " + cabinet + " , Drawer = " + drawer + " , Box = " + box + "]. Please check for unoccupied slide location.", "Duplicate Location", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                btn_clear_selection_Click(null, null);
+                clear();
+                enable_disable_inputs(false);
                 return false;
             }
 
@@ -608,6 +611,59 @@ namespace SBMS
         private void button2_Click(object sender, EventArgs e)
         {
             reload_data();
+        }
+
+        private void selected_row_all_slides(object sender, DataGridViewCellEventArgs e)
+        {
+                int rowIndexGird;
+                rowIndexGird = e.RowIndex;
+
+                if (dgr_allslides.SelectedRows.Count > 0)
+                {
+                    MessageBox.Show("you selected row:" + (rowIndexGird + 1).ToString());
+
+                    txt_bar_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["barcodeallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_slide_sequence.Text = dgr_allslides.Rows[e.RowIndex].Cells["sequenceallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_country_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["ccallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_donor_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["donorallslidesGridViewTextBoxColumn"].Value.ToString();
+                    cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ssallslidesGridViewColumn"].Value);
+                    cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["scallsldesGridViewColumn"].Value);
+                    cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["stallsldesGridViewColumn"].Value);
+                    txt_lower_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["ldallsldesGridViewColumn"].Value + string.Empty;
+                    txt_average_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["adallsldesGridViewColumn"].Value + string.Empty;
+                    txt_upper_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["udallsldesGridViewColumn"].Value.ToString();
+                    cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["dcallsldesGridViewColumn"].Value);
+                    cmb_owners.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ownerallsldesGridViewColumn"].Value);
+                    txt_acquired_date.Text = dgr_allslides.Rows[e.RowIndex].Cells["adateallsldesGridViewColumn"].Value.ToString();
+                    cmb_validation.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["vdateallsldesGridViewColumn"].Value);
+                    txt_comment.Text = dgr_allslides.Rows[e.RowIndex].Cells["commentallsldesGridViewColumn"].Value.ToString();
+
+                    if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isDamagedallsldesGridViewColumn"].Value))
+                        rdoDamagedYes.Checked = true;
+                    else
+                        rdoDamagedNo.Checked = true;
+
+                    if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isReservedallsldesGridViewColumn"].Value))
+                        rdoResevedYes.Checked = true;
+                    else
+                        rdoResevedNo.Checked = true;
+                    txt_cabinet_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["cabinetallsldesGridViewColumn"].Value.ToString();
+                    txt_drawer_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["drawerallsldesGridViewColumn"].Value.ToString();
+                    txt_box_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["boxallsldesGridViewColumn"].Value.ToString();
+
+                    enable_disable_inputs(true); //enable for select
+
+                    btn_edit_update.Enabled = true;
+                    lbl_editing_status.Visible = true;
+                    btn_save.Enabled = false;
+                    Slides_Id_Update = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["idallsldesGridViewColumn"].Value.ToString());
+                }
+                else
+                {
+                    enable_disable_inputs(false); //disabble for select
+                    MessageBox.Show("NO Data to Select");
+                }
+           
         }
     }
 }

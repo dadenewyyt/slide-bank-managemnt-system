@@ -36,11 +36,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbl_notes = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
             this.btn_user_account = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.btn_lending_history = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btn_archive_summary = new System.Windows.Forms.Button();
@@ -51,6 +48,9 @@
             this.bn_borrowers = new System.Windows.Forms.Button();
             this.btn_donors = new System.Windows.Forms.Button();
             this.btn_slides = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1261, 761);
+            this.panel1.Size = new System.Drawing.Size(1261, 749);
             this.panel1.TabIndex = 13;
             // 
             // label1
@@ -92,7 +92,7 @@
             this.pictureBox3.Image = global::SBMS.Properties.Resources._2000px_Flag_of_Ethiopia_svg;
             this.pictureBox3.Location = new System.Drawing.Point(46, 79);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(161, 148);
+            this.pictureBox3.Size = new System.Drawing.Size(116, 81);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 29;
             this.pictureBox3.TabStop = false;
@@ -102,7 +102,7 @@
             this.pictureBox1.Image = global::SBMS.Properties.Resources._27332741_1426914380750443_3640997397741266774_n;
             this.pictureBox1.Location = new System.Drawing.Point(501, 82);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 145);
+            this.pictureBox1.Size = new System.Drawing.Size(115, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -112,7 +112,7 @@
             this.pictureBox2.Image = global::SBMS.Properties.Resources.icap_logo;
             this.pictureBox2.Location = new System.Drawing.Point(981, 76);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(214, 145);
+            this.pictureBox2.Size = new System.Drawing.Size(182, 96);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
@@ -124,7 +124,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 231);
+            this.splitContainer1.Location = new System.Drawing.Point(3, 195);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -150,8 +150,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.bn_borrowers);
             this.splitContainer1.Panel2.Controls.Add(this.btn_donors);
             this.splitContainer1.Panel2.Controls.Add(this.btn_slides);
-            this.splitContainer1.Size = new System.Drawing.Size(1255, 527);
-            this.splitContainer1.SplitterDistance = 31;
+            this.splitContainer1.Size = new System.Drawing.Size(1255, 551);
+            this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 13;
             // 
             // lbl_notes
@@ -169,23 +169,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(912, 471);
+            this.label2.Location = new System.Drawing.Point(916, 466);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(332, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Developed by Daniel Adenew, Lead Software Engineer MDTA,ICAP.";
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button13.Location = new System.Drawing.Point(727, 378);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(247, 85);
-            this.button13.TabIndex = 26;
-            this.button13.Text = "Help ";
-            this.button13.UseVisualStyleBackColor = false;
             // 
             // btn_user_account
             // 
@@ -200,18 +188,6 @@
             this.btn_user_account.UseVisualStyleBackColor = false;
             this.btn_user_account.Click += new System.EventHandler(this.btn_user_account_Click);
             // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button12.Location = new System.Drawing.Point(474, 378);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(247, 85);
-            this.button12.TabIndex = 23;
-            this.button12.Text = "Help ";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.SlateGray;
@@ -223,18 +199,6 @@
             this.button15.TabIndex = 24;
             this.button15.Text = "Slide Set Generator";
             this.button15.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button11.Location = new System.Drawing.Point(221, 378);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(247, 85);
-            this.button11.TabIndex = 22;
-            this.button11.Text = "Reports";
-            this.button11.UseVisualStyleBackColor = false;
             // 
             // btn_lending_history
             // 
@@ -359,12 +323,48 @@
             this.btn_slides.UseVisualStyleBackColor = false;
             this.btn_slides.Click += new System.EventHandler(this.btn_slides_Click);
             // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button13.Location = new System.Drawing.Point(727, 378);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(247, 85);
+            this.button13.TabIndex = 26;
+            this.button13.Text = "Help ";
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button12.Location = new System.Drawing.Point(474, 378);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(247, 85);
+            this.button12.TabIndex = 23;
+            this.button12.Text = "Help ";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button11.Location = new System.Drawing.Point(221, 378);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(247, 85);
+            this.button11.TabIndex = 22;
+            this.button11.Text = "Reports";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
             // MDIChild
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1261, 761);
+            this.ClientSize = new System.Drawing.Size(1261, 749);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
@@ -394,11 +394,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button btn_user_account;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button btn_lending_history;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btn_archive_summary;
@@ -412,5 +409,8 @@
         private System.Windows.Forms.Button bn_borrowers;
         private System.Windows.Forms.Label lbl_notes;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
     }
 }

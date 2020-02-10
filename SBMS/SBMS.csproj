@@ -157,6 +157,8 @@
     <Compile Include="Services\DataFetchService.cs" />
     <Compile Include="Services\HelperServices.cs" />
     <Compile Include="Services\LookUpServices.cs" />
+    <Compile Include="Services\FilterService.cs" />
+    <Compile Include="Services\UserAccountServices.cs" />
     <Compile Include="Slides.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -42,67 +42,45 @@
             this.txt_bar_code = new System.Windows.Forms.TextBox();
             this.txt_country_code = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.btn_edit_update = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_cabinet_number = new System.Windows.Forms.TextBox();
-            this.txt_box_number = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txt_drawer_number = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.rdoReserved = new System.Windows.Forms.GroupBox();
-            this.rdoResevedNo = new System.Windows.Forms.RadioButton();
-            this.rdoResevedYes = new System.Windows.Forms.RadioButton();
-            this.rdoDamaged = new System.Windows.Forms.GroupBox();
-            this.rdoDamagedNo = new System.Windows.Forms.RadioButton();
-            this.rdoDamagedYes = new System.Windows.Forms.RadioButton();
-            this.txt_comment = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmb_validation = new System.Windows.Forms.ComboBox();
             this.validationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.validationDataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.validationDataBindingSource = new SBMS.validationDataBindingSource();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_upper_density = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_average_density = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_lower_density = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmb_density_category = new System.Windows.Forms.ComboBox();
             this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_acquired_date = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmb_owners = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cmb_specice_category = new System.Windows.Forms.ComboBox();
             this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.specieCatgeoryDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.specieCatgeoryDataSet = new SBMS.specieCatgeoryDataSet();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cmb_specice_stage = new System.Windows.Forms.ComboBox();
             this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stagedataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stage_dataBindingSource = new SBMS.stage_dataBindingSource();
-            this.label18 = new System.Windows.Forms.Label();
-            this.cmb_specice_specifics = new System.Windows.Forms.ComboBox();
             this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.speciecespecificsdataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_clear_selection = new System.Windows.Forms.Button();
+            this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ownerDataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
+            this.recentslidedatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.slidesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.slidesTableAdapter = new SBMS.sbmsDataSetTableAdapters.slidesTableAdapter();
+            this.recent_slide_datasetTableAdapter = new SBMS.sbmsDataSetTableAdapters.recent_slide_datasetTableAdapter();
+            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
+            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
+            this.species_categoryTableAdapter = new SBMS.specieCatgeoryDataSetTableAdapters.species_categoryTableAdapter();
+            this.species_stagesTableAdapter = new SBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
+            this.validationsTableAdapter = new SBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
+            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
+            this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.speciece_specifics_dataBindingSource1 = new SBMS.speciece_specifics_dataBindingSource();
+            this.speciectypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.recentslidedatasetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label19 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.txt_search_slide_recent = new System.Windows.Forms.TextBox();
             this.dgr_recentslides = new System.Windows.Forms.DataGridView();
             this.idrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,9 +96,6 @@
             this.adrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.udrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ownerrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ownerDataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
             this.cabinetrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boxrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawerrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,8 +110,6 @@
             this.cdaterecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbyrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ubyrecentslidesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recentslidedatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
             this.button7 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
@@ -145,6 +118,49 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dgr_allslides = new System.Windows.Forms.DataGridView();
+            this.btn_clear_selection = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.cmb_specice_specifics = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cmb_specice_stage = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cmb_specice_category = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cmb_owners = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_acquired_date = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cmb_density_category = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_lower_density = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_average_density = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_upper_density = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmb_validation = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_comment = new System.Windows.Forms.TextBox();
+            this.rdoDamaged = new System.Windows.Forms.GroupBox();
+            this.rdoDamagedNo = new System.Windows.Forms.RadioButton();
+            this.rdoDamagedYes = new System.Windows.Forms.RadioButton();
+            this.rdoReserved = new System.Windows.Forms.GroupBox();
+            this.rdoResevedNo = new System.Windows.Forms.RadioButton();
+            this.rdoResevedYes = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_cabinet_number = new System.Windows.Forms.TextBox();
+            this.txt_box_number = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txt_drawer_number = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btn_edit_update = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.IDallsldesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeallslidesGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorallslidesGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sequenceallslidesGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -171,32 +187,10 @@
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slidesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label19 = new System.Windows.Forms.Label();
-            this.slidesTableAdapter = new SBMS.sbmsDataSetTableAdapters.slidesTableAdapter();
-            this.recent_slide_datasetTableAdapter = new SBMS.sbmsDataSetTableAdapters.recent_slide_datasetTableAdapter();
-            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
-            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
-            this.species_categoryTableAdapter = new SBMS.specieCatgeoryDataSetTableAdapters.species_categoryTableAdapter();
-            this.species_stagesTableAdapter = new SBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
-            this.validationsTableAdapter = new SBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
-            this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciece_specifics_dataBindingSource1 = new SBMS.speciece_specifics_dataBindingSource();
-            this.speciectypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.recentslidedatasetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.rdoReserved.SuspendLayout();
-            this.rdoDamaged.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSourceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).BeginInit();
@@ -211,22 +205,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciecespecificsdataBindingSourceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgr_recentslides)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSourceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentslidedatasetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgr_allslides)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentslidedatasetBindingSource1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgr_recentslides)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgr_allslides)).BeginInit();
+            this.rdoDamaged.SuspendLayout();
+            this.rdoReserved.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -254,17 +255,17 @@
             this.splitContainer1.Panel2.Controls.Add(this.txt_bar_code);
             this.splitContainer1.Panel2.Controls.Add(this.txt_country_code);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Size = new System.Drawing.Size(1248, 170);
-            this.splitContainer1.SplitterDistance = 53;
+            this.splitContainer1.Size = new System.Drawing.Size(1353, 131);
+            this.splitContainer1.SplitterDistance = 29;
             this.splitContainer1.TabIndex = 16;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(462, 4);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(456, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(257, 33);
+            this.label7.Size = new System.Drawing.Size(215, 29);
             this.label7.TabIndex = 0;
             this.label7.Text = "Slide Management";
             // 
@@ -283,59 +284,59 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label8.Location = new System.Drawing.Point(375, 75);
+            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(355, 65);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 17);
+            this.label8.Size = new System.Drawing.Size(121, 16);
             this.label8.TabIndex = 28;
             this.label8.Text = "Sequence Number:";
             // 
             // txt_slide_sequence
             // 
-            this.txt_slide_sequence.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_slide_sequence.Location = new System.Drawing.Point(503, 75);
+            this.txt_slide_sequence.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_slide_sequence.Location = new System.Drawing.Point(483, 65);
             this.txt_slide_sequence.Name = "txt_slide_sequence";
             this.txt_slide_sequence.ReadOnly = true;
-            this.txt_slide_sequence.Size = new System.Drawing.Size(227, 25);
+            this.txt_slide_sequence.Size = new System.Drawing.Size(227, 23);
             this.txt_slide_sequence.TabIndex = 27;
             // 
             // txt_donor_code
             // 
-            this.txt_donor_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_donor_code.Location = new System.Drawing.Point(502, 44);
+            this.txt_donor_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_donor_code.Location = new System.Drawing.Point(482, 34);
             this.txt_donor_code.Name = "txt_donor_code";
             this.txt_donor_code.ReadOnly = true;
-            this.txt_donor_code.Size = new System.Drawing.Size(227, 25);
+            this.txt_donor_code.Size = new System.Drawing.Size(227, 23);
             this.txt_donor_code.TabIndex = 26;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label1.Location = new System.Drawing.Point(400, 47);
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(380, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 25;
             this.label1.Text = "Donor Code:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(48, 22);
+            this.label2.Location = new System.Drawing.Point(28, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 21);
+            this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "Scan In :=>";
             // 
             // txt_slide_scan
             // 
-            this.txt_slide_scan.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_slide_scan.Location = new System.Drawing.Point(157, 18);
+            this.txt_slide_scan.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_slide_scan.Location = new System.Drawing.Point(137, 8);
             this.txt_slide_scan.MaxLength = 8;
             this.txt_slide_scan.Name = "txt_slide_scan";
-            this.txt_slide_scan.Size = new System.Drawing.Size(210, 25);
+            this.txt_slide_scan.Size = new System.Drawing.Size(210, 23);
             this.txt_slide_scan.TabIndex = 20;
             this.txt_slide_scan.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clicked_on);
             this.txt_slide_scan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_pressed);
@@ -343,326 +344,40 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label4.Location = new System.Drawing.Point(89, 57);
+            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(69, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 24;
             this.label4.Text = "BarCode:";
             // 
             // txt_bar_code
             // 
-            this.txt_bar_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_bar_code.Location = new System.Drawing.Point(159, 49);
+            this.txt_bar_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_bar_code.Location = new System.Drawing.Point(139, 39);
             this.txt_bar_code.Name = "txt_bar_code";
             this.txt_bar_code.ReadOnly = true;
-            this.txt_bar_code.Size = new System.Drawing.Size(210, 25);
+            this.txt_bar_code.Size = new System.Drawing.Size(210, 23);
             this.txt_bar_code.TabIndex = 21;
             // 
             // txt_country_code
             // 
-            this.txt_country_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_country_code.Location = new System.Drawing.Point(502, 13);
+            this.txt_country_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_country_code.Location = new System.Drawing.Point(482, 3);
             this.txt_country_code.Name = "txt_country_code";
             this.txt_country_code.ReadOnly = true;
-            this.txt_country_code.Size = new System.Drawing.Size(227, 25);
+            this.txt_country_code.Size = new System.Drawing.Size(227, 23);
             this.txt_country_code.TabIndex = 23;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label3.Location = new System.Drawing.Point(400, 21);
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(380, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 17);
+            this.label3.Size = new System.Drawing.Size(94, 16);
             this.label3.TabIndex = 22;
             this.label3.Text = "Country Code:";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(279, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 27);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Find ";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer2.Location = new System.Drawing.Point(1, 179);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.btn_edit_update);
-            this.splitContainer2.Panel1.Controls.Add(this.button5);
-            this.splitContainer2.Panel1.Controls.Add(this.btn_save);
-            this.splitContainer2.Panel1.Controls.Add(this.panel1);
-            this.splitContainer2.Panel1.Controls.Add(this.rdoReserved);
-            this.splitContainer2.Panel1.Controls.Add(this.rdoDamaged);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_comment);
-            this.splitContainer2.Panel1.Controls.Add(this.label9);
-            this.splitContainer2.Panel1.Controls.Add(this.cmb_validation);
-            this.splitContainer2.Panel1.Controls.Add(this.label10);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_upper_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label14);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_average_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label13);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_lower_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label12);
-            this.splitContainer2.Panel1.Controls.Add(this.cmb_density_category);
-            this.splitContainer2.Panel1.Controls.Add(this.label15);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_acquired_date);
-            this.splitContainer2.Panel1.Controls.Add(this.label11);
-            this.splitContainer2.Panel1.Controls.Add(this.cmb_owners);
-            this.splitContainer2.Panel1.Controls.Add(this.label16);
-            this.splitContainer2.Panel1.Controls.Add(this.cmb_specice_category);
-            this.splitContainer2.Panel1.Controls.Add(this.label17);
-            this.splitContainer2.Panel1.Controls.Add(this.cmb_specice_stage);
-            this.splitContainer2.Panel1.Controls.Add(this.label18);
-            this.splitContainer2.Panel1.Controls.Add(this.cmb_specice_specifics);
-            this.splitContainer2.Panel1.Controls.Add(this.label28);
-            this.splitContainer2.Panel1.Controls.Add(this.label5);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.btn_clear_selection);
-            this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer2.Panel2.Controls.Add(this.label19);
-            this.splitContainer2.Size = new System.Drawing.Size(1248, 650);
-            this.splitContainer2.SplitterDistance = 391;
-            this.splitContainer2.TabIndex = 17;
-            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
-            // 
-            // btn_edit_update
-            // 
-            this.btn_edit_update.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_edit_update.Enabled = false;
-            this.btn_edit_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edit_update.Location = new System.Drawing.Point(187, 607);
-            this.btn_edit_update.Name = "btn_edit_update";
-            this.btn_edit_update.Size = new System.Drawing.Size(100, 36);
-            this.btn_edit_update.TabIndex = 93;
-            this.btn_edit_update.Text = "Edit/Update";
-            this.btn_edit_update.UseVisualStyleBackColor = false;
-            this.btn_edit_update.Click += new System.EventHandler(this.btn_edit_update_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Enabled = false;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(293, 607);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 36);
-            this.button5.TabIndex = 92;
-            this.button5.Text = "Delet";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(99, 607);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(82, 36);
-            this.btn_save.TabIndex = 91;
-            this.btn_save.Text = "Save!";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.txt_cabinet_number);
-            this.panel1.Controls.Add(this.txt_box_number);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.txt_drawer_number);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(18, 475);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(357, 122);
-            this.panel1.TabIndex = 90;
-            // 
-            // txt_cabinet_number
-            // 
-            this.txt_cabinet_number.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_cabinet_number.Location = new System.Drawing.Point(180, 23);
-            this.txt_cabinet_number.MaxLength = 10;
-            this.txt_cabinet_number.Name = "txt_cabinet_number";
-            this.txt_cabinet_number.Size = new System.Drawing.Size(168, 25);
-            this.txt_cabinet_number.TabIndex = 64;
-            // 
-            // txt_box_number
-            // 
-            this.txt_box_number.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_box_number.Location = new System.Drawing.Point(180, 85);
-            this.txt_box_number.MaxLength = 10;
-            this.txt_box_number.Name = "txt_box_number";
-            this.txt_box_number.Size = new System.Drawing.Size(168, 25);
-            this.txt_box_number.TabIndex = 63;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label20.Location = new System.Drawing.Point(65, 90);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 17);
-            this.label20.TabIndex = 62;
-            this.label20.Text = "Box Number:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label21.Location = new System.Drawing.Point(50, 59);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(108, 17);
-            this.label21.TabIndex = 61;
-            this.label21.Text = "Drawer Number:";
-            // 
-            // txt_drawer_number
-            // 
-            this.txt_drawer_number.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_drawer_number.Location = new System.Drawing.Point(180, 54);
-            this.txt_drawer_number.MaxLength = 10;
-            this.txt_drawer_number.Name = "txt_drawer_number";
-            this.txt_drawer_number.Size = new System.Drawing.Size(168, 25);
-            this.txt_drawer_number.TabIndex = 60;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label22.Location = new System.Drawing.Point(50, 31);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(111, 17);
-            this.label22.TabIndex = 59;
-            this.label22.Text = "Cabinet Number:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 17);
-            this.label6.TabIndex = 58;
-            this.label6.Text = "Location Card:";
-            // 
-            // rdoReserved
-            // 
-            this.rdoReserved.Controls.Add(this.rdoResevedNo);
-            this.rdoReserved.Controls.Add(this.rdoResevedYes);
-            this.rdoReserved.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.rdoReserved.Location = new System.Drawing.Point(23, 426);
-            this.rdoReserved.Name = "rdoReserved";
-            this.rdoReserved.Size = new System.Drawing.Size(354, 33);
-            this.rdoReserved.TabIndex = 89;
-            this.rdoReserved.TabStop = false;
-            this.rdoReserved.Text = "Reseved Slide?";
-            // 
-            // rdoResevedNo
-            // 
-            this.rdoResevedNo.AutoSize = true;
-            this.rdoResevedNo.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.rdoResevedNo.Location = new System.Drawing.Point(299, 10);
-            this.rdoResevedNo.Name = "rdoResevedNo";
-            this.rdoResevedNo.Size = new System.Drawing.Size(44, 21);
-            this.rdoResevedNo.TabIndex = 1;
-            this.rdoResevedNo.TabStop = true;
-            this.rdoResevedNo.Text = "No";
-            this.rdoResevedNo.UseVisualStyleBackColor = true;
-            // 
-            // rdoResevedYes
-            // 
-            this.rdoResevedYes.AutoSize = true;
-            this.rdoResevedYes.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.rdoResevedYes.Location = new System.Drawing.Point(235, 10);
-            this.rdoResevedYes.Name = "rdoResevedYes";
-            this.rdoResevedYes.Size = new System.Drawing.Size(47, 21);
-            this.rdoResevedYes.TabIndex = 0;
-            this.rdoResevedYes.TabStop = true;
-            this.rdoResevedYes.Text = "Yes";
-            this.rdoResevedYes.UseVisualStyleBackColor = true;
-            // 
-            // rdoDamaged
-            // 
-            this.rdoDamaged.Controls.Add(this.rdoDamagedNo);
-            this.rdoDamaged.Controls.Add(this.rdoDamagedYes);
-            this.rdoDamaged.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.rdoDamaged.Location = new System.Drawing.Point(23, 386);
-            this.rdoDamaged.Name = "rdoDamaged";
-            this.rdoDamaged.Size = new System.Drawing.Size(352, 37);
-            this.rdoDamaged.TabIndex = 88;
-            this.rdoDamaged.TabStop = false;
-            this.rdoDamaged.Text = "isDamaged?";
-            // 
-            // rdoDamagedNo
-            // 
-            this.rdoDamagedNo.AutoSize = true;
-            this.rdoDamagedNo.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.rdoDamagedNo.Location = new System.Drawing.Point(299, 13);
-            this.rdoDamagedNo.Name = "rdoDamagedNo";
-            this.rdoDamagedNo.Size = new System.Drawing.Size(44, 21);
-            this.rdoDamagedNo.TabIndex = 1;
-            this.rdoDamagedNo.TabStop = true;
-            this.rdoDamagedNo.Text = "No";
-            this.rdoDamagedNo.UseVisualStyleBackColor = true;
-            // 
-            // rdoDamagedYes
-            // 
-            this.rdoDamagedYes.AutoSize = true;
-            this.rdoDamagedYes.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.rdoDamagedYes.Location = new System.Drawing.Point(235, 13);
-            this.rdoDamagedYes.Name = "rdoDamagedYes";
-            this.rdoDamagedYes.Size = new System.Drawing.Size(47, 21);
-            this.rdoDamagedYes.TabIndex = 0;
-            this.rdoDamagedYes.TabStop = true;
-            this.rdoDamagedYes.Text = "Yes";
-            this.rdoDamagedYes.UseVisualStyleBackColor = true;
-            // 
-            // txt_comment
-            // 
-            this.txt_comment.Enabled = false;
-            this.txt_comment.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_comment.Location = new System.Drawing.Point(136, 328);
-            this.txt_comment.MaxLength = 150;
-            this.txt_comment.Multiline = true;
-            this.txt_comment.Name = "txt_comment";
-            this.txt_comment.Size = new System.Drawing.Size(239, 52);
-            this.txt_comment.TabIndex = 87;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 331);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 17);
-            this.label9.TabIndex = 86;
-            this.label9.Text = "Comment:";
-            // 
-            // cmb_validation
-            // 
-            this.cmb_validation.DataSource = this.validationsBindingSource;
-            this.cmb_validation.DisplayMember = "validation";
-            this.cmb_validation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_validation.Enabled = false;
-            this.cmb_validation.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_validation.FormattingEnabled = true;
-            this.cmb_validation.Location = new System.Drawing.Point(136, 293);
-            this.cmb_validation.Name = "cmb_validation";
-            this.cmb_validation.Size = new System.Drawing.Size(239, 25);
-            this.cmb_validation.TabIndex = 85;
-            this.cmb_validation.ValueMember = "id";
             // 
             // validationsBindingSource
             // 
@@ -679,92 +394,6 @@
             this.validationDataBindingSource.DataSetName = "validationDataBindingSource";
             this.validationDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 301);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 17);
-            this.label10.TabIndex = 84;
-            this.label10.Text = "Validation:";
-            // 
-            // txt_upper_density
-            // 
-            this.txt_upper_density.Enabled = false;
-            this.txt_upper_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_upper_density.Location = new System.Drawing.Point(136, 179);
-            this.txt_upper_density.MaxLength = 30;
-            this.txt_upper_density.Name = "txt_upper_density";
-            this.txt_upper_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_upper_density.TabIndex = 83;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(15, 184);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 17);
-            this.label14.TabIndex = 82;
-            this.label14.Text = "Upper Density:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txt_average_density
-            // 
-            this.txt_average_density.Enabled = false;
-            this.txt_average_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_average_density.Location = new System.Drawing.Point(136, 153);
-            this.txt_average_density.MaxLength = 30;
-            this.txt_average_density.Name = "txt_average_density";
-            this.txt_average_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_average_density.TabIndex = 81;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(4, 158);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 17);
-            this.label13.TabIndex = 80;
-            this.label13.Text = "Average Density:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txt_lower_density
-            // 
-            this.txt_lower_density.Enabled = false;
-            this.txt_lower_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lower_density.Location = new System.Drawing.Point(136, 127);
-            this.txt_lower_density.MaxLength = 30;
-            this.txt_lower_density.Name = "txt_lower_density";
-            this.txt_lower_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_lower_density.TabIndex = 77;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(15, 132);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 17);
-            this.label12.TabIndex = 79;
-            this.label12.Text = "Lower Density:";
-            // 
-            // cmb_density_category
-            // 
-            this.cmb_density_category.DataSource = this.densitycategoryBindingSource;
-            this.cmb_density_category.DisplayMember = "density_category";
-            this.cmb_density_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_density_category.Enabled = false;
-            this.cmb_density_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_density_category.FormattingEnabled = true;
-            this.cmb_density_category.Location = new System.Drawing.Point(136, 207);
-            this.cmb_density_category.Name = "cmb_density_category";
-            this.cmb_density_category.Size = new System.Drawing.Size(239, 25);
-            this.cmb_density_category.TabIndex = 76;
-            this.cmb_density_category.ValueMember = "id";
-            // 
             // densitycategoryBindingSource
             // 
             this.densitycategoryBindingSource.DataMember = "density_category";
@@ -774,72 +403,6 @@
             // 
             this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
             this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(6, 210);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(116, 17);
-            this.label15.TabIndex = 75;
-            this.label15.Text = "Density Catgeory:";
-            // 
-            // txt_acquired_date
-            // 
-            this.txt_acquired_date.Enabled = false;
-            this.txt_acquired_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_acquired_date.Location = new System.Drawing.Point(136, 264);
-            this.txt_acquired_date.Name = "txt_acquired_date";
-            this.txt_acquired_date.Size = new System.Drawing.Size(239, 25);
-            this.txt_acquired_date.TabIndex = 74;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 270);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 17);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "Aquired Date:";
-            // 
-            // cmb_owners
-            // 
-            this.cmb_owners.DisplayMember = "id";
-            this.cmb_owners.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_owners.Enabled = false;
-            this.cmb_owners.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_owners.FormattingEnabled = true;
-            this.cmb_owners.Location = new System.Drawing.Point(136, 236);
-            this.cmb_owners.Name = "cmb_owners";
-            this.cmb_owners.Size = new System.Drawing.Size(239, 25);
-            this.cmb_owners.TabIndex = 72;
-            this.cmb_owners.ValueMember = "id";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(67, 239);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 17);
-            this.label16.TabIndex = 71;
-            this.label16.Text = "Owner";
-            // 
-            // cmb_specice_category
-            // 
-            this.cmb_specice_category.DataSource = this.speciescategoryBindingSource;
-            this.cmb_specice_category.DisplayMember = "species_category";
-            this.cmb_specice_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_specice_category.Enabled = false;
-            this.cmb_specice_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_specice_category.FormattingEnabled = true;
-            this.cmb_specice_category.Location = new System.Drawing.Point(136, 71);
-            this.cmb_specice_category.Name = "cmb_specice_category";
-            this.cmb_specice_category.Size = new System.Drawing.Size(239, 25);
-            this.cmb_specice_category.TabIndex = 70;
-            this.cmb_specice_category.ValueMember = "id";
             // 
             // speciescategoryBindingSource
             // 
@@ -856,30 +419,6 @@
             this.specieCatgeoryDataSet.DataSetName = "specieCatgeoryDataSet";
             this.specieCatgeoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 79);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 17);
-            this.label17.TabIndex = 69;
-            this.label17.Text = "Speices Category";
-            // 
-            // cmb_specice_stage
-            // 
-            this.cmb_specice_stage.DataSource = this.speciesstagesBindingSource;
-            this.cmb_specice_stage.DisplayMember = "stage";
-            this.cmb_specice_stage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_specice_stage.Enabled = false;
-            this.cmb_specice_stage.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_specice_stage.FormattingEnabled = true;
-            this.cmb_specice_stage.Location = new System.Drawing.Point(136, 99);
-            this.cmb_specice_stage.Name = "cmb_specice_stage";
-            this.cmb_specice_stage.Size = new System.Drawing.Size(239, 25);
-            this.cmb_specice_stage.TabIndex = 68;
-            this.cmb_specice_stage.ValueMember = "id";
-            // 
             // speciesstagesBindingSource
             // 
             this.speciesstagesBindingSource.DataMember = "species_stages";
@@ -894,30 +433,6 @@
             // 
             this.stage_dataBindingSource.DataSetName = "stage_dataBindingSource";
             this.stage_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(71, 104);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(45, 17);
-            this.label18.TabIndex = 67;
-            this.label18.Text = "Stage:";
-            // 
-            // cmb_specice_specifics
-            // 
-            this.cmb_specice_specifics.DataSource = this.speciesspecificsBindingSource;
-            this.cmb_specice_specifics.DisplayMember = "specifics";
-            this.cmb_specice_specifics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_specice_specifics.Enabled = false;
-            this.cmb_specice_specifics.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_specice_specifics.FormattingEnabled = true;
-            this.cmb_specice_specifics.Location = new System.Drawing.Point(136, 44);
-            this.cmb_specice_specifics.Name = "cmb_specice_specifics";
-            this.cmb_specice_specifics.Size = new System.Drawing.Size(239, 25);
-            this.cmb_specice_specifics.TabIndex = 66;
-            this.cmb_specice_specifics.ValueMember = "id";
             // 
             // speciesspecificsBindingSource
             // 
@@ -934,47 +449,107 @@
             this.speciece_specifics_dataBindingSource.DataSetName = "speciece_specifics_dataBindingSource";
             this.speciece_specifics_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label28
+            // ownersBindingSource
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(3, 52);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(102, 17);
-            this.label28.TabIndex = 65;
-            this.label28.Text = "Speices Specific:";
+            this.ownersBindingSource.DataMember = "owners";
+            this.ownersBindingSource.DataSource = this.ownerDataBindingSourceBindingSource;
             // 
-            // label5
+            // ownerDataBindingSourceBindingSource
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(12, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(341, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Slide Information as per the Donor Initial Registration.";
+            this.ownerDataBindingSourceBindingSource.DataSource = this.ownerDataBindingSource;
+            this.ownerDataBindingSourceBindingSource.Position = 0;
             // 
-            // btn_clear_selection
+            // ownerDataBindingSource
             // 
-            this.btn_clear_selection.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_clear_selection.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear_selection.Location = new System.Drawing.Point(732, 12);
-            this.btn_clear_selection.Name = "btn_clear_selection";
-            this.btn_clear_selection.Size = new System.Drawing.Size(110, 26);
-            this.btn_clear_selection.TabIndex = 42;
-            this.btn_clear_selection.Text = "Clear selection";
-            this.btn_clear_selection.UseVisualStyleBackColor = false;
-            this.btn_clear_selection.Click += new System.EventHandler(this.btn_clear_selection_Click);
+            this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
+            this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // recentslidedatasetBindingSource
+            // 
+            this.recentslidedatasetBindingSource.DataMember = "recent_slide_dataset";
+            this.recentslidedatasetBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // slidesBindingSource
+            // 
+            this.slidesBindingSource.DataMember = "slides";
+            this.slidesBindingSource.DataSource = this.sbmsDataSetBindingSource;
+            // 
+            // sbmsDataSetBindingSource
+            // 
+            this.sbmsDataSetBindingSource.DataSource = this.sbmsDataSet;
+            this.sbmsDataSetBindingSource.Position = 0;
+            // 
+            // slidesTableAdapter
+            // 
+            this.slidesTableAdapter.ClearBeforeFill = true;
+            // 
+            // recent_slide_datasetTableAdapter
+            // 
+            this.recent_slide_datasetTableAdapter.ClearBeforeFill = true;
+            // 
+            // ownersTableAdapter
+            // 
+            this.ownersTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_specificsTableAdapter
+            // 
+            this.species_specificsTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_categoryTableAdapter
+            // 
+            this.species_categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_stagesTableAdapter
+            // 
+            this.species_stagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // validationsTableAdapter
+            // 
+            this.validationsTableAdapter.ClearBeforeFill = true;
+            // 
+            // density_categoryTableAdapter
+            // 
+            this.density_categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // desnityCatbindingDataSourceBindingSource
+            // 
+            this.desnityCatbindingDataSourceBindingSource.DataSource = this.desnityCat_bindingDataSource;
+            this.desnityCatbindingDataSourceBindingSource.Position = 0;
+            // 
+            // speciece_specifics_dataBindingSource1
+            // 
+            this.speciece_specifics_dataBindingSource1.DataSetName = "speciece_specifics_dataBindingSource";
+            this.speciece_specifics_dataBindingSource1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // recentslidedatasetBindingSource1
+            // 
+            this.recentslidedatasetBindingSource1.DataMember = "recent_slide_dataset";
+            this.recentslidedatasetBindingSource1.DataSource = this.sbmsDataSetBindingSource;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label19.ForeColor = System.Drawing.Color.Blue;
+            this.label19.Location = new System.Drawing.Point(17, 12);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 17);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "Slides Entered :";
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(16, 39);
+            this.tabControl1.Location = new System.Drawing.Point(16, 47);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(830, 597);
+            this.tabControl1.Size = new System.Drawing.Size(885, 486);
             this.tabControl1.TabIndex = 48;
             // 
             // tabPage1
@@ -988,7 +563,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(822, 571);
+            this.tabPage1.Size = new System.Drawing.Size(877, 460);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "100 Recent Slides";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1005,13 +580,23 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(631, 6);
+            this.button2.Location = new System.Drawing.Point(684, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 33);
             this.button2.TabIndex = 49;
             this.button2.Text = "Refresh!";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(279, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 27);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Find ";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // txt_search_slide_recent
             // 
@@ -1065,7 +650,7 @@
             this.dgr_recentslides.ShowCellToolTips = false;
             this.dgr_recentslides.ShowEditingIcon = false;
             this.dgr_recentslides.ShowRowErrors = false;
-            this.dgr_recentslides.Size = new System.Drawing.Size(810, 523);
+            this.dgr_recentslides.Size = new System.Drawing.Size(865, 412);
             this.dgr_recentslides.TabIndex = 0;
             this.dgr_recentslides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selected_row);
             // 
@@ -1175,21 +760,6 @@
             this.ownerrecentslidesGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ownerrecentslidesGridViewColumn.ValueMember = "id";
             // 
-            // ownersBindingSource
-            // 
-            this.ownersBindingSource.DataMember = "owners";
-            this.ownersBindingSource.DataSource = this.ownerDataBindingSourceBindingSource;
-            // 
-            // ownerDataBindingSourceBindingSource
-            // 
-            this.ownerDataBindingSourceBindingSource.DataSource = this.ownerDataBindingSource;
-            this.ownerDataBindingSourceBindingSource.Position = 0;
-            // 
-            // ownerDataBindingSource
-            // 
-            this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
-            this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cabinetrecentslidesGridViewColumn
             // 
             this.cabinetrecentslidesGridViewColumn.DataPropertyName = "cabinet_number";
@@ -1279,20 +849,10 @@
             this.ubyrecentslidesGridViewColumn.HeaderText = "UpdatedBy";
             this.ubyrecentslidesGridViewColumn.Name = "ubyrecentslidesGridViewColumn";
             // 
-            // recentslidedatasetBindingSource
-            // 
-            this.recentslidedatasetBindingSource.DataMember = "recent_slide_dataset";
-            this.recentslidedatasetBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(712, 6);
+            this.button7.Location = new System.Drawing.Point(774, 5);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(97, 33);
             this.button7.TabIndex = 31;
@@ -1310,7 +870,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(822, 571);
+            this.tabPage2.Size = new System.Drawing.Size(877, 460);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "All Slides in Database";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1349,7 +909,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(712, 6);
+            this.button1.Location = new System.Drawing.Point(774, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 33);
             this.button1.TabIndex = 32;
@@ -1358,7 +918,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(631, 6);
+            this.button4.Location = new System.Drawing.Point(693, 9);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 33);
             this.button4.TabIndex = 47;
@@ -1371,6 +931,7 @@
             this.dgr_allslides.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgr_allslides.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgr_allslides.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDallsldesGridViewColumn,
             this.barcodeallslidesGridViewTextBoxColumn,
             this.donorallslidesGridViewTextBoxColumn,
             this.sequenceallslidesGridViewTextBoxColumn,
@@ -1398,6 +959,7 @@
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23});
             this.dgr_allslides.DataSource = this.slidesBindingSource;
+            this.dgr_allslides.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgr_allslides.Location = new System.Drawing.Point(6, 45);
             this.dgr_allslides.Name = "dgr_allslides";
             this.dgr_allslides.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1405,8 +967,530 @@
             this.dgr_allslides.ShowCellToolTips = false;
             this.dgr_allslides.ShowEditingIcon = false;
             this.dgr_allslides.ShowRowErrors = false;
-            this.dgr_allslides.Size = new System.Drawing.Size(803, 523);
+            this.dgr_allslides.Size = new System.Drawing.Size(865, 435);
             this.dgr_allslides.TabIndex = 1;
+            this.dgr_allslides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selected_row_all_slides);
+            // 
+            // btn_clear_selection
+            // 
+            this.btn_clear_selection.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_clear_selection.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_clear_selection.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear_selection.Location = new System.Drawing.Point(781, 15);
+            this.btn_clear_selection.Name = "btn_clear_selection";
+            this.btn_clear_selection.Size = new System.Drawing.Size(110, 34);
+            this.btn_clear_selection.TabIndex = 42;
+            this.btn_clear_selection.Text = "Clear selection";
+            this.btn_clear_selection.UseVisualStyleBackColor = false;
+            this.btn_clear_selection.Click += new System.EventHandler(this.btn_clear_selection_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(341, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Slide Information as per the Donor Initial Registration.";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(12, 28);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(102, 17);
+            this.label28.TabIndex = 65;
+            this.label28.Text = "Speices Specific:";
+            // 
+            // cmb_specice_specifics
+            // 
+            this.cmb_specice_specifics.DataSource = this.speciesspecificsBindingSource;
+            this.cmb_specice_specifics.DisplayMember = "specifics";
+            this.cmb_specice_specifics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_specice_specifics.Enabled = false;
+            this.cmb_specice_specifics.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_specice_specifics.FormattingEnabled = true;
+            this.cmb_specice_specifics.Location = new System.Drawing.Point(145, 20);
+            this.cmb_specice_specifics.Name = "cmb_specice_specifics";
+            this.cmb_specice_specifics.Size = new System.Drawing.Size(239, 25);
+            this.cmb_specice_specifics.TabIndex = 66;
+            this.cmb_specice_specifics.ValueMember = "id";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(80, 80);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(45, 17);
+            this.label18.TabIndex = 67;
+            this.label18.Text = "Stage:";
+            // 
+            // cmb_specice_stage
+            // 
+            this.cmb_specice_stage.DataSource = this.speciesstagesBindingSource;
+            this.cmb_specice_stage.DisplayMember = "stage";
+            this.cmb_specice_stage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_specice_stage.Enabled = false;
+            this.cmb_specice_stage.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_specice_stage.FormattingEnabled = true;
+            this.cmb_specice_stage.Location = new System.Drawing.Point(145, 75);
+            this.cmb_specice_stage.Name = "cmb_specice_stage";
+            this.cmb_specice_stage.Size = new System.Drawing.Size(239, 25);
+            this.cmb_specice_stage.TabIndex = 68;
+            this.cmb_specice_stage.ValueMember = "id";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(12, 55);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 17);
+            this.label17.TabIndex = 69;
+            this.label17.Text = "Speices Category";
+            // 
+            // cmb_specice_category
+            // 
+            this.cmb_specice_category.DataSource = this.speciescategoryBindingSource;
+            this.cmb_specice_category.DisplayMember = "species_category";
+            this.cmb_specice_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_specice_category.Enabled = false;
+            this.cmb_specice_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_specice_category.FormattingEnabled = true;
+            this.cmb_specice_category.Location = new System.Drawing.Point(145, 47);
+            this.cmb_specice_category.Name = "cmb_specice_category";
+            this.cmb_specice_category.Size = new System.Drawing.Size(239, 25);
+            this.cmb_specice_category.TabIndex = 70;
+            this.cmb_specice_category.ValueMember = "id";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(76, 215);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(49, 17);
+            this.label16.TabIndex = 71;
+            this.label16.Text = "Owner";
+            // 
+            // cmb_owners
+            // 
+            this.cmb_owners.DisplayMember = "id";
+            this.cmb_owners.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_owners.Enabled = false;
+            this.cmb_owners.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_owners.FormattingEnabled = true;
+            this.cmb_owners.Location = new System.Drawing.Point(145, 212);
+            this.cmb_owners.Name = "cmb_owners";
+            this.cmb_owners.Size = new System.Drawing.Size(239, 25);
+            this.cmb_owners.TabIndex = 72;
+            this.cmb_owners.ValueMember = "id";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(32, 246);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(91, 17);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "Aquired Date:";
+            // 
+            // txt_acquired_date
+            // 
+            this.txt_acquired_date.Enabled = false;
+            this.txt_acquired_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_acquired_date.Location = new System.Drawing.Point(145, 240);
+            this.txt_acquired_date.Name = "txt_acquired_date";
+            this.txt_acquired_date.Size = new System.Drawing.Size(239, 25);
+            this.txt_acquired_date.TabIndex = 74;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(15, 186);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(116, 17);
+            this.label15.TabIndex = 75;
+            this.label15.Text = "Density Catgeory:";
+            // 
+            // cmb_density_category
+            // 
+            this.cmb_density_category.DataSource = this.densitycategoryBindingSource;
+            this.cmb_density_category.DisplayMember = "density_category";
+            this.cmb_density_category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_density_category.Enabled = false;
+            this.cmb_density_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_density_category.FormattingEnabled = true;
+            this.cmb_density_category.Location = new System.Drawing.Point(145, 183);
+            this.cmb_density_category.Name = "cmb_density_category";
+            this.cmb_density_category.Size = new System.Drawing.Size(239, 25);
+            this.cmb_density_category.TabIndex = 76;
+            this.cmb_density_category.ValueMember = "id";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(24, 108);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 17);
+            this.label12.TabIndex = 79;
+            this.label12.Text = "Lower Density:";
+            // 
+            // txt_lower_density
+            // 
+            this.txt_lower_density.Enabled = false;
+            this.txt_lower_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lower_density.Location = new System.Drawing.Point(145, 103);
+            this.txt_lower_density.MaxLength = 30;
+            this.txt_lower_density.Name = "txt_lower_density";
+            this.txt_lower_density.Size = new System.Drawing.Size(239, 25);
+            this.txt_lower_density.TabIndex = 77;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(13, 134);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 17);
+            this.label13.TabIndex = 80;
+            this.label13.Text = "Average Density:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txt_average_density
+            // 
+            this.txt_average_density.Enabled = false;
+            this.txt_average_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_average_density.Location = new System.Drawing.Point(145, 129);
+            this.txt_average_density.MaxLength = 30;
+            this.txt_average_density.Name = "txt_average_density";
+            this.txt_average_density.Size = new System.Drawing.Size(239, 25);
+            this.txt_average_density.TabIndex = 81;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(24, 160);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 17);
+            this.label14.TabIndex = 82;
+            this.label14.Text = "Upper Density:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txt_upper_density
+            // 
+            this.txt_upper_density.Enabled = false;
+            this.txt_upper_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_upper_density.Location = new System.Drawing.Point(145, 155);
+            this.txt_upper_density.MaxLength = 30;
+            this.txt_upper_density.Name = "txt_upper_density";
+            this.txt_upper_density.Size = new System.Drawing.Size(239, 25);
+            this.txt_upper_density.TabIndex = 83;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(42, 276);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 17);
+            this.label10.TabIndex = 84;
+            this.label10.Text = "Validation:";
+            // 
+            // cmb_validation
+            // 
+            this.cmb_validation.DataSource = this.validationsBindingSource;
+            this.cmb_validation.DisplayMember = "validation";
+            this.cmb_validation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_validation.Enabled = false;
+            this.cmb_validation.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_validation.FormattingEnabled = true;
+            this.cmb_validation.Location = new System.Drawing.Point(144, 268);
+            this.cmb_validation.Name = "cmb_validation";
+            this.cmb_validation.Size = new System.Drawing.Size(239, 25);
+            this.cmb_validation.TabIndex = 85;
+            this.cmb_validation.ValueMember = "id";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(42, 306);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 17);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "Comment:";
+            // 
+            // txt_comment
+            // 
+            this.txt_comment.Enabled = false;
+            this.txt_comment.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_comment.Location = new System.Drawing.Point(145, 299);
+            this.txt_comment.MaxLength = 150;
+            this.txt_comment.Multiline = true;
+            this.txt_comment.Name = "txt_comment";
+            this.txt_comment.Size = new System.Drawing.Size(238, 36);
+            this.txt_comment.TabIndex = 87;
+            // 
+            // rdoDamaged
+            // 
+            this.rdoDamaged.Controls.Add(this.rdoDamagedNo);
+            this.rdoDamaged.Controls.Add(this.rdoDamagedYes);
+            this.rdoDamaged.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoDamaged.Location = new System.Drawing.Point(32, 341);
+            this.rdoDamaged.Name = "rdoDamaged";
+            this.rdoDamaged.Size = new System.Drawing.Size(352, 37);
+            this.rdoDamaged.TabIndex = 88;
+            this.rdoDamaged.TabStop = false;
+            this.rdoDamaged.Text = "isDamaged?";
+            // 
+            // rdoDamagedNo
+            // 
+            this.rdoDamagedNo.AutoSize = true;
+            this.rdoDamagedNo.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoDamagedNo.Location = new System.Drawing.Point(299, 13);
+            this.rdoDamagedNo.Name = "rdoDamagedNo";
+            this.rdoDamagedNo.Size = new System.Drawing.Size(41, 19);
+            this.rdoDamagedNo.TabIndex = 1;
+            this.rdoDamagedNo.TabStop = true;
+            this.rdoDamagedNo.Text = "No";
+            this.rdoDamagedNo.UseVisualStyleBackColor = true;
+            // 
+            // rdoDamagedYes
+            // 
+            this.rdoDamagedYes.AutoSize = true;
+            this.rdoDamagedYes.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoDamagedYes.Location = new System.Drawing.Point(235, 13);
+            this.rdoDamagedYes.Name = "rdoDamagedYes";
+            this.rdoDamagedYes.Size = new System.Drawing.Size(43, 19);
+            this.rdoDamagedYes.TabIndex = 0;
+            this.rdoDamagedYes.TabStop = true;
+            this.rdoDamagedYes.Text = "Yes";
+            this.rdoDamagedYes.UseVisualStyleBackColor = true;
+            // 
+            // rdoReserved
+            // 
+            this.rdoReserved.Controls.Add(this.rdoResevedNo);
+            this.rdoReserved.Controls.Add(this.rdoResevedYes);
+            this.rdoReserved.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoReserved.Location = new System.Drawing.Point(32, 379);
+            this.rdoReserved.Name = "rdoReserved";
+            this.rdoReserved.Size = new System.Drawing.Size(354, 33);
+            this.rdoReserved.TabIndex = 89;
+            this.rdoReserved.TabStop = false;
+            this.rdoReserved.Text = "Reseved Slide?";
+            // 
+            // rdoResevedNo
+            // 
+            this.rdoResevedNo.AutoSize = true;
+            this.rdoResevedNo.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoResevedNo.Location = new System.Drawing.Point(299, 10);
+            this.rdoResevedNo.Name = "rdoResevedNo";
+            this.rdoResevedNo.Size = new System.Drawing.Size(41, 19);
+            this.rdoResevedNo.TabIndex = 1;
+            this.rdoResevedNo.TabStop = true;
+            this.rdoResevedNo.Text = "No";
+            this.rdoResevedNo.UseVisualStyleBackColor = true;
+            // 
+            // rdoResevedYes
+            // 
+            this.rdoResevedYes.AutoSize = true;
+            this.rdoResevedYes.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoResevedYes.Location = new System.Drawing.Point(235, 10);
+            this.rdoResevedYes.Name = "rdoResevedYes";
+            this.rdoResevedYes.Size = new System.Drawing.Size(43, 19);
+            this.rdoResevedYes.TabIndex = 0;
+            this.rdoResevedYes.TabStop = true;
+            this.rdoResevedYes.Text = "Yes";
+            this.rdoResevedYes.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txt_cabinet_number);
+            this.panel1.Controls.Add(this.txt_box_number);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.txt_drawer_number);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(29, 418);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(357, 106);
+            this.panel1.TabIndex = 90;
+            // 
+            // txt_cabinet_number
+            // 
+            this.txt_cabinet_number.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_cabinet_number.Location = new System.Drawing.Point(182, 9);
+            this.txt_cabinet_number.MaxLength = 10;
+            this.txt_cabinet_number.Name = "txt_cabinet_number";
+            this.txt_cabinet_number.Size = new System.Drawing.Size(168, 25);
+            this.txt_cabinet_number.TabIndex = 64;
+            // 
+            // txt_box_number
+            // 
+            this.txt_box_number.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_box_number.Location = new System.Drawing.Point(182, 71);
+            this.txt_box_number.MaxLength = 10;
+            this.txt_box_number.Name = "txt_box_number";
+            this.txt_box_number.Size = new System.Drawing.Size(168, 25);
+            this.txt_box_number.TabIndex = 63;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.label20.Location = new System.Drawing.Point(67, 76);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 17);
+            this.label20.TabIndex = 62;
+            this.label20.Text = "Box Number:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.label21.Location = new System.Drawing.Point(52, 45);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(108, 17);
+            this.label21.TabIndex = 61;
+            this.label21.Text = "Drawer Number:";
+            // 
+            // txt_drawer_number
+            // 
+            this.txt_drawer_number.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_drawer_number.Location = new System.Drawing.Point(182, 40);
+            this.txt_drawer_number.MaxLength = 10;
+            this.txt_drawer_number.Name = "txt_drawer_number";
+            this.txt_drawer_number.Size = new System.Drawing.Size(168, 25);
+            this.txt_drawer_number.TabIndex = 60;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.label22.Location = new System.Drawing.Point(52, 17);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(111, 17);
+            this.label22.TabIndex = 59;
+            this.label22.Text = "Cabinet Number:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 17);
+            this.label6.TabIndex = 58;
+            this.label6.Text = "Location Card:";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainer2.Location = new System.Drawing.Point(1, 132);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.panel1);
+            this.splitContainer2.Panel1.Controls.Add(this.rdoReserved);
+            this.splitContainer2.Panel1.Controls.Add(this.rdoDamaged);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_comment);
+            this.splitContainer2.Panel1.Controls.Add(this.label9);
+            this.splitContainer2.Panel1.Controls.Add(this.cmb_validation);
+            this.splitContainer2.Panel1.Controls.Add(this.label10);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_upper_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label14);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_average_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label13);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_lower_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label12);
+            this.splitContainer2.Panel1.Controls.Add(this.cmb_density_category);
+            this.splitContainer2.Panel1.Controls.Add(this.label15);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_acquired_date);
+            this.splitContainer2.Panel1.Controls.Add(this.label11);
+            this.splitContainer2.Panel1.Controls.Add(this.cmb_owners);
+            this.splitContainer2.Panel1.Controls.Add(this.label16);
+            this.splitContainer2.Panel1.Controls.Add(this.cmb_specice_category);
+            this.splitContainer2.Panel1.Controls.Add(this.label17);
+            this.splitContainer2.Panel1.Controls.Add(this.cmb_specice_stage);
+            this.splitContainer2.Panel1.Controls.Add(this.label18);
+            this.splitContainer2.Panel1.Controls.Add(this.cmb_specice_specifics);
+            this.splitContainer2.Panel1.Controls.Add(this.label28);
+            this.splitContainer2.Panel1.Controls.Add(this.label5);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.btn_edit_update);
+            this.splitContainer2.Panel2.Controls.Add(this.button5);
+            this.splitContainer2.Panel2.Controls.Add(this.btn_clear_selection);
+            this.splitContainer2.Panel2.Controls.Add(this.btn_save);
+            this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer2.Panel2.Controls.Add(this.label19);
+            this.splitContainer2.Size = new System.Drawing.Size(1350, 560);
+            this.splitContainer2.SplitterDistance = 436;
+            this.splitContainer2.TabIndex = 17;
+            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
+            // 
+            // btn_edit_update
+            // 
+            this.btn_edit_update.BackColor = System.Drawing.Color.Yellow;
+            this.btn_edit_update.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_edit_update.Enabled = false;
+            this.btn_edit_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit_update.Location = new System.Drawing.Point(591, 13);
+            this.btn_edit_update.Name = "btn_edit_update";
+            this.btn_edit_update.Size = new System.Drawing.Size(100, 36);
+            this.btn_edit_update.TabIndex = 96;
+            this.btn_edit_update.Text = "Edit/Update";
+            this.btn_edit_update.UseVisualStyleBackColor = false;
+            this.btn_edit_update.Click += new System.EventHandler(this.btn_edit_update_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button5.Enabled = false;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(697, 13);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(82, 36);
+            this.button5.TabIndex = 95;
+            this.button5.Text = "Delet";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.Green;
+            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_save.Location = new System.Drawing.Point(503, 13);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(82, 36);
+            this.btn_save.TabIndex = 94;
+            this.btn_save.Text = "Save!";
+            this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // IDallsldesGridViewColumn
+            // 
+            this.IDallsldesGridViewColumn.DataPropertyName = "id";
+            this.IDallsldesGridViewColumn.HeaderText = "id";
+            this.IDallsldesGridViewColumn.Name = "IDallsldesGridViewColumn";
+            this.IDallsldesGridViewColumn.ReadOnly = true;
+            this.IDallsldesGridViewColumn.Visible = false;
             // 
             // barcodeallslidesGridViewTextBoxColumn
             // 
@@ -1589,84 +1673,19 @@
             this.dataGridViewTextBoxColumn23.HeaderText = "Uby";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             // 
-            // slidesBindingSource
-            // 
-            this.slidesBindingSource.DataMember = "slides";
-            this.slidesBindingSource.DataSource = this.sbmsDataSetBindingSource;
-            // 
-            // sbmsDataSetBindingSource
-            // 
-            this.sbmsDataSetBindingSource.DataSource = this.sbmsDataSet;
-            this.sbmsDataSetBindingSource.Position = 0;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label19.ForeColor = System.Drawing.Color.Blue;
-            this.label19.Location = new System.Drawing.Point(17, 12);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(101, 17);
-            this.label19.TabIndex = 46;
-            this.label19.Text = "Slides Entered :";
-            // 
-            // slidesTableAdapter
-            // 
-            this.slidesTableAdapter.ClearBeforeFill = true;
-            // 
-            // recent_slide_datasetTableAdapter
-            // 
-            this.recent_slide_datasetTableAdapter.ClearBeforeFill = true;
-            // 
-            // ownersTableAdapter
-            // 
-            this.ownersTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_specificsTableAdapter
-            // 
-            this.species_specificsTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_categoryTableAdapter
-            // 
-            this.species_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_stagesTableAdapter
-            // 
-            this.species_stagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // validationsTableAdapter
-            // 
-            this.validationsTableAdapter.ClearBeforeFill = true;
-            // 
-            // density_categoryTableAdapter
-            // 
-            this.density_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // desnityCatbindingDataSourceBindingSource
-            // 
-            this.desnityCatbindingDataSourceBindingSource.DataSource = this.desnityCat_bindingDataSource;
-            this.desnityCatbindingDataSourceBindingSource.Position = 0;
-            // 
-            // speciece_specifics_dataBindingSource1
-            // 
-            this.speciece_specifics_dataBindingSource1.DataSetName = "speciece_specifics_dataBindingSource";
-            this.speciece_specifics_dataBindingSource1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // recentslidedatasetBindingSource1
-            // 
-            this.recentslidedatasetBindingSource1.DataMember = "recent_slide_dataset";
-            this.recentslidedatasetBindingSource1.DataSource = this.sbmsDataSetBindingSource;
-            // 
             // Slides
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1261, 841);
+            this.CancelButton = this.btn_clear_selection;
+            this.ClientSize = new System.Drawing.Size(1357, 711);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Slides";
             this.Text = "Slides";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Slides_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -1674,18 +1693,6 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            this.splitContainer2.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.rdoReserved.ResumeLayout(false);
-            this.rdoReserved.PerformLayout();
-            this.rdoDamaged.ResumeLayout(false);
-            this.rdoDamaged.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.validationsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSourceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.validationDataBindingSource)).EndInit();
@@ -1700,24 +1707,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciecespecificsdataBindingSourceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgr_recentslides)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSourceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentslidedatasetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgr_allslides)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slidesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.desnityCatbindingDataSourceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciectypeBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentslidedatasetBindingSource1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgr_recentslides)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgr_allslides)).EndInit();
+            this.rdoDamaged.ResumeLayout(false);
+            this.rdoDamaged.PerformLayout();
+            this.rdoReserved.ResumeLayout(false);
+            this.rdoReserved.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1735,17 +1754,8 @@
         private System.Windows.Forms.TextBox txt_slide_sequence;
         private System.Windows.Forms.TextBox txt_donor_code;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dgr_recentslides;
         private System.Windows.Forms.BindingSource sbmsDataSetBindingSource;
         private sbmsDataSet sbmsDataSet;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.BindingSource slidesBindingSource;
         private sbmsDataSetTableAdapters.slidesTableAdapter slidesTableAdapter;
         private System.Windows.Forms.BindingSource recentslidedatasetBindingSource;
@@ -1761,30 +1771,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lowerdensityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn averagedensityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn upperdensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txt_comment;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cmb_validation;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_upper_density;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_average_density;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_lower_density;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmb_density_category;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker txt_acquired_date;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cmb_owners;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cmb_specice_category;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cmb_specice_stage;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox cmb_specice_specifics;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource speciecespecificsdataBindingSourceBindingSource;
         private speciece_specifics_dataBindingSource speciece_specifics_dataBindingSource;
         private System.Windows.Forms.BindingSource speciesspecificsBindingSource;
@@ -1801,7 +1787,6 @@
         private validationDataBindingSource validationDataBindingSource;
         private System.Windows.Forms.BindingSource validationsBindingSource;
         private validationDataBindingSourceTableAdapters.validationsTableAdapter validationsTableAdapter;
-        private System.Windows.Forms.Button button3;
         private desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter density_categoryTableAdapter;
         private desnityCat_bindingDataSource desnityCat_bindingDataSource;
         private System.Windows.Forms.BindingSource desnityCatbindingDataSourceBindingSource;
@@ -1827,60 +1812,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updateddate1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isWHODataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isActive1DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridView dgr_allslides;
-        private System.Windows.Forms.GroupBox rdoReserved;
-        private System.Windows.Forms.RadioButton rdoResevedNo;
-        private System.Windows.Forms.RadioButton rdoResevedYes;
-        private System.Windows.Forms.GroupBox rdoDamaged;
-        private System.Windows.Forms.RadioButton rdoDamagedNo;
-        private System.Windows.Forms.RadioButton rdoDamagedYes;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txt_cabinet_number;
-        private System.Windows.Forms.TextBox txt_box_number;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txt_drawer_number;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btn_edit_update;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txt_search_slide_recent;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button btn_find_all;
-        private System.Windows.Forms.TextBox txt_search_all;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeallslidesGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donorallslidesGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceallslidesGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccallslidesGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ssallslidesGridViewColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn scallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn stallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dcallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ldallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn udallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ownerallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cabinetallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drawerallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adateallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn vdateallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn commentallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isDamagedallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isReservedallsldesGridViewColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isBorroweddataGridViewCheckBoxColumnrecentslides;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private speciece_specifics_dataBindingSource speciece_specifics_dataBindingSource1;
         private System.Windows.Forms.BindingSource speciectypeBindingSource2;
         private System.Windows.Forms.Label lbl_editing_status;
         private System.Windows.Forms.BindingSource recentslidedatasetBindingSource1;
-        private System.Windows.Forms.Button btn_clear_selection;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txt_search_slide_recent;
+        private System.Windows.Forms.DataGridView dgr_recentslides;
         private System.Windows.Forms.DataGridViewTextBoxColumn idrecentslidesGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcoderecentslidesGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donorcodrecentslidesGridViewColumn;
@@ -1908,5 +1851,82 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cdaterecentslidesGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cbyrecentslidesGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ubyrecentslidesGridViewColumn;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btn_find_all;
+        private System.Windows.Forms.TextBox txt_search_all;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dgr_allslides;
+        private System.Windows.Forms.Button btn_clear_selection;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox cmb_specice_specifics;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cmb_specice_stage;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cmb_specice_category;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cmb_owners;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker txt_acquired_date;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cmb_density_category;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_lower_density;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt_average_density;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txt_upper_density;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmb_validation;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_comment;
+        private System.Windows.Forms.GroupBox rdoDamaged;
+        private System.Windows.Forms.RadioButton rdoDamagedNo;
+        private System.Windows.Forms.RadioButton rdoDamagedYes;
+        private System.Windows.Forms.GroupBox rdoReserved;
+        private System.Windows.Forms.RadioButton rdoResevedNo;
+        private System.Windows.Forms.RadioButton rdoResevedYes;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txt_cabinet_number;
+        private System.Windows.Forms.TextBox txt_box_number;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txt_drawer_number;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Button btn_edit_update;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeallslidesGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorallslidesGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceallslidesGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccallslidesGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ssallslidesGridViewColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn scallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn stallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dcallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ldallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn udallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ownerallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cabinetallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drawerallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boxallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adateallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn vdateallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isDamagedallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isReservedallsldesGridViewColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isBorroweddataGridViewCheckBoxColumnrecentslides;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
     }
 }

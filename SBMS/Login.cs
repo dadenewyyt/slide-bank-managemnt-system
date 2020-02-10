@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SBMS.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace SBMS
 {
     public partial class Login : Form
     {
-        private  Boolean login_flag = false; 
+        private Boolean login_flag = false;
 
         public Login()
         {
@@ -58,52 +59,62 @@ namespace SBMS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panel_progress.Show();
+            //this.Modal = true;
+
             timer1.Enabled = true;
-            login_flag = false;
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            panel_progress.Show();
             if (progressBar1.Value <= 99)
             {
                 progressBar1.Value = progressBar1.Value + 1;
-              
             }
-            else
+
+            if (progressBar1.Value == 100)
             {
                 timer1.Stop();
+                login_flag = UserAccountServices.login(txt_name.Text.ToString().Trim(), txt_pass.Text.ToString());
 
-                if (progressBar1.Value ==100 && login_flag==true)
+                if (login_flag == true)
                 {
                     panel_progress.Hide();
-                  
+                    this.Hide();
+                    TopMost = false;
                     MDIParent1 mdiParent1 = new MDIParent1();
                     mdiParent1.ShowDialog();
-                    Visible = false;
-                    TopMost = false;
+
                 }
-
-                if (progressBar1.Value == 100 && login_flag == false)
+                if (login_flag == false && progressBar1.Value == 100)
                 {
-                    panel_progress.Hide();
-              
                     MessageBox.Show("Inorrect , Could you please make sure you type a correct username and password", "Security", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Visible = false;
-                    TopMost = false;
-                    MDIParent1 mdiParent1 = new MDIParent1();
-                    mdiParent1.ShowDialog();
-                    
+                    timer1.Enabled = false;
+                    panel_progress.Hide();
+                    progressBar1.Value = 0;
+                    panel_progress.Hide();
+
+                    //this.Show();
+                    //TopMost = false;
                 }
             }
         }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void enter_pressed(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void enter_key(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                button4_Click(null, null);
+            }
         }
     }
 }
