@@ -69,3 +69,5 @@ C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csp
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Users.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.ArchiveSummary.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Users.resources
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Selection.resources
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.SlideHistory.resources

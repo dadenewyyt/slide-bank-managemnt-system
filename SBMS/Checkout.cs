@@ -39,16 +39,18 @@ namespace SBMS
           
 
             Dictionary<int, string> borrowerDic  = new Dictionary<int, string>();
-
+            borrowerDic.Add(0, "--Select Borrower/Contact---");
             foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
             {
-                borrowerDic.Add(Convert.ToInt32(row["id"]), "Full Name:" + row["fname"] + " " + row["lname"] + "Org:"+ row["organisation"] + " " + row["job_title"]);
+                borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   "+ row["organisation"] + "  Position:  " + row["job_title"]);
             }
+           
             cmb_borrowers.DataSource =  new BindingSource(borrowerDic, null);
             ;
 
             cmb_borrowers.DisplayMember = "Value";
             cmb_borrowers.ValueMember = "Key";
+            //cmb_borrowers.SelectedItem = 0;
             //cmb_borrowers.Bind();
             // this.borr.Fill(this.sbmsDataSet.slides_for_checkout);
 
@@ -107,7 +109,13 @@ namespace SBMS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //validate
+            btn_dayCalculaor_Click(null,null);
+            if (Int32.Parse(txt_days.Text.ToString()) == 0 || Int32.Parse(txt_days.Text.ToString()) < 0) {
+                MessageBox.Show("Checkout date can not be O days or -ve Day Value.(You can not borrow backward ?", "Invalid ");
+                return;
 
+            }
         }
 
         private void selected_slides_checkout_ready(object sender, DataGridViewCellEventArgs e)
@@ -238,7 +246,7 @@ namespace SBMS
             DateTime d1 = txt_from_date.Value;
             DateTime d2 = txt_due_date.Value;
             TimeSpan days =  d2 - d1;
-            txt_days.Text = Convert.ToString(days.TotalDays);
+            txt_days.Text = Convert.ToString(Math.Round(Double.Parse(days.TotalDays.ToString()),1));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -251,7 +259,7 @@ namespace SBMS
                 timer1.Enabled = false;
 
                 bool isValid = ValidateSearch();
-
+                
                 if (isValid == true)
                 {
 
@@ -267,6 +275,64 @@ namespace SBMS
 
                 }
             }
+        }
+
+        private void chk_SS_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chk_SS.Checked)
+                cmb_specice_specifics.Enabled = false;
+            else
+                cmb_specice_specifics.Enabled = true;
+
+        }
+
+        private void chk_SC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chk_SC.Checked)
+                cmb_specice_category.Enabled = false;
+            else
+                cmb_specice_category.Enabled = true;
+        }
+
+        private void chk_S_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chk_S.Checked)
+                cmb_specice_stage.Enabled = false;
+            else
+                cmb_specice_stage.Enabled = true;
+        }
+
+        private void chk_DC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chk_DC.Checked)
+                cmb_density_category.Enabled = false;
+            else
+                cmb_density_category.Enabled = true;
+        }
+
+        private void btn_Add_borrower_Click(object sender, EventArgs e)
+        {
+            Borrowers b = new Borrowers();
+         
+            b.MdiParent = this.ParentForm;
+            b.Show();
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            cmb_borrowers.Refresh();
+            cmb_borrowers.DataSource = null;
+            cmb_borrowers.Items.Clear();
+            Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
+            borrowerDic.Add(0, "--Select Borrower/Contact---");
+            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            {
+                borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   " + row["organisation"] + "  Position:  " + row["job_title"]);
+            }
+
+            cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
+            cmb_borrowers.DisplayMember = "Value";
+            cmb_borrowers.ValueMember = "Key";
         }
     }
 }

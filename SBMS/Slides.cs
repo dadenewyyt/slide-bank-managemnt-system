@@ -17,6 +17,7 @@ namespace SBMS
        private int slide_id = -1;
         DataFetchService dataFetchService;
         public int donor_id = -1;
+        public bool history_flag = false;
 
         //LookUpServices lookUpServices;
 
@@ -262,19 +263,27 @@ namespace SBMS
                 return false;
             }
 
-            if (String.IsNullOrEmpty(txt_cabinet_number.Text) || String.IsNullOrEmpty(txt_drawer_number.Text) || String.IsNullOrEmpty(txt_box_number.Text))
+            if (history_flag == true)
             {
+                if (String.IsNullOrEmpty(txt_cabinet_number.Text) || String.IsNullOrEmpty(txt_drawer_number.Text) || String.IsNullOrEmpty(txt_box_number.Text))
+                {
 
-                MessageBox.Show("Location Data is empty or not valid. Please , correct", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                    MessageBox.Show("Location Data is empty or not valid. Please , correct", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
 
+                }
             }
+         
 
             return true;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+
+            int cabinet = 0, drawer = 0, box = 0;bool isValid = true; //0,0,0 is imaginary postion
+
+
             dataFetchService = new DataFetchService();
             int slideDuplicate = dataFetchService.CheckDuplicateSlideInfo(txt_slide_sequence.Text);
 
@@ -285,10 +294,14 @@ namespace SBMS
                 clear();
                 return;
             }
+        
+            if (history_flag == false) {
+                isValid = ValidateBeforeSave();
+            }
 
-            bool isValid = ValidateBeforeSave();
+          
 
-            if (isValid == false)
+            if (isValid == false && history_flag == false)
             {
                 MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -296,24 +309,35 @@ namespace SBMS
 
             //TODO:check location data if occupied or not
 
-            //convert to int
-            int cabinet = Convert.ToInt32(txt_cabinet_number.Text.ToString());
-            int drawer = Convert.ToInt32(txt_drawer_number.Text.ToString());
-            int box = Convert.ToInt32(txt_box_number.Text.ToString());
+           
+            //check damaged is selecty
+            if (history_flag == true)
+            {
 
-            int isLocationOccupied = 0;
-            if (cabinet > 0 &&drawer>0 && box> 0) 
-                isLocationOccupied = dataFetchService.CheckDuplicateLocation(cabinet, drawer, box);
-
-            if (isLocationOccupied==1) {
-                
-                MessageBox.Show("Slide exisit at [Cabinet = "+cabinet +" , Drawer = "+drawer+" , Box = "+ box+"]. Please check for unoccupied slide location.", "Duplicate Location", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                MessageBox.Show("Slide has is not saved!", "Slide Not Saved! ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                clear();
-                return;
+                DialogResult result = MessageBox.Show("You have stated that slide is Damaged ?  Are you sure to save this slide ? Slide will never have real exisitince in physical location", "Damaged Slide Save", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                 { 
+                    //execute normal code recheck slide as no 
+                    //turn on damaged off to NO
+                    rdoDamagedNo.Checked = true;
+                    location_panel.Enabled = true;
+                }
             }
 
-            if (Donor_Id_Slide != -1)
+            //convert to int
+            if (history_flag == false)
+            {
+                cabinet = Convert.ToInt32(txt_cabinet_number.Text.ToString());
+                drawer = Convert.ToInt32(txt_drawer_number.Text.ToString());
+                box = Convert.ToInt32(txt_box_number.Text.ToString());
+            }
+
+            bool isValidLocation = true;
+
+            if (history_flag == false)
+                isValidLocation = ValidateSlideLocationData();
+
+            if (Donor_Id_Slide != -1 && isValidLocation==true)
             {
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
@@ -334,24 +358,27 @@ namespace SBMS
                         command.Parameters.AddWithValue("@bar_code", txt_slide_scan.Text);
                         command.Parameters.AddWithValue("@sequence", txt_slide_sequence.Text);
                         command.Parameters.AddWithValue("@donor_id", Donor_Id_Slide);
-                        command.Parameters.AddWithValue("@cabinet_number", Convert.ToInt32(txt_cabinet_number.Text).ToString());
-                        command.Parameters.AddWithValue("@drawer_number", Convert.ToInt32(txt_drawer_number.Text).ToString());
-                        command.Parameters.AddWithValue("@box_number", Convert.ToInt32(txt_box_number.Text).ToString());
+
+                        command.Parameters.AddWithValue("@cabinet_number", cabinet);
+                        command.Parameters.AddWithValue("@drawer_number", drawer);
+                        command.Parameters.AddWithValue("@box_number", box);
+                        
 
                         if (rdoDamagedYes.Checked)
                             command.Parameters.AddWithValue("@isDamaged", true);
                         if (rdoDamagedNo.Checked)
                             command.Parameters.AddWithValue("@isDamaged", false);
-                        if (rdoDamagedYes.Checked)
-                            command.Parameters.AddWithValue("@isDamaged", true);
+                  
                         if (rdoResevedYes.Checked)
                             command.Parameters.AddWithValue("@isReserved", true);
                         if (rdoResevedNo.Checked)
                             command.Parameters.AddWithValue("@isReserved", false);
+
                         if (rdoDamagedYes.Checked)
                             command.Parameters.AddWithValue("@isActive", false);
                         else
                             command.Parameters.AddWithValue("@isActive", true);
+
 
                         command.Parameters.AddWithValue("@isBorrowed", false);
                         command.Parameters.AddWithValue("@created_date", DateTime.Today.Date);
@@ -369,7 +396,7 @@ namespace SBMS
 
                             if (recordsAffected > 0)
                             {
-                                MessageBox.Show("Slide's Information Updated !", "Success");
+                                MessageBox.Show("Slide's Information Saved !", "Success");
                                 reload_data();
 
                             }
@@ -664,6 +691,14 @@ namespace SBMS
                     MessageBox.Show("NO Data to Select");
                 }
            
+        }
+
+        private void rdoDamagedYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoDamagedYes.Checked) {
+                location_panel.Enabled = false;
+                history_flag = true;
+            }
         }
     }
 }

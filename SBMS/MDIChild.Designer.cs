@@ -30,35 +30,35 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lbl_notes = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
             this.btn_user_account = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.btn_lending_history = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btn_archive_summary = new System.Windows.Forms.Button();
             this.btn_all_slides = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.btn_checkout = new System.Windows.Forms.Button();
             this.btn_checkin = new System.Windows.Forms.Button();
             this.bn_borrowers = new System.Windows.Forms.Button();
             this.btn_donors = new System.Windows.Forms.Button();
             this.btn_slides = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,36 +86,6 @@
             this.label1.Size = new System.Drawing.Size(1183, 64);
             this.label1.TabIndex = 30;
             this.label1.Text = "National Malaria Archive System - NAMS";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SBMS.Properties.Resources._2000px_Flag_of_Ethiopia_svg;
-            this.pictureBox3.Location = new System.Drawing.Point(46, 79);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(116, 81);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SBMS.Properties.Resources._27332741_1426914380750443_3640997397741266774_n;
-            this.pictureBox1.Location = new System.Drawing.Point(501, 82);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 107);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SBMS.Properties.Resources.icap_logo;
-            this.pictureBox2.Location = new System.Drawing.Point(981, 76);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(182, 96);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
             // 
             // splitContainer1
             // 
@@ -175,6 +145,18 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Developed by Daniel Adenew, Lead Software Engineer MDTA,ICAP.";
             // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button13.Location = new System.Drawing.Point(727, 378);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(247, 85);
+            this.button13.TabIndex = 26;
+            this.button13.Text = "Help ";
+            this.button13.UseVisualStyleBackColor = false;
+            // 
             // btn_user_account
             // 
             this.btn_user_account.BackColor = System.Drawing.Color.RoyalBlue;
@@ -188,6 +170,18 @@
             this.btn_user_account.UseVisualStyleBackColor = false;
             this.btn_user_account.Click += new System.EventHandler(this.btn_user_account_Click);
             // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button12.Location = new System.Drawing.Point(474, 378);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(247, 85);
+            this.button12.TabIndex = 23;
+            this.button12.Text = "Help ";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.SlateGray;
@@ -199,6 +193,18 @@
             this.button15.TabIndex = 24;
             this.button15.Text = "Slide Set Generator";
             this.button15.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button11.Location = new System.Drawing.Point(221, 378);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(247, 85);
+            this.button11.TabIndex = 22;
+            this.button11.Text = "Reports";
+            this.button11.UseVisualStyleBackColor = false;
             // 
             // btn_lending_history
             // 
@@ -222,6 +228,7 @@
             this.button9.TabIndex = 20;
             this.button9.Text = "Slide History";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // btn_archive_summary
             // 
@@ -248,18 +255,6 @@
             this.btn_all_slides.Text = "All Slides ";
             this.btn_all_slides.UseVisualStyleBackColor = false;
             this.btn_all_slides.Click += new System.EventHandler(this.btn_all_slides_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.SlateGray;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(727, 105);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(247, 85);
-            this.button6.TabIndex = 17;
-            this.button6.Text = "Selections";
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // btn_checkout
             // 
@@ -323,41 +318,48 @@
             this.btn_slides.UseVisualStyleBackColor = false;
             this.btn_slides.Click += new System.EventHandler(this.btn_slides_Click);
             // 
-            // button13
+            // button6
             // 
-            this.button13.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button13.Location = new System.Drawing.Point(727, 378);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(247, 85);
-            this.button13.TabIndex = 26;
-            this.button13.Text = "Help ";
-            this.button13.UseVisualStyleBackColor = false;
+            this.button6.BackColor = System.Drawing.Color.SlateGray;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.Location = new System.Drawing.Point(727, 105);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(247, 85);
+            this.button6.TabIndex = 17;
+            this.button6.Text = "Slide Selection Search Engine";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button12
+            // pictureBox3
             // 
-            this.button12.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button12.Location = new System.Drawing.Point(474, 378);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(247, 85);
-            this.button12.TabIndex = 23;
-            this.button12.Text = "Help ";
-            this.button12.UseVisualStyleBackColor = false;
+            this.pictureBox3.Image = global::SBMS.Properties.Resources._2000px_Flag_of_Ethiopia_svg;
+            this.pictureBox3.Location = new System.Drawing.Point(46, 79);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(116, 81);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
             // 
-            // button11
+            // pictureBox1
             // 
-            this.button11.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button11.Location = new System.Drawing.Point(221, 378);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(247, 85);
-            this.button11.TabIndex = 22;
-            this.button11.Text = "Reports";
-            this.button11.UseVisualStyleBackColor = false;
+            this.pictureBox1.Image = global::SBMS.Properties.Resources._27332741_1426914380750443_3640997397741266774_n;
+            this.pictureBox1.Location = new System.Drawing.Point(501, 82);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 107);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SBMS.Properties.Resources.icap_logo;
+            this.pictureBox2.Location = new System.Drawing.Point(981, 76);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(182, 96);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // MDIChild
             // 
@@ -374,15 +376,15 @@
             this.Text = "HOME";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,7 +402,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btn_archive_summary;
         private System.Windows.Forms.Button btn_all_slides;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Button btn_checkin;
         private System.Windows.Forms.Button btn_donors;
@@ -412,5 +413,6 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button6;
     }
 }

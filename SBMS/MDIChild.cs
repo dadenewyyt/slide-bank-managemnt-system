@@ -87,5 +87,19 @@ namespace SBMS
             
            
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Selection selection = new Selection();
+            selection.MdiParent = this.ParentForm;
+            selection.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SlideHistory slideHistory = new SlideHistory();
+            slideHistory.MdiParent = this.ParentForm;
+            slideHistory.Show();
+        }
     }
 }
