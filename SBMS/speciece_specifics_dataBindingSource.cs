@@ -7,9 +7,11 @@
     }
 }
 
-namespace SBMS.speciece_specifics_dataBindingSourceTableAdapters {
-    
-    
-    public partial class species_specificsTableAdapter {
+namespace SBMS.speciece_specifics_dataBindingSourceTableAdapters
+{
+
+
+    public partial class species_specificsTableAdapter
+    {
     }
 }

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RecentSlidesDataSet" targetNamespace="http://tempuri.org/RecentSlidesDataSet.xsd" xmlns:mstns="http://tempuri.org/RecentSlidesDataSet.xsd" xmlns="http://tempuri.org/RecentSlidesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sbmsConnectionStringDaniel" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sbmsConnectionStringDaniel (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SBMS.Properties.Settings.GlobalReference.Default.sbmsConnectionStringDaniel" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="recent_slide_datasetTableAdapter" GeneratorDataComponentClassName="recent_slide_datasetTableAdapter" Name="recent_slide_dataset" UserDataComponentName="recent_slide_datasetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sbmsConnectionStringDaniel (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT   TOP (100) s.id, s.bar_code, s.sequence, s.donor_id, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.last_updated_by, 
+                         d.id AS donor_donor_id, d.donor_code, d.species_specific_id, d.species_stage_id, d.species_catgeroy_id, d.lower_density, d.average_density, d.upper_density, d.density_category_id, d.owner_id, d.acquired_date, 
+                         d.country_code, d.comment, d.validation_id
+FROM              dbo.slides AS s INNER JOIN
+                         dbo.donors AS d ON d.id = s.donor_id
+WHERE        (d.isActive = 1) AND (s.isActive=1) AND  (s.isBorrowed = 0)  
+ORDER BY s.created_date DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="bar_code" DataSetColumn="bar_code" />
+              <Mapping SourceColumn="sequence" DataSetColumn="sequence" />
+              <Mapping SourceColumn="upper_density" DataSetColumn="upper_density" />
+              <Mapping SourceColumn="isReserved" DataSetColumn="isReserved" />
+              <Mapping SourceColumn="country_code" DataSetColumn="country_code" />
+              <Mapping SourceColumn="species_specific_id" DataSetColumn="species_specific_id" />
+              <Mapping SourceColumn="species_stage_id" DataSetColumn="species_stage_id" />
+              <Mapping SourceColumn="density_category_id" DataSetColumn="density_category_id" />
+              <Mapping SourceColumn="lower_density" DataSetColumn="lower_density" />
+              <Mapping SourceColumn="average_density" DataSetColumn="average_density" />
+              <Mapping SourceColumn="owner_id" DataSetColumn="owner_id" />
+              <Mapping SourceColumn="acquired_date" DataSetColumn="acquired_date" />
+              <Mapping SourceColumn="validation_id" DataSetColumn="validation_id" />
+              <Mapping SourceColumn="comment" DataSetColumn="comment" />
+              <Mapping SourceColumn="cabinet_number" DataSetColumn="cabinet_number" />
+              <Mapping SourceColumn="drawer_number" DataSetColumn="drawer_number" />
+              <Mapping SourceColumn="box_number" DataSetColumn="box_number" />
+              <Mapping SourceColumn="isDamaged" DataSetColumn="isDamaged" />
+              <Mapping SourceColumn="isBorrowed" DataSetColumn="isBorrowed" />
+              <Mapping SourceColumn="isActive" DataSetColumn="isActive" />
+              <Mapping SourceColumn="updated_date" DataSetColumn="updated_date" />
+              <Mapping SourceColumn="created_date" DataSetColumn="created_date" />
+              <Mapping SourceColumn="created_by" DataSetColumn="created_by" />
+              <Mapping SourceColumn="last_updated_by" DataSetColumn="last_updated_by" />
+              <Mapping SourceColumn="donor_code" DataSetColumn="donor_code" />
+              <Mapping SourceColumn="donor_id" DataSetColumn="donor_id" />
+              <Mapping SourceColumn="species_catgeroy_id" DataSetColumn="species_catgeroy_id" />
+              <Mapping SourceColumn="donor_donor_id" DataSetColumn="donor_donor_id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RecentSlidesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RecentSlidesDataSet" msprop:Generator_UserDSName="RecentSlidesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="recent_slide_dataset" msprop:Generator_TableClassName="recent_slide_datasetDataTable" msprop:Generator_TableVarName="tablerecent_slide_dataset" msprop:Generator_TablePropName="recent_slide_dataset" msprop:Generator_RowDeletingName="recent_slide_datasetRowDeleting" msprop:Generator_RowChangingName="recent_slide_datasetRowChanging" msprop:Generator_RowEvHandlerName="recent_slide_datasetRowChangeEventHandler" msprop:Generator_RowDeletedName="recent_slide_datasetRowDeleted" msprop:Generator_UserTableName="recent_slide_dataset" msprop:Generator_RowChangedName="recent_slide_datasetRowChanged" msprop:Generator_RowEvArgName="recent_slide_datasetRowChangeEvent" msprop:Generator_RowClassName="recent_slide_datasetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="bar_code" msprop:Generator_ColumnVarNameInTable="columnbar_code" msprop:Generator_ColumnPropNameInRow="bar_code" msprop:Generator_ColumnPropNameInTable="bar_codeColumn" msprop:Generator_UserColumnName="bar_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sequence" msprop:Generator_ColumnVarNameInTable="columnsequence" msprop:Generator_ColumnPropNameInRow="sequence" msprop:Generator_ColumnPropNameInTable="sequenceColumn" msprop:Generator_UserColumnName="sequence">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="upper_density" msprop:Generator_ColumnVarNameInTable="columnupper_density" msprop:Generator_ColumnPropNameInRow="upper_density" msprop:Generator_ColumnPropNameInTable="upper_densityColumn" msprop:Generator_UserColumnName="upper_density" type="xs:long" />
+              <xs:element name="isReserved" msprop:Generator_ColumnVarNameInTable="columnisReserved" msprop:Generator_ColumnPropNameInRow="isReserved" msprop:Generator_ColumnPropNameInTable="isReservedColumn" msprop:Generator_UserColumnName="isReserved" type="xs:boolean" minOccurs="0" />
+              <xs:element name="country_code" msprop:Generator_ColumnVarNameInTable="columncountry_code" msprop:Generator_ColumnPropNameInRow="country_code" msprop:Generator_ColumnPropNameInTable="country_codeColumn" msprop:Generator_UserColumnName="country_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="species_specific_id" msprop:Generator_ColumnVarNameInTable="columnspecies_specific_id" msprop:Generator_ColumnPropNameInRow="species_specific_id" msprop:Generator_ColumnPropNameInTable="species_specific_idColumn" msprop:Generator_UserColumnName="species_specific_id" type="xs:int" />
+              <xs:element name="species_stage_id" msprop:Generator_ColumnVarNameInTable="columnspecies_stage_id" msprop:Generator_ColumnPropNameInRow="species_stage_id" msprop:Generator_ColumnPropNameInTable="species_stage_idColumn" msprop:Generator_UserColumnName="species_stage_id" type="xs:int" />
+              <xs:element name="density_category_id" msprop:Generator_ColumnVarNameInTable="columndensity_category_id" msprop:Generator_ColumnPropNameInRow="density_category_id" msprop:Generator_ColumnPropNameInTable="density_category_idColumn" msprop:Generator_UserColumnName="density_category_id" type="xs:int" />
+              <xs:element name="lower_density" msprop:Generator_ColumnVarNameInTable="columnlower_density" msprop:Generator_ColumnPropNameInRow="lower_density" msprop:Generator_ColumnPropNameInTable="lower_densityColumn" msprop:Generator_UserColumnName="lower_density" type="xs:long" />
+              <xs:element name="average_density" msprop:Generator_ColumnVarNameInTable="columnaverage_density" msprop:Generator_ColumnPropNameInRow="average_density" msprop:Generator_ColumnPropNameInTable="average_densityColumn" msprop:Generator_UserColumnName="average_density" type="xs:long" />
+              <xs:element name="owner_id" msprop:Generator_ColumnVarNameInTable="columnowner_id" msprop:Generator_ColumnPropNameInRow="owner_id" msprop:Generator_ColumnPropNameInTable="owner_idColumn" msprop:Generator_UserColumnName="owner_id" type="xs:int" />
+              <xs:element name="acquired_date" msprop:Generator_ColumnVarNameInTable="columnacquired_date" msprop:Generator_ColumnPropNameInRow="acquired_date" msprop:Generator_ColumnPropNameInTable="acquired_dateColumn" msprop:Generator_UserColumnName="acquired_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="validation_id" msprop:Generator_ColumnVarNameInTable="columnvalidation_id" msprop:Generator_ColumnPropNameInRow="validation_id" msprop:Generator_ColumnPropNameInTable="validation_idColumn" msprop:Generator_UserColumnName="validation_id" type="xs:int" />
+              <xs:element name="comment" msprop:Generator_ColumnVarNameInTable="columncomment" msprop:Generator_ColumnPropNameInRow="comment" msprop:Generator_ColumnPropNameInTable="commentColumn" msprop:Generator_UserColumnName="comment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cabinet_number" msprop:Generator_ColumnVarNameInTable="columncabinet_number" msprop:Generator_ColumnPropNameInRow="cabinet_number" msprop:Generator_ColumnPropNameInTable="cabinet_numberColumn" msprop:Generator_UserColumnName="cabinet_number" type="xs:int" />
+              <xs:element name="drawer_number" msprop:Generator_ColumnVarNameInTable="columndrawer_number" msprop:Generator_ColumnPropNameInRow="drawer_number" msprop:Generator_ColumnPropNameInTable="drawer_numberColumn" msprop:Generator_UserColumnName="drawer_number" type="xs:int" />
+              <xs:element name="box_number" msprop:Generator_ColumnVarNameInTable="columnbox_number" msprop:Generator_ColumnPropNameInRow="box_number" msprop:Generator_ColumnPropNameInTable="box_numberColumn" msprop:Generator_UserColumnName="box_number" type="xs:int" />
+              <xs:element name="isDamaged" msprop:Generator_ColumnVarNameInTable="columnisDamaged" msprop:Generator_ColumnPropNameInRow="isDamaged" msprop:Generator_ColumnPropNameInTable="isDamagedColumn" msprop:Generator_UserColumnName="isDamaged" type="xs:boolean" minOccurs="0" />
+              <xs:element name="isBorrowed" msprop:Generator_ColumnVarNameInTable="columnisBorrowed" msprop:Generator_ColumnPropNameInRow="isBorrowed" msprop:Generator_ColumnPropNameInTable="isBorrowedColumn" msprop:Generator_UserColumnName="isBorrowed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_UserColumnName="isActive" type="xs:boolean" minOccurs="0" />
+              <xs:element name="updated_date" msprop:Generator_ColumnVarNameInTable="columnupdated_date" msprop:Generator_ColumnPropNameInRow="updated_date" msprop:Generator_ColumnPropNameInTable="updated_dateColumn" msprop:Generator_UserColumnName="updated_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_date" msprop:Generator_ColumnVarNameInTable="columncreated_date" msprop:Generator_ColumnPropNameInRow="created_date" msprop:Generator_ColumnPropNameInTable="created_dateColumn" msprop:Generator_UserColumnName="created_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_by" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_UserColumnName="created_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="last_updated_by" msprop:Generator_ColumnVarNameInTable="columnlast_updated_by" msprop:Generator_ColumnPropNameInRow="last_updated_by" msprop:Generator_ColumnPropNameInTable="last_updated_byColumn" msprop:Generator_UserColumnName="last_updated_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="donor_code" msprop:Generator_ColumnVarNameInTable="columndonor_code" msprop:Generator_ColumnPropNameInRow="donor_code" msprop:Generator_ColumnPropNameInTable="donor_codeColumn" msprop:Generator_UserColumnName="donor_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="donor_id" msprop:Generator_ColumnVarNameInTable="columndonor_id" msprop:Generator_ColumnPropNameInRow="donor_id" msprop:Generator_ColumnPropNameInTable="donor_idColumn" msprop:Generator_UserColumnName="donor_id" type="xs:int" />
+              <xs:element name="species_catgeroy_id" msprop:Generator_ColumnVarNameInTable="columnspecies_catgeroy_id" msprop:Generator_ColumnPropNameInRow="species_catgeroy_id" msprop:Generator_ColumnPropNameInTable="species_catgeroy_idColumn" msprop:Generator_UserColumnName="species_catgeroy_id" type="xs:int" />
+              <xs:element name="donor_donor_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columndonor_donor_id" msprop:Generator_ColumnPropNameInRow="donor_donor_id" msprop:Generator_ColumnPropNameInTable="donor_donor_idColumn" msprop:Generator_UserColumnName="donor_donor_id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:recent_slide_dataset" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

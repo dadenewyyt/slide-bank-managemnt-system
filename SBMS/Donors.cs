@@ -1,42 +1,37 @@
 ﻿using SBMS.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace SBMS
 {
     public partial class Donors : Form
     {
-        
+
         private int id_update = -1;
         DataFetchService dataFetchService;
         LookUpServices lookUpServices;
 
         public int Id_update { get => id_update; set => id_update = value; }
 
-        public void clear() {
+        public void clear()
+        {
             txt_barcode_scan_in.Text = string.Empty;
             txt_country_code.Text = string.Empty;
             txt_donor_code.Text = string.Empty;
             cmb_specice_specifics.SelectedIndex = 0;
             cmb_specice_category.SelectedIndex = 0;
-            cmb_specice_stage.SelectedIndex =0;
+            cmb_specice_stage.SelectedIndex = 0;
             txt_lower_density.Text = string.Empty;
             txt_average_density.Text = string.Empty;
             txt_upper_density.Text = string.Empty;
             cmb_density_category.SelectedIndex = 0;
             cmb_owners.SelectedIndex = 0;
             txt_acquired_date.Text = "";
-            cmb_validation.SelectedIndex =0;
+            cmb_validation.SelectedIndex = 0;
             txt_comment.Text = "";
         }
 
@@ -76,15 +71,15 @@ namespace SBMS
         }
 
         private void GetData(string selectCommand)
-    {
-           // bindingSourceDonorsDataGrid = new BindingSource();
-            dataAdapterDonorsDataGridview = new SqlDataAdapter();
-        try
         {
-            // Specify a connection string.  
-            // Replace <SQL Server> with the SQL Server for your Northwind sample database.
-            // Replace "Integrated Security=True" with user login information if necessary.
-            
+            // bindingSourceDonorsDataGrid = new BindingSource();
+            dataAdapterDonorsDataGridview = new SqlDataAdapter();
+            try
+            {
+                // Specify a connection string.  
+                // Replace <SQL Server> with the SQL Server for your Northwind sample database.
+                // Replace "Integrated Security=True" with user login information if necessary.
+
 
                 // Create a new data adapter based on the specified query.
                 dataAdapterDonorsDataGridview = new SqlDataAdapter(selectCommand, DatabaseServices.connectionString);
@@ -100,19 +95,19 @@ namespace SBMS
                 };
                 dataAdapterDonorsDataGridview.Fill(table);
                 donorsBindingSource.DataSource = table;
-               // dgr_donors.AutoGenerateColumns = false;
+                // dgr_donors.AutoGenerateColumns = false;
 
-                
+
                 // Resize the DataGridView columns to fit the newly loaded content.
-               // dgr_donors.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                // dgr_donors.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("To run this example, replace the value of the " +
+                    "connectionString variable with a connection string that is " +
+                    "valid for your system.");
+            }
         }
-        catch (SqlException)
-        {
-            MessageBox.Show("To run this example, replace the value of the " +
-                "connectionString variable with a connection string that is " +
-                "valid for your system.");
-        }
-    }
 
         private void Donors_Load(object sender, EventArgs e)
         {
@@ -221,53 +216,53 @@ namespace SBMS
                 clear();
             }
 
-           
+
 
 
             // MessageBox.Show("Saving");
             DateTime dt = DateTime.Now;
 
-                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+            using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+            {
+
+                using (SqlCommand command = new SqlCommand())
                 {
+                    command.Connection = connection;
+                    string insertDonorQuery = "INSERT into donors" +
+                        "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,species_catgeroy_id,density_category_id,lower_density," +
+                         "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,updated_by,created_date,updated_date) " +
+                         "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
+                         "@average_density,@upper_density,@owner_id,@acquired_date," +
+                         "@validation_id,@comment,@created_by,@updated_by,@created_date,@updated_date)";
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = insertDonorQuery;
+                    command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
+                    command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
+                    command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
+                    command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@species_catgeroy_id", cmb_specice_category.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@species_stage_id", cmb_specice_stage.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@density_category_id", cmb_density_category.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@lower_density", txt_lower_density.Text.ToString());
+                    command.Parameters.AddWithValue("@average_density", txt_average_density.Text.ToString());
+                    command.Parameters.AddWithValue("@upper_density", txt_upper_density.Text.ToString());
+                    command.Parameters.AddWithValue("@owner_id", cmb_owners.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
+                    command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
+                    command.Parameters.AddWithValue("@created_by", "Daniel Adenew, Sofware Engineer");
+                    command.Parameters.AddWithValue("@updated_by", "");
+                    command.Parameters.AddWithValue("@created_date", dt.ToString("yyyy/MM/dd"));
+                    command.Parameters.AddWithValue("@updated_date", "");
 
-                    using (SqlCommand command = new SqlCommand())
+                    try
                     {
-                        command.Connection = connection;
-                        string insertDonorQuery = "INSERT into donors" +
-                            "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,species_catgeroy_id,density_category_id,lower_density," +
-                             "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,updated_by,created_date,updated_date) " +
-                             "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
-                             "@average_density,@upper_density,@owner_id,@acquired_date," +
-                             "@validation_id,@comment,@created_by,@updated_by,@created_date,@updated_date)";
-                        command.CommandType = CommandType.Text;
-                        command.CommandText = insertDonorQuery;
-                        command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
-                        command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
-                        command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
-                        command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@species_catgeroy_id", cmb_specice_category.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@species_stage_id", cmb_specice_stage.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@density_category_id", cmb_density_category.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@lower_density", txt_lower_density.Text.ToString());
-                        command.Parameters.AddWithValue("@average_density", txt_average_density.Text.ToString());
-                        command.Parameters.AddWithValue("@upper_density", txt_upper_density.Text.ToString());
-                        command.Parameters.AddWithValue("@owner_id", cmb_owners.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
-                        command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
-                        command.Parameters.AddWithValue("@created_by", "Daniel Adenew, Sofware Engineer");
-                        command.Parameters.AddWithValue("@updated_by", "");
-                        command.Parameters.AddWithValue("@created_date", dt.ToString("yyyy/MM/dd"));
-                        command.Parameters.AddWithValue("@updated_date", "");
 
-                        try
+                        if (connection.State == ConnectionState.Closed)
                         {
-
-                            if (connection.State == ConnectionState.Closed)
-                            {
-                                connection.Open();
-                            }
-                            int recordsAffected = command.ExecuteNonQuery();
+                            connection.Open();
+                        }
+                        int recordsAffected = command.ExecuteNonQuery();
 
                         if (recordsAffected > 0)
                         {
@@ -276,20 +271,20 @@ namespace SBMS
                         }
 
                     }
-                        catch (SqlException ex)
-                        {
-                            MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Donor");
-                        }
-                        finally
-                        {
-                          
-                            clear();
-                           
-                            connection.Close();
-                        }
-
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Donor");
                     }
-              
+                    finally
+                    {
+
+                        clear();
+
+                        connection.Close();
+                    }
+
+                }
+
             }
         }
 
@@ -298,14 +293,14 @@ namespace SBMS
 
 
             int rowIndex;
-            rowIndex = e.RowIndex; 
+            rowIndex = e.RowIndex;
 
 
-          
+
             if (dgr_donors.SelectedRows.Count > 0)
             {
-                MessageBox.Show("you selected row:" + (rowIndex+1).ToString());
-               
+                MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
+
                 txt_barcode_scan_in.Text = dgr_donors.Rows[e.RowIndex].Cells["barcodeDataGridViewTextBoxColumn"].Value + string.Empty;
                 txt_country_code.Text = dgr_donors.Rows[e.RowIndex].Cells["countrycodeDataGridViewTextBoxColumn"].Value + string.Empty;
                 txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
@@ -338,7 +333,7 @@ namespace SBMS
         {
             string searchValue = txt_search_box.Text;
             bool found = false;
-           dgr_donors.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgr_donors.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             try
             {
                 foreach (DataGridViewRow row in dgr_donors.Rows)
@@ -347,7 +342,7 @@ namespace SBMS
                     {
                         row.Selected = true;
                         found = true;
-                        MessageBox.Show("Donor is found. See hightligthed","Find Result");
+                        MessageBox.Show("Donor is found. See hightligthed", "Find Result");
                         break;
                     }
                 }
@@ -357,7 +352,8 @@ namespace SBMS
                 MessageBox.Show(exc.Message);
             }
 
-            if (found==false) {
+            if (found == false)
+            {
                 MessageBox.Show("Donor is not found. With a Donor Code : " + searchValue.ToString(), "Find Result");
             }
         }
@@ -366,7 +362,7 @@ namespace SBMS
         {
 
             dataFetchService = new DataFetchService();
-            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCodeUpdate(txt_donor_code.Text,Id_update);
+            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCodeUpdate(txt_donor_code.Text, Id_update);
 
             if (donorFoundDuplicate == 1)
             {
@@ -445,7 +441,7 @@ namespace SBMS
                             clear();
                             reload_data();
                             lbl_editing_status.Visible = false;
-                           // btn_deactivate.Enabled = false;
+                            // btn_deactivate.Enabled = false;
                             btn_save.Enabled = true;
                             btn_save_edit.Enabled = false;
                             connection.Close();
@@ -464,17 +460,17 @@ namespace SBMS
 
         private void enter_pressed(object sender, KeyPressEventArgs e)
         {
-           
+
             if (e.KeyChar == (char)13)
             {
 
                 if (txt_barcode_scan_in.TextLength != 8)
                 {
                     MessageBox.Show("The barcode scan or typed length should be 8 digits", "Error");
-                    return ;
+                    return;
                 }
 
-                if (int.TryParse(txt_barcode_scan_in.Text, out int n)==false)
+                if (int.TryParse(txt_barcode_scan_in.Text, out int n) == false)
                 {
                     MessageBox.Show("The barcode scan should only be digits", "Error");
                     return;
@@ -500,7 +496,7 @@ namespace SBMS
                     txt_barcode_scan_in.Text = "";
                 }
             }
-            
+
 
         }
 
@@ -511,11 +507,13 @@ namespace SBMS
             txt_barcode_scan_in.Text = "";
         }
 
-        private bool ValidateBeforeSave() {
+        private bool ValidateBeforeSave()
+        {
 
-           
-            if (String.IsNullOrEmpty(txt_barcode_scan_in.Text) || String.IsNullOrEmpty(txt_country_code.Text) || String.IsNullOrEmpty(txt_donor_code.Text)) {
-              
+
+            if (String.IsNullOrEmpty(txt_barcode_scan_in.Text) || String.IsNullOrEmpty(txt_country_code.Text) || String.IsNullOrEmpty(txt_donor_code.Text))
+            {
+
                 MessageBox.Show("Barcode , Donor code , Country code should not be empty to save new Donor Information. Press enter after you entered scan in barcode or enter a valida barcode number.", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
 
@@ -554,7 +552,7 @@ namespace SBMS
         private void button2_Click(object sender, EventArgs e)
         {
             dgr_donors.ClearSelection();
-            Id_update =-1; //invalid is save query is not possible :(
+            Id_update = -1; //invalid is save query is not possible :(
             btn_save.Enabled = true;
             btn_save_edit.Enabled = false;
             lbl_editing_status.Visible = false;
@@ -562,5 +560,5 @@ namespace SBMS
 
         }
     }
- }
+}
 

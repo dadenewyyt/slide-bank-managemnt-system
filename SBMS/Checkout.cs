@@ -1,12 +1,8 @@
 ﻿using SBMS.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SBMS
@@ -36,16 +32,16 @@ namespace SBMS
             this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
             // TODO: This line of code loads data into the 'sbmsDataSet.slides_for_checkout' table. You can move, or remove it, as needed.
             this.slidesCheckoutTableAdapter.Fill(this.sbmsDataSet.slides_for_checkout);
-          
 
-            Dictionary<int, string> borrowerDic  = new Dictionary<int, string>();
+
+            Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
             borrowerDic.Add(0, "--Select Borrower/Contact---");
             foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
             {
-                borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   "+ row["organisation"] + "  Position:  " + row["job_title"]);
+                borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   " + row["organisation"] + "  Position:  " + row["job_title"]);
             }
-           
-            cmb_borrowers.DataSource =  new BindingSource(borrowerDic, null);
+
+            cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
             ;
 
             cmb_borrowers.DisplayMember = "Value";
@@ -59,13 +55,13 @@ namespace SBMS
             dgvCheckBox.ReadOnly = false;
             dgvCheckBox.DefaultCellStyle.BackColor = Color.Red;
             dgvCheckBox.Name = "DGVCheckBox";
-            grd_slides_for_checkout.Columns.Insert(0,dgvCheckBox);
+            grd_slides_for_checkout.Columns.Insert(0, dgvCheckBox);
             grd_slides_for_checkout.ReadOnly = false;
 
-             lookupServices = new LookUpServices();
+            lookupServices = new LookUpServices();
 
             //get Speciece Specifics
-             dictionarySpecifics = lookupServices.fetchLookupTables("species_specifics");
+            dictionarySpecifics = lookupServices.fetchLookupTables("species_specifics");
 
             cmb_specice_specifics.DataSource = new BindingSource(dictionarySpecifics, null);
             cmb_specice_specifics.ValueMember = "Key";
@@ -94,7 +90,7 @@ namespace SBMS
             cmb_density_category.DisplayMember = "Value";
             cmb_density_category.SelectedIndex = 0;
 
-           
+
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -110,8 +106,9 @@ namespace SBMS
         private void button1_Click(object sender, EventArgs e)
         {
             //validate
-            btn_dayCalculaor_Click(null,null);
-            if (Int32.Parse(txt_days.Text.ToString()) == 0 || Int32.Parse(txt_days.Text.ToString()) < 0) {
+            btn_dayCalculaor_Click(null, null);
+            if (Int32.Parse(txt_days.Text.ToString()) == 0 || Int32.Parse(txt_days.Text.ToString()) < 0)
+            {
                 MessageBox.Show("Checkout date can not be O days or -ve Day Value.(You can not borrow backward ?", "Invalid ");
                 return;
 
@@ -162,8 +159,8 @@ namespace SBMS
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-        
+
+
 
             // Datat
             DataTable dt = new DataTable();
@@ -179,15 +176,17 @@ namespace SBMS
             dt.Columns.Add("Cabinet#");
             dt.Columns.Add("Box#");
             dt.Columns.Add("Drawer#");
-          
 
-            foreach (DataGridViewRow drv in grd_slides_for_checkout.Rows) {
+
+            foreach (DataGridViewRow drv in grd_slides_for_checkout.Rows)
+            {
 
                 bool chkBoxSelect = Convert.ToBoolean(drv.Cells["DGVCheckBox"].Value);
 
-                if (chkBoxSelect) {
-                    dt.Rows.Add(drv.Cells[2].Value, drv.Cells[3].Value, drv.Cells[4].Value, dictionaryDCatgerory[Convert.ToInt32(drv.Cells[5].Value)],dictionarySpecifics[Convert.ToInt32(drv.Cells[5].Value)], dictionarySCatgerory[Convert.ToInt32(drv.Cells[7].Value)], drv.Cells[8].Value, drv.Cells[9].Value, drv.Cells[10].Value, drv.Cells[11].Value, drv.Cells[12].Value, drv.Cells[13].Value);
-                 
+                if (chkBoxSelect)
+                {
+                    dt.Rows.Add(drv.Cells[2].Value, drv.Cells[3].Value, drv.Cells[4].Value, dictionaryDCatgerory[Convert.ToInt32(drv.Cells[5].Value)], dictionarySpecifics[Convert.ToInt32(drv.Cells[5].Value)], dictionarySCatgerory[Convert.ToInt32(drv.Cells[7].Value)], drv.Cells[8].Value, drv.Cells[9].Value, drv.Cells[10].Value, drv.Cells[11].Value, drv.Cells[12].Value, drv.Cells[13].Value);
+
                     drv.DefaultCellStyle.BackColor = Color.Gray;
                     drv.DefaultCellStyle.ForeColor = Color.Aqua;
                 }
@@ -196,48 +195,51 @@ namespace SBMS
 
         }
 
-        private bool ValidateSearch() { 
-        
-         if(cmb_specice_category.SelectedIndex==-1 && chk_SC.Checked) { 
+        private bool ValidateSearch()
+        {
+
+            if (cmb_specice_category.SelectedIndex == -1 && chk_SC.Checked)
+            {
 
                 MessageBox.Show("You have selected invalid value for specice Catgeroy", "Invalid Search Criteria");
                 return false;
+            }
+
+            if (cmb_specice_specifics.SelectedIndex == -1 && chk_SS.Checked)
+            {
+
+                MessageBox.Show("You have selected invalid value for specice specifics", "Invalid Search Criteria");
+                return false;
+            }
+
+            if (cmb_specice_stage.SelectedIndex == -1 && chk_S.Checked)
+            {
+
+                MessageBox.Show("You have selected invalid value for specice stage", "Invalid Search Criteria");
+                return false;
+            }
+
+            if (cmb_density_category.SelectedIndex == -1 && chk_DC.Checked)
+            {
+
+                MessageBox.Show("You have selected invalid value for density catgeroy", "Invalid Search Criteria");
+                return false;
+            }
+
+
+            return true;
         }
 
-        if(cmb_specice_specifics.SelectedIndex==-1 && chk_SS.Checked) {
-        
-             MessageBox.Show("You have selected invalid value for specice specifics", "Invalid Search Criteria");
-             return false;
-        }
-
-        if (cmb_specice_stage.SelectedIndex == -1 && chk_S.Checked)
-        {
-
-            MessageBox.Show("You have selected invalid value for specice stage", "Invalid Search Criteria");
-            return false;
-        }
-
-        if (cmb_density_category.SelectedIndex == -1 && chk_DC.Checked)
-        {
-
-            MessageBox.Show("You have selected invalid value for density catgeroy", "Invalid Search Criteria");
-            return false;
-        }
+        //cmb_specice_specifics.SelectedIndex == -1 || cmb_specice_stage.SelectedIndex==-1 || cmb_density_category.SelectedIndex==-1) {
 
 
-         return true;
-        }
-
-    //cmb_specice_specifics.SelectedIndex == -1 || cmb_specice_stage.SelectedIndex==-1 || cmb_density_category.SelectedIndex==-1) {
-
-
-    private void btn_search_Click(object sender, EventArgs e)
+        private void btn_search_Click(object sender, EventArgs e)
         {
             progressBar1.Visible = true;
             timer1.Enabled = true;
-           
-         
-           
+
+
+
 
         }
 
@@ -245,8 +247,8 @@ namespace SBMS
         {
             DateTime d1 = txt_from_date.Value;
             DateTime d2 = txt_due_date.Value;
-            TimeSpan days =  d2 - d1;
-            txt_days.Text = Convert.ToString(Math.Round(Double.Parse(days.TotalDays.ToString()),1));
+            TimeSpan days = d2 - d1;
+            txt_days.Text = Convert.ToString(Math.Round(Double.Parse(days.TotalDays.ToString()), 1));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -259,7 +261,7 @@ namespace SBMS
                 timer1.Enabled = false;
 
                 bool isValid = ValidateSearch();
-                
+
                 if (isValid == true)
                 {
 
@@ -313,7 +315,7 @@ namespace SBMS
         private void btn_Add_borrower_Click(object sender, EventArgs e)
         {
             Borrowers b = new Borrowers();
-         
+
             b.MdiParent = this.ParentForm;
             b.Show();
         }

@@ -1,20 +1,18 @@
-﻿using SBMS.Services;
+﻿using SBMS.Reports.CrystalReports;
+using SBMS.Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SBMS
 {
     public partial class Slides : Form
     {
-       private int slide_id = -1;
+        private int slide_id = -1;
         DataFetchService dataFetchService;
         public int donor_id = -1;
         public bool history_flag = false;
@@ -23,14 +21,14 @@ namespace SBMS
 
         public int Slides_Id_Update { get => slide_id; set => slide_id = value; }
 
-       
+
         //fetched id when a bardcode is entered =>scan in
         private int Donor_Id_Slide { get => slide_id; set => slide_id = value; }
-        
+
 
         public Slides()
         {
-            
+
 
             InitializeComponent();
             rdoDamagedNo.Checked = true;
@@ -64,7 +62,7 @@ namespace SBMS
 
         public void enable_disable_inputs(bool flag)
         {
-         
+
             cmb_specice_specifics.Enabled = flag;
             cmb_specice_category.Enabled = flag;
             cmb_specice_stage.Enabled = flag;
@@ -93,7 +91,7 @@ namespace SBMS
         {
             // TODO: This line of code loads data into the 'sbmsDataSet1.slides' table. You can move, or remove it, as needed.
             this.slidesTableAdapter.Fill(this.sbmsDataSet.slides);
-          
+
             // TODO: This line of code loads data into the 'speciceDataSet.species_category' table. You can move, or remove it, as needed.
             this.species_categoryTableAdapter.Fill(this.specieCatgeoryDataSet.species_category);
             // TODO: This line of code loads data into the 'ownerDataBindingSource.owners' table. You can move, or remove it, as needed.
@@ -162,7 +160,7 @@ namespace SBMS
 
         private void enter_pressed(object sender, KeyPressEventArgs e)
         {
-            Dictionary<string, string> separated = new Dictionary<string, string>() ;
+            Dictionary<string, string> separated = new Dictionary<string, string>();
 
             if (e.KeyChar == (char)13)
             {
@@ -173,7 +171,7 @@ namespace SBMS
                     return;
                 }
 
-                if (int.TryParse(txt_slide_scan.Text.ToString(), out int n)==false) //numbers only
+                if (int.TryParse(txt_slide_scan.Text.ToString(), out int n) == false) //numbers only
                 {
                     MessageBox.Show("Slide Scan must all be numeric value.", "INFORMATION", MessageBoxButtons.OK);
                     return;
@@ -188,16 +186,17 @@ namespace SBMS
                 txt_donor_code.Text = separated["DC"];
                 txt_slide_sequence.Text = separated["SS"];
                 txt_bar_code.Text = txt_slide_scan.Text;
-              
+
             }
 
-            
-                //fetch if there is any thing found with that donor id..it should be a must found since we suppose donor is already exisiting
 
-           if (separated.Count() > 0) { 
-                    
-            dataFetchService = new DataFetchService();
-            DataTable slideInfoDonorDT = dataFetchService.FecthSlideByDonorCode(separated["DC"].ToString());
+            //fetch if there is any thing found with that donor id..it should be a must found since we suppose donor is already exisiting
+
+            if (separated.Count() > 0)
+            {
+
+                dataFetchService = new DataFetchService();
+                DataTable slideInfoDonorDT = dataFetchService.FecthSlideByDonorCode(separated["DC"].ToString());
 
                 if (slideInfoDonorDT.Rows.Count > 0)
                 {
@@ -209,7 +208,7 @@ namespace SBMS
                         cmb_specice_category.SelectedIndex = Convert.ToInt32(row["species_catgeroy_id"].ToString());
                         cmb_specice_stage.SelectedIndex = Convert.ToInt32(row["species_stage_id"].ToString());
                         txt_lower_density.Text = row["lower_density"].ToString(); ;
-                        txt_average_density.Text = row["average_density"].ToString(); 
+                        txt_average_density.Text = row["average_density"].ToString();
                         txt_upper_density.Text = row["upper_density"].ToString(); ;
                         cmb_density_category.SelectedIndex = Convert.ToInt32(row["density_category_id"].ToString());
                         cmb_owners.SelectedIndex = Convert.ToInt32(row["owner_id"].ToString());
@@ -221,10 +220,11 @@ namespace SBMS
                     // txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
                     txt_donor_code.BackColor = Color.Green;
                 }
-                else {
+                else
+                {
                     txt_donor_code.BackColor = Color.Red;
-                     MessageBox.Show("The Entered Donor Code is New! System not found any record associted with the donor code. Register the donor first and come back.", "INFORMATION", MessageBoxButtons.OK);
-                }         
+                    MessageBox.Show("The Entered Donor Code is New! System not found any record associted with the donor code. Register the donor first and come back.", "INFORMATION", MessageBoxButtons.OK);
+                }
             }
         }
 
@@ -273,7 +273,7 @@ namespace SBMS
 
                 }
             }
-         
+
 
             return true;
         }
@@ -281,7 +281,7 @@ namespace SBMS
         private void btn_save_Click(object sender, EventArgs e)
         {
 
-            int cabinet = 0, drawer = 0, box = 0;bool isValid = true; //0,0,0 is imaginary postion
+            int cabinet = 0, drawer = 0, box = 0; bool isValid = true; //0,0,0 is imaginary postion
 
 
             dataFetchService = new DataFetchService();
@@ -294,12 +294,13 @@ namespace SBMS
                 clear();
                 return;
             }
-        
-            if (history_flag == false) {
+
+            if (history_flag == false)
+            {
                 isValid = ValidateBeforeSave();
             }
 
-          
+
 
             if (isValid == false && history_flag == false)
             {
@@ -309,14 +310,14 @@ namespace SBMS
 
             //TODO:check location data if occupied or not
 
-           
+
             //check damaged is selecty
             if (history_flag == true)
             {
 
                 DialogResult result = MessageBox.Show("You have stated that slide is Damaged ?  Are you sure to save this slide ? Slide will never have real exisitince in physical location", "Damaged Slide Save", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.No)
-                 { 
+                {
                     //execute normal code recheck slide as no 
                     //turn on damaged off to NO
                     rdoDamagedNo.Checked = true;
@@ -337,7 +338,7 @@ namespace SBMS
             if (history_flag == false)
                 isValidLocation = ValidateSlideLocationData();
 
-            if (Donor_Id_Slide != -1 && isValidLocation==true)
+            if (Donor_Id_Slide != -1 && isValidLocation == true)
             {
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
@@ -362,13 +363,13 @@ namespace SBMS
                         command.Parameters.AddWithValue("@cabinet_number", cabinet);
                         command.Parameters.AddWithValue("@drawer_number", drawer);
                         command.Parameters.AddWithValue("@box_number", box);
-                        
+
 
                         if (rdoDamagedYes.Checked)
                             command.Parameters.AddWithValue("@isDamaged", true);
                         if (rdoDamagedNo.Checked)
                             command.Parameters.AddWithValue("@isDamaged", false);
-                  
+
                         if (rdoResevedYes.Checked)
                             command.Parameters.AddWithValue("@isReserved", true);
                         if (rdoResevedNo.Checked)
@@ -405,18 +406,18 @@ namespace SBMS
                         catch (SqlException ex)
                         {
                             MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Slides", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        
+
                         }
                         finally
                         {
                             clear();
-                           // this.btn_reload_Click(null, null);
+                            // this.btn_reload_Click(null, null);
                             //this.btn_reload_Click(null, null);
-                           lbl_editing_status.Visible = false;
-                           // btn_deactivate.Enabled = false;
-                          btn_save.Enabled = true;
-                          btn_edit_update.Enabled = false;
-                          connection.Close();
+                            lbl_editing_status.Visible = false;
+                            // btn_deactivate.Enabled = false;
+                            btn_save.Enabled = true;
+                            btn_edit_update.Enabled = false;
+                            connection.Close();
                         }
 
                     }
@@ -465,9 +466,9 @@ namespace SBMS
                 txt_box_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["boxrecentslidesGridViewColumn"].Value.ToString();
 
                 enable_disable_inputs(true); //enable for select
-               
+
                 btn_edit_update.Enabled = true;
-               lbl_editing_status.Visible = true;
+                lbl_editing_status.Visible = true;
                 btn_save.Enabled = false;
                 Slides_Id_Update = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["idrecentslidesGridViewColumn"].Value.ToString());
             }
@@ -509,19 +510,19 @@ namespace SBMS
                         command.Parameters.AddWithValue("@cabinet", Convert.ToInt32(txt_cabinet_number.Text.ToString()));
                         command.Parameters.AddWithValue("@box", Convert.ToInt32(txt_box_number.Text.ToString()));
                         command.Parameters.AddWithValue("@drawer", Convert.ToInt32(txt_drawer_number.Text.ToString()));
-              
-                        if (rdoDamagedYes.Checked==true)
+
+                        if (rdoDamagedYes.Checked == true)
                             command.Parameters.AddWithValue("@isDamaged", true);
                         if (rdoDamagedNo.Checked == true)
                             command.Parameters.AddWithValue("@isDamaged", false);
-                       
-                        if (rdoResevedYes.Checked==true)
+
+                        if (rdoResevedYes.Checked == true)
                             command.Parameters.AddWithValue("@isReserved", true);
                         if (rdoResevedNo.Checked == true)
                             command.Parameters.AddWithValue("@isReserved", false);
-      
+
                         command.Parameters.AddWithValue("@updated_by", "Update User");
-                       
+
                         try
                         {
 
@@ -546,9 +547,9 @@ namespace SBMS
                         }
                         finally
                         {
-                            
+
                             connection.Close();
-                            btn_clear_selection_Click(null,null);
+                            btn_clear_selection_Click(null, null);
                             clear();
                             enable_disable_inputs(false);
                         }
@@ -570,7 +571,8 @@ namespace SBMS
 
         }
 
-        private bool ValidateSlideLocationData() {
+        private bool ValidateSlideLocationData()
+        {
             int n;
 
             if (String.IsNullOrEmpty(txt_cabinet_number.Text) || String.IsNullOrEmpty(txt_drawer_number.Text) || String.IsNullOrEmpty(txt_box_number.Text))
@@ -608,7 +610,7 @@ namespace SBMS
             int isLocationOccupied = 0;
             dataFetchService = new DataFetchService();
             if (cabinet > 0 && drawer > 0 && box > 0)
-                isLocationOccupied = dataFetchService.CheckDuplicateLocationUpdate(cabinet, drawer, box,Slides_Id_Update);
+                isLocationOccupied = dataFetchService.CheckDuplicateLocationUpdate(cabinet, drawer, box, Slides_Id_Update);
 
             if (isLocationOccupied == 1)
             {
@@ -623,7 +625,8 @@ namespace SBMS
             return true;
         }
 
-        private void reload_data() {
+        private void reload_data()
+        {
 
             this.recent_slide_datasetTableAdapter.Fill(this.sbmsDataSet.recent_slide_dataset);
             this.slidesTableAdapter.Fill(this.sbmsDataSet.slides);
@@ -642,63 +645,88 @@ namespace SBMS
 
         private void selected_row_all_slides(object sender, DataGridViewCellEventArgs e)
         {
-                int rowIndexGird;
-                rowIndexGird = e.RowIndex;
+            int rowIndexGird;
+            rowIndexGird = e.RowIndex;
 
-                if (dgr_allslides.SelectedRows.Count > 0)
-                {
-                    MessageBox.Show("you selected row:" + (rowIndexGird + 1).ToString());
+            if (dgr_allslides.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("you selected row:" + (rowIndexGird + 1).ToString());
 
-                    txt_bar_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["barcodeallslidesGridViewTextBoxColumn"].Value + string.Empty;
-                    txt_slide_sequence.Text = dgr_allslides.Rows[e.RowIndex].Cells["sequenceallslidesGridViewTextBoxColumn"].Value + string.Empty;
-                    txt_country_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["ccallslidesGridViewTextBoxColumn"].Value + string.Empty;
-                    txt_donor_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["donorallslidesGridViewTextBoxColumn"].Value.ToString();
-                    cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ssallslidesGridViewColumn"].Value);
-                    cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["scallsldesGridViewColumn"].Value);
-                    cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["stallsldesGridViewColumn"].Value);
-                    txt_lower_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["ldallsldesGridViewColumn"].Value + string.Empty;
-                    txt_average_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["adallsldesGridViewColumn"].Value + string.Empty;
-                    txt_upper_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["udallsldesGridViewColumn"].Value.ToString();
-                    cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["dcallsldesGridViewColumn"].Value);
-                    cmb_owners.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ownerallsldesGridViewColumn"].Value);
-                    txt_acquired_date.Text = dgr_allslides.Rows[e.RowIndex].Cells["adateallsldesGridViewColumn"].Value.ToString();
-                    cmb_validation.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["vdateallsldesGridViewColumn"].Value);
-                    txt_comment.Text = dgr_allslides.Rows[e.RowIndex].Cells["commentallsldesGridViewColumn"].Value.ToString();
+                txt_bar_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["barcodeallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                txt_slide_sequence.Text = dgr_allslides.Rows[e.RowIndex].Cells["sequenceallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                txt_country_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["ccallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                txt_donor_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["donorallslidesGridViewTextBoxColumn"].Value.ToString();
+                cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ssallslidesGridViewColumn"].Value);
+                cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["scallsldesGridViewColumn"].Value);
+                cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["stallsldesGridViewColumn"].Value);
+                txt_lower_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["ldallsldesGridViewColumn"].Value + string.Empty;
+                txt_average_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["adallsldesGridViewColumn"].Value + string.Empty;
+                txt_upper_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["udallsldesGridViewColumn"].Value.ToString();
+                cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["dcallsldesGridViewColumn"].Value);
+                cmb_owners.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ownerallsldesGridViewColumn"].Value);
+                txt_acquired_date.Text = dgr_allslides.Rows[e.RowIndex].Cells["adateallsldesGridViewColumn"].Value.ToString();
+                cmb_validation.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["vdateallsldesGridViewColumn"].Value);
+                txt_comment.Text = dgr_allslides.Rows[e.RowIndex].Cells["commentallsldesGridViewColumn"].Value.ToString();
 
-                    if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isDamagedallsldesGridViewColumn"].Value))
-                        rdoDamagedYes.Checked = true;
-                    else
-                        rdoDamagedNo.Checked = true;
-
-                    if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isReservedallsldesGridViewColumn"].Value))
-                        rdoResevedYes.Checked = true;
-                    else
-                        rdoResevedNo.Checked = true;
-                    txt_cabinet_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["cabinetallsldesGridViewColumn"].Value.ToString();
-                    txt_drawer_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["drawerallsldesGridViewColumn"].Value.ToString();
-                    txt_box_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["boxallsldesGridViewColumn"].Value.ToString();
-
-                    enable_disable_inputs(true); //enable for select
-
-                    btn_edit_update.Enabled = true;
-                    lbl_editing_status.Visible = true;
-                    btn_save.Enabled = false;
-                    Slides_Id_Update = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["idallsldesGridViewColumn"].Value.ToString());
-                }
+                if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isDamagedallsldesGridViewColumn"].Value))
+                    rdoDamagedYes.Checked = true;
                 else
-                {
-                    enable_disable_inputs(false); //disabble for select
-                    MessageBox.Show("NO Data to Select");
-                }
-           
+                    rdoDamagedNo.Checked = true;
+
+                if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isReservedallsldesGridViewColumn"].Value))
+                    rdoResevedYes.Checked = true;
+                else
+                    rdoResevedNo.Checked = true;
+                txt_cabinet_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["cabinetallsldesGridViewColumn"].Value.ToString();
+                txt_drawer_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["drawerallsldesGridViewColumn"].Value.ToString();
+                txt_box_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["boxallsldesGridViewColumn"].Value.ToString();
+
+                enable_disable_inputs(true); //enable for select
+
+                btn_edit_update.Enabled = true;
+                lbl_editing_status.Visible = true;
+                btn_save.Enabled = false;
+                Slides_Id_Update = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["idallsldesGridViewColumn"].Value.ToString());
+            }
+            else
+            {
+                enable_disable_inputs(false); //disabble for select
+                MessageBox.Show("NO Data to Select");
+            }
+
         }
 
         private void rdoDamagedYes_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoDamagedYes.Checked) {
+            if (rdoDamagedYes.Checked)
+            {
                 location_panel.Enabled = false;
                 history_flag = true;
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ReportViewRecentSlides s = new ReportViewRecentSlides();
+            s.MdiParent = this.ParentForm;
+            s.Show();
+        }
+
+        public DataGridView getDataGridView()
+        {
+            return this.dgr_recentslides;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllSlidesReportViewePort allSlidesReportViewPort = new AllSlidesReportViewePort();
+            allSlidesReportViewPort.MdiParent = this.ParentForm;
+            allSlidesReportViewPort.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

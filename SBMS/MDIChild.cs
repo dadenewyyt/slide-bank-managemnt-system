@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SBMS
@@ -17,7 +10,7 @@ namespace SBMS
             InitializeComponent();
         }
 
-               
+
         private void btn_slides_Click(object sender, EventArgs e)
         {
 
@@ -84,8 +77,8 @@ namespace SBMS
 
         private void btn_user_account_Click(object sender, EventArgs e)
         {
-            
-           
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)

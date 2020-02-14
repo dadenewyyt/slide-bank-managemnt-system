@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace SBMS.Services
 {
@@ -13,12 +9,12 @@ namespace SBMS.Services
     {
 
         public LookUpServices() { DatabaseServices.GetConnection(); }
-     
+
 
         public Dictionary<int, string> fetchLookupTables(String lookUptype)
         {
 
-            DataTable dataTable= new DataTable();
+            DataTable dataTable = new DataTable();
             switch (lookUptype)
             {
 
@@ -117,7 +113,7 @@ namespace SBMS.Services
                         SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM validations", DatabaseServices.con);
                         adapter.Fill(dataTable);
 
-                    
+
 
                     }
                     catch (Exception ex)
@@ -127,12 +123,13 @@ namespace SBMS.Services
 
 
                     break;
-                    
+
             }
 
             var dict = new Dictionary<int, string>();
 
-            if (0 < dataTable.Rows.Count) {
+            if (0 < dataTable.Rows.Count)
+            {
 
                 dict.Add(0, "--Select--");
 
@@ -142,11 +139,11 @@ namespace SBMS.Services
 
                 }
             }
-            
+
             return dict;
         }
 
 
-       
+
     }
 }

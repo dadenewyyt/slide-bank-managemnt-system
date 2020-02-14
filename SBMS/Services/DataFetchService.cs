@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SBMS.Services
@@ -32,7 +28,7 @@ namespace SBMS.Services
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message,"Donor Fetch Slide Page");
+                        MessageBox.Show(ex.Message, "Donor Fetch Slide Page");
                         return slideFromDonorDataTable;
                     }
 
@@ -80,7 +76,7 @@ namespace SBMS.Services
 
             if (String.IsNullOrEmpty(donorCode) == false)
             {
-                string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim()+"and id="+DonorId;
+                string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim() + "and id=" + DonorId;
                 using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
                 {
 
@@ -175,11 +171,11 @@ namespace SBMS.Services
                     MessageBox.Show(ex.Message);
                     return -1;
                 }
-        }
+            }
             return -1;
         }
 
-        public int CheckDuplicateLocationUpdate(int cabinet, int drawer, int box,int slide_id)
+        public int CheckDuplicateLocationUpdate(int cabinet, int drawer, int box, int slide_id)
         {
 
 

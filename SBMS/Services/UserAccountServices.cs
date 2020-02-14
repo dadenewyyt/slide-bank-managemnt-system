@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SBMS.Services
 {
     static class UserAccountServices
     {
-       
+
         static bool isLoggedIn = false;
         static string full_name;
         static string username;
@@ -20,9 +16,9 @@ namespace SBMS.Services
         public static bool IsLoggedIn { get => isLoggedIn; set => isLoggedIn = value; }
         public static string Username { get => username; set => username = value; }
 
-        public static bool login(string uname , string password) 
+        public static bool login(string uname, string password)
         {
-           
+
             using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
             {
 
@@ -45,10 +41,10 @@ namespace SBMS.Services
                         var fullname = command.ExecuteScalar();
                         if (fullname == null)
                             return false;
-                        if (String.IsNullOrEmpty(fullname.ToString())==false)
+                        if (String.IsNullOrEmpty(fullname.ToString()) == false)
                         {
                             IsLoggedIn = true;
-                            Username= uname;
+                            Username = uname;
                             Full_name = fullname.ToString();
 
                             return true;

@@ -1,12 +1,5 @@
 ﻿using SBMS.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SBMS
@@ -14,8 +7,8 @@ namespace SBMS
     public partial class MDIParent1 : Form
     {
         private int childFormNumber = 0;
-       
-            // Display the new form.
+
+        // Display the new form.
         public MDIParent1()
         {
             InitializeComponent();
@@ -23,6 +16,11 @@ namespace SBMS
             // Set the Parent Form of the Child window.
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
+
+
+            //Slides slide = new Slides();
+           // slide.MdiParent = this;
+
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -74,10 +72,11 @@ namespace SBMS
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+
         }
 
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e) { 
+        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,7 +123,7 @@ namespace SBMS
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure ?","Logout",MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure ?", "Logout", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 foreach (Form childForm in MdiChildren)
@@ -134,7 +133,7 @@ namespace SBMS
                 Dispose();
                 this.Close();
             }
-            
+
         }
     }
 }
