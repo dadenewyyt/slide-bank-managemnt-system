@@ -13,7 +13,7 @@ namespace SBMS
         Dictionary<int, string> dictionarySpecifics;
         Dictionary<int, string> dictionaryStages;
         Dictionary<int, string> dictionarySCatgerory;
-        FilterService filterService;
+        SearchAndFilterService filterService;
         LookUpServices lookupServices;
         public Checkout()
         {
@@ -254,7 +254,7 @@ namespace SBMS
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Value = progressBar1.Value + 1;
-            if (progressBar1.Value > 99)
+            //if (progressBar1.Value > 99)
             {
                 progressBar1.Value = 0;
                 progressBar1.Visible = false;
@@ -265,7 +265,7 @@ namespace SBMS
                 if (isValid == true)
                 {
 
-                    filterService = new FilterService();
+                    filterService = new SearchAndFilterService();
                     filterService.SCID = cmb_specice_category.SelectedIndex;
                     filterService.SSID = cmb_specice_specifics.SelectedIndex;
                     filterService.SID = cmb_specice_stage.SelectedIndex;

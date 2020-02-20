@@ -198,7 +198,7 @@
     <Compile Include="Services\DataFetchService.cs" />
     <Compile Include="Services\HelperServices.cs" />
     <Compile Include="Services\LookUpServices.cs" />
-    <Compile Include="Services\FilterService.cs" />
+    <Compile Include="Services\SearchAndFilterService.cs" />
     <Compile Include="Services\UserAccountServices.cs" />
     <Compile Include="SlideHistory.cs">
       <SubType>Form</SubType>
@@ -471,6 +471,7 @@
   <ItemGroup>
     <Content Include="assets\27332741_1426914380750443_3640997397741266774_n.png" />
     <Content Include="assets\icap logo.png" />
+    <Content Include="SQL\searchStoreProcedure.txt" />
     <None Include="assets\xfn1X.jpg" />
     <None Include="Resources\27332741_1426914380750443_3640997397741266774_n.png" />
     <None Include="Resources\2000px-Flag_of_Ethiopia.svg.png" />

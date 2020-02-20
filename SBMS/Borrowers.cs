@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SBMS.Services;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -196,7 +197,7 @@ namespace SBMS
                         command.Parameters.AddWithValue("@note", txt_notes.Text.Trim());
                         command.Parameters.AddWithValue("@city", txt_city.Text.Trim());
                         command.Parameters.AddWithValue("@postcode", txt_pobox.Text.Trim());
-                        command.Parameters.AddWithValue("@updated_by", "Daniel Updated");
+                        command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
 
 
                         try
@@ -254,13 +255,14 @@ namespace SBMS
                     {
                         command.Connection = connection;
                         string updateDonorQuery = "UPDATE borrowers " +
-                            "SET isdeleted=@deletedStatus WHERE id=@id";
+                            "SET isdeleted=@deletedStatus ,updated_by=@updated_by WHERE id=@id";
 
                         command.CommandType = CommandType.Text;
                         command.CommandText = updateDonorQuery;
                         command.Parameters.AddWithValue("@id", borrower_update_id);
                         command.Parameters.AddWithValue("@deletedStatus", true);
-
+                        command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username
+);
 
 
                         try

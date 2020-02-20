@@ -383,7 +383,7 @@ namespace SBMS
 
                         command.Parameters.AddWithValue("@isBorrowed", false);
                         command.Parameters.AddWithValue("@created_date", DateTime.Today.Date);
-                        command.Parameters.AddWithValue("@created_by", "Daniel");
+                        command.Parameters.AddWithValue("@created_by", "Full name="+UserAccountServices.Full_name + "=Username="+UserAccountServices.Username);
 
                         try
                         {
@@ -521,7 +521,7 @@ namespace SBMS
                         if (rdoResevedNo.Checked == true)
                             command.Parameters.AddWithValue("@isReserved", false);
 
-                        command.Parameters.AddWithValue("@updated_by", "Update User");
+                        command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
 
                         try
                         {
@@ -561,13 +561,22 @@ namespace SBMS
 
         private void btn_clear_selection_Click(object sender, EventArgs e)
         {
-            btn_edit_update.Enabled = false;
-            btn_save.Enabled = true;
-            enable_disable_inputs(false); //diable inputs them
-            dgr_recentslides.ClearSelection();
-            Donor_Id_Slide = -1;
-            Slides_Id_Update = -1;
-            dgr_allslides.ClearSelection();
+            try
+            {
+                btn_edit_update.Enabled = false;
+                btn_save.Enabled = true;
+                enable_disable_inputs(false); //diable inputs them
+                if(dgr_recentslides.SelectedRows.Count>0)
+                   dgr_recentslides.ClearSelection();
+                Donor_Id_Slide = -1;
+                Slides_Id_Update = -1;
+                dgr_allslides.ClearSelection();
+                lbl_editing_status.Visible = false;
+                clear();
+            }
+            catch (Exception ex) {
+            }
+   
 
         }
 
@@ -725,6 +734,11 @@ namespace SBMS
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

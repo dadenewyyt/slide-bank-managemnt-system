@@ -233,7 +233,7 @@ namespace SBMS
                          "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,updated_by,created_date,updated_date) " +
                          "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
                          "@average_density,@upper_density,@owner_id,@acquired_date," +
-                         "@validation_id,@comment,@created_by,@updated_by,@created_date,@updated_date)";
+                         "@validation_id,@comment,@created_by)";
                     command.CommandType = CommandType.Text;
                     command.CommandText = insertDonorQuery;
                     command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
@@ -250,10 +250,9 @@ namespace SBMS
                     command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
                     command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
                     command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
-                    command.Parameters.AddWithValue("@created_by", "Daniel Adenew, Sofware Engineer");
-                    command.Parameters.AddWithValue("@updated_by", "");
-                    command.Parameters.AddWithValue("@created_date", dt.ToString("yyyy/MM/dd"));
-                    command.Parameters.AddWithValue("@updated_date", "");
+                    command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+
+              
 
                     try
                     {
@@ -395,7 +394,7 @@ namespace SBMS
                         string updateDonorQuery = "UPDATE donors " +
                             "SET bar_code=@bar_code,country_code=@country_code,donor_code=@donor_code,species_specific_id=@species_specific_id," +
                             "species_stage_id=@species_stage_id,density_category_id=@density_category_id,lower_density=@lower_density,average_density=@average_density,upper_density=@upper_density," +
-                            "owner_id=@owner_id,acquired_date=@acquired_date,validation_id=@validation_id,comment=@comment,updated_by=@updated_by,updated_date=@updated_date WHERE id=@id";
+                            "owner_id=@owner_id,acquired_date=@acquired_date,validation_id=@validation_id,comment=@comment,updated_by=@updated_by WHERE id=@id";
 
                         command.CommandType = CommandType.Text;
                         command.CommandText = updateDonorQuery;
@@ -413,8 +412,8 @@ namespace SBMS
                         command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
                         command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
                         command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
-                        command.Parameters.AddWithValue("@updated_by", "Test User");
-                        command.Parameters.AddWithValue("@updated_date", dt.ToString("yyyy/MM/dd"));
+                        command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+
 
                         try
                         {
