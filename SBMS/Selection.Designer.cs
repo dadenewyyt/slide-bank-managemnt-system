@@ -86,27 +86,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grd_search_results = new System.Windows.Forms.DataGridView();
-            this.btn_refresh = new System.Windows.Forms.Button();
-            this.btn_Add_borrower = new System.Windows.Forms.Button();
-            this.btn_dayCalculaor = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txt_days = new System.Windows.Forms.TextBox();
-            this.btn_checkout = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.txt_due_date = new System.Windows.Forms.DateTimePicker();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txt_from_date = new System.Windows.Forms.DateTimePicker();
-            this.label29 = new System.Windows.Forms.Label();
-            this.cmb_borrowers = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.slidesearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
-            this.slide_searchTableAdapter = new SBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,6 +101,27 @@
             this.cabinetnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawernumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boxnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slidesearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.btn_refresh = new System.Windows.Forms.Button();
+            this.btn_Add_borrower = new System.Windows.Forms.Button();
+            this.btn_dayCalculaor = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.btn_checkout = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cmb_reason = new System.Windows.Forms.ComboBox();
+            this.txt_due_date = new System.Windows.Forms.DateTimePicker();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txt_from_date = new System.Windows.Forms.DateTimePicker();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cmb_borrowers = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
+            this.slide_searchTableAdapter = new SBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
+            this.txt_days = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -151,6 +151,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.slidesearchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowercontactlistBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_days)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -245,15 +246,15 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.txt_days);
             this.splitContainer2.Panel2.Controls.Add(this.grd_search_results);
             this.splitContainer2.Panel2.Controls.Add(this.btn_refresh);
             this.splitContainer2.Panel2.Controls.Add(this.btn_Add_borrower);
             this.splitContainer2.Panel2.Controls.Add(this.btn_dayCalculaor);
             this.splitContainer2.Panel2.Controls.Add(this.label26);
-            this.splitContainer2.Panel2.Controls.Add(this.txt_days);
             this.splitContainer2.Panel2.Controls.Add(this.btn_checkout);
             this.splitContainer2.Panel2.Controls.Add(this.label27);
-            this.splitContainer2.Panel2.Controls.Add(this.comboBox2);
+            this.splitContainer2.Panel2.Controls.Add(this.cmb_reason);
             this.splitContainer2.Panel2.Controls.Add(this.txt_due_date);
             this.splitContainer2.Panel2.Controls.Add(this.label28);
             this.splitContainer2.Panel2.Controls.Add(this.txt_from_date);
@@ -779,198 +780,6 @@
             this.grd_search_results.Size = new System.Drawing.Size(877, 369);
             this.grd_search_results.TabIndex = 134;
             // 
-            // btn_refresh
-            // 
-            this.btn_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_refresh.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.btn_refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_refresh.Location = new System.Drawing.Point(572, 6);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(170, 35);
-            this.btn_refresh.TabIndex = 133;
-            this.btn_refresh.Text = "refresh contact";
-            this.btn_refresh.UseVisualStyleBackColor = false;
-            // 
-            // btn_Add_borrower
-            // 
-            this.btn_Add_borrower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_Add_borrower.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.btn_Add_borrower.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Add_borrower.Location = new System.Drawing.Point(395, 6);
-            this.btn_Add_borrower.Name = "btn_Add_borrower";
-            this.btn_Add_borrower.Size = new System.Drawing.Size(171, 35);
-            this.btn_Add_borrower.TabIndex = 132;
-            this.btn_Add_borrower.Text = "<< Add new || View >>";
-            this.btn_Add_borrower.UseVisualStyleBackColor = false;
-            // 
-            // btn_dayCalculaor
-            // 
-            this.btn_dayCalculaor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_dayCalculaor.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.btn_dayCalculaor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_dayCalculaor.Location = new System.Drawing.Point(149, 128);
-            this.btn_dayCalculaor.Name = "btn_dayCalculaor";
-            this.btn_dayCalculaor.Size = new System.Drawing.Size(184, 27);
-            this.btn_dayCalculaor.TabIndex = 131;
-            this.btn_dayCalculaor.Text = "<< How many Days?";
-            this.btn_dayCalculaor.UseVisualStyleBackColor = false;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(26, 133);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(38, 17);
-            this.label26.TabIndex = 130;
-            this.label26.Text = "Days";
-            // 
-            // txt_days
-            // 
-            this.txt_days.Font = new System.Drawing.Font("Microsoft JhengHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_days.Location = new System.Drawing.Point(94, 130);
-            this.txt_days.Name = "txt_days";
-            this.txt_days.ReadOnly = true;
-            this.txt_days.Size = new System.Drawing.Size(50, 22);
-            this.txt_days.TabIndex = 129;
-            // 
-            // btn_checkout
-            // 
-            this.btn_checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_checkout.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.btn_checkout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_checkout.Location = new System.Drawing.Point(395, 92);
-            this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(161, 63);
-            this.btn_checkout.TabIndex = 128;
-            this.btn_checkout.Text = "Checkout ! >>";
-            this.btn_checkout.UseVisualStyleBackColor = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(26, 107);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(55, 17);
-            this.label27.TabIndex = 127;
-            this.label27.Text = "Reason:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Test",
-            "hwell",
-            "asdasdas",
-            "asdasdasd"});
-            this.comboBox2.Location = new System.Drawing.Point(95, 99);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(238, 25);
-            this.comboBox2.TabIndex = 126;
-            this.comboBox2.Text = "---Select Reason--";
-            // 
-            // txt_due_date
-            // 
-            this.txt_due_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_due_date.Location = new System.Drawing.Point(94, 68);
-            this.txt_due_date.Name = "txt_due_date";
-            this.txt_due_date.Size = new System.Drawing.Size(239, 25);
-            this.txt_due_date.TabIndex = 125;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(26, 74);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(33, 17);
-            this.label28.TabIndex = 124;
-            this.label28.Text = "Due";
-            // 
-            // txt_from_date
-            // 
-            this.txt_from_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_from_date.Location = new System.Drawing.Point(94, 37);
-            this.txt_from_date.Name = "txt_from_date";
-            this.txt_from_date.Size = new System.Drawing.Size(239, 25);
-            this.txt_from_date.TabIndex = 123;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(21, 10);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(73, 17);
-            this.label29.TabIndex = 122;
-            this.label29.Text = "Borrowers:";
-            // 
-            // cmb_borrowers
-            // 
-            this.cmb_borrowers.DisplayMember = "fname";
-            this.cmb_borrowers.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.cmb_borrowers.FormattingEnabled = true;
-            this.cmb_borrowers.Location = new System.Drawing.Point(94, 7);
-            this.cmb_borrowers.Name = "cmb_borrowers";
-            this.cmb_borrowers.Size = new System.Drawing.Size(295, 25);
-            this.cmb_borrowers.TabIndex = 121;
-            this.cmb_borrowers.ValueMember = "id";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(26, 43);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(43, 17);
-            this.label30.TabIndex = 120;
-            this.label30.Text = "From:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(9, 158);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(111, 20);
-            this.label25.TabIndex = 12;
-            this.label25.Text = "Search results";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label35.Location = new System.Drawing.Point(-1, 647);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(247, 13);
-            this.label35.TabIndex = 3;
-            this.label35.Text = "Concept Idea by  Mekonnen Tadesse PMI/MDTA.";
-            // 
-            // slidesearchBindingSource
-            // 
-            this.slidesearchBindingSource.DataMember = "slide_search";
-            this.slidesearchBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // borrowercontactlistBindingSource
-            // 
-            this.borrowercontactlistBindingSource.DataMember = "borrower_contact_list";
-            this.borrowercontactlistBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // borrower_contact_listTableAdapter
-            // 
-            this.borrower_contact_listTableAdapter.ClearBeforeFill = true;
-            // 
-            // slide_searchTableAdapter
-            // 
-            this.slide_searchTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -1063,6 +872,198 @@
             this.boxnumberDataGridViewTextBoxColumn.HeaderText = "box_number";
             this.boxnumberDataGridViewTextBoxColumn.Name = "boxnumberDataGridViewTextBoxColumn";
             // 
+            // slidesearchBindingSource
+            // 
+            this.slidesearchBindingSource.DataMember = "slide_search";
+            this.slidesearchBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_refresh.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.btn_refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_refresh.Location = new System.Drawing.Point(572, 7);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(170, 25);
+            this.btn_refresh.TabIndex = 133;
+            this.btn_refresh.Text = "refresh contact";
+            this.btn_refresh.UseVisualStyleBackColor = false;
+            // 
+            // btn_Add_borrower
+            // 
+            this.btn_Add_borrower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Add_borrower.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.btn_Add_borrower.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Add_borrower.Location = new System.Drawing.Point(395, 6);
+            this.btn_Add_borrower.Name = "btn_Add_borrower";
+            this.btn_Add_borrower.Size = new System.Drawing.Size(171, 26);
+            this.btn_Add_borrower.TabIndex = 132;
+            this.btn_Add_borrower.Text = "<< Add new || View >>";
+            this.btn_Add_borrower.UseVisualStyleBackColor = false;
+            // 
+            // btn_dayCalculaor
+            // 
+            this.btn_dayCalculaor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_dayCalculaor.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.btn_dayCalculaor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_dayCalculaor.Location = new System.Drawing.Point(149, 128);
+            this.btn_dayCalculaor.Name = "btn_dayCalculaor";
+            this.btn_dayCalculaor.Size = new System.Drawing.Size(184, 27);
+            this.btn_dayCalculaor.TabIndex = 131;
+            this.btn_dayCalculaor.Text = "<< How many Days?";
+            this.btn_dayCalculaor.UseVisualStyleBackColor = false;
+            this.btn_dayCalculaor.Click += new System.EventHandler(this.btn_dayCalculaor_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(26, 133);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(38, 17);
+            this.label26.TabIndex = 130;
+            this.label26.Text = "Days";
+            // 
+            // btn_checkout
+            // 
+            this.btn_checkout.BackColor = System.Drawing.Color.DarkGray;
+            this.btn_checkout.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.btn_checkout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_checkout.Location = new System.Drawing.Point(395, 144);
+            this.btn_checkout.Name = "btn_checkout";
+            this.btn_checkout.Size = new System.Drawing.Size(492, 29);
+            this.btn_checkout.TabIndex = 128;
+            this.btn_checkout.Text = "Checkout Searched Results ! >>";
+            this.btn_checkout.UseVisualStyleBackColor = false;
+            this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(26, 107);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(55, 17);
+            this.label27.TabIndex = 127;
+            this.label27.Text = "Reason:";
+            // 
+            // cmb_reason
+            // 
+            this.cmb_reason.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.cmb_reason.FormattingEnabled = true;
+            this.cmb_reason.Items.AddRange(new object[] {
+            "Test",
+            "hwell",
+            "asdasdas",
+            "asdasdasd"});
+            this.cmb_reason.Location = new System.Drawing.Point(95, 99);
+            this.cmb_reason.Name = "cmb_reason";
+            this.cmb_reason.Size = new System.Drawing.Size(238, 25);
+            this.cmb_reason.TabIndex = 126;
+            this.cmb_reason.Text = "---Select Reason--";
+            // 
+            // txt_due_date
+            // 
+            this.txt_due_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_due_date.Location = new System.Drawing.Point(94, 68);
+            this.txt_due_date.Name = "txt_due_date";
+            this.txt_due_date.Size = new System.Drawing.Size(239, 25);
+            this.txt_due_date.TabIndex = 125;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(26, 74);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(33, 17);
+            this.label28.TabIndex = 124;
+            this.label28.Text = "Due";
+            // 
+            // txt_from_date
+            // 
+            this.txt_from_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_from_date.Location = new System.Drawing.Point(94, 37);
+            this.txt_from_date.Name = "txt_from_date";
+            this.txt_from_date.Size = new System.Drawing.Size(239, 25);
+            this.txt_from_date.TabIndex = 123;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(21, 10);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(73, 17);
+            this.label29.TabIndex = 122;
+            this.label29.Text = "Borrowers:";
+            // 
+            // cmb_borrowers
+            // 
+            this.cmb_borrowers.DisplayMember = "fname";
+            this.cmb_borrowers.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.cmb_borrowers.FormattingEnabled = true;
+            this.cmb_borrowers.Location = new System.Drawing.Point(94, 7);
+            this.cmb_borrowers.Name = "cmb_borrowers";
+            this.cmb_borrowers.Size = new System.Drawing.Size(295, 25);
+            this.cmb_borrowers.TabIndex = 121;
+            this.cmb_borrowers.ValueMember = "id";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(26, 43);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(43, 17);
+            this.label30.TabIndex = 120;
+            this.label30.Text = "From:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(9, 158);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(111, 20);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Search results";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label35.Location = new System.Drawing.Point(-1, 647);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(247, 13);
+            this.label35.TabIndex = 3;
+            this.label35.Text = "Concept Idea by  Mekonnen Tadesse PMI/MDTA.";
+            // 
+            // borrowercontactlistBindingSource
+            // 
+            this.borrowercontactlistBindingSource.DataMember = "borrower_contact_list";
+            this.borrowercontactlistBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // borrower_contact_listTableAdapter
+            // 
+            this.borrower_contact_listTableAdapter.ClearBeforeFill = true;
+            // 
+            // slide_searchTableAdapter
+            // 
+            this.slide_searchTableAdapter.ClearBeforeFill = true;
+            // 
+            // txt_days
+            // 
+            this.txt_days.Location = new System.Drawing.Point(94, 130);
+            this.txt_days.Name = "txt_days";
+            this.txt_days.Size = new System.Drawing.Size(49, 20);
+            this.txt_days.TabIndex = 135;
+            // 
             // Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1107,6 +1108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.slidesearchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowercontactlistBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_days)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1136,10 +1138,9 @@
         private System.Windows.Forms.Button btn_Add_borrower;
         private System.Windows.Forms.Button btn_dayCalculaor;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox txt_days;
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_reason;
         private System.Windows.Forms.DateTimePicker txt_due_date;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.DateTimePicker txt_from_date;
@@ -1207,5 +1208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cabinetnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn drawernumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn boxnumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown txt_days;
     }
 }

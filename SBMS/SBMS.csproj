@@ -194,6 +194,7 @@
     <Compile Include="Selection.Designer.cs">
       <DependentUpon>Selection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\CheckinCheckoutService.cs" />
     <Compile Include="Services\DatabaseServices.cs" />
     <Compile Include="Services\DataFetchService.cs" />
     <Compile Include="Services\HelperServices.cs" />

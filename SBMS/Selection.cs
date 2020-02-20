@@ -8,32 +8,7 @@ namespace SBMS
 {
     public partial class Selection : Form
     {
-        //Capture search flags which are usefull or not
-        int pf_ld = 0;
-        int pf_hd = 0;
-        int pf_md =  0;
-        //pv
-        int pv_ld = 0;
-        int pv_hd = 0;
-        int pv_md = 0;
-        //pvpf
-        int pvpf_ld = 0;
-        int pvpf_hd = 0;
-        int pfpv_md = 0;
-        //po
-        int po_ld = 0;
-        int po_hd = 0;
-        int po_md = 0;
-
-        //pm
-        int pm_ld = 0;
-        int pm_hd = 0;
-        int pm_md = 0;
-
-        //others
-        int others_ld = 0;
-        int others_hd = 0;
-        int others_md = 0;
+        
 
         bool pv_on = true;
         bool pf_on = true;
@@ -42,7 +17,7 @@ namespace SBMS
         bool po_on = true;
         bool pm_on = true;
         bool others_on = true;
-
+        DataTable mergedSearchResult = new DataTable();
         //pf
         DataTable pf_ld_datatable = new DataTable();
         DataTable pf_md_datatable = new DataTable();
@@ -68,10 +43,12 @@ namespace SBMS
         DataTable others_md_datatable = new DataTable();
         DataTable others_hd_datatable = new DataTable();
         SearchAndFilterService searchAndFilterService;
+        CheckinCheckoutService checkinCheckoutService;
         public Selection()
         {
             InitializeComponent();
             searchAndFilterService = new SearchAndFilterService(); //initliaise
+            checkinCheckoutService = new CheckinCheckoutService();
 
         }
 
@@ -93,7 +70,7 @@ namespace SBMS
         private void Selection_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sbmsDataSet.slide_search' table. You can move, or remove it, as needed.
-            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search,1000,'B');
+            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
             // TODO: This line of code loads data into the 'sbmsDataSet.borrower_contact_list' table. You can move, or remove it, as needed.
             this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
  
@@ -122,7 +99,7 @@ namespace SBMS
             this.searchPms();
             this.searchPos();
             this.searchOthers();
-            DataTable mergedSearchResult = new DataTable();
+          
             mergedSearchResult.Clear();
             mergedSearchResult.Merge(pv_ld_datatable);
             mergedSearchResult.Merge(pf_ld_datatable);
@@ -130,9 +107,36 @@ namespace SBMS
             mergedSearchResult.Merge(po_ld_datatable);
             mergedSearchResult.Merge(pm_ld_datatable);
             mergedSearchResult.Merge(others_ld_datatable);
-
+            grd_search_results.DataSource = null;
             grd_search_results.DataSource = mergedSearchResult;
+            resetDataSetsAftersearch();
 
+        }
+
+        private void resetDataSetsAftersearch() {
+            pf_ld_datatable.Clear();
+            pf_md_datatable.Clear();
+            pf_hd_datatable.Clear();
+            //pv
+            pv_ld_datatable.Clear();
+            pv_md_datatable.Clear();
+            pv_hd_datatable.Clear();
+            //pfpv
+            pfpv_hd_datatable.Clear();
+            pfpv_ld_datatable.Clear();
+            pfpv_md_datatable.Clear();
+            //po
+            po_ld_datatable.Clear();
+            po_md_datatable.Clear();
+            po_hd_datatable.Clear();
+            //pm
+            pm_ld_datatable.Clear(); ;
+            pm_md_datatable.Clear();
+            pm_hd_datatable.Clear();
+            //others
+            others_ld_datatable.Clear();
+            others_md_datatable.Clear();
+            others_hd_datatable.Clear();
         }
 
         private void searchPfPvs() {
@@ -286,6 +290,10 @@ namespace SBMS
             {
                 MessageBox.Show("Pv will be excluded from search");
             }
+            if (pf_on == false)
+            {
+                MessageBox.Show("Pf will be excluded from search");
+            }
             if (pvpf_on == false)
             {
                 MessageBox.Show("PvPf will be excluded from search");
@@ -296,7 +304,7 @@ namespace SBMS
             }
             if (pm_on == false)
             {
-                MessageBox.Show("Pf will be excluded from search");
+                MessageBox.Show("Pm will be excluded from search");
             }
             if (others_on == false)
             {
@@ -350,6 +358,59 @@ namespace SBMS
             pf_ld_q.Enabled = false;
             pf_md_q.Enabled = false;
             pf_on = false;
+        }
+        private bool validate_before_Checkout() {
+
+            if (cmb_borrowers.SelectedIndex ==-1) {
+                MessageBox.Show("Please, select a borrower to checkout for");
+                return false;
+            }
+            if (cmb_borrowers.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please, select a borrower to checkout for");
+                return false;
+            }
+
+            if (cmb_reason.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please, select a a reason for checkout");
+                return false;
+            }
+
+            if (txt_days.Value<=0) {
+
+                MessageBox.Show("Numdays is 0 or invalid. That means no checkout ? calculate the number of days for checkout");
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btn_checkout_Click(object sender, EventArgs e)
+        {
+            bool isValid = validate_before_Checkout();
+
+            if (isValid == true)
+            {
+
+                int slides_id = -1;
+                List<int> ids = new List<int>();
+                DialogResult dialogResult = MessageBox.Show("You are going to checkout all below slides. Are you sure ?", "Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row in grd_search_results.Rows)
+                    {
+                        ids.Add(Int32.Parse(row.Cells["id"].Value.ToString()));
+                        //More code here
+                    }
+                    checkinCheckoutService.checkoutbySlideIds(cmb_borrowers.SelectedIndex, ids);
+                }
+            }
+        }
+
+        private void btn_dayCalculaor_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

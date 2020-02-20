@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace SBMS.Services
@@ -27,22 +28,19 @@ namespace SBMS.Services
 
         public DataTable searchSlideByParasiteQuanityAndDensity(string parasiste,int quantity,string density)
         {
-
-            DataTable searchResult = new DataTable();
-          
-                using (var cmd = new SqlCommand("sp_slidesearchengine", DatabaseServices.con))
-                using (var sqlDataAdapter = new SqlDataAdapter(cmd))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@parasite", parasiste);
-                    cmd.Parameters.AddWithValue("@quantity", quantity);
-                    cmd.Parameters.AddWithValue("@density", density);
-                    searchResult.Clear();
-                    sqlDataAdapter.Fill(searchResult);
-                }
-
-            // if there are records, bind to Grid view & display
-            return searchResult;
+            DataTable searchResults = new DataTable();
+            using (var con = new SqlConnection(DatabaseServices.connectionString))
+            using (var cmd = new SqlCommand("dbo.sp_slidesearchengine", con))
+            using (var da = new SqlDataAdapter(cmd))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@parasite_type", parasiste);
+                cmd.Parameters.AddWithValue("@quantity", quantity);
+                cmd.Parameters.AddWithValue("@density", density);
+                da.Fill(searchResults);
+            }
+         
+            return searchResults;
         }
 
     }
