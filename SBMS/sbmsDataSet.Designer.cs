@@ -6803,8 +6803,6 @@ namespace SBMS {
             
             private global::System.Data.DataColumn columncreated_by;
             
-            private global::System.Data.DataColumn columnlast_updated_by;
-            
             private global::System.Data.DataColumn columndonor_code;
             
             private global::System.Data.DataColumn columnspecies_catgeroy_id;
@@ -6818,6 +6816,8 @@ namespace SBMS {
             private global::System.Data.DataColumn columnspecifics;
             
             private global::System.Data.DataColumn columnstage;
+            
+            private global::System.Data.DataColumn columnupdated_by;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -7046,14 +7046,6 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn last_updated_byColumn {
-                get {
-                    return this.columnlast_updated_by;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn donor_codeColumn {
                 get {
                     return this.columndonor_code;
@@ -7105,6 +7097,14 @@ namespace SBMS {
             public global::System.Data.DataColumn stageColumn {
                 get {
                     return this.columnstage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn updated_byColumn {
+                get {
+                    return this.columnupdated_by;
                 }
             }
             
@@ -7169,13 +7169,13 @@ namespace SBMS {
                         System.DateTime updated_date, 
                         System.DateTime created_date, 
                         string created_by, 
-                        string last_updated_by, 
                         string donor_code, 
                         int species_catgeroy_id, 
                         string density_category, 
                         string species_category, 
                         string specifics, 
-                        string stage) {
+                        string stage, 
+                        string updated_by) {
                 slide_searchRow rowslide_searchRow = ((slide_searchRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -7202,14 +7202,14 @@ namespace SBMS {
                         updated_date,
                         created_date,
                         created_by,
-                        last_updated_by,
                         donor_code,
                         species_catgeroy_id,
                         null,
                         density_category,
                         species_category,
                         specifics,
-                        stage};
+                        stage,
+                        updated_by};
                 rowslide_searchRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowslide_searchRow);
                 return rowslide_searchRow;
@@ -7263,7 +7263,6 @@ namespace SBMS {
                 this.columnupdated_date = base.Columns["updated_date"];
                 this.columncreated_date = base.Columns["created_date"];
                 this.columncreated_by = base.Columns["created_by"];
-                this.columnlast_updated_by = base.Columns["last_updated_by"];
                 this.columndonor_code = base.Columns["donor_code"];
                 this.columnspecies_catgeroy_id = base.Columns["species_catgeroy_id"];
                 this.columndonor_donor_id = base.Columns["donor_donor_id"];
@@ -7271,6 +7270,7 @@ namespace SBMS {
                 this.columnspecies_category = base.Columns["species_category"];
                 this.columnspecifics = base.Columns["specifics"];
                 this.columnstage = base.Columns["stage"];
+                this.columnupdated_by = base.Columns["updated_by"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7324,8 +7324,6 @@ namespace SBMS {
                 base.Columns.Add(this.columncreated_date);
                 this.columncreated_by = new global::System.Data.DataColumn("created_by", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreated_by);
-                this.columnlast_updated_by = new global::System.Data.DataColumn("last_updated_by", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlast_updated_by);
                 this.columndonor_code = new global::System.Data.DataColumn("donor_code", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndonor_code);
                 this.columnspecies_catgeroy_id = new global::System.Data.DataColumn("species_catgeroy_id", typeof(int), null, global::System.Data.MappingType.Element);
@@ -7340,6 +7338,8 @@ namespace SBMS {
                 base.Columns.Add(this.columnspecifics);
                 this.columnstage = new global::System.Data.DataColumn("stage", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstage);
+                this.columnupdated_by = new global::System.Data.DataColumn("updated_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_by);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -7367,7 +7367,6 @@ namespace SBMS {
                 this.columndrawer_number.AllowDBNull = false;
                 this.columnbox_number.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 2147483647;
-                this.columnlast_updated_by.MaxLength = 2147483647;
                 this.columndonor_code.AllowDBNull = false;
                 this.columndonor_code.MaxLength = 2147483647;
                 this.columnspecies_catgeroy_id.AllowDBNull = false;
@@ -7380,6 +7379,7 @@ namespace SBMS {
                 this.columnspecies_category.MaxLength = 2147483647;
                 this.columnspecifics.MaxLength = 2147483647;
                 this.columnstage.MaxLength = 2147483647;
+                this.columnupdated_by.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11540,22 +11540,6 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string last_updated_by {
-                get {
-                    try {
-                        return ((string)(this[this.tableslide_search.last_updated_byColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'last_updated_by\' in table \'slide_search\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableslide_search.last_updated_byColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string donor_code {
                 get {
                     return ((string)(this[this.tableslide_search.donor_codeColumn]));
@@ -11648,6 +11632,22 @@ namespace SBMS {
                 }
                 set {
                     this[this.tableslide_search.stageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string updated_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.updated_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_by\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.updated_byColumn] = value;
                 }
             }
             
@@ -11761,18 +11761,6 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Islast_updated_byNull() {
-                return this.IsNull(this.tableslide_search.last_updated_byColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setlast_updated_byNull() {
-                this[this.tableslide_search.last_updated_byColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isdensity_categoryNull() {
                 return this.IsNull(this.tableslide_search.density_categoryColumn);
             }
@@ -11817,6 +11805,18 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetstageNull() {
                 this[this.tableslide_search.stageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isupdated_byNull() {
+                return this.IsNull(this.tableslide_search.updated_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setupdated_byNull() {
+                this[this.tableslide_search.updated_byColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -17410,7 +17410,6 @@ ORDER BY s.id";
             tableMapping.ColumnMappings.Add("updated_date", "updated_date");
             tableMapping.ColumnMappings.Add("created_date", "created_date");
             tableMapping.ColumnMappings.Add("created_by", "created_by");
-            tableMapping.ColumnMappings.Add("last_updated_by", "last_updated_by");
             tableMapping.ColumnMappings.Add("donor_code", "donor_code");
             tableMapping.ColumnMappings.Add("species_catgeroy_id", "species_catgeroy_id");
             tableMapping.ColumnMappings.Add("donor_donor_id", "donor_donor_id");
@@ -17418,6 +17417,7 @@ ORDER BY s.id";
             tableMapping.ColumnMappings.Add("species_category", "species_category");
             tableMapping.ColumnMappings.Add("specifics", "specifics");
             tableMapping.ColumnMappings.Add("stage", "stage");
+            tableMapping.ColumnMappings.Add("updated_by", "updated_by");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -17434,13 +17434,13 @@ ORDER BY s.id";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT top 1000 s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.last_updated_by, 
+            this._commandCollection[0].CommandText = @"SELECT top 1000 s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
                          d.id AS donor_donor_id, d.donor_code, 
 						 d.species_specific_id, 
 						 d.species_stage_id, 
 						 d.species_catgeroy_id, 
 						 d.lower_density, 
-						 d.average_density, 
+					 	 d.average_density, 
 						 d.upper_density, 
 						 d.density_category_id, 
 						 d.owner_id,
@@ -17456,7 +17456,7 @@ FROM  slides AS s INNER JOIN donors		AS d ON d.id = s.donor_id
 	  inner join species_category as sc on sc.id = d.species_catgeroy_id
 	  inner join species_specifics as ss on ss.id = d.species_specific_id
 	  inner join species_stages as st on st.id = d.species_stage_id
-WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0)  
+WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0)  and (s.isBorrowed=0)
 ORDER BY s.id;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }

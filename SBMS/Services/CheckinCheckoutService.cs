@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Windows;
 
 namespace SBMS.Services
 {
     public class CheckinCheckoutService
     {
-
-        //Get Connection from web.config file
-        public bool checkoutbySlideIds(int borrower_id,List<int> id)
+        public bool checkoutbySlideIds(int borrower_id, List<int> ids, DateTime fromDate, DateTime dueDate, String reason)
         {
-            String list_of_ids_with_comma = "";
-            id.ForEach(delegate (int d)
+            string list_of_ids_with_comma = "";
+
+            ids.ForEach(delegate (int sid)
             {
-                list_of_ids_with_comma += d.ToString() + ",";
+                list_of_ids_with_comma += sid + ",";
             });
+
+           list_of_ids_with_comma = list_of_ids_with_comma.Remove(list_of_ids_with_comma.Length - 1);//reove tge kaqst ,
 
             using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
             {
@@ -25,8 +28,7 @@ namespace SBMS.Services
                 {
                     command.Connection = connection;
                     string updateDonorQuery = "UPDATE slides " +
-                        "SET isBorrowed=1,updated_by=@updated_by" +
-                        "WHERE id IN (@ids)";
+                        "SET isBorrowed=1,updated_by=@updated_by WHERE id IN (SELECT value FROM STRING_SPLIT(@ids,','))";
                     command.CommandText = updateDonorQuery;
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@ids", list_of_ids_with_comma);
@@ -39,62 +41,65 @@ namespace SBMS.Services
                             connection.Open();
                         }
                         int recordsAffected = command.ExecuteNonQuery();
-                        if (recordsAffected > 0)
-                        {
-                            return true;
-                        }
+
 
                     }
                     catch (SqlException ex)
                     {
+                        MessageBox.Show("Checkout Database Error:" + ex.Message);
                         return false;
-
                     }
-                }
-                using (SqlCommand command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    string insertQUery = "INSERT current_lending " +
-                        "SET borrower_id=@b_id,slide_id=@slide_id," +
-                        "updated_by=@updated_by," +
-                        "checked_out_date=@created_date," +
-                        "due_date=@due_date,"+
-                        "created_by=@created_by"+
-                        "WHERE id =@id";
-                    command.CommandText = insertQUery;
-                    command.CommandType = CommandType.Text;
+                  }
 
-                    for (int i = 0; i < id.Count; i++) {
-                        command.Parameters.AddWithValue("@slide_id", id[i]);
-                        command.Parameters.AddWithValue("@b_id", borrower_id);
-                        command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
-                        try
+                    ids.ForEach(delegate (int sid)
+                    {
+                        using (SqlCommand command = new SqlCommand())
                         {
-
-                            if (connection.State == ConnectionState.Closed)
+                            command.Connection = connection;
+                            string insertQUery = "INSERT into current_lending " +
+                                "(borrower_id," +
+                                "slide_id," +
+                                "checked_out_date," +
+                                "due_date," +
+                                "reason," +
+                                "created_by)" +
+                                "Values(" +
+                                "@b_id," +
+                                "@slide_id," +
+                                "@checked_out_date," +
+                                "@due_date," +
+                                "@reason," +
+                                "@created_by)";
+                            command.CommandText = insertQUery;
+                            command.CommandType = CommandType.Text;
+                            command.Parameters.AddWithValue("@b_id", borrower_id);
+                            command.Parameters.AddWithValue("@slide_id", sid);
+                            command.Parameters.AddWithValue("@checked_out_date", fromDate);
+                            command.Parameters.AddWithValue("@due_date", dueDate);
+                            command.Parameters.AddWithValue("@reason", reason);
+                            command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+                            try
                             {
-                                connection.Open();
+
+                                if (connection.State == ConnectionState.Closed)
+                                {
+                                    connection.Open();
+                                }
+
+                                int recordsAffected = command.ExecuteNonQuery();
                             }
-                            int recordsAffected = command.ExecuteNonQuery();
-                            if (recordsAffected > 0)
+                            catch (SqlException ex)
                             {
-                                return true;
+                                MessageBox.Show("Checkout Database Error:" + ex.Message);
                             }
-
                         }
-                        catch (SqlException ex)
-                        {
-                            return false;
-
-                        }
-                    }
-
+                    });
+                    connection.Close();
                     //end result of adding to chekout table
-
-                }
-
-                return false;
+                return true;
             }
+
         }
     }
 }
+

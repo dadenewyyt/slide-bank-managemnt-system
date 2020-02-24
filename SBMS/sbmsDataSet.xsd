@@ -896,13 +896,13 @@ ORDER BY s.id</CommandText>
               <DbSource ConnectionRef="sbmsConnectionStringDaniel (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT top 1000 s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.last_updated_by, 
+                    <CommandText>SELECT top 1000 s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
                          d.id AS donor_donor_id, d.donor_code, 
 						 d.species_specific_id, 
 						 d.species_stage_id, 
 						 d.species_catgeroy_id, 
 						 d.lower_density, 
-						 d.average_density, 
+					 	 d.average_density, 
 						 d.upper_density, 
 						 d.density_category_id, 
 						 d.owner_id,
@@ -918,7 +918,7 @@ FROM  slides AS s INNER JOIN donors		AS d ON d.id = s.donor_id
 	  inner join species_category as sc on sc.id = d.species_catgeroy_id
 	  inner join species_specifics as ss on ss.id = d.species_specific_id
 	  inner join species_stages as st on st.id = d.species_stage_id
-WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0)  
+WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0)  and (s.isBorrowed=0)
 ORDER BY s.id;</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -950,7 +950,6 @@ ORDER BY s.id;</CommandText>
               <Mapping SourceColumn="updated_date" DataSetColumn="updated_date" />
               <Mapping SourceColumn="created_date" DataSetColumn="created_date" />
               <Mapping SourceColumn="created_by" DataSetColumn="created_by" />
-              <Mapping SourceColumn="last_updated_by" DataSetColumn="last_updated_by" />
               <Mapping SourceColumn="donor_code" DataSetColumn="donor_code" />
               <Mapping SourceColumn="species_catgeroy_id" DataSetColumn="species_catgeroy_id" />
               <Mapping SourceColumn="donor_donor_id" DataSetColumn="donor_donor_id" />
@@ -958,6 +957,7 @@ ORDER BY s.id;</CommandText>
               <Mapping SourceColumn="species_category" DataSetColumn="species_category" />
               <Mapping SourceColumn="specifics" DataSetColumn="specifics" />
               <Mapping SourceColumn="stage" DataSetColumn="stage" />
+              <Mapping SourceColumn="updated_by" DataSetColumn="updated_by" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -969,7 +969,7 @@ ORDER BY s.id;</CommandText>
   <xs:element name="sbmsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="sbmsDataSet" msprop:Generator_UserDSName="sbmsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="donors" msprop:Generator_TableClassName="donorsDataTable" msprop:Generator_TableVarName="tabledonors" msprop:Generator_RowChangedName="donorsRowChanged" msprop:Generator_TablePropName="donors" msprop:Generator_RowDeletingName="donorsRowDeleting" msprop:Generator_RowChangingName="donorsRowChanging" msprop:Generator_RowEvHandlerName="donorsRowChangeEventHandler" msprop:Generator_RowDeletedName="donorsRowDeleted" msprop:Generator_RowClassName="donorsRow" msprop:Generator_UserTableName="donors" msprop:Generator_RowEvArgName="donorsRowChangeEvent">
+        <xs:element name="donors" msprop:Generator_TableClassName="donorsDataTable" msprop:Generator_TableVarName="tabledonors" msprop:Generator_TablePropName="donors" msprop:Generator_RowDeletingName="donorsRowDeleting" msprop:Generator_RowChangingName="donorsRowChanging" msprop:Generator_RowEvHandlerName="donorsRowChangeEventHandler" msprop:Generator_RowDeletedName="donorsRowDeleted" msprop:Generator_UserTableName="donors" msprop:Generator_RowChangedName="donorsRowChanged" msprop:Generator_RowEvArgName="donorsRowChangeEvent" msprop:Generator_RowClassName="donorsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1032,7 +1032,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="recent_slide_dataset" msprop:Generator_TableClassName="recent_slide_datasetDataTable" msprop:Generator_TableVarName="tablerecent_slide_dataset" msprop:Generator_TablePropName="recent_slide_dataset" msprop:Generator_RowDeletingName="recent_slide_datasetRowDeleting" msprop:Generator_RowChangingName="recent_slide_datasetRowChanging" msprop:Generator_RowEvHandlerName="recent_slide_datasetRowChangeEventHandler" msprop:Generator_RowDeletedName="recent_slide_datasetRowDeleted" msprop:Generator_UserTableName="recent_slide_dataset" msprop:Generator_RowChangedName="recent_slide_datasetRowChanged" msprop:Generator_RowEvArgName="recent_slide_datasetRowChangeEvent" msprop:Generator_RowClassName="recent_slide_datasetRow">
+        <xs:element name="recent_slide_dataset" msprop:Generator_TableClassName="recent_slide_datasetDataTable" msprop:Generator_TableVarName="tablerecent_slide_dataset" msprop:Generator_RowChangedName="recent_slide_datasetRowChanged" msprop:Generator_TablePropName="recent_slide_dataset" msprop:Generator_RowDeletingName="recent_slide_datasetRowDeleting" msprop:Generator_RowChangingName="recent_slide_datasetRowChanging" msprop:Generator_RowEvHandlerName="recent_slide_datasetRowChangeEventHandler" msprop:Generator_RowDeletedName="recent_slide_datasetRowDeleted" msprop:Generator_RowClassName="recent_slide_datasetRow" msprop:Generator_UserTableName="recent_slide_dataset" msprop:Generator_RowEvArgName="recent_slide_datasetRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1109,7 +1109,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="slides" msprop:Generator_TableClassName="slidesDataTable" msprop:Generator_TableVarName="tableslides" msprop:Generator_TablePropName="slides" msprop:Generator_RowDeletingName="slidesRowDeleting" msprop:Generator_RowChangingName="slidesRowChanging" msprop:Generator_RowEvHandlerName="slidesRowChangeEventHandler" msprop:Generator_RowDeletedName="slidesRowDeleted" msprop:Generator_UserTableName="slides" msprop:Generator_RowChangedName="slidesRowChanged" msprop:Generator_RowEvArgName="slidesRowChangeEvent" msprop:Generator_RowClassName="slidesRow">
+        <xs:element name="slides" msprop:Generator_TableClassName="slidesDataTable" msprop:Generator_TableVarName="tableslides" msprop:Generator_RowChangedName="slidesRowChanged" msprop:Generator_TablePropName="slides" msprop:Generator_RowDeletingName="slidesRowDeleting" msprop:Generator_RowChangingName="slidesRowChanging" msprop:Generator_RowEvHandlerName="slidesRowChangeEventHandler" msprop:Generator_RowDeletedName="slidesRowDeleted" msprop:Generator_RowClassName="slidesRow" msprop:Generator_UserTableName="slides" msprop:Generator_RowEvArgName="slidesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1186,7 +1186,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="species_category" msprop:Generator_TableClassName="species_categoryDataTable" msprop:Generator_TableVarName="tablespecies_category" msprop:Generator_RowChangedName="species_categoryRowChanged" msprop:Generator_TablePropName="species_category" msprop:Generator_RowDeletingName="species_categoryRowDeleting" msprop:Generator_RowChangingName="species_categoryRowChanging" msprop:Generator_RowEvHandlerName="species_categoryRowChangeEventHandler" msprop:Generator_RowDeletedName="species_categoryRowDeleted" msprop:Generator_RowClassName="species_categoryRow" msprop:Generator_UserTableName="species_category" msprop:Generator_RowEvArgName="species_categoryRowChangeEvent">
+        <xs:element name="species_category" msprop:Generator_TableClassName="species_categoryDataTable" msprop:Generator_TableVarName="tablespecies_category" msprop:Generator_TablePropName="species_category" msprop:Generator_RowDeletingName="species_categoryRowDeleting" msprop:Generator_RowChangingName="species_categoryRowChanging" msprop:Generator_RowEvHandlerName="species_categoryRowChangeEventHandler" msprop:Generator_RowDeletedName="species_categoryRowDeleted" msprop:Generator_UserTableName="species_category" msprop:Generator_RowChangedName="species_categoryRowChanged" msprop:Generator_RowEvArgName="species_categoryRowChangeEvent" msprop:Generator_RowClassName="species_categoryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1200,7 +1200,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="species_specifics" msprop:Generator_TableClassName="species_specificsDataTable" msprop:Generator_TableVarName="tablespecies_specifics" msprop:Generator_RowChangedName="species_specificsRowChanged" msprop:Generator_TablePropName="species_specifics" msprop:Generator_RowDeletingName="species_specificsRowDeleting" msprop:Generator_RowChangingName="species_specificsRowChanging" msprop:Generator_RowEvHandlerName="species_specificsRowChangeEventHandler" msprop:Generator_RowDeletedName="species_specificsRowDeleted" msprop:Generator_RowClassName="species_specificsRow" msprop:Generator_UserTableName="species_specifics" msprop:Generator_RowEvArgName="species_specificsRowChangeEvent">
+        <xs:element name="species_specifics" msprop:Generator_TableClassName="species_specificsDataTable" msprop:Generator_TableVarName="tablespecies_specifics" msprop:Generator_TablePropName="species_specifics" msprop:Generator_RowDeletingName="species_specificsRowDeleting" msprop:Generator_RowChangingName="species_specificsRowChanging" msprop:Generator_RowEvHandlerName="species_specificsRowChangeEventHandler" msprop:Generator_RowDeletedName="species_specificsRowDeleted" msprop:Generator_UserTableName="species_specifics" msprop:Generator_RowChangedName="species_specificsRowChanged" msprop:Generator_RowEvArgName="species_specificsRowChangeEvent" msprop:Generator_RowClassName="species_specificsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1214,7 +1214,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="species_stages" msprop:Generator_TableClassName="species_stagesDataTable" msprop:Generator_TableVarName="tablespecies_stages" msprop:Generator_RowChangedName="species_stagesRowChanged" msprop:Generator_TablePropName="species_stages" msprop:Generator_RowDeletingName="species_stagesRowDeleting" msprop:Generator_RowChangingName="species_stagesRowChanging" msprop:Generator_RowEvHandlerName="species_stagesRowChangeEventHandler" msprop:Generator_RowDeletedName="species_stagesRowDeleted" msprop:Generator_RowClassName="species_stagesRow" msprop:Generator_UserTableName="species_stages" msprop:Generator_RowEvArgName="species_stagesRowChangeEvent">
+        <xs:element name="species_stages" msprop:Generator_TableClassName="species_stagesDataTable" msprop:Generator_TableVarName="tablespecies_stages" msprop:Generator_TablePropName="species_stages" msprop:Generator_RowDeletingName="species_stagesRowDeleting" msprop:Generator_RowChangingName="species_stagesRowChanging" msprop:Generator_RowEvHandlerName="species_stagesRowChangeEventHandler" msprop:Generator_RowDeletedName="species_stagesRowDeleted" msprop:Generator_UserTableName="species_stages" msprop:Generator_RowChangedName="species_stagesRowChanged" msprop:Generator_RowEvArgName="species_stagesRowChangeEvent" msprop:Generator_RowClassName="species_stagesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1228,7 +1228,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_RowClassName="usersRow" msprop:Generator_UserTableName="users" msprop:Generator_RowEvArgName="usersRowChangeEvent">
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1272,7 +1272,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="validations" msprop:Generator_TableClassName="validationsDataTable" msprop:Generator_TableVarName="tablevalidations" msprop:Generator_RowChangedName="validationsRowChanged" msprop:Generator_TablePropName="validations" msprop:Generator_RowDeletingName="validationsRowDeleting" msprop:Generator_RowChangingName="validationsRowChanging" msprop:Generator_RowEvHandlerName="validationsRowChangeEventHandler" msprop:Generator_RowDeletedName="validationsRowDeleted" msprop:Generator_RowClassName="validationsRow" msprop:Generator_UserTableName="validations" msprop:Generator_RowEvArgName="validationsRowChangeEvent">
+        <xs:element name="validations" msprop:Generator_TableClassName="validationsDataTable" msprop:Generator_TableVarName="tablevalidations" msprop:Generator_TablePropName="validations" msprop:Generator_RowDeletingName="validationsRowDeleting" msprop:Generator_RowChangingName="validationsRowChanging" msprop:Generator_RowEvHandlerName="validationsRowChangeEventHandler" msprop:Generator_RowDeletedName="validationsRowDeleted" msprop:Generator_UserTableName="validations" msprop:Generator_RowChangedName="validationsRowChanged" msprop:Generator_RowEvArgName="validationsRowChangeEvent" msprop:Generator_RowClassName="validationsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1286,7 +1286,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="borrowers" msprop:Generator_TableClassName="borrowersDataTable" msprop:Generator_TableVarName="tableborrowers" msprop:Generator_TablePropName="borrowers" msprop:Generator_RowDeletingName="borrowersRowDeleting" msprop:Generator_RowChangingName="borrowersRowChanging" msprop:Generator_RowEvHandlerName="borrowersRowChangeEventHandler" msprop:Generator_RowDeletedName="borrowersRowDeleted" msprop:Generator_UserTableName="borrowers" msprop:Generator_RowChangedName="borrowersRowChanged" msprop:Generator_RowEvArgName="borrowersRowChangeEvent" msprop:Generator_RowClassName="borrowersRow">
+        <xs:element name="borrowers" msprop:Generator_TableClassName="borrowersDataTable" msprop:Generator_TableVarName="tableborrowers" msprop:Generator_RowChangedName="borrowersRowChanged" msprop:Generator_TablePropName="borrowers" msprop:Generator_RowDeletingName="borrowersRowDeleting" msprop:Generator_RowChangingName="borrowersRowChanging" msprop:Generator_RowEvHandlerName="borrowersRowChangeEventHandler" msprop:Generator_RowDeletedName="borrowersRowDeleted" msprop:Generator_RowClassName="borrowersRow" msprop:Generator_UserTableName="borrowers" msprop:Generator_RowEvArgName="borrowersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1408,7 +1408,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="slides_for_checkout" msprop:Generator_TableClassName="slides_for_checkoutDataTable" msprop:Generator_TableVarName="tableslides_for_checkout" msprop:Generator_RowChangedName="slides_for_checkoutRowChanged" msprop:Generator_TablePropName="slides_for_checkout" msprop:Generator_RowDeletingName="slides_for_checkoutRowDeleting" msprop:Generator_RowChangingName="slides_for_checkoutRowChanging" msprop:Generator_RowEvHandlerName="slides_for_checkoutRowChangeEventHandler" msprop:Generator_RowDeletedName="slides_for_checkoutRowDeleted" msprop:Generator_RowClassName="slides_for_checkoutRow" msprop:Generator_UserTableName="slides_for_checkout" msprop:Generator_RowEvArgName="slides_for_checkoutRowChangeEvent">
+        <xs:element name="slides_for_checkout" msprop:Generator_TableClassName="slides_for_checkoutDataTable" msprop:Generator_TableVarName="tableslides_for_checkout" msprop:Generator_TablePropName="slides_for_checkout" msprop:Generator_RowDeletingName="slides_for_checkoutRowDeleting" msprop:Generator_RowChangingName="slides_for_checkoutRowChanging" msprop:Generator_RowEvHandlerName="slides_for_checkoutRowChangeEventHandler" msprop:Generator_RowDeletedName="slides_for_checkoutRowDeleted" msprop:Generator_UserTableName="slides_for_checkout" msprop:Generator_RowChangedName="slides_for_checkoutRowChanged" msprop:Generator_RowEvArgName="slides_for_checkoutRowChangeEvent" msprop:Generator_RowClassName="slides_for_checkoutRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1485,7 +1485,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="borrower_contact_list" msprop:Generator_TableClassName="borrower_contact_listDataTable" msprop:Generator_TableVarName="tableborrower_contact_list" msprop:Generator_TablePropName="borrower_contact_list" msprop:Generator_RowDeletingName="borrower_contact_listRowDeleting" msprop:Generator_RowChangingName="borrower_contact_listRowChanging" msprop:Generator_RowEvHandlerName="borrower_contact_listRowChangeEventHandler" msprop:Generator_RowDeletedName="borrower_contact_listRowDeleted" msprop:Generator_UserTableName="borrower_contact_list" msprop:Generator_RowChangedName="borrower_contact_listRowChanged" msprop:Generator_RowEvArgName="borrower_contact_listRowChangeEvent" msprop:Generator_RowClassName="borrower_contact_listRow">
+        <xs:element name="borrower_contact_list" msprop:Generator_TableClassName="borrower_contact_listDataTable" msprop:Generator_TableVarName="tableborrower_contact_list" msprop:Generator_RowChangedName="borrower_contact_listRowChanged" msprop:Generator_TablePropName="borrower_contact_list" msprop:Generator_RowDeletingName="borrower_contact_listRowDeleting" msprop:Generator_RowChangingName="borrower_contact_listRowChanging" msprop:Generator_RowEvHandlerName="borrower_contact_listRowChangeEventHandler" msprop:Generator_RowDeletedName="borrower_contact_listRowDeleted" msprop:Generator_RowClassName="borrower_contact_listRow" msprop:Generator_UserTableName="borrower_contact_list" msprop:Generator_RowEvArgName="borrower_contact_listRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1614,7 +1614,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="slide_history" msprop:Generator_TableClassName="slide_historyDataTable" msprop:Generator_TableVarName="tableslide_history" msprop:Generator_RowChangedName="slide_historyRowChanged" msprop:Generator_TablePropName="slide_history" msprop:Generator_RowDeletingName="slide_historyRowDeleting" msprop:Generator_RowChangingName="slide_historyRowChanging" msprop:Generator_RowEvHandlerName="slide_historyRowChangeEventHandler" msprop:Generator_RowDeletedName="slide_historyRowDeleted" msprop:Generator_RowClassName="slide_historyRow" msprop:Generator_UserTableName="slide_history" msprop:Generator_RowEvArgName="slide_historyRowChangeEvent">
+        <xs:element name="slide_history" msprop:Generator_TableClassName="slide_historyDataTable" msprop:Generator_TableVarName="tableslide_history" msprop:Generator_TablePropName="slide_history" msprop:Generator_RowDeletingName="slide_historyRowDeleting" msprop:Generator_RowChangingName="slide_historyRowChanging" msprop:Generator_RowEvHandlerName="slide_historyRowChangeEventHandler" msprop:Generator_RowDeletedName="slide_historyRowDeleted" msprop:Generator_UserTableName="slide_history" msprop:Generator_RowChangedName="slide_historyRowChanged" msprop:Generator_RowEvArgName="slide_historyRowChangeEvent" msprop:Generator_RowClassName="slide_historyRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1691,7 +1691,7 @@ ORDER BY s.id;</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="slide_search" msprop:Generator_TableClassName="slide_searchDataTable" msprop:Generator_TableVarName="tableslide_search" msprop:Generator_TablePropName="slide_search" msprop:Generator_RowDeletingName="slide_searchRowDeleting" msprop:Generator_RowChangingName="slide_searchRowChanging" msprop:Generator_RowEvHandlerName="slide_searchRowChangeEventHandler" msprop:Generator_RowDeletedName="slide_searchRowDeleted" msprop:Generator_UserTableName="slide_search" msprop:Generator_RowChangedName="slide_searchRowChanged" msprop:Generator_RowEvArgName="slide_searchRowChangeEvent" msprop:Generator_RowClassName="slide_searchRow">
+        <xs:element name="slide_search" msprop:Generator_TableClassName="slide_searchDataTable" msprop:Generator_TableVarName="tableslide_search" msprop:Generator_RowChangedName="slide_searchRowChanged" msprop:Generator_TablePropName="slide_search" msprop:Generator_RowDeletingName="slide_searchRowDeleting" msprop:Generator_RowChangingName="slide_searchRowChanging" msprop:Generator_RowEvHandlerName="slide_searchRowChangeEventHandler" msprop:Generator_RowDeletedName="slide_searchRowDeleted" msprop:Generator_RowClassName="slide_searchRow" msprop:Generator_UserTableName="slide_search" msprop:Generator_RowEvArgName="slide_searchRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1748,13 +1748,6 @@ ORDER BY s.id;</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="last_updated_by" msprop:Generator_ColumnVarNameInTable="columnlast_updated_by" msprop:Generator_ColumnPropNameInRow="last_updated_by" msprop:Generator_ColumnPropNameInTable="last_updated_byColumn" msprop:Generator_UserColumnName="last_updated_by" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="donor_code" msprop:Generator_ColumnVarNameInTable="columndonor_code" msprop:Generator_ColumnPropNameInRow="donor_code" msprop:Generator_ColumnPropNameInTable="donor_codeColumn" msprop:Generator_UserColumnName="donor_code">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1786,6 +1779,13 @@ ORDER BY s.id;</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="stage" msprop:Generator_ColumnVarNameInTable="columnstage" msprop:Generator_ColumnPropNameInRow="stage" msprop:Generator_ColumnPropNameInTable="stageColumn" msprop:Generator_UserColumnName="stage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="updated_by" msprop:Generator_ColumnVarNameInTable="columnupdated_by" msprop:Generator_ColumnPropNameInRow="updated_by" msprop:Generator_ColumnPropNameInTable="updated_byColumn" msprop:Generator_UserColumnName="updated_by" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />

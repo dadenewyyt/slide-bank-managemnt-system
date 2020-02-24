@@ -75,7 +75,7 @@ namespace SBMS
             this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
  
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
-            borrowerDic.Add(0, "--Select Borrower/Contact---");
+            borrowerDic.Add(-1, "--Select Borrower/Contact---");
             foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
             {
                 borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   " + row["organisation"] + "  Position:  " + row["job_title"]);
@@ -361,11 +361,8 @@ namespace SBMS
         }
         private bool validate_before_Checkout() {
 
-            if (cmb_borrowers.SelectedIndex ==-1) {
-                MessageBox.Show("Please, select a borrower to checkout for");
-                return false;
-            }
-            if (cmb_borrowers.SelectedIndex == -1)
+            
+            if (cmb_borrowers.SelectedIndex == 0)
             {
                 MessageBox.Show("Please, select a borrower to checkout for");
                 return false;
@@ -389,28 +386,46 @@ namespace SBMS
         private void btn_checkout_Click(object sender, EventArgs e)
         {
             bool isValid = validate_before_Checkout();
-
+            List<int> ids = new List<int>();
             if (isValid == true)
             {
 
                 int slides_id = -1;
-                List<int> ids = new List<int>();
                 DialogResult dialogResult = MessageBox.Show("You are going to checkout all below slides. Are you sure ?", "Checkout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     foreach (DataGridViewRow row in grd_search_results.Rows)
                     {
-                        ids.Add(Int32.Parse(row.Cells["id"].Value.ToString()));
-                        //More code here
+                        for (int i = 0; i < grd_search_results.Columns.Count; i++)
+                        {
+                            String header = grd_search_results.Columns[i].HeaderText;
+                            String cellText = row.Cells[i].ToString();
+                            var cellValue = row.Cells[i].Value;
+                            Console.WriteLine("COlumn:" + header);
+                            // Console.WriteLine("Row TExt:"+cellText);
+                            Console.WriteLine("Value:" + cellValue);
+                            if (header == "id" && cellValue != null)
+                                ids.Add(Convert.ToInt32(cellValue.ToString()));
+                        }
                     }
-                    checkinCheckoutService.checkoutbySlideIds(cmb_borrowers.SelectedIndex, ids);
+
+                    bool isOkay = checkinCheckoutService.checkoutbySlideIds(cmb_borrowers.SelectedIndex, ids,txt_from_date.Value,txt_due_date.Value,cmb_reason.SelectedItem.ToString());
+
+                    if (isOkay)
+                    {
+                        MessageBox.Show("Successfull! Slides are Checked Out!");
+                        this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+                    }
                 }
             }
         }
 
         private void btn_dayCalculaor_Click(object sender, EventArgs e)
         {
-
+            DateTime d1 = txt_from_date.Value;
+            DateTime d2 = txt_due_date.Value;
+            TimeSpan days = d2 - d1;
+            txt_days.Value =Convert.ToDecimal(Math.Round(Double.Parse(days.TotalDays.ToString()), 1));
         }
     }
 }

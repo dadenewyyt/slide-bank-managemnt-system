@@ -85,6 +85,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_days = new System.Windows.Forms.NumericUpDown();
             this.grd_search_results = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,7 +122,6 @@
             this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
             this.slide_searchTableAdapter = new SBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
-            this.txt_days = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -147,11 +147,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pf_hd_q)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pf_md_q)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pf_ld_q)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_days)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_search_results)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slidesearchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowercontactlistBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_days)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -754,6 +754,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Parasite";
             // 
+            // txt_days
+            // 
+            this.txt_days.Location = new System.Drawing.Point(94, 130);
+            this.txt_days.Name = "txt_days";
+            this.txt_days.Size = new System.Drawing.Size(49, 20);
+            this.txt_days.TabIndex = 135;
+            // 
             // grd_search_results
             // 
             this.grd_search_results.AutoGenerateColumns = false;
@@ -786,7 +793,6 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // barcodeDataGridViewTextBoxColumn
             // 
@@ -971,6 +977,7 @@
             // 
             this.txt_due_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_due_date.Location = new System.Drawing.Point(94, 68);
+            this.txt_due_date.MinDate = new System.DateTime(2020, 2, 24, 0, 0, 0, 0);
             this.txt_due_date.Name = "txt_due_date";
             this.txt_due_date.Size = new System.Drawing.Size(239, 25);
             this.txt_due_date.TabIndex = 125;
@@ -1057,13 +1064,6 @@
             // 
             this.slide_searchTableAdapter.ClearBeforeFill = true;
             // 
-            // txt_days
-            // 
-            this.txt_days.Location = new System.Drawing.Point(94, 130);
-            this.txt_days.Name = "txt_days";
-            this.txt_days.Size = new System.Drawing.Size(49, 20);
-            this.txt_days.TabIndex = 135;
-            // 
             // Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1104,11 +1104,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pf_hd_q)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pf_md_q)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pf_ld_q)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_days)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_search_results)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slidesearchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowercontactlistBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_days)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1193,6 +1193,7 @@
         private System.Windows.Forms.CheckBox chk_pf;
         private System.Windows.Forms.BindingSource slidesearchBindingSource;
         private sbmsDataSetTableAdapters.slide_searchTableAdapter slide_searchTableAdapter;
+        private System.Windows.Forms.NumericUpDown txt_days;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donorcodeDataGridViewTextBoxColumn;
@@ -1208,6 +1209,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cabinetnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn drawernumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn boxnumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.NumericUpDown txt_days;
     }
 }
