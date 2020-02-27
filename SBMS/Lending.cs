@@ -60,14 +60,15 @@ namespace SBMS
                 searched = searchAndFIlterService.SearchLendingByBorrowerId(id);
 
             }
-            if (searched != null)
+            if (searched.Rows.Count>0)
             {
+                MessageBox.Show("Search" + this.cmb_borrowers.SelectedIndex);
                 grd_currentLending.DataSource = null;
                 grd_currentLending.Refresh();
                 grd_currentLending.DataSource = searched;
               
             }
-            if (searched == null)
+            if (searched.Rows.Count == 0 && this.cmb_borrowers.SelectedIndex!=0)
             {
                 MessageBox.Show("The Searched Borrower has not current lendings.", "System");
             }
