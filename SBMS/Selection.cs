@@ -1,4 +1,5 @@
-﻿using SBMS.Services;
+﻿using SBMS.Reports.CrystalReports;
+using SBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -85,9 +86,8 @@ namespace SBMS
             
             cmb_borrowers.DisplayMember = "Value";
             cmb_borrowers.ValueMember = "Key";
-            //cmb_borrowers.SelectedItem = 0;
-            //cmb_borrowers.Bind();
-            // this.borr.Fill(this.sbmsDataSet.slides_for_checkout);
+            cmb_borrowers.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmb_borrowers.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void btn_generate_Click(object sender, EventArgs e)
@@ -413,9 +413,17 @@ namespace SBMS
 
                     if (isOkay)
                     {
-                        MessageBox.Show("Successfull! Slides are Checked Out!");
-                        this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+                        MessageBox.Show("Successfull! Selected Slides are now checked out!");
+                        MessageBox.Show("Checkout Report is ready for print out, please make sure to keep this saved.");
+
+                        //this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+
+                        SearchChekoutReportViewPort v = new SearchChekoutReportViewPort() ;
+                        v.MdiParent = this.ParentForm;
+                        v.Show();
                     }
+
+                   
                 }
             }
         }
@@ -426,6 +434,31 @@ namespace SBMS
             DateTime d2 = txt_due_date.Value;
             TimeSpan days = d2 - d1;
             txt_days.Value =Convert.ToDecimal(Math.Round(Double.Parse(days.TotalDays.ToString()), 1));
+        }
+
+        public DataGridView getDataGridView()
+        {
+
+            return this.grd_search_results;
+        }
+
+        private void btn_refresh_Click_1(object sender, EventArgs e)
+        {
+
+            Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
+            borrowerDic.Add(-1, "--Select Borrower/Contact---");
+            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            {
+                borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   " + row["organisation"] + "  Position:  " + row["job_title"]);
+            }
+
+            cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
+
+            cmb_borrowers.DisplayMember = "Value";
+            cmb_borrowers.ValueMember = "Key";
+            //cmb_borrowers.SelectedItem = 0;
+            //cmb_borrowers.Bind();
+            // this.borr.Fill(this.sbmsDataSet.slides_for_checkout);
         }
     }
 }

@@ -26,6 +26,8 @@ namespace SBMS.Reports.CrystalReports {
         
         private recent_slide_datasetDataTable tablerecent_slide_dataset;
         
+        private slide_searchDataTable tableslide_search;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace SBMS.Reports.CrystalReports {
                 if ((ds.Tables["recent_slide_dataset"] != null)) {
                     base.Tables.Add(new recent_slide_datasetDataTable(ds.Tables["recent_slide_dataset"]));
                 }
+                if ((ds.Tables["slide_search"] != null)) {
+                    base.Tables.Add(new slide_searchDataTable(ds.Tables["slide_search"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace SBMS.Reports.CrystalReports {
         public recent_slide_datasetDataTable recent_slide_dataset {
             get {
                 return this.tablerecent_slide_dataset;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public slide_searchDataTable slide_search {
+            get {
+                return this.tableslide_search;
             }
         }
         
@@ -155,6 +170,9 @@ namespace SBMS.Reports.CrystalReports {
                 if ((ds.Tables["recent_slide_dataset"] != null)) {
                     base.Tables.Add(new recent_slide_datasetDataTable(ds.Tables["recent_slide_dataset"]));
                 }
+                if ((ds.Tables["slide_search"] != null)) {
+                    base.Tables.Add(new slide_searchDataTable(ds.Tables["slide_search"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace SBMS.Reports.CrystalReports {
                     this.tablerecent_slide_dataset.InitVars();
                 }
             }
+            this.tableslide_search = ((slide_searchDataTable)(base.Tables["slide_search"]));
+            if ((initTable == true)) {
+                if ((this.tableslide_search != null)) {
+                    this.tableslide_search.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace SBMS.Reports.CrystalReports {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablerecent_slide_dataset = new recent_slide_datasetDataTable();
             base.Tables.Add(this.tablerecent_slide_dataset);
+            this.tableslide_search = new slide_searchDataTable();
+            base.Tables.Add(this.tableslide_search);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializerecent_slide_dataset() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeslide_search() {
             return false;
         }
         
@@ -272,6 +304,9 @@ namespace SBMS.Reports.CrystalReports {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void recent_slide_datasetRowChangeEventHandler(object sender, recent_slide_datasetRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void slide_searchRowChangeEventHandler(object sender, slide_searchRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -327,8 +362,6 @@ namespace SBMS.Reports.CrystalReports {
             
             private global::System.Data.DataColumn columncreated_by;
             
-            private global::System.Data.DataColumn columnlast_updated_by;
-            
             private global::System.Data.DataColumn columndonor_code;
             
             private global::System.Data.DataColumn columndonor_id;
@@ -336,6 +369,8 @@ namespace SBMS.Reports.CrystalReports {
             private global::System.Data.DataColumn columnspecies_catgeroy_id;
             
             private global::System.Data.DataColumn columndonor_donor_id;
+            
+            private global::System.Data.DataColumn columnupdated_by;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -564,14 +599,6 @@ namespace SBMS.Reports.CrystalReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn last_updated_byColumn {
-                get {
-                    return this.columnlast_updated_by;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn donor_codeColumn {
                 get {
                     return this.columndonor_code;
@@ -599,6 +626,14 @@ namespace SBMS.Reports.CrystalReports {
             public global::System.Data.DataColumn donor_donor_idColumn {
                 get {
                     return this.columndonor_donor_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn updated_byColumn {
+                get {
+                    return this.columnupdated_by;
                 }
             }
             
@@ -663,10 +698,10 @@ namespace SBMS.Reports.CrystalReports {
                         System.DateTime updated_date, 
                         System.DateTime created_date, 
                         string created_by, 
-                        string last_updated_by, 
                         string donor_code, 
                         int donor_id, 
-                        int species_catgeroy_id) {
+                        int species_catgeroy_id, 
+                        string updated_by) {
                 recent_slide_datasetRow rowrecent_slide_datasetRow = ((recent_slide_datasetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -693,11 +728,11 @@ namespace SBMS.Reports.CrystalReports {
                         updated_date,
                         created_date,
                         created_by,
-                        last_updated_by,
                         donor_code,
                         donor_id,
                         species_catgeroy_id,
-                        null};
+                        null,
+                        updated_by};
                 rowrecent_slide_datasetRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrecent_slide_datasetRow);
                 return rowrecent_slide_datasetRow;
@@ -751,11 +786,11 @@ namespace SBMS.Reports.CrystalReports {
                 this.columnupdated_date = base.Columns["updated_date"];
                 this.columncreated_date = base.Columns["created_date"];
                 this.columncreated_by = base.Columns["created_by"];
-                this.columnlast_updated_by = base.Columns["last_updated_by"];
                 this.columndonor_code = base.Columns["donor_code"];
                 this.columndonor_id = base.Columns["donor_id"];
                 this.columnspecies_catgeroy_id = base.Columns["species_catgeroy_id"];
                 this.columndonor_donor_id = base.Columns["donor_donor_id"];
+                this.columnupdated_by = base.Columns["updated_by"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -809,8 +844,6 @@ namespace SBMS.Reports.CrystalReports {
                 base.Columns.Add(this.columncreated_date);
                 this.columncreated_by = new global::System.Data.DataColumn("created_by", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreated_by);
-                this.columnlast_updated_by = new global::System.Data.DataColumn("last_updated_by", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlast_updated_by);
                 this.columndonor_code = new global::System.Data.DataColumn("donor_code", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndonor_code);
                 this.columndonor_id = new global::System.Data.DataColumn("donor_id", typeof(int), null, global::System.Data.MappingType.Element);
@@ -819,6 +852,8 @@ namespace SBMS.Reports.CrystalReports {
                 base.Columns.Add(this.columnspecies_catgeroy_id);
                 this.columndonor_donor_id = new global::System.Data.DataColumn("donor_donor_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndonor_donor_id);
+                this.columnupdated_by = new global::System.Data.DataColumn("updated_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_by);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -846,7 +881,6 @@ namespace SBMS.Reports.CrystalReports {
                 this.columndrawer_number.AllowDBNull = false;
                 this.columnbox_number.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 2147483647;
-                this.columnlast_updated_by.MaxLength = 2147483647;
                 this.columndonor_code.AllowDBNull = false;
                 this.columndonor_code.MaxLength = 2147483647;
                 this.columndonor_id.AllowDBNull = false;
@@ -856,6 +890,7 @@ namespace SBMS.Reports.CrystalReports {
                 this.columndonor_donor_id.AutoIncrementStep = -1;
                 this.columndonor_donor_id.AllowDBNull = false;
                 this.columndonor_donor_id.ReadOnly = true;
+                this.columnupdated_by.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -942,6 +977,764 @@ namespace SBMS.Reports.CrystalReports {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "recent_slide_datasetDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class slide_searchDataTable : global::System.Data.TypedTableBase<slide_searchRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnbar_code;
+            
+            private global::System.Data.DataColumn columnsequence;
+            
+            private global::System.Data.DataColumn columnupper_density;
+            
+            private global::System.Data.DataColumn columnisReserved;
+            
+            private global::System.Data.DataColumn columncountry_code;
+            
+            private global::System.Data.DataColumn columnspecies_specific_id;
+            
+            private global::System.Data.DataColumn columnspecies_stage_id;
+            
+            private global::System.Data.DataColumn columndensity_category_id;
+            
+            private global::System.Data.DataColumn columnlower_density;
+            
+            private global::System.Data.DataColumn columnaverage_density;
+            
+            private global::System.Data.DataColumn columnowner_id;
+            
+            private global::System.Data.DataColumn columnacquired_date;
+            
+            private global::System.Data.DataColumn columnvalidation_id;
+            
+            private global::System.Data.DataColumn columncomment;
+            
+            private global::System.Data.DataColumn columncabinet_number;
+            
+            private global::System.Data.DataColumn columndrawer_number;
+            
+            private global::System.Data.DataColumn columnbox_number;
+            
+            private global::System.Data.DataColumn columnisDamaged;
+            
+            private global::System.Data.DataColumn columnisBorrowed;
+            
+            private global::System.Data.DataColumn columnisActive;
+            
+            private global::System.Data.DataColumn columnupdated_date;
+            
+            private global::System.Data.DataColumn columncreated_date;
+            
+            private global::System.Data.DataColumn columncreated_by;
+            
+            private global::System.Data.DataColumn columndonor_code;
+            
+            private global::System.Data.DataColumn columnspecies_catgeroy_id;
+            
+            private global::System.Data.DataColumn columndonor_donor_id;
+            
+            private global::System.Data.DataColumn columndensity_category;
+            
+            private global::System.Data.DataColumn columnspecies_category;
+            
+            private global::System.Data.DataColumn columnspecifics;
+            
+            private global::System.Data.DataColumn columnstage;
+            
+            private global::System.Data.DataColumn columnupdated_by;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public slide_searchDataTable() {
+                this.TableName = "slide_search";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal slide_searchDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected slide_searchDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn bar_codeColumn {
+                get {
+                    return this.columnbar_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn sequenceColumn {
+                get {
+                    return this.columnsequence;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn upper_densityColumn {
+                get {
+                    return this.columnupper_density;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isReservedColumn {
+                get {
+                    return this.columnisReserved;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn country_codeColumn {
+                get {
+                    return this.columncountry_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn species_specific_idColumn {
+                get {
+                    return this.columnspecies_specific_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn species_stage_idColumn {
+                get {
+                    return this.columnspecies_stage_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn density_category_idColumn {
+                get {
+                    return this.columndensity_category_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn lower_densityColumn {
+                get {
+                    return this.columnlower_density;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn average_densityColumn {
+                get {
+                    return this.columnaverage_density;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn owner_idColumn {
+                get {
+                    return this.columnowner_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn acquired_dateColumn {
+                get {
+                    return this.columnacquired_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn validation_idColumn {
+                get {
+                    return this.columnvalidation_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn commentColumn {
+                get {
+                    return this.columncomment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cabinet_numberColumn {
+                get {
+                    return this.columncabinet_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn drawer_numberColumn {
+                get {
+                    return this.columndrawer_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn box_numberColumn {
+                get {
+                    return this.columnbox_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isDamagedColumn {
+                get {
+                    return this.columnisDamaged;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isBorrowedColumn {
+                get {
+                    return this.columnisBorrowed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isActiveColumn {
+                get {
+                    return this.columnisActive;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn updated_dateColumn {
+                get {
+                    return this.columnupdated_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn created_dateColumn {
+                get {
+                    return this.columncreated_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn created_byColumn {
+                get {
+                    return this.columncreated_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn donor_codeColumn {
+                get {
+                    return this.columndonor_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn species_catgeroy_idColumn {
+                get {
+                    return this.columnspecies_catgeroy_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn donor_donor_idColumn {
+                get {
+                    return this.columndonor_donor_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn density_categoryColumn {
+                get {
+                    return this.columndensity_category;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn species_categoryColumn {
+                get {
+                    return this.columnspecies_category;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn specificsColumn {
+                get {
+                    return this.columnspecifics;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn stageColumn {
+                get {
+                    return this.columnstage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn updated_byColumn {
+                get {
+                    return this.columnupdated_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public slide_searchRow this[int index] {
+                get {
+                    return ((slide_searchRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event slide_searchRowChangeEventHandler slide_searchRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event slide_searchRowChangeEventHandler slide_searchRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event slide_searchRowChangeEventHandler slide_searchRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event slide_searchRowChangeEventHandler slide_searchRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addslide_searchRow(slide_searchRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public slide_searchRow Addslide_searchRow(
+                        string bar_code, 
+                        string sequence, 
+                        long upper_density, 
+                        bool isReserved, 
+                        string country_code, 
+                        int species_specific_id, 
+                        int species_stage_id, 
+                        int density_category_id, 
+                        long lower_density, 
+                        long average_density, 
+                        int owner_id, 
+                        System.DateTime acquired_date, 
+                        int validation_id, 
+                        string comment, 
+                        int cabinet_number, 
+                        int drawer_number, 
+                        int box_number, 
+                        bool isDamaged, 
+                        bool isBorrowed, 
+                        bool isActive, 
+                        System.DateTime updated_date, 
+                        System.DateTime created_date, 
+                        string created_by, 
+                        string donor_code, 
+                        int species_catgeroy_id, 
+                        string density_category, 
+                        string species_category, 
+                        string specifics, 
+                        string stage, 
+                        string updated_by) {
+                slide_searchRow rowslide_searchRow = ((slide_searchRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        bar_code,
+                        sequence,
+                        upper_density,
+                        isReserved,
+                        country_code,
+                        species_specific_id,
+                        species_stage_id,
+                        density_category_id,
+                        lower_density,
+                        average_density,
+                        owner_id,
+                        acquired_date,
+                        validation_id,
+                        comment,
+                        cabinet_number,
+                        drawer_number,
+                        box_number,
+                        isDamaged,
+                        isBorrowed,
+                        isActive,
+                        updated_date,
+                        created_date,
+                        created_by,
+                        donor_code,
+                        species_catgeroy_id,
+                        null,
+                        density_category,
+                        species_category,
+                        specifics,
+                        stage,
+                        updated_by};
+                rowslide_searchRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowslide_searchRow);
+                return rowslide_searchRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public slide_searchRow FindByid(int id) {
+                return ((slide_searchRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                slide_searchDataTable cln = ((slide_searchDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new slide_searchDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnbar_code = base.Columns["bar_code"];
+                this.columnsequence = base.Columns["sequence"];
+                this.columnupper_density = base.Columns["upper_density"];
+                this.columnisReserved = base.Columns["isReserved"];
+                this.columncountry_code = base.Columns["country_code"];
+                this.columnspecies_specific_id = base.Columns["species_specific_id"];
+                this.columnspecies_stage_id = base.Columns["species_stage_id"];
+                this.columndensity_category_id = base.Columns["density_category_id"];
+                this.columnlower_density = base.Columns["lower_density"];
+                this.columnaverage_density = base.Columns["average_density"];
+                this.columnowner_id = base.Columns["owner_id"];
+                this.columnacquired_date = base.Columns["acquired_date"];
+                this.columnvalidation_id = base.Columns["validation_id"];
+                this.columncomment = base.Columns["comment"];
+                this.columncabinet_number = base.Columns["cabinet_number"];
+                this.columndrawer_number = base.Columns["drawer_number"];
+                this.columnbox_number = base.Columns["box_number"];
+                this.columnisDamaged = base.Columns["isDamaged"];
+                this.columnisBorrowed = base.Columns["isBorrowed"];
+                this.columnisActive = base.Columns["isActive"];
+                this.columnupdated_date = base.Columns["updated_date"];
+                this.columncreated_date = base.Columns["created_date"];
+                this.columncreated_by = base.Columns["created_by"];
+                this.columndonor_code = base.Columns["donor_code"];
+                this.columnspecies_catgeroy_id = base.Columns["species_catgeroy_id"];
+                this.columndonor_donor_id = base.Columns["donor_donor_id"];
+                this.columndensity_category = base.Columns["density_category"];
+                this.columnspecies_category = base.Columns["species_category"];
+                this.columnspecifics = base.Columns["specifics"];
+                this.columnstage = base.Columns["stage"];
+                this.columnupdated_by = base.Columns["updated_by"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnbar_code = new global::System.Data.DataColumn("bar_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbar_code);
+                this.columnsequence = new global::System.Data.DataColumn("sequence", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsequence);
+                this.columnupper_density = new global::System.Data.DataColumn("upper_density", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupper_density);
+                this.columnisReserved = new global::System.Data.DataColumn("isReserved", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisReserved);
+                this.columncountry_code = new global::System.Data.DataColumn("country_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncountry_code);
+                this.columnspecies_specific_id = new global::System.Data.DataColumn("species_specific_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecies_specific_id);
+                this.columnspecies_stage_id = new global::System.Data.DataColumn("species_stage_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecies_stage_id);
+                this.columndensity_category_id = new global::System.Data.DataColumn("density_category_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndensity_category_id);
+                this.columnlower_density = new global::System.Data.DataColumn("lower_density", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlower_density);
+                this.columnaverage_density = new global::System.Data.DataColumn("average_density", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaverage_density);
+                this.columnowner_id = new global::System.Data.DataColumn("owner_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnowner_id);
+                this.columnacquired_date = new global::System.Data.DataColumn("acquired_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacquired_date);
+                this.columnvalidation_id = new global::System.Data.DataColumn("validation_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalidation_id);
+                this.columncomment = new global::System.Data.DataColumn("comment", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncomment);
+                this.columncabinet_number = new global::System.Data.DataColumn("cabinet_number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncabinet_number);
+                this.columndrawer_number = new global::System.Data.DataColumn("drawer_number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndrawer_number);
+                this.columnbox_number = new global::System.Data.DataColumn("box_number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbox_number);
+                this.columnisDamaged = new global::System.Data.DataColumn("isDamaged", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDamaged);
+                this.columnisBorrowed = new global::System.Data.DataColumn("isBorrowed", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisBorrowed);
+                this.columnisActive = new global::System.Data.DataColumn("isActive", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisActive);
+                this.columnupdated_date = new global::System.Data.DataColumn("updated_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_date);
+                this.columncreated_date = new global::System.Data.DataColumn("created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreated_date);
+                this.columncreated_by = new global::System.Data.DataColumn("created_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreated_by);
+                this.columndonor_code = new global::System.Data.DataColumn("donor_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndonor_code);
+                this.columnspecies_catgeroy_id = new global::System.Data.DataColumn("species_catgeroy_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecies_catgeroy_id);
+                this.columndonor_donor_id = new global::System.Data.DataColumn("donor_donor_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndonor_donor_id);
+                this.columndensity_category = new global::System.Data.DataColumn("density_category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndensity_category);
+                this.columnspecies_category = new global::System.Data.DataColumn("species_category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecies_category);
+                this.columnspecifics = new global::System.Data.DataColumn("specifics", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecifics);
+                this.columnstage = new global::System.Data.DataColumn("stage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstage);
+                this.columnupdated_by = new global::System.Data.DataColumn("updated_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_by);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+                this.columnbar_code.AllowDBNull = false;
+                this.columnbar_code.MaxLength = 2147483647;
+                this.columnsequence.AllowDBNull = false;
+                this.columnsequence.MaxLength = 2147483647;
+                this.columnupper_density.AllowDBNull = false;
+                this.columncountry_code.AllowDBNull = false;
+                this.columncountry_code.MaxLength = 2147483647;
+                this.columnspecies_specific_id.AllowDBNull = false;
+                this.columnspecies_stage_id.AllowDBNull = false;
+                this.columndensity_category_id.AllowDBNull = false;
+                this.columnlower_density.AllowDBNull = false;
+                this.columnaverage_density.AllowDBNull = false;
+                this.columnowner_id.AllowDBNull = false;
+                this.columnvalidation_id.AllowDBNull = false;
+                this.columncomment.MaxLength = 2147483647;
+                this.columncabinet_number.AllowDBNull = false;
+                this.columndrawer_number.AllowDBNull = false;
+                this.columnbox_number.AllowDBNull = false;
+                this.columncreated_by.MaxLength = 2147483647;
+                this.columndonor_code.AllowDBNull = false;
+                this.columndonor_code.MaxLength = 2147483647;
+                this.columnspecies_catgeroy_id.AllowDBNull = false;
+                this.columndonor_donor_id.AutoIncrement = true;
+                this.columndonor_donor_id.AutoIncrementSeed = -1;
+                this.columndonor_donor_id.AutoIncrementStep = -1;
+                this.columndonor_donor_id.AllowDBNull = false;
+                this.columndonor_donor_id.ReadOnly = true;
+                this.columndensity_category.MaxLength = 2147483647;
+                this.columnspecies_category.MaxLength = 2147483647;
+                this.columnspecifics.MaxLength = 2147483647;
+                this.columnstage.MaxLength = 2147483647;
+                this.columnupdated_by.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public slide_searchRow Newslide_searchRow() {
+                return ((slide_searchRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new slide_searchRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(slide_searchRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.slide_searchRowChanged != null)) {
+                    this.slide_searchRowChanged(this, new slide_searchRowChangeEvent(((slide_searchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.slide_searchRowChanging != null)) {
+                    this.slide_searchRowChanging(this, new slide_searchRowChangeEvent(((slide_searchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.slide_searchRowDeleted != null)) {
+                    this.slide_searchRowDeleted(this, new slide_searchRowChangeEvent(((slide_searchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.slide_searchRowDeleting != null)) {
+                    this.slide_searchRowDeleting(this, new slide_searchRowChangeEvent(((slide_searchRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removeslide_searchRow(slide_searchRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                RecentSlidesDataSet ds = new RecentSlidesDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "slide_searchDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1307,23 +2100,6 @@ namespace SBMS.Reports.CrystalReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string last_updated_by {
-                get {
-                    try {
-                        return ((string)(this[this.tablerecent_slide_dataset.last_updated_byColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'last_updated_by\' in table \'recent_slide_dataset\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tablerecent_slide_dataset.last_updated_byColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string donor_code {
                 get {
                     return ((string)(this[this.tablerecent_slide_dataset.donor_codeColumn]));
@@ -1363,6 +2139,22 @@ namespace SBMS.Reports.CrystalReports {
                 }
                 set {
                     this[this.tablerecent_slide_dataset.donor_donor_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string updated_by {
+                get {
+                    try {
+                        return ((string)(this[this.tablerecent_slide_dataset.updated_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_by\' in table \'recent_slide_dataset\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablerecent_slide_dataset.updated_byColumn] = value;
                 }
             }
             
@@ -1476,14 +2268,619 @@ namespace SBMS.Reports.CrystalReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Islast_updated_byNull() {
-                return this.IsNull(this.tablerecent_slide_dataset.last_updated_byColumn);
+            public bool Isupdated_byNull() {
+                return this.IsNull(this.tablerecent_slide_dataset.updated_byColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setlast_updated_byNull() {
-                this[this.tablerecent_slide_dataset.last_updated_byColumn] = global::System.Convert.DBNull;
+            public void Setupdated_byNull() {
+                this[this.tablerecent_slide_dataset.updated_byColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class slide_searchRow : global::System.Data.DataRow {
+            
+            private slide_searchDataTable tableslide_search;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal slide_searchRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableslide_search = ((slide_searchDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableslide_search.idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string bar_code {
+                get {
+                    return ((string)(this[this.tableslide_search.bar_codeColumn]));
+                }
+                set {
+                    this[this.tableslide_search.bar_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string sequence {
+                get {
+                    return ((string)(this[this.tableslide_search.sequenceColumn]));
+                }
+                set {
+                    this[this.tableslide_search.sequenceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long upper_density {
+                get {
+                    return ((long)(this[this.tableslide_search.upper_densityColumn]));
+                }
+                set {
+                    this[this.tableslide_search.upper_densityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isReserved {
+                get {
+                    try {
+                        return ((bool)(this[this.tableslide_search.isReservedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isReserved\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.isReservedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string country_code {
+                get {
+                    return ((string)(this[this.tableslide_search.country_codeColumn]));
+                }
+                set {
+                    this[this.tableslide_search.country_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int species_specific_id {
+                get {
+                    return ((int)(this[this.tableslide_search.species_specific_idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.species_specific_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int species_stage_id {
+                get {
+                    return ((int)(this[this.tableslide_search.species_stage_idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.species_stage_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int density_category_id {
+                get {
+                    return ((int)(this[this.tableslide_search.density_category_idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.density_category_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long lower_density {
+                get {
+                    return ((long)(this[this.tableslide_search.lower_densityColumn]));
+                }
+                set {
+                    this[this.tableslide_search.lower_densityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long average_density {
+                get {
+                    return ((long)(this[this.tableslide_search.average_densityColumn]));
+                }
+                set {
+                    this[this.tableslide_search.average_densityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int owner_id {
+                get {
+                    return ((int)(this[this.tableslide_search.owner_idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.owner_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime acquired_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableslide_search.acquired_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acquired_date\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.acquired_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int validation_id {
+                get {
+                    return ((int)(this[this.tableslide_search.validation_idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.validation_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string comment {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.commentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'comment\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.commentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int cabinet_number {
+                get {
+                    return ((int)(this[this.tableslide_search.cabinet_numberColumn]));
+                }
+                set {
+                    this[this.tableslide_search.cabinet_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int drawer_number {
+                get {
+                    return ((int)(this[this.tableslide_search.drawer_numberColumn]));
+                }
+                set {
+                    this[this.tableslide_search.drawer_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int box_number {
+                get {
+                    return ((int)(this[this.tableslide_search.box_numberColumn]));
+                }
+                set {
+                    this[this.tableslide_search.box_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isDamaged {
+                get {
+                    try {
+                        return ((bool)(this[this.tableslide_search.isDamagedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isDamaged\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.isDamagedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isBorrowed {
+                get {
+                    try {
+                        return ((bool)(this[this.tableslide_search.isBorrowedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isBorrowed\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.isBorrowedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isActive {
+                get {
+                    try {
+                        return ((bool)(this[this.tableslide_search.isActiveColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isActive\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.isActiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime updated_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableslide_search.updated_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.updated_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime created_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableslide_search.created_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'created_date\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.created_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string created_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.created_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'created_by\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.created_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string donor_code {
+                get {
+                    return ((string)(this[this.tableslide_search.donor_codeColumn]));
+                }
+                set {
+                    this[this.tableslide_search.donor_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int species_catgeroy_id {
+                get {
+                    return ((int)(this[this.tableslide_search.species_catgeroy_idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.species_catgeroy_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int donor_donor_id {
+                get {
+                    return ((int)(this[this.tableslide_search.donor_donor_idColumn]));
+                }
+                set {
+                    this[this.tableslide_search.donor_donor_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string density_category {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.density_categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'density_category\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.density_categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string species_category {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.species_categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'species_category\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.species_categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string specifics {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.specificsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'specifics\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.specificsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string stage {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.stageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'stage\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.stageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string updated_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableslide_search.updated_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_by\' in table \'slide_search\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableslide_search.updated_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisReservedNull() {
+                return this.IsNull(this.tableslide_search.isReservedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisReservedNull() {
+                this[this.tableslide_search.isReservedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isacquired_dateNull() {
+                return this.IsNull(this.tableslide_search.acquired_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setacquired_dateNull() {
+                this[this.tableslide_search.acquired_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscommentNull() {
+                return this.IsNull(this.tableslide_search.commentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcommentNull() {
+                this[this.tableslide_search.commentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisDamagedNull() {
+                return this.IsNull(this.tableslide_search.isDamagedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisDamagedNull() {
+                this[this.tableslide_search.isDamagedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisBorrowedNull() {
+                return this.IsNull(this.tableslide_search.isBorrowedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisBorrowedNull() {
+                this[this.tableslide_search.isBorrowedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisActiveNull() {
+                return this.IsNull(this.tableslide_search.isActiveColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisActiveNull() {
+                this[this.tableslide_search.isActiveColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isupdated_dateNull() {
+                return this.IsNull(this.tableslide_search.updated_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setupdated_dateNull() {
+                this[this.tableslide_search.updated_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscreated_dateNull() {
+                return this.IsNull(this.tableslide_search.created_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcreated_dateNull() {
+                this[this.tableslide_search.created_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscreated_byNull() {
+                return this.IsNull(this.tableslide_search.created_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcreated_byNull() {
+                this[this.tableslide_search.created_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdensity_categoryNull() {
+                return this.IsNull(this.tableslide_search.density_categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdensity_categoryNull() {
+                this[this.tableslide_search.density_categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isspecies_categoryNull() {
+                return this.IsNull(this.tableslide_search.species_categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setspecies_categoryNull() {
+                this[this.tableslide_search.species_categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsspecificsNull() {
+                return this.IsNull(this.tableslide_search.specificsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetspecificsNull() {
+                this[this.tableslide_search.specificsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsstageNull() {
+                return this.IsNull(this.tableslide_search.stageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetstageNull() {
+                this[this.tableslide_search.stageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isupdated_byNull() {
+                return this.IsNull(this.tableslide_search.updated_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setupdated_byNull() {
+                this[this.tableslide_search.updated_byColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1507,6 +2904,40 @@ namespace SBMS.Reports.CrystalReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public recent_slide_datasetRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class slide_searchRowChangeEvent : global::System.EventArgs {
+            
+            private slide_searchRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public slide_searchRowChangeEvent(slide_searchRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public slide_searchRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1670,11 +3101,11 @@ namespace SBMS.Reports.CrystalReports.RecentSlidesDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("updated_date", "updated_date");
             tableMapping.ColumnMappings.Add("created_date", "created_date");
             tableMapping.ColumnMappings.Add("created_by", "created_by");
-            tableMapping.ColumnMappings.Add("last_updated_by", "last_updated_by");
             tableMapping.ColumnMappings.Add("donor_code", "donor_code");
             tableMapping.ColumnMappings.Add("donor_id", "donor_id");
             tableMapping.ColumnMappings.Add("species_catgeroy_id", "species_catgeroy_id");
             tableMapping.ColumnMappings.Add("donor_donor_id", "donor_donor_id");
+            tableMapping.ColumnMappings.Add("updated_by", "updated_by");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1691,7 +3122,7 @@ namespace SBMS.Reports.CrystalReports.RecentSlidesDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT   TOP (100) s.id, s.bar_code, s.sequence, s.donor_id, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.last_updated_by, 
+            this._commandCollection[0].CommandText = @"SELECT   TOP (100) s.id, s.bar_code, s.sequence, s.donor_id, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
                          d.id AS donor_donor_id, d.donor_code, d.species_specific_id, d.species_stage_id, d.species_catgeroy_id, d.lower_density, d.average_density, d.upper_density, d.density_category_id, d.owner_id, d.acquired_date, 
                          d.country_code, d.comment, d.validation_id
 FROM              dbo.slides AS s INNER JOIN
@@ -1721,6 +3152,227 @@ ORDER BY s.created_date DESC";
         public virtual RecentSlidesDataSet.recent_slide_datasetDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             RecentSlidesDataSet.recent_slide_datasetDataTable dataTable = new RecentSlidesDataSet.recent_slide_datasetDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class slide_searchTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public slide_searchTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "slide_search";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("bar_code", "bar_code");
+            tableMapping.ColumnMappings.Add("sequence", "sequence");
+            tableMapping.ColumnMappings.Add("upper_density", "upper_density");
+            tableMapping.ColumnMappings.Add("isReserved", "isReserved");
+            tableMapping.ColumnMappings.Add("country_code", "country_code");
+            tableMapping.ColumnMappings.Add("species_specific_id", "species_specific_id");
+            tableMapping.ColumnMappings.Add("species_stage_id", "species_stage_id");
+            tableMapping.ColumnMappings.Add("density_category_id", "density_category_id");
+            tableMapping.ColumnMappings.Add("lower_density", "lower_density");
+            tableMapping.ColumnMappings.Add("average_density", "average_density");
+            tableMapping.ColumnMappings.Add("owner_id", "owner_id");
+            tableMapping.ColumnMappings.Add("acquired_date", "acquired_date");
+            tableMapping.ColumnMappings.Add("validation_id", "validation_id");
+            tableMapping.ColumnMappings.Add("comment", "comment");
+            tableMapping.ColumnMappings.Add("cabinet_number", "cabinet_number");
+            tableMapping.ColumnMappings.Add("drawer_number", "drawer_number");
+            tableMapping.ColumnMappings.Add("box_number", "box_number");
+            tableMapping.ColumnMappings.Add("isDamaged", "isDamaged");
+            tableMapping.ColumnMappings.Add("isBorrowed", "isBorrowed");
+            tableMapping.ColumnMappings.Add("isActive", "isActive");
+            tableMapping.ColumnMappings.Add("updated_date", "updated_date");
+            tableMapping.ColumnMappings.Add("created_date", "created_date");
+            tableMapping.ColumnMappings.Add("created_by", "created_by");
+            tableMapping.ColumnMappings.Add("donor_code", "donor_code");
+            tableMapping.ColumnMappings.Add("species_catgeroy_id", "species_catgeroy_id");
+            tableMapping.ColumnMappings.Add("donor_donor_id", "donor_donor_id");
+            tableMapping.ColumnMappings.Add("density_category", "density_category");
+            tableMapping.ColumnMappings.Add("species_category", "species_category");
+            tableMapping.ColumnMappings.Add("specifics", "specifics");
+            tableMapping.ColumnMappings.Add("stage", "stage");
+            tableMapping.ColumnMappings.Add("updated_by", "updated_by");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT top 1000 s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
+                         d.id AS donor_donor_id, d.donor_code, 
+						 d.species_specific_id, 
+						 d.species_stage_id, 
+						 d.species_catgeroy_id, 
+						 d.lower_density, 
+					 	 d.average_density, 
+						 d.upper_density, 
+						 d.density_category_id, 
+						 d.owner_id,
+						 d.validation_id,
+						 d.acquired_date, 
+                         d.comment, 
+						 dc.density_category,
+						 sc.species_category,
+						 ss.specifics,
+						 st.stage
+FROM  slides AS s INNER JOIN donors		AS d ON d.id = s.donor_id
+	  inner join density_category as dc on dc.id = d.density_category_id 
+	  inner join species_category as sc on sc.id = d.species_catgeroy_id
+	  inner join species_specifics as ss on ss.id = d.species_specific_id
+	  inner join species_stages as st on st.id = d.species_stage_id
+WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0)  and (s.isBorrowed=0)
+ORDER BY s.id;";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(RecentSlidesDataSet.slide_searchDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual RecentSlidesDataSet.slide_searchDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            RecentSlidesDataSet.slide_searchDataTable dataTable = new RecentSlidesDataSet.slide_searchDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

@@ -92,3 +92,4 @@ C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\De
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.pdb
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csprojAssemblyReference.cache
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Reports.CrystalReports.AllSlidesReportViewePort.resources
+C:\Users\INTuser\source\repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Reports.CrystalReports.SearchChekoutReportViewPort.resources

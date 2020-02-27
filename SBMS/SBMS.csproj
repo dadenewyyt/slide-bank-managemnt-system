@@ -164,11 +164,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReportRecentSlidesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\CrystalReports\CrystalReportSearchCheckout.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSearchCheckout.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\CrystalReports\ReportViewRecentSlides.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\CrystalReports\ReportViewRecentSlides.Designer.cs">
       <DependentUpon>ReportViewRecentSlides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\SearchChekoutReportViewPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\SearchChekoutReportViewPort.Designer.cs">
+      <DependentUpon>SearchChekoutReportViewPort.cs</DependentUpon>
     </Compile>
     <Compile Include="Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -303,8 +315,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportRecentSlides.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\CrystalReportSearchCheckout.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSearchCheckout.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\ReportViewRecentSlides.resx">
       <DependentUpon>ReportViewRecentSlides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\SearchChekoutReportViewPort.resx">
+      <DependentUpon>SearchChekoutReportViewPort.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -472,6 +491,8 @@
   <ItemGroup>
     <Content Include="assets\27332741_1426914380750443_3640997397741266774_n.png" />
     <Content Include="assets\icap logo.png" />
+    <None Include="Resources\LOGO2.png" />
+    <None Include="Resources\Usaid_Icap_logo.png" />
     <Content Include="SQL\searchStoreProcedure.txt" />
     <None Include="assets\xfn1X.jpg" />
     <None Include="Resources\27332741_1426914380750443_3640997397741266774_n.png" />

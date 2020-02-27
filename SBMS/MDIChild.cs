@@ -94,5 +94,10 @@ namespace SBMS
             slideHistory.MdiParent = this.ParentForm;
             slideHistory.Show();
         }
+
+        private void MDIChild_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

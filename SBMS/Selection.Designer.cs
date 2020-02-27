@@ -764,6 +764,7 @@
             // grd_search_results
             // 
             this.grd_search_results.AutoGenerateColumns = false;
+            this.grd_search_results.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_search_results.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd_search_results.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -899,6 +900,7 @@
             this.btn_refresh.TabIndex = 133;
             this.btn_refresh.Text = "refresh contact";
             this.btn_refresh.UseVisualStyleBackColor = false;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click_1);
             // 
             // btn_Add_borrower
             // 

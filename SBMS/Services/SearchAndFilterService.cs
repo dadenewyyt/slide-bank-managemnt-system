@@ -43,5 +43,21 @@ namespace SBMS.Services
             return searchResults;
         }
 
+        public DataTable SearchLendingByBorrowerId(int id) {
+            DataTable searchResults = new DataTable();
+            using (var con = new SqlConnection(DatabaseServices.connectionString))
+            using (var cmd = new SqlCommand("SELECT * FROM  dbo.current_lending as l INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id INNER JOIN dbo.slides AS s ON s.id = l.slide_id INNER JOIN dbo.donors as d on d.id = s.donor_id where borrower_id=@id", con))
+            using (var da = new SqlDataAdapter(cmd))
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@id", id);
+                da.Fill(searchResults);
+            }
+
+            if (searchResults != null)
+                return searchResults;
+            return null;
+        } 
+
     }
 }
