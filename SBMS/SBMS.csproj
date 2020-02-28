@@ -461,6 +461,7 @@
     <None Include="speciece_specifics_dataBindingSource.xss">
       <DependentUpon>speciece_specifics_dataBindingSource.xsd</DependentUpon>
     </None>
+    <None Include="SQL\sbms_Feb27_2020_lending_history_modified.bak" />
     <None Include="SQL\sbms_dec_25_19.bak" />
     <None Include="stage_dataBindingSource.xsc">
       <DependentUpon>stage_dataBindingSource.xsd</DependentUpon>

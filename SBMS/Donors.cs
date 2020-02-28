@@ -142,8 +142,8 @@ namespace SBMS
             cmb_specice_specifics.ValueMember = "Key";
             cmb_specice_specifics.DisplayMember = "Value";
             cmb_specice_specifics.SelectedIndex = 0;
-            cmb_specice_specifics.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmb_specice_specifics.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //cmb_specice_specifics.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //cmb_specice_specifics.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get Speciece Specifics
             Dictionary<int, string> dictionarySCatgerory = lookupServices.fetchLookupTables("species_category");
             cmb_specice_category.DataSource = new BindingSource(dictionarySCatgerory, null);
@@ -151,24 +151,24 @@ namespace SBMS
             cmb_specice_category.DisplayMember = "Value";
 
             cmb_specice_category.SelectedIndex = 0;
-            cmb_specice_category.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmb_specice_category.AutoCompleteSource = AutoCompleteSource.ListItems;
+          //  cmb_specice_category.AutoCompleteMode = AutoCompleteMode.Suggest;
+           // cmb_specice_category.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get Speciece Stage
             Dictionary<int, string> dictionaryStages = lookupServices.fetchLookupTables("species_stages");
             cmb_specice_stage.DataSource = new BindingSource(dictionaryStages, null);
             cmb_specice_stage.ValueMember = "Key";
             cmb_specice_stage.DisplayMember = "Value";
             cmb_specice_stage.SelectedIndex = 0;
-            cmb_specice_stage.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmb_specice_stage.AutoCompleteSource = AutoCompleteSource.ListItems;
+           // cmb_specice_stage.AutoCompleteMode = AutoCompleteMode.Suggest;
+           // cmb_specice_stage.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get Speciece Specifics
             Dictionary<int, string> dictionaryDCatgerory = lookupServices.fetchLookupTables("density_category");
             cmb_density_category.DataSource = new BindingSource(dictionaryDCatgerory, null);
             cmb_density_category.ValueMember = "Key";
             cmb_density_category.DisplayMember = "Value";
             cmb_density_category.SelectedIndex = 0;
-            cmb_density_category.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmb_density_category.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //cmb_density_category.AutoCompleteMode = AutoCompleteMode.Suggest;
+          //  cmb_density_category.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             //get validation
             Dictionary<int, string> dictionaryValidations = lookupServices.fetchLookupTables("validations");
@@ -176,16 +176,16 @@ namespace SBMS
             cmb_validation.ValueMember = "Key";
             cmb_validation.DisplayMember = "Value";
             cmb_validation.SelectedIndex = 0;
-            cmb_validation.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmb_validation.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //cmb_validation.AutoCompleteMode = AutoCompleteMode.Suggest;
+           // cmb_validation.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get owners 
             Dictionary<int, string> dictionaryOwners = lookupServices.fetchLookupTables("owners");
             cmb_owners.DataSource = new BindingSource(dictionaryOwners, null);
             cmb_owners.ValueMember = "Key";
             cmb_owners.DisplayMember = "Value";
             cmb_owners.SelectedIndex = 0;
-            cmb_owners.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmb_owners.AutoCompleteSource = AutoCompleteSource.ListItems;
+           ////// cmb_owners.AutoCompleteMode = AutoCompleteMode.Suggest;
+           // cmb_owners.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
 
@@ -237,7 +237,7 @@ namespace SBMS
                     command.Connection = connection;
                     string insertDonorQuery = "INSERT into donors" +
                         "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,species_catgeroy_id,density_category_id,lower_density," +
-                         "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,updated_by,created_date,updated_date) " +
+                         "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,) " +
                          "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
                          "@average_density,@upper_density,@owner_id,@acquired_date," +
                          "@validation_id,@comment,@created_by)";

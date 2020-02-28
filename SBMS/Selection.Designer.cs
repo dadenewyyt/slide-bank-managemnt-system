@@ -337,7 +337,7 @@
             this.button2.BackColor = System.Drawing.Color.SteelBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(193, 498);
+            this.button2.Location = new System.Drawing.Point(365, 498);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(78, 41);
             this.button2.TabIndex = 74;
@@ -624,7 +624,7 @@
             this.btn_generate.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_generate.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generate.ForeColor = System.Drawing.Color.White;
-            this.btn_generate.Location = new System.Drawing.Point(275, 498);
+            this.btn_generate.Location = new System.Drawing.Point(240, 498);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(119, 41);
             this.btn_generate.TabIndex = 41;

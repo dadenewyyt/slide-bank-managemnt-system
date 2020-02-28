@@ -15,7 +15,7 @@ namespace SBMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Lending());
+            Application.Run(new MDIParent1());
 
             /* try
              {
