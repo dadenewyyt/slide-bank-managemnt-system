@@ -142,8 +142,8 @@ namespace SBMS
             cmb_specice_specifics.ValueMember = "Key";
             cmb_specice_specifics.DisplayMember = "Value";
             cmb_specice_specifics.SelectedIndex = 0;
-            //cmb_specice_specifics.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //cmb_specice_specifics.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmb_specice_specifics.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmb_specice_specifics.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get Speciece Specifics
             Dictionary<int, string> dictionarySCatgerory = lookupServices.fetchLookupTables("species_category");
             cmb_specice_category.DataSource = new BindingSource(dictionarySCatgerory, null);
@@ -151,24 +151,24 @@ namespace SBMS
             cmb_specice_category.DisplayMember = "Value";
 
             cmb_specice_category.SelectedIndex = 0;
-          //  cmb_specice_category.AutoCompleteMode = AutoCompleteMode.Suggest;
-           // cmb_specice_category.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmb_specice_category.AutoCompleteMode = AutoCompleteMode.Suggest;
+           cmb_specice_category.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get Speciece Stage
             Dictionary<int, string> dictionaryStages = lookupServices.fetchLookupTables("species_stages");
             cmb_specice_stage.DataSource = new BindingSource(dictionaryStages, null);
             cmb_specice_stage.ValueMember = "Key";
             cmb_specice_stage.DisplayMember = "Value";
             cmb_specice_stage.SelectedIndex = 0;
-           // cmb_specice_stage.AutoCompleteMode = AutoCompleteMode.Suggest;
-           // cmb_specice_stage.AutoCompleteSource = AutoCompleteSource.ListItems;
+           cmb_specice_stage.AutoCompleteMode = AutoCompleteMode.Suggest;
+           cmb_specice_stage.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get Speciece Specifics
             Dictionary<int, string> dictionaryDCatgerory = lookupServices.fetchLookupTables("density_category");
             cmb_density_category.DataSource = new BindingSource(dictionaryDCatgerory, null);
             cmb_density_category.ValueMember = "Key";
             cmb_density_category.DisplayMember = "Value";
             cmb_density_category.SelectedIndex = 0;
-            //cmb_density_category.AutoCompleteMode = AutoCompleteMode.Suggest;
-          //  cmb_density_category.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmb_density_category.AutoCompleteMode = AutoCompleteMode.Suggest;
+          cmb_density_category.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             //get validation
             Dictionary<int, string> dictionaryValidations = lookupServices.fetchLookupTables("validations");
@@ -176,8 +176,8 @@ namespace SBMS
             cmb_validation.ValueMember = "Key";
             cmb_validation.DisplayMember = "Value";
             cmb_validation.SelectedIndex = 0;
-            //cmb_validation.AutoCompleteMode = AutoCompleteMode.Suggest;
-           // cmb_validation.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmb_validation.AutoCompleteMode = AutoCompleteMode.Suggest;
+           cmb_validation.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get owners 
             Dictionary<int, string> dictionaryOwners = lookupServices.fetchLookupTables("owners");
             cmb_owners.DataSource = new BindingSource(dictionaryOwners, null);
@@ -311,8 +311,8 @@ namespace SBMS
                 txt_country_code.Text = dgr_donors.Rows[e.RowIndex].Cells["countrycodeDataGridViewTextBoxColumn"].Value + string.Empty;
                 txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
                 cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesspecificidDataGridViewTextBoxColumn"].Value);
-                cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesstageidDataGridViewTextBoxColumn"].Value);
-                cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["SCategory"].Value);
+                cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["SCategory"].Value);
+                cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesstageidDataGridViewTextBoxColumn"].Value);
                 txt_lower_density.Text = dgr_donors.Rows[e.RowIndex].Cells["lowerdensityDataGridViewTextBoxColumn"].Value + string.Empty;
                 txt_average_density.Text = dgr_donors.Rows[e.RowIndex].Cells["averagedensityDataGridViewTextBoxColumn"].Value + string.Empty;
                 txt_upper_density.Text = dgr_donors.Rows[e.RowIndex].Cells["upperdensityDataGridViewTextBoxColumn"].Value.ToString();
@@ -340,11 +340,12 @@ namespace SBMS
             string searchValue = txt_search_box.Text;
             bool found = false;
             dgr_donors.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            button2_Click(null, null);
             try
             {
                 foreach (DataGridViewRow row in dgr_donors.Rows)
                 {
-                    if (row.Cells[2].Value.ToString().Equals(searchValue))
+                    if (String.Compare(row.Cells[3].Value.ToString(),searchValue.ToString().Trim())==0)
                     {
                         row.Selected = true;
                         found = true;

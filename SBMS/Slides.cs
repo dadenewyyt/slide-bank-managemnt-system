@@ -29,8 +29,7 @@ namespace SBMS
         public Slides()
         {
 
-
-            InitializeComponent();
+            InitializeComponent(); 
             rdoDamagedNo.Checked = true;
             rdoResevedNo.Checked = true;
         }

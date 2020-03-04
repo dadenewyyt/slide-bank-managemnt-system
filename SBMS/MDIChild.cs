@@ -99,5 +99,13 @@ namespace SBMS
         {
 
         }
+
+        private void btn_replace_Click(object sender, EventArgs e)
+        {
+            SlideReplace slideReplace = new SlideReplace();
+            slideReplace.MdiParent = this.ParentForm;
+            slideReplace.Show();
+
+        }
     }
 }

@@ -219,6 +219,12 @@
     <Compile Include="SlideHistory.Designer.cs">
       <DependentUpon>SlideHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="SlideReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SlideReplace.Designer.cs">
+      <DependentUpon>SlideReplace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Slides.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SlideHistory.resx">
       <DependentUpon>SlideHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SlideReplace.resx">
+      <DependentUpon>SlideReplace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Slides.resx">
       <DependentUpon>Slides.cs</DependentUpon>

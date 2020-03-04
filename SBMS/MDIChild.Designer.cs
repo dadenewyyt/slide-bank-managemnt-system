@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIChild));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lbl_notes = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btn_replace = new System.Windows.Forms.Button();
             this.btn_user_account = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.btn_lending_history = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@
             this.bn_borrowers = new System.Windows.Forms.Button();
             this.btn_donors = new System.Windows.Forms.Button();
             this.btn_slides = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,11 +79,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS UI Gothic", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 3);
+            this.label1.Location = new System.Drawing.Point(256, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1002, 53);
             this.label1.TabIndex = 30;
-            this.label1.Text = "National Archive of Malarai Slides - NAMS";
+            this.label1.Text = "National Archive of Malaria Slides - NAMS";
             // 
             // pictureBox3
             // 
@@ -127,9 +128,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.lbl_notes);
+            this.splitContainer1.Panel2.Controls.Add(this.richTextBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.button13);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_replace);
             this.splitContainer1.Panel2.Controls.Add(this.btn_user_account);
             this.splitContainer1.Panel2.Controls.Add(this.button11);
             this.splitContainer1.Panel2.Controls.Add(this.btn_lending_history);
@@ -146,17 +147,6 @@
             this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 13;
             // 
-            // lbl_notes
-            // 
-            this.lbl_notes.AutoSize = true;
-            this.lbl_notes.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_notes.ForeColor = System.Drawing.Color.Navy;
-            this.lbl_notes.Location = new System.Drawing.Point(7, 16);
-            this.lbl_notes.Name = "lbl_notes";
-            this.lbl_notes.Size = new System.Drawing.Size(275, 26);
-            this.lbl_notes.TabIndex = 0;
-            this.lbl_notes.Text = "Click a button to continue";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -168,17 +158,18 @@
             this.label2.Text = "Software Developed by Daniel Adenew , PMI/MDTA Lead Software Engineer ICAP/USAID " +
     "Cooperation, 2020 (C) 0935554290";
             // 
-            // button13
+            // btn_replace
             // 
-            this.button13.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button13.Location = new System.Drawing.Point(799, 387);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(238, 85);
-            this.button13.TabIndex = 26;
-            this.button13.Text = "Help ";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btn_replace.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_replace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_replace.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_replace.Location = new System.Drawing.Point(284, 296);
+            this.btn_replace.Name = "btn_replace";
+            this.btn_replace.Size = new System.Drawing.Size(247, 85);
+            this.btn_replace.TabIndex = 26;
+            this.btn_replace.Text = "Slide Replacment";
+            this.btn_replace.UseVisualStyleBackColor = false;
+            this.btn_replace.Click += new System.EventHandler(this.btn_replace_Click);
             // 
             // btn_user_account
             // 
@@ -198,16 +189,16 @@
             this.button11.BackColor = System.Drawing.Color.RoyalBlue;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button11.Location = new System.Drawing.Point(284, 387);
+            this.button11.Location = new System.Drawing.Point(799, 387);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(247, 85);
+            this.button11.Size = new System.Drawing.Size(238, 85);
             this.button11.TabIndex = 22;
             this.button11.Text = "Reports";
             this.button11.UseVisualStyleBackColor = false;
             // 
             // btn_lending_history
             // 
-            this.btn_lending_history.BackColor = System.Drawing.Color.LightYellow;
+            this.btn_lending_history.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btn_lending_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_lending_history.Location = new System.Drawing.Point(799, 196);
             this.btn_lending_history.Name = "btn_lending_history";
@@ -219,7 +210,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.SandyBrown;
+            this.button9.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button9.Location = new System.Drawing.Point(546, 196);
             this.button9.Name = "button9";
@@ -244,10 +235,10 @@
             // 
             // btn_all_slides
             // 
-            this.btn_all_slides.BackColor = System.Drawing.Color.ForestGreen;
+            this.btn_all_slides.BackColor = System.Drawing.Color.LightCoral;
             this.btn_all_slides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btn_all_slides.ForeColor = System.Drawing.Color.MintCream;
-            this.btn_all_slides.Location = new System.Drawing.Point(284, 296);
+            this.btn_all_slides.Location = new System.Drawing.Point(284, 387);
             this.btn_all_slides.Name = "btn_all_slides";
             this.btn_all_slides.Size = new System.Drawing.Size(247, 85);
             this.btn_all_slides.TabIndex = 18;
@@ -257,9 +248,9 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.SlateGray;
+            this.button6.BackColor = System.Drawing.Color.SpringGreen;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.ForeColor = System.Drawing.Color.MidnightBlue;
             this.button6.Location = new System.Drawing.Point(284, 105);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(753, 85);
@@ -282,7 +273,7 @@
             // 
             // btn_checkin
             // 
-            this.btn_checkin.BackColor = System.Drawing.Color.Gold;
+            this.btn_checkin.BackColor = System.Drawing.Color.LightBlue;
             this.btn_checkin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_checkin.Location = new System.Drawing.Point(284, 196);
             this.btn_checkin.Name = "btn_checkin";
@@ -300,19 +291,19 @@
             this.bn_borrowers.Name = "bn_borrowers";
             this.bn_borrowers.Size = new System.Drawing.Size(247, 85);
             this.bn_borrowers.TabIndex = 14;
-            this.bn_borrowers.Text = "Borrowers";
+            this.bn_borrowers.Text = "Borrower Entry";
             this.bn_borrowers.UseVisualStyleBackColor = false;
             this.bn_borrowers.Click += new System.EventHandler(this.bn_borrowers_Click);
             // 
             // btn_donors
             // 
-            this.btn_donors.BackColor = System.Drawing.Color.Red;
+            this.btn_donors.BackColor = System.Drawing.Color.YellowGreen;
             this.btn_donors.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_donors.Location = new System.Drawing.Point(284, 16);
             this.btn_donors.Name = "btn_donors";
             this.btn_donors.Size = new System.Drawing.Size(247, 85);
             this.btn_donors.TabIndex = 13;
-            this.btn_donors.Text = "Donors";
+            this.btn_donors.Text = "Donor Entry";
             this.btn_donors.UseVisualStyleBackColor = false;
             this.btn_donors.Click += new System.EventHandler(this.btn_donors_Click);
             // 
@@ -329,6 +320,14 @@
             this.btn_slides.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_slides.UseVisualStyleBackColor = false;
             this.btn_slides.Click += new System.EventHandler(this.btn_slides_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(3, 16);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(270, 456);
+            this.richTextBox1.TabIndex = 28;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // MDIChild
             // 
@@ -374,11 +373,11 @@
         private System.Windows.Forms.Button btn_slides;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bn_borrowers;
-        private System.Windows.Forms.Label lbl_notes;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btn_replace;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

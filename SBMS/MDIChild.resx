@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Instructions: 
+
+To start a slide data entry you need first to enter donor information. 
+
+To start donor registration or donor entry press the "DONOR Entry" button to access all donors
+and thier specieces/slide specifications. 
+
+
+After entering a donor data , to insert the each slides sequence or slide specifications 
+of a donor click "Slide Entry" button to manage slide including all slides available on the slide bank and recent slides on the list.</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
