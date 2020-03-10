@@ -14,9 +14,12 @@
     }
 }
 
-namespace SBMS.sbmsDataSetTableAdapters {
-    
-    
+namespace SBMS.sbmsDataSetTableAdapters
+{
+    partial class locationDataAdapter
+    {
+    }
+
     public partial class slide_searchTableAdapter {
     }
 }

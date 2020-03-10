@@ -94,6 +94,12 @@
     <Compile Include="Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="DueDateReminderCheckedOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DueDateReminderCheckedOut.Designer.cs">
+      <DependentUpon>DueDateReminderCheckedOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="densityCat_bindingDataSource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +153,12 @@
     <Compile Include="Reports\CrystalReports\AllSlidesReportViewePort.Designer.cs">
       <DependentUpon>AllSlidesReportViewePort.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\CrystalReports\CheckOutReminderViewPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\CheckOutReminderViewPort.Designer.cs">
+      <DependentUpon>CheckOutReminderViewPort.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CrystalReports\CrystalReportAllSlides.cs">
       <DependentUpon>CrystalReportAllSlides.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -168,6 +180,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReportSearchCheckout.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\DueDateBorrowedCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DueDateBorrowedCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\LocationEquippedReportViewPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\LocationEquippedReportViewPort.Designer.cs">
+      <DependentUpon>LocationEquippedReportViewPort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\LocationEquippiedCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocationEquippiedCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\CrystalReports\ReportViewRecentSlides.cs">
@@ -285,6 +315,9 @@
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DueDateReminderCheckedOut.resx">
+      <DependentUpon>DueDateReminderCheckedOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Donors.resx">
       <DependentUpon>Donors.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +346,9 @@
     <EmbeddedResource Include="Reports\CrystalReports\AllSlidesReportViewePort.resx">
       <DependentUpon>AllSlidesReportViewePort.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\CheckOutReminderViewPort.resx">
+      <DependentUpon>CheckOutReminderViewPort.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\CrystalReportAllSlides.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportAllSlides.cs</LastGenOutput>
@@ -324,6 +360,17 @@
     <EmbeddedResource Include="Reports\CrystalReports\CrystalReportSearchCheckout.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportSearchCheckout.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\DueDateBorrowedCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DueDateBorrowedCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\LocationEquippedReportViewPort.resx">
+      <DependentUpon>LocationEquippedReportViewPort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\LocationEquippiedCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LocationEquippiedCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\ReportViewRecentSlides.resx">
       <DependentUpon>ReportViewRecentSlides.cs</DependentUpon>

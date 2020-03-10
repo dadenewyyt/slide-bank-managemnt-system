@@ -102,10 +102,17 @@ namespace SBMS
 
         private void btn_replace_Click(object sender, EventArgs e)
         {
-            SlideReplace slideReplace = new SlideReplace();
+            CheckOutReminder slideReplace = new CheckOutReminder();
             slideReplace.MdiParent = this.ParentForm;
             slideReplace.Show();
 
+        }
+
+        private void btn_alert_Click(object sender, EventArgs e)
+        {
+            DueDateReminderCheckedOut reminder = new DueDateReminderCheckedOut();
+            reminder.MdiParent = this.ParentForm;
+            reminder.Show();
         }
     }
 }

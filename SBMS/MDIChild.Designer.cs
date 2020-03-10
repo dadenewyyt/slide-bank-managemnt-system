@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_replace = new System.Windows.Forms.Button();
             this.btn_user_account = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             this.bn_borrowers = new System.Windows.Forms.Button();
             this.btn_donors = new System.Windows.Forms.Button();
             this.btn_slides = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_alert = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,6 +129,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btn_alert);
             this.splitContainer1.Panel2.Controls.Add(this.richTextBox1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.btn_replace);
@@ -146,6 +148,14 @@
             this.splitContainer1.Size = new System.Drawing.Size(1255, 551);
             this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 13;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(3, 16);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(270, 456);
+            this.richTextBox1.TabIndex = 28;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // label2
             // 
@@ -173,14 +183,14 @@
             // 
             // btn_user_account
             // 
-            this.btn_user_account.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_user_account.BackColor = System.Drawing.Color.Red;
             this.btn_user_account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btn_user_account.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_user_account.Location = new System.Drawing.Point(546, 387);
             this.btn_user_account.Name = "btn_user_account";
             this.btn_user_account.Size = new System.Drawing.Size(247, 85);
             this.btn_user_account.TabIndex = 25;
-            this.btn_user_account.Text = "User Account";
+            this.btn_user_account.Text = "Slide Exchange";
             this.btn_user_account.UseVisualStyleBackColor = false;
             this.btn_user_account.Click += new System.EventHandler(this.btn_user_account_Click);
             // 
@@ -248,12 +258,12 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.SpringGreen;
+            this.button6.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.MidnightBlue;
             this.button6.Location = new System.Drawing.Point(284, 105);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(753, 85);
+            this.button6.Size = new System.Drawing.Size(500, 85);
             this.button6.TabIndex = 17;
             this.button6.Text = "Slide Selection Search Engine";
             this.button6.UseVisualStyleBackColor = false;
@@ -321,13 +331,17 @@
             this.btn_slides.UseVisualStyleBackColor = false;
             this.btn_slides.Click += new System.EventHandler(this.btn_slides_Click);
             // 
-            // richTextBox1
+            // btn_alert
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 16);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(270, 456);
-            this.richTextBox1.TabIndex = 28;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.btn_alert.BackColor = System.Drawing.Color.Red;
+            this.btn_alert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_alert.Location = new System.Drawing.Point(790, 105);
+            this.btn_alert.Name = "btn_alert";
+            this.btn_alert.Size = new System.Drawing.Size(247, 85);
+            this.btn_alert.TabIndex = 29;
+            this.btn_alert.Text = "ALERT!";
+            this.btn_alert.UseVisualStyleBackColor = false;
+            this.btn_alert.Click += new System.EventHandler(this.btn_alert_Click);
             // 
             // MDIChild
             // 
@@ -379,5 +393,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btn_alert;
     }
 }

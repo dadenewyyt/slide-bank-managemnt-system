@@ -88,6 +88,8 @@ namespace SBMS
 
         private void Slides_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sbmsDataSet.locationData' table. You can move, or remove it, as needed.
+            this.locationDataAdapter.Fill(this.sbmsDataSet.locationData);
             // TODO: This line of code loads data into the 'sbmsDataSet1.slides' table. You can move, or remove it, as needed.
             this.slidesTableAdapter.Fill(this.sbmsDataSet.slides);
 
@@ -296,7 +298,7 @@ namespace SBMS
 
             if (history_flag == false)
             {
-                isValid = ValidateBeforeSave();
+                isValid = true;// ValidateBeforeSave();
             }
 
 
@@ -648,6 +650,8 @@ namespace SBMS
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+            
             reload_data();
         }
 
@@ -656,7 +660,7 @@ namespace SBMS
             int rowIndexGird;
             rowIndexGird = e.RowIndex;
 
-            if (dgr_allslides.SelectedRows.Count > 0)
+            if (rowIndexGird!=0 && dgr_allslides.SelectedRows.Count != 0)
             {
                 MessageBox.Show("you selected row:" + (rowIndexGird + 1).ToString());
 
@@ -725,6 +729,11 @@ namespace SBMS
             return this.dgr_recentslides;
         }
 
+        public DataGridView getLocationDataGridView()
+        {
+            return this.dgr_locations;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             AllSlidesReportViewePort allSlidesReportViewPort = new AllSlidesReportViewePort();
@@ -740,6 +749,13 @@ namespace SBMS
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_print_locations_Click(object sender, EventArgs e)
+        {
+            LocationEquippedReportViewPort locationEquippedReportViewPort = new LocationEquippedReportViewPort();
+            locationEquippedReportViewPort.MdiParent = this.ParentForm;
+            locationEquippedReportViewPort.Show();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SBMS
 {
-    public partial class SlideReplace : Form
+    public partial class CheckOutReminder : Form
     {
-        public SlideReplace()
+        public CheckOutReminder()
         {
             InitializeComponent();
         }
