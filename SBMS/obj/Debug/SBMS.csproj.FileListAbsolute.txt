@@ -44,7 +44,6 @@ C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\De
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Resource1.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Selection.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.SlideHistory.resources
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.CheckOutReminder.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Slides.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Users.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csproj.GenerateResource.cache
@@ -52,3 +51,5 @@ C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\De
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.exe
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.pdb
 C:\Users\INTuser\source\repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Reports.CrystalReports.LocationEquippedReportViewPort.resources
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.SlideReplace.resources
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Reports.CrystalReports.PrintCurrentLendings.resources

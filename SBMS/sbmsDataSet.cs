@@ -4,6 +4,10 @@
 
     partial class sbmsDataSet
     {
+        partial class current_lending_historyDataTable
+        {
+        }
+
         partial class slide_searchDataTable
         {
         }

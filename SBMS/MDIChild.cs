@@ -97,12 +97,14 @@ namespace SBMS
 
         private void MDIChild_Load(object sender, EventArgs e)
         {
-
+            DueDateReminderCheckedOut reminder = new DueDateReminderCheckedOut();
+            reminder.MdiParent = this.ParentForm;
+            reminder.Show();
         }
 
         private void btn_replace_Click(object sender, EventArgs e)
         {
-            CheckOutReminder slideReplace = new CheckOutReminder();
+            SlideReplace slideReplace = new SlideReplace();
             slideReplace.MdiParent = this.ParentForm;
             slideReplace.Show();
 

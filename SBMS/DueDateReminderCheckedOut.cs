@@ -35,5 +35,10 @@ namespace SBMS
             checkoutReminderViewPort.MdiParent = this.ParentForm;
             checkoutReminderViewPort.Show();
         }
+
+        private void DueDateReminderCheckedOut_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("Are you sure ?", "Reminder", MessageBoxButtons.YesNo);
+        }
     }
 }

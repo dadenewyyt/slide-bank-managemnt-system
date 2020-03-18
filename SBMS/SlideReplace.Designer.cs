@@ -1,6 +1,6 @@
 ﻿namespace SBMS
 {
-    partial class CheckOutReminder
+    partial class SlideReplace
     {
         /// <summary>
         /// Required designer variable.

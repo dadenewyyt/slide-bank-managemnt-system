@@ -93,7 +93,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.grd_currentLending);
-            this.splitContainer1.Size = new System.Drawing.Size(1219, 437);
+            this.splitContainer1.Size = new System.Drawing.Size(961, 437);
             this.splitContainer1.SplitterDistance = 96;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -168,10 +168,9 @@
             this.borrowedbyDataGridViewTextBoxColumn,
             this.bcreateddateDataGridViewTextBoxColumn});
             this.grd_currentLending.DataSource = this.currentlendingduedatepassedBindingSource;
-            this.grd_currentLending.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_currentLending.Location = new System.Drawing.Point(0, 0);
             this.grd_currentLending.Name = "grd_currentLending";
-            this.grd_currentLending.Size = new System.Drawing.Size(1215, 333);
+            this.grd_currentLending.Size = new System.Drawing.Size(954, 333);
             this.grd_currentLending.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn
@@ -376,15 +375,16 @@
             // 
             this.current_lending_duedate_passed_TableAdapter.ClearBeforeFill = true;
             // 
-            // CheckoutReminder
+            // DueDateReminderCheckedOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1232, 450);
+            this.ClientSize = new System.Drawing.Size(975, 464);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "CheckoutReminder";
+            this.Name = "DueDateReminderCheckedOut";
             this.Text = "CheckoutReminder";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DueDateReminderCheckedOut_FormClosing);
             this.Load += new System.EventHandler(this.CheckoutReminder_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

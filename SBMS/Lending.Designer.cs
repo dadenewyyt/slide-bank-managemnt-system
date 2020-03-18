@@ -31,29 +31,38 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label18 = new System.Windows.Forms.Label();
-            this.cmb_borrowers = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_find = new System.Windows.Forms.Button();
+            this.cmb_borrowers_org = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmb_borrowers_full_name = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grd_currentLending = new System.Windows.Forms.DataGridView();
+            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
+            this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.speciecespecificsdataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
+            this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
+            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
+            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
             this.speciesspecificidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciecespecificsdataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
             this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSet = new SBMS.sbmsDataSet();
             this.owneridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
             this.acquireddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,14 +72,11 @@
             this.checkedoutdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.currentLendingHisotryTableAdapter = new SBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
             this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
             this.species_stagesTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_stagesTableAdapter();
-            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
-            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -83,12 +89,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciecespecificsdataBindingSourceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,11 +111,16 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.cmb_borrowers);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_find);
+            this.splitContainer1.Panel2.Controls.Add(this.cmb_borrowers_org);
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.cmb_borrowers_full_name);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1352, 121);
-            this.splitContainer1.SplitterDistance = 46;
+            this.splitContainer1.Size = new System.Drawing.Size(1352, 153);
+            this.splitContainer1.SplitterDistance = 58;
             this.splitContainer1.TabIndex = 1;
             // 
             // label18
@@ -122,47 +133,70 @@
             this.label18.TabIndex = 11;
             this.label18.Text = "Current Borrowed Slides and Lending History";
             // 
-            // cmb_borrowers
+            // btn_find
             // 
-            this.cmb_borrowers.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.cmb_borrowers.FormattingEnabled = true;
-            this.cmb_borrowers.Location = new System.Drawing.Point(206, 24);
-            this.cmb_borrowers.Name = "cmb_borrowers";
-            this.cmb_borrowers.Size = new System.Drawing.Size(455, 25);
-            this.cmb_borrowers.TabIndex = 9;
-            this.cmb_borrowers.SelectedIndexChanged += new System.EventHandler(this.searchby_borrower);
+            this.btn_find.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_find.Location = new System.Drawing.Point(722, 26);
+            this.btn_find.Name = "btn_find";
+            this.btn_find.Size = new System.Drawing.Size(81, 26);
+            this.btn_find.TabIndex = 13;
+            this.btn_find.Text = "Find!";
+            this.btn_find.UseVisualStyleBackColor = true;
+            this.btn_find.Click += new System.EventHandler(this.btn_find_Click);
             // 
-            // label1
+            // cmb_borrowers_org
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(9, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search by Borrower";
+            this.cmb_borrowers_org.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.cmb_borrowers_org.FormattingEnabled = true;
+            this.cmb_borrowers_org.Location = new System.Drawing.Point(346, 57);
+            this.cmb_borrowers_org.Name = "cmb_borrowers_org";
+            this.cmb_borrowers_org.Size = new System.Drawing.Size(370, 25);
+            this.cmb_borrowers_org.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(253, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 21);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Full Name";
+            // 
+            // cmb_borrowers_full_name
+            // 
+            this.cmb_borrowers_full_name.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.cmb_borrowers_full_name.FormattingEnabled = true;
+            this.cmb_borrowers_full_name.Location = new System.Drawing.Point(346, 28);
+            this.cmb_borrowers_full_name.Name = "cmb_borrowers_full_name";
+            this.cmb_borrowers_full_name.Size = new System.Drawing.Size(370, 25);
+            this.cmb_borrowers_full_name.TabIndex = 9;
             // 
             // tabControl1
             // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(1, 128);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(1, 153);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1356, 535);
+            this.tabControl1.Size = new System.Drawing.Size(1340, 780);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.grd_currentLending);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1348, 509);
+            this.tabPage1.Size = new System.Drawing.Size(1332, 744);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Current";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Text = "Active Lendings";
             // 
             // grd_currentLending
             // 
@@ -188,11 +222,102 @@
             this.checkedoutdateDataGridViewTextBoxColumn,
             this.duedateDataGridViewTextBoxColumn});
             this.grd_currentLending.DataSource = this.currentlendinghistoryBindingSource;
-            this.grd_currentLending.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_currentLending.Location = new System.Drawing.Point(3, 3);
+            this.grd_currentLending.Location = new System.Drawing.Point(9, 44);
             this.grd_currentLending.Name = "grd_currentLending";
-            this.grd_currentLending.Size = new System.Drawing.Size(1342, 503);
+            this.grd_currentLending.Size = new System.Drawing.Size(1376, 460);
             this.grd_currentLending.TabIndex = 0;
+            // 
+            // densitycategoryBindingSource
+            // 
+            this.densitycategoryBindingSource.DataMember = "density_category";
+            this.densitycategoryBindingSource.DataSource = this.desnityCat_bindingDataSource;
+            // 
+            // desnityCat_bindingDataSource
+            // 
+            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
+            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // speciesspecificsBindingSource
+            // 
+            this.speciesspecificsBindingSource.DataMember = "species_specifics";
+            this.speciesspecificsBindingSource.DataSource = this.speciecespecificsdataBindingSourceBindingSource;
+            // 
+            // speciecespecificsdataBindingSourceBindingSource
+            // 
+            this.speciecespecificsdataBindingSourceBindingSource.DataSource = this.speciece_specifics_dataBindingSource;
+            this.speciecespecificsdataBindingSourceBindingSource.Position = 0;
+            // 
+            // speciece_specifics_dataBindingSource
+            // 
+            this.speciece_specifics_dataBindingSource.DataSetName = "speciece_specifics_dataBindingSource";
+            this.speciece_specifics_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ownersBindingSource
+            // 
+            this.ownersBindingSource.DataMember = "owners";
+            this.ownersBindingSource.DataSource = this.ownerDataBindingSource;
+            // 
+            // ownerDataBindingSource
+            // 
+            this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
+            this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1300, 403);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "All Lending History";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // density_categoryTableAdapter
+            // 
+            this.density_categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // ownersTableAdapter
+            // 
+            this.ownersTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_specificsTableAdapter
+            // 
+            this.species_specificsTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(722, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 26);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Find!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(231, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 21);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Organisation";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(437, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 21);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Search and Filter";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -238,16 +363,6 @@
             this.densitycategoryidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.densitycategoryidDataGridViewTextBoxColumn.ValueMember = "id";
             // 
-            // densitycategoryBindingSource
-            // 
-            this.densitycategoryBindingSource.DataMember = "density_category";
-            this.densitycategoryBindingSource.DataSource = this.desnityCat_bindingDataSource;
-            // 
-            // desnityCat_bindingDataSource
-            // 
-            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
-            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // speciesspecificidDataGridViewTextBoxColumn
             // 
             this.speciesspecificidDataGridViewTextBoxColumn.DataPropertyName = "species_specific_id";
@@ -259,21 +374,6 @@
             this.speciesspecificidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.speciesspecificidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.speciesspecificidDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // speciesspecificsBindingSource
-            // 
-            this.speciesspecificsBindingSource.DataMember = "species_specifics";
-            this.speciesspecificsBindingSource.DataSource = this.speciecespecificsdataBindingSourceBindingSource;
-            // 
-            // speciecespecificsdataBindingSourceBindingSource
-            // 
-            this.speciecespecificsdataBindingSourceBindingSource.DataSource = this.speciece_specifics_dataBindingSource;
-            this.speciecespecificsdataBindingSourceBindingSource.Position = 0;
-            // 
-            // speciece_specifics_dataBindingSource
-            // 
-            this.speciece_specifics_dataBindingSource.DataSetName = "speciece_specifics_dataBindingSource";
-            this.speciece_specifics_dataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // speciesstageidDataGridViewTextBoxColumn
             // 
@@ -308,16 +408,6 @@
             this.owneridDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.owneridDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.owneridDataGridViewTextBoxColumn.ValueMember = "id";
-            // 
-            // ownersBindingSource
-            // 
-            this.ownersBindingSource.DataMember = "owners";
-            this.ownersBindingSource.DataSource = this.ownerDataBindingSource;
-            // 
-            // ownerDataBindingSource
-            // 
-            this.ownerDataBindingSource.DataSetName = "ownerDataBindingSource";
-            this.ownerDataBindingSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // acquireddateDataGridViewTextBoxColumn
             // 
@@ -372,26 +462,6 @@
             this.currentlendinghistoryBindingSource.DataMember = "current_lending_history";
             this.currentlendinghistoryBindingSource.DataSource = this.sbmsDataSet;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1348, 509);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Past/History";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1342, 503);
-            this.dataGridView2.TabIndex = 0;
-            // 
             // currentLendingHisotryTableAdapter
             // 
             this.currentLendingHisotryTableAdapter.ClearBeforeFill = true;
@@ -400,28 +470,37 @@
             // 
             this.borrower_contact_listTableAdapter.ClearBeforeFill = true;
             // 
-            // density_categoryTableAdapter
-            // 
-            this.density_categoryTableAdapter.ClearBeforeFill = true;
-            // 
             // species_stagesTableAdapter
             // 
             this.species_stagesTableAdapter.ClearBeforeFill = true;
             // 
-            // ownersTableAdapter
+            // dataGridView2
             // 
-            this.ownersTableAdapter.ClearBeforeFill = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1303, 503);
+            this.dataGridView2.TabIndex = 0;
             // 
-            // species_specificsTableAdapter
+            // button2
             // 
-            this.species_specificsTableAdapter.ClearBeforeFill = true;
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(9, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 35);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Print!";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Lending
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1308, 741);
+            this.ClientSize = new System.Drawing.Size(1360, 517);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Lending";
@@ -441,12 +520,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciecespecificsdataBindingSourceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciece_specifics_dataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.speciesstagesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -456,13 +535,11 @@
         private sbmsDataSetTableAdapters.borrower_contact_listTableAdapter borrower_contact_listTableAdapter;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmb_borrowers;
+        private System.Windows.Forms.ComboBox cmb_borrowers_full_name;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView grd_currentLending;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private sbmsDataSet sbmsDataSet;
         private System.Windows.Forms.BindingSource currentlendinghistoryBindingSource;
         private sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter currentLendingHisotryTableAdapter;
@@ -495,5 +572,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkedoutdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn duedateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_find;
+        private System.Windows.Forms.ComboBox cmb_borrowers_org;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button2;
     }
 }

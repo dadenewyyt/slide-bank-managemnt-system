@@ -7760,6 +7760,10 @@ namespace SBMS {
             
             private global::System.Data.DataColumn columnisActive1;
             
+            private global::System.Data.DataColumn columncreated_date3;
+            
+            private global::System.Data.DataColumn columnupdated_date3;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public current_lending_historyDataTable() {
@@ -8307,6 +8311,22 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn created_date3Column {
+                get {
+                    return this.columncreated_date3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn updated_date3Column {
+                get {
+                    return this.columnupdated_date3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8402,7 +8422,9 @@ namespace SBMS {
                         System.DateTime created_date2, 
                         System.DateTime updated_date2, 
                         bool _isWHO_, 
-                        bool isActive1) {
+                        bool isActive1, 
+                        System.DateTime created_date3, 
+                        System.DateTime updated_date3) {
                 current_lending_historyRow rowcurrent_lending_historyRow = ((current_lending_historyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -8468,7 +8490,9 @@ namespace SBMS {
                         created_date2,
                         updated_date2,
                         _isWHO_,
-                        isActive1};
+                        isActive1,
+                        created_date3,
+                        updated_date3};
                 rowcurrent_lending_historyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcurrent_lending_historyRow);
                 return rowcurrent_lending_historyRow;
@@ -8562,6 +8586,8 @@ namespace SBMS {
                 this.columnupdated_date2 = base.Columns["updated_date2"];
                 this._columnisWHO_ = base.Columns["isWHO?"];
                 this.columnisActive1 = base.Columns["isActive1"];
+                this.columncreated_date3 = base.Columns["created_date3"];
+                this.columnupdated_date3 = base.Columns["updated_date3"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8697,6 +8723,10 @@ namespace SBMS {
                 base.Columns.Add(this._columnisWHO_);
                 this.columnisActive1 = new global::System.Data.DataColumn("isActive1", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnisActive1);
+                this.columncreated_date3 = new global::System.Data.DataColumn("created_date3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreated_date3);
+                this.columnupdated_date3 = new global::System.Data.DataColumn("updated_date3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_date3);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -8723,7 +8753,6 @@ namespace SBMS {
                 this.columncabinet_number.AllowDBNull = false;
                 this.columndrawer_number.AllowDBNull = false;
                 this.columnbox_number.AllowDBNull = false;
-                this.columncreated_date.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 2147483647;
                 this.columndonor_code.AllowDBNull = false;
                 this.columndonor_code.MaxLength = 2147483647;
@@ -8767,6 +8796,7 @@ namespace SBMS {
                 this.columnid2.AutoIncrementStep = -1;
                 this.columnid2.AllowDBNull = false;
                 this.columnid2.ReadOnly = true;
+                this.columncreated_date1.AllowDBNull = false;
                 this.columncreated_by2.MaxLength = 2147483647;
                 this.columnupdated_by2.MaxLength = 2147483647;
                 this.columnid3.AutoIncrement = true;
@@ -15431,7 +15461,13 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date {
                 get {
-                    return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_dateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'created_date\' in table \'current_lending_history\' is DBNull." +
+                                "", e);
+                    }
                 }
                 set {
                     this[this.tablecurrent_lending_history.created_dateColumn] = value;
@@ -15849,13 +15885,7 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date1 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_date1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date1\' in table \'current_lending_history\' is DBNull" +
-                                ".", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_date1Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_history.created_date1Column] = value;
@@ -16016,6 +16046,40 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime created_date3 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_date3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'created_date3\' in table \'current_lending_history\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_history.created_date3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime updated_date3 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.updated_date3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date3\' in table \'current_lending_history\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_history.updated_date3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsisReservedNull() {
                 return this.IsNull(this.tablecurrent_lending_history.isReservedColumn);
             }
@@ -16096,6 +16160,18 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setupdated_dateNull() {
                 this[this.tablecurrent_lending_history.updated_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscreated_dateNull() {
+                return this.IsNull(this.tablecurrent_lending_history.created_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcreated_dateNull() {
+                this[this.tablecurrent_lending_history.created_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16280,18 +16356,6 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_date1Null() {
-                return this.IsNull(this.tablecurrent_lending_history.created_date1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_date1Null() {
-                this[this.tablecurrent_lending_history.created_date1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Iscreated_by2Null() {
                 return this.IsNull(this.tablecurrent_lending_history.created_by2Column);
             }
@@ -16384,6 +16448,30 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisActive1Null() {
                 this[this.tablecurrent_lending_history.isActive1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscreated_date3Null() {
+                return this.IsNull(this.tablecurrent_lending_history.created_date3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcreated_date3Null() {
+                this[this.tablecurrent_lending_history.created_date3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isupdated_date3Null() {
+                return this.IsNull(this.tablecurrent_lending_history.updated_date3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setupdated_date3Null() {
+                this[this.tablecurrent_lending_history.updated_date3Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -24072,6 +24160,8 @@ ORDER BY s.id;";
             tableMapping.ColumnMappings.Add("updated_date2", "updated_date2");
             tableMapping.ColumnMappings.Add("isWHO?", "isWHO?");
             tableMapping.ColumnMappings.Add("isActive1", "isActive1");
+            tableMapping.ColumnMappings.Add("created_date3", "created_date3");
+            tableMapping.ColumnMappings.Add("updated_date3", "updated_date3");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

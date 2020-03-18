@@ -431,8 +431,6 @@ namespace SBMS
             int rowIndex;
             rowIndex = e.RowIndex;
 
-
-
             if (dgr_recentslides.SelectedRows.Count > 0)
             {
                 MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());

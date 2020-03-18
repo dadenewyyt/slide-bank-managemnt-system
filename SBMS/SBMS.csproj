@@ -200,6 +200,12 @@
       <DependentUpon>LocationEquippiedCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\CrystalReports\PrintCurrentLendings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\PrintCurrentLendings.Designer.cs">
+      <DependentUpon>PrintCurrentLendings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CrystalReports\ReportViewRecentSlides.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +377,9 @@
     <EmbeddedResource Include="Reports\CrystalReports\LocationEquippiedCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LocationEquippiedCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\PrintCurrentLendings.resx">
+      <DependentUpon>PrintCurrentLendings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\ReportViewRecentSlides.resx">
       <DependentUpon>ReportViewRecentSlides.cs</DependentUpon>

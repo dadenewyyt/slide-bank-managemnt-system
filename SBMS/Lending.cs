@@ -1,7 +1,9 @@
-﻿using SBMS.Services;
+﻿using SBMS.Reports.CrystalReports;
+using SBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SBMS
@@ -35,43 +37,133 @@ namespace SBMS
             // TODO: This line of code loads data into the 'sbmsDataSet.borrower_contact_list' table. You can move, or remove it, as needed.
             this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
-            borrowerDic.Add(-1, "--Search Borrower Here---");
+            borrowerDic.Add(-1, "--Select Full Name of the Borrower---");
             foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
             {
-                borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   " + row["organisation"] + "  Position:  " + row["job_title"]);
+                borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"]);
             }
 
-            cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
+            cmb_borrowers_full_name.DataSource = new BindingSource(borrowerDic, null);
 
-            cmb_borrowers.DisplayMember = "Value";
-            cmb_borrowers.ValueMember = "Key";
+            cmb_borrowers_full_name.DisplayMember = "Value";
+            cmb_borrowers_full_name.ValueMember = "Key";
 
-            cmb_borrowers.AutoCompleteMode = AutoCompleteMode.Suggest;
-            cmb_borrowers.AutoCompleteSource = AutoCompleteSource.ListItems;
+            Dictionary<int, string> borrowerOrgDic = new Dictionary<int, string>();
+
+
+            borrowerOrgDic.Add(-1, "--Select Organisations---");
+            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            {
+                borrowerOrgDic.Add(Convert.ToInt32(row["id"]), row["organisation"].ToString());
+            }
+
+            cmb_borrowers_org.DataSource = new BindingSource(borrowerOrgDic, null);
+
+            cmb_borrowers_org.DisplayMember = "Value";
+            cmb_borrowers_org.ValueMember = "Key";
+
+            cmb_borrowers_org.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmb_borrowers_org.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void searchby_borrower(object sender, EventArgs e)
         {
             DataTable searched = new DataTable();
-            if (this.cmb_borrowers.SelectedIndex != 0)
+            if (this.cmb_borrowers_full_name.SelectedIndex != 0)
             {
-                MessageBox.Show("Search" + this.cmb_borrowers.SelectedIndex);
-                int id = this.cmb_borrowers.SelectedIndex;
+                MessageBox.Show("Search" + this.cmb_borrowers_full_name.SelectedIndex);
+                int id = this.cmb_borrowers_full_name.SelectedIndex;
                 searched = searchAndFIlterService.SearchLendingByBorrowerId(id);
 
             }
             if (searched.Rows.Count>0)
             {
-                MessageBox.Show("Search" + this.cmb_borrowers.SelectedIndex);
+                MessageBox.Show("Search" + this.cmb_borrowers_full_name.SelectedIndex);
                 grd_currentLending.DataSource = null;
                 grd_currentLending.Refresh();
                 grd_currentLending.DataSource = searched;
               
             }
-            if (searched.Rows.Count == 0 && this.cmb_borrowers.SelectedIndex!=0)
+            if (searched.Rows.Count == 0 && this.cmb_borrowers_full_name.SelectedIndex!=0)
             {
                 MessageBox.Show("The Searched Borrower has not current lendings.", "System");
             }
+        }
+
+        private void btn_find_Click(object sender, EventArgs e)
+        {
+
+            DataTable searched = new DataTable();
+            if (this.cmb_borrowers_full_name.SelectedIndex != 0)
+            {
+                MessageBox.Show("Search" + this.cmb_borrowers_full_name.SelectedItem.ToString());
+                int id = this.cmb_borrowers_full_name.SelectedIndex;
+                searched = searchAndFIlterService.SearchLendingByBorrowerId(id);
+
+            }
+            if (searched.Rows.Count > 0)
+            {
+                //MessageBox.Show("Search" + this.cmb_borrowers_org.SelectedIndex);
+                grd_currentLending.DataSource = null;
+                grd_currentLending.Refresh();
+                grd_currentLending.DataSource = searched;
+
+            }
+            if (searched.Rows.Count == 0 && this.cmb_borrowers_full_name.SelectedIndex != 0)
+            {
+                MessageBox.Show("Borrower has not current lendings.", "System");
+                grd_currentLending.DataSource = null;
+                grd_currentLending.Refresh();
+                grd_currentLending.DataSource = searched;
+            }
+
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable searched = new DataTable();
+            if (this.cmb_borrowers_org.SelectedIndex != 0)
+            {
+                MessageBox.Show("Search" + this.cmb_borrowers_org.SelectedItem.ToString());
+                int id = this.cmb_borrowers_org.SelectedIndex;
+                searched = searchAndFIlterService.SearchLendingByBorrowerId(id);
+
+            }
+            if (searched.Rows.Count > 0)
+            {
+                //MessageBox.Show("Search" + this.cmb_borrowers_org.SelectedIndex);
+                grd_currentLending.DataSource = null;
+                grd_currentLending.Refresh();
+                grd_currentLending.DataSource = searched;
+
+            }
+            if (searched.Rows.Count == 0 && this.cmb_borrowers_org.SelectedIndex != 0)
+            {
+                MessageBox.Show("Organisation has not current lendings.", "System");
+                grd_currentLending.DataSource = null;
+                grd_currentLending.Refresh();
+                grd_currentLending.DataSource = searched;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PrintCurrentLendings print = new PrintCurrentLendings();
+            print.MdiParent = this.MdiParent;
+            print.Show();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.grd_currentLending.Width, this.grd_currentLending.Height);
+            grd_currentLending.DrawToBitmap(bm, new Rectangle(0,0,this.grd_currentLending.Width, this.grd_currentLending.Height));
+            e.Graphics.DrawImage(bm, 10, 10);
         }
     }
 }
