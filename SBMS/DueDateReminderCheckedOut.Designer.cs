@@ -34,22 +34,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grd_currentLending = new System.Windows.Forms.DataGridView();
+            this.currentlendingduedatepassedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.current_lending_duedate_passed_TableAdapter = new SBMS.sbmsDataSetTableAdapters.current_lending_duedate_passed_TableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabinetnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawernumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boxnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lowerdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.averagedensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upperdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.speciesspecificidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.owneridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciescatgeroyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkedoutdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,9 +63,6 @@
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrowedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bcreateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currentlendingduedatepassedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.current_lending_duedate_passed_TableAdapter = new SBMS.sbmsDataSetTableAdapters.current_lending_duedate_passed_TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -138,20 +133,15 @@
             this.grd_currentLending.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.barcodeDataGridViewTextBoxColumn,
-            this.sequenceDataGridViewTextBoxColumn,
             this.countrycodeDataGridViewTextBoxColumn,
             this.donorcodeDataGridViewTextBoxColumn,
+            this.sequenceDataGridViewTextBoxColumn,
             this.cabinetnumberDataGridViewTextBoxColumn,
             this.drawernumberDataGridViewTextBoxColumn,
             this.boxnumberDataGridViewTextBoxColumn,
             this.densitycategoryidDataGridViewTextBoxColumn,
-            this.lowerdensityDataGridViewTextBoxColumn,
-            this.averagedensityDataGridViewTextBoxColumn,
-            this.upperdensityDataGridViewTextBoxColumn,
             this.speciesspecificidDataGridViewTextBoxColumn,
             this.speciesstageidDataGridViewTextBoxColumn,
-            this.owneridDataGridViewTextBoxColumn,
-            this.speciescatgeroyidDataGridViewTextBoxColumn,
             this.checkedoutdateDataGridViewTextBoxColumn,
             this.duedateDataGridViewTextBoxColumn,
             this.reasonDataGridViewTextBoxColumn,
@@ -173,6 +163,20 @@
             this.grd_currentLending.Size = new System.Drawing.Size(954, 333);
             this.grd_currentLending.TabIndex = 1;
             // 
+            // currentlendingduedatepassedBindingSource
+            // 
+            this.currentlendingduedatepassedBindingSource.DataMember = "current_lending_duedate_passed";
+            this.currentlendingduedatepassedBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // current_lending_duedate_passed_TableAdapter
+            // 
+            this.current_lending_duedate_passed_TableAdapter.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -187,23 +191,23 @@
             this.barcodeDataGridViewTextBoxColumn.HeaderText = "Bcode";
             this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
             // 
-            // sequenceDataGridViewTextBoxColumn
-            // 
-            this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
-            this.sequenceDataGridViewTextBoxColumn.HeaderText = "Seq#";
-            this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
-            // 
             // countrycodeDataGridViewTextBoxColumn
             // 
             this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
-            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "CCode";
+            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "Contry";
             this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
             // 
             // donorcodeDataGridViewTextBoxColumn
             // 
             this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
-            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "DCode";
+            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "Donor";
             this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
+            // 
+            // sequenceDataGridViewTextBoxColumn
+            // 
+            this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
+            this.sequenceDataGridViewTextBoxColumn.HeaderText = "Slide Sequence#";
+            this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
             // 
             // cabinetnumberDataGridViewTextBoxColumn
             // 
@@ -226,26 +230,8 @@
             // densitycategoryidDataGridViewTextBoxColumn
             // 
             this.densitycategoryidDataGridViewTextBoxColumn.DataPropertyName = "density_category_id";
-            this.densitycategoryidDataGridViewTextBoxColumn.HeaderText = "DCategory";
+            this.densitycategoryidDataGridViewTextBoxColumn.HeaderText = "Density";
             this.densitycategoryidDataGridViewTextBoxColumn.Name = "densitycategoryidDataGridViewTextBoxColumn";
-            // 
-            // lowerdensityDataGridViewTextBoxColumn
-            // 
-            this.lowerdensityDataGridViewTextBoxColumn.DataPropertyName = "lower_density";
-            this.lowerdensityDataGridViewTextBoxColumn.HeaderText = "LD";
-            this.lowerdensityDataGridViewTextBoxColumn.Name = "lowerdensityDataGridViewTextBoxColumn";
-            // 
-            // averagedensityDataGridViewTextBoxColumn
-            // 
-            this.averagedensityDataGridViewTextBoxColumn.DataPropertyName = "average_density";
-            this.averagedensityDataGridViewTextBoxColumn.HeaderText = "AD";
-            this.averagedensityDataGridViewTextBoxColumn.Name = "averagedensityDataGridViewTextBoxColumn";
-            // 
-            // upperdensityDataGridViewTextBoxColumn
-            // 
-            this.upperdensityDataGridViewTextBoxColumn.DataPropertyName = "upper_density";
-            this.upperdensityDataGridViewTextBoxColumn.HeaderText = "UD";
-            this.upperdensityDataGridViewTextBoxColumn.Name = "upperdensityDataGridViewTextBoxColumn";
             // 
             // speciesspecificidDataGridViewTextBoxColumn
             // 
@@ -258,18 +244,6 @@
             this.speciesstageidDataGridViewTextBoxColumn.DataPropertyName = "species_stage_id";
             this.speciesstageidDataGridViewTextBoxColumn.HeaderText = "Stage";
             this.speciesstageidDataGridViewTextBoxColumn.Name = "speciesstageidDataGridViewTextBoxColumn";
-            // 
-            // owneridDataGridViewTextBoxColumn
-            // 
-            this.owneridDataGridViewTextBoxColumn.DataPropertyName = "owner_id";
-            this.owneridDataGridViewTextBoxColumn.HeaderText = "Owner";
-            this.owneridDataGridViewTextBoxColumn.Name = "owneridDataGridViewTextBoxColumn";
-            // 
-            // speciescatgeroyidDataGridViewTextBoxColumn
-            // 
-            this.speciescatgeroyidDataGridViewTextBoxColumn.DataPropertyName = "species_catgeroy_id";
-            this.speciescatgeroyidDataGridViewTextBoxColumn.HeaderText = "SCategory";
-            this.speciescatgeroyidDataGridViewTextBoxColumn.Name = "speciescatgeroyidDataGridViewTextBoxColumn";
             // 
             // checkedoutdateDataGridViewTextBoxColumn
             // 
@@ -361,20 +335,6 @@
             this.bcreateddateDataGridViewTextBoxColumn.HeaderText = "Borrowed_Date";
             this.bcreateddateDataGridViewTextBoxColumn.Name = "bcreateddateDataGridViewTextBoxColumn";
             // 
-            // currentlendingduedatepassedBindingSource
-            // 
-            this.currentlendingduedatepassedBindingSource.DataMember = "current_lending_duedate_passed";
-            this.currentlendingduedatepassedBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // current_lending_duedate_passed_TableAdapter
-            // 
-            this.current_lending_duedate_passed_TableAdapter.ClearBeforeFill = true;
-            // 
             // DueDateReminderCheckedOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,20 +370,15 @@
         private sbmsDataSetTableAdapters.current_lending_duedate_passed_TableAdapter current_lending_duedate_passed_TableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countrycodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donorcodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cabinetnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn drawernumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn boxnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn densitycategoryidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lowerdensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn averagedensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn upperdensityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn speciesspecificidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn speciesstageidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn owneridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speciescatgeroyidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkedoutdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn duedateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;

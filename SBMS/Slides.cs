@@ -431,7 +431,7 @@ namespace SBMS
             int rowIndex;
             rowIndex = e.RowIndex;
 
-            if (dgr_recentslides.SelectedRows.Count > 0)
+            if (dgr_recentslides.Rows.Count <= rowIndex)
             {
                 MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
 
@@ -643,13 +643,41 @@ namespace SBMS
 
         private void btn_find_all_Click(object sender, EventArgs e)
         {
-            //search here
+            try
+            {
+                if (txt_search_all.Text.ToString() != "")
+                {
+                    int donor = Convert.ToInt32(txt_search_all.Text.ToString());
+                    SearchAndFilterService searchAndFilterService = new SearchAndFilterService();
+                    DataTable dt = searchAndFilterService.SearchSlideByDonor(donor);
+
+
+                    if (dt == null)
+                    {
+
+                        MessageBox.Show("Slid/s with the donor code" + donor + " was not found! ");
+                    }
+                    else
+                    {
+                        dgr_allslides.DataSource = null;
+                        dgr_allslides.Refresh();
+                        dgr_allslides.DataSource = dt;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Donor number is empty or invalid,renter");
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Donorr number is empty or invalid,renter");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            
+            dgr_recentslides.DataSource = this.recentslidedatasetBindingSource;
+
             reload_data();
         }
 
@@ -658,7 +686,7 @@ namespace SBMS
             int rowIndexGird;
             rowIndexGird = e.RowIndex;
 
-            if (rowIndexGird!=0 && dgr_allslides.SelectedRows.Count != 0)
+            if (dgr_allslides.Rows.Count <= rowIndexGird)
             {
                 MessageBox.Show("you selected row:" + (rowIndexGird + 1).ToString());
 
@@ -741,8 +769,36 @@ namespace SBMS
 
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txt_search_slide_recent.Text.ToString() != "")
+                {
+                    int number = Convert.ToInt32(txt_search_slide_recent.Text.ToString());
+                    SearchAndFilterService searchAndFilterService = new SearchAndFilterService();
+                    DataTable dt = searchAndFilterService.SearchSlideByNumber(number);
 
-        }
+
+                    if (dt == null)
+                    {
+
+                        MessageBox.Show("Slide with that number" + number + " was not found! ");
+                    }
+                    else
+                    {
+                        dgr_recentslides.DataSource = null;
+                        dgr_recentslides.Refresh();
+                        dgr_recentslides.DataSource = dt;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Slide number is empty or invalid,renter");
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Slide number is empty or invalid,renter");
+            }
+}
 
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -754,6 +810,53 @@ namespace SBMS
             LocationEquippedReportViewPort locationEquippedReportViewPort = new LocationEquippedReportViewPort();
             locationEquippedReportViewPort.MdiParent = this.ParentForm;
             locationEquippedReportViewPort.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.dgr_allslides.DataSource = this.slidesBindingSource;
+        }
+
+        private void btn_location_search_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                int cabinet = Decimal.ToInt32(numeric_cabinet.Value);
+                int drawer = Decimal.ToInt32(numeric_drawer.Value);
+                int box = Decimal.ToInt32(numeric_box.Value);
+
+                if (cabinet!=0 && drawer!=0 && box!=0)
+                {
+                    int number = Convert.ToInt32(txt_search_slide_recent.Text.ToString());
+                    SearchAndFilterService searchAndFilterService = new SearchAndFilterService();
+                    DataTable dt = searchAndFilterService.SearchLocationOccupied(cabinet,drawer,box);
+                    if (dt.Rows.Count>0)
+                    {
+
+                        MessageBox.Show("Location at Cabinet:"+cabinet+" Drawer: " +drawer+"Box:"+ box +"was not found! ");
+                    }
+                    else
+                    {
+                        dgr_locations.DataSource = null;
+                        dgr_locations.Refresh();
+                        dgr_locations.DataSource = dt;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Corerct some invalid value entered");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Slide number is empty or invalid,renter");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.dgr_locations.DataSource = this.slidesBindingSource;
         }
     }
 }

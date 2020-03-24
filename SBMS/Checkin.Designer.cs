@@ -31,83 +31,87 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_b_create_date = new System.Windows.Forms.TextBox();
+            this.txt_bby = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_reason = new System.Windows.Forms.TextBox();
+            this.txt_comment = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_returned_status = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.btn_Checkin = new System.Windows.Forms.Button();
+            this.txt_due_Date = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_org_borrower = new System.Windows.Forms.TextBox();
+            this.txt_b_full_name = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_checked_out_date = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_barcode = new System.Windows.Forms.TextBox();
+            this.txt_slide_number = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_contry_code = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_donor_code = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_slide_scan_in = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.grd_checkin_borrowed = new System.Windows.Forms.DataGridView();
+            this.currentLendingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countrycode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.species = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.species_catgeroy = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.density = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
+            this.cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.box = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobtitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.organisation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duedate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checked_out_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowed_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b_created_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentlendinghistoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet1 = new SBMS.sbmsDataSet();
+            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
             this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.currentLendingHisotryTableAdapter = new SBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
-            this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.species_categoryTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
-            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
-            this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
-            this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.species_specificsTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_specificsTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.species_specific_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.species_catgeroy_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.density_category_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.lowerdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.averagedensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upperdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acquireddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cabinetnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drawernumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isBorrowedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isActiveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobtitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.organisationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checked_out_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_checkin_borrowed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Location = new System.Drawing.Point(0, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -118,30 +122,36 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBox8);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_b_create_date);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_bby);
+            this.splitContainer1.Panel2.Controls.Add(this.label15);
+            this.splitContainer1.Panel2.Controls.Add(this.label14);
+            this.splitContainer1.Panel2.Controls.Add(this.label8);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_reason);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_comment);
             this.splitContainer1.Panel2.Controls.Add(this.label13);
-            this.splitContainer1.Panel2.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.cmb_returned_status);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox9);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_Checkin);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_due_Date);
             this.splitContainer1.Panel2.Controls.Add(this.label11);
             this.splitContainer1.Panel2.Controls.Add(this.label12);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox10);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox7);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_org_borrower);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_b_full_name);
             this.splitContainer1.Panel2.Controls.Add(this.label9);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox6);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_checked_out_date);
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox5);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox4);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_barcode);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_slide_number);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_contry_code);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_donor_code);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.txt_slide_scan_in);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(1258, 263);
+            this.splitContainer1.Size = new System.Drawing.Size(1321, 263);
             this.splitContainer1.SplitterDistance = 74;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -155,68 +165,131 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Checkin Slides Borrrowed";
             // 
-            // textBox8
+            // txt_b_create_date
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox8.Location = new System.Drawing.Point(913, 36);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(198, 76);
-            this.textBox8.TabIndex = 21;
+            this.txt_b_create_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_b_create_date.Location = new System.Drawing.Point(718, 136);
+            this.txt_b_create_date.Name = "txt_b_create_date";
+            this.txt_b_create_date.ReadOnly = true;
+            this.txt_b_create_date.Size = new System.Drawing.Size(225, 25);
+            this.txt_b_create_date.TabIndex = 27;
+            // 
+            // txt_bby
+            // 
+            this.txt_bby.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_bby.Location = new System.Drawing.Point(718, 67);
+            this.txt_bby.Name = "txt_bby";
+            this.txt_bby.ReadOnly = true;
+            this.txt_bby.Size = new System.Drawing.Size(225, 25);
+            this.txt_bby.TabIndex = 26;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.label15.Location = new System.Drawing.Point(715, 106);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(102, 17);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Borrowed Date:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.label14.Location = new System.Drawing.Point(715, 47);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 17);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Borrowed By:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.label8.Location = new System.Drawing.Point(351, 141);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 17);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Reason:";
+            // 
+            // txt_reason
+            // 
+            this.txt_reason.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_reason.Location = new System.Drawing.Point(484, 138);
+            this.txt_reason.Name = "txt_reason";
+            this.txt_reason.ReadOnly = true;
+            this.txt_reason.Size = new System.Drawing.Size(225, 25);
+            this.txt_reason.TabIndex = 22;
+            // 
+            // txt_comment
+            // 
+            this.txt_comment.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_comment.Location = new System.Drawing.Point(1051, 33);
+            this.txt_comment.Multiline = true;
+            this.txt_comment.Name = "txt_comment";
+            this.txt_comment.Size = new System.Drawing.Size(198, 76);
+            this.txt_comment.TabIndex = 21;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label13.Location = new System.Drawing.Point(835, 36);
+            this.label13.Location = new System.Drawing.Point(973, 33);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(72, 17);
             this.label13.TabIndex = 20;
             this.label13.Text = "Comment:";
             // 
-            // comboBox1
+            // cmb_returned_status
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(913, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 25);
-            this.comboBox1.TabIndex = 19;
+            this.cmb_returned_status.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.cmb_returned_status.FormattingEnabled = true;
+            this.cmb_returned_status.Items.AddRange(new object[] {
+            "--Select---",
+            "Okay",
+            "Damaged",
+            "Missing"});
+            this.cmb_returned_status.Location = new System.Drawing.Point(1051, 5);
+            this.cmb_returned_status.Name = "cmb_returned_status";
+            this.cmb_returned_status.Size = new System.Drawing.Size(198, 25);
+            this.cmb_returned_status.TabIndex = 19;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label10.Location = new System.Drawing.Point(729, 13);
+            this.label10.Location = new System.Drawing.Point(867, 8);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(178, 17);
             this.label10.TabIndex = 18;
             this.label10.Text = "Slide Status When Retruned:";
             // 
-            // button2
+            // btn_Checkin
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.button2.Location = new System.Drawing.Point(913, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 42);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Checkin";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Checkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_Checkin.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Checkin.Location = new System.Drawing.Point(1051, 115);
+            this.btn_Checkin.Name = "btn_Checkin";
+            this.btn_Checkin.Size = new System.Drawing.Size(198, 42);
+            this.btn_Checkin.TabIndex = 13;
+            this.btn_Checkin.Text = "Checkin";
+            this.btn_Checkin.UseVisualStyleBackColor = false;
             // 
-            // textBox9
+            // txt_due_Date
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox9.Location = new System.Drawing.Point(501, 103);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(198, 25);
-            this.textBox9.TabIndex = 17;
+            this.txt_due_Date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_due_Date.Location = new System.Drawing.Point(484, 74);
+            this.txt_due_Date.Name = "txt_due_Date";
+            this.txt_due_Date.ReadOnly = true;
+            this.txt_due_Date.Size = new System.Drawing.Size(225, 25);
+            this.txt_due_Date.TabIndex = 17;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label11.Location = new System.Drawing.Point(351, 109);
+            this.label11.Location = new System.Drawing.Point(351, 77);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 17);
             this.label11.TabIndex = 16;
@@ -227,29 +300,29 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label12.Location = new System.Drawing.Point(351, 46);
+            this.label12.Location = new System.Drawing.Point(351, 44);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(149, 17);
+            this.label12.Size = new System.Drawing.Size(90, 17);
             this.label12.TabIndex = 15;
-            this.label12.Text = "Borrower Organisation:";
+            this.label12.Text = "Organisation:";
             // 
-            // textBox10
+            // txt_org_borrower
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox10.Location = new System.Drawing.Point(484, 43);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(225, 25);
-            this.textBox10.TabIndex = 14;
+            this.txt_org_borrower.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_org_borrower.Location = new System.Drawing.Point(484, 44);
+            this.txt_org_borrower.Name = "txt_org_borrower";
+            this.txt_org_borrower.ReadOnly = true;
+            this.txt_org_borrower.Size = new System.Drawing.Size(225, 25);
+            this.txt_org_borrower.TabIndex = 14;
             // 
-            // textBox7
+            // txt_b_full_name
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox7.Location = new System.Drawing.Point(484, 13);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(225, 25);
-            this.textBox7.TabIndex = 13;
+            this.txt_b_full_name.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_b_full_name.Location = new System.Drawing.Point(484, 13);
+            this.txt_b_full_name.Name = "txt_b_full_name";
+            this.txt_b_full_name.ReadOnly = true;
+            this.txt_b_full_name.Size = new System.Drawing.Size(225, 25);
+            this.txt_b_full_name.TabIndex = 13;
             // 
             // label9
             // 
@@ -261,21 +334,21 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Borrower Full Name:";
             // 
-            // textBox6
+            // txt_checked_out_date
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox6.Location = new System.Drawing.Point(501, 133);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(198, 25);
-            this.textBox6.TabIndex = 11;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.txt_checked_out_date.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_checked_out_date.Location = new System.Drawing.Point(484, 105);
+            this.txt_checked_out_date.Name = "txt_checked_out_date";
+            this.txt_checked_out_date.ReadOnly = true;
+            this.txt_checked_out_date.Size = new System.Drawing.Size(225, 25);
+            this.txt_checked_out_date.TabIndex = 11;
+            this.txt_checked_out_date.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label6.Location = new System.Drawing.Point(351, 141);
+            this.label6.Location = new System.Drawing.Point(351, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 17);
             this.label6.TabIndex = 10;
@@ -291,23 +364,23 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Barcode:";
             // 
-            // textBox5
+            // txt_barcode
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox5.Location = new System.Drawing.Point(112, 133);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(222, 25);
-            this.textBox5.TabIndex = 8;
+            this.txt_barcode.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_barcode.Location = new System.Drawing.Point(112, 133);
+            this.txt_barcode.Name = "txt_barcode";
+            this.txt_barcode.ReadOnly = true;
+            this.txt_barcode.Size = new System.Drawing.Size(222, 25);
+            this.txt_barcode.TabIndex = 8;
             // 
-            // textBox4
+            // txt_slide_number
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox4.Location = new System.Drawing.Point(112, 106);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(222, 25);
-            this.textBox4.TabIndex = 7;
+            this.txt_slide_number.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_slide_number.Location = new System.Drawing.Point(112, 106);
+            this.txt_slide_number.Name = "txt_slide_number";
+            this.txt_slide_number.ReadOnly = true;
+            this.txt_slide_number.Size = new System.Drawing.Size(222, 25);
+            this.txt_slide_number.TabIndex = 7;
             // 
             // label4
             // 
@@ -319,14 +392,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Slide number:";
             // 
-            // textBox3
+            // txt_contry_code
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox3.Location = new System.Drawing.Point(112, 77);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(222, 25);
-            this.textBox3.TabIndex = 5;
+            this.txt_contry_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_contry_code.Location = new System.Drawing.Point(112, 77);
+            this.txt_contry_code.Name = "txt_contry_code";
+            this.txt_contry_code.ReadOnly = true;
+            this.txt_contry_code.Size = new System.Drawing.Size(222, 25);
+            this.txt_contry_code.TabIndex = 5;
             // 
             // label3
             // 
@@ -338,15 +411,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Country Code:";
             // 
-            // textBox2
+            // txt_donor_code
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox2.Location = new System.Drawing.Point(112, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(222, 25);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txt_donor_code.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_donor_code.Location = new System.Drawing.Point(112, 48);
+            this.txt_donor_code.Name = "txt_donor_code";
+            this.txt_donor_code.ReadOnly = true;
+            this.txt_donor_code.Size = new System.Drawing.Size(222, 25);
+            this.txt_donor_code.TabIndex = 3;
+            this.txt_donor_code.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -358,13 +431,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Donor Code:";
             // 
-            // textBox1
+            // txt_slide_scan_in
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.textBox1.Location = new System.Drawing.Point(112, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 25);
-            this.textBox1.TabIndex = 1;
+            this.txt_slide_scan_in.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
+            this.txt_slide_scan_in.Location = new System.Drawing.Point(112, 18);
+            this.txt_slide_scan_in.Name = "txt_slide_scan_in";
+            this.txt_slide_scan_in.Size = new System.Drawing.Size(222, 25);
+            this.txt_slide_scan_in.TabIndex = 1;
+            this.txt_slide_scan_in.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.find_borrowed_slide);
             // 
             // label1
             // 
@@ -376,57 +450,224 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Scan In:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.barcodeDataGridViewTextBoxColumn,
-            this.donorcodeDataGridViewTextBoxColumn,
-            this.sequenceDataGridViewTextBoxColumn,
-            this.countrycodeDataGridViewTextBoxColumn,
-            this.species_specific_id,
-            this.species_catgeroy_id,
-            this.density_category_id,
-            this.lowerdensityDataGridViewTextBoxColumn,
-            this.averagedensityDataGridViewTextBoxColumn,
-            this.upperdensityDataGridViewTextBoxColumn,
-            this.acquireddateDataGridViewTextBoxColumn,
-            this.cabinetnumberDataGridViewTextBoxColumn,
-            this.drawernumberDataGridViewTextBoxColumn,
-            this.boxnumberDataGridViewTextBoxColumn,
-            this.reasonDataGridViewTextBoxColumn,
-            this.isBorrowedDataGridViewCheckBoxColumn,
-            this.isActiveDataGridViewCheckBoxColumn,
-            this.fnameDataGridViewTextBoxColumn,
-            this.lnameDataGridViewTextBoxColumn,
-            this.jobtitleDataGridViewTextBoxColumn,
-            this.organisationDataGridViewTextBoxColumn,
-            this.duedateDataGridViewTextBoxColumn,
-            this.checked_out_date,
-            this.updateddateDataGridViewTextBoxColumn,
-            this.createddateDataGridViewTextBoxColumn,
-            this.createdbyDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.currentlendinghistoryBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 272);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1258, 345);
-            this.dataGridView1.TabIndex = 3;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1183, 247);
+            this.button1.Location = new System.Drawing.Point(1195, 272);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(117, 23);
             this.button1.TabIndex = 12;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // grd_checkin_borrowed
+            // 
+            this.grd_checkin_borrowed.AutoGenerateColumns = false;
+            this.grd_checkin_borrowed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd_checkin_borrowed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.currentLendingId,
+            this.barcode,
+            this.donorcode,
+            this.countrycode,
+            this.sequence,
+            this.species,
+            this.species_catgeroy,
+            this.density,
+            this.cabinet,
+            this.drawer,
+            this.box,
+            this.reason,
+            this.fname,
+            this.lname,
+            this.jobtitle,
+            this.organisation,
+            this.duedate,
+            this.checked_out_date,
+            this.borrowed_by,
+            this.b_created_date});
+            this.grd_checkin_borrowed.DataSource = this.currentlendinghistoryBindingSource1;
+            this.grd_checkin_borrowed.Location = new System.Drawing.Point(0, 301);
+            this.grd_checkin_borrowed.Name = "grd_checkin_borrowed";
+            this.grd_checkin_borrowed.Size = new System.Drawing.Size(1321, 378);
+            this.grd_checkin_borrowed.TabIndex = 3;
+            this.grd_checkin_borrowed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_checkin_borrowed_CellClick);
+            // 
+            // currentLendingId
+            // 
+            this.currentLendingId.DataPropertyName = "id";
+            this.currentLendingId.HeaderText = "id";
+            this.currentLendingId.Name = "currentLendingId";
+            this.currentLendingId.ReadOnly = true;
+            this.currentLendingId.Visible = false;
+            // 
+            // barcode
+            // 
+            this.barcode.DataPropertyName = "bar_code";
+            this.barcode.HeaderText = "Barcode";
+            this.barcode.Name = "barcode";
+            // 
+            // donorcode
+            // 
+            this.donorcode.DataPropertyName = "donor_code";
+            this.donorcode.HeaderText = "Donor";
+            this.donorcode.Name = "donorcode";
+            // 
+            // countrycode
+            // 
+            this.countrycode.DataPropertyName = "country_code";
+            this.countrycode.HeaderText = "Country";
+            this.countrycode.Name = "countrycode";
+            // 
+            // sequence
+            // 
+            this.sequence.DataPropertyName = "sequence";
+            this.sequence.HeaderText = "Sequence";
+            this.sequence.Name = "sequence";
+            // 
+            // species
+            // 
+            this.species.DataPropertyName = "species_specific_id";
+            this.species.DataSource = this.speciesspecificsBindingSource;
+            this.species.DisplayMember = "specifics";
+            this.species.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.species.HeaderText = "Speciecs";
+            this.species.Name = "species";
+            this.species.ValueMember = "id";
+            // 
+            // speciesspecificsBindingSource
+            // 
+            this.speciesspecificsBindingSource.DataMember = "species_specifics";
+            this.speciesspecificsBindingSource.DataSource = this.sbmsDataSet;
             // 
             // sbmsDataSet
             // 
             this.sbmsDataSet.DataSetName = "sbmsDataSet";
             this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // species_catgeroy
+            // 
+            this.species_catgeroy.DataPropertyName = "species_catgeroy_id";
+            this.species_catgeroy.DataSource = this.speciescategoryBindingSource;
+            this.species_catgeroy.DisplayMember = "species_category";
+            this.species_catgeroy.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.species_catgeroy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.species_catgeroy.HeaderText = "Category";
+            this.species_catgeroy.Name = "species_catgeroy";
+            this.species_catgeroy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.species_catgeroy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.species_catgeroy.ValueMember = "id";
+            // 
+            // speciescategoryBindingSource
+            // 
+            this.speciescategoryBindingSource.DataMember = "species_category";
+            this.speciescategoryBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // density
+            // 
+            this.density.DataPropertyName = "density_category_id";
+            this.density.DataSource = this.densitycategoryBindingSource;
+            this.density.DisplayMember = "density_category";
+            this.density.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.density.HeaderText = "Density";
+            this.density.Name = "density";
+            this.density.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.density.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.density.ValueMember = "id";
+            // 
+            // densitycategoryBindingSource
+            // 
+            this.densitycategoryBindingSource.DataMember = "density_category";
+            this.densitycategoryBindingSource.DataSource = this.desnityCat_bindingDataSource;
+            // 
+            // desnityCat_bindingDataSource
+            // 
+            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
+            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cabinet
+            // 
+            this.cabinet.DataPropertyName = "cabinet_number";
+            this.cabinet.HeaderText = "Cabinet";
+            this.cabinet.Name = "cabinet";
+            // 
+            // drawer
+            // 
+            this.drawer.DataPropertyName = "drawer_number";
+            this.drawer.HeaderText = "Drawer";
+            this.drawer.Name = "drawer";
+            // 
+            // box
+            // 
+            this.box.DataPropertyName = "box_number";
+            this.box.HeaderText = "Box";
+            this.box.Name = "box";
+            // 
+            // reason
+            // 
+            this.reason.DataPropertyName = "reason";
+            this.reason.HeaderText = "Reason";
+            this.reason.Name = "reason";
+            // 
+            // fname
+            // 
+            this.fname.DataPropertyName = "fname";
+            this.fname.HeaderText = "BFname";
+            this.fname.Name = "fname";
+            // 
+            // lname
+            // 
+            this.lname.DataPropertyName = "lname";
+            this.lname.HeaderText = "BLastname";
+            this.lname.Name = "lname";
+            // 
+            // jobtitle
+            // 
+            this.jobtitle.DataPropertyName = "job_title";
+            this.jobtitle.HeaderText = "Postion";
+            this.jobtitle.Name = "jobtitle";
+            // 
+            // organisation
+            // 
+            this.organisation.DataPropertyName = "organisation";
+            this.organisation.HeaderText = "Organisation";
+            this.organisation.Name = "organisation";
+            // 
+            // duedate
+            // 
+            this.duedate.DataPropertyName = "due_date";
+            this.duedate.HeaderText = "DueDate";
+            this.duedate.Name = "duedate";
+            // 
+            // checked_out_date
+            // 
+            this.checked_out_date.DataPropertyName = "checked_out_date";
+            this.checked_out_date.HeaderText = "CheckoutDate";
+            this.checked_out_date.Name = "checked_out_date";
+            // 
+            // borrowed_by
+            // 
+            this.borrowed_by.DataPropertyName = "borrowed_by";
+            this.borrowed_by.HeaderText = "BorrowedBy";
+            this.borrowed_by.Name = "borrowed_by";
+            // 
+            // b_created_date
+            // 
+            this.b_created_date.DataPropertyName = "b_created_date";
+            this.b_created_date.HeaderText = "Record_CreatedDate";
+            this.b_created_date.Name = "b_created_date";
+            // 
+            // currentlendinghistoryBindingSource1
+            // 
+            this.currentlendinghistoryBindingSource1.DataMember = "current_lending_history";
+            this.currentlendinghistoryBindingSource1.DataSource = this.sbmsDataSet1;
+            // 
+            // sbmsDataSet1
+            // 
+            this.sbmsDataSet1.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // density_categoryTableAdapter
+            // 
+            this.density_categoryTableAdapter.ClearBeforeFill = true;
             // 
             // currentlendinghistoryBindingSource
             // 
@@ -437,226 +678,22 @@
             // 
             this.currentLendingHisotryTableAdapter.ClearBeforeFill = true;
             // 
-            // speciescategoryBindingSource
-            // 
-            this.speciescategoryBindingSource.DataMember = "species_category";
-            this.speciescategoryBindingSource.DataSource = this.sbmsDataSet;
-            // 
             // species_categoryTableAdapter
             // 
             this.species_categoryTableAdapter.ClearBeforeFill = true;
             // 
-            // desnityCat_bindingDataSource
-            // 
-            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
-            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // densitycategoryBindingSource
-            // 
-            this.densitycategoryBindingSource.DataMember = "density_category";
-            this.densitycategoryBindingSource.DataSource = this.desnityCat_bindingDataSource;
-            // 
-            // density_categoryTableAdapter
-            // 
-            this.density_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // speciesspecificsBindingSource
-            // 
-            this.speciesspecificsBindingSource.DataMember = "species_specifics";
-            this.speciesspecificsBindingSource.DataSource = this.sbmsDataSet;
-            // 
             // species_specificsTableAdapter
             // 
             this.species_specificsTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // barcodeDataGridViewTextBoxColumn
-            // 
-            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "bar_code";
-            this.barcodeDataGridViewTextBoxColumn.HeaderText = "bar_code";
-            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
-            // 
-            // donorcodeDataGridViewTextBoxColumn
-            // 
-            this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
-            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "donor_code";
-            this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
-            // 
-            // sequenceDataGridViewTextBoxColumn
-            // 
-            this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
-            this.sequenceDataGridViewTextBoxColumn.HeaderText = "sequence";
-            this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
-            // 
-            // countrycodeDataGridViewTextBoxColumn
-            // 
-            this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
-            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "country_code";
-            this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
-            // 
-            // species_specific_id
-            // 
-            this.species_specific_id.DataPropertyName = "species_specific_id";
-            this.species_specific_id.DataSource = this.speciesspecificsBindingSource;
-            this.species_specific_id.DisplayMember = "specifics";
-            this.species_specific_id.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.species_specific_id.HeaderText = "species_specific";
-            this.species_specific_id.Name = "species_specific_id";
-            this.species_specific_id.ValueMember = "id";
-            // 
-            // species_catgeroy_id
-            // 
-            this.species_catgeroy_id.DataPropertyName = "species_catgeroy_id";
-            this.species_catgeroy_id.DataSource = this.speciescategoryBindingSource;
-            this.species_catgeroy_id.DisplayMember = "species_category";
-            this.species_catgeroy_id.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.species_catgeroy_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.species_catgeroy_id.HeaderText = "species_catgeroy";
-            this.species_catgeroy_id.Name = "species_catgeroy_id";
-            this.species_catgeroy_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.species_catgeroy_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.species_catgeroy_id.ValueMember = "id";
-            // 
-            // density_category_id
-            // 
-            this.density_category_id.DataPropertyName = "density_category_id";
-            this.density_category_id.DataSource = this.densitycategoryBindingSource;
-            this.density_category_id.DisplayMember = "density_category";
-            this.density_category_id.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.density_category_id.HeaderText = "density_category";
-            this.density_category_id.Name = "density_category_id";
-            this.density_category_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.density_category_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.density_category_id.ValueMember = "id";
-            // 
-            // lowerdensityDataGridViewTextBoxColumn
-            // 
-            this.lowerdensityDataGridViewTextBoxColumn.DataPropertyName = "lower_density";
-            this.lowerdensityDataGridViewTextBoxColumn.HeaderText = "lower_density";
-            this.lowerdensityDataGridViewTextBoxColumn.Name = "lowerdensityDataGridViewTextBoxColumn";
-            // 
-            // averagedensityDataGridViewTextBoxColumn
-            // 
-            this.averagedensityDataGridViewTextBoxColumn.DataPropertyName = "average_density";
-            this.averagedensityDataGridViewTextBoxColumn.HeaderText = "average_density";
-            this.averagedensityDataGridViewTextBoxColumn.Name = "averagedensityDataGridViewTextBoxColumn";
-            // 
-            // upperdensityDataGridViewTextBoxColumn
-            // 
-            this.upperdensityDataGridViewTextBoxColumn.DataPropertyName = "upper_density";
-            this.upperdensityDataGridViewTextBoxColumn.HeaderText = "upper_density";
-            this.upperdensityDataGridViewTextBoxColumn.Name = "upperdensityDataGridViewTextBoxColumn";
-            // 
-            // acquireddateDataGridViewTextBoxColumn
-            // 
-            this.acquireddateDataGridViewTextBoxColumn.DataPropertyName = "acquired_date";
-            this.acquireddateDataGridViewTextBoxColumn.HeaderText = "acquired_date";
-            this.acquireddateDataGridViewTextBoxColumn.Name = "acquireddateDataGridViewTextBoxColumn";
-            // 
-            // cabinetnumberDataGridViewTextBoxColumn
-            // 
-            this.cabinetnumberDataGridViewTextBoxColumn.DataPropertyName = "cabinet_number";
-            this.cabinetnumberDataGridViewTextBoxColumn.HeaderText = "cabinet_number";
-            this.cabinetnumberDataGridViewTextBoxColumn.Name = "cabinetnumberDataGridViewTextBoxColumn";
-            // 
-            // drawernumberDataGridViewTextBoxColumn
-            // 
-            this.drawernumberDataGridViewTextBoxColumn.DataPropertyName = "drawer_number";
-            this.drawernumberDataGridViewTextBoxColumn.HeaderText = "drawer_number";
-            this.drawernumberDataGridViewTextBoxColumn.Name = "drawernumberDataGridViewTextBoxColumn";
-            // 
-            // boxnumberDataGridViewTextBoxColumn
-            // 
-            this.boxnumberDataGridViewTextBoxColumn.DataPropertyName = "box_number";
-            this.boxnumberDataGridViewTextBoxColumn.HeaderText = "box_number";
-            this.boxnumberDataGridViewTextBoxColumn.Name = "boxnumberDataGridViewTextBoxColumn";
-            // 
-            // reasonDataGridViewTextBoxColumn
-            // 
-            this.reasonDataGridViewTextBoxColumn.DataPropertyName = "reason";
-            this.reasonDataGridViewTextBoxColumn.HeaderText = "reason";
-            this.reasonDataGridViewTextBoxColumn.Name = "reasonDataGridViewTextBoxColumn";
-            // 
-            // isBorrowedDataGridViewCheckBoxColumn
-            // 
-            this.isBorrowedDataGridViewCheckBoxColumn.DataPropertyName = "isBorrowed";
-            this.isBorrowedDataGridViewCheckBoxColumn.HeaderText = "isBorrowed";
-            this.isBorrowedDataGridViewCheckBoxColumn.Name = "isBorrowedDataGridViewCheckBoxColumn";
-            // 
-            // isActiveDataGridViewCheckBoxColumn
-            // 
-            this.isActiveDataGridViewCheckBoxColumn.DataPropertyName = "isActive";
-            this.isActiveDataGridViewCheckBoxColumn.HeaderText = "isActive";
-            this.isActiveDataGridViewCheckBoxColumn.Name = "isActiveDataGridViewCheckBoxColumn";
-            // 
-            // fnameDataGridViewTextBoxColumn
-            // 
-            this.fnameDataGridViewTextBoxColumn.DataPropertyName = "fname";
-            this.fnameDataGridViewTextBoxColumn.HeaderText = "fname";
-            this.fnameDataGridViewTextBoxColumn.Name = "fnameDataGridViewTextBoxColumn";
-            // 
-            // lnameDataGridViewTextBoxColumn
-            // 
-            this.lnameDataGridViewTextBoxColumn.DataPropertyName = "lname";
-            this.lnameDataGridViewTextBoxColumn.HeaderText = "lname";
-            this.lnameDataGridViewTextBoxColumn.Name = "lnameDataGridViewTextBoxColumn";
-            // 
-            // jobtitleDataGridViewTextBoxColumn
-            // 
-            this.jobtitleDataGridViewTextBoxColumn.DataPropertyName = "job_title";
-            this.jobtitleDataGridViewTextBoxColumn.HeaderText = "job_title";
-            this.jobtitleDataGridViewTextBoxColumn.Name = "jobtitleDataGridViewTextBoxColumn";
-            // 
-            // organisationDataGridViewTextBoxColumn
-            // 
-            this.organisationDataGridViewTextBoxColumn.DataPropertyName = "organisation";
-            this.organisationDataGridViewTextBoxColumn.HeaderText = "organisation";
-            this.organisationDataGridViewTextBoxColumn.Name = "organisationDataGridViewTextBoxColumn";
-            // 
-            // duedateDataGridViewTextBoxColumn
-            // 
-            this.duedateDataGridViewTextBoxColumn.DataPropertyName = "due_date";
-            this.duedateDataGridViewTextBoxColumn.HeaderText = "due_date";
-            this.duedateDataGridViewTextBoxColumn.Name = "duedateDataGridViewTextBoxColumn";
-            // 
-            // checked_out_date
-            // 
-            this.checked_out_date.DataPropertyName = "checked_out_date";
-            this.checked_out_date.HeaderText = "checked_out_date";
-            this.checked_out_date.Name = "checked_out_date";
-            // 
-            // updateddateDataGridViewTextBoxColumn
-            // 
-            this.updateddateDataGridViewTextBoxColumn.DataPropertyName = "updated_date";
-            this.updateddateDataGridViewTextBoxColumn.HeaderText = "updated_date";
-            this.updateddateDataGridViewTextBoxColumn.Name = "updateddateDataGridViewTextBoxColumn";
-            // 
-            // createddateDataGridViewTextBoxColumn
-            // 
-            this.createddateDataGridViewTextBoxColumn.DataPropertyName = "created_date";
-            this.createddateDataGridViewTextBoxColumn.HeaderText = "created_date";
-            this.createddateDataGridViewTextBoxColumn.Name = "createddateDataGridViewTextBoxColumn";
-            // 
-            // createdbyDataGridViewTextBoxColumn
-            // 
-            this.createdbyDataGridViewTextBoxColumn.DataPropertyName = "created_by";
-            this.createdbyDataGridViewTextBoxColumn.HeaderText = "created_by";
-            this.createdbyDataGridViewTextBoxColumn.Name = "createdbyDataGridViewTextBoxColumn";
             // 
             // Checkin_Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1261, 638);
+            this.ClientSize = new System.Drawing.Size(1324, 683);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grd_checkin_borrowed);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Checkin_Checkout";
             this.Text = "Checkin_Checkout";
@@ -667,13 +704,15 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_checkin_borrowed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -682,31 +721,31 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_donor_code;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_slide_scan_in;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_checked_out_date;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_barcode;
+        private System.Windows.Forms.TextBox txt_slide_number;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_contry_code;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txt_due_Date;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_org_borrower;
+        private System.Windows.Forms.TextBox txt_b_full_name;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grd_checkin_borrowed;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txt_comment;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_returned_status;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Checkin;
         private sbmsDataSet sbmsDataSet;
         private System.Windows.Forms.BindingSource currentlendinghistoryBindingSource;
         private sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter currentLendingHisotryTableAdapter;
@@ -717,32 +756,33 @@
         private desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter density_categoryTableAdapter;
         private System.Windows.Forms.BindingSource speciesspecificsBindingSource;
         private sbmsDataSetTableAdapters.species_specificsTableAdapter species_specificsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donorcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sequenceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countrycodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn species_specific_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn species_catgeroy_id;
-        private System.Windows.Forms.DataGridViewComboBoxColumn density_category_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lowerdensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn averagedensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn upperdensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acquireddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cabinetnumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drawernumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxnumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isBorrowedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isActiveDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn organisationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duedateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txt_b_create_date;
+        private System.Windows.Forms.TextBox txt_bby;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_reason;
+        private sbmsDataSet sbmsDataSet1;
+        private System.Windows.Forms.BindingSource currentlendinghistoryBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currentLendingId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countrycode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequence;
+        private System.Windows.Forms.DataGridViewComboBoxColumn species;
+        private System.Windows.Forms.DataGridViewComboBoxColumn species_catgeroy;
+        private System.Windows.Forms.DataGridViewComboBoxColumn density;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cabinet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drawer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn box;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn organisation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duedate;
         private System.Windows.Forms.DataGridViewTextBoxColumn checked_out_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updateddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdbyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrowed_by;
+        private System.Windows.Forms.DataGridViewTextBoxColumn b_created_date;
     }
 }

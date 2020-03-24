@@ -56,7 +56,7 @@ namespace SBMS
             int rowIndex;
             rowIndex = e.RowIndex;
 
-            if (dgr_borrower.SelectedRows.Count > 0)
+            if (dgr_borrower.Rows.Count <= rowIndex)
             {
                 MessageBox.Show("selected row:" + (rowIndex + 1).ToString());
 

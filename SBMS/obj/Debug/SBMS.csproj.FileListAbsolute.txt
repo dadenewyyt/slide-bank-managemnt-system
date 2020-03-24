@@ -1,4 +1,3 @@
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csprojAssemblyReference.cache
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.exe.config
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.exe
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.pdb

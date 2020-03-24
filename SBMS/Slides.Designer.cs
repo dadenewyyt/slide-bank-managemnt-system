@@ -145,9 +145,9 @@
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numeric_box = new System.Windows.Forms.NumericUpDown();
+            this.numeric_drawer = new System.Windows.Forms.NumericUpDown();
+            this.numeric_cabinet = new System.Windows.Forms.NumericUpDown();
             this.btn_print_locations = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -253,9 +253,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgr_allslides)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource1)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_drawer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_cabinet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_locations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationDataBindingSource)).BeginInit();
             this.rdoDamaged.SuspendLayout();
@@ -573,7 +573,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(16, 47);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -635,7 +635,6 @@
             this.txt_search_slide_recent.Location = new System.Drawing.Point(142, 11);
             this.txt_search_slide_recent.MaxLength = 20;
             this.txt_search_slide_recent.Name = "txt_search_slide_recent";
-            this.txt_search_slide_recent.ReadOnly = true;
             this.txt_search_slide_recent.Size = new System.Drawing.Size(210, 25);
             this.txt_search_slide_recent.TabIndex = 29;
             // 
@@ -960,6 +959,7 @@
             this.button4.TabIndex = 47;
             this.button4.Text = "Refresh!";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dgr_allslides
             // 
@@ -1203,9 +1203,9 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.numericUpDown3);
-            this.tabPage3.Controls.Add(this.numericUpDown2);
-            this.tabPage3.Controls.Add(this.numericUpDown1);
+            this.tabPage3.Controls.Add(this.numeric_box);
+            this.tabPage3.Controls.Add(this.numeric_drawer);
+            this.tabPage3.Controls.Add(this.numeric_cabinet);
             this.tabPage3.Controls.Add(this.btn_print_locations);
             this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.label19);
@@ -1219,26 +1219,26 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Occupied Places ?";
             // 
-            // numericUpDown3
+            // numeric_box
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(382, 13);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(49, 22);
-            this.numericUpDown3.TabIndex = 58;
+            this.numeric_box.Location = new System.Drawing.Point(382, 13);
+            this.numeric_box.Name = "numeric_box";
+            this.numeric_box.Size = new System.Drawing.Size(49, 22);
+            this.numeric_box.TabIndex = 58;
             // 
-            // numericUpDown2
+            // numeric_drawer
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(326, 13);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(49, 22);
-            this.numericUpDown2.TabIndex = 57;
+            this.numeric_drawer.Location = new System.Drawing.Point(326, 13);
+            this.numeric_drawer.Name = "numeric_drawer";
+            this.numeric_drawer.Size = new System.Drawing.Size(49, 22);
+            this.numeric_drawer.TabIndex = 57;
             // 
-            // numericUpDown1
+            // numeric_cabinet
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(271, 13);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(49, 22);
-            this.numericUpDown1.TabIndex = 56;
+            this.numeric_cabinet.Location = new System.Drawing.Point(271, 13);
+            this.numeric_cabinet.Name = "numeric_cabinet";
+            this.numeric_cabinet.Size = new System.Drawing.Size(49, 22);
+            this.numeric_cabinet.TabIndex = 56;
             // 
             // btn_print_locations
             // 
@@ -1259,6 +1259,7 @@
             this.button8.TabIndex = 55;
             this.button8.Text = "Refresh!";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label19
             // 
@@ -1279,6 +1280,7 @@
             this.btn_location_search.TabIndex = 53;
             this.btn_location_search.Text = "Find ";
             this.btn_location_search.UseVisualStyleBackColor = true;
+            this.btn_location_search.Click += new System.EventHandler(this.btn_location_search_Click);
             // 
             // dgr_locations
             // 
@@ -2040,9 +2042,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ownersBindingSource1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_drawer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_cabinet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_locations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.locationDataBindingSource)).EndInit();
             this.rdoDamaged.ResumeLayout(false);
@@ -2277,8 +2279,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cdaterecentslidesGridViewColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updated_by;
         private System.Windows.Forms.DataGridViewTextBoxColumn udaterecentslidesGridViewColumn;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numeric_box;
+        private System.Windows.Forms.NumericUpDown numeric_drawer;
+        private System.Windows.Forms.NumericUpDown numeric_cabinet;
     }
 }

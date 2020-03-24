@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -57,7 +58,47 @@ namespace SBMS.Services
             if (searchResults != null)
                 return searchResults;
             return null;
-        } 
+        }
 
+        public DataTable SearchSlideByNumber(int number)
+        {
+
+            DataTable checkouSlideDT = new DataTable();
+            string strCommandText = "SELECT top(500) s.id, s.bar_code, s.sequence, s.donor_id, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, d.id AS donor_donor_id, d.donor_code, d.species_specific_id, d.species_stage_id, d.species_catgeroy_id, d.lower_density, d.average_density, d.upper_density, d.density_category_id, d.owner_id, d.acquired_date," +
+                "d.country_code, d.comment, d.validation_id FROM dbo.slides AS s INNER JOIN dbo.donors AS d ON d.id = s.donor_id WHERE(d.isActive = 1) and(s.isBorrowed = 0) and(s.isReserved = 0) and(s.isDamaged = 0) and (s.sequence="+number+") ORDER BY d.id";
+            SqlDataAdapter SlideCheckouFilterAdpter = new SqlDataAdapter(strCommandText, DatabaseServices.con);
+            SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(SlideCheckouFilterAdpter);
+            checkouSlideDT.Clear();
+            SlideCheckouFilterAdpter.Fill(checkouSlideDT);
+            // if there are records, bind to Grid view & display
+            return checkouSlideDT;
+        }
+
+        public DataTable SearchSlideByDonor(int donor)
+        {
+
+            DataTable checkouSlideDT = new DataTable();
+            string strCommandText = "SELECT top(500) s.id, s.bar_code, s.sequence, s.donor_id, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, d.id AS donor_donor_id, d.donor_code, d.species_specific_id, d.species_stage_id, d.species_catgeroy_id, d.lower_density, d.average_density, d.upper_density, d.density_category_id, d.owner_id, d.acquired_date," +
+                "d.country_code, d.comment, d.validation_id FROM dbo.slides AS s INNER JOIN dbo.donors AS d ON d.id = s.donor_id WHERE(d.isActive = 1) and(s.isBorrowed = 0) and(s.isReserved = 0) and(s.isDamaged = 0) and (d.donor_code=" + donor + ") ORDER BY d.id";
+            SqlDataAdapter SlideCheckouFilterAdpter = new SqlDataAdapter(strCommandText, DatabaseServices.con);
+            SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(SlideCheckouFilterAdpter);
+            checkouSlideDT.Clear();
+            SlideCheckouFilterAdpter.Fill(checkouSlideDT);
+            // if there are records, bind to Grid view & display
+            return checkouSlideDT;
+        }
+
+        public DataTable SearchLocationOccupied(int c , int d , int b)
+        {
+
+            DataTable locationData = new DataTable();
+            string strCommandText = "SELECT s.bar_code, s.sequence,s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, d.donor_code, d.species_specific_id, d.species_stage_id, d.species_catgeroy_id, d.lower_density, d.average_density, d.upper_density, d.density_category_id, d.owner_id, d.acquired_date, d.country_code FROM dbo.slides AS s INNER JOIN dbo.donors AS d ON d.id = s.donor_id WHERE(d.isActive = 1) and(s.cabinet_number == "+c+") and(s.drawer_number ="+d+")and(s.box_number = "+b+") ORDER BY s.cabinet_number; ";
+            SqlDataAdapter SlideCheckouFilterAdpter = new SqlDataAdapter(strCommandText, DatabaseServices.con);
+            SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(SlideCheckouFilterAdpter);
+            locationData.Clear();
+            SlideCheckouFilterAdpter.Fill(locationData);
+            // if there are records, bind to Grid view & display
+            return locationData;
+        }
     }
 }

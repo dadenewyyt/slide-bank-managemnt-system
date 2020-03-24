@@ -106,6 +106,32 @@ namespace SBMS.Services
             return 1;
         }
 
+        public DataTable FecthBorrowedSlideByBarCode(string barcode)
+        {
+            DataTable BorrowedSlideByBarCode = new DataTable();
+
+            if (String.IsNullOrEmpty(barcode) == false)
+            {
+                string selectquery = "SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date FROM dbo.current_lending as l INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id INNER JOIN dbo.slides AS s ON s.id = l.slide_id INNER JOIN dbo.donors as d on d.id = s.donor_id WHERE (s.bar_code="+barcode+")ORDER BY d.donor_code,l.due_date ASC;";
+                using (SqlDataAdapter adapter = new SqlDataAdapter(selectquery, DatabaseServices.con))
+                {
+
+                    try
+                    {
+
+                        adapter.Fill(BorrowedSlideByBarCode);
+                        return BorrowedSlideByBarCode;
+                    }
+                    catch (Exception ex)
+                    {
+                       MessageBox.Show(ex.Message, "We are unable to find a slide with the barcode:"+barcode);
+                        return BorrowedSlideByBarCode;
+                    }
+
+                }
+            }
+            return BorrowedSlideByBarCode;
+        }
 
         public int CheckDuplicateSlideInfo(string sequence)
         {

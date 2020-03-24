@@ -60,6 +60,10 @@ namespace SBMS {
         
         private global::System.Data.DataRelation relationFK_current_lending_borrowers1;
         
+        private global::System.Data.DataRelation relationFK_current_lending_borrowers2;
+        
+        private global::System.Data.DataRelation relationFK_current_lending_borrowers3;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -560,6 +564,8 @@ namespace SBMS {
             }
             this.relationFK_current_lending_borrowers = this.Relations["FK_current_lending_borrowers"];
             this.relationFK_current_lending_borrowers1 = this.Relations["FK_current_lending_borrowers1"];
+            this.relationFK_current_lending_borrowers2 = this.Relations["FK_current_lending_borrowers2"];
+            this.relationFK_current_lending_borrowers3 = this.Relations["FK_current_lending_borrowers3"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,6 +616,14 @@ namespace SBMS {
                         this.tableborrower_contact_list.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecurrent_lending_duedate_passed.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers1);
+            this.relationFK_current_lending_borrowers2 = new global::System.Data.DataRelation("FK_current_lending_borrowers2", new global::System.Data.DataColumn[] {
+                        this.tableborrowers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecurrent_lending_history.borrower_idColumn}, false);
+            this.Relations.Add(this.relationFK_current_lending_borrowers2);
+            this.relationFK_current_lending_borrowers3 = new global::System.Data.DataRelation("FK_current_lending_borrowers3", new global::System.Data.DataColumn[] {
+                        this.tableborrower_contact_list.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecurrent_lending_history.borrower_idColumn}, false);
+            this.Relations.Add(this.relationFK_current_lending_borrowers3);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7764,6 +7778,10 @@ namespace SBMS {
             
             private global::System.Data.DataColumn columnupdated_date3;
             
+            private global::System.Data.DataColumn columnborrowed_by;
+            
+            private global::System.Data.DataColumn columnb_created_date;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public current_lending_historyDataTable() {
@@ -8327,6 +8345,22 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn borrowed_byColumn {
+                get {
+                    return this.columnborrowed_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn b_created_dateColumn {
+                get {
+                    return this.columnb_created_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8390,7 +8424,7 @@ namespace SBMS {
                         int donor_id, 
                         int species_catgeroy_id, 
                         string updated_by, 
-                        int borrower_id, 
+                        borrowersRow parentborrowersRowByFK_current_lending_borrowers2, 
                         int slide_id, 
                         System.DateTime checked_out_date, 
                         System.DateTime due_date, 
@@ -8424,7 +8458,9 @@ namespace SBMS {
                         bool _isWHO_, 
                         bool isActive1, 
                         System.DateTime created_date3, 
-                        System.DateTime updated_date3) {
+                        System.DateTime updated_date3, 
+                        string borrowed_by, 
+                        System.DateTime b_created_date) {
                 current_lending_historyRow rowcurrent_lending_historyRow = ((current_lending_historyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -8455,7 +8491,7 @@ namespace SBMS {
                         donor_id,
                         species_catgeroy_id,
                         updated_by,
-                        borrower_id,
+                        null,
                         slide_id,
                         checked_out_date,
                         due_date,
@@ -8492,7 +8528,12 @@ namespace SBMS {
                         _isWHO_,
                         isActive1,
                         created_date3,
-                        updated_date3};
+                        updated_date3,
+                        borrowed_by,
+                        b_created_date};
+                if ((parentborrowersRowByFK_current_lending_borrowers2 != null)) {
+                    columnValuesArray[28] = parentborrowersRowByFK_current_lending_borrowers2[0];
+                }
                 rowcurrent_lending_historyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcurrent_lending_historyRow);
                 return rowcurrent_lending_historyRow;
@@ -8588,6 +8629,8 @@ namespace SBMS {
                 this.columnisActive1 = base.Columns["isActive1"];
                 this.columncreated_date3 = base.Columns["created_date3"];
                 this.columnupdated_date3 = base.Columns["updated_date3"];
+                this.columnborrowed_by = base.Columns["borrowed_by"];
+                this.columnb_created_date = base.Columns["b_created_date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8727,6 +8770,10 @@ namespace SBMS {
                 base.Columns.Add(this.columncreated_date3);
                 this.columnupdated_date3 = new global::System.Data.DataColumn("updated_date3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnupdated_date3);
+                this.columnborrowed_by = new global::System.Data.DataColumn("borrowed_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnborrowed_by);
+                this.columnb_created_date = new global::System.Data.DataColumn("b_created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnb_created_date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -8808,6 +8855,7 @@ namespace SBMS {
                 this.columnbar_code1.MaxLength = 2147483647;
                 this.columncreated_by3.MaxLength = 2147483647;
                 this.columnupdated_by3.MaxLength = 2147483647;
+                this.columnborrowed_by.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13071,6 +13119,17 @@ namespace SBMS {
                     return ((current_lending_duedate_passedRow[])(base.GetChildRows(this.Table.ChildRelations["FK_current_lending_borrowers"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public current_lending_historyRow[] Getcurrent_lending_historyRows() {
+                if ((this.Table.ChildRelations["FK_current_lending_borrowers2"] == null)) {
+                    return new current_lending_historyRow[0];
+                }
+                else {
+                    return ((current_lending_historyRow[])(base.GetChildRows(this.Table.ChildRelations["FK_current_lending_borrowers2"])));
+                }
+            }
         }
         
         /// <summary>
@@ -14051,6 +14110,17 @@ namespace SBMS {
                 }
                 else {
                     return ((current_lending_duedate_passedRow[])(base.GetChildRows(this.Table.ChildRelations["FK_current_lending_borrowers1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public current_lending_historyRow[] Getcurrent_lending_historyRows() {
+                if ((this.Table.ChildRelations["FK_current_lending_borrowers3"] == null)) {
+                    return new current_lending_historyRow[0];
+                }
+                else {
+                    return ((current_lending_historyRow[])(base.GetChildRows(this.Table.ChildRelations["FK_current_lending_borrowers3"])));
                 }
             }
         }
@@ -16080,6 +16150,61 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string borrowed_by {
+                get {
+                    try {
+                        return ((string)(this[this.tablecurrent_lending_history.borrowed_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'borrowed_by\' in table \'current_lending_history\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_history.borrowed_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime b_created_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.b_created_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'b_created_date\' in table \'current_lending_history\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_history.b_created_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public borrowersRow borrowersRow {
+                get {
+                    return ((borrowersRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public borrower_contact_listRow borrower_contact_listRow {
+                get {
+                    return ((borrower_contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers3"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsisReservedNull() {
                 return this.IsNull(this.tablecurrent_lending_history.isReservedColumn);
             }
@@ -16472,6 +16597,30 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setupdated_date3Null() {
                 this[this.tablecurrent_lending_history.updated_date3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isborrowed_byNull() {
+                return this.IsNull(this.tablecurrent_lending_history.borrowed_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setborrowed_byNull() {
+                this[this.tablecurrent_lending_history.borrowed_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isb_created_dateNull() {
+                return this.IsNull(this.tablecurrent_lending_history.b_created_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setb_created_dateNull() {
+                this[this.tablecurrent_lending_history.b_created_dateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19668,13 +19817,13 @@ SELECT id, bar_code, country_code, donor_code, species_catgeroy_id, species_spec
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT   TOP (100) s.id, s.bar_code, s.sequence, s.donor_id, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
+            this._commandCollection[0].CommandText = @"SELECT   TOP (500) s.id, s.bar_code, s.sequence, s.donor_id, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
                          d.id AS donor_donor_id, d.donor_code, d.species_specific_id, d.species_stage_id, d.species_catgeroy_id, d.lower_density, d.average_density, d.upper_density, d.density_category_id, d.owner_id, d.acquired_date, 
                          d.country_code, d.comment, d.validation_id
 FROM              dbo.slides AS s INNER JOIN
                          dbo.donors AS d ON d.id = s.donor_id
 WHERE        (d.isActive = 1) AND (s.isActive=1) AND  (s.isBorrowed = 0)  
-ORDER BY s.created_date DESC";
+ORDER BY  d.id ;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -24162,6 +24311,8 @@ ORDER BY s.id;";
             tableMapping.ColumnMappings.Add("isActive1", "isActive1");
             tableMapping.ColumnMappings.Add("created_date3", "created_date3");
             tableMapping.ColumnMappings.Add("updated_date3", "updated_date3");
+            tableMapping.ColumnMappings.Add("borrowed_by", "borrowed_by");
+            tableMapping.ColumnMappings.Add("b_created_date", "b_created_date");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -24178,9 +24329,12 @@ ORDER BY s.id;";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT * FROM  dbo.current_lending as l\r\nINNER JOIN dbo.borrowers AS b ON b.id = " +
-                "l.borrower_id\r\nINNER JOIN dbo.slides AS s ON s.id = l.slide_id\r\nINNER JOIN dbo.d" +
-                "onors as d on d.id = s.donor_id\r\nORDER BY d.donor_code,s.created_date ASC;";
+            this._commandCollection[0].CommandText = @"SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date
+FROM  dbo.current_lending as l
+INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id
+INNER JOIN dbo.slides AS s ON s.id = l.slide_id
+INNER JOIN dbo.donors as d on d.id = s.donor_id
+ORDER BY d.donor_code,s.created_date ASC;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

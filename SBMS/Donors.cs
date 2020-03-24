@@ -303,7 +303,7 @@ namespace SBMS
 
 
 
-            if (dgr_donors.SelectedRows.Count > 0)
+            if (dgr_donors.Rows.Count <= rowIndex)
             {
                 MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
 
