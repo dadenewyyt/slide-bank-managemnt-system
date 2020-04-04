@@ -275,6 +275,7 @@
             this.btn_Checkin.TabIndex = 13;
             this.btn_Checkin.Text = "Checkin";
             this.btn_Checkin.UseVisualStyleBackColor = false;
+            this.btn_Checkin.Click += new System.EventHandler(this.btn_Checkin_Click);
             // 
             // txt_due_Date
             // 
@@ -438,6 +439,7 @@
             this.txt_slide_scan_in.Name = "txt_slide_scan_in";
             this.txt_slide_scan_in.Size = new System.Drawing.Size(222, 25);
             this.txt_slide_scan_in.TabIndex = 1;
+            this.txt_slide_scan_in.Click += new System.EventHandler(this.txt_slide_scan_in_Click);
             this.txt_slide_scan_in.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.find_borrowed_slide);
             // 
             // label1

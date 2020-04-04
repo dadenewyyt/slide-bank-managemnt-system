@@ -10,7 +10,9 @@ namespace SBMS
     public partial class Checkin_Checkout : Form
     {
         int current_lending_id = -1;
+        int slide_id_checkin = -1;
         public int CurrentLending_Id_Checkin { get => current_lending_id; set => current_lending_id = value; }
+        public int Slide_Id_Checkin { get => slide_id_checkin; set => slide_id_checkin = value; }
         public Checkin_Checkout()
         {
             InitializeComponent();
@@ -41,6 +43,8 @@ namespace SBMS
             this.density_categoryTableAdapter.Fill(this.desnityCat_bindingDataSource.density_category);
             // TODO: This line of code loads data into the 'sbmsDataSet.species_category' table. You can move, or remove it, as needed.
             this.species_categoryTableAdapter.Fill(this.sbmsDataSet.species_category);
+            cmb_returned_status.SelectedIndex = 0;
+            grd_checkin_borrowed.AllowUserToAddRows = false;
 
         }
 
@@ -73,9 +77,8 @@ namespace SBMS
                 txt_donor_code.Text = separated["DC"];
                 txt_slide_number.Text = separated["SS"];
                 txt_barcode.Text = txt_slide_scan_in.Text;
-
+                
             }
-
 
             //fetch if there is any thing found with that donor id..it should be a must found since we suppose donor is already exisiting
 
@@ -90,6 +93,7 @@ namespace SBMS
                     //fetch data
                     foreach (DataRow row in BorrowedSlideDT.Rows)
                     {
+                        txt_slide_scan_in.Text = txt_barcode.Text;
                         txt_barcode.Text = row["bar_code"].ToString();
                         txt_contry_code.Text = row["country_code"].ToString();
                         txt_donor_code.Text = row["donor_code"].ToString();
@@ -101,6 +105,8 @@ namespace SBMS
                         txt_reason.Text =row["reason"].ToString();
                         txt_bby.Text = row["borrowed_by"].ToString();
                         txt_b_create_date.Text = row["b_created_date"].ToString();
+                        Slide_Id_Checkin = Convert.ToInt32(row["slide_id"]);
+                        CurrentLending_Id_Checkin = Convert.ToInt32(row["id"].ToString());
                     }
                    
                 }
@@ -108,6 +114,8 @@ namespace SBMS
                 {
                     //txt_donor_code.BackColor = Color.Red;
                     MessageBox.Show("System can not find borrowed slide with the bardcode", "INFORMATION", MessageBoxButtons.OK);
+                    Slide_Id_Checkin = -1;
+                    CurrentLending_Id_Checkin = -1;
                 }
             }
         }
@@ -120,7 +128,7 @@ namespace SBMS
             if (grd_checkin_borrowed.Rows.Count > 0)
             {
                 MessageBox.Show("selected row:" + (rowIndexGird + 1).ToString());
-
+                txt_slide_scan_in.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["barcode"].Value + string.Empty;
                 txt_barcode.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["barcode"].Value + string.Empty;
                 txt_slide_number.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["sequence"].Value + string.Empty;
                 txt_contry_code.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["countrycode"].Value + string.Empty;
@@ -139,6 +147,105 @@ namespace SBMS
             {
                 MessageBox.Show("NO Data to Select");
             }
+        }
+
+        public bool validateInputs() {
+
+            if (cmb_returned_status.SelectedIndex == 0 ) {
+                MessageBox.Show("Please , select valid value of Returned Status");
+                return false;
+            }
+
+            if (String.IsNullOrEmpty(txt_barcode.Text))
+            {
+                MessageBox.Show("Please , select valid value of Returned Status");
+                return false;
+            }
+
+            if (String.IsNullOrEmpty(txt_comment.Text))
+            {
+                DialogResult result = MessageBox.Show("Are you sure to contine with comment being empty ? Press No to enter value or Yes to coninue checkin","Checkin",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                if (result.CompareTo(DialogResult.Yes)==0)
+                     return true;
+                else
+                    return false;
+            }
+
+            /*if(String.IsNullOrEmpty(txt_barcode.Text))
+            {
+                MessageBox.Show("Please , select valid value of Returned Status");
+                return false;
+            }*/
+
+            return true;
+        }
+
+        private void btn_Checkin_Click(object sender, EventArgs e)
+        {
+           
+            validateInputs();
+            int caseValue = cmb_returned_status.SelectedIndex;
+            switch (caseValue) {
+                case 1: //OKAY
+                     Console.WriteLine("xx");
+                    CheckinSlideOkay("OKAY");
+                    break;
+                case 2: //Damageded
+                    CheckinSlideDamaged("Damaged");
+                    break;
+                default:
+                    break;
+            
+            }
+        }
+
+        public bool CheckinSlideOkay(String status) {
+            CheckinCheckoutService checkinCheckoutService = new CheckinCheckoutService();
+
+
+            bool result = checkinCheckoutService.CheckinSlideIsOkay("Okay", Slide_Id_Checkin, CurrentLending_Id_Checkin);
+            if (result == false)
+            {
+                MessageBox.Show("OKAY: Checkin was not succefull due some error, please try again");
+                return false;
+            }
+            return true;
+        }
+
+        public bool CheckinSlideDamaged(String status)
+        {
+            CheckinCheckoutService checkinCheckoutService = new CheckinCheckoutService();
+
+            bool result = checkinCheckoutService.CheckinSlidesDamaged("Damaged", Slide_Id_Checkin, CurrentLending_Id_Checkin);
+            if (result == false) {
+                MessageBox.Show("Damaged: Checkin was not succefull due some error, please try again");
+                return false;
+            }
+                return true;
+        }
+
+        private void txt_slide_scan_in_Click(object sender, EventArgs e)
+        {
+            
+                txt_slide_scan_in.Text = "";
+                txt_donor_code.Text = "";
+                txt_slide_number.Text = "";
+                txt_barcode.Text = "";
+                txt_contry_code.Text = "";
+
+                txt_barcode.Text = string.Empty;
+                txt_slide_number.Text =string.Empty;
+                txt_contry_code.Text =string.Empty;
+                txt_donor_code.Text = string.Empty;
+                txt_org_borrower.Text = "";
+                txt_b_full_name.Text = "";
+                txt_checked_out_date.Text = "";
+                txt_due_Date.Text =  string.Empty;
+                txt_reason.Text =string.Empty;
+                txt_bby.Text = "";
+                txt_b_create_date.Text = "";
+                cmb_returned_status.SelectedIndex = 0;
+                CurrentLending_Id_Checkin = -1;
         }
     }
 }

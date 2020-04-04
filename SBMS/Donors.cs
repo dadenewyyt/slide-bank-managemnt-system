@@ -111,6 +111,7 @@ namespace SBMS
 
         private void Donors_Load(object sender, EventArgs e)
         {
+            dgr_donors.AllowUserToAddRows = false;
             // TODO: This line of code loads data into the 'speciceCatgeroyDataSet.species_category' table. You can move, or remove it, as needed.
             this.species_categoryTableAdapter.Fill(this.speciceCatgeroyDataSet.species_category);
             // TODO: This line of code loads data into the 'sbmsDataSet.species_specifics' table. You can move, or remove it, as needed.
@@ -302,37 +303,42 @@ namespace SBMS
             rowIndex = e.RowIndex;
 
 
-
-            if (dgr_donors.Rows.Count <= rowIndex)
+            try
             {
-                MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
+                if (dgr_donors.Rows.Count > 0)
+                {
+                    MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
 
-                txt_barcode_scan_in.Text = dgr_donors.Rows[e.RowIndex].Cells["barcodeDataGridViewTextBoxColumn"].Value + string.Empty;
-                txt_country_code.Text = dgr_donors.Rows[e.RowIndex].Cells["countrycodeDataGridViewTextBoxColumn"].Value + string.Empty;
-                txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
-                cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesspecificidDataGridViewTextBoxColumn"].Value);
-                cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["SCategory"].Value);
-                cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesstageidDataGridViewTextBoxColumn"].Value);
-                txt_lower_density.Text = dgr_donors.Rows[e.RowIndex].Cells["lowerdensityDataGridViewTextBoxColumn"].Value + string.Empty;
-                txt_average_density.Text = dgr_donors.Rows[e.RowIndex].Cells["averagedensityDataGridViewTextBoxColumn"].Value + string.Empty;
-                txt_upper_density.Text = dgr_donors.Rows[e.RowIndex].Cells["upperdensityDataGridViewTextBoxColumn"].Value.ToString();
-                cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["densitycategoryidDataGridViewTextBoxColumn"].Value);
-                cmb_owners.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["owneridDataGridViewTextBoxColumn"].Value);
-                txt_acquired_date.Text = dgr_donors.Rows[e.RowIndex].Cells["acquireddateDataGridViewTextBoxColumn"].Value.ToString();
-                cmb_validation.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["validationidDataGridViewTextBoxColumn"].Value);
-                txt_comment.Text = dgr_donors.Rows[e.RowIndex].Cells["commentDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_barcode_scan_in.Text = dgr_donors.Rows[e.RowIndex].Cells["barcodeDataGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_country_code.Text = dgr_donors.Rows[e.RowIndex].Cells["countrycodeDataGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
+                    cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesspecificidDataGridViewTextBoxColumn"].Value);
+                    cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["SCategory"].Value);
+                    cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["speciesstageidDataGridViewTextBoxColumn"].Value);
+                    txt_lower_density.Text = dgr_donors.Rows[e.RowIndex].Cells["lowerdensityDataGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_average_density.Text = dgr_donors.Rows[e.RowIndex].Cells["averagedensityDataGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_upper_density.Text = dgr_donors.Rows[e.RowIndex].Cells["upperdensityDataGridViewTextBoxColumn"].Value.ToString();
+                    cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["densitycategoryidDataGridViewTextBoxColumn"].Value);
+                    cmb_owners.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["owneridDataGridViewTextBoxColumn"].Value);
+                    txt_acquired_date.Text = dgr_donors.Rows[e.RowIndex].Cells["acquireddateDataGridViewTextBoxColumn"].Value.ToString();
+                    cmb_validation.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["validationidDataGridViewTextBoxColumn"].Value);
+                    txt_comment.Text = dgr_donors.Rows[e.RowIndex].Cells["commentDataGridViewTextBoxColumn"].Value.ToString();
 
-                btn_deactivate.Enabled = true;
-                btn_save_edit.Enabled = true;
-                lbl_editing_status.Visible = true;
-                btn_save.Enabled = false;
-                Id_update = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["idDataGridViewTextBoxColumn"].Value.ToString());
+                    btn_deactivate.Enabled = true;
+                    btn_save_edit.Enabled = true;
+                    lbl_editing_status.Visible = true;
+                    btn_save.Enabled = false;
+                    Id_update = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["idDataGridViewTextBoxColumn"].Value.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("NO Data to Select");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("NO Data to Select");
+                //TODO}
             }
-
         }
 
         private void btn_find_Click(object sender, EventArgs e)

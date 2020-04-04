@@ -55,40 +55,45 @@ namespace SBMS
         {
             int rowIndex;
             rowIndex = e.RowIndex;
-
-            if (dgr_borrower.Rows.Count <= rowIndex)
+            try
             {
-                MessageBox.Show("selected row:" + (rowIndex + 1).ToString());
+                if (dgr_borrower.Rows.Count > 0)
+                {
+                    MessageBox.Show("selected row:" + (rowIndex + 1).ToString());
 
-                txt_fname.Text = dgr_borrower.Rows[e.RowIndex].Cells["fnameDataGridViewTextBoxColumn"].Value.ToString();
-                txt_lname.Text = dgr_borrower.Rows[e.RowIndex].Cells["lnameDataGridViewTextBoxColumn"].Value.ToString();
-                txt_jtitle.Text = dgr_borrower.Rows[e.RowIndex].Cells["jobtitleDataGridViewTextBoxColumn"].Value.ToString();
-                txt_org.Text = dgr_borrower.Rows[e.RowIndex].Cells["organisationDataGridViewTextBoxColumn"].Value.ToString();
-                txt_oemail.Text = dgr_borrower.Rows[e.RowIndex].Cells["officalemailDataGridViewTextBoxColumn"].Value.ToString();
-                txt_pemail.Text = dgr_borrower.Rows[e.RowIndex].Cells["personalemailDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_fname.Text = dgr_borrower.Rows[e.RowIndex].Cells["fnameDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_lname.Text = dgr_borrower.Rows[e.RowIndex].Cells["lnameDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_jtitle.Text = dgr_borrower.Rows[e.RowIndex].Cells["jobtitleDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_org.Text = dgr_borrower.Rows[e.RowIndex].Cells["organisationDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_oemail.Text = dgr_borrower.Rows[e.RowIndex].Cells["officalemailDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_pemail.Text = dgr_borrower.Rows[e.RowIndex].Cells["personalemailDataGridViewTextBoxColumn"].Value.ToString();
 
-                txt_mphone.Text = dgr_borrower.Rows[e.RowIndex].Cells["mobilephoneDataGridViewTextBoxColumn"].Value.ToString();
-                txt_ophone.Text = dgr_borrower.Rows[e.RowIndex].Cells["officephoneDataGridViewTextBoxColumn"].Value.ToString();
-                txt_fnum.Text = dgr_borrower.Rows[e.RowIndex].Cells["faxnumberDataGridViewTextBoxColumn"].Value.ToString();
-                txt_country.Text = dgr_borrower.Rows[e.RowIndex].Cells["countryDataGridViewTextBoxColumn"].Value.ToString();
-                txt_city.Text = dgr_borrower.Rows[e.RowIndex].Cells["cityDataGridViewTextBoxColumn"].Value.ToString();
-                txt_pobox.Text = dgr_borrower.Rows[e.RowIndex].Cells["postcodeDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_mphone.Text = dgr_borrower.Rows[e.RowIndex].Cells["mobilephoneDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_ophone.Text = dgr_borrower.Rows[e.RowIndex].Cells["officephoneDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_fnum.Text = dgr_borrower.Rows[e.RowIndex].Cells["faxnumberDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_country.Text = dgr_borrower.Rows[e.RowIndex].Cells["countryDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_city.Text = dgr_borrower.Rows[e.RowIndex].Cells["cityDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_pobox.Text = dgr_borrower.Rows[e.RowIndex].Cells["postcodeDataGridViewTextBoxColumn"].Value.ToString();
 
-                txt_hno.Text = dgr_borrower.Rows[e.RowIndex].Cells["hnoDataGridViewTextBoxColumn"].Value.ToString();
-                txt_notes.Text = dgr_borrower.Rows[e.RowIndex].Cells["fnameDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_hno.Text = dgr_borrower.Rows[e.RowIndex].Cells["hnoDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_notes.Text = dgr_borrower.Rows[e.RowIndex].Cells["fnameDataGridViewTextBoxColumn"].Value.ToString();
 
-                //enable_disable_inputs(true); //enable for select
+                    //enable_disable_inputs(true); //enable for select
 
-                btn_update.Enabled = true;
-                btn_delete.Enabled = true;
-                //lbl_editing_status.Visible = true;
-                btn_save.Enabled = false;
-                borrower_update_id = Convert.ToInt32(dgr_borrower.Rows[e.RowIndex].Cells["idDataGridViewTextBoxColumn"].Value.ToString());
-            }
-            else
-            {
-                //enable_disable_inputs(false); //disabble for select
-                MessageBox.Show("NO Data to Select");
+                    btn_update.Enabled = true;
+                    btn_delete.Enabled = true;
+                    //lbl_editing_status.Visible = true;
+                    btn_save.Enabled = false;
+                    borrower_update_id = Convert.ToInt32(dgr_borrower.Rows[e.RowIndex].Cells["idDataGridViewTextBoxColumn"].Value.ToString());
+                }
+                else
+                {
+                    //enable_disable_inputs(false); //disabble for select
+                    MessageBox.Show("NO Data to Select");
+                }
+            }//end of try
+            catch (Exception ex)
+            { //TODO}
             }
         }
 
@@ -160,6 +165,7 @@ namespace SBMS
         {
             // TODO: This line of code loads data into the 'sbmsDataSet.borrowers' table. You can move, or remove it, as needed.
             this.borrowersTableAdapter.Fill(this.sbmsDataSet.borrowers);
+            dgr_borrower.AllowUserToAddRows = false;
 
         }
 

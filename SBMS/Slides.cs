@@ -12,6 +12,9 @@ namespace SBMS
 {
     public partial class Slides : Form
     {
+
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         private int slide_id = -1;
         DataFetchService dataFetchService;
         public int donor_id = -1;
@@ -88,6 +91,11 @@ namespace SBMS
 
         private void Slides_Load(object sender, EventArgs e)
         {
+
+            dgr_allslides.AllowUserToAddRows = false;
+            dgr_recentslides.AllowUserToAddRows = false;
+            dgr_locations.AllowUserToAddRows = false;
+
             // TODO: This line of code loads data into the 'sbmsDataSet.locationData' table. You can move, or remove it, as needed.
             this.locationDataAdapter.Fill(this.sbmsDataSet.locationData);
             // TODO: This line of code loads data into the 'sbmsDataSet1.slides' table. You can move, or remove it, as needed.
@@ -162,70 +170,76 @@ namespace SBMS
         private void enter_pressed(object sender, KeyPressEventArgs e)
         {
             Dictionary<string, string> separated = new Dictionary<string, string>();
-
-            if (e.KeyChar == (char)13)
+            try
             {
 
-                if (txt_slide_scan.TextLength != 8)
+                if (e.KeyChar == (char)13)
                 {
-                    MessageBox.Show("Slide Scan in must be 8 digits.", "INFORMATION", MessageBoxButtons.OK);
-                    return;
-                }
 
-                if (int.TryParse(txt_slide_scan.Text.ToString(), out int n) == false) //numbers only
-                {
-                    MessageBox.Show("Slide Scan must all be numeric value.", "INFORMATION", MessageBoxButtons.OK);
-                    return;
-                }
-
-                HelperServices helperService = new HelperServices();
-                separated = helperService.SeperateBarCodeIntoCodes(txt_slide_scan.Text.ToString());
-
-                if (separated == null) return;
-
-                txt_country_code.Text = separated["CC"];
-                txt_donor_code.Text = separated["DC"];
-                txt_slide_sequence.Text = separated["SS"];
-                txt_bar_code.Text = txt_slide_scan.Text;
-
-            }
-
-
-            //fetch if there is any thing found with that donor id..it should be a must found since we suppose donor is already exisiting
-
-            if (separated.Count() > 0)
-            {
-
-                dataFetchService = new DataFetchService();
-                DataTable slideInfoDonorDT = dataFetchService.FecthSlideByDonorCode(separated["DC"].ToString());
-
-                if (slideInfoDonorDT.Rows.Count > 0)
-                {
-                    //fetch data
-                    foreach (DataRow row in slideInfoDonorDT.Rows)
+                    if (txt_slide_scan.TextLength != 8)
                     {
-
-                        cmb_specice_specifics.SelectedIndex = Convert.ToInt32(row["species_specific_id"].ToString());
-                        cmb_specice_category.SelectedIndex = Convert.ToInt32(row["species_catgeroy_id"].ToString());
-                        cmb_specice_stage.SelectedIndex = Convert.ToInt32(row["species_stage_id"].ToString());
-                        txt_lower_density.Text = row["lower_density"].ToString(); ;
-                        txt_average_density.Text = row["average_density"].ToString();
-                        txt_upper_density.Text = row["upper_density"].ToString(); ;
-                        cmb_density_category.SelectedIndex = Convert.ToInt32(row["density_category_id"].ToString());
-                        cmb_owners.SelectedIndex = Convert.ToInt32(row["owner_id"].ToString());
-                        txt_acquired_date.Text = row["acquired_date"].ToString(); ;
-                        cmb_validation.SelectedIndex = Convert.ToInt32(row["validation_id"].ToString());
-                        txt_comment.Text = row["comment"].ToString();
-                        Donor_Id_Slide = Convert.ToInt32(row["id"].ToString());
+                        MessageBox.Show("Slide Scan in must be 8 digits.", "INFORMATION", MessageBoxButtons.OK);
+                        return;
                     }
-                    // txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
-                    txt_donor_code.BackColor = Color.Green;
+
+                    if (int.TryParse(txt_slide_scan.Text.ToString(), out int n) == false) //numbers only
+                    {
+                        MessageBox.Show("Slide Scan must all be numeric value.", "INFORMATION", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    HelperServices helperService = new HelperServices();
+                    separated = helperService.SeperateBarCodeIntoCodes(txt_slide_scan.Text.ToString());
+
+                    if (separated == null) return;
+
+                    txt_country_code.Text = separated["CC"];
+                    txt_donor_code.Text = separated["DC"];
+                    txt_slide_sequence.Text = separated["SS"];
+                    txt_bar_code.Text = txt_slide_scan.Text;
+
                 }
-                else
+
+
+                //fetch if there is any thing found with that donor id..it should be a must found since we suppose donor is already exisiting
+
+                if (separated.Count() > 0)
                 {
-                    txt_donor_code.BackColor = Color.Red;
-                    MessageBox.Show("The Entered Donor Code is New! System not found any record associted with the donor code. Register the donor first and come back.", "INFORMATION", MessageBoxButtons.OK);
+
+                    dataFetchService = new DataFetchService();
+                    DataTable slideInfoDonorDT = dataFetchService.FecthSlideByDonorCode(separated["DC"].ToString());
+
+                    if (slideInfoDonorDT.Rows.Count > 0)
+                    {
+                        //fetch data
+                        foreach (DataRow row in slideInfoDonorDT.Rows)
+                        {
+
+                            cmb_specice_specifics.SelectedIndex = Convert.ToInt32(row["species_specific_id"].ToString());
+                            cmb_specice_category.SelectedIndex = Convert.ToInt32(row["species_catgeroy_id"].ToString());
+                            cmb_specice_stage.SelectedIndex = Convert.ToInt32(row["species_stage_id"].ToString());
+                            txt_lower_density.Text = row["lower_density"].ToString(); ;
+                            txt_average_density.Text = row["average_density"].ToString();
+                            txt_upper_density.Text = row["upper_density"].ToString(); ;
+                            cmb_density_category.SelectedIndex = Convert.ToInt32(row["density_category_id"].ToString());
+                            cmb_owners.SelectedIndex = Convert.ToInt32(row["owner_id"].ToString());
+                            txt_acquired_date.Text = row["acquired_date"].ToString(); ;
+                            cmb_validation.SelectedIndex = Convert.ToInt32(row["validation_id"].ToString());
+                            txt_comment.Text = row["comment"].ToString();
+                            Donor_Id_Slide = Convert.ToInt32(row["id"].ToString());
+                        }
+                        // txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
+                        txt_donor_code.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        txt_donor_code.BackColor = Color.Red;
+                        MessageBox.Show("The Entered Donor Code is New! System not found any record associted with the donor code. Register the donor first and come back.", "INFORMATION", MessageBoxButtons.OK);
+                    }
                 }
+            }//end of try 
+            catch (Exception ex) {
+                logger.Error(ex, "Slide page with donor id search error");
             }
         }
 
@@ -430,51 +444,59 @@ namespace SBMS
         {
             int rowIndex;
             rowIndex = e.RowIndex;
-
-            if (dgr_recentslides.Rows.Count <= rowIndex)
+            
+            try
             {
-                MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
 
-                txt_bar_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["barcoderecentslidesGridViewColumn"].Value + string.Empty;
-                txt_slide_sequence.Text = dgr_recentslides.Rows[e.RowIndex].Cells["sequencerecentslidesGridViewColumn"].Value + string.Empty;
-                txt_country_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["ccrecentslidesGridViewColumn"].Value + string.Empty;
-                txt_donor_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["donorcodrecentslidesGridViewColumn"].Value.ToString();
-                cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["ssrecentslidesGridViewColumn"].Value);
-                cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["screcentslidesGridViewColumn"].Value);
-                cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["strecentslidesGridViewColumn"].Value);
-                txt_lower_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["ldrecentslidesGridViewColumn"].Value + string.Empty;
-                txt_average_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["adrecentslidesGridViewColumn"].Value + string.Empty;
-                txt_upper_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["udrecentslidesGridViewColumn"].Value.ToString();
-                cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["dcrecentslidesGridViewColumn"].Value);
-                cmb_owners.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["ownerrecentslidesGridViewColumn"].Value);
-                txt_acquired_date.Text = dgr_recentslides.Rows[e.RowIndex].Cells["adaterecentslidesGridViewColumn"].Value.ToString();
-                cmb_validation.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["validationrecentslidesGridViewColumn"].Value);
-                txt_comment.Text = dgr_recentslides.Rows[e.RowIndex].Cells["commentrecentslidesGridViewColumn"].Value.ToString();
+                if (dgr_recentslides.Rows.Count > 0)
+                {
+                    MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
 
-                if (Convert.ToBoolean(dgr_recentslides.Rows[e.RowIndex].Cells["isDamagedrecentslidesGridViewColumn"].Value))
-                    rdoDamagedYes.Checked = true;
+                    txt_bar_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["barcoderecentslidesGridViewColumn"].Value + string.Empty;
+                    txt_slide_sequence.Text = dgr_recentslides.Rows[e.RowIndex].Cells["sequencerecentslidesGridViewColumn"].Value + string.Empty;
+                    txt_country_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["ccrecentslidesGridViewColumn"].Value + string.Empty;
+                    txt_donor_code.Text = dgr_recentslides.Rows[e.RowIndex].Cells["donorcodrecentslidesGridViewColumn"].Value.ToString();
+                    cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["ssrecentslidesGridViewColumn"].Value);
+                    cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["screcentslidesGridViewColumn"].Value);
+                    cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["strecentslidesGridViewColumn"].Value);
+                    txt_lower_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["ldrecentslidesGridViewColumn"].Value + string.Empty;
+                    txt_average_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["adrecentslidesGridViewColumn"].Value + string.Empty;
+                    txt_upper_density.Text = dgr_recentslides.Rows[e.RowIndex].Cells["udrecentslidesGridViewColumn"].Value.ToString();
+                    cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["dcrecentslidesGridViewColumn"].Value);
+                    cmb_owners.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["ownerrecentslidesGridViewColumn"].Value);
+                    txt_acquired_date.Text = dgr_recentslides.Rows[e.RowIndex].Cells["adaterecentslidesGridViewColumn"].Value.ToString();
+                    cmb_validation.SelectedIndex = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["validationrecentslidesGridViewColumn"].Value);
+                    txt_comment.Text = dgr_recentslides.Rows[e.RowIndex].Cells["commentrecentslidesGridViewColumn"].Value.ToString();
+
+                    if (Convert.ToBoolean(dgr_recentslides.Rows[e.RowIndex].Cells["isDamagedrecentslidesGridViewColumn"].Value))
+                        rdoDamagedYes.Checked = true;
+                    else
+                        rdoDamagedNo.Checked = true;
+
+                    if (Convert.ToBoolean(dgr_recentslides.Rows[e.RowIndex].Cells["isResevedrecentslidesGridViewColumn"].Value))
+                        rdoResevedYes.Checked = true;
+                    else
+                        rdoResevedNo.Checked = true;
+                    txt_cabinet_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["cabinetrecentslidesGridViewColumn"].Value.ToString();
+                    txt_drawer_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["drawerrecentslidesGridViewColumn"].Value.ToString();
+                    txt_box_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["boxrecentslidesGridViewColumn"].Value.ToString();
+
+                    enable_disable_inputs(true); //enable for select
+
+                    btn_edit_update.Enabled = true;
+                    lbl_editing_status.Visible = true;
+                    btn_save.Enabled = false;
+                    Slides_Id_Update = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["idrecentslidesGridViewColumn"].Value.ToString());
+                }
                 else
-                    rdoDamagedNo.Checked = true;
-
-                if (Convert.ToBoolean(dgr_recentslides.Rows[e.RowIndex].Cells["isResevedrecentslidesGridViewColumn"].Value))
-                    rdoResevedYes.Checked = true;
-                else
-                    rdoResevedNo.Checked = true;
-                txt_cabinet_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["cabinetrecentslidesGridViewColumn"].Value.ToString();
-                txt_drawer_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["drawerrecentslidesGridViewColumn"].Value.ToString();
-                txt_box_number.Text = dgr_recentslides.Rows[e.RowIndex].Cells["boxrecentslidesGridViewColumn"].Value.ToString();
-
-                enable_disable_inputs(true); //enable for select
-
-                btn_edit_update.Enabled = true;
-                lbl_editing_status.Visible = true;
-                btn_save.Enabled = false;
-                Slides_Id_Update = Convert.ToInt32(dgr_recentslides.Rows[e.RowIndex].Cells["idrecentslidesGridViewColumn"].Value.ToString());
-            }
-            else
+                {
+                    enable_disable_inputs(false); //disabble for select
+                    MessageBox.Show("NO Data to Select");
+                }
+            }//end of catch
+            catch (Exception ex)
             {
-                enable_disable_inputs(false); //disabble for select
-                MessageBox.Show("NO Data to Select");
+
             }
         }
 
@@ -685,51 +707,56 @@ namespace SBMS
         {
             int rowIndexGird;
             rowIndexGird = e.RowIndex;
-
-            if (dgr_allslides.Rows.Count <= rowIndexGird)
+            try
             {
-                MessageBox.Show("you selected row:" + (rowIndexGird + 1).ToString());
+                if (dgr_allslides.Rows.Count > 0)
+                {
+                    MessageBox.Show("you selected row:" + (rowIndexGird + 1).ToString());
 
-                txt_bar_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["barcodeallslidesGridViewTextBoxColumn"].Value + string.Empty;
-                txt_slide_sequence.Text = dgr_allslides.Rows[e.RowIndex].Cells["sequenceallslidesGridViewTextBoxColumn"].Value + string.Empty;
-                txt_country_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["ccallslidesGridViewTextBoxColumn"].Value + string.Empty;
-                txt_donor_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["donorallslidesGridViewTextBoxColumn"].Value.ToString();
-                cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ssallslidesGridViewColumn"].Value);
-                cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["scallsldesGridViewColumn"].Value);
-                cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["stallsldesGridViewColumn"].Value);
-                txt_lower_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["ldallsldesGridViewColumn"].Value + string.Empty;
-                txt_average_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["adallsldesGridViewColumn"].Value + string.Empty;
-                txt_upper_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["udallsldesGridViewColumn"].Value.ToString();
-                cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["dcallsldesGridViewColumn"].Value);
-                cmb_owners.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ownerallsldesGridViewColumn"].Value);
-                txt_acquired_date.Text = dgr_allslides.Rows[e.RowIndex].Cells["adateallsldesGridViewColumn"].Value.ToString();
-                cmb_validation.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["vdateallsldesGridViewColumn"].Value);
-                txt_comment.Text = dgr_allslides.Rows[e.RowIndex].Cells["commentallsldesGridViewColumn"].Value.ToString();
+                    txt_bar_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["barcodeallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_slide_sequence.Text = dgr_allslides.Rows[e.RowIndex].Cells["sequenceallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_country_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["ccallslidesGridViewTextBoxColumn"].Value + string.Empty;
+                    txt_donor_code.Text = dgr_allslides.Rows[e.RowIndex].Cells["donorallslidesGridViewTextBoxColumn"].Value.ToString();
+                    cmb_specice_specifics.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ssallslidesGridViewColumn"].Value);
+                    cmb_specice_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["scallsldesGridViewColumn"].Value);
+                    cmb_specice_stage.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["stallsldesGridViewColumn"].Value);
+                    txt_lower_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["ldallsldesGridViewColumn"].Value + string.Empty;
+                    txt_average_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["adallsldesGridViewColumn"].Value + string.Empty;
+                    txt_upper_density.Text = dgr_allslides.Rows[e.RowIndex].Cells["udallsldesGridViewColumn"].Value.ToString();
+                    cmb_density_category.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["dcallsldesGridViewColumn"].Value);
+                    cmb_owners.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["ownerallsldesGridViewColumn"].Value);
+                    txt_acquired_date.Text = dgr_allslides.Rows[e.RowIndex].Cells["adateallsldesGridViewColumn"].Value.ToString();
+                    cmb_validation.SelectedIndex = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["vdateallsldesGridViewColumn"].Value);
+                    txt_comment.Text = dgr_allslides.Rows[e.RowIndex].Cells["commentallsldesGridViewColumn"].Value.ToString();
 
-                if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isDamagedallsldesGridViewColumn"].Value))
-                    rdoDamagedYes.Checked = true;
+                    if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isDamagedallsldesGridViewColumn"].Value))
+                        rdoDamagedYes.Checked = true;
+                    else
+                        rdoDamagedNo.Checked = true;
+
+                    if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isReservedallsldesGridViewColumn"].Value))
+                        rdoResevedYes.Checked = true;
+                    else
+                        rdoResevedNo.Checked = true;
+                    txt_cabinet_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["cabinetallsldesGridViewColumn"].Value.ToString();
+                    txt_drawer_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["drawerallsldesGridViewColumn"].Value.ToString();
+                    txt_box_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["boxallsldesGridViewColumn"].Value.ToString();
+
+                    enable_disable_inputs(true); //enable for select
+
+                    btn_edit_update.Enabled = true;
+                    lbl_editing_status.Visible = true;
+                    btn_save.Enabled = false;
+                    Slides_Id_Update = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["idallsldesGridViewColumn"].Value.ToString());
+                }
                 else
-                    rdoDamagedNo.Checked = true;
-
-                if (Convert.ToBoolean(dgr_allslides.Rows[e.RowIndex].Cells["isReservedallsldesGridViewColumn"].Value))
-                    rdoResevedYes.Checked = true;
-                else
-                    rdoResevedNo.Checked = true;
-                txt_cabinet_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["cabinetallsldesGridViewColumn"].Value.ToString();
-                txt_drawer_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["drawerallsldesGridViewColumn"].Value.ToString();
-                txt_box_number.Text = dgr_allslides.Rows[e.RowIndex].Cells["boxallsldesGridViewColumn"].Value.ToString();
-
-                enable_disable_inputs(true); //enable for select
-
-                btn_edit_update.Enabled = true;
-                lbl_editing_status.Visible = true;
-                btn_save.Enabled = false;
-                Slides_Id_Update = Convert.ToInt32(dgr_allslides.Rows[e.RowIndex].Cells["idallsldesGridViewColumn"].Value.ToString());
+                {
+                    enable_disable_inputs(false); //disabble for select
+                    MessageBox.Show("NO Data to Select");
+                }
             }
-            else
-            {
-                enable_disable_inputs(false); //disabble for select
-                MessageBox.Show("NO Data to Select");
+            catch (Exception ex) { 
+                //TODO
             }
 
         }

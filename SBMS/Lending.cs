@@ -24,6 +24,10 @@ namespace SBMS
 
         private void Lending_Load(object sender, System.EventArgs e)
         {
+            grd_currentLending.AllowUserToAddRows = false;
+            
+            // TODO: This line of code loads data into the 'sbmsDataSet.current_lending_past_history' table. You can move, or remove it, as needed.
+            this.current_lending_past_historyTableAdapter.Fill(this.sbmsDataSet.current_lending_past_history);
             // TODO: This line of code loads data into the 'speciece_specifics_dataBindingSource.species_specifics' table. You can move, or remove it, as needed.
             this.species_specificsTableAdapter.Fill(this.speciece_specifics_dataBindingSource.species_specifics);
             // TODO: This line of code loads data into the 'ownerDataBindingSource.owners' table. You can move, or remove it, as needed.
@@ -92,29 +96,35 @@ namespace SBMS
 
         private void btn_find_Click(object sender, EventArgs e)
         {
-
-            DataTable searched = new DataTable();
-            if (this.cmb_borrowers_full_name.SelectedIndex != 0)
+            try
             {
-                MessageBox.Show("Search" + this.cmb_borrowers_full_name.SelectedItem.ToString());
-                int id = this.cmb_borrowers_full_name.SelectedIndex;
-                searched = searchAndFIlterService.SearchLendingByBorrowerId(id);
+                DataTable searched = new DataTable();
+                if (this.cmb_borrowers_full_name.SelectedIndex != 0)
+                {
+                    MessageBox.Show("Search" + this.cmb_borrowers_full_name.SelectedItem.ToString());
+                    int id = this.cmb_borrowers_full_name.SelectedIndex;
+                    searched = searchAndFIlterService.SearchLendingByBorrowerId(id);
 
+                }
+                if (searched.Rows.Count > 0)
+                {
+                    //MessageBox.Show("Search" + this.cmb_borrowers_org.SelectedIndex);
+                    grd_currentLending.DataSource = null;
+                    grd_currentLending.Refresh();
+                    grd_currentLending.DataSource = searched;
+
+                }
+                if (searched.Rows.Count == 0 && this.cmb_borrowers_full_name.SelectedIndex != 0)
+                {
+                    MessageBox.Show("Borrower has not current lendings.", "System");
+                    grd_currentLending.DataSource = null;
+                    grd_currentLending.Refresh();
+                    grd_currentLending.DataSource = searched;
+                }
             }
-            if (searched.Rows.Count > 0)
-            {
-                //MessageBox.Show("Search" + this.cmb_borrowers_org.SelectedIndex);
-                grd_currentLending.DataSource = null;
-                grd_currentLending.Refresh();
-                grd_currentLending.DataSource = searched;
-
-            }
-            if (searched.Rows.Count == 0 && this.cmb_borrowers_full_name.SelectedIndex != 0)
-            {
-                MessageBox.Show("Borrower has not current lendings.", "System");
-                grd_currentLending.DataSource = null;
-                grd_currentLending.Refresh();
-                grd_currentLending.DataSource = searched;
+             
+            catch (Exception ex) { 
+            //TODO
             }
 
             
