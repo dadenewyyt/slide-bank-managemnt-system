@@ -1,0 +1,11 @@
+2020-04-04 23:07:50.8880 SBMS.Selection Search Result for  count:0
+2020-04-04 23:37:04.7372 SBMS.Selection Search Result for  count:2
+2020-04-04 23:37:08.1182 SBMS.Selection Search Result for  count:1
+2020-04-04 23:37:29.1295 SBMS.Selection checkout successfull: 
+2020-04-04 23:40:32.4838 SBMS.Selection checkout successfull: 
+2020-04-04 23:42:18.1068 SBMS.Selection Search Result for  count:1
+2020-04-04 23:42:36.0343 SBMS.Selection checkout successfull: 
+2020-04-04 23:48:08.7901 SBMS.Selection checkout successfull: 
+2020-04-04 23:49:06.0594 SBMS.Selection Search Result for  count:1
+2020-04-04 23:49:18.4126 SBMS.Selection checkout successfull: 
+2020-04-04 23:50:43.8320 SBMS.Selection checkout successfull: 

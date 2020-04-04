@@ -119,6 +119,7 @@
             this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
             this.slide_searchTableAdapter = new SBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -243,6 +244,7 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.button1);
             this.splitContainer2.Panel2.Controls.Add(this.txt_days);
             this.splitContainer2.Panel2.Controls.Add(this.grd_search_results);
             this.splitContainer2.Panel2.Controls.Add(this.btn_refresh);
@@ -774,6 +776,8 @@
             // 
             // grd_search_results
             // 
+            this.grd_search_results.AllowUserToAddRows = false;
+            this.grd_search_results.AllowUserToDeleteRows = false;
             this.grd_search_results.AutoGenerateColumns = false;
             this.grd_search_results.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grd_search_results.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -793,6 +797,7 @@
             this.grd_search_results.DataSource = this.slidesearchBindingSource;
             this.grd_search_results.Location = new System.Drawing.Point(3, 201);
             this.grd_search_results.Name = "grd_search_results";
+            this.grd_search_results.ReadOnly = true;
             this.grd_search_results.Size = new System.Drawing.Size(985, 362);
             this.grd_search_results.TabIndex = 134;
             // 
@@ -809,66 +814,77 @@
             this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "bar_code";
             this.barcodeDataGridViewTextBoxColumn.HeaderText = "BarCode";
             this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
+            this.barcodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // donorcodeDataGridViewTextBoxColumn
             // 
             this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
             this.donorcodeDataGridViewTextBoxColumn.HeaderText = "Donor";
             this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
+            this.donorcodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sequenceDataGridViewTextBoxColumn
             // 
             this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
             this.sequenceDataGridViewTextBoxColumn.HeaderText = "Sequence";
             this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
+            this.sequenceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // countrycodeDataGridViewTextBoxColumn
             // 
             this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
             this.countrycodeDataGridViewTextBoxColumn.HeaderText = "Country";
             this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
+            this.countrycodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // speciescategoryDataGridViewTextBoxColumn
             // 
             this.speciescategoryDataGridViewTextBoxColumn.DataPropertyName = "species_category";
             this.speciescategoryDataGridViewTextBoxColumn.HeaderText = "Scategory";
             this.speciescategoryDataGridViewTextBoxColumn.Name = "speciescategoryDataGridViewTextBoxColumn";
+            this.speciescategoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // specificsDataGridViewTextBoxColumn
             // 
             this.specificsDataGridViewTextBoxColumn.DataPropertyName = "specifics";
             this.specificsDataGridViewTextBoxColumn.HeaderText = "Specifics";
             this.specificsDataGridViewTextBoxColumn.Name = "specificsDataGridViewTextBoxColumn";
+            this.specificsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // stageDataGridViewTextBoxColumn
             // 
             this.stageDataGridViewTextBoxColumn.DataPropertyName = "stage";
             this.stageDataGridViewTextBoxColumn.HeaderText = "Stage";
             this.stageDataGridViewTextBoxColumn.Name = "stageDataGridViewTextBoxColumn";
+            this.stageDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // densitycategoryDataGridViewTextBoxColumn
             // 
             this.densitycategoryDataGridViewTextBoxColumn.DataPropertyName = "density_category";
             this.densitycategoryDataGridViewTextBoxColumn.HeaderText = "Density";
             this.densitycategoryDataGridViewTextBoxColumn.Name = "densitycategoryDataGridViewTextBoxColumn";
+            this.densitycategoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cabinetnumberDataGridViewTextBoxColumn
             // 
             this.cabinetnumberDataGridViewTextBoxColumn.DataPropertyName = "cabinet_number";
             this.cabinetnumberDataGridViewTextBoxColumn.HeaderText = "Cabinet#";
             this.cabinetnumberDataGridViewTextBoxColumn.Name = "cabinetnumberDataGridViewTextBoxColumn";
+            this.cabinetnumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // drawernumberDataGridViewTextBoxColumn
             // 
             this.drawernumberDataGridViewTextBoxColumn.DataPropertyName = "drawer_number";
             this.drawernumberDataGridViewTextBoxColumn.HeaderText = "Drawer#";
             this.drawernumberDataGridViewTextBoxColumn.Name = "drawernumberDataGridViewTextBoxColumn";
+            this.drawernumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // boxnumberDataGridViewTextBoxColumn
             // 
             this.boxnumberDataGridViewTextBoxColumn.DataPropertyName = "box_number";
             this.boxnumberDataGridViewTextBoxColumn.HeaderText = "Box#";
             this.boxnumberDataGridViewTextBoxColumn.Name = "boxnumberDataGridViewTextBoxColumn";
+            this.boxnumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // slidesearchBindingSource
             // 
@@ -942,7 +958,7 @@
             this.btn_checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btn_checkout.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_checkout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_checkout.Location = new System.Drawing.Point(732, 138);
+            this.btn_checkout.Location = new System.Drawing.Point(606, 133);
             this.btn_checkout.Name = "btn_checkout";
             this.btn_checkout.Size = new System.Drawing.Size(256, 60);
             this.btn_checkout.TabIndex = 128;
@@ -1084,6 +1100,19 @@
             // slide_searchTableAdapter
             // 
             this.slide_searchTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(868, 134);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 60);
+            this.button1.TabIndex = 136;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Selection
             // 
@@ -1227,5 +1256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn drawernumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn boxnumberDataGridViewTextBoxColumn;
         public System.Windows.Forms.DataGridView grd_search_results;
+        private System.Windows.Forms.Button button1;
     }
 }

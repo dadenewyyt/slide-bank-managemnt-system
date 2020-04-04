@@ -11,7 +11,8 @@ namespace SBMS
     {
 
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
-
+        List<int> ids = new List<int>();
+        DataGridView cloneOfSearchResults = new DataGridView();
         bool pv_on = true;
         bool pf_on = true;
         bool pvpf_on = true;
@@ -131,6 +132,7 @@ namespace SBMS
 
             resetDataSetsAftersearch();
             logger.Info("Search Result for "+ UserAccountServices.Full_name+" count:" + mergedSearchResult.Rows.Count.ToString());
+            cloneOfSearchResults = grd_search_results;
 
         }
 
@@ -379,7 +381,7 @@ namespace SBMS
 
             bool isValid = validate_before_Checkout();
 
-            List<int> ids = new List<int>();
+           
             try
             {
                
@@ -405,27 +407,37 @@ namespace SBMS
                             }
                         }
 
+
+                        if (ids!=null)
+                        {
+                               logger.Info("checkout successfull: " + UserAccountServices.Full_name);
+                            //this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+
+                           
+                        }
+
                         bool isOkay = checkinCheckoutService.checkoutbySlideIds(cmb_borrowers.SelectedIndex, ids, txt_from_date.Value, txt_due_date.Value, cmb_reason.SelectedItem.ToString());
 
                         if (isOkay)
                         {
-                            MessageBox.Show("Success! Search Resuls will be checked out!");
-                            MessageBox.Show("Checkout Report is ready for print out, please make sure to keep this saved.");
-                            logger.Info("checkout successfull: " + UserAccountServices.Full_name);
-                            //this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
 
+                            MessageBox.Show("Success! Search are now checked out! For :=>"+cmb_borrowers.SelectedItem.ToString());
+                            MessageBox.Show("Generating Checkout Report.");
                             SearchChekoutReportViewPort v = new SearchChekoutReportViewPort();
                             v.MdiParent = this.ParentForm;
                             v.Show();
+                            grd_search_results.DataSource = null;
+                            grd_search_results.Refresh();
+                            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+                            grd_search_results.DataSource = slidesearchBindingSource;
                         }
-
 
                     }
                 }
             }
             catch (Exception ex) {
                 //LOGGER HERE
-                logger.Error("Search excpetion for user {UserAccountServices.Full_name}"+ex.StackTrace.ToString()) ;
+                logger.Error(ex,"Search excpetion for user {UserAccountServices.Full_name}"+ex.StackTrace.ToString()) ;
 
             }
         }
@@ -459,10 +471,13 @@ namespace SBMS
 
 }
 
-        public DataGridView getDataGridView()
+        public List<int> getSlideIDs()
         {
-
-            return this.grd_search_results;
+            if (ids != null && ids.Count > 0)
+                return this.ids;
+            else
+                logger.Error("Slide IDS for checkout is empty currenly");
+            return null;
         }
 
         private void btn_refresh_Click_1(object sender, EventArgs e)
@@ -533,6 +548,16 @@ namespace SBMS
             grd_search_results.DataSource = slidesearchBindingSource;
             grd_search_results.Refresh();
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sbmsDataSet.slide_search' table. You can move, or remove it, as needed.
+            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+            grd_search_results.DataSource = null;
+            grd_search_results.DataSource = slidesearchBindingSource;
+            grd_search_results.Refresh();
+            ids = new List<int>();
         }
     }
 }

@@ -1,4 +1,8 @@
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\NLog.config
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Selection.resx
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Program.cs
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Selection.cs
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Selection.Designer.cs
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.exe.config
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.exe
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.pdb
@@ -14,7 +18,6 @@ C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\De
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
@@ -56,7 +59,3 @@ C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\De
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.exe
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.pdb
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csprojAssemblyReference.cache
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Program.cs
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Selection.resx
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Selection.cs
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\Debug\Selection.Designer.cs

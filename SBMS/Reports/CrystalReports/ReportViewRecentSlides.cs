@@ -57,7 +57,7 @@ namespace SBMS
 
             if (slideFormsFromReport != null)
             {
-                MessageBox.Show("got SLides");
+                //MessageBox.Show("got SLides");
                 recentSLideDataGridView = slideFormsFromReport.getDataGridView();
                           
 

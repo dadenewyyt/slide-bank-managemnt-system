@@ -50,7 +50,7 @@ namespace SBMS.Services
                         return false;
                     }
                 }
-
+                
                 ids.ForEach(delegate (int sid)
                 {
                     using (SqlCommand command = new SqlCommand())

@@ -1,1 +1,6 @@
-2020-04-04 23:07:50.8880 SBMS.Selection Search Result for  count:0
+2020-04-05 01:33:14.7620 SBMS.Selection Search excpetion for user {UserAccountServices.Full_name}   at SBMS.Selection.btn_checkout_Click(Object sender, EventArgs e) in C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\Selection.cs:line 406
+2020-04-05 01:35:13.4969 SBMS.Selection Search excpetion for user {UserAccountServices.Full_name}   at SBMS.Selection.btn_checkout_Click(Object sender, EventArgs e) in C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\Selection.cs:line 406
+2020-04-05 01:36:10.8938 SBMS.Selection checkout successfull: 
+2020-04-05 01:36:50.0305 SBMS.Selection Search excpetion for user {UserAccountServices.Full_name}   at SBMS.Selection.btn_checkout_Click(Object sender, EventArgs e) in C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\Selection.cs:line 406System.NullReferenceException: Object reference not set to an instance of an object.
+   at SBMS.Selection.btn_checkout_Click(Object sender, EventArgs e) in C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\Selection.cs:line 406
+2020-04-05 01:38:22.4014 SBMS.Selection checkout successfull: 
