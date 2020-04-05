@@ -1,0 +1,134 @@
+﻿USE [sbms]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_slidesearchengine]    Script Date: 4/5/2020 4:50:00 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[sp_slidesearchengine] @parasite_type varchar(50) , @quantity int, @density varchar(50)  
+AS
+/** search others parasite by density expec n,bo,pv,po,pm... **/
+IF (@parasite_type='others')
+BEGIN
+   SELECT top(@quantity) s.id, 
+                          s.bar_code, 
+                         s.sequence, 
+						 d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, 
+                         s.updated_by, 
+                         d.id AS donor_donor_id, d.donor_code, 
+						 d.species_specific_id, 
+						 d.species_stage_id, 
+						 d.species_catgeroy_id, 
+						 d.lower_density, 
+						 d.average_density, 
+						 d.upper_density, 
+						 d.density_category_id, 
+						 d.owner_id,
+						 d.validation_id,
+						 d.acquired_date, 
+                         d.comment, 
+						 dc.density_category,
+						 sc.species_category,
+						 ss.specifics,
+						 st.stage
+FROM  slides AS s INNER JOIN donors		AS d ON d.id = s.donor_id
+	  inner join density_category as dc on dc.id = d.density_category_id 
+	  inner join species_category as sc on sc.id = d.species_catgeroy_id
+	  inner join species_specifics as ss on ss.id = d.species_specific_id
+	  inner join species_stages as st on st.id = d.species_stage_id
+WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0) and
+             (dc.code=@density) and (ss.specifics <> 'pf') and (ss.specifics <> 'pv') and
+			 (ss.specifics <> 'pfpv') and (ss.specifics <> 'po') and (ss.specifics <> 'pm') and
+			 (ss.specifics <> 'borrella') and (ss.specifics <> 'n')
+			 
+ORDER BY s.id;
+END
+IF (@density='C' )
+BEGIN
+SELECT top(@quantity) s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
+                         d.id AS donor_donor_id, d.donor_code, 
+						 d.species_specific_id, 
+						 d.species_stage_id, 
+						 d.species_catgeroy_id, 
+						 d.lower_density, 
+						 d.average_density, 
+						 d.upper_density, 
+						 d.density_category_id, 
+						 d.owner_id,
+						 d.validation_id,
+						 d.acquired_date, 
+                         d.comment, 
+						 dc.density_category,
+						 sc.species_category,
+						 ss.specifics,
+						 st.stage
+FROM  slides AS s INNER JOIN donors AS d ON d.id = s.donor_id
+	  inner join density_category as dc on dc.id = d.density_category_id 
+	  inner join species_category as sc on sc.id = d.species_catgeroy_id
+	  inner join species_specifics as ss on ss.id = d.species_specific_id
+	  inner join species_stages as st on st.id = d.species_stage_id
+WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0)  
+             and (ss.specifics=@parasite_type) and (dc.code='C')or(dc.code='D')or(dc.code='E')   
+ORDER BY s.id;
+END
+/**search all parasistes exclude negatives and borrella here **/
+IF(@density<>'C')
+BEGIN
+SELECT top(@quantity) s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
+                         d.id AS donor_donor_id, d.donor_code, 
+						 d.species_specific_id, 
+						 d.species_stage_id, 
+						 d.species_catgeroy_id, 
+						 d.lower_density, 
+						 d.average_density, 
+						 d.upper_density, 
+						 d.density_category_id, 
+						 d.owner_id,
+						 d.validation_id,
+						 d.acquired_date, 
+                         d.comment, 
+						 dc.density_category,
+						 sc.species_category,
+						 ss.specifics,
+						 st.stage
+FROM  slides AS s INNER JOIN donors AS d ON d.id = s.donor_id
+	  inner join density_category as dc on dc.id = d.density_category_id 
+	  inner join species_category as sc on sc.id = d.species_catgeroy_id
+	  inner join species_specifics as ss on ss.id = d.species_specific_id
+	  inner join species_stages as st on st.id = d.species_stage_id
+WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0) and
+             (dc.code=@density) and (ss.specifics=@parasite_type) and 
+			 (ss.specifics <> 'pfpm') and (ss.specifics <> 'pvpo') and
+			 (ss.specifics <> 'pvpm') and (ss.specifics <> 'pmpo') and 
+			 (ss.specifics <> 'borrella') and (ss.specifics <> 'n')
+ORDER BY s.id;
+END
+/**search negatives regardless of density **/
+IF(@parasite_type='n' AND @density='C' )
+BEGIN
+SELECT top(@quantity) s.id, s.bar_code, s.sequence, d.country_code, s.cabinet_number, s.drawer_number, s.box_number, s.isDamaged, s.isReserved, s.isBorrowed, s.isActive, s.updated_date, s.created_date, s.created_by, s.updated_by, 
+                         d.id AS donor_donor_id, d.donor_code, 
+						 d.species_specific_id, 
+						 d.species_stage_id, 
+						 d.species_catgeroy_id, 
+						 d.lower_density, 
+						 d.average_density, 
+						 d.upper_density, 
+						 d.density_category_id, 
+						 d.owner_id,
+						 d.validation_id,
+						 d.acquired_date, 
+                         d.comment, 
+						 dc.density_category,
+						 sc.species_category,
+						 ss.specifics,
+						 st.stage
+FROM  slides AS s INNER JOIN donors AS d ON d.id = s.donor_id
+	  inner join density_category as dc on dc.id = d.density_category_id 
+	  inner join species_category as sc on sc.id = d.species_catgeroy_id
+	  inner join species_specifics as ss on ss.id = d.species_specific_id
+	  inner join species_stages as st on st.id = d.species_stage_id
+WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.isDamaged=0) and
+             (ss.specifics=@parasite_type)
+ORDER BY s.id;
+END

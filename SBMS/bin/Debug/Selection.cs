@@ -118,21 +118,48 @@ namespace SBMS
 
 
             mergedSearchResult.Clear();
-            mergedSearchResult.Merge(pv_ld_datatable);
-            mergedSearchResult.Merge(pf_ld_datatable);
-            mergedSearchResult.Merge(pfpv_ld_datatable);
-            mergedSearchResult.Merge(po_ld_datatable);
-            mergedSearchResult.Merge(pm_ld_datatable);
-            mergedSearchResult.Merge(others_ld_datatable);
-            mergedSearchResult.Merge(bo_ld_datatable);
-            mergedSearchResult.Merge(negatives_datatable);
+            if (pv_ld_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(pv_ld_datatable);
+            }
+            if (pf_ld_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(pf_ld_datatable);
+            }
+            if (pfpv_ld_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(pfpv_ld_datatable);
+            }
+
+            if (po_ld_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(po_ld_datatable);
+            }
+            if (pm_ld_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(pm_ld_datatable);
+            }
+            if (others_ld_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(others_ld_datatable);
+            }
+            if (bo_ld_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(bo_ld_datatable);
+            }
+
+            if (negatives_datatable.Rows.Count > 0)
+            {
+                mergedSearchResult.Merge(negatives_datatable);
+            }
 
             grd_search_results.DataSource = null;
+           // grd_search_results.Refresh();
             grd_search_results.DataSource = mergedSearchResult;
 
             resetDataSetsAftersearch();
             logger.Info("Search Result for "+ UserAccountServices.Full_name+" count:" + mergedSearchResult.Rows.Count.ToString());
-            cloneOfSearchResults = grd_search_results;
+           // cloneOfSearchResults = grd_search_results;
 
         }
 
@@ -160,6 +187,9 @@ namespace SBMS
             others_ld_datatable.Clear();
             others_md_datatable.Clear();
             others_hd_datatable.Clear();
+
+            //mereged
+           // mergedSearchResult.Clear();
         }
 
         private void searchPfPvs() {
@@ -292,20 +322,20 @@ namespace SBMS
             if (borrela_all_q.Value > 0)
             {
                 int ld_q = Convert.ToInt32(borrela_all_q.Value);
-                bo_ld_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("bo", ld_q, "A");
+                bo_ld_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("borrella", ld_q, "A");
             }
 
             if (borrela_all_q.Value > 0)
             {
                 int md_q = Convert.ToInt32(borrela_all_q.Value);
-                bo_md_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("bo", md_q, "B");
+                bo_md_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("borrella", md_q, "B");
                 bo_ld_datatable.Merge(bo_md_datatable);
             }
 
             if (borrela_all_q.Value > 0)
             {
                 int hd_q = Convert.ToInt32(borrela_all_q.Value);
-                bo_hd_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("bo", hd_q, "C");
+                bo_hd_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("borrella", hd_q, "C");
                 bo_ld_datatable.Merge(bo_hd_datatable);
             }
 
