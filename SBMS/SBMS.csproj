@@ -342,6 +342,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>validationDataBindingSource.xsd</DependentUpon>
     </Compile>
+    <Content Include="SQL\StoredProcedure_Critical_Update.txt" />
     <EmbeddedResource Include="AllSlides.resx">
       <DependentUpon>AllSlides.cs</DependentUpon>
     </EmbeddedResource>
