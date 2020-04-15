@@ -15,7 +15,7 @@ namespace SBMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Selection());
+            Application.Run(new Login());
 
             /* try
              {

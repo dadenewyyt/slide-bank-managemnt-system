@@ -529,16 +529,7 @@ namespace SBMS
             // this.borr.Fill(this.sbmsDataSet.slides_for_checkout);
         }
 
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+  
         private void btn_Add_borrower_Click(object sender, EventArgs e)
         {
             Borrowers b = new Borrowers();

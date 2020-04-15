@@ -70,14 +70,6 @@
             this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
-            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
-            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
-            this.currentLendingHisotryTableAdapter = new SBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
-            this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
-            this.species_stagesTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_stagesTableAdapter();
-            this.currentlendingpasthistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.current_lending_past_historyTableAdapter = new SBMS.sbmsDataSetTableAdapters.current_lending_past_historyTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +88,14 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentlendingpasthistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
+            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
+            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
+            this.currentLendingHisotryTableAdapter = new SBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
+            this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
+            this.species_stagesTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_stagesTableAdapter();
+            this.current_lending_past_historyTableAdapter = new SBMS.sbmsDataSetTableAdapters.current_lending_past_historyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,8 +114,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.currentlendingpasthistoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendingpasthistoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -139,7 +139,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.cmb_borrowers_full_name);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1352, 153);
+            this.splitContainer1.Size = new System.Drawing.Size(1391, 153);
             this.splitContainer1.SplitterDistance = 58;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -236,7 +236,7 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 160);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1395, 773);
+            this.tabControl1.Size = new System.Drawing.Size(1395, 495);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -478,43 +478,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1387, 738);
+            this.tabPage2.Size = new System.Drawing.Size(1387, 460);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "All Lending History";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // density_categoryTableAdapter
-            // 
-            this.density_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // ownersTableAdapter
-            // 
-            this.ownersTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_specificsTableAdapter
-            // 
-            this.species_specificsTableAdapter.ClearBeforeFill = true;
-            // 
-            // currentLendingHisotryTableAdapter
-            // 
-            this.currentLendingHisotryTableAdapter.ClearBeforeFill = true;
-            // 
-            // borrower_contact_listTableAdapter
-            // 
-            this.borrower_contact_listTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_stagesTableAdapter
-            // 
-            this.species_stagesTableAdapter.ClearBeforeFill = true;
-            // 
-            // currentlendingpasthistoryBindingSource
-            // 
-            this.currentlendingpasthistoryBindingSource.DataMember = "current_lending_past_history";
-            this.currentlendingpasthistoryBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // current_lending_past_historyTableAdapter
-            // 
-            this.current_lending_past_historyTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView1
             // 
@@ -673,12 +640,45 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "Due Date";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
+            // currentlendingpasthistoryBindingSource
+            // 
+            this.currentlendingpasthistoryBindingSource.DataMember = "current_lending_past_history";
+            this.currentlendingpasthistoryBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // density_categoryTableAdapter
+            // 
+            this.density_categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // ownersTableAdapter
+            // 
+            this.ownersTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_specificsTableAdapter
+            // 
+            this.species_specificsTableAdapter.ClearBeforeFill = true;
+            // 
+            // currentLendingHisotryTableAdapter
+            // 
+            this.currentLendingHisotryTableAdapter.ClearBeforeFill = true;
+            // 
+            // borrower_contact_listTableAdapter
+            // 
+            this.borrower_contact_listTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_stagesTableAdapter
+            // 
+            this.species_stagesTableAdapter.ClearBeforeFill = true;
+            // 
+            // current_lending_past_historyTableAdapter
+            // 
+            this.current_lending_past_historyTableAdapter.ClearBeforeFill = true;
+            // 
             // Lending
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1360, 517);
+            this.ClientSize = new System.Drawing.Size(1395, 660);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Lending";
@@ -704,8 +704,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.currentlendingpasthistoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.currentlendingpasthistoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

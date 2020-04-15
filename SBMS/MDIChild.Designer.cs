@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btn_alert = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_replace = new System.Windows.Forms.Button();
@@ -43,14 +44,13 @@
             this.btn_lending_history = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btn_archive_summary = new System.Windows.Forms.Button();
-            this.btn_all_slides = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btn_checkout = new System.Windows.Forms.Button();
             this.btn_checkin = new System.Windows.Forms.Button();
             this.bn_borrowers = new System.Windows.Forms.Button();
             this.btn_donors = new System.Windows.Forms.Button();
             this.btn_slides = new System.Windows.Forms.Button();
-            this.btn_alert = new System.Windows.Forms.Button();
+            this.btn_all_slides = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,6 +149,18 @@
             this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 13;
             // 
+            // btn_alert
+            // 
+            this.btn_alert.BackColor = System.Drawing.Color.Red;
+            this.btn_alert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_alert.Location = new System.Drawing.Point(790, 105);
+            this.btn_alert.Name = "btn_alert";
+            this.btn_alert.Size = new System.Drawing.Size(247, 85);
+            this.btn_alert.TabIndex = 29;
+            this.btn_alert.Text = "ALERT!";
+            this.btn_alert.UseVisualStyleBackColor = false;
+            this.btn_alert.Click += new System.EventHandler(this.btn_alert_Click);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(3, 16);
@@ -210,11 +222,11 @@
             // 
             this.btn_lending_history.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btn_lending_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_lending_history.Location = new System.Drawing.Point(799, 196);
+            this.btn_lending_history.Location = new System.Drawing.Point(537, 196);
             this.btn_lending_history.Name = "btn_lending_history";
-            this.btn_lending_history.Size = new System.Drawing.Size(238, 85);
+            this.btn_lending_history.Size = new System.Drawing.Size(500, 85);
             this.btn_lending_history.TabIndex = 21;
-            this.btn_lending_history.Text = "Current Lendings";
+            this.btn_lending_history.Text = "Lend Lending and Borrowed History";
             this.btn_lending_history.UseVisualStyleBackColor = false;
             this.btn_lending_history.Click += new System.EventHandler(this.btn_lending_history_Click);
             // 
@@ -222,7 +234,7 @@
             // 
             this.button9.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button9.Location = new System.Drawing.Point(546, 196);
+            this.button9.Location = new System.Drawing.Point(284, 387);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(247, 85);
             this.button9.TabIndex = 20;
@@ -242,19 +254,6 @@
             this.btn_archive_summary.Text = "Archive Summary";
             this.btn_archive_summary.UseVisualStyleBackColor = false;
             this.btn_archive_summary.Click += new System.EventHandler(this.btn_archive_summary_Click);
-            // 
-            // btn_all_slides
-            // 
-            this.btn_all_slides.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_all_slides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_all_slides.ForeColor = System.Drawing.Color.MintCream;
-            this.btn_all_slides.Location = new System.Drawing.Point(284, 387);
-            this.btn_all_slides.Name = "btn_all_slides";
-            this.btn_all_slides.Size = new System.Drawing.Size(247, 85);
-            this.btn_all_slides.TabIndex = 18;
-            this.btn_all_slides.Text = "All Slides ";
-            this.btn_all_slides.UseVisualStyleBackColor = false;
-            this.btn_all_slides.Click += new System.EventHandler(this.btn_all_slides_Click);
             // 
             // button6
             // 
@@ -331,17 +330,18 @@
             this.btn_slides.UseVisualStyleBackColor = false;
             this.btn_slides.Click += new System.EventHandler(this.btn_slides_Click);
             // 
-            // btn_alert
+            // btn_all_slides
             // 
-            this.btn_alert.BackColor = System.Drawing.Color.Red;
-            this.btn_alert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_alert.Location = new System.Drawing.Point(790, 105);
-            this.btn_alert.Name = "btn_alert";
-            this.btn_alert.Size = new System.Drawing.Size(247, 85);
-            this.btn_alert.TabIndex = 29;
-            this.btn_alert.Text = "ALERT!";
-            this.btn_alert.UseVisualStyleBackColor = false;
-            this.btn_alert.Click += new System.EventHandler(this.btn_alert_Click);
+            this.btn_all_slides.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_all_slides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_all_slides.ForeColor = System.Drawing.Color.MintCream;
+            this.btn_all_slides.Location = new System.Drawing.Point(1102, 448);
+            this.btn_all_slides.Name = "btn_all_slides";
+            this.btn_all_slides.Size = new System.Drawing.Size(142, 24);
+            this.btn_all_slides.TabIndex = 18;
+            this.btn_all_slides.Text = "All Slides ";
+            this.btn_all_slides.UseVisualStyleBackColor = false;
+            this.btn_all_slides.Click += new System.EventHandler(this.btn_all_slides_Click);
             // 
             // MDIChild
             // 
@@ -380,7 +380,6 @@
         private System.Windows.Forms.Button btn_lending_history;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btn_archive_summary;
-        private System.Windows.Forms.Button btn_all_slides;
         private System.Windows.Forms.Button btn_checkout;
         private System.Windows.Forms.Button btn_checkin;
         private System.Windows.Forms.Button btn_donors;
@@ -394,5 +393,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btn_alert;
+        private System.Windows.Forms.Button btn_all_slides;
     }
 }

@@ -106,7 +106,7 @@ namespace SBMS
 
         private void btn_generate_Click(object sender, EventArgs e)
         {
-           // showValidationMessage();
+           //this.showValidationMessage();
             this.searchForPfCriteria();
             this.searchPvs();
             this.searchPfPvs();
@@ -403,6 +403,7 @@ namespace SBMS
         private void btn_checkout_Click(object sender, EventArgs e)
         {
             MessageBox.Show(grd_search_results.Rows.Count.ToString());
+
             if (grd_search_results.Rows.Count <= 0)
             {
                 MessageBox.Show("Search is result is empty, Nothing to checkout.");
@@ -417,7 +418,6 @@ namespace SBMS
                
                 if (isValid == true)
                 {
-
                     int slides_id = -1;
                     DialogResult dialogResult = MessageBox.Show("You are going to checkout all below slides. Are you sure ?", "Checkout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
@@ -441,9 +441,8 @@ namespace SBMS
                         if (ids!=null)
                         {
                                logger.Info("checkout successfull: " + UserAccountServices.Full_name);
-                            //this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
-
-                           
+                               MessageBox.Show("Checkout is succesfull");
+                               this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
                         }
 
                         bool isOkay = checkinCheckoutService.checkoutbySlideIds(cmb_borrowers.SelectedIndex, ids, txt_from_date.Value, txt_due_date.Value, cmb_reason.SelectedItem.ToString());
@@ -456,8 +455,8 @@ namespace SBMS
                             SearchChekoutReportViewPort v = new SearchChekoutReportViewPort();
                             v.MdiParent = this.ParentForm;
                             v.Show();
-                            grd_search_results.DataSource = null;
-                            grd_search_results.Refresh();
+                            //grd_search_results.DataSource = null;
+                           // grd_search_results.Refresh();
                             this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
                             grd_search_results.DataSource = slidesearchBindingSource;
                         }
@@ -529,16 +528,7 @@ namespace SBMS
             // this.borr.Fill(this.sbmsDataSet.slides_for_checkout);
         }
 
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+  
         private void btn_Add_borrower_Click(object sender, EventArgs e)
         {
             Borrowers b = new Borrowers();

@@ -131,9 +131,17 @@ namespace SBMS
                     childForm.Close();
                 }
                 Dispose();
-                this.Close();
+                Application.Exit();
             }
+          
 
+        }
+
+        private void MDIParent1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+         Application.Exit();
+           
         }
     }
 }

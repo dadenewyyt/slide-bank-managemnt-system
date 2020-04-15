@@ -9,6 +9,8 @@ namespace SBMS
 {
     public partial class Checkin_Checkout : Form
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         int current_lending_id = -1;
         int slide_id_checkin = -1;
         public int CurrentLending_Id_Checkin { get => current_lending_id; set => current_lending_id = value; }
@@ -16,21 +18,6 @@ namespace SBMS
         public Checkin_Checkout()
         {
             InitializeComponent();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Checkin_Checkout_Load(object sender, EventArgs e)
@@ -51,6 +38,8 @@ namespace SBMS
         private void find_borrowed_slide(object sender, KeyPressEventArgs e)
         {
 
+            try 
+            { 
             Dictionary<string, string> separated = new Dictionary<string, string>();
 
             if (e.KeyChar == (char)13)
@@ -80,73 +69,84 @@ namespace SBMS
                 
             }
 
-            //fetch if there is any thing found with that donor id..it should be a must found since we suppose donor is already exisiting
+                //fetch if there is any thing found with that donor id..it should be a must found since we suppose donor is already exisiting
 
-            if (separated.Count() > 0)
-            {
-
-                DataFetchService dataFetchService = new DataFetchService();
-                DataTable BorrowedSlideDT = dataFetchService.FecthBorrowedSlideByBarCode(txt_barcode.Text.ToString());
-
-                if (BorrowedSlideDT.Rows.Count > 0)
+                if (separated.Count() > 0)
                 {
-                    //fetch data
-                    foreach (DataRow row in BorrowedSlideDT.Rows)
+
+                    DataFetchService dataFetchService = new DataFetchService();
+                    DataTable BorrowedSlideDT = dataFetchService.FecthBorrowedSlideByBarCode(txt_barcode.Text.ToString());
+
+                    if (BorrowedSlideDT.Rows.Count > 0)
                     {
-                        txt_slide_scan_in.Text = txt_barcode.Text;
-                        txt_barcode.Text = row["bar_code"].ToString();
-                        txt_contry_code.Text = row["country_code"].ToString();
-                        txt_donor_code.Text = row["donor_code"].ToString();
-                        txt_slide_number.Text = row["sequence"].ToString();
-                        txt_b_full_name.Text = row["sequence"].ToString() + " " +row["sequence"].ToString();
-                        txt_org_borrower.Text = row["organisation"].ToString();
-                        txt_due_Date.Text = row["due_date"].ToString();
-                        txt_checked_out_date.Text = row["checked_out_date"].ToString();
-                        txt_reason.Text =row["reason"].ToString();
-                        txt_bby.Text = row["borrowed_by"].ToString();
-                        txt_b_create_date.Text = row["b_created_date"].ToString();
-                        Slide_Id_Checkin = Convert.ToInt32(row["slide_id"]);
-                        CurrentLending_Id_Checkin = Convert.ToInt32(row["id"].ToString());
+                        //fetch data
+                        foreach (DataRow row in BorrowedSlideDT.Rows)
+                        {
+                            txt_slide_scan_in.Text = txt_barcode.Text;
+                            txt_barcode.Text = row["bar_code"].ToString();
+                            txt_contry_code.Text = row["country_code"].ToString();
+                            txt_donor_code.Text = row["donor_code"].ToString();
+                            txt_slide_number.Text = row["sequence"].ToString();
+                            txt_b_full_name.Text = row["sequence"].ToString() + " " + row["sequence"].ToString();
+                            txt_org_borrower.Text = row["organisation"].ToString();
+                            txt_due_Date.Text = row["due_date"].ToString();
+                            txt_checked_out_date.Text = row["checked_out_date"].ToString();
+                            txt_reason.Text = row["reason"].ToString();
+                            txt_bby.Text = row["borrowed_by"].ToString();
+                            txt_b_create_date.Text = row["b_created_date"].ToString();
+                            Slide_Id_Checkin = Convert.ToInt32(row["slide_id"]);
+                            CurrentLending_Id_Checkin = Convert.ToInt32(row["id"].ToString());
+                        }
+
                     }
-                   
+                    else
+                    {
+                        //txt_donor_code.BackColor = Color.Red;
+                        MessageBox.Show("System can not find borrowed slide with the bardcode", "INFORMATION", MessageBoxButtons.OK);
+                        logger.Info("System can not find borrowed slide with the bardcode");
+                        Slide_Id_Checkin = -1;
+                        CurrentLending_Id_Checkin = -1;
+                    }
                 }
-                else
-                {
-                    //txt_donor_code.BackColor = Color.Red;
-                    MessageBox.Show("System can not find borrowed slide with the bardcode", "INFORMATION", MessageBoxButtons.OK);
-                    Slide_Id_Checkin = -1;
-                    CurrentLending_Id_Checkin = -1;
-                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception on Checkin Form");
+
             }
         }
 
         private void grd_checkin_borrowed_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndexGird;
-            rowIndexGird = e.RowIndex;
-
-            if (grd_checkin_borrowed.Rows.Count > 0)
             {
-                MessageBox.Show("selected row:" + (rowIndexGird + 1).ToString());
-                txt_slide_scan_in.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["barcode"].Value + string.Empty;
-                txt_barcode.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["barcode"].Value + string.Empty;
-                txt_slide_number.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["sequence"].Value + string.Empty;
-                txt_contry_code.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["countrycode"].Value + string.Empty;
-                txt_donor_code.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["donorcode"].Value.ToString()+ string.Empty;
-                txt_org_borrower.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["organisation"].Value.ToString();
-                txt_b_full_name.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["fname"].ToString() + grd_checkin_borrowed.Rows[e.RowIndex].Cells["lname"].ToString();
-                txt_checked_out_date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["checked_out_date"].Value + string.Empty;
-                txt_due_Date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["duedate"].Value + string.Empty;
-                txt_reason.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["reason"].Value + string.Empty;
-                txt_bby.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["borrowed_by"].Value + string.Empty;
-                txt_b_create_date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["b_created_date"].Value + string.Empty;
+                int rowIndexGird;
+                rowIndexGird = e.RowIndex;
 
-                CurrentLending_Id_Checkin = Convert.ToInt32(grd_checkin_borrowed.Rows[e.RowIndex].Cells["currentLendingId"].Value.ToString());
-            }
-            else
-            {
-                MessageBox.Show("NO Data to Select");
-            }
+                if (grd_checkin_borrowed.Rows.Count > 0)
+                {
+                    MessageBox.Show("selected row:" + (rowIndexGird + 1).ToString());
+                    txt_slide_scan_in.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["barcode"].Value + string.Empty;
+                    txt_barcode.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["barcode"].Value + string.Empty;
+                    txt_slide_number.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["sequence"].Value + string.Empty;
+                    txt_contry_code.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["countrycode"].Value + string.Empty;
+                    txt_donor_code.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["donorcode"].Value.ToString() + string.Empty;
+                    txt_org_borrower.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["organisation"].Value.ToString();
+                    txt_b_full_name.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["fname"].ToString() + grd_checkin_borrowed.Rows[e.RowIndex].Cells["lname"].ToString();
+                    txt_checked_out_date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["checked_out_date"].Value + string.Empty;
+                    txt_due_Date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["duedate"].Value + string.Empty;
+                    txt_reason.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["reason"].Value + string.Empty;
+                    txt_bby.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["borrowed_by"].Value + string.Empty;
+                    txt_b_create_date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["b_created_date"].Value + string.Empty;
+                    Slide_Id_Checkin = Convert.ToInt32(grd_checkin_borrowed.Rows[e.RowIndex].Cells["slideId"].Value.ToString());
+                    CurrentLending_Id_Checkin = Convert.ToInt32(grd_checkin_borrowed.Rows[e.RowIndex].Cells["currentLendingId"].Value.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("NO Data to Select");
+                }
+
+            //set slideid based on row selected  barcode
+            //get side
+
         }
 
         public bool validateInputs() {
@@ -183,15 +183,18 @@ namespace SBMS
         private void btn_Checkin_Click(object sender, EventArgs e)
         {
            
-            validateInputs();
+            //validateInputs();
             int caseValue = cmb_returned_status.SelectedIndex;
             switch (caseValue) {
                 case 1: //OKAY
                      Console.WriteLine("xx");
                     CheckinSlideOkay("OKAY");
                     break;
-                case 2: //Damageded
+                case 2: //Damaged
                     CheckinSlideDamaged("Damaged");
+                    break;
+                case 88: //Exchanage
+                    CheckinSlideDamaged("Exchange");
                     break;
                 default:
                     break;
@@ -200,16 +203,40 @@ namespace SBMS
         }
 
         public bool CheckinSlideOkay(String status) {
-            CheckinCheckoutService checkinCheckoutService = new CheckinCheckoutService();
+            bool result = true;
 
-
-            bool result = checkinCheckoutService.CheckinSlideIsOkay("Okay", Slide_Id_Checkin, CurrentLending_Id_Checkin);
-            if (result == false)
+            MessageBox.Show(Slide_Id_Checkin.ToString());
+            MessageBox.Show(CurrentLending_Id_Checkin.ToString());
+           // return false;
+            try
             {
-                MessageBox.Show("OKAY: Checkin was not succefull due some error, please try again");
-                return false;
+                CheckinCheckoutService checkinCheckoutService = new CheckinCheckoutService();
+                result = checkinCheckoutService.CheckinSlideIsOkay("Okay", Slide_Id_Checkin, CurrentLending_Id_Checkin);
+                if (result == false)
+                {
+                    MessageBox.Show("OKAY: Checkin was not succefull due some error, please try again");
+                    
+                    result = false;
+                    txt_slide_scan_in_Click(null, null);
+                    return result;
+                }
+                return result;
             }
-            return true;
+            
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Exception on Checkin Form");
+                MessageBox.Show(ex.Message);
+            }
+            if (result) {
+                
+                MessageBox.Show("Successs: Checkin completed");
+                logger.Info("Successs: Checkin completed");
+                btnreload_data_Click(null,null); //refersh
+            }
+
+            return result;
+        
         }
 
         public bool CheckinSlideDamaged(String status)
@@ -246,6 +273,16 @@ namespace SBMS
                 txt_b_create_date.Text = "";
                 cmb_returned_status.SelectedIndex = 0;
                 CurrentLending_Id_Checkin = -1;
+        }
+
+        private void btnreload_data_Click(object sender, EventArgs e)
+        {
+   
+            grd_checkin_borrowed.DataSource = null;
+            grd_checkin_borrowed.Refresh();
+            this.currentLendingHisotryTableAdapter.Fill(this.sbmsDataSet1.current_lending_history);
+            grd_checkin_borrowed.DataSource = this.sbmsDataSet1.current_lending_history;
+             
         }
     }
 }

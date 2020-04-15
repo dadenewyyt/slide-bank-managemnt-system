@@ -20,6 +20,14 @@
 
 namespace SBMS.sbmsDataSetTableAdapters
 {
+    partial class slide_reserved_for_replacementTableAdapter
+    {
+    }
+
+    partial class slide_to_replaceTableAdapter
+    {
+    }
+
     partial class locationDataAdapter
     {
     }

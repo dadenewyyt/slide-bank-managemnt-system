@@ -10,8 +10,11 @@ namespace SBMS.Services
 {
     public class CheckinCheckoutService
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public bool checkoutbySlideIds(int borrower_id, List<int> ids, DateTime fromDate, DateTime dueDate, String reason)
         {
+
             string list_of_ids_with_comma = "";
 
             ids.ForEach(delegate (int sid)
@@ -46,11 +49,12 @@ namespace SBMS.Services
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("Checkout Database Error:" + ex.Message);
+                        //MessageBox.Show("Checkout Database Error:" + ex.Message);
+                        logger.Error(ex, "Checkin Database Error");
                         return false;
                     }
                 }
-                
+
                 ids.ForEach(delegate (int sid)
                 {
                     using (SqlCommand command = new SqlCommand())
@@ -90,7 +94,7 @@ namespace SBMS.Services
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show("Checkout Database Error:" + ex.Message);
+                            logger.Error(ex, "Exception at CheckinCheckoutServices");
                         }
                     }
                 });
@@ -107,12 +111,17 @@ namespace SBMS.Services
             //first update the slide using slide id to be isBorrowed = 0 than isBorrowed=1
             using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
             {
+                SqlTransaction transaction;
+                connection.Open();
+                transaction = connection.BeginTransaction("CheckinSlidesTransaction");
+
 
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
+                    command.Transaction = transaction;
                     string updateCheckinQuery = "UPDATE slides " +
-                        "SET isBorrowed=0,updated_by=@updated_by WHERE id=@slide_id)";
+                        "SET isBorrowed=0,updated_by=@updated_by WHERE id=@slide_id;";
                     command.CommandText = updateCheckinQuery;
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@slide_id", slide_id);
@@ -130,45 +139,74 @@ namespace SBMS.Services
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("Checkin Database Error updating borrowed status:" + ex.Message);
+                        logger.Error(ex, "Exception at CheckinCheckoutServices");
+                        try
+                        {
+                            transaction.Rollback();
+                        }
+                        catch (Exception ex2)
+                        {
+                            // This catch block will handle any errors that may have occurred
+                            // on the server that would cause the rollback to fail, such as
+                            // a closed connection.
+                            logger.Error(ex,"Rollback Exception Type: {0}"+ ex2.GetType());
+                            Console.WriteLine("  Message: {0}", ex2.Message);
+                        }
                         return false;
                     }
                 }
 
                 //then make current lending slide as hisotry 
 
+                using (SqlCommand command = new SqlCommand())
                 {
-                    using (SqlCommand command = new SqlCommand())
+                    command.Connection = connection;
+                    command.Transaction = transaction;
+                    string insertQUery = "Update current_lending SET isHistory=1,updated_by=@updated_by,checkinstatus=@status WHERE id=@current_lending_id;";
+                    command.CommandText = insertQUery;
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@current_lending_id", current_lending_id);
+                    command.Parameters.AddWithValue("@slide_id", slide_id);
+                    command.Parameters.AddWithValue("@status", status);
+                    command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+                    try
                     {
-                        command.Connection = connection;
-                        string insertQUery = "Update current_lending SET isHistory=1,updated_by=@updated_by WHERE id=@current_lending_id) ";
-                        command.CommandText = insertQUery;
-                        command.CommandType = CommandType.Text;
-                        command.Parameters.AddWithValue("@current_lending_id", current_lending_id);
-                        command.Parameters.AddWithValue("@slide_id", slide_id);
-                        command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+
+                        if (connection.State == ConnectionState.Closed)
+                        {
+                            connection.Open();
+                        }
+
+                        int recordsAffected = command.ExecuteNonQuery();
+                        transaction.Commit();
+                        logger.Info("Commit:Both records are written to database.");
+                        Console.WriteLine("Both records are written to database."); 
+                    }
+                    catch (SqlException ex)
+                    {
+                        //MessageBox.Show("Checkin Database Error Making slide as history:" + ex.Message);
+                        logger.Error(ex, "Checkin Database Error Making slide as history");
                         try
                         {
-
-                            if (connection.State == ConnectionState.Closed)
-                            {
-                                connection.Open();
-                            }
-
-                            int recordsAffected = command.ExecuteNonQuery();
+                            transaction.Rollback();
                         }
-                        catch (SqlException ex)
+                        catch (Exception ex2)
                         {
-                            MessageBox.Show("Checkin Database Error Making slide as history:" + ex.Message);
-                            return false;
+                            // This catch block will handle any errors that may have occurred
+                            // on the server that would cause the rollback to fail, such as
+                            // a closed connection.
+                            logger.Error(ex, "Rollback Exception Type: {0}" + ex2.GetType());
+                            Console.WriteLine("  Message: {0}", ex2.Message);
                         }
+                        return false;
                     }
-                    connection.Close();
-                    //end result of adding to chekout table
-                    return true;
                 }
+                connection.Close();
+                //end result of adding to chekout table
+                return true;
             }
         }
+       
 
         public bool CheckinSlidesDamaged(string status, int slide_id, int current_lending_id)
         {
@@ -181,7 +219,7 @@ namespace SBMS.Services
                 {
                     command.Connection = connection;
                     string updateCheckinQuery = "UPDATE slides " +
-                        "SET isBorrowed=0,isDamaged=1,updated_by=@updated_by WHERE id=@slide_id)";
+                        "SET isBorrowed=0,isDamaged=1,updated_by=@updated_by WHERE id=@slide_id";
                     command.CommandText = updateCheckinQuery;
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@slide_id", slide_id);
@@ -199,7 +237,8 @@ namespace SBMS.Services
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("Checkin Database Error updating borrowed status:" + ex.Message);
+                        //MessageBox.Show("Checkin Database Error updating borrowed status:" + ex.Message);
+                        logger.Error(ex, "Checkin Database Error updating borrowed status");
                         return false;
                     }
                 }
@@ -210,7 +249,7 @@ namespace SBMS.Services
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        string insertQUery = "Update current_lending SET checkinStatus=@checkinStatus,isHistory=1,updated_by=@updated_by WHERE id=@current_lending_id) ";
+                        string insertQUery = "Update current_lending SET checkinStatus=@checkinStatus,isHistory=1,updated_by=@updated_by WHERE id=@current_lending_id ";
                         command.CommandText = insertQUery;
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@current_lending_id", current_lending_id);
@@ -229,7 +268,8 @@ namespace SBMS.Services
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show("Checkin Database Error Making slide as history:" + ex.Message);
+                            //MessageBox.Show("Checkin Database Error Making slide as history:" + ex.Message);
+                            logger.Error(ex, "Checkin Database Error updating borrowed status");
                             return false;
                         }
                     }

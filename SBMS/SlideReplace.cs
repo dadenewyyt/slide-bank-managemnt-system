@@ -12,6 +12,8 @@ namespace SBMS
 {
     public partial class SlideReplace : Form
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
         public SlideReplace()
         {
             InitializeComponent();
@@ -24,32 +26,13 @@ namespace SBMS
 
         private bool validateAndSearchFlags() {
 
-            if (String.IsNullOrEmpty(txt_to_replace.Text)) {
-                MessageBox.Show("Slide to replace should not be empty");
-                return false;
-            }
-            if (String.IsNullOrEmpty(txt_replaced.Text))
-            {
-                MessageBox.Show("Replaced with slide should not be empty");
-                return false;
-            }
 
             return true;
         }
 
         private bool validateSlideSequenceIds()
         {
-            
-            if (String.IsNullOrEmpty(txt_to_replace.Text))
-            {
-                MessageBox.Show("Slide to replace should not be empty");
-                return false;
-            }
-            if (String.IsNullOrEmpty(txt_replaced.Text))
-            {
-                MessageBox.Show("Replaced with slide should not be empty");
-                return false;
-            }
+          
 
             return true;
         }
@@ -65,6 +48,10 @@ namespace SBMS
 
         private void SlideReplace_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sbmsDataSet.slide_reserved_for_replacement' table. You can move, or remove it, as needed.
+            this.slide_reserved_for_replacementTableAdapter.Fill(this.sbmsDataSet.slide_reserved_for_replacement);
+            // TODO: This line of code loads data into the 'sbmsDataSet.slide_to_replace' table. You can move, or remove it, as needed.
+            this.slide_to_replaceTableAdapter.Fill(this.sbmsDataSet.slide_to_replace);
             // TODO: This line of code loads data into the 'speciceCatgeroyDataSet.species_category' table. You can move, or remove it, as needed.
             this.species_categoryTableAdapter1.Fill(this.speciceCatgeroyDataSet.species_category);
 

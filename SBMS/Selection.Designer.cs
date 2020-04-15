@@ -82,6 +82,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.txt_days = new System.Windows.Forms.NumericUpDown();
             this.grd_search_results = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,7 +120,6 @@
             this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
             this.slide_searchTableAdapter = new SBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -240,7 +240,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.label7);
             this.splitContainer2.Panel1.Controls.Add(this.label6);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
-            this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
+           
             // 
             // splitContainer2.Panel2
             // 
@@ -362,7 +362,7 @@
             this.label24.Size = new System.Drawing.Size(51, 19);
             this.label24.TabIndex = 73;
             this.label24.Text = "Others";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
+            
             // 
             // label34
             // 
@@ -767,6 +767,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Parasite";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(868, 134);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 60);
+            this.button1.TabIndex = 136;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // txt_days
             // 
             this.txt_days.Location = new System.Drawing.Point(94, 130);
@@ -898,25 +911,25 @@
             // 
             // btn_refresh
             // 
-            this.btn_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_refresh.BackColor = System.Drawing.Color.Gray;
             this.btn_refresh.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
             this.btn_refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_refresh.Location = new System.Drawing.Point(640, 5);
+            this.btn_refresh.Location = new System.Drawing.Point(627, 3);
             this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(170, 25);
+            this.btn_refresh.Size = new System.Drawing.Size(88, 53);
             this.btn_refresh.TabIndex = 133;
-            this.btn_refresh.Text = "refresh contact";
+            this.btn_refresh.Text = "Refresh  Contacts";
             this.btn_refresh.UseVisualStyleBackColor = false;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click_1);
             // 
             // btn_Add_borrower
             // 
-            this.btn_Add_borrower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Add_borrower.BackColor = System.Drawing.Color.Gray;
             this.btn_Add_borrower.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
             this.btn_Add_borrower.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Add_borrower.Location = new System.Drawing.Point(463, 4);
+            this.btn_Add_borrower.Location = new System.Drawing.Point(463, 3);
             this.btn_Add_borrower.Name = "btn_Add_borrower";
-            this.btn_Add_borrower.Size = new System.Drawing.Size(171, 26);
+            this.btn_Add_borrower.Size = new System.Drawing.Size(158, 53);
             this.btn_Add_borrower.TabIndex = 132;
             this.btn_Add_borrower.Text = "<< Add new || View >>";
             this.btn_Add_borrower.UseVisualStyleBackColor = false;
@@ -999,10 +1012,10 @@
             this.cmb_reason.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
             this.cmb_reason.FormattingEnabled = true;
             this.cmb_reason.Items.AddRange(new object[] {
-            "Test",
-            "hwell",
-            "asdasdas",
-            "asdasdasd"});
+            "Test and Exam",
+            "Training",
+            "PPT",
+            "Exchange"});
             this.cmb_reason.Location = new System.Drawing.Point(95, 99);
             this.cmb_reason.Name = "cmb_reason";
             this.cmb_reason.Size = new System.Drawing.Size(238, 25);
@@ -1082,7 +1095,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label25.Location = new System.Drawing.Point(3, 176);
+            this.label25.Location = new System.Drawing.Point(3, 175);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(111, 20);
             this.label25.TabIndex = 12;
@@ -1100,19 +1113,6 @@
             // slide_searchTableAdapter
             // 
             this.slide_searchTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(868, 134);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 60);
-            this.button1.TabIndex = 136;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Selection
             // 
