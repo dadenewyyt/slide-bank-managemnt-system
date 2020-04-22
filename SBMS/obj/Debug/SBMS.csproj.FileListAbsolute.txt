@@ -33,7 +33,6 @@ C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\bin\De
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.AllSlides.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.ArchiveSummary.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Borrowers.resources
-C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Checkin_Checkout.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Checkout.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.DueDateReminderCheckedOut.resources
 C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Donors.resources
@@ -102,3 +101,4 @@ C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.exe
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.pdb
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.pdb
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csprojAssemblyReference.cache
+C:\Users\INTuser\Source\Repos\dadenewyyt\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Checkin.resources

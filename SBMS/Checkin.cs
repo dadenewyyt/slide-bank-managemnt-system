@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SBMS
 {
-    public partial class Checkin_Checkout : Form
+    public partial class Checkin : Form
     {
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
@@ -15,12 +15,12 @@ namespace SBMS
         int slide_id_checkin = -1;
         public int CurrentLending_Id_Checkin { get => current_lending_id; set => current_lending_id = value; }
         public int Slide_Id_Checkin { get => slide_id_checkin; set => slide_id_checkin = value; }
-        public Checkin_Checkout()
+        public Checkin()
         {
             InitializeComponent();
         }
 
-        private void Checkin_Checkout_Load(object sender, EventArgs e)
+        private void Checkin_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sbmsDataSet1.current_lending_history' table. You can move, or remove it, as needed.
             this.currentLendingHisotryTableAdapter.Fill(this.sbmsDataSet1.current_lending_history);
@@ -220,7 +220,6 @@ namespace SBMS
                     txt_slide_scan_in_Click(null, null);
                     return result;
                 }
-                return result;
             }
             
             catch (Exception ex)
