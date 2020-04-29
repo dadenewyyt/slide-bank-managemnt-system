@@ -7,6 +7,7 @@ namespace SBMS.Services
 {
     class DataFetchService
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         public DataFetchService() { DatabaseServices.GetConnection(); }
 
@@ -29,6 +30,7 @@ namespace SBMS.Services
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Donor Fetch Slide Page");
+                        logger.Error(ex, "DataFetchService for Donor Fetch");
                         return slideFromDonorDataTable;
                     }
 
@@ -63,6 +65,7 @@ namespace SBMS.Services
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                        logger.Error(ex, "DataFetchService for Donor Fetch");
                         return -1;
                     }
 
@@ -98,6 +101,7 @@ namespace SBMS.Services
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                        logger.Error(ex, "DataFetchService for Donor Fetch");
                         return -1;
                     }
 
@@ -125,6 +129,8 @@ namespace SBMS.Services
                     catch (Exception ex)
                     {
                        MessageBox.Show(ex.Message, "We are unable to find a slide with the barcode:"+barcode);
+                       logger.Error(ex, "DataFetchService for Donor Fetch");
+
                         return BorrowedSlideByBarCode;
                     }
 
@@ -133,12 +139,13 @@ namespace SBMS.Services
             return BorrowedSlideByBarCode;
         }
 
-        public int CheckDuplicateSlideInfo(string sequence)
+        public int CheckDuplicateSlideInfo(string sequence , string barcode)
         {
 
+             //first get the donor id for the slide /////
             if (String.IsNullOrEmpty(sequence) == false)
             {
-                string selectquery = "select sequence from slides where sequence=" + sequence.Trim();
+                string selectquery = "select id from slides where bar_code= "+barcode +" and sequence=" + sequence.Trim();
                 using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
                 {
 
@@ -160,6 +167,8 @@ namespace SBMS.Services
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                        logger.Error(ex, "DataFetchService for Donor Fetch");
+
                         return -1;
                     }
 
@@ -195,6 +204,7 @@ namespace SBMS.Services
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    logger.Error(ex, "DataFetchService for Donor Fetch");
                     return -1;
                 }
             }
@@ -205,8 +215,7 @@ namespace SBMS.Services
         {
 
 
-            string selectquery = "select sequence from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box +
-                " and id =" + slide_id; ;
+            string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box +" and id =" + slide_id; ;
             using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
             {
 
@@ -228,10 +237,42 @@ namespace SBMS.Services
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    logger.Error(ex, "DataFetchService for Donor Fetch");
+
                     return -1;
                 }
             }
             return 1;
+        }
+
+        public int CheckIfLocationOccuiped(int cabinet, int drawer, int box)
+        {
+            string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box;
+            using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+            {
+
+                try
+                {
+                    //con.Open();
+                    SqlDataReader cr = command2.ExecuteReader();
+                    while (cr.Read())
+                    {
+                        if (cr.HasRows == true)
+                        {
+
+                            return 1;
+                        }
+
+                    }
+                    cr.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return 1;
+                }
+            }
+            return -1;
         }
     }
 }

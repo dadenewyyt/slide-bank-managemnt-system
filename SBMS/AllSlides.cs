@@ -13,5 +13,12 @@ namespace SBMS
         {
 
         }
+
+        private void AllSlides_Load(object sender, System.EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sbmsDataSet.slides' table. You can move, or remove it, as needed.
+            this.slidesTableAdapter.Fill(this.sbmsDataSet.slides);
+
+        }
     }
 }

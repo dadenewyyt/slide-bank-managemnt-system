@@ -11,6 +11,10 @@ namespace SBMS.Services
         static bool isLoggedIn = false;
         static string full_name;
         static string username;
+        static string exchange_id_default;
+
+
+        public static string Exchange_id_default { get => exchange_id_default; set => exchange_id_default = value; }
 
         public static string Full_name { get => full_name; set => full_name = value; }
         public static bool IsLoggedIn { get => isLoggedIn; set => isLoggedIn = value; }

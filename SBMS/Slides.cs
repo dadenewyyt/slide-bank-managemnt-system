@@ -58,6 +58,7 @@ namespace SBMS
             txt_cabinet_number.Text = "";
             txt_box_number.Text = "";
             txt_bar_code.Text = "";
+            txt_donor_code.BackColor = Color.Red;
 
 
         }
@@ -300,7 +301,7 @@ namespace SBMS
 
 
             dataFetchService = new DataFetchService();
-            int slideDuplicate = dataFetchService.CheckDuplicateSlideInfo(txt_slide_sequence.Text);
+            int slideDuplicate = dataFetchService.CheckDuplicateSlideInfo(txt_slide_sequence.Text,txt_bar_code.Text);
 
             if (slideDuplicate == 1)
             {
@@ -351,7 +352,7 @@ namespace SBMS
             bool isValidLocation = true;
 
             if (history_flag == false)
-                isValidLocation = ValidateSlideLocationData();
+                isValidLocation = ValidateSlideLocationData("save");
 
             if (Donor_Id_Slide != -1 && isValidLocation == true)
             {
@@ -421,15 +422,16 @@ namespace SBMS
                         catch (SqlException ex)
                         {
                             MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Slides", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            logger.Error(ex, "Slide Saving error Exception");
 
                         }
                         finally
                         {
                             clear();
-                            // this.btn_reload_Click(null, null);
+                            this.btn_clear_selection_Click(null, null);
                             //this.btn_reload_Click(null, null);
                             lbl_editing_status.Visible = false;
-                            // btn_deactivate.Enabled = false;
+                           // btn_deactivate.Enabled = false;
                             btn_save.Enabled = true;
                             btn_edit_update.Enabled = false;
                             connection.Close();
@@ -502,8 +504,7 @@ namespace SBMS
 
         private void btn_edit_update_Click(object sender, EventArgs e)
         {
-
-            bool isValidated = ValidateSlideLocationData();
+            bool isValidated = ValidateSlideLocationData("update");
 
             if (isValidated == false)
             {
@@ -523,7 +524,7 @@ namespace SBMS
                     {
                         command.Connection = connection;
                         string updateDonorQuery = "UPDATE slides " +
-                            "SET last_updated_by=@updated_by,isDamaged=@isDamaged,isReserved=@isReserved,cabinet_number=@cabinet,drawer_number=@drawer,box_number=@box WHERE id=@id";
+                            "SET updated_by=@updated_by,isDamaged=@isDamaged,isReserved=@isReserved,cabinet_number=@cabinet,drawer_number=@drawer,box_number=@box WHERE id=@id";
 
                         command.CommandType = CommandType.Text;
                         command.CommandText = updateDonorQuery;
@@ -601,7 +602,7 @@ namespace SBMS
 
         }
 
-        private bool ValidateSlideLocationData()
+        private bool ValidateSlideLocationData(string state)
         {
             int n;
 
@@ -639,8 +640,10 @@ namespace SBMS
 
             int isLocationOccupied = 0;
             dataFetchService = new DataFetchService();
-            if (cabinet > 0 && drawer > 0 && box > 0)
-                isLocationOccupied = dataFetchService.CheckDuplicateLocationUpdate(cabinet, drawer, box, Slides_Id_Update);
+            if (cabinet > 0 && drawer > 0 && box > 0 && state=="save")
+                isLocationOccupied = dataFetchService.CheckIfLocationOccuiped(cabinet, drawer, box);
+            if (cabinet > 0 && drawer > 0 && box > 0 && state == "update")
+                isLocationOccupied = dataFetchService.CheckDuplicateLocationUpdate(cabinet, drawer, box,Slides_Id_Update);
 
             if (isLocationOccupied == 1)
             {
@@ -693,6 +696,7 @@ namespace SBMS
             }
             catch (Exception ex) {
                 MessageBox.Show("Donorr number is empty or invalid,renter");
+                logger.Error(ex, "Slide Form");
             }
         }
 

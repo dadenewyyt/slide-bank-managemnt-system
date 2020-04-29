@@ -72,9 +72,6 @@
             this.btn_find = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dgr_borrower = new System.Windows.Forms.DataGridView();
-            this.borrowersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.borrowersTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrowersTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +92,9 @@
             this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.upatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isdeletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.borrowersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.borrowersTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrowersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -131,9 +131,9 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(403, 6);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(445, 31);
+            this.label18.Size = new System.Drawing.Size(430, 31);
             this.label18.TabIndex = 11;
-            this.label18.Text = "Borrowers Information Management";
+            this.label18.Text = "Contacts Information Management";
             // 
             // splitContainer2
             // 
@@ -605,20 +605,6 @@
             this.dgr_borrower.TabIndex = 0;
             this.dgr_borrower.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgr_borrower_CellClick);
             // 
-            // borrowersBindingSource
-            // 
-            this.borrowersBindingSource.DataMember = "borrowers";
-            this.borrowersBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // borrowersTableAdapter
-            // 
-            this.borrowersTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -742,6 +728,20 @@
             this.isdeletedDataGridViewCheckBoxColumn.Name = "isdeletedDataGridViewCheckBoxColumn";
             this.isdeletedDataGridViewCheckBoxColumn.Visible = false;
             // 
+            // borrowersBindingSource
+            // 
+            this.borrowersBindingSource.DataMember = "borrowers";
+            this.borrowersBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // borrowersTableAdapter
+            // 
+            this.borrowersTableAdapter.ClearBeforeFill = true;
+            // 
             // Borrowers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,8 +752,8 @@
             this.Controls.Add(this.splitContainer1);
             this.MaximizeBox = false;
             this.Name = "Borrowers";
-            this.Text = "Borrowers";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Contacts Information";
             this.Load += new System.EventHandler(this.Borrowers_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

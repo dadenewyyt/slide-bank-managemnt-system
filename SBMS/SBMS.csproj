@@ -125,6 +125,12 @@
     <Compile Include="Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="DonorExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonorExchange.Designer.cs">
+      <DependentUpon>DonorExchange.cs</DependentUpon>
+    </Compile>
     <Compile Include="DueDateReminderCheckedOut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,7 @@
       <DependentUpon>Selection.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Services\ImportDefaults.cs" />
     <Compile Include="Services\CheckinCheckoutService.cs" />
     <Compile Include="Services\DatabaseServices.cs" />
     <Compile Include="Services\DataFetchService.cs" />
@@ -357,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DonorExchange.resx">
+      <DependentUpon>DonorExchange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DueDateReminderCheckedOut.resx">
       <DependentUpon>DueDateReminderCheckedOut.cs</DependentUpon>

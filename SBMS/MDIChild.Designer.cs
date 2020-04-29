@@ -44,13 +44,13 @@
             this.btn_lending_history = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btn_archive_summary = new System.Windows.Forms.Button();
+            this.btn_all_slides = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btn_checkout = new System.Windows.Forms.Button();
             this.btn_checkin = new System.Windows.Forms.Button();
             this.bn_borrowers = new System.Windows.Forms.Button();
             this.btn_donors = new System.Windows.Forms.Button();
             this.btn_slides = new System.Windows.Forms.Button();
-            this.btn_all_slides = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -163,6 +163,9 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.richTextBox1.Location = new System.Drawing.Point(3, 16);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(270, 456);
@@ -195,10 +198,10 @@
             // 
             // btn_user_account
             // 
-            this.btn_user_account.BackColor = System.Drawing.Color.Red;
+            this.btn_user_account.BackColor = System.Drawing.Color.DarkOrange;
             this.btn_user_account.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btn_user_account.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_user_account.Location = new System.Drawing.Point(546, 387);
+            this.btn_user_account.Location = new System.Drawing.Point(537, 296);
             this.btn_user_account.Name = "btn_user_account";
             this.btn_user_account.Size = new System.Drawing.Size(247, 85);
             this.btn_user_account.TabIndex = 25;
@@ -232,13 +235,13 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button9.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button9.Location = new System.Drawing.Point(284, 387);
+            this.button9.Location = new System.Drawing.Point(799, 296);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(247, 85);
+            this.button9.Size = new System.Drawing.Size(238, 85);
             this.button9.TabIndex = 20;
-            this.button9.Text = "Slide History";
+            this.button9.Text = "Slides History";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -247,13 +250,26 @@
             this.btn_archive_summary.BackColor = System.Drawing.Color.SaddleBrown;
             this.btn_archive_summary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btn_archive_summary.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_archive_summary.Location = new System.Drawing.Point(546, 296);
+            this.btn_archive_summary.Location = new System.Drawing.Point(537, 387);
             this.btn_archive_summary.Name = "btn_archive_summary";
             this.btn_archive_summary.Size = new System.Drawing.Size(247, 85);
             this.btn_archive_summary.TabIndex = 19;
             this.btn_archive_summary.Text = "Archive Summary";
             this.btn_archive_summary.UseVisualStyleBackColor = false;
             this.btn_archive_summary.Click += new System.EventHandler(this.btn_archive_summary_Click);
+            // 
+            // btn_all_slides
+            // 
+            this.btn_all_slides.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_all_slides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_all_slides.ForeColor = System.Drawing.Color.MintCream;
+            this.btn_all_slides.Location = new System.Drawing.Point(1043, 387);
+            this.btn_all_slides.Name = "btn_all_slides";
+            this.btn_all_slides.Size = new System.Drawing.Size(201, 85);
+            this.btn_all_slides.TabIndex = 18;
+            this.btn_all_slides.Text = "All Slides ";
+            this.btn_all_slides.UseVisualStyleBackColor = false;
+            this.btn_all_slides.Click += new System.EventHandler(this.btn_all_slides_Click);
             // 
             // button6
             // 
@@ -270,13 +286,13 @@
             // 
             // btn_checkout
             // 
-            this.btn_checkout.BackColor = System.Drawing.Color.YellowGreen;
+            this.btn_checkout.BackColor = System.Drawing.Color.Olive;
             this.btn_checkout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_checkout.Location = new System.Drawing.Point(799, 296);
+            this.btn_checkout.Location = new System.Drawing.Point(284, 387);
             this.btn_checkout.Name = "btn_checkout";
-            this.btn_checkout.Size = new System.Drawing.Size(238, 85);
+            this.btn_checkout.Size = new System.Drawing.Size(247, 85);
             this.btn_checkout.TabIndex = 16;
-            this.btn_checkout.Text = "Checkout";
+            this.btn_checkout.Text = "Single Checkout";
             this.btn_checkout.UseVisualStyleBackColor = false;
             this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
             // 
@@ -300,7 +316,7 @@
             this.bn_borrowers.Name = "bn_borrowers";
             this.bn_borrowers.Size = new System.Drawing.Size(247, 85);
             this.bn_borrowers.TabIndex = 14;
-            this.bn_borrowers.Text = "Borrower Entry";
+            this.bn_borrowers.Text = "Contacts Entry";
             this.bn_borrowers.UseVisualStyleBackColor = false;
             this.bn_borrowers.Click += new System.EventHandler(this.bn_borrowers_Click);
             // 
@@ -329,19 +345,6 @@
             this.btn_slides.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_slides.UseVisualStyleBackColor = false;
             this.btn_slides.Click += new System.EventHandler(this.btn_slides_Click);
-            // 
-            // btn_all_slides
-            // 
-            this.btn_all_slides.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_all_slides.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_all_slides.ForeColor = System.Drawing.Color.MintCream;
-            this.btn_all_slides.Location = new System.Drawing.Point(1102, 448);
-            this.btn_all_slides.Name = "btn_all_slides";
-            this.btn_all_slides.Size = new System.Drawing.Size(142, 24);
-            this.btn_all_slides.TabIndex = 18;
-            this.btn_all_slides.Text = "All Slides ";
-            this.btn_all_slides.UseVisualStyleBackColor = false;
-            this.btn_all_slides.Click += new System.EventHandler(this.btn_all_slides_Click);
             // 
             // MDIChild
             // 

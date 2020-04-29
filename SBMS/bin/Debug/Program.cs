@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SBMS.Services;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 
@@ -7,6 +10,8 @@ namespace SBMS
 {
     static class Program
     {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -15,22 +20,38 @@ namespace SBMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            ImportDefaultsService importDefaultsService = new ImportDefaultsService();
 
-            /* try
+
+            try
              {
-                 SqlConnection conn = DatabaseServices.GetConnection();
-                 Console.WriteLine("HELLO WORDL"+conn.State);
+                 logger.Info("importing defaults");
+                int id = importDefaultsService.CheckIfDefaultExisits();
+                if (id !=-1)
+                {
+                    logger.Info("Default is found proceeding.");
+                    Application.Run(new Login());
 
-                 LookUpServices lookUpServices = new LookUpServices();
-                 DataTable t = lookUpServices.fetchLookupTables("validations");
-                 Console.WriteLine(t.Rows.Count);
+                }
+                else {
+                    bool result = importDefaultsService.addDefaultCountryOfOrigin();
+                    if (result == false)
+                    {
+                        logger.Error("Hi, the system is reporting problem importing Counry of Origin\n");
+                        Application.Exit();
+                    }
+                    else {
+                        Application.Run(new Login());
+                    }
+                }
+            }
+             catch (Exception ex) {
+                 MessageBox.Show(ex.Message+"Hi, the system is reporting problem with SQL Server Database\n");
+                 logger.Error(ex,"Hi, the system is reporting problem importing Counry of Origin\n");
+                 Application.Exit();
 
+            }
 
-             }
-             catch (Exception e) {
-                 MessageBox.Show("Hi, the system is reporting problem with SQL Server Database\n"+e.Message, "Initalising Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }*/
         }
     }
 }

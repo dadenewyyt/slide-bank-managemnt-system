@@ -1049,6 +1049,10 @@ namespace SBMS {
             
             private global::System.Data.DataColumn columnspecies_catgeroy_id;
             
+            private global::System.Data.DataColumn columnCountryOfOrigin;
+            
+            private global::System.Data.DataColumn columnisExchange;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public donorsDataTable() {
@@ -1252,6 +1256,22 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CountryOfOriginColumn {
+                get {
+                    return this.columnCountryOfOrigin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchangeColumn {
+                get {
+                    return this.columnisExchange;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1307,7 +1327,9 @@ namespace SBMS {
                         System.DateTime updated_date, 
                         bool _isWHO_, 
                         bool isActive, 
-                        int species_catgeroy_id) {
+                        int species_catgeroy_id, 
+                        string CountryOfOrigin, 
+                        bool isExchange) {
                 donorsRow rowdonorsRow = ((donorsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1330,7 +1352,9 @@ namespace SBMS {
                         updated_date,
                         _isWHO_,
                         isActive,
-                        species_catgeroy_id};
+                        species_catgeroy_id,
+                        CountryOfOrigin,
+                        isExchange};
                 rowdonorsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdonorsRow);
                 return rowdonorsRow;
@@ -1381,6 +1405,8 @@ namespace SBMS {
                 this._columnisWHO_ = base.Columns["isWHO?"];
                 this.columnisActive = base.Columns["isActive"];
                 this.columnspecies_catgeroy_id = base.Columns["species_catgeroy_id"];
+                this.columnCountryOfOrigin = base.Columns["CountryOfOrigin"];
+                this.columnisExchange = base.Columns["isExchange"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1430,6 +1456,10 @@ namespace SBMS {
                 base.Columns.Add(this.columnisActive);
                 this.columnspecies_catgeroy_id = new global::System.Data.DataColumn("species_catgeroy_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnspecies_catgeroy_id);
+                this.columnCountryOfOrigin = new global::System.Data.DataColumn("CountryOfOrigin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountryOfOrigin);
+                this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1455,7 +1485,10 @@ namespace SBMS {
                 this.columncomment.MaxLength = 2147483647;
                 this.columncreated_by.MaxLength = 2147483647;
                 this.columnupdated_by.MaxLength = 2147483647;
+                this.columnisActive.AllowDBNull = false;
                 this.columnspecies_catgeroy_id.AllowDBNull = false;
+                this.columnCountryOfOrigin.MaxLength = 50;
+                this.columnisExchange.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2155,6 +2188,8 @@ namespace SBMS {
                 this.columncabinet_number.AllowDBNull = false;
                 this.columndrawer_number.AllowDBNull = false;
                 this.columnbox_number.AllowDBNull = false;
+                this.columnupdated_date.AllowDBNull = false;
+                this.columncreated_date.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 2147483647;
                 this.columndonor_code.AllowDBNull = false;
                 this.columndonor_code.MaxLength = 2147483647;
@@ -15642,12 +15677,7 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool isActive {
                 get {
-                    try {
-                        return ((bool)(this[this.tabledonors.isActiveColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isActive\' in table \'donors\' is DBNull.", e);
-                    }
+                    return ((bool)(this[this.tabledonors.isActiveColumn]));
                 }
                 set {
                     this[this.tabledonors.isActiveColumn] = value;
@@ -15662,6 +15692,33 @@ namespace SBMS {
                 }
                 set {
                     this[this.tabledonors.species_catgeroy_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CountryOfOrigin {
+                get {
+                    try {
+                        return ((string)(this[this.tabledonors.CountryOfOriginColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountryOfOrigin\' in table \'donors\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledonors.CountryOfOriginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange {
+                get {
+                    return ((bool)(this[this.tabledonors.isExchangeColumn]));
+                }
+                set {
+                    this[this.tabledonors.isExchangeColumn] = value;
                 }
             }
             
@@ -15751,14 +15808,14 @@ namespace SBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsisActiveNull() {
-                return this.IsNull(this.tabledonors.isActiveColumn);
+            public bool IsCountryOfOriginNull() {
+                return this.IsNull(this.tabledonors.CountryOfOriginColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetisActiveNull() {
-                this[this.tabledonors.isActiveColumn] = global::System.Convert.DBNull;
+            public void SetCountryOfOriginNull() {
+                this[this.tabledonors.CountryOfOriginColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16052,12 +16109,7 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_date {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablerecent_slide_dataset.updated_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date\' in table \'recent_slide_dataset\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablerecent_slide_dataset.updated_dateColumn]));
                 }
                 set {
                     this[this.tablerecent_slide_dataset.updated_dateColumn] = value;
@@ -16068,12 +16120,7 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablerecent_slide_dataset.created_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date\' in table \'recent_slide_dataset\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablerecent_slide_dataset.created_dateColumn]));
                 }
                 set {
                     this[this.tablerecent_slide_dataset.created_dateColumn] = value;
@@ -16226,30 +16273,6 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisActiveNull() {
                 this[this.tablerecent_slide_dataset.isActiveColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupdated_dateNull() {
-                return this.IsNull(this.tablerecent_slide_dataset.updated_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupdated_dateNull() {
-                this[this.tablerecent_slide_dataset.updated_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_dateNull() {
-                return this.IsNull(this.tablerecent_slide_dataset.created_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_dateNull() {
-                this[this.tablerecent_slide_dataset.created_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27845,125 +27868,9 @@ namespace SBMS.sbmsDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("isWHO?", "isWHO?");
             tableMapping.ColumnMappings.Add("isActive", "isActive");
             tableMapping.ColumnMappings.Add("species_catgeroy_id", "species_catgeroy_id");
+            tableMapping.ColumnMappings.Add("CountryOfOrigin", "CountryOfOrigin");
+            tableMapping.ColumnMappings.Add("isExchange", "isExchange");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[donors] WHERE (([id] = @Original_id) AND ([species_catgeroy_id] = @Original_species_catgeroy_id) AND ([species_specific_id] = @Original_species_specific_id) AND ([species_stage_id] = @Original_species_stage_id) AND ([density_category_id] = @Original_density_category_id) AND ([lower_density] = @Original_lower_density) AND ([average_density] = @Original_average_density) AND ([upper_density] = @Original_upper_density) AND ([owner_id] = @Original_owner_id) AND ((@IsNull_acquired_date = 1 AND [acquired_date] IS NULL) OR ([acquired_date] = @Original_acquired_date)) AND ([validation_id] = @Original_validation_id) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = @Original_updated_date)) AND ((@p3 = 1 AND [isWHO?] IS NULL) OR ([isWHO?] = @p2)) AND ((@IsNull_isActive = 1 AND [isActive] IS NULL) OR ([isActive] = @Original_isActive)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_species_catgeroy_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_catgeroy_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_species_specific_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_specific_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_species_stage_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_stage_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_density_category_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "density_category_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lower_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lower_density", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_average_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "average_density", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_upper_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upper_density", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_owner_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "owner_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_acquired_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acquired_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_acquired_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acquired_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_validation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "validation_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_updated_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isWHO?", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isWHO?", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isActive", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[donors] ([bar_code], [country_code], [donor_code], [species_catgeroy_id], [species_specific_id], [species_stage_id], [density_category_id], [lower_density], [average_density], [upper_density], [owner_id], [acquired_date], [validation_id], [comment], [created_by], [updated_by], [created_date], [updated_date], [isWHO?], [isActive]) VALUES (@bar_code, @country_code, @donor_code, @species_catgeroy_id, @species_specific_id, @species_stage_id, @density_category_id, @lower_density, @average_density, @upper_density, @owner_id, @acquired_date, @validation_id, @comment, @created_by, @updated_by, @created_date, @updated_date, @p1, @isActive);
-SELECT id, bar_code, country_code, donor_code, species_catgeroy_id, species_specific_id, species_stage_id, density_category_id, lower_density, average_density, upper_density, owner_id, acquired_date, validation_id, comment, created_by, updated_by, created_date, updated_date, [isWHO?], isActive FROM donors WHERE (id = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bar_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bar_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@country_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "country_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@donor_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "donor_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@species_catgeroy_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_catgeroy_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@species_specific_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_specific_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@species_stage_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_stage_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@density_category_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "density_category_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lower_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lower_density", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@average_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "average_density", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@upper_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upper_density", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@owner_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "owner_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@acquired_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acquired_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@validation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "validation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comment", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isWHO?", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[donors] SET [bar_code] = @bar_code, [country_code] = @country_code," +
-                " [donor_code] = @donor_code, [species_catgeroy_id] = @species_catgeroy_id, [spec" +
-                "ies_specific_id] = @species_specific_id, [species_stage_id] = @species_stage_id," +
-                " [density_category_id] = @density_category_id, [lower_density] = @lower_density," +
-                " [average_density] = @average_density, [upper_density] = @upper_density, [owner_" +
-                "id] = @owner_id, [acquired_date] = @acquired_date, [validation_id] = @validation" +
-                "_id, [comment] = @comment, [created_by] = @created_by, [updated_by] = @updated_b" +
-                "y, [created_date] = @created_date, [updated_date] = @updated_date, [isWHO?] = @p" +
-                "1, [isActive] = @isActive WHERE (([id] = @Original_id) AND ([species_catgeroy_id" +
-                "] = @Original_species_catgeroy_id) AND ([species_specific_id] = @Original_specie" +
-                "s_specific_id) AND ([species_stage_id] = @Original_species_stage_id) AND ([densi" +
-                "ty_category_id] = @Original_density_category_id) AND ([lower_density] = @Origina" +
-                "l_lower_density) AND ([average_density] = @Original_average_density) AND ([upper" +
-                "_density] = @Original_upper_density) AND ([owner_id] = @Original_owner_id) AND (" +
-                "(@IsNull_acquired_date = 1 AND [acquired_date] IS NULL) OR ([acquired_date] = @O" +
-                "riginal_acquired_date)) AND ([validation_id] = @Original_validation_id) AND ((@I" +
-                "sNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Origina" +
-                "l_created_date)) AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR (" +
-                "[updated_date] = @Original_updated_date)) AND ((@p3 = 1 AND [isWHO?] IS NULL) OR" +
-                " ([isWHO?] = @p2)) AND ((@IsNull_isActive = 1 AND [isActive] IS NULL) OR ([isAct" +
-                "ive] = @Original_isActive)));\r\nSELECT id, bar_code, country_code, donor_code, sp" +
-                "ecies_catgeroy_id, species_specific_id, species_stage_id, density_category_id, l" +
-                "ower_density, average_density, upper_density, owner_id, acquired_date, validatio" +
-                "n_id, comment, created_by, updated_by, created_date, updated_date, [isWHO?], isA" +
-                "ctive FROM donors WHERE (id = @id)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bar_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bar_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@country_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "country_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@donor_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "donor_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@species_catgeroy_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_catgeroy_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@species_specific_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_specific_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@species_stage_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_stage_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@density_category_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "density_category_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lower_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lower_density", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@average_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "average_density", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@upper_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upper_density", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@owner_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "owner_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@acquired_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acquired_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@validation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "validation_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comment", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isWHO?", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_species_catgeroy_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_catgeroy_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_species_specific_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_specific_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_species_stage_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "species_stage_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_density_category_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "density_category_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lower_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lower_density", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_average_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "average_density", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_upper_density", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upper_density", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_owner_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "owner_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_acquired_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acquired_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_acquired_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "acquired_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_validation_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "validation_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_updated_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isWHO?", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isWHO?", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isActive", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27979,7 +27886,9 @@ SELECT id, bar_code, country_code, donor_code, species_catgeroy_id, species_spec
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT id, bar_code, country_code, donor_code, species_catgeroy_id,species_specific_id, species_stage_id, density_category_id, lower_density, average_density, upper_density, owner_id, acquired_date, validation_id, comment, created_by, updated_by, created_date, updated_date, [isWHO?], isActive FROM dbo.donors";
+            this._commandCollection[0].CommandText = @"SELECT d.id, bar_code, country_code, donor_code, species_catgeroy_id,species_specific_id, species_stage_id, density_category_id, lower_density, average_density, upper_density, owner_id, acquired_date, validation_id, comment, d.created_by, d.updated_by, d.created_date, d.updated_date, [isWHO?], isActive,b.country as CountryOfOrigin,d.isExchange FROM dbo.donors as d
+inner join borrowers b on b.id = d.exchange_id
+order by d.created_date desc;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -28005,448 +27914,6 @@ SELECT id, bar_code, country_code, donor_code, species_catgeroy_id, species_spec
             sbmsDataSet.donorsDataTable dataTable = new sbmsDataSet.donorsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sbmsDataSet.donorsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sbmsDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "donors");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, int Original_species_catgeroy_id, int Original_species_specific_id, int Original_species_stage_id, int Original_density_category_id, long Original_lower_density, long Original_average_density, long Original_upper_density, int Original_owner_id, global::System.Nullable<global::System.DateTime> Original_acquired_date, int Original_validation_id, global::System.Nullable<global::System.DateTime> Original_created_date, global::System.Nullable<global::System.DateTime> Original_updated_date, global::System.Nullable<bool> p2, global::System.Nullable<bool> Original_isActive) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_species_catgeroy_id));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_species_specific_id));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_species_stage_id));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_density_category_id));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((long)(Original_lower_density));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((long)(Original_average_density));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((long)(Original_upper_density));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_owner_id));
-            if ((Original_acquired_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_acquired_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_validation_id));
-            if ((Original_created_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTime)(Original_created_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_updated_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_updated_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((p2.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((bool)(p2.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_isActive.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((bool)(Original_isActive.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string bar_code, 
-                    string country_code, 
-                    string donor_code, 
-                    int species_catgeroy_id, 
-                    int species_specific_id, 
-                    int species_stage_id, 
-                    int density_category_id, 
-                    long lower_density, 
-                    long average_density, 
-                    long upper_density, 
-                    int owner_id, 
-                    global::System.Nullable<global::System.DateTime> acquired_date, 
-                    int validation_id, 
-                    string comment, 
-                    string created_by, 
-                    string updated_by, 
-                    global::System.Nullable<global::System.DateTime> created_date, 
-                    global::System.Nullable<global::System.DateTime> updated_date, 
-                    global::System.Nullable<bool> p1, 
-                    global::System.Nullable<bool> isActive) {
-            if ((bar_code == null)) {
-                throw new global::System.ArgumentNullException("bar_code");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(bar_code));
-            }
-            if ((country_code == null)) {
-                throw new global::System.ArgumentNullException("country_code");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(country_code));
-            }
-            if ((donor_code == null)) {
-                throw new global::System.ArgumentNullException("donor_code");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(donor_code));
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(species_catgeroy_id));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(species_specific_id));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(species_stage_id));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(density_category_id));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((long)(lower_density));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((long)(average_density));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((long)(upper_density));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(owner_id));
-            if ((acquired_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(acquired_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(validation_id));
-            if ((comment == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(comment));
-            }
-            if ((created_by == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(created_by));
-            }
-            if ((updated_by == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(updated_by));
-            }
-            if ((created_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((System.DateTime)(created_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((updated_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((System.DateTime)(updated_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((p1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((bool)(p1.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((isActive.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((bool)(isActive.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string bar_code, 
-                    string country_code, 
-                    string donor_code, 
-                    int species_catgeroy_id, 
-                    int species_specific_id, 
-                    int species_stage_id, 
-                    int density_category_id, 
-                    long lower_density, 
-                    long average_density, 
-                    long upper_density, 
-                    int owner_id, 
-                    global::System.Nullable<global::System.DateTime> acquired_date, 
-                    int validation_id, 
-                    string comment, 
-                    string created_by, 
-                    string updated_by, 
-                    global::System.Nullable<global::System.DateTime> created_date, 
-                    global::System.Nullable<global::System.DateTime> updated_date, 
-                    global::System.Nullable<bool> p1, 
-                    global::System.Nullable<bool> isActive, 
-                    int Original_id, 
-                    int Original_species_catgeroy_id, 
-                    int Original_species_specific_id, 
-                    int Original_species_stage_id, 
-                    int Original_density_category_id, 
-                    long Original_lower_density, 
-                    long Original_average_density, 
-                    long Original_upper_density, 
-                    int Original_owner_id, 
-                    global::System.Nullable<global::System.DateTime> Original_acquired_date, 
-                    int Original_validation_id, 
-                    global::System.Nullable<global::System.DateTime> Original_created_date, 
-                    global::System.Nullable<global::System.DateTime> Original_updated_date, 
-                    global::System.Nullable<bool> p2, 
-                    global::System.Nullable<bool> Original_isActive, 
-                    int id) {
-            if ((bar_code == null)) {
-                throw new global::System.ArgumentNullException("bar_code");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(bar_code));
-            }
-            if ((country_code == null)) {
-                throw new global::System.ArgumentNullException("country_code");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(country_code));
-            }
-            if ((donor_code == null)) {
-                throw new global::System.ArgumentNullException("donor_code");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(donor_code));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(species_catgeroy_id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(species_specific_id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(species_stage_id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(density_category_id));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((long)(lower_density));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((long)(average_density));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((long)(upper_density));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(owner_id));
-            if ((acquired_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(acquired_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(validation_id));
-            if ((comment == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(comment));
-            }
-            if ((created_by == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(created_by));
-            }
-            if ((updated_by == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(updated_by));
-            }
-            if ((created_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(created_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((updated_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(updated_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((p1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(p1.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((isActive.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(isActive.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_id));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_species_catgeroy_id));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_species_specific_id));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_species_stage_id));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_density_category_id));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((long)(Original_lower_density));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((long)(Original_average_density));
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((long)(Original_upper_density));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_owner_id));
-            if ((Original_acquired_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_acquired_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(Original_validation_id));
-            if ((Original_created_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((System.DateTime)(Original_created_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            if ((Original_updated_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(Original_updated_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            if ((p2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((bool)(p2.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            if ((Original_isActive.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((bool)(Original_isActive.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string bar_code, 
-                    string country_code, 
-                    string donor_code, 
-                    int species_catgeroy_id, 
-                    int species_specific_id, 
-                    int species_stage_id, 
-                    int density_category_id, 
-                    long lower_density, 
-                    long average_density, 
-                    long upper_density, 
-                    int owner_id, 
-                    global::System.Nullable<global::System.DateTime> acquired_date, 
-                    int validation_id, 
-                    string comment, 
-                    string created_by, 
-                    string updated_by, 
-                    global::System.Nullable<global::System.DateTime> created_date, 
-                    global::System.Nullable<global::System.DateTime> updated_date, 
-                    global::System.Nullable<bool> p1, 
-                    global::System.Nullable<bool> isActive, 
-                    int Original_id, 
-                    int Original_species_catgeroy_id, 
-                    int Original_species_specific_id, 
-                    int Original_species_stage_id, 
-                    int Original_density_category_id, 
-                    long Original_lower_density, 
-                    long Original_average_density, 
-                    long Original_upper_density, 
-                    int Original_owner_id, 
-                    global::System.Nullable<global::System.DateTime> Original_acquired_date, 
-                    int Original_validation_id, 
-                    global::System.Nullable<global::System.DateTime> Original_created_date, 
-                    global::System.Nullable<global::System.DateTime> Original_updated_date, 
-                    global::System.Nullable<bool> p2, 
-                    global::System.Nullable<bool> Original_isActive) {
-            return this.Update(bar_code, country_code, donor_code, species_catgeroy_id, species_specific_id, species_stage_id, density_category_id, lower_density, average_density, upper_density, owner_id, acquired_date, validation_id, comment, created_by, updated_by, created_date, updated_date, p1, isActive, Original_id, Original_species_catgeroy_id, Original_species_specific_id, Original_species_stage_id, Original_density_category_id, Original_lower_density, Original_average_density, Original_upper_density, Original_owner_id, Original_acquired_date, Original_validation_id, Original_created_date, Original_updated_date, p2, Original_isActive, Original_id);
         }
     }
     
@@ -28622,7 +28089,7 @@ SELECT id, bar_code, country_code, donor_code, species_catgeroy_id, species_spec
 FROM              dbo.slides AS s INNER JOIN
                          dbo.donors AS d ON d.id = s.donor_id
 WHERE        (d.isActive = 1) AND (s.isActive=1) AND  (s.isBorrowed = 0)  
-ORDER BY  d.id ;";
+ORDER BY  s.created_date desc;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34502,8 +33969,6 @@ ORDER BY s.id";
         
         private UpdateOrderOption _updateOrder;
         
-        private donorsTableAdapter _donorsTableAdapter;
-        
         private species_categoryTableAdapter _species_categoryTableAdapter;
         
         private species_specificsTableAdapter _species_specificsTableAdapter;
@@ -34530,20 +33995,6 @@ ORDER BY s.id";
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public donorsTableAdapter donorsTableAdapter {
-            get {
-                return this._donorsTableAdapter;
-            }
-            set {
-                this._donorsTableAdapter = value;
             }
         }
         
@@ -34664,10 +34115,6 @@ ORDER BY s.id";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._donorsTableAdapter != null) 
-                            && (this._donorsTableAdapter.Connection != null))) {
-                    return this._donorsTableAdapter.Connection;
-                }
                 if (((this._species_categoryTableAdapter != null) 
                             && (this._species_categoryTableAdapter.Connection != null))) {
                     return this._species_categoryTableAdapter.Connection;
@@ -34709,9 +34156,6 @@ ORDER BY s.id";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._donorsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._species_categoryTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -34744,15 +34188,6 @@ ORDER BY s.id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(sbmsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._donorsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.donors.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._donorsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._borrowersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.borrowers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -34826,14 +34261,6 @@ ORDER BY s.id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(sbmsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._donorsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.donors.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._donorsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._borrowersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.borrowers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -34956,14 +34383,6 @@ ORDER BY s.id";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._donorsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.donors.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._donorsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -35002,11 +34421,6 @@ ORDER BY s.id";
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._donorsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._donorsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             if (((this._species_categoryTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._species_categoryTableAdapter.Connection) == false))) {
@@ -35075,15 +34489,6 @@ ORDER BY s.id";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._donorsTableAdapter != null)) {
-                    revertConnections.Add(this._donorsTableAdapter, this._donorsTableAdapter.Connection);
-                    this._donorsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._donorsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._donorsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._donorsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._donorsTableAdapter.Adapter);
-                    }
-                }
                 if ((this._species_categoryTableAdapter != null)) {
                     revertConnections.Add(this._species_categoryTableAdapter, this._species_categoryTableAdapter.Connection);
                     this._species_categoryTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -35204,10 +34609,6 @@ ORDER BY s.id";
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._donorsTableAdapter != null)) {
-                    this._donorsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._donorsTableAdapter]));
-                    this._donorsTableAdapter.Transaction = null;
                 }
                 if ((this._species_categoryTableAdapter != null)) {
                     this._species_categoryTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._species_categoryTableAdapter]));

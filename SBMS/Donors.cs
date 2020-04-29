@@ -10,8 +10,10 @@ namespace SBMS
 {
     public partial class Donors : Form
     {
+       private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
         private int id_update = -1;
+        private bool exchange_flag = false;
         DataFetchService dataFetchService;
         LookUpServices lookUpServices;
 
@@ -33,13 +35,16 @@ namespace SBMS
             txt_acquired_date.Text = "";
             cmb_validation.SelectedIndex = 0;
             txt_comment.Text = "";
+            button1_Click_1(null, null); //exchange clear
+            rdo_notexchange_CheckedChanged(null,null);
         }
 
         public Donors()
         {
             InitializeComponent();
             dgr_donors.ClearSelection();
-
+            rdo_exchange.Checked = false;
+            rdo_notexchange.Visible = false;
             // dgr_donors.DataSource = bindingSourceDonorsDataGrid;
 
             // GetData("select * from donors");
@@ -185,12 +190,30 @@ namespace SBMS
             cmb_owners.ValueMember = "Key";
             cmb_owners.DisplayMember = "Value";
             cmb_owners.SelectedIndex = 0;
-           ////// cmb_owners.AutoCompleteMode = AutoCompleteMode.Suggest;
-           // cmb_owners.AutoCompleteSource = AutoCompleteSource.ListItems;
+            ////// cmb_owners.AutoCompleteMode = AutoCompleteMode.Suggest;
+            // cmb_owners.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            // TODO: This line of code loads data into the 'sbmsDataSet.borrower_contact_list' table. You can move, or remove it, as needed.
+            this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
+
+            Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
+            borrowerDic.Add(-1, "--Select Exchange Contact---");
+            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            {
+                borrowerDic.Add(Convert.ToInt32(row["id"]), "Country:" + row["country"] + " Person:" + row["fname"] + " " + row["lname"]);
+            }
+
+            cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
+
+            cmb_borrowers.DisplayMember = "Value";
+            cmb_borrowers.ValueMember = "Key";
+            cmb_borrowers.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmb_borrowers.AutoCompleteSource = AutoCompleteSource.ListItems;
+
         }
 
 
-        private void reload_data()
+    private void reload_data()
         {
             this.donorsTableAdapter.Fill(this.sbmsDataSet.donors);
         }
@@ -202,106 +225,132 @@ namespace SBMS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            bool isValid = ValidateBeforeSave();
-
-            if (isValid == false)
+            try
             {
-                MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                bool isValid = ValidateBeforeSave();
 
-            }
-
-            //first  validate
-
-            dataFetchService = new DataFetchService();
-            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
-
-            if (donorFoundDuplicate == 1)
-            {
-
-                MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                clear();
-            }
-
-
-
-
-            // MessageBox.Show("Saving");
-            DateTime dt = DateTime.Now;
-
-            using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
-            {
-
-                using (SqlCommand command = new SqlCommand())
+                if (isValid == false)
                 {
-                    command.Connection = connection;
-                    string insertDonorQuery = "INSERT into donors" +
-                        "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,species_catgeroy_id,density_category_id,lower_density," +
-                         "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,) " +
-                         "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
-                         "@average_density,@upper_density,@owner_id,@acquired_date," +
-                         "@validation_id,@comment,@created_by)";
-                    command.CommandType = CommandType.Text;
-                    command.CommandText = insertDonorQuery;
-                    command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
-                    command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
-                    command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
-                    command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
-                    command.Parameters.AddWithValue("@species_catgeroy_id", cmb_specice_category.SelectedIndex.ToString());
-                    command.Parameters.AddWithValue("@species_stage_id", cmb_specice_stage.SelectedIndex.ToString());
-                    command.Parameters.AddWithValue("@density_category_id", cmb_density_category.SelectedIndex.ToString());
-                    command.Parameters.AddWithValue("@lower_density", txt_lower_density.Text.ToString());
-                    command.Parameters.AddWithValue("@average_density", txt_average_density.Text.ToString());
-                    command.Parameters.AddWithValue("@upper_density", txt_upper_density.Text.ToString());
-                    command.Parameters.AddWithValue("@owner_id", cmb_owners.SelectedIndex.ToString());
-                    command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
-                    command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
-                    command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
-                    command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+                    MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    logger.Info("Data is not saved. Please enter correct and valid value for all data elements") ;
 
-              
-
-                    try
-                    {
-
-                        if (connection.State == ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
-                        int recordsAffected = command.ExecuteNonQuery();
-
-                        if (recordsAffected > 0)
-                        {
-                            MessageBox.Show("Slide's Information Updated !", "Success");
-                            reload_data();
-                        }
-
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Donor");
-                    }
-                    finally
-                    {
-
-                        clear();
-
-                        connection.Close();
-                    }
+                    return;
 
                 }
 
+                bool isExchangeInfoOkay = ValidateExchangeInfo();
+
+                if (isExchangeInfoOkay == false)
+                {
+                    //validation message will be show on validateExchange method
+                    return;
+
+                }
+                //first  validate
+
+                dataFetchService = new DataFetchService();
+                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+
+                if (donorFoundDuplicate == 1)
+                {
+
+                    MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    logger.Info("System can not save a donor twice with code:" + txt_donor_code.Text.Trim());
+                    clear();
+                }
+
+
+
+
+                // MessageBox.Show("Saving");
+                DateTime dt = DateTime.Now;
+
+                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                {
+
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        string insertDonorQuery = "INSERT into donors" +
+                            "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,species_catgeroy_id,density_category_id,lower_density," +
+                             "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,isExchange,exchange_id) " +
+                             "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
+                             "@average_density,@upper_density,@owner_id,@acquired_date,@validation_id,@comment,@created_by,@isExchange,@exchange_id)";
+                        command.CommandType = CommandType.Text;
+                        command.CommandText = insertDonorQuery;
+                        command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
+                        command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
+                        command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
+                        command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
+                        command.Parameters.AddWithValue("@species_catgeroy_id", cmb_specice_category.SelectedIndex.ToString());
+                        command.Parameters.AddWithValue("@species_stage_id", cmb_specice_stage.SelectedIndex.ToString());
+                        command.Parameters.AddWithValue("@density_category_id", cmb_density_category.SelectedIndex.ToString());
+                        command.Parameters.AddWithValue("@lower_density", txt_lower_density.Text.ToString());
+                        command.Parameters.AddWithValue("@average_density", txt_average_density.Text.ToString());
+                        command.Parameters.AddWithValue("@upper_density", txt_upper_density.Text.ToString());
+                        command.Parameters.AddWithValue("@owner_id", cmb_owners.SelectedIndex.ToString());
+                        command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
+                        command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
+                        command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
+                        command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+                        if (exchange_flag == true)
+                        {
+                            command.Parameters.AddWithValue("@isExchange", 1);
+                            //OWNER IS SOME EXCHNAGE DONATOR
+                            command.Parameters.AddWithValue("@exchange_id", cmb_borrowers.SelectedIndex.ToString());
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@isExchange", 0);
+                            //owner of slide is EPHI
+                            command.Parameters.AddWithValue("@exchange_id", StartupValueServices.Exchange_id_default);
+                        }
+                        try
+                        {
+
+                            if (connection.State == ConnectionState.Closed)
+                            {
+                                connection.Open();
+                            }
+                            int recordsAffected = command.ExecuteNonQuery();
+
+                            if (recordsAffected > 0)
+                            {
+                                MessageBox.Show("Donor's Information is Created !", "Success");
+                                logger.Info("New Donor Saved");
+                                reload_data();
+                            }
+
+                        }
+                        catch (SqlException ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Donor");
+                            logger.Error(ex,"Error Donor was not Saved");
+                        }
+                        finally
+                        {
+
+                            clear();
+                            connection.Close();
+                        }
+
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+
+                logger.Error(ex, "Exception occured on save donor");
             }
         }
 
         private void dgr_donors_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-
             int rowIndex;
             rowIndex = e.RowIndex;
-
 
             try
             {
@@ -323,6 +372,7 @@ namespace SBMS
                     txt_acquired_date.Text = dgr_donors.Rows[e.RowIndex].Cells["acquireddateDataGridViewTextBoxColumn"].Value.ToString();
                     cmb_validation.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["validationidDataGridViewTextBoxColumn"].Value);
                     txt_comment.Text = dgr_donors.Rows[e.RowIndex].Cells["commentDataGridViewTextBoxColumn"].Value.ToString();
+                    cmb_borrowers.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["validationidDataGridViewTextBoxColumn"].Value);
 
                     btn_deactivate.Enabled = true;
                     btn_save_edit.Enabled = true;
@@ -362,7 +412,9 @@ namespace SBMS
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                //MessageBox.Show(exc.Message);
+                logger.Error(exc,"find Donor ");
+
             }
 
             if (found == false)
@@ -373,95 +425,120 @@ namespace SBMS
 
         private void btn_save_edit_Click(object sender, EventArgs e)
         {
-
-            dataFetchService = new DataFetchService();
-            int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCodeUpdate(txt_donor_code.Text, Id_update);
-
-            if (donorFoundDuplicate == 1)
+            try
             {
+                dataFetchService = new DataFetchService();
+                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCodeUpdate(txt_donor_code.Text, Id_update);
 
-                MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                return;
-            }
-
-            bool isValid = ValidateBeforeSave();
-
-            if (isValid == false)
-            {
-                MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-
-            }
-
-            if (Id_update != -1)
-            {
-                // MessageBox.Show("Saving");
-                DateTime dt = DateTime.Now;
-
-                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                if (donorFoundDuplicate == 1)
                 {
 
-                    using (SqlCommand command = new SqlCommand())
+                    MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                bool isValid = ValidateBeforeSave();
+
+                bool isExchangeInfoOkay = ValidateExchangeInfo();
+
+                if (isValid == false)
+                {
+                    MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+
+                }
+                if (isExchangeInfoOkay == false)
+                {
+                    //validation message will be show on validateExchange method
+                    return;
+
+                }
+
+                if (Id_update != -1)
+                {
+                    // MessageBox.Show("Saving");
+                    DateTime dt = DateTime.Now;
+
+                    using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
                     {
-                        command.Connection = connection;
-                        string updateDonorQuery = "UPDATE donors " +
-                            "SET bar_code=@bar_code,country_code=@country_code,donor_code=@donor_code,species_specific_id=@species_specific_id," +
-                            "species_stage_id=@species_stage_id,density_category_id=@density_category_id,lower_density=@lower_density,average_density=@average_density,upper_density=@upper_density," +
-                            "owner_id=@owner_id,acquired_date=@acquired_date,validation_id=@validation_id,comment=@comment,updated_by=@updated_by WHERE id=@id";
 
-                        command.CommandType = CommandType.Text;
-                        command.CommandText = updateDonorQuery;
-                        command.Parameters.AddWithValue("@id", Id_update);
-                        command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
-                        command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
-                        command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
-                        command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@species_stage_id", cmb_specice_stage.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@density_category_id", cmb_density_category.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@lower_density", txt_lower_density.Text.ToString());
-                        command.Parameters.AddWithValue("@average_density", txt_average_density.Text.ToString());
-                        command.Parameters.AddWithValue("@upper_density", txt_upper_density.Text.ToString());
-                        command.Parameters.AddWithValue("@owner_id", cmb_owners.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
-                        command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
-                        command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
-                        command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
-
-
-                        try
+                        using (SqlCommand command = new SqlCommand())
                         {
+                            command.Connection = connection;
+                            string updateDonorQuery = "UPDATE donors " +
+                                "SET bar_code=@bar_code,country_code=@country_code,donor_code=@donor_code,species_specific_id=@species_specific_id," +
+                                "species_stage_id=@species_stage_id,density_category_id=@density_category_id,lower_density=@lower_density,average_density=@average_density,upper_density=@upper_density," +
+                                "owner_id=@owner_id,acquired_date=@acquired_date,validation_id=@validation_id,comment=@comment,updated_by=@updated_by,isExchange=@isExchange,exchange_id=@exchange_id WHERE id=@id";
 
-                            if (connection.State == ConnectionState.Closed)
+                            command.CommandType = CommandType.Text;
+                            command.CommandText = updateDonorQuery;
+                            command.Parameters.AddWithValue("@id", Id_update);
+                            command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
+                            command.Parameters.AddWithValue("@country_code", txt_country_code.Text.ToString());
+                            command.Parameters.AddWithValue("@donor_code", txt_donor_code.Text.ToString());
+                            command.Parameters.AddWithValue("@species_specific_id", cmb_specice_specifics.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@species_stage_id", cmb_specice_stage.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@density_category_id", cmb_density_category.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@lower_density", txt_lower_density.Text.ToString());
+                            command.Parameters.AddWithValue("@average_density", txt_average_density.Text.ToString());
+                            command.Parameters.AddWithValue("@upper_density", txt_upper_density.Text.ToString());
+                            command.Parameters.AddWithValue("@owner_id", cmb_owners.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@acquired_date", txt_acquired_date.Value);
+                            command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
+                            command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+
+                            if (exchange_flag == true)
                             {
-                                connection.Open();
+                                command.Parameters.AddWithValue("@isExchange", 1);
+                                //OWNER IS SOME EXCHNAGE DONATOR
+                                command.Parameters.AddWithValue("@exchange_id", cmb_borrowers.SelectedIndex.ToString());
                             }
-                            int recordsAffected = command.ExecuteNonQuery();
-                            if (recordsAffected > 0)
+                            else
                             {
-                                MessageBox.Show("Donor's Information Updated!", "Success");
+                                command.Parameters.AddWithValue("@isExchange", 0);
+                                //owner of slide is EPHI
+                                command.Parameters.AddWithValue("@exchange_id", StartupValueServices.Exchange_id_default);
+                            }
+                            try
+                            {
+
+                                if (connection.State == ConnectionState.Closed)
+                                {
+                                    connection.Open();
+                                }
+                                int recordsAffected = command.ExecuteNonQuery();
+                                if (recordsAffected > 0)
+                                {
+                                    MessageBox.Show("Donor's Information Updated!", "Success");
+                                    reload_data();
+                                }
+
+                            }
+                            catch (SqlException ex)
+                            {
+                                MessageBox.Show(ex.Message.ToString(), "ERROR Updating Donor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            }
+                            finally
+                            {
+                                clear();
                                 reload_data();
+                                lbl_editing_status.Visible = false;
+                                // btn_deactivate.Enabled = false;
+                                btn_save.Enabled = true;
+                                btn_save_edit.Enabled = false;
+                                connection.Close();
                             }
 
                         }
-                        catch (SqlException ex)
-                        {
-                            MessageBox.Show(ex.Message.ToString(), "ERROR Updating Donor", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                        finally
-                        {
-                            clear();
-                            reload_data();
-                            lbl_editing_status.Visible = false;
-                            // btn_deactivate.Enabled = false;
-                            btn_save.Enabled = true;
-                            btn_save_edit.Enabled = false;
-                            connection.Close();
-                        }
-
                     }
                 }
+            }
+            catch (Exception ex) {
+                logger.Error(ex,"Edit/Update Donor Info");
+
             }
 
         }
@@ -520,6 +597,17 @@ namespace SBMS
             txt_barcode_scan_in.Text = "";
         }
 
+        private bool ValidateExchangeInfo() {
+
+            if (cmb_borrowers.SelectedIndex == 0 && exchange_flag==true)
+            {
+                MessageBox.Show("Please, select exchange contact. If the donor is acquired by Exchange. Othewise press 'Not Exchange Button to Skio'", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+
         private bool ValidateBeforeSave()
         {
 
@@ -571,6 +659,58 @@ namespace SBMS
             lbl_editing_status.Visible = false;
             clear();
 
+        }
+
+        private void btn_contact_Click(object sender, EventArgs e)
+        {
+            Borrowers contact = new Borrowers();
+            contact.MdiParent = this.MdiParent;
+            contact.Show();
+        }
+
+        private void rdo_exchange_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdo_exchange.Checked)
+            {
+
+                excahnge_panel.Visible = true;
+                excahnge_panel.Enabled = true;
+                exchange_flag = true;
+                rdo_notexchange.Visible = true;
+                return;
+            }
+   
+
+        }
+
+        private void rdo_notexchange_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo_notexchange.Checked)
+            {
+                excahnge_panel.Visible = false;
+                excahnge_panel.Enabled = false;
+                exchange_flag = false;
+                rdo_exchange.Checked = false;
+                rdo_notexchange.Visible = false;
+
+                return;
+            }
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
+            borrowerDic.Add(-1, "--Select Exchange Contact---");
+            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            {
+                borrowerDic.Add(Convert.ToInt32(row["id"]),"Country:" + row["country"]+ " Person:" + row["fname"]+" "+row["lname"]);
+            }
+
+            cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
+
+            cmb_borrowers.DisplayMember = "Value";
+            cmb_borrowers.ValueMember = "Key";
         }
     }
 }
