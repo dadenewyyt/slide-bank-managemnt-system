@@ -291,6 +291,7 @@
     <Compile Include="Services\HelperServices.cs" />
     <Compile Include="Services\LookUpServices.cs" />
     <Compile Include="Services\SearchAndFilterService.cs" />
+    <Compile Include="Services\StartupValueServices.cs" />
     <Compile Include="Services\UserAccountServices.cs" />
     <Compile Include="SlideHistory.cs">
       <SubType>Form</SubType>
