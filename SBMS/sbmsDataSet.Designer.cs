@@ -9095,8 +9095,6 @@ namespace SBMS {
                 this.columnbar_code1.MaxLength = 2147483647;
                 this.columncreated_by3.MaxLength = 2147483647;
                 this.columnupdated_by3.MaxLength = 2147483647;
-                this.columncreated_date2.AllowDBNull = false;
-                this.columnupdated_date2.AllowDBNull = false;
                 this.columnborrowed_by.MaxLength = 50;
                 this.columncheckinStatus.MaxLength = 50;
             }
@@ -20644,7 +20642,13 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date2 {
                 get {
-                    return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_date2Column]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_date2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'created_date2\' in table \'current_lending_history\' is DBNull" +
+                                ".", e);
+                    }
                 }
                 set {
                     this[this.tablecurrent_lending_history.created_date2Column] = value;
@@ -20655,7 +20659,13 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_date2 {
                 get {
-                    return ((global::System.DateTime)(this[this.tablecurrent_lending_history.updated_date2Column]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.updated_date2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date2\' in table \'current_lending_history\' is DBNull" +
+                                ".", e);
+                    }
                 }
                 set {
                     this[this.tablecurrent_lending_history.updated_date2Column] = value;
@@ -21138,6 +21148,30 @@ namespace SBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setupdated_by3Null() {
                 this[this.tablecurrent_lending_history.updated_by3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Iscreated_date2Null() {
+                return this.IsNull(this.tablecurrent_lending_history.created_date2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setcreated_date2Null() {
+                this[this.tablecurrent_lending_history.created_date2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isupdated_date2Null() {
+                return this.IsNull(this.tablecurrent_lending_history.updated_date2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setupdated_date2Null() {
+                this[this.tablecurrent_lending_history.updated_date2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

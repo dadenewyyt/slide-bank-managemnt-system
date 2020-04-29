@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2020-04-29 22:07:20.8744 SBMS.Program importing defaults
 2020-04-29 22:07:23.5364 SBMS.Services.ImportDefaultsService Default Country of Origin Data is Added
 2020-04-29 22:56:44.4507 SBMS.Program importing defaults
@@ -16,3 +17,6 @@ System.InvalidOperationException: Sequence contains no elements
    at SBMS.Program.Main()
 2020-04-29 23:04:43.4015 SBMS.Program importing defaults
 2020-04-29 23:04:58.5615 SBMS.Program Default is found proceeding.
+=======
+2020-04-22 09:01:28.3323 SBMS.Services.CheckinCheckoutService Commit:Both records are written to database.
+>>>>>>> 2c3542deb9248937667172aceafbcf5c9c39829f

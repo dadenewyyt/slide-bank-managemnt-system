@@ -39,7 +39,7 @@ namespace SBMS
         private void btn_checkin_Click(object sender, EventArgs e)
         {
 
-            Checkin_Checkout checkin = new Checkin_Checkout();
+            Checkin checkin = new Checkin();
             checkin.MdiParent = this.ParentForm;
             checkin.Show();
         }

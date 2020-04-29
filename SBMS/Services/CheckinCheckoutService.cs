@@ -115,7 +115,6 @@ namespace SBMS.Services
                 connection.Open();
                 transaction = connection.BeginTransaction("CheckinSlidesTransaction");
 
-
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -150,7 +149,7 @@ namespace SBMS.Services
                             // on the server that would cause the rollback to fail, such as
                             // a closed connection.
                             logger.Error(ex,"Rollback Exception Type: {0}"+ ex2.GetType());
-                            Console.WriteLine("  Message: {0}", ex2.Message);
+                            
                         }
                         return false;
                     }
