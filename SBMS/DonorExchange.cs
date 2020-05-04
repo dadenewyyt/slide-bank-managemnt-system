@@ -83,7 +83,7 @@ namespace SBMS
 
 
                 // Create a new data adapter based on the specified query.
-                dataAdapterDonorsDataGridview = new SqlDataAdapter(selectCommand, DatabaseServices.connectionString);
+                dataAdapterDonorsDataGridview = new SqlDataAdapter(selectCommand, DBConnectionSingltonServices.connectionString);
 
                 // Create a command builder to generate SQL update, insert, and
                 // delete commands based on selectCommand. 
@@ -233,7 +233,7 @@ namespace SBMS
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
 
-                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())
@@ -408,7 +408,7 @@ namespace SBMS
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
 
-                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())

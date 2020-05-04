@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SBMS.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +21,11 @@ namespace SBMS
 
         int damaged_slide_id = -1;
         int replaced_slide_id = -1;
-
+        ReplacementServices replacementService;
         public SlideReplace()
         {
             InitializeComponent();
+            replacementService = new ReplacementServices();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -106,7 +108,7 @@ namespace SBMS
             if (grd_replace.Rows.Count > 0)
             {
                 string barcode = grd_replace.Rows[e.RowIndex].Cells["barcodereplacdataGridViewTextBoxColumn"].Value + string.Empty;
-                replaced_slide_id = Convert.ToInt32(grd_replace.Rows[e.RowIndex].Cells["idreplaceGridViewTextBoxColumn1"].Value);
+                replaced_slide_id = Convert.ToInt32(grd_replace.Rows[e.RowIndex].Cells["idreplaceGridViewTextBoxColumn"].Value);
                 lbl_selection_replace.ForeColor = Color.Green;
                 lbl_selection_replace.Text = "Replacement Slide Selected => Bardcode:" + barcode;
                 replace_selected = true;
@@ -119,29 +121,29 @@ namespace SBMS
 
             if (damaged_selected == true && replace_selected == false)
             {
-                MessageBox.Show("Select the Replacement Slide. Come back.");
+                MessageBox.Show("Select the Replacement Slide.");
                 return false;
             }
             if (replace_selected == true && damaged_selected == false)
             {
-                MessageBox.Show("Select the Damaged Slide to be replaced.Come back.");
+                MessageBox.Show("Select the Damaged Slide to be replaced.");
                 return false;
             }
             if (damaged_selected == false && replace_selected == false)
             {
-                MessageBox.Show("Nothing is Selected ?");
+                MessageBox.Show("Please,select slides from left and right");
                 return false;
             }
             if (damaged_speciece != replacement_speciece)
             {
-                DialogResult result = MessageBox.Show("Speciecs doesn match! Are you sure you would like to proceed? ", "Replacment Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if (result == DialogResult.No) return false;
+                MessageBox.Show("Speciecs doesn match! Select Same Speciece Slides. ", "Replacment Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);             
+                return false;
             }
             if (damaged_slide_id == -1)
             {
                 return false;
             }
-            if (replaced_slide_id != -1)
+            if (replaced_slide_id == -1)
             {
                 return false;
             }
@@ -153,15 +155,42 @@ namespace SBMS
         private void btn_replace_Click(object sender, EventArgs e)
         {
             bool isEverythingOk = ValidateSelection();
+            MessageBox.Show(isEverythingOk.ToString());
+            bool replaceOk = false;
+            if (isEverythingOk) {
+                
+                replaceOk = replacementService.ReplaceSlides(damaged_slide_id, replaced_slide_id);
 
-            if (isEverythingOk == true) { 
-            
-                //replacment starts nows
+                if (replaceOk) {
 
-            
+                    MessageBox.Show("Replacement was succesfull");
+                }
+
+                clear_data();
             }
 
-            
+        }
+
+        private void clear_data() {
+
+          
+            grd_damaged.DataSource = null;
+            grd_replace.DataSource = null;
+        
+            this.slide_reserved_for_replacementTableAdapter.Fill(this.sbmsDataSet.slide_reserved_for_replacement);
+            this.slide_to_replaceTableAdapter.Fill(this.sbmsDataSet.slide_to_replace);
+
+            grd_damaged.DataSource = slidetoreplaceBindingSource;
+            grd_replace.DataSource = slidereservedforreplacementBindingSource;
+            grd_damaged.Refresh();
+            grd_replace.Refresh();
+        }
+
+        private void btn_replacment_history_Click(object sender, EventArgs e)
+        {
+            ReplacementHistory replacement = new ReplacementHistory();
+            replacement.MdiParent = this.MdiParent;
+            replacement.Show();
         }
     }
 }

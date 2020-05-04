@@ -147,7 +147,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(277, 6);
+            this.label18.Location = new System.Drawing.Point(328, 6);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(642, 33);
             this.label18.TabIndex = 11;
@@ -248,7 +248,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1387, 738);
+            this.tabPage1.Size = new System.Drawing.Size(1387, 460);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Active Lendings";
             // 

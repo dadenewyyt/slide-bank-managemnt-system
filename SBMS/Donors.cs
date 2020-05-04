@@ -87,7 +87,7 @@ namespace SBMS
 
 
                 // Create a new data adapter based on the specified query.
-                dataAdapterDonorsDataGridview = new SqlDataAdapter(selectCommand, DatabaseServices.connectionString);
+                dataAdapterDonorsDataGridview = new SqlDataAdapter(selectCommand, DBConnectionSingltonServices.connectionString);
 
                 // Create a command builder to generate SQL update, insert, and
                 // delete commands based on selectCommand. 
@@ -266,7 +266,7 @@ namespace SBMS
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
 
-                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())
@@ -330,7 +330,6 @@ namespace SBMS
                         }
                         finally
                         {
-
                             clear();
                             connection.Close();
                         }
@@ -372,7 +371,20 @@ namespace SBMS
                     txt_acquired_date.Text = dgr_donors.Rows[e.RowIndex].Cells["acquireddateDataGridViewTextBoxColumn"].Value.ToString();
                     cmb_validation.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["validationidDataGridViewTextBoxColumn"].Value);
                     txt_comment.Text = dgr_donors.Rows[e.RowIndex].Cells["commentDataGridViewTextBoxColumn"].Value.ToString();
-                    cmb_borrowers.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["validationidDataGridViewTextBoxColumn"].Value);
+
+                    MessageBox.Show("you selected row:" + dgr_donors.Rows[e.RowIndex].Cells["isExchangeDataGridViewColumn"].Value.ToString());
+                    if (Convert.ToBoolean(dgr_donors.Rows[e.RowIndex].Cells["isExchangeDataGridViewColumn"].Value))
+                    {
+                        rdo_exchange.Checked = true;
+                        rdo_exchange_CheckedChanged(null, null);    
+                        cmb_borrowers.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["isExchangeDataGridViewColumn"].Value);
+                    }
+                    else
+                    {
+                        rdo_notexchange.Checked = true;
+                        rdo_notexchange_CheckedChanged(null, null);
+                        cmb_borrowers.SelectedIndex = 0;
+                    }
 
                     btn_deactivate.Enabled = true;
                     btn_save_edit.Enabled = true;
@@ -460,7 +472,7 @@ namespace SBMS
                     // MessageBox.Show("Saving");
                     DateTime dt = DateTime.Now;
 
-                    using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                    using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                     {
 
                         using (SqlCommand command = new SqlCommand())

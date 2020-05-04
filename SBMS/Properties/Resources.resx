@@ -136,13 +136,19 @@
   <data name="lock-4441691_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock-4441691_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="splash_SBMS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash_SBMS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="2000px-Flag_of_Ethiopia.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2000px-Flag_of_Ethiopia.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usaid_Icap_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usaid_Icap_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usaid_Icap_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usaid_Icap_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\click.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

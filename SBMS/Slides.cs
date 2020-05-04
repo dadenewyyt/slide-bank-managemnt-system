@@ -359,7 +359,7 @@ namespace SBMS
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
 
-                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())
@@ -517,7 +517,7 @@ namespace SBMS
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
 
-                using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())

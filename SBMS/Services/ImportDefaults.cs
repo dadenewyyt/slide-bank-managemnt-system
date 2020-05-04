@@ -17,7 +17,7 @@ namespace SBMS.Services
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(Services.DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())
@@ -90,7 +90,7 @@ namespace SBMS.Services
         {
 
             DataTable searchResults = new DataTable();
-            using (var con = new SqlConnection(DatabaseServices.connectionString))
+            using (var con = new SqlConnection(DBConnectionSingltonServices.connectionString))
             using (var cmd = new SqlCommand("SELECT id FROM borrowers where isDefault=@isDefault", con))
             using (var da = new SqlDataAdapter(cmd))
             {

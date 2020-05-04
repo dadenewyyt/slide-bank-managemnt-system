@@ -77,7 +77,9 @@ namespace SBMS
 
         private void btn_user_account_Click(object sender, EventArgs e)
         {
-
+            ExchangedSlides exchanged = new ExchangedSlides();
+            exchanged.MdiParent = this.MdiParent;
+            exchanged.Show();
 
         }
 
@@ -115,6 +117,13 @@ namespace SBMS
             DueDateReminderCheckedOut reminder = new DueDateReminderCheckedOut();
             reminder.MdiParent = this.ParentForm;
             reminder.Show();
+        }
+
+        private void btn_replacment_history_Click(object sender, EventArgs e)
+        {
+            ReplacementHistory replacement = new ReplacementHistory();
+            replacement.MdiParent = this.MdiParent;
+            replacement.Show();
         }
     }
 }

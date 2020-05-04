@@ -83,6 +83,16 @@ namespace SBMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap click {
+            get {
+                object obj = ResourceManager.GetObject("click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -126,6 +136,16 @@ namespace SBMS.Properties {
         internal static System.Drawing.Bitmap output_onlinepngtools {
             get {
                 object obj = ResourceManager.GetObject("output-onlinepngtools", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap splash_SBMS {
+            get {
+                object obj = ResourceManager.GetObject("splash_SBMS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace SBMS.Services
 {
-    public static class DatabaseServices
+    public static class DBConnectionSingltonServices
     {
         public static String connectionString = ConfigurationManager.ConnectionStrings["SBMS.Properties.Settings.sbmsConnectionStringDaniel"].ConnectionString;
 

@@ -24,7 +24,7 @@ namespace SBMS.Services
 
             list_of_ids_with_comma = list_of_ids_with_comma.Remove(list_of_ids_with_comma.Length - 1);//reove tge kaqst ,
 
-            using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+            using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
             {
 
                 using (SqlCommand command = new SqlCommand())
@@ -109,7 +109,7 @@ namespace SBMS.Services
         {
 
             //first update the slide using slide id to be isBorrowed = 0 than isBorrowed=1
-            using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+            using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
             {
                 SqlTransaction transaction;
                 connection.Open();
@@ -211,7 +211,7 @@ namespace SBMS.Services
         {
 
             //first update the slide using slide id to be isBorrowed = 0 than isBorrowed=1
-            using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+            using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
             {
 
                 using (SqlCommand command = new SqlCommand())

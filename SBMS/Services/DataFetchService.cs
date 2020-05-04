@@ -9,7 +9,7 @@ namespace SBMS.Services
     {
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public DataFetchService() { DatabaseServices.GetConnection(); }
+        public DataFetchService() { DBConnectionSingltonServices.GetConnection(); }
 
         public DataTable FecthSlideByDonorCode(string donorCode)
         {
@@ -18,7 +18,7 @@ namespace SBMS.Services
             if (String.IsNullOrEmpty(donorCode) == false)
             {
                 string selectquery = "select * from donors where donor_code=" + donorCode.Trim();
-                using (SqlDataAdapter adapter = new SqlDataAdapter(selectquery, DatabaseServices.con))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(selectquery, DBConnectionSingltonServices.con))
                 {
 
                     try
@@ -44,7 +44,7 @@ namespace SBMS.Services
             if (String.IsNullOrEmpty(donorCode) == false)
             {
                 string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim();
-                using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+                using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
                 {
 
                     try
@@ -80,7 +80,7 @@ namespace SBMS.Services
             if (String.IsNullOrEmpty(donorCode) == false)
             {
                 string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim() + "and id=" + DonorId;
-                using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+                using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
                 {
 
                     try
@@ -117,7 +117,7 @@ namespace SBMS.Services
             if (String.IsNullOrEmpty(barcode) == false)
             {
                 string selectquery = "SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date FROM dbo.current_lending as l INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id INNER JOIN dbo.slides AS s ON s.id = l.slide_id INNER JOIN dbo.donors as d on d.id = s.donor_id WHERE (s.bar_code="+barcode+")ORDER BY d.donor_code,l.due_date ASC;";
-                using (SqlDataAdapter adapter = new SqlDataAdapter(selectquery, DatabaseServices.con))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(selectquery, DBConnectionSingltonServices.con))
                 {
 
                     try
@@ -146,7 +146,7 @@ namespace SBMS.Services
             if (String.IsNullOrEmpty(sequence) == false)
             {
                 string selectquery = "select id from slides where bar_code= "+barcode +" and sequence=" + sequence.Trim();
-                using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+                using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
                 {
 
                     try
@@ -183,7 +183,7 @@ namespace SBMS.Services
 
 
             string selectquery = "select sequence from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box;
-            using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+            using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
             {
 
                 try
@@ -216,7 +216,7 @@ namespace SBMS.Services
 
 
             string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box +" and id =" + slide_id; ;
-            using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+            using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
             {
 
                 try
@@ -248,7 +248,7 @@ namespace SBMS.Services
         public int CheckIfLocationOccuiped(int cabinet, int drawer, int box)
         {
             string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box;
-            using (SqlCommand command2 = new SqlCommand(selectquery, DatabaseServices.con))
+            using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
             {
 
                 try

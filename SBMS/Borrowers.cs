@@ -99,7 +99,7 @@ namespace SBMS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(Services.DatabaseServices.connectionString))
+            using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
             {
 
                 using (SqlCommand command = new SqlCommand())
@@ -175,7 +175,7 @@ namespace SBMS
             if (borrower_update_id != -1)
             {
 
-                using (SqlConnection connection = new SqlConnection(Services.DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())
@@ -254,7 +254,7 @@ namespace SBMS
             if (borrower_update_id != -1)
             {
 
-                using (SqlConnection connection = new SqlConnection(Services.DatabaseServices.connectionString))
+                using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
                 {
 
                     using (SqlCommand command = new SqlCommand())

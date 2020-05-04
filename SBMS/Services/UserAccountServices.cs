@@ -23,7 +23,7 @@ namespace SBMS.Services
         public static bool login(string uname, string password)
         {
 
-            using (SqlConnection connection = new SqlConnection(DatabaseServices.connectionString))
+            using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
             {
 
                 using (SqlCommand command = new SqlCommand())
