@@ -32,7 +32,7 @@ namespace SBMS
                     logger.Info("Default is found proceeding.");
                     StartupValueServices.Exchange_id_default = id;
 
-                    Application.Run(new MDIChild());
+                    Application.Run(new Splash());
 
                 }
                 else {
@@ -48,10 +48,9 @@ namespace SBMS
                 }
             }
              catch (Exception ex) {
-                 MessageBox.Show(ex.Message+"Hi, the system is reporting problem with SQL Server Database\n");
-                 logger.Error(ex,"Hi, the system is reporting problem importing Counry of Origin\n");
-                 Application.Exit();
-                 
+                 MessageBox.Show(ex.Message+"Hi, the system is reporting problem with SQL \n");
+                 logger.Error(ex,"see application log error for the cause of this error \n");
+ 
             }
 
         }

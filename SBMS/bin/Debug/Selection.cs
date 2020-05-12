@@ -188,8 +188,16 @@ namespace SBMS
             others_md_datatable.Clear();
             others_hd_datatable.Clear();
 
+            //borrella
+            bo_ld_datatable.Clear();
+            bo_md_datatable.Clear();
+            bo_hd_datatable.Clear();
+
+            //negative
+            negatives_datatable.Clear();
+
             //mereged
-           // mergedSearchResult.Clear();
+            // mergedSearchResult.Clear();
         }
 
         private void searchPfPvs() {
@@ -323,20 +331,6 @@ namespace SBMS
             {
                 int ld_q = Convert.ToInt32(borrela_all_q.Value);
                 bo_ld_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("borrella", ld_q, "A");
-            }
-
-            if (borrela_all_q.Value > 0)
-            {
-                int md_q = Convert.ToInt32(borrela_all_q.Value);
-                bo_md_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("borrella", md_q, "B");
-                bo_ld_datatable.Merge(bo_md_datatable);
-            }
-
-            if (borrela_all_q.Value > 0)
-            {
-                int hd_q = Convert.ToInt32(borrela_all_q.Value);
-                bo_hd_datatable = searchAndFilterService.searchSlideByParasiteQuanityAndDensity("borrella", hd_q, "C");
-                bo_ld_datatable.Merge(bo_hd_datatable);
             }
 
         }
@@ -561,6 +555,8 @@ namespace SBMS
             others_all_q.Value = 0;
             borrela_all_q.Value = 0;
             negatives_q.Value = 0;
+
+
 
             // TODO: This line of code loads data into the 'sbmsDataSet.slide_search' table. You can move, or remove it, as needed.
             this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);

@@ -43,3 +43,9 @@ C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csp
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csproj.CopyComplete
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.exe
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.pdb
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.ReplacementHistory.resources
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.exe.manifest
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\bin\Debug\SBMS.application
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.exe.manifest
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.application
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csprojAssemblyReference.cache

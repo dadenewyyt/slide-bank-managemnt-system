@@ -534,9 +534,9 @@
             this.label19.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
             this.label19.Location = new System.Drawing.Point(10, 17);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 17);
+            this.label19.Size = new System.Drawing.Size(138, 17);
             this.label19.TabIndex = 36;
-            this.label19.Text = "Borrower:";
+            this.label19.Text = "Contact Organisation";
             // 
             // button4
             // 
@@ -563,9 +563,9 @@
             // txt_search
             // 
             this.txt_search.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_search.Location = new System.Drawing.Point(83, 13);
+            this.txt_search.Location = new System.Drawing.Point(149, 13);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(290, 25);
+            this.txt_search.Size = new System.Drawing.Size(224, 25);
             this.txt_search.TabIndex = 31;
             this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_pressed);
             // 

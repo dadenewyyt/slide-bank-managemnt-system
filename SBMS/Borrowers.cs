@@ -76,7 +76,7 @@ namespace SBMS
                     txt_pobox.Text = dgr_borrower.Rows[e.RowIndex].Cells["postcodeDataGridViewTextBoxColumn"].Value.ToString();
 
                     txt_hno.Text = dgr_borrower.Rows[e.RowIndex].Cells["hnoDataGridViewTextBoxColumn"].Value.ToString();
-                    txt_notes.Text = dgr_borrower.Rows[e.RowIndex].Cells["fnameDataGridViewTextBoxColumn"].Value.ToString();
+                    txt_notes.Text = dgr_borrower.Rows[e.RowIndex].Cells["noteDataGridViewTextBoxColumn"].Value.ToString();
 
                     //enable_disable_inputs(true); //enable for select
 
@@ -140,7 +140,7 @@ namespace SBMS
 
                         if (recordsAffected > 0)
                         {
-                            MessageBox.Show("Borrower's Information Saved !", "Success");
+                            MessageBox.Show("Contact's Information Saved !", "Success");
                             reload_data();
                         }
 
@@ -217,7 +217,7 @@ namespace SBMS
 
                             if (recordsAffected > 0)
                             {
-                                MessageBox.Show("Borrower Information is Updated !", "Success");
+                                MessageBox.Show("Contact's Information is Updated !", "Success");
                                 reload_data();
 
                             }
@@ -283,7 +283,7 @@ namespace SBMS
 
                             if (recordsAffected > 0)
                             {
-                                MessageBox.Show("Borrower Information is Deleted !", "Success");
+                                MessageBox.Show("Contact's Information is Deleted !", "Success");
                                 reload_data();
 
                             }
@@ -327,13 +327,13 @@ namespace SBMS
                 foreach (DataGridViewRow row in dgr_borrower.Rows)
                 {
                     // searchCompar = String.Concat(row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString());
-                    if (null != row.Cells[4].Value)
+                    if (null != row.Cells[3].Value)
                     {
-                        if (row.Cells[4].Value.ToString().Contains(searchValue))
+                        if (String.Compare(row.Cells[3].Value.ToString(),searchValue)==0)
                         {
                             row.Selected = true;
                             found = true;
-                            MessageBox.Show("Borrower is found by organisation. See hightligthed", "Find Result");
+                            MessageBox.Show("Contact is found by organisation. See hightligthed", "Find Result");
                             break;
                         }
                     }
@@ -346,7 +346,7 @@ namespace SBMS
 
             if (found == false)
             {
-                MessageBox.Show("Borrower is not found. With a organisation name : " + searchValue.ToString(), "Find Result");
+                MessageBox.Show("Contact is not found. With a organisation name : " + searchValue.ToString(), "Find Result");
             }
         }
 

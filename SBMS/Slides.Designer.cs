@@ -291,7 +291,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.txt_bar_code);
             this.splitContainer1.Panel2.Controls.Add(this.txt_country_code);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Size = new System.Drawing.Size(1353, 131);
+            this.splitContainer1.Size = new System.Drawing.Size(1477, 131);
             this.splitContainer1.SplitterDistance = 28;
             this.splitContainer1.TabIndex = 16;
             // 
@@ -578,7 +578,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(885, 486);
+            this.tabControl1.Size = new System.Drawing.Size(973, 611);
             this.tabControl1.TabIndex = 48;
             // 
             // tabPage1
@@ -592,7 +592,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(877, 454);
+            this.tabPage1.Size = new System.Drawing.Size(965, 579);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "100 Recent Slides";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -679,7 +679,7 @@
             this.dgr_recentslides.ShowCellToolTips = false;
             this.dgr_recentslides.ShowEditingIcon = false;
             this.dgr_recentslides.ShowRowErrors = false;
-            this.dgr_recentslides.Size = new System.Drawing.Size(865, 412);
+            this.dgr_recentslides.Size = new System.Drawing.Size(953, 528);
             this.dgr_recentslides.TabIndex = 0;
             this.dgr_recentslides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selected_row);
             // 
@@ -904,7 +904,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(877, 454);
+            this.tabPage2.Size = new System.Drawing.Size(965, 579);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "All Slides in Database";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1002,7 +1002,7 @@
             this.dgr_allslides.ShowCellToolTips = false;
             this.dgr_allslides.ShowEditingIcon = false;
             this.dgr_allslides.ShowRowErrors = false;
-            this.dgr_allslides.Size = new System.Drawing.Size(865, 409);
+            this.dgr_allslides.Size = new System.Drawing.Size(953, 528);
             this.dgr_allslides.TabIndex = 1;
             this.dgr_allslides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selected_row_all_slides);
             // 
@@ -1215,7 +1215,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 28);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(877, 454);
+            this.tabPage3.Size = new System.Drawing.Size(965, 579);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Occupied Places ?";
             // 
@@ -1310,7 +1310,7 @@
             this.dgr_locations.DataSource = this.locationDataBindingSource;
             this.dgr_locations.Location = new System.Drawing.Point(6, 44);
             this.dgr_locations.Name = "dgr_locations";
-            this.dgr_locations.Size = new System.Drawing.Size(871, 448);
+            this.dgr_locations.Size = new System.Drawing.Size(953, 529);
             this.dgr_locations.TabIndex = 0;
             // 
             // barcodeDataGridViewTextBoxColumn
@@ -1938,8 +1938,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.btn_save);
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
-            this.splitContainer2.Size = new System.Drawing.Size(1353, 561);
-            this.splitContainer2.SplitterDistance = 436;
+            this.splitContainer2.Size = new System.Drawing.Size(1477, 671);
+            this.splitContainer2.SplitterDistance = 475;
             this.splitContainer2.TabIndex = 17;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
@@ -1993,7 +1993,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.CancelButton = this.btn_clear_selection;
-            this.ClientSize = new System.Drawing.Size(1357, 711);
+            this.ClientSize = new System.Drawing.Size(1483, 803);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;

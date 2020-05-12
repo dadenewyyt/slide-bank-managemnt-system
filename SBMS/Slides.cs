@@ -20,6 +20,7 @@ namespace SBMS
         public int donor_id = -1;
         public bool history_flag = false;
 
+
         //LookUpServices lookUpServices;
 
         public int Slides_Id_Update { get => slide_id; set => slide_id = value; }
@@ -298,147 +299,154 @@ namespace SBMS
         {
 
             int cabinet = 0, drawer = 0, box = 0; bool isValid = true; //0,0,0 is imaginary postion
-
-
-            dataFetchService = new DataFetchService();
-            int slideDuplicate = dataFetchService.CheckDuplicateSlideInfo(txt_slide_sequence.Text,txt_bar_code.Text);
-
-            if (slideDuplicate == 1)
-            {
-
-                MessageBox.Show("Slide with Sequence Code <" + txt_slide_sequence.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                clear();
-                return;
-            }
-
-            if (history_flag == false)
-            {
-                isValid = true;// ValidateBeforeSave();
-            }
-
-
-
-            if (isValid == false && history_flag == false)
-            {
-                MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            //TODO:check location data if occupied or not
-
-
-            //check damaged is selecty
-            if (history_flag == true)
-            {
-
-                DialogResult result = MessageBox.Show("You have stated that slide is Damaged ?  Are you sure to save this slide ? Slide will never have real exisitince in physical location", "Damaged Slide Save", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.No)
-                {
-                    //execute normal code recheck slide as no 
-                    //turn on damaged off to NO
-                    rdoDamagedNo.Checked = true;
-                    location_panel.Enabled = true;
-                }
-            }
-
-            //convert to int
-            if (history_flag == false)
-            {
-                cabinet = Convert.ToInt32(txt_cabinet_number.Text.ToString());
-                drawer = Convert.ToInt32(txt_drawer_number.Text.ToString());
-                box = Convert.ToInt32(txt_box_number.Text.ToString());
-            }
-
             bool isValidLocation = true;
 
-            if (history_flag == false)
+            try
+            {
+               
                 isValidLocation = ValidateSlideLocationData("save");
 
-            if (Donor_Id_Slide != -1 && isValidLocation == true)
-            {
-                // MessageBox.Show("Saving");
-                DateTime dt = DateTime.Now;
+                dataFetchService = new DataFetchService();
+                int slideDuplicate = dataFetchService.CheckDuplicateSlideInfo(txt_slide_sequence.Text, txt_bar_code.Text);
 
-                using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
+                if (slideDuplicate == 1)
                 {
 
-                    using (SqlCommand command = new SqlCommand())
+                    MessageBox.Show("Slide with Sequence Code <" + txt_slide_sequence.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    clear();
+                    return;
+                }
+
+                if (history_flag == false)
+                {
+                    isValid = true;// ValidateBeforeSave();
+                }
+
+
+
+                if (isValid == false && history_flag == false)
+                {
+                    MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                //TODO:check location data if occupied or not
+
+
+                //check damaged is selecty
+                if (history_flag == true)
+                {
+
+                    DialogResult result = MessageBox.Show("You have stated that slide is Damaged ?  Are you sure to save this slide ? Slide will never have real exisitince in physical location", "Damaged Slide Save", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
                     {
-                        command.Connection = connection;
-                        string insertSlideQuery = "INSERT into slides" +
-                             "(bar_code,sequence,donor_id,cabinet_number,drawer_number,box_number,isDamaged,isReserved,isBorrowed,isActive,created_date,created_by) " +
-                              "VALUES (@bar_code,@sequence,@donor_id,@cabinet_number,@drawer_number,@box_number,@isDamaged,@isReserved,@isBorrowed,@isActive,@created_date,@created_by)";
-
-                        command.CommandType = CommandType.Text;
-                        command.CommandText = insertSlideQuery;
-
-                        command.Parameters.AddWithValue("@bar_code", txt_slide_scan.Text);
-                        command.Parameters.AddWithValue("@sequence", txt_slide_sequence.Text);
-                        command.Parameters.AddWithValue("@donor_id", Donor_Id_Slide);
-
-                        command.Parameters.AddWithValue("@cabinet_number", cabinet);
-                        command.Parameters.AddWithValue("@drawer_number", drawer);
-                        command.Parameters.AddWithValue("@box_number", box);
-
-
-                        if (rdoDamagedYes.Checked)
-                            command.Parameters.AddWithValue("@isDamaged", true);
-                        if (rdoDamagedNo.Checked)
-                            command.Parameters.AddWithValue("@isDamaged", false);
-
-                        if (rdoResevedYes.Checked)
-                            command.Parameters.AddWithValue("@isReserved", true);
-                        if (rdoResevedNo.Checked)
-                            command.Parameters.AddWithValue("@isReserved", false);
-
-                        if (rdoDamagedYes.Checked)
-                            command.Parameters.AddWithValue("@isActive", false);
-                        else
-                            command.Parameters.AddWithValue("@isActive", true);
-
-
-                        command.Parameters.AddWithValue("@isBorrowed", false);
-                        command.Parameters.AddWithValue("@created_date", DateTime.Today.Date);
-                        command.Parameters.AddWithValue("@created_by", "Full name="+UserAccountServices.Full_name + "=Username="+UserAccountServices.Username);
-
-                        try
-                        {
-
-                            if (connection.State == ConnectionState.Closed)
-                            {
-                                connection.Open();
-                            }
-
-                            int recordsAffected = command.ExecuteNonQuery();
-
-                            if (recordsAffected > 0)
-                            {
-                                MessageBox.Show("Slide's Information Saved !", "Success");
-                                reload_data();
-
-                            }
-
-                        }
-                        catch (SqlException ex)
-                        {
-                            MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Slides", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            logger.Error(ex, "Slide Saving error Exception");
-
-                        }
-                        finally
-                        {
-                            clear();
-                            this.btn_clear_selection_Click(null, null);
-                            //this.btn_reload_Click(null, null);
-                            lbl_editing_status.Visible = false;
-                           // btn_deactivate.Enabled = false;
-                            btn_save.Enabled = true;
-                            btn_edit_update.Enabled = false;
-                            connection.Close();
-                        }
-
+                        //execute normal code recheck slide as no 
+                        //turn on damaged off to NO
+                        rdoDamagedNo.Checked = true;
+                        location_panel.Enabled = true;
                     }
                 }
+
+                //convert to int
+                if (history_flag == false && isValidLocation==true)
+                {
+                    cabinet = Convert.ToInt32(txt_cabinet_number.Text.ToString());
+                    drawer = Convert.ToInt32(txt_drawer_number.Text.ToString());
+                    box = Convert.ToInt32(txt_box_number.Text.ToString());
+                }
+
+
+               
+
+                if (Donor_Id_Slide != -1 && isValidLocation == true)
+                {
+                    // MessageBox.Show("Saving");
+                    DateTime dt = DateTime.Now;
+
+                    using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
+                    {
+
+                        using (SqlCommand command = new SqlCommand())
+                        {
+                            command.Connection = connection;
+                            string insertSlideQuery = "INSERT into slides" +
+                                 "(bar_code,sequence,donor_id,cabinet_number,drawer_number,box_number,isDamaged,isReserved,isBorrowed,isActive,created_date,created_by) " +
+                                  "VALUES (@bar_code,@sequence,@donor_id,@cabinet_number,@drawer_number,@box_number,@isDamaged,@isReserved,@isBorrowed,@isActive,@created_date,@created_by)";
+
+                            command.CommandType = CommandType.Text;
+                            command.CommandText = insertSlideQuery;
+
+                            command.Parameters.AddWithValue("@bar_code", txt_slide_scan.Text);
+                            command.Parameters.AddWithValue("@sequence", txt_slide_sequence.Text);
+                            command.Parameters.AddWithValue("@donor_id", Donor_Id_Slide);
+
+                            command.Parameters.AddWithValue("@cabinet_number", cabinet);
+                            command.Parameters.AddWithValue("@drawer_number", drawer);
+                            command.Parameters.AddWithValue("@box_number", box);
+
+
+                            if (rdoDamagedYes.Checked)
+                                command.Parameters.AddWithValue("@isDamaged", true);
+                            if (rdoDamagedNo.Checked)
+                                command.Parameters.AddWithValue("@isDamaged", false);
+
+                            if (rdoResevedYes.Checked)
+                                command.Parameters.AddWithValue("@isReserved", true);
+                            if (rdoResevedNo.Checked)
+                                command.Parameters.AddWithValue("@isReserved", false);
+
+                            if (rdoDamagedYes.Checked)
+                                command.Parameters.AddWithValue("@isActive", false);
+                            else
+                                command.Parameters.AddWithValue("@isActive", true);
+
+
+                            command.Parameters.AddWithValue("@isBorrowed", false);
+                            command.Parameters.AddWithValue("@created_date", DateTime.Today.Date);
+                            command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+
+                            try
+                            {
+
+                                if (connection.State == ConnectionState.Closed)
+                                {
+                                    connection.Open();
+                                }
+
+                                int recordsAffected = command.ExecuteNonQuery();
+
+                                if (recordsAffected > 0)
+                                {
+                                    MessageBox.Show("Slide's Information Saved !", "Success");
+                                    reload_data();
+
+                                }
+
+                            }
+                            catch (SqlException ex)
+                            {
+                                MessageBox.Show(ex.Message.ToString(), "ERROR SAVING Slides", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                logger.Error(ex, "Slide Saving error Exception");
+
+                            }
+                            finally
+                            {
+                                clear();
+                                this.btn_clear_selection_Click(null, null);
+                                //this.btn_reload_Click(null, null);
+                                lbl_editing_status.Visible = false;
+                                // btn_deactivate.Enabled = false;
+                                btn_save.Enabled = true;
+                                btn_edit_update.Enabled = false;
+                                connection.Close();
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) {
+                logger.Error(ex, "Error at Save SLides");
             }
         }
 
@@ -647,7 +655,7 @@ namespace SBMS
 
             if (isLocationOccupied == 1)
             {
-
+                
                 MessageBox.Show("Slide exisit at [Cabinet = " + cabinet + " , Drawer = " + drawer + " , Box = " + box + "]. Please check for unoccupied slide location.", "Duplicate Location", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 btn_clear_selection_Click(null, null);
                 clear();

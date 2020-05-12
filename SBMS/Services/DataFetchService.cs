@@ -215,7 +215,7 @@ namespace SBMS.Services
         {
 
 
-            string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box +" and id =" + slide_id; ;
+            string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box ;
             using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
             {
 
@@ -227,23 +227,26 @@ namespace SBMS.Services
                     {
                         if (cr.HasRows == true)
                         {
-
-                            return -1;
+                            if (cr.GetInt32(0).ToString()==slide_id.ToString())
+                                return -1; //slide space is occupied
+                        }
+                        else {
+                            return 1; 
                         }
 
                     }
                     cr.Close();
+                    return -1; //not occupied
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    logger.Error(ex, "DataFetchService for Donor Fetch");
+                    logger.Error(ex, "DataFetchService for Donor Location Data Exception");
 
-                    return -1;
+                    return 1;
                 }
             }
-            return 1;
-        }
+          }
 
         public int CheckIfLocationOccuiped(int cabinet, int drawer, int box)
         {
