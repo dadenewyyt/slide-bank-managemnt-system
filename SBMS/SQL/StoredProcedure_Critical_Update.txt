@@ -132,3 +132,12 @@ WHERE        (d.isActive = 1)  and (s.isActive=1) and (s.isReserved=0) and (s.is
              (ss.specifics=@parasite_type)
 ORDER BY s.id;
 END
+
+
+----
+
+/* For security reasons the login is created disabled and with a random password. */
+/****** Object:  Login [daniel]    Script Date: 5/14/2020 10:51:30 AM ******/
+alter LOGIN [daniel] WITH PASSWORD=N'kissm4@5s', DEFAULT_DATABASE=[sbms], DEFAULT_LANGUAGE=[us_english], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+----

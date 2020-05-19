@@ -385,8 +385,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>validationDataBindingSource.xsd</DependentUpon>
     </Compile>
+    <None Include="Manual\Software User Manual-Draft-EPHI.docx" />
     <None Include="Resources\splash_SBMS.png" />
     <None Include="Resources\click.jpg" />
+    <Content Include="SQL\FixUserAuthentication.txt" />
     <Content Include="SQL\StoredProcedure_Critical_Update.txt" />
     <EmbeddedResource Include="AllSlides.resx">
       <DependentUpon>AllSlides.cs</DependentUpon>

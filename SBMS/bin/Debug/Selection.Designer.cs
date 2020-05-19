@@ -113,7 +113,7 @@
             this.txt_due_date = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
             this.txt_from_date = new System.Windows.Forms.DateTimePicker();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lbl_ont = new System.Windows.Forms.Label();
             this.cmb_borrowers = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -240,7 +240,6 @@
             this.splitContainer2.Panel1.Controls.Add(this.label7);
             this.splitContainer2.Panel1.Controls.Add(this.label6);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
-           
             // 
             // splitContainer2.Panel2
             // 
@@ -261,7 +260,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.txt_due_date);
             this.splitContainer2.Panel2.Controls.Add(this.label28);
             this.splitContainer2.Panel2.Controls.Add(this.txt_from_date);
-            this.splitContainer2.Panel2.Controls.Add(this.label29);
+            this.splitContainer2.Panel2.Controls.Add(this.lbl_ont);
             this.splitContainer2.Panel2.Controls.Add(this.cmb_borrowers);
             this.splitContainer2.Panel2.Controls.Add(this.label30);
             this.splitContainer2.Panel2.Controls.Add(this.label25);
@@ -362,7 +361,6 @@
             this.label24.Size = new System.Drawing.Size(51, 19);
             this.label24.TabIndex = 73;
             this.label24.Text = "Others";
-            
             // 
             // label34
             // 
@@ -1021,6 +1019,7 @@
             this.cmb_reason.Size = new System.Drawing.Size(238, 25);
             this.cmb_reason.TabIndex = 126;
             this.cmb_reason.Text = "---Select Reason--";
+            this.cmb_reason.SelectedIndexChanged += new System.EventHandler(this.cmb_reason_SelectedIndexChanged);
             // 
             // label36
             // 
@@ -1059,15 +1058,15 @@
             this.txt_from_date.Size = new System.Drawing.Size(239, 25);
             this.txt_from_date.TabIndex = 123;
             // 
-            // label29
+            // lbl_ont
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(21, 10);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(73, 17);
-            this.label29.TabIndex = 122;
-            this.label29.Text = "Borrowers:";
+            this.lbl_ont.AutoSize = true;
+            this.lbl_ont.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ont.Location = new System.Drawing.Point(21, 10);
+            this.lbl_ont.Name = "lbl_ont";
+            this.lbl_ont.Size = new System.Drawing.Size(65, 17);
+            this.lbl_ont.TabIndex = 122;
+            this.lbl_ont.Text = "Contacts:";
             // 
             // cmb_borrowers
             // 
@@ -1194,7 +1193,7 @@
         private System.Windows.Forms.DateTimePicker txt_due_date;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.DateTimePicker txt_from_date;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lbl_ont;
         private System.Windows.Forms.ComboBox cmb_borrowers;
         private System.Windows.Forms.Label label30;
         private sbmsDataSet sbmsDataSet;

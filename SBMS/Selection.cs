@@ -56,6 +56,7 @@ namespace SBMS
        
         SearchAndFilterService searchAndFilterService;
         CheckinCheckoutService checkinCheckoutService;
+        bool skip_days_validation = false;
         public Selection()
         {
             InitializeComponent();
@@ -373,19 +374,19 @@ namespace SBMS
         private bool validate_before_Checkout() {
 
            
-            if (cmb_borrowers.SelectedIndex == 0)
+            if (cmb_borrowers.SelectedIndex == 0 && skip_days_validation == false)
             {
-                MessageBox.Show("Please, select a borrower to checkout for");
+                MessageBox.Show("Please, select a Contacts to checkout for Borrow/Exchange");
                 return false;
             }
 
-            if (cmb_reason.SelectedIndex == -1)
+            if (cmb_reason.SelectedIndex == -1 && skip_days_validation == false)
             {
                 MessageBox.Show("Please, select a a reason for checkout");
                 return false;
             }
 
-            if (txt_days.Value<=0) {
+            if (txt_days.Value<=0 && skip_days_validation==false) {
 
                 MessageBox.Show("Numdays is 0 or invalid. That means no checkout ? calculate the number of days for checkout");
                 return false;
@@ -423,7 +424,7 @@ namespace SBMS
                                 String header = grd_search_results.Columns[i].HeaderText;
                                 String cellText = row.Cells[i].ToString();
                                 var cellValue = row.Cells[i].Value;
-                               // Console.WriteLine("COlumn:" + header);
+                                // Console.WriteLine("COlumn:" + header);
                                 // Console.WriteLine("Row TExt:"+cellText);
                                 //Console.WriteLine("Value:" + cellValue);
                                 if (header == "id" && cellValue != null)
@@ -431,21 +432,45 @@ namespace SBMS
                             }
                         }
 
+                        bool isExchange = false;
 
-                        if (ids!=null)
+                        if (ids != null)
                         {
-                               logger.Info("checkout successfull: " + UserAccountServices.Full_name);
-                               MessageBox.Show("Checkout is succesfull");
-                               this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+                            logger.Info("checkout started ids are not null: " + UserAccountServices.Full_name);
+                            //MessageBox.Show("Checkout proccess is started succesfull");
+                            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
                         }
 
-                        bool isOkay = checkinCheckoutService.checkoutbySlideIds(cmb_borrowers.SelectedIndex, ids, txt_from_date.Value, txt_due_date.Value, cmb_reason.SelectedItem.ToString());
+                        bool isOkay = false;
 
-                        if (isOkay)
+                        if (String.CompareOrdinal(cmb_reason.SelectedItem.ToString(), "Exchange") == 0) {
+                            isOkay = checkinCheckoutService.checkoutbySlideOutForExchange(cmb_borrowers.SelectedIndex, ids, cmb_reason.SelectedItem.ToString());
+                            isExchange = true;
+                        }
+                        else 
+                        {
+                            isOkay = checkinCheckoutService.checkoutbySlideNoneExchange(cmb_borrowers.SelectedIndex, ids, txt_from_date.Value, txt_due_date.Value, cmb_reason.SelectedItem.ToString());
+                        }
+
+                        if (isOkay == true && isExchange == false)
                         {
 
-                            MessageBox.Show("Success! Search are now checked out! For :=>"+cmb_borrowers.SelectedItem.ToString());
+                            MessageBox.Show("Success! Search are now checked out! For :=>" + cmb_borrowers.SelectedItem.ToString());
                             MessageBox.Show("Generating Checkout Report.");
+                            SearchChekoutReportViewPort v = new SearchChekoutReportViewPort();
+                            v.MdiParent = this.ParentForm;
+                            v.Show();
+                            //grd_search_results.DataSource = null;
+                            // grd_search_results.Refresh();
+                            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+                            grd_search_results.DataSource = slidesearchBindingSource;
+                        }
+
+                        if (isOkay==true && isExchange==true)
+                        {
+
+                            MessageBox.Show("Success! The selected slides are out and Exchanged.  :=>"+cmb_borrowers.SelectedItem.ToString());
+                            MessageBox.Show("Generating Exchange Report.");
                             SearchChekoutReportViewPort v = new SearchChekoutReportViewPort();
                             v.MdiParent = this.ParentForm;
                             v.Show();
@@ -460,13 +485,14 @@ namespace SBMS
             }
             catch (Exception ex) {
                 //LOGGER HERE
-                logger.Error(ex,"Search excpetion for user {UserAccountServices.Full_name}"+ex.StackTrace.ToString()) ;
+                logger.Error(ex,"Search Checkout Search"+ex.StackTrace.ToString()) ;
 
             }
         }
 
         private void btn_dayCalculaor_Click(object sender, EventArgs e)
         {
+
             try
             {
                 DateTime d1 = txt_from_date.Value;
@@ -479,20 +505,20 @@ namespace SBMS
                     txt_days.BackColor = System.Drawing.Color.Green;
                     btn_dayCalculaor.ForeColor = System.Drawing.Color.Yellow;
                     btn_dayCalculaor.BackColor = System.Drawing.Color.Green;
-                     
-                }
-                else {
+            }
+                else
+                {
                     txt_days.ForeColor = System.Drawing.Color.Black;
                     txt_days.BackColor = System.Drawing.Color.Red;
                     btn_dayCalculaor.ForeColor = System.Drawing.Color.Black;
                     btn_dayCalculaor.BackColor = System.Drawing.Color.Red;
                 }
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 logger.Error(ex.StackTrace);
             }
-
-}
+        }
 
         public List<int> getSlideIDs()
         {
@@ -574,6 +600,50 @@ namespace SBMS
             grd_search_results.DataSource = slidesearchBindingSource;
             grd_search_results.Refresh();
             ids = new List<int>();
+        }
+
+        private void cmb_reason_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_reason.SelectedItem.ToString()=="Exchange")
+            {
+                DialogResult result = MessageBox.Show("You have selected : Checkout is as Exchange.\n Please , note that this sides will be returned back again \n in the normal checkin circulation", "Exchange", MessageBoxButtons.YesNo);
+               
+                if (result == DialogResult.Yes)
+                {
+                    txt_from_date.Enabled = false;
+                    txt_due_date.Enabled = false;
+                    txt_days.Enabled = false;
+                    skip_days_validation = true;
+                    btn_dayCalculaor.Enabled = false;
+
+                    Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
+                    borrowerDic.Add(-1, "--Select Exchange Contacts---");
+                    foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+                    {
+                        borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Country:   " + row["country"] + "  City:  " + row["city"]);
+                    }
+
+                    cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
+
+                    cmb_borrowers.DisplayMember = "Value";
+                    cmb_borrowers.ValueMember = "Key";
+                    cmb_borrowers.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    cmb_borrowers.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    lbl_ont.Text = "Exchange Contacts";
+                }
+                else {
+                    cmb_reason.SelectedIndex = 0;
+                    txt_from_date.Enabled = true;
+                    txt_due_date.Enabled = true;
+                    txt_days.Enabled = true;
+                    skip_days_validation = false;
+                    btn_dayCalculaor.Enabled = true;
+                    lbl_ont.Text = "Borrower Contacts";
+
+                }
+
+            }
+
         }
     }
 }

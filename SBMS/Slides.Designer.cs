@@ -291,7 +291,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.txt_bar_code);
             this.splitContainer1.Panel2.Controls.Add(this.txt_country_code);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Size = new System.Drawing.Size(1477, 131);
+            this.splitContainer1.Size = new System.Drawing.Size(1571, 131);
             this.splitContainer1.SplitterDistance = 28;
             this.splitContainer1.TabIndex = 16;
             // 
@@ -299,7 +299,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(456, 0);
+            this.label7.Location = new System.Drawing.Point(617, -2);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(215, 29);
             this.label7.TabIndex = 0;
@@ -578,7 +578,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(973, 611);
+            this.tabControl1.Size = new System.Drawing.Size(1036, 611);
             this.tabControl1.TabIndex = 48;
             // 
             // tabPage1
@@ -592,9 +592,9 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(965, 579);
+            this.tabPage1.Size = new System.Drawing.Size(1028, 579);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "100 Recent Slides";
+            this.tabPage1.Text = "500 Recent Slides";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label23
@@ -679,7 +679,7 @@
             this.dgr_recentslides.ShowCellToolTips = false;
             this.dgr_recentslides.ShowEditingIcon = false;
             this.dgr_recentslides.ShowRowErrors = false;
-            this.dgr_recentslides.Size = new System.Drawing.Size(953, 528);
+            this.dgr_recentslides.Size = new System.Drawing.Size(1016, 528);
             this.dgr_recentslides.TabIndex = 0;
             this.dgr_recentslides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selected_row);
             // 
@@ -1938,8 +1938,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.btn_save);
             this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
-            this.splitContainer2.Size = new System.Drawing.Size(1477, 671);
-            this.splitContainer2.SplitterDistance = 475;
+            this.splitContainer2.Size = new System.Drawing.Size(1571, 671);
+            this.splitContainer2.SplitterDistance = 505;
             this.splitContainer2.TabIndex = 17;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
@@ -1993,13 +1993,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.CancelButton = this.btn_clear_selection;
-            this.ClientSize = new System.Drawing.Size(1483, 803);
+            this.ClientSize = new System.Drawing.Size(1576, 856);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.splitContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Slides";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Slides";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Slides_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

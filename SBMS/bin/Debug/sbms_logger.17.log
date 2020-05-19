@@ -1,0 +1,67 @@
+2020-05-19 10:31:15.7061 SBMS.Selection checkout successfull: 
+2020-05-19 10:33:21.1848 SBMS.Program importing defaults
+2020-05-19 10:33:21.6586 SBMS.Program Default is found proceeding.
+2020-05-19 10:33:38.6456 SBMS.Selection Search Result for  count:1
+2020-05-19 10:33:47.8942 SBMS.Selection checkout successfull: 
+2020-05-19 10:33:51.2790 SBMS.Services.CheckinCheckoutService Commit:Both records are written to database.
+2020-05-19 10:36:02.8532 SBMS.Selection Search Result for  count:1
+2020-05-19 10:36:40.4802 SBMS.Selection checkout successfull: 
+2020-05-19 10:36:46.7296 SBMS.Services.CheckinCheckoutService Exception at CheckinCheckoutServicesSystem.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_current_lending_borrowers". The conflict occurred in database "sbms", table "dbo.borrowers", column 'id'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideNoneExchange(Int32 borrower_id, List`1 ids, DateTime fromDate, DateTime dueDate, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 103
+ClientConnectionId:db5bcb7c-4455-4a8c-8a3f-403f2c0377de
+Error Number:547,State:0,Class:16
+2020-05-19 10:37:23.8309 SBMS.Selection checkout successfull: 
+2020-05-19 10:37:26.4047 SBMS.Services.CheckinCheckoutService Exception at CheckinCheckoutServicesSystem.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_current_lending_borrowers". The conflict occurred in database "sbms", table "dbo.borrowers", column 'id'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideNoneExchange(Int32 borrower_id, List`1 ids, DateTime fromDate, DateTime dueDate, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 103
+ClientConnectionId:db5bcb7c-4455-4a8c-8a3f-403f2c0377de
+Error Number:547,State:0,Class:16
+2020-05-19 10:37:37.5189 SBMS.Selection Search Result for  count:1
+2020-05-19 10:38:09.7476 SBMS.Program importing defaults
+2020-05-19 10:38:10.3051 SBMS.Program Default is found proceeding.
+2020-05-19 10:38:32.8360 SBMS.Selection Search Result for  count:1
+2020-05-19 10:39:06.1632 SBMS.Selection checkout successfull: 
+2020-05-19 10:39:10.2214 SBMS.Services.CheckinCheckoutService Commit:Both records are written to database.
+2020-05-19 10:59:34.2248 SBMS.Program importing defaults
+2020-05-19 10:59:34.6906 SBMS.Program Default is found proceeding.
+2020-05-19 15:12:27.4941 SBMS.Program importing defaults
+2020-05-19 15:12:27.7475 SBMS.Program Default is found proceeding.
+2020-05-19 15:13:42.0149 SBMS.Program importing defaults
+2020-05-19 15:13:42.4976 SBMS.Program Default is found proceeding.
+2020-05-19 15:21:30.2614 SBMS.Selection checkout successfull: 
+2020-05-19 15:21:50.7145 SBMS.Services.CheckinCheckoutService Exception at CheckinCheckoutServicesSystem.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near 'slide_id'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideOutForExchange(Int32 exchanged_contact_id, List`1 ids, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 240
+ClientConnectionId:e9c6fd9b-4fa6-4837-8067-d4fbf5fe6715
+Error Number:102,State:1,Class:15
+2020-05-19 15:23:44.3337 SBMS.Program importing defaults
+2020-05-19 15:23:44.6628 SBMS.Program Default is found proceeding.
+2020-05-19 15:28:59.2372 SBMS.Selection Search Result for  count:1
+2020-05-19 15:29:09.5712 SBMS.Selection checkout successfull: 
