@@ -244,6 +244,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReportRecentSlidesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\CrystalReports\CrystalReportExchangeCheckout.cs">
+      <DependentUpon>CrystalReportExchangeCheckout.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\CrystalReports\CrystalReportSearchCheckout.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -279,6 +285,12 @@
     </Compile>
     <Compile Include="Reports\CrystalReports\ReportViewRecentSlides.Designer.cs">
       <DependentUpon>ReportViewRecentSlides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\ExchangeChekoutReportViewPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\ExchangeChekoutReportViewPort.Designer.cs">
+      <DependentUpon>ExchangeChekoutReportViewPort.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\CrystalReports\SearchChekoutReportViewPort.cs">
       <SubType>Form</SubType>
@@ -389,6 +401,7 @@
     <None Include="Resources\splash_SBMS.png" />
     <None Include="Resources\click.jpg" />
     <Content Include="SQL\FixUserAuthentication.txt" />
+    <Content Include="SQL\revert.sql" />
     <Content Include="SQL\StoredProcedure_Critical_Update.txt" />
     <EmbeddedResource Include="AllSlides.resx">
       <DependentUpon>AllSlides.cs</DependentUpon>
@@ -456,6 +469,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportRecentSlides.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\CrystalReportExchangeCheckout.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportExchangeCheckout.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\CrystalReportSearchCheckout.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportSearchCheckout.cs</LastGenOutput>
@@ -476,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\ReportViewRecentSlides.resx">
       <DependentUpon>ReportViewRecentSlides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\ExchangeChekoutReportViewPort.resx">
+      <DependentUpon>ExchangeChekoutReportViewPort.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\SearchChekoutReportViewPort.resx">
       <DependentUpon>SearchChekoutReportViewPort.cs</DependentUpon>

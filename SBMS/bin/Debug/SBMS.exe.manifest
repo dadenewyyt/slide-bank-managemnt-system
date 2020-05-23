@@ -270,14 +270,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SBMS.exe" size="2538432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SBMS.exe" size="2646976">
       <assemblyIdentity name="SBMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vuyF5tcZLtHO2GHdHqHoHdLp0tbmlpG+cvPV061PrIs=</dsig:DigestValue>
+        <dsig:DigestValue>doABsq7mywD1Je1ExwR5win+U3VdXFd853cIoNL+eyY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -366,6 +366,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>S8Nw1JqNYBxsPjZ1koYGp5sGobyLnsvrY9Fn7QroE0s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SQL\revert.sql" size="130">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ISrQKA15ViKxVFo/IeyZS0cNS9KsTCGcbXRaDSqjtI4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SQL\searchStoreProcedure.txt" size="4191">

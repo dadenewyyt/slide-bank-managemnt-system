@@ -1,14 +1,27 @@
-2020-05-19 17:25:02.5637 SBMS.Services.CheckinCheckoutService Checkout Exception Upating slides tableSystem.Data.SqlClient.SqlException (0x80131904): The variable name '@drawer' has already been declared. Variable names must be unique within a query batch or stored procedure.
-Must declare the scalar variable "@created_by".
-   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-   at SBMS.Services.CheckinCheckoutService.checkoutbySlideOutForExchange(Int32 exchanged_contact_id, List`1 ids, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 235
-ClientConnectionId:2d4321f0-86d0-4c48-b01b-294a014a37de
-Error Number:134,State:1,Class:15
+2020-05-21 14:19:39.3900 SBMS.Program importing defaults
+2020-05-21 14:19:39.9396 SBMS.Program Default is found proceeding.
+2020-05-21 15:14:27.0223 SBMS.Program importing defaults
+2020-05-21 15:14:27.6157 SBMS.Program Default is found proceeding.
+2020-05-21 15:19:45.9037 SBMS.Program importing defaults
+2020-05-21 15:19:46.2228 SBMS.Program Default is found proceeding.
+2020-05-21 15:22:36.8727 SBMS.Program importing defaults
+2020-05-21 15:22:36.9695 SBMS.Program Default is found proceeding.
+2020-05-21 15:44:40.2123 SBMS.Program importing defaults
+2020-05-21 15:44:40.3639 SBMS.Program Default is found proceeding.
+2020-05-21 15:45:07.7966 SBMS.Program importing defaults
+2020-05-21 15:45:07.8864 SBMS.Program Default is found proceeding.
+2020-05-21 15:45:33.6934 SBMS.Program importing defaults
+2020-05-21 15:45:33.7841 SBMS.Program Default is found proceeding.
+2020-05-21 15:45:59.6340 SBMS.Program importing defaults
+2020-05-21 15:45:59.8454 SBMS.Program Default is found proceeding.
+2020-05-21 16:38:33.1817 SBMS.Program importing defaults
+2020-05-21 16:38:33.2824 SBMS.Program Default is found proceeding.
+2020-05-21 16:38:47.3488 SBMS.Selection Search Result for  count:1
+2020-05-21 16:38:52.8960 SBMS.Selection checkout started ids are not null: 
+2020-05-21 16:38:53.1553 SBMS.Services.CheckinCheckoutService SUCCESS COMMIT:Tripple record commits or transactions are written to database.
+2020-05-21 16:46:51.3930 SBMS.Program importing defaults
+2020-05-21 16:46:51.4967 SBMS.Program Default is found proceeding.
+2020-05-21 16:56:47.6933 SBMS.Program importing defaults
+2020-05-21 16:56:47.8579 SBMS.Program Default is found proceeding.
+2020-05-21 17:23:21.7366 SBMS.Program importing defaults
+2020-05-21 17:23:21.8353 SBMS.Program Default is found proceeding.

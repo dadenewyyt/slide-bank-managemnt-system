@@ -103,11 +103,9 @@
             this.btn_Add_borrower = new System.Windows.Forms.Button();
             this.btn_dayCalculaor = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.btn_checkout = new System.Windows.Forms.Button();
-            this.label37 = new System.Windows.Forms.Label();
+            this.found_in_bank = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.cmb_reason = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.txt_due_date = new System.Windows.Forms.DateTimePicker();
@@ -120,6 +118,8 @@
             this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
             this.slide_searchTableAdapter = new SBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
+            this.txt_total_request = new System.Windows.Forms.TextBox();
+            this.txt_found_in_bank = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -149,8 +149,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_search_results)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slidesearchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowercontactlistBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,6 +241,8 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.txt_found_in_bank);
+            this.splitContainer2.Panel2.Controls.Add(this.txt_total_request);
             this.splitContainer2.Panel2.Controls.Add(this.button1);
             this.splitContainer2.Panel2.Controls.Add(this.txt_days);
             this.splitContainer2.Panel2.Controls.Add(this.grd_search_results);
@@ -250,11 +250,9 @@
             this.splitContainer2.Panel2.Controls.Add(this.btn_Add_borrower);
             this.splitContainer2.Panel2.Controls.Add(this.btn_dayCalculaor);
             this.splitContainer2.Panel2.Controls.Add(this.label26);
-            this.splitContainer2.Panel2.Controls.Add(this.numericUpDown2);
             this.splitContainer2.Panel2.Controls.Add(this.btn_checkout);
-            this.splitContainer2.Panel2.Controls.Add(this.label37);
+            this.splitContainer2.Panel2.Controls.Add(this.found_in_bank);
             this.splitContainer2.Panel2.Controls.Add(this.label27);
-            this.splitContainer2.Panel2.Controls.Add(this.numericUpDown1);
             this.splitContainer2.Panel2.Controls.Add(this.cmb_reason);
             this.splitContainer2.Panel2.Controls.Add(this.label36);
             this.splitContainer2.Panel2.Controls.Add(this.txt_due_date);
@@ -956,14 +954,6 @@
             this.label26.TabIndex = 130;
             this.label26.Text = "Days";
             // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(431, 174);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.ReadOnly = true;
-            this.numericUpDown2.Size = new System.Drawing.Size(62, 20);
-            this.numericUpDown2.TabIndex = 84;
-            // 
             // btn_checkout
             // 
             this.btn_checkout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -977,15 +967,15 @@
             this.btn_checkout.UseVisualStyleBackColor = false;
             this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
             // 
-            // label37
+            // found_in_bank
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(325, 175);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(100, 19);
-            this.label37.TabIndex = 83;
-            this.label37.Text = "Found in Bank:";
+            this.found_in_bank.AutoSize = true;
+            this.found_in_bank.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.found_in_bank.Location = new System.Drawing.Point(357, 176);
+            this.found_in_bank.Name = "found_in_bank";
+            this.found_in_bank.Size = new System.Drawing.Size(100, 19);
+            this.found_in_bank.TabIndex = 83;
+            this.found_in_bank.Text = "Found in Bank:";
             // 
             // label27
             // 
@@ -996,14 +986,6 @@
             this.label27.Size = new System.Drawing.Size(55, 17);
             this.label27.TabIndex = 127;
             this.label27.Text = "Reason:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(243, 175);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(62, 20);
-            this.numericUpDown1.TabIndex = 82;
             // 
             // cmb_reason
             // 
@@ -1113,6 +1095,22 @@
             // 
             this.slide_searchTableAdapter.ClearBeforeFill = true;
             // 
+            // txt_total_request
+            // 
+            this.txt_total_request.Location = new System.Drawing.Point(243, 174);
+            this.txt_total_request.Name = "txt_total_request";
+            this.txt_total_request.ReadOnly = true;
+            this.txt_total_request.Size = new System.Drawing.Size(98, 20);
+            this.txt_total_request.TabIndex = 137;
+            // 
+            // txt_found_in_bank
+            // 
+            this.txt_found_in_bank.Location = new System.Drawing.Point(463, 174);
+            this.txt_found_in_bank.Name = "txt_found_in_bank";
+            this.txt_found_in_bank.ReadOnly = true;
+            this.txt_found_in_bank.Size = new System.Drawing.Size(98, 20);
+            this.txt_found_in_bank.TabIndex = 138;
+            // 
             // Selection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1156,8 +1154,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grd_search_results)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slidesearchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowercontactlistBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1236,9 +1232,7 @@
         private System.Windows.Forms.NumericUpDown borrela_all_q;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label found_in_bank;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
@@ -1256,5 +1250,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn boxnumberDataGridViewTextBoxColumn;
         public System.Windows.Forms.DataGridView grd_search_results;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_found_in_bank;
+        private System.Windows.Forms.TextBox txt_total_request;
     }
 }

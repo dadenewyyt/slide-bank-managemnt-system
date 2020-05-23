@@ -21,5 +21,12 @@ namespace SBMS
         {
 
         }
+
+        private void ExchangedSlides_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sbmsDataSet.ExchangeCheckouReportTable' table. You can move, or remove it, as needed.
+            //this.exchangeCheckoutReportTableAdapter.Fill(this.sbmsDataSet.ExchangeCheckouReportTable);
+
+        }
     }
 }

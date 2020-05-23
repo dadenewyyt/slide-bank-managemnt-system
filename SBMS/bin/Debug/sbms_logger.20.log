@@ -1,0 +1,65 @@
+2020-05-21 09:26:16.2458 SBMS.Program importing defaults
+2020-05-21 09:26:16.9380 SBMS.Program Default is found proceeding.
+2020-05-21 09:29:16.6697 SBMS.Program importing defaults
+2020-05-21 09:29:16.7900 SBMS.Program Default is found proceeding.
+2020-05-21 09:33:32.2701 SBMS.Program importing defaults
+2020-05-21 09:33:32.3980 SBMS.Program Default is found proceeding.
+2020-05-21 09:34:38.8069 SBMS.Selection Search Result for  count:1
+2020-05-21 09:36:18.4410 SBMS.Selection checkout started ids are not null: 
+2020-05-21 09:55:33.8562 SBMS.Program importing defaults
+2020-05-21 09:55:33.9923 SBMS.Program Default is found proceeding.
+2020-05-21 09:55:57.1184 SBMS.Selection Search Result for  count:1
+2020-05-21 09:56:07.8691 SBMS.Selection checkout started ids are not null: 
+2020-05-21 09:56:10.3334 SBMS.Services.CheckinCheckoutService Checkout Exception Upating slides tableSystem.Data.SqlClient.SqlException (0x80131904): The variable name '@drawer' has already been declared. Variable names must be unique within a query batch or stored procedure.
+Must declare the scalar variable "@created_by".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideOutForExchange(Int32 exchanged_contact_id, List`1 ids, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 237
+ClientConnectionId:b035376e-f68b-4708-a25d-845037d42c46
+Error Number:134,State:1,Class:15
+2020-05-21 09:56:52.0108 SBMS.Selection Search Result for  count:1
+2020-05-21 09:57:26.4492 SBMS.Selection checkout started ids are not null: 
+2020-05-21 09:57:45.9874 SBMS.Services.CheckinCheckoutService Checkout Exception Upating slides tableSystem.Data.SqlClient.SqlException (0x80131904): The variable name '@drawer' has already been declared. Variable names must be unique within a query batch or stored procedure.
+Must declare the scalar variable "@created_by".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideOutForExchange(Int32 exchanged_contact_id, List`1 ids, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 237
+ClientConnectionId:b035376e-f68b-4708-a25d-845037d42c46
+Error Number:134,State:1,Class:15
+2020-05-21 10:01:23.5243 SBMS.Program importing defaults
+2020-05-21 10:01:23.6666 SBMS.Program Default is found proceeding.
+2020-05-21 10:01:59.7925 SBMS.Program importing defaults
+2020-05-21 10:01:59.9018 SBMS.Program Default is found proceeding.
+2020-05-21 10:02:14.7826 SBMS.Selection Search Result for  count:1
+2020-05-21 10:02:30.7761 SBMS.Selection checkout started ids are not null: 
+2020-05-21 10:02:53.2472 SBMS.Services.CheckinCheckoutService Checkout Exception Upating slides tableSystem.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the nvarchar value 'Full name==Username=' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideOutForExchange(Int32 exchanged_contact_id, List`1 ids, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 235
+ClientConnectionId:f12e65c5-cd75-4754-b897-17f867d0fbff
+Error Number:245,State:1,Class:16
+2020-05-21 10:06:21.1042 SBMS.Program importing defaults
+2020-05-21 10:06:21.2227 SBMS.Program Default is found proceeding.
+2020-05-21 10:06:48.1798 SBMS.Selection Search Result for  count:1
+2020-05-21 10:06:57.7324 SBMS.Selection checkout started ids are not null: 

@@ -3,6 +3,7 @@ using SBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SBMS
@@ -53,7 +54,7 @@ namespace SBMS
 
         //negatives
         DataTable negatives_datatable = new DataTable();
-       
+
         SearchAndFilterService searchAndFilterService;
         CheckinCheckoutService checkinCheckoutService;
         bool skip_days_validation = false;
@@ -89,7 +90,7 @@ namespace SBMS
             this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
             // TODO: This line of code loads data into the 'sbmsDataSet.borrower_contact_list' table. You can move, or remove it, as needed.
             this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
- 
+
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
             borrowerDic.Add(-1, "--Select Borrower/Contact---");
             foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
@@ -98,16 +99,18 @@ namespace SBMS
             }
 
             cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
-            
+
             cmb_borrowers.DisplayMember = "Value";
             cmb_borrowers.ValueMember = "Key";
             cmb_borrowers.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmb_borrowers.AutoCompleteSource = AutoCompleteSource.ListItems;
+            txt_total_request.Text = "0";
+            txt_found_in_bank.Text = grd_search_results.Rows.Count.ToString();
         }
 
         private void btn_generate_Click(object sender, EventArgs e)
         {
-           //this.showValidationMessage();
+            //this.showValidationMessage();
             this.searchForPfCriteria();
             this.searchPvs();
             this.searchPfPvs();
@@ -155,15 +158,48 @@ namespace SBMS
             }
 
             grd_search_results.DataSource = null;
-           // grd_search_results.Refresh();
+            // grd_search_results.Refresh();
             grd_search_results.DataSource = mergedSearchResult;
 
             resetDataSetsAftersearch();
-            logger.Info("Search Result for "+ UserAccountServices.Full_name+" count:" + mergedSearchResult.Rows.Count.ToString());
-           // cloneOfSearchResults = grd_search_results;
-
+            logger.Info("Search Result for " + UserAccountServices.Full_name + " count:" + mergedSearchResult.Rows.Count.ToString());
+            // cloneOfSearchResults = grd_search_results;
+            txt_found_in_bank.Text = grd_search_results.Rows.Count.ToString();
+            Decimal total = addupNumericValues();
+            txt_total_request.Text = total.ToString();
         }
 
+        private Decimal addupNumericValues() {
+
+            Decimal sum = 0;
+
+            sum += pv_hd_q.Value;
+            sum += pv_ld_q.Value;
+            sum += pv_md_q.Value;
+
+            sum += pf_hd_q.Value;
+            sum += pf_ld_q.Value;
+            sum += pf_md_q.Value;
+
+            sum += pfpv_hd_q.Value;
+            sum += pfpv_ld_q.Value;
+            sum += pfpv_md_q.Value;
+
+            sum += po_hd_q.Value;
+            sum += po_ld_q.Value;
+            sum += po_md_q.Value;
+
+            sum += pm_hd_q.Value;
+            sum += pm_ld_q.Value;
+            sum += pm_md_q.Value;
+
+            sum += negatives_q.Value;
+            sum += others_all_q.Value;
+            sum += borrela_all_q.Value;
+
+            return sum;
+
+        }
         private void resetDataSetsAftersearch() {
             pf_ld_datatable.Clear();
             pf_md_datatable.Clear();
@@ -374,9 +410,9 @@ namespace SBMS
         private bool validate_before_Checkout() {
 
            
-            if (cmb_borrowers.SelectedIndex == 0 && skip_days_validation == false)
+            if (cmb_borrowers.SelectedIndex == 0)
             {
-                MessageBox.Show("Please, select a Contacts to checkout for Borrow/Exchange");
+                MessageBox.Show("Please, select a Contacts");
                 return false;
             }
 
@@ -397,7 +433,6 @@ namespace SBMS
 
         private void btn_checkout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(grd_search_results.Rows.Count.ToString());
 
             if (grd_search_results.Rows.Count <= 0)
             {
@@ -438,7 +473,7 @@ namespace SBMS
                         {
                             logger.Info("checkout started ids are not null: " + UserAccountServices.Full_name);
                             //MessageBox.Show("Checkout proccess is started succesfull");
-                            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+                            //this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
                         }
 
                         bool isOkay = false;
@@ -452,14 +487,31 @@ namespace SBMS
                             isOkay = checkinCheckoutService.checkoutbySlideNoneExchange(cmb_borrowers.SelectedIndex, ids, txt_from_date.Value, txt_due_date.Value, cmb_reason.SelectedItem.ToString());
                         }
 
+                        if (isOkay == false)
+                        {
+
+                            MessageBox.Show("Checkout is not Succesfull. \n Please , try again with reset search ");
+                            this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
+                            grd_search_results.DataSource = slidesearchBindingSource;
+                            return;
+                        }
+
+
                         if (isOkay == true && isExchange == false)
                         {
 
-                            MessageBox.Show("Success! Search are now checked out! For :=>" + cmb_borrowers.SelectedItem.ToString());
-                            MessageBox.Show("Generating Checkout Report.");
-                            SearchChekoutReportViewPort v = new SearchChekoutReportViewPort();
-                            v.MdiParent = this.ParentForm;
-                            v.Show();
+
+                            this.Invoke(new Action(() => { MessageBox.Show("Success! The selected slides are checkedout for Borrower with" + cmb_borrowers.SelectedItem.ToString()); }));
+
+                            this.Invoke(new Action(() => {
+                                SearchChekoutReportViewPort v = new SearchChekoutReportViewPort();
+                                v.MdiParent = this.ParentForm;
+                                v.Show();
+                            }));
+
+                            MessageBox.Show("Print out is being genereated");
+
+
                             //grd_search_results.DataSource = null;
                             // grd_search_results.Refresh();
                             this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
@@ -469,13 +521,17 @@ namespace SBMS
                         if (isOkay==true && isExchange==true)
                         {
 
-                            MessageBox.Show("Success! The selected slides are out and Exchanged.  :=>"+cmb_borrowers.SelectedItem.ToString());
-                            MessageBox.Show("Generating Exchange Report.");
-                            SearchChekoutReportViewPort v = new SearchChekoutReportViewPort();
-                            v.MdiParent = this.ParentForm;
-                            v.Show();
+                            
+                            this.Invoke(new Action(() => { MessageBox.Show("Success! The selected slides are Exchanged with " + cmb_borrowers.SelectedItem.ToString()); }));
+
+                            this.Invoke(new Action(() => {
+                                ExchangeCheckoutReportViewPort v = new ExchangeCheckoutReportViewPort();
+                                v.MdiParent = this.ParentForm;
+                                v.Show(); }));
+
+                            MessageBox.Show("Print out is being genereated");
                             //grd_search_results.DataSource = null;
-                           // grd_search_results.Refresh();
+                            // grd_search_results.Refresh();
                             this.slide_searchTableAdapter.Fill(this.sbmsDataSet.slide_search);
                             grd_search_results.DataSource = slidesearchBindingSource;
                         }

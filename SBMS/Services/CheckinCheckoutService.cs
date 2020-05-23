@@ -12,14 +12,14 @@ namespace SBMS.Services
     {
         private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
+        int drawer = 0;
+        int box = 0;
+        int cabinet = 0;
+
         private SearchAndFilterService searchAndFilterService;
         public CheckinCheckoutService() {
             searchAndFilterService = new SearchAndFilterService();
         }
-
-        int drawer = 0;
-        int box = 0;
-        int cabinet = 0;
 
         public bool checkoutbySlideNoneExchange(int borrower_id, List<int> ids, DateTime fromDate, DateTime dueDate, String reason)
         {
@@ -162,7 +162,11 @@ namespace SBMS.Services
         bool errorfound = false;
         DataTable formerSlidesData = new DataTable();
 
-       ids.ForEach(delegate (int sid)
+        int drawer = 0;
+        int box = 0;
+        int cabinet = 0;
+
+        ids.ForEach(delegate (int sid)
         {
             list_of_ids_with_comma += sid + ",";
         });
@@ -205,14 +209,15 @@ namespace SBMS.Services
                            "historytype," +
                            "isreverted," +
                            "created_date)" +
-                           "Values(" +
+                           "Values (" +
                            "@slide_id," +
                            "@drawer," +
-                           "@box," +
                            "@cabinet," +
+                           "@box," +
                            "@created_by," +
                            "@historytype," +
-                           "@created_date)";
+                           "@isreverted," +
+                           "@created_date);";
                         command.CommandText = insertQUery;
 
                         command.CommandType = CommandType.Text;
@@ -220,9 +225,8 @@ namespace SBMS.Services
                         command.Parameters.AddWithValue("@cabinet", cabinet);
                         command.Parameters.AddWithValue("@box", box);
                         command.Parameters.AddWithValue("@drawer", drawer);
-                        command.Parameters.AddWithValue("@created", drawer);
-                        command.Parameters.AddWithValue("@drawer", drawer);
                         command.Parameters.AddWithValue("@historytype", reason);
+                        command.Parameters.AddWithValue("@isreverted", 0); // show rever cases are false in the future
                         command.Parameters.AddWithValue("@created_date", DateTime.Now.ToString());
                         command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
                         try
@@ -241,7 +245,7 @@ namespace SBMS.Services
                             //MessageBox.Show("Checkout Database Error:" + ex.Message);
                             logger.Error(ex, "Checkout Exception Upating slides table");
                             errorfound = true;
-                            return errorfound;
+                            return false ;
 
                         }
                     }
@@ -273,7 +277,7 @@ namespace SBMS.Services
                     //MessageBox.Show("Checkout Database Error:" + ex.Message);
                     logger.Error(ex, "Checkout Exception Upating slides table");
                     errorfound = true;
-                    return errorfound;
+                    return false;
 
                 }
             }
@@ -288,13 +292,16 @@ namespace SBMS.Services
                         string insertQUery = "INSERT into exchanges (" +
                             "slide_id," +
                             "exchange_contact_id," +
-                            "exchange_date," +
+                            "exchanged_date," +
                             "exchanged_by," +
+                            "cabinet,"+
+                            "box,"+
+                            "drawer,"+
                             "note)" +
                             "Values(" +
                             "@slide_id," +
                             "@exchange_contact_id," +
-                            "@exchange_date," +
+                            "@exchanged_date," +
                             "@exchanged_by," +
                             "@cabinet," +
                             "@box," +
@@ -309,7 +316,10 @@ namespace SBMS.Services
 
                         command.Parameters.AddWithValue("@slide_id", Convert.ToInt32(ids[i]));
                         command.Parameters.AddWithValue("@exchange_contact_id", exchanged_contact_id);
-                        command.Parameters.AddWithValue("@exchange_date", DBNull.Value);
+                        command.Parameters.AddWithValue("@exchanged_date", DateTime.Now.ToString());
+                        command.Parameters.AddWithValue("@cabinet", cabinet);
+                        command.Parameters.AddWithValue("@box", box);
+                        command.Parameters.AddWithValue("@drawer", drawer);
                         //command.Parameters.AddWithValue("@due_date", dueDate);
                         command.Parameters.AddWithValue("@note", reason);
                         command.Parameters.AddWithValue("@exchanged_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
@@ -341,7 +351,7 @@ namespace SBMS.Services
                     {
 
                         transaction.Commit();
-                        logger.Info("Commit:Both records are written to database.");
+                        logger.Info("SUCCESS COMMIT:Tripple record commits or transactions are written to database.");
                         connection.Close();
                         return true;
                     }

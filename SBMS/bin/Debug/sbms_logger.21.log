@@ -1,0 +1,65 @@
+2020-05-21 10:08:48.2913 SBMS.Services.CheckinCheckoutService Exception at Checkin/Checkout ServicesSystem.Data.SqlClient.SqlException (0x80131904): Must declare the scalar variable "@cabinet".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideOutForExchange(Int32 exchanged_contact_id, List`1 ids, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 325
+ClientConnectionId:81e53b3e-2cd8-4174-bed5-7855fd5f8eda
+Error Number:137,State:2,Class:15
+2020-05-21 10:17:10.1040 SBMS.Program importing defaults
+2020-05-21 10:17:10.1991 SBMS.Program Default is found proceeding.
+2020-05-21 10:17:25.0870 SBMS.Selection Search Result for  count:1
+2020-05-21 10:17:35.1155 SBMS.Selection checkout started ids are not null: 
+2020-05-21 10:17:39.2621 SBMS.Services.CheckinCheckoutService Exception at Checkin/Checkout ServicesSystem.Data.SqlClient.SqlException (0x80131904): Invalid column name 'exchange_date'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at SBMS.Services.CheckinCheckoutService.checkoutbySlideOutForExchange(Int32 exchanged_contact_id, List`1 ids, String reason) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Services\CheckinCheckoutService.cs:line 331
+ClientConnectionId:785e2ae5-0a7c-4083-a568-09078a488ee0
+Error Number:207,State:1,Class:16
+2020-05-21 10:19:29.7605 SBMS.Program importing defaults
+2020-05-21 10:19:29.9242 SBMS.Program Default is found proceeding.
+2020-05-21 10:19:44.9908 SBMS.Selection Search Result for  count:1
+2020-05-21 10:20:01.0673 SBMS.Selection checkout started ids are not null: 
+2020-05-21 10:20:02.8096 SBMS.Services.CheckinCheckoutService Commit:Both records are written to database.
+2020-05-21 10:42:41.0258 SBMS.Program importing defaults
+2020-05-21 10:42:41.1751 SBMS.Program Default is found proceeding.
+2020-05-21 11:09:30.6792 SBMS.Program importing defaults
+2020-05-21 11:09:30.8821 SBMS.Program Default is found proceeding.
+2020-05-21 11:14:24.8042 SBMS.Selection Search Result for  count:0
+2020-05-21 11:15:10.8039 SBMS.Program importing defaults
+2020-05-21 11:15:10.9201 SBMS.Program Default is found proceeding.
+2020-05-21 11:20:02.0817 SBMS.Program importing defaults
+2020-05-21 11:20:02.1944 SBMS.Program Default is found proceeding.
+2020-05-21 11:20:23.8784 SBMS.Selection Search Result for  count:1
+2020-05-21 11:20:34.1837 SBMS.Selection checkout started ids are not null: 
+2020-05-21 11:20:37.4293 SBMS.Services.CheckinCheckoutService Commit:Both records are written to database.
+2020-05-21 11:20:46.3055 SBMS.Reports.CrystalReports.ExchangeCheckoutReportViewPort Checkout Report generation has some expectionsSystem.NullReferenceException: Object reference not set to an instance of an object.
+   at SBMS.Reports.CrystalReports.ExchangeCheckoutReportViewPort.ExchangeCheckoutReportViewPort_Load(Object sender, EventArgs e) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Reports\CrystalReports\ExchangeChekoutReportViewPort.cs:line 53
+2020-05-21 11:31:47.3082 SBMS.Program importing defaults
+2020-05-21 11:31:47.4115 SBMS.Program Default is found proceeding.
+2020-05-21 11:31:55.1072 SBMS.Selection Search Result for  count:1
+2020-05-21 11:32:07.5548 SBMS.Selection checkout started ids are not null: 
+2020-05-21 11:32:07.6153 SBMS.Services.CheckinCheckoutService SUCCESS COMMIT:Tripple record commits or transactions are written to database.
+2020-05-21 11:32:15.3882 SBMS.Reports.CrystalReports.ExchangeCheckoutReportViewPort Checkout Report generation has some expectionsSystem.NullReferenceException: Object reference not set to an instance of an object.
+   at SBMS.Reports.CrystalReports.ExchangeCheckoutReportViewPort.ExchangeCheckoutReportViewPort_Load(Object sender, EventArgs e) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Reports\CrystalReports\ExchangeChekoutReportViewPort.cs:line 53
+2020-05-21 11:33:55.4178 SBMS.Program importing defaults
+2020-05-21 11:33:55.5492 SBMS.Program Default is found proceeding.
+2020-05-21 11:34:02.8231 SBMS.Selection Search Result for  count:1
+2020-05-21 11:34:24.3762 SBMS.Selection checkout started ids are not null: 
+2020-05-21 11:34:24.4491 SBMS.Services.CheckinCheckoutService SUCCESS COMMIT:Tripple record commits or transactions are written to database.
+2020-05-21 11:34:27.6968 SBMS.Reports.CrystalReports.ExchangeCheckoutReportViewPort Checkout Report generation has some expectionsSystem.NullReferenceException: Object reference not set to an instance of an object.
+   at SBMS.Reports.CrystalReports.ExchangeCheckoutReportViewPort.ExchangeCheckoutReportViewPort_Load(Object sender, EventArgs e) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Reports\CrystalReports\ExchangeChekoutReportViewPort.cs:line 53
+2020-05-21 11:36:24.5452 SBMS.Program importing defaults
+2020-05-21 11:36:24.6652 SBMS.Program Default is found proceeding.
