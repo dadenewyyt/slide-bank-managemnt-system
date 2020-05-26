@@ -26,14 +26,14 @@ namespace SBMS
 
             try
              {
-                 logger.Info("importing defaults");
+                logger.Info("importing defaults");
                 int id = importDefaultsService.CheckIfDefaultExisits();
                 if (id !=-1)
                 {
                     logger.Info("Default is found proceeding.");
                     StartupValueServices.Exchange_id_default = id;
 
-                    Application.Run(new MDIParent1());
+                    Application.Run(new MDIChild());
 
                 }
                 else {

@@ -34,7 +34,34 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grd_exchange_in = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specificsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.densitycategoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cabinetnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawernumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boxnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDamagedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isReservedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isBorrowedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isActiveDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isReplacedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isOutExchangedDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isExchangeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobtitleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.organisationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.officalemailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.officephoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.faxnumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.grd_exchanged_out = new System.Windows.Forms.DataGridView();
@@ -67,86 +94,9 @@
             this.exchangeCheckouReportTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSet = new SBMS.sbmsDataSet();
             this.exchangeCheckoutReportTableAdapter = new SBMS.sbmsDataSetTableAdapters.exchangeCheckoutReportTableAdapter();
-            this.exchangeCheckouReportTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specificsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slideidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exchangecontactidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exchangeddateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exchangedbyDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cabinetDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drawerDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cabinetnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drawernumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boxnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDamagedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isReservedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isBorrowedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isActiveDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isReplacedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isOutExchangedDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcode1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciesspecificidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciescatgeroyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lowerdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.averagedensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upperdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.owneridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acquireddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.validationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdby1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedby1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createddate1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updateddate1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isWHODataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isActive1DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isExchangeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.exchangeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobtitleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.organisationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.officalemailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personalemailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobilephoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.officephoneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.faxnumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postcodeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createddate2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdby2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updateddate2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedby2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isdeletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isDefaultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speciescategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stageDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id7DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.densitycategoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exchangeSlidesIncomingDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.exchangeSlidesIncomingDataTableTableAdapter = new SBMS.sbmsDataSetTableAdapters.ExchangeSlidesIncomingDataTableTableAdapter();
+            this.exchangeSlidesIncomingDataTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -154,11 +104,12 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_exchange_in)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_exchanged_out)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeCheckouReportTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exchangeCheckouReportTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exchangeSlidesIncomingDataTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exchangeSlidesIncomingDataTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -199,7 +150,7 @@
             // 
             this.splitContainer2.Panel1.Controls.Add(this.button2);
             this.splitContainer2.Panel1.Controls.Add(this.label2);
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer2.Panel1.Controls.Add(this.grd_exchange_in);
             // 
             // splitContainer2.Panel2
             // 
@@ -221,6 +172,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Print";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -232,25 +184,18 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Slides Recived By Exchange/Donation to EPHI";
             // 
-            // dataGridView1
+            // grd_exchange_in
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grd_exchange_in.AutoGenerateColumns = false;
+            this.grd_exchange_in.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.grd_exchange_in.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd_exchange_in.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
-            this.specificsDataGridViewTextBoxColumn1,
-            this.slideidDataGridViewTextBoxColumn,
-            this.exchangecontactidDataGridViewTextBoxColumn,
-            this.exchangeddateDataGridViewTextBoxColumn1,
-            this.exchangedbyDataGridViewTextBoxColumn1,
-            this.cabinetDataGridViewTextBoxColumn1,
-            this.boxDataGridViewTextBoxColumn1,
-            this.drawerDataGridViewTextBoxColumn1,
-            this.noteDataGridViewTextBoxColumn1,
-            this.id1DataGridViewTextBoxColumn,
             this.barcodeDataGridViewTextBoxColumn1,
+            this.specificsDataGridViewTextBoxColumn1,
+            this.densitycategoryDataGridViewTextBoxColumn1,
             this.sequenceDataGridViewTextBoxColumn,
-            this.donoridDataGridViewTextBoxColumn,
+            this.donorcodeDataGridViewTextBoxColumn,
             this.cabinetnumberDataGridViewTextBoxColumn,
             this.drawernumberDataGridViewTextBoxColumn,
             this.boxnumberDataGridViewTextBoxColumn,
@@ -258,69 +203,189 @@
             this.isReservedDataGridViewCheckBoxColumn,
             this.isBorrowedDataGridViewCheckBoxColumn,
             this.isActiveDataGridViewCheckBoxColumn1,
-            this.updateddateDataGridViewTextBoxColumn,
             this.createddateDataGridViewTextBoxColumn,
             this.createdbyDataGridViewTextBoxColumn,
             this.updatedbyDataGridViewTextBoxColumn,
             this.isReplacedDataGridViewCheckBoxColumn,
             this.isOutExchangedDataGridViewCheckBoxColumn1,
-            this.id2DataGridViewTextBoxColumn,
-            this.barcode1DataGridViewTextBoxColumn,
-            this.countrycodeDataGridViewTextBoxColumn,
-            this.donorcodeDataGridViewTextBoxColumn,
-            this.speciesspecificidDataGridViewTextBoxColumn,
-            this.speciesstageidDataGridViewTextBoxColumn,
-            this.speciescatgeroyidDataGridViewTextBoxColumn,
-            this.lowerdensityDataGridViewTextBoxColumn,
-            this.averagedensityDataGridViewTextBoxColumn,
-            this.upperdensityDataGridViewTextBoxColumn,
-            this.densitycategoryidDataGridViewTextBoxColumn,
-            this.owneridDataGridViewTextBoxColumn,
-            this.acquireddateDataGridViewTextBoxColumn,
-            this.validationidDataGridViewTextBoxColumn,
-            this.commentDataGridViewTextBoxColumn1,
-            this.createdby1DataGridViewTextBoxColumn,
-            this.updatedby1DataGridViewTextBoxColumn,
-            this.createddate1DataGridViewTextBoxColumn,
-            this.updateddate1DataGridViewTextBoxColumn,
-            this.isWHODataGridViewCheckBoxColumn1,
-            this.isActive1DataGridViewCheckBoxColumn,
             this.isExchangeDataGridViewCheckBoxColumn,
-            this.exchangeidDataGridViewTextBoxColumn,
-            this.id3DataGridViewTextBoxColumn,
             this.fnameDataGridViewTextBoxColumn1,
             this.lnameDataGridViewTextBoxColumn1,
             this.jobtitleDataGridViewTextBoxColumn1,
+            this.countryDataGridViewTextBoxColumn1,
             this.organisationDataGridViewTextBoxColumn1,
             this.officalemailDataGridViewTextBoxColumn1,
-            this.personalemailDataGridViewTextBoxColumn,
-            this.mobilephoneDataGridViewTextBoxColumn1,
             this.officephoneDataGridViewTextBoxColumn1,
-            this.faxnumberDataGridViewTextBoxColumn1,
-            this.countryDataGridViewTextBoxColumn1,
-            this.cityDataGridViewTextBoxColumn1,
-            this.hnoDataGridViewTextBoxColumn,
-            this.postcodeDataGridViewTextBoxColumn1,
-            this.note1DataGridViewTextBoxColumn,
-            this.createddate2DataGridViewTextBoxColumn,
-            this.createdby2DataGridViewTextBoxColumn,
-            this.updateddate2DataGridViewTextBoxColumn,
-            this.updatedby2DataGridViewTextBoxColumn,
-            this.isdeletedDataGridViewCheckBoxColumn,
-            this.isDefaultDataGridViewCheckBoxColumn,
-            this.id4DataGridViewTextBoxColumn,
-            this.id5DataGridViewTextBoxColumn,
-            this.speciescategoryDataGridViewTextBoxColumn,
-            this.id6DataGridViewTextBoxColumn,
-            this.stageDataGridViewTextBoxColumn1,
-            this.id7DataGridViewTextBoxColumn,
-            this.densitycategoryDataGridViewTextBoxColumn1,
-            this.codeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.exchangeCheckouReportTableBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(725, 533);
-            this.dataGridView1.TabIndex = 0;
+            this.faxnumberDataGridViewTextBoxColumn1});
+            this.grd_exchange_in.DataSource = this.exchangeSlidesIncomingDataTableBindingSource;
+            this.grd_exchange_in.Location = new System.Drawing.Point(4, 74);
+            this.grd_exchange_in.Name = "grd_exchange_in";
+            this.grd_exchange_in.Size = new System.Drawing.Size(725, 533);
+            this.grd_exchange_in.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // barcodeDataGridViewTextBoxColumn1
+            // 
+            this.barcodeDataGridViewTextBoxColumn1.DataPropertyName = "bar_code";
+            this.barcodeDataGridViewTextBoxColumn1.HeaderText = "Barcode";
+            this.barcodeDataGridViewTextBoxColumn1.Name = "barcodeDataGridViewTextBoxColumn1";
+            // 
+            // specificsDataGridViewTextBoxColumn1
+            // 
+            this.specificsDataGridViewTextBoxColumn1.DataPropertyName = "specifics";
+            this.specificsDataGridViewTextBoxColumn1.HeaderText = "Specifics";
+            this.specificsDataGridViewTextBoxColumn1.Name = "specificsDataGridViewTextBoxColumn1";
+            // 
+            // densitycategoryDataGridViewTextBoxColumn1
+            // 
+            this.densitycategoryDataGridViewTextBoxColumn1.DataPropertyName = "density_category";
+            this.densitycategoryDataGridViewTextBoxColumn1.HeaderText = "Density";
+            this.densitycategoryDataGridViewTextBoxColumn1.Name = "densitycategoryDataGridViewTextBoxColumn1";
+            // 
+            // sequenceDataGridViewTextBoxColumn
+            // 
+            this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
+            this.sequenceDataGridViewTextBoxColumn.HeaderText = "Sequence";
+            this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
+            // 
+            // donorcodeDataGridViewTextBoxColumn
+            // 
+            this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
+            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "Donor Code";
+            this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
+            // 
+            // cabinetnumberDataGridViewTextBoxColumn
+            // 
+            this.cabinetnumberDataGridViewTextBoxColumn.DataPropertyName = "cabinet_number";
+            this.cabinetnumberDataGridViewTextBoxColumn.HeaderText = "Cabinet";
+            this.cabinetnumberDataGridViewTextBoxColumn.Name = "cabinetnumberDataGridViewTextBoxColumn";
+            // 
+            // drawernumberDataGridViewTextBoxColumn
+            // 
+            this.drawernumberDataGridViewTextBoxColumn.DataPropertyName = "drawer_number";
+            this.drawernumberDataGridViewTextBoxColumn.HeaderText = "Drawer";
+            this.drawernumberDataGridViewTextBoxColumn.Name = "drawernumberDataGridViewTextBoxColumn";
+            // 
+            // boxnumberDataGridViewTextBoxColumn
+            // 
+            this.boxnumberDataGridViewTextBoxColumn.DataPropertyName = "box_number";
+            this.boxnumberDataGridViewTextBoxColumn.HeaderText = "Box";
+            this.boxnumberDataGridViewTextBoxColumn.Name = "boxnumberDataGridViewTextBoxColumn";
+            // 
+            // isDamagedDataGridViewCheckBoxColumn
+            // 
+            this.isDamagedDataGridViewCheckBoxColumn.DataPropertyName = "isDamaged";
+            this.isDamagedDataGridViewCheckBoxColumn.HeaderText = "Damaged?";
+            this.isDamagedDataGridViewCheckBoxColumn.Name = "isDamagedDataGridViewCheckBoxColumn";
+            // 
+            // isReservedDataGridViewCheckBoxColumn
+            // 
+            this.isReservedDataGridViewCheckBoxColumn.DataPropertyName = "isReserved";
+            this.isReservedDataGridViewCheckBoxColumn.HeaderText = "Reserved?";
+            this.isReservedDataGridViewCheckBoxColumn.Name = "isReservedDataGridViewCheckBoxColumn";
+            // 
+            // isBorrowedDataGridViewCheckBoxColumn
+            // 
+            this.isBorrowedDataGridViewCheckBoxColumn.DataPropertyName = "isBorrowed";
+            this.isBorrowedDataGridViewCheckBoxColumn.HeaderText = "isBorrowed";
+            this.isBorrowedDataGridViewCheckBoxColumn.Name = "isBorrowedDataGridViewCheckBoxColumn";
+            // 
+            // isActiveDataGridViewCheckBoxColumn1
+            // 
+            this.isActiveDataGridViewCheckBoxColumn1.DataPropertyName = "isActive";
+            this.isActiveDataGridViewCheckBoxColumn1.HeaderText = "isActive";
+            this.isActiveDataGridViewCheckBoxColumn1.Name = "isActiveDataGridViewCheckBoxColumn1";
+            // 
+            // createddateDataGridViewTextBoxColumn
+            // 
+            this.createddateDataGridViewTextBoxColumn.DataPropertyName = "created_date";
+            this.createddateDataGridViewTextBoxColumn.HeaderText = "created_date";
+            this.createddateDataGridViewTextBoxColumn.Name = "createddateDataGridViewTextBoxColumn";
+            // 
+            // createdbyDataGridViewTextBoxColumn
+            // 
+            this.createdbyDataGridViewTextBoxColumn.DataPropertyName = "created_by";
+            this.createdbyDataGridViewTextBoxColumn.HeaderText = "created_by";
+            this.createdbyDataGridViewTextBoxColumn.Name = "createdbyDataGridViewTextBoxColumn";
+            // 
+            // updatedbyDataGridViewTextBoxColumn
+            // 
+            this.updatedbyDataGridViewTextBoxColumn.DataPropertyName = "updated_by";
+            this.updatedbyDataGridViewTextBoxColumn.HeaderText = "updated_by";
+            this.updatedbyDataGridViewTextBoxColumn.Name = "updatedbyDataGridViewTextBoxColumn";
+            // 
+            // isReplacedDataGridViewCheckBoxColumn
+            // 
+            this.isReplacedDataGridViewCheckBoxColumn.DataPropertyName = "isReplaced";
+            this.isReplacedDataGridViewCheckBoxColumn.HeaderText = "isReplaced";
+            this.isReplacedDataGridViewCheckBoxColumn.Name = "isReplacedDataGridViewCheckBoxColumn";
+            // 
+            // isOutExchangedDataGridViewCheckBoxColumn1
+            // 
+            this.isOutExchangedDataGridViewCheckBoxColumn1.DataPropertyName = "isOutExchanged";
+            this.isOutExchangedDataGridViewCheckBoxColumn1.HeaderText = "isOutExchanged";
+            this.isOutExchangedDataGridViewCheckBoxColumn1.Name = "isOutExchangedDataGridViewCheckBoxColumn1";
+            // 
+            // isExchangeDataGridViewCheckBoxColumn
+            // 
+            this.isExchangeDataGridViewCheckBoxColumn.DataPropertyName = "isExchange";
+            this.isExchangeDataGridViewCheckBoxColumn.HeaderText = "isExchange";
+            this.isExchangeDataGridViewCheckBoxColumn.Name = "isExchangeDataGridViewCheckBoxColumn";
+            // 
+            // fnameDataGridViewTextBoxColumn1
+            // 
+            this.fnameDataGridViewTextBoxColumn1.DataPropertyName = "fname";
+            this.fnameDataGridViewTextBoxColumn1.HeaderText = "ContactFname";
+            this.fnameDataGridViewTextBoxColumn1.Name = "fnameDataGridViewTextBoxColumn1";
+            // 
+            // lnameDataGridViewTextBoxColumn1
+            // 
+            this.lnameDataGridViewTextBoxColumn1.DataPropertyName = "lname";
+            this.lnameDataGridViewTextBoxColumn1.HeaderText = "Lname";
+            this.lnameDataGridViewTextBoxColumn1.Name = "lnameDataGridViewTextBoxColumn1";
+            // 
+            // jobtitleDataGridViewTextBoxColumn1
+            // 
+            this.jobtitleDataGridViewTextBoxColumn1.DataPropertyName = "job_title";
+            this.jobtitleDataGridViewTextBoxColumn1.HeaderText = "Postion";
+            this.jobtitleDataGridViewTextBoxColumn1.Name = "jobtitleDataGridViewTextBoxColumn1";
+            // 
+            // countryDataGridViewTextBoxColumn1
+            // 
+            this.countryDataGridViewTextBoxColumn1.DataPropertyName = "country";
+            this.countryDataGridViewTextBoxColumn1.HeaderText = "CountryOfOrigin";
+            this.countryDataGridViewTextBoxColumn1.Name = "countryDataGridViewTextBoxColumn1";
+            // 
+            // organisationDataGridViewTextBoxColumn1
+            // 
+            this.organisationDataGridViewTextBoxColumn1.DataPropertyName = "organisation";
+            this.organisationDataGridViewTextBoxColumn1.HeaderText = "Organ\'n";
+            this.organisationDataGridViewTextBoxColumn1.Name = "organisationDataGridViewTextBoxColumn1";
+            // 
+            // officalemailDataGridViewTextBoxColumn1
+            // 
+            this.officalemailDataGridViewTextBoxColumn1.DataPropertyName = "offical_email";
+            this.officalemailDataGridViewTextBoxColumn1.HeaderText = "Off.Email";
+            this.officalemailDataGridViewTextBoxColumn1.Name = "officalemailDataGridViewTextBoxColumn1";
+            // 
+            // officephoneDataGridViewTextBoxColumn1
+            // 
+            this.officephoneDataGridViewTextBoxColumn1.DataPropertyName = "office_phone";
+            this.officephoneDataGridViewTextBoxColumn1.HeaderText = "OfficePhone";
+            this.officephoneDataGridViewTextBoxColumn1.Name = "officephoneDataGridViewTextBoxColumn1";
+            // 
+            // faxnumberDataGridViewTextBoxColumn1
+            // 
+            this.faxnumberDataGridViewTextBoxColumn1.DataPropertyName = "fax_number";
+            this.faxnumberDataGridViewTextBoxColumn1.HeaderText = "Fax#";
+            this.faxnumberDataGridViewTextBoxColumn1.Name = "faxnumberDataGridViewTextBoxColumn1";
             // 
             // button1
             // 
@@ -333,6 +398,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -582,492 +648,19 @@
             // 
             this.exchangeCheckoutReportTableAdapter.ClearBeforeFill = true;
             // 
-            // exchangeCheckouReportTableBindingSource1
+            // exchangeSlidesIncomingDataTableBindingSource
             // 
-            this.exchangeCheckouReportTableBindingSource1.DataMember = "ExchangeCheckouReportTable";
-            this.exchangeCheckouReportTableBindingSource1.DataSource = this.sbmsDataSet;
+            this.exchangeSlidesIncomingDataTableBindingSource.DataMember = "ExchangeSlidesIncomingDataTable";
+            this.exchangeSlidesIncomingDataTableBindingSource.DataSource = this.sbmsDataSet;
             // 
-            // idDataGridViewTextBoxColumn1
+            // exchangeSlidesIncomingDataTableTableAdapter
             // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.exchangeSlidesIncomingDataTableTableAdapter.ClearBeforeFill = true;
             // 
-            // specificsDataGridViewTextBoxColumn1
+            // exchangeSlidesIncomingDataTableBindingSource1
             // 
-            this.specificsDataGridViewTextBoxColumn1.DataPropertyName = "specifics";
-            this.specificsDataGridViewTextBoxColumn1.HeaderText = "specifics";
-            this.specificsDataGridViewTextBoxColumn1.Name = "specificsDataGridViewTextBoxColumn1";
-            // 
-            // slideidDataGridViewTextBoxColumn
-            // 
-            this.slideidDataGridViewTextBoxColumn.DataPropertyName = "slide_id";
-            this.slideidDataGridViewTextBoxColumn.HeaderText = "slide_id";
-            this.slideidDataGridViewTextBoxColumn.Name = "slideidDataGridViewTextBoxColumn";
-            // 
-            // exchangecontactidDataGridViewTextBoxColumn
-            // 
-            this.exchangecontactidDataGridViewTextBoxColumn.DataPropertyName = "exchange_contact_id";
-            this.exchangecontactidDataGridViewTextBoxColumn.HeaderText = "exchange_contact_id";
-            this.exchangecontactidDataGridViewTextBoxColumn.Name = "exchangecontactidDataGridViewTextBoxColumn";
-            // 
-            // exchangeddateDataGridViewTextBoxColumn1
-            // 
-            this.exchangeddateDataGridViewTextBoxColumn1.DataPropertyName = "exchanged_date";
-            this.exchangeddateDataGridViewTextBoxColumn1.HeaderText = "exchanged_date";
-            this.exchangeddateDataGridViewTextBoxColumn1.Name = "exchangeddateDataGridViewTextBoxColumn1";
-            // 
-            // exchangedbyDataGridViewTextBoxColumn1
-            // 
-            this.exchangedbyDataGridViewTextBoxColumn1.DataPropertyName = "exchanged_by";
-            this.exchangedbyDataGridViewTextBoxColumn1.HeaderText = "exchanged_by";
-            this.exchangedbyDataGridViewTextBoxColumn1.Name = "exchangedbyDataGridViewTextBoxColumn1";
-            // 
-            // cabinetDataGridViewTextBoxColumn1
-            // 
-            this.cabinetDataGridViewTextBoxColumn1.DataPropertyName = "cabinet";
-            this.cabinetDataGridViewTextBoxColumn1.HeaderText = "cabinet";
-            this.cabinetDataGridViewTextBoxColumn1.Name = "cabinetDataGridViewTextBoxColumn1";
-            // 
-            // boxDataGridViewTextBoxColumn1
-            // 
-            this.boxDataGridViewTextBoxColumn1.DataPropertyName = "box";
-            this.boxDataGridViewTextBoxColumn1.HeaderText = "box";
-            this.boxDataGridViewTextBoxColumn1.Name = "boxDataGridViewTextBoxColumn1";
-            // 
-            // drawerDataGridViewTextBoxColumn1
-            // 
-            this.drawerDataGridViewTextBoxColumn1.DataPropertyName = "drawer";
-            this.drawerDataGridViewTextBoxColumn1.HeaderText = "drawer";
-            this.drawerDataGridViewTextBoxColumn1.Name = "drawerDataGridViewTextBoxColumn1";
-            // 
-            // noteDataGridViewTextBoxColumn1
-            // 
-            this.noteDataGridViewTextBoxColumn1.DataPropertyName = "note";
-            this.noteDataGridViewTextBoxColumn1.HeaderText = "note";
-            this.noteDataGridViewTextBoxColumn1.Name = "noteDataGridViewTextBoxColumn1";
-            // 
-            // id1DataGridViewTextBoxColumn
-            // 
-            this.id1DataGridViewTextBoxColumn.DataPropertyName = "id1";
-            this.id1DataGridViewTextBoxColumn.HeaderText = "id1";
-            this.id1DataGridViewTextBoxColumn.Name = "id1DataGridViewTextBoxColumn";
-            this.id1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // barcodeDataGridViewTextBoxColumn1
-            // 
-            this.barcodeDataGridViewTextBoxColumn1.DataPropertyName = "bar_code";
-            this.barcodeDataGridViewTextBoxColumn1.HeaderText = "bar_code";
-            this.barcodeDataGridViewTextBoxColumn1.Name = "barcodeDataGridViewTextBoxColumn1";
-            // 
-            // sequenceDataGridViewTextBoxColumn
-            // 
-            this.sequenceDataGridViewTextBoxColumn.DataPropertyName = "sequence";
-            this.sequenceDataGridViewTextBoxColumn.HeaderText = "sequence";
-            this.sequenceDataGridViewTextBoxColumn.Name = "sequenceDataGridViewTextBoxColumn";
-            // 
-            // donoridDataGridViewTextBoxColumn
-            // 
-            this.donoridDataGridViewTextBoxColumn.DataPropertyName = "donor_id";
-            this.donoridDataGridViewTextBoxColumn.HeaderText = "donor_id";
-            this.donoridDataGridViewTextBoxColumn.Name = "donoridDataGridViewTextBoxColumn";
-            // 
-            // cabinetnumberDataGridViewTextBoxColumn
-            // 
-            this.cabinetnumberDataGridViewTextBoxColumn.DataPropertyName = "cabinet_number";
-            this.cabinetnumberDataGridViewTextBoxColumn.HeaderText = "cabinet_number";
-            this.cabinetnumberDataGridViewTextBoxColumn.Name = "cabinetnumberDataGridViewTextBoxColumn";
-            // 
-            // drawernumberDataGridViewTextBoxColumn
-            // 
-            this.drawernumberDataGridViewTextBoxColumn.DataPropertyName = "drawer_number";
-            this.drawernumberDataGridViewTextBoxColumn.HeaderText = "drawer_number";
-            this.drawernumberDataGridViewTextBoxColumn.Name = "drawernumberDataGridViewTextBoxColumn";
-            // 
-            // boxnumberDataGridViewTextBoxColumn
-            // 
-            this.boxnumberDataGridViewTextBoxColumn.DataPropertyName = "box_number";
-            this.boxnumberDataGridViewTextBoxColumn.HeaderText = "box_number";
-            this.boxnumberDataGridViewTextBoxColumn.Name = "boxnumberDataGridViewTextBoxColumn";
-            // 
-            // isDamagedDataGridViewCheckBoxColumn
-            // 
-            this.isDamagedDataGridViewCheckBoxColumn.DataPropertyName = "isDamaged";
-            this.isDamagedDataGridViewCheckBoxColumn.HeaderText = "isDamaged";
-            this.isDamagedDataGridViewCheckBoxColumn.Name = "isDamagedDataGridViewCheckBoxColumn";
-            // 
-            // isReservedDataGridViewCheckBoxColumn
-            // 
-            this.isReservedDataGridViewCheckBoxColumn.DataPropertyName = "isReserved";
-            this.isReservedDataGridViewCheckBoxColumn.HeaderText = "isReserved";
-            this.isReservedDataGridViewCheckBoxColumn.Name = "isReservedDataGridViewCheckBoxColumn";
-            // 
-            // isBorrowedDataGridViewCheckBoxColumn
-            // 
-            this.isBorrowedDataGridViewCheckBoxColumn.DataPropertyName = "isBorrowed";
-            this.isBorrowedDataGridViewCheckBoxColumn.HeaderText = "isBorrowed";
-            this.isBorrowedDataGridViewCheckBoxColumn.Name = "isBorrowedDataGridViewCheckBoxColumn";
-            // 
-            // isActiveDataGridViewCheckBoxColumn1
-            // 
-            this.isActiveDataGridViewCheckBoxColumn1.DataPropertyName = "isActive";
-            this.isActiveDataGridViewCheckBoxColumn1.HeaderText = "isActive";
-            this.isActiveDataGridViewCheckBoxColumn1.Name = "isActiveDataGridViewCheckBoxColumn1";
-            // 
-            // updateddateDataGridViewTextBoxColumn
-            // 
-            this.updateddateDataGridViewTextBoxColumn.DataPropertyName = "updated_date";
-            this.updateddateDataGridViewTextBoxColumn.HeaderText = "updated_date";
-            this.updateddateDataGridViewTextBoxColumn.Name = "updateddateDataGridViewTextBoxColumn";
-            // 
-            // createddateDataGridViewTextBoxColumn
-            // 
-            this.createddateDataGridViewTextBoxColumn.DataPropertyName = "created_date";
-            this.createddateDataGridViewTextBoxColumn.HeaderText = "created_date";
-            this.createddateDataGridViewTextBoxColumn.Name = "createddateDataGridViewTextBoxColumn";
-            // 
-            // createdbyDataGridViewTextBoxColumn
-            // 
-            this.createdbyDataGridViewTextBoxColumn.DataPropertyName = "created_by";
-            this.createdbyDataGridViewTextBoxColumn.HeaderText = "created_by";
-            this.createdbyDataGridViewTextBoxColumn.Name = "createdbyDataGridViewTextBoxColumn";
-            // 
-            // updatedbyDataGridViewTextBoxColumn
-            // 
-            this.updatedbyDataGridViewTextBoxColumn.DataPropertyName = "updated_by";
-            this.updatedbyDataGridViewTextBoxColumn.HeaderText = "updated_by";
-            this.updatedbyDataGridViewTextBoxColumn.Name = "updatedbyDataGridViewTextBoxColumn";
-            // 
-            // isReplacedDataGridViewCheckBoxColumn
-            // 
-            this.isReplacedDataGridViewCheckBoxColumn.DataPropertyName = "isReplaced";
-            this.isReplacedDataGridViewCheckBoxColumn.HeaderText = "isReplaced";
-            this.isReplacedDataGridViewCheckBoxColumn.Name = "isReplacedDataGridViewCheckBoxColumn";
-            // 
-            // isOutExchangedDataGridViewCheckBoxColumn1
-            // 
-            this.isOutExchangedDataGridViewCheckBoxColumn1.DataPropertyName = "isOutExchanged";
-            this.isOutExchangedDataGridViewCheckBoxColumn1.HeaderText = "isOutExchanged";
-            this.isOutExchangedDataGridViewCheckBoxColumn1.Name = "isOutExchangedDataGridViewCheckBoxColumn1";
-            // 
-            // id2DataGridViewTextBoxColumn
-            // 
-            this.id2DataGridViewTextBoxColumn.DataPropertyName = "id2";
-            this.id2DataGridViewTextBoxColumn.HeaderText = "id2";
-            this.id2DataGridViewTextBoxColumn.Name = "id2DataGridViewTextBoxColumn";
-            this.id2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // barcode1DataGridViewTextBoxColumn
-            // 
-            this.barcode1DataGridViewTextBoxColumn.DataPropertyName = "bar_code1";
-            this.barcode1DataGridViewTextBoxColumn.HeaderText = "bar_code1";
-            this.barcode1DataGridViewTextBoxColumn.Name = "barcode1DataGridViewTextBoxColumn";
-            // 
-            // countrycodeDataGridViewTextBoxColumn
-            // 
-            this.countrycodeDataGridViewTextBoxColumn.DataPropertyName = "country_code";
-            this.countrycodeDataGridViewTextBoxColumn.HeaderText = "country_code";
-            this.countrycodeDataGridViewTextBoxColumn.Name = "countrycodeDataGridViewTextBoxColumn";
-            // 
-            // donorcodeDataGridViewTextBoxColumn
-            // 
-            this.donorcodeDataGridViewTextBoxColumn.DataPropertyName = "donor_code";
-            this.donorcodeDataGridViewTextBoxColumn.HeaderText = "donor_code";
-            this.donorcodeDataGridViewTextBoxColumn.Name = "donorcodeDataGridViewTextBoxColumn";
-            // 
-            // speciesspecificidDataGridViewTextBoxColumn
-            // 
-            this.speciesspecificidDataGridViewTextBoxColumn.DataPropertyName = "species_specific_id";
-            this.speciesspecificidDataGridViewTextBoxColumn.HeaderText = "species_specific_id";
-            this.speciesspecificidDataGridViewTextBoxColumn.Name = "speciesspecificidDataGridViewTextBoxColumn";
-            // 
-            // speciesstageidDataGridViewTextBoxColumn
-            // 
-            this.speciesstageidDataGridViewTextBoxColumn.DataPropertyName = "species_stage_id";
-            this.speciesstageidDataGridViewTextBoxColumn.HeaderText = "species_stage_id";
-            this.speciesstageidDataGridViewTextBoxColumn.Name = "speciesstageidDataGridViewTextBoxColumn";
-            // 
-            // speciescatgeroyidDataGridViewTextBoxColumn
-            // 
-            this.speciescatgeroyidDataGridViewTextBoxColumn.DataPropertyName = "species_catgeroy_id";
-            this.speciescatgeroyidDataGridViewTextBoxColumn.HeaderText = "species_catgeroy_id";
-            this.speciescatgeroyidDataGridViewTextBoxColumn.Name = "speciescatgeroyidDataGridViewTextBoxColumn";
-            // 
-            // lowerdensityDataGridViewTextBoxColumn
-            // 
-            this.lowerdensityDataGridViewTextBoxColumn.DataPropertyName = "lower_density";
-            this.lowerdensityDataGridViewTextBoxColumn.HeaderText = "lower_density";
-            this.lowerdensityDataGridViewTextBoxColumn.Name = "lowerdensityDataGridViewTextBoxColumn";
-            // 
-            // averagedensityDataGridViewTextBoxColumn
-            // 
-            this.averagedensityDataGridViewTextBoxColumn.DataPropertyName = "average_density";
-            this.averagedensityDataGridViewTextBoxColumn.HeaderText = "average_density";
-            this.averagedensityDataGridViewTextBoxColumn.Name = "averagedensityDataGridViewTextBoxColumn";
-            // 
-            // upperdensityDataGridViewTextBoxColumn
-            // 
-            this.upperdensityDataGridViewTextBoxColumn.DataPropertyName = "upper_density";
-            this.upperdensityDataGridViewTextBoxColumn.HeaderText = "upper_density";
-            this.upperdensityDataGridViewTextBoxColumn.Name = "upperdensityDataGridViewTextBoxColumn";
-            // 
-            // densitycategoryidDataGridViewTextBoxColumn
-            // 
-            this.densitycategoryidDataGridViewTextBoxColumn.DataPropertyName = "density_category_id";
-            this.densitycategoryidDataGridViewTextBoxColumn.HeaderText = "density_category_id";
-            this.densitycategoryidDataGridViewTextBoxColumn.Name = "densitycategoryidDataGridViewTextBoxColumn";
-            // 
-            // owneridDataGridViewTextBoxColumn
-            // 
-            this.owneridDataGridViewTextBoxColumn.DataPropertyName = "owner_id";
-            this.owneridDataGridViewTextBoxColumn.HeaderText = "owner_id";
-            this.owneridDataGridViewTextBoxColumn.Name = "owneridDataGridViewTextBoxColumn";
-            // 
-            // acquireddateDataGridViewTextBoxColumn
-            // 
-            this.acquireddateDataGridViewTextBoxColumn.DataPropertyName = "acquired_date";
-            this.acquireddateDataGridViewTextBoxColumn.HeaderText = "acquired_date";
-            this.acquireddateDataGridViewTextBoxColumn.Name = "acquireddateDataGridViewTextBoxColumn";
-            // 
-            // validationidDataGridViewTextBoxColumn
-            // 
-            this.validationidDataGridViewTextBoxColumn.DataPropertyName = "validation_id";
-            this.validationidDataGridViewTextBoxColumn.HeaderText = "validation_id";
-            this.validationidDataGridViewTextBoxColumn.Name = "validationidDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn1
-            // 
-            this.commentDataGridViewTextBoxColumn1.DataPropertyName = "comment";
-            this.commentDataGridViewTextBoxColumn1.HeaderText = "comment";
-            this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
-            // 
-            // createdby1DataGridViewTextBoxColumn
-            // 
-            this.createdby1DataGridViewTextBoxColumn.DataPropertyName = "created_by1";
-            this.createdby1DataGridViewTextBoxColumn.HeaderText = "created_by1";
-            this.createdby1DataGridViewTextBoxColumn.Name = "createdby1DataGridViewTextBoxColumn";
-            // 
-            // updatedby1DataGridViewTextBoxColumn
-            // 
-            this.updatedby1DataGridViewTextBoxColumn.DataPropertyName = "updated_by1";
-            this.updatedby1DataGridViewTextBoxColumn.HeaderText = "updated_by1";
-            this.updatedby1DataGridViewTextBoxColumn.Name = "updatedby1DataGridViewTextBoxColumn";
-            // 
-            // createddate1DataGridViewTextBoxColumn
-            // 
-            this.createddate1DataGridViewTextBoxColumn.DataPropertyName = "created_date1";
-            this.createddate1DataGridViewTextBoxColumn.HeaderText = "created_date1";
-            this.createddate1DataGridViewTextBoxColumn.Name = "createddate1DataGridViewTextBoxColumn";
-            // 
-            // updateddate1DataGridViewTextBoxColumn
-            // 
-            this.updateddate1DataGridViewTextBoxColumn.DataPropertyName = "updated_date1";
-            this.updateddate1DataGridViewTextBoxColumn.HeaderText = "updated_date1";
-            this.updateddate1DataGridViewTextBoxColumn.Name = "updateddate1DataGridViewTextBoxColumn";
-            // 
-            // isWHODataGridViewCheckBoxColumn1
-            // 
-            this.isWHODataGridViewCheckBoxColumn1.DataPropertyName = "isWHO?";
-            this.isWHODataGridViewCheckBoxColumn1.HeaderText = "isWHO?";
-            this.isWHODataGridViewCheckBoxColumn1.Name = "isWHODataGridViewCheckBoxColumn1";
-            // 
-            // isActive1DataGridViewCheckBoxColumn
-            // 
-            this.isActive1DataGridViewCheckBoxColumn.DataPropertyName = "isActive1";
-            this.isActive1DataGridViewCheckBoxColumn.HeaderText = "isActive1";
-            this.isActive1DataGridViewCheckBoxColumn.Name = "isActive1DataGridViewCheckBoxColumn";
-            // 
-            // isExchangeDataGridViewCheckBoxColumn
-            // 
-            this.isExchangeDataGridViewCheckBoxColumn.DataPropertyName = "isExchange";
-            this.isExchangeDataGridViewCheckBoxColumn.HeaderText = "isExchange";
-            this.isExchangeDataGridViewCheckBoxColumn.Name = "isExchangeDataGridViewCheckBoxColumn";
-            // 
-            // exchangeidDataGridViewTextBoxColumn
-            // 
-            this.exchangeidDataGridViewTextBoxColumn.DataPropertyName = "exchange_id";
-            this.exchangeidDataGridViewTextBoxColumn.HeaderText = "exchange_id";
-            this.exchangeidDataGridViewTextBoxColumn.Name = "exchangeidDataGridViewTextBoxColumn";
-            // 
-            // id3DataGridViewTextBoxColumn
-            // 
-            this.id3DataGridViewTextBoxColumn.DataPropertyName = "id3";
-            this.id3DataGridViewTextBoxColumn.HeaderText = "id3";
-            this.id3DataGridViewTextBoxColumn.Name = "id3DataGridViewTextBoxColumn";
-            this.id3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fnameDataGridViewTextBoxColumn1
-            // 
-            this.fnameDataGridViewTextBoxColumn1.DataPropertyName = "fname";
-            this.fnameDataGridViewTextBoxColumn1.HeaderText = "fname";
-            this.fnameDataGridViewTextBoxColumn1.Name = "fnameDataGridViewTextBoxColumn1";
-            // 
-            // lnameDataGridViewTextBoxColumn1
-            // 
-            this.lnameDataGridViewTextBoxColumn1.DataPropertyName = "lname";
-            this.lnameDataGridViewTextBoxColumn1.HeaderText = "lname";
-            this.lnameDataGridViewTextBoxColumn1.Name = "lnameDataGridViewTextBoxColumn1";
-            // 
-            // jobtitleDataGridViewTextBoxColumn1
-            // 
-            this.jobtitleDataGridViewTextBoxColumn1.DataPropertyName = "job_title";
-            this.jobtitleDataGridViewTextBoxColumn1.HeaderText = "job_title";
-            this.jobtitleDataGridViewTextBoxColumn1.Name = "jobtitleDataGridViewTextBoxColumn1";
-            // 
-            // organisationDataGridViewTextBoxColumn1
-            // 
-            this.organisationDataGridViewTextBoxColumn1.DataPropertyName = "organisation";
-            this.organisationDataGridViewTextBoxColumn1.HeaderText = "organisation";
-            this.organisationDataGridViewTextBoxColumn1.Name = "organisationDataGridViewTextBoxColumn1";
-            // 
-            // officalemailDataGridViewTextBoxColumn1
-            // 
-            this.officalemailDataGridViewTextBoxColumn1.DataPropertyName = "offical_email";
-            this.officalemailDataGridViewTextBoxColumn1.HeaderText = "offical_email";
-            this.officalemailDataGridViewTextBoxColumn1.Name = "officalemailDataGridViewTextBoxColumn1";
-            // 
-            // personalemailDataGridViewTextBoxColumn
-            // 
-            this.personalemailDataGridViewTextBoxColumn.DataPropertyName = "personal_email";
-            this.personalemailDataGridViewTextBoxColumn.HeaderText = "personal_email";
-            this.personalemailDataGridViewTextBoxColumn.Name = "personalemailDataGridViewTextBoxColumn";
-            // 
-            // mobilephoneDataGridViewTextBoxColumn1
-            // 
-            this.mobilephoneDataGridViewTextBoxColumn1.DataPropertyName = "mobile_phone";
-            this.mobilephoneDataGridViewTextBoxColumn1.HeaderText = "mobile_phone";
-            this.mobilephoneDataGridViewTextBoxColumn1.Name = "mobilephoneDataGridViewTextBoxColumn1";
-            // 
-            // officephoneDataGridViewTextBoxColumn1
-            // 
-            this.officephoneDataGridViewTextBoxColumn1.DataPropertyName = "office_phone";
-            this.officephoneDataGridViewTextBoxColumn1.HeaderText = "office_phone";
-            this.officephoneDataGridViewTextBoxColumn1.Name = "officephoneDataGridViewTextBoxColumn1";
-            // 
-            // faxnumberDataGridViewTextBoxColumn1
-            // 
-            this.faxnumberDataGridViewTextBoxColumn1.DataPropertyName = "fax_number";
-            this.faxnumberDataGridViewTextBoxColumn1.HeaderText = "fax_number";
-            this.faxnumberDataGridViewTextBoxColumn1.Name = "faxnumberDataGridViewTextBoxColumn1";
-            // 
-            // countryDataGridViewTextBoxColumn1
-            // 
-            this.countryDataGridViewTextBoxColumn1.DataPropertyName = "country";
-            this.countryDataGridViewTextBoxColumn1.HeaderText = "country";
-            this.countryDataGridViewTextBoxColumn1.Name = "countryDataGridViewTextBoxColumn1";
-            // 
-            // cityDataGridViewTextBoxColumn1
-            // 
-            this.cityDataGridViewTextBoxColumn1.DataPropertyName = "city";
-            this.cityDataGridViewTextBoxColumn1.HeaderText = "city";
-            this.cityDataGridViewTextBoxColumn1.Name = "cityDataGridViewTextBoxColumn1";
-            // 
-            // hnoDataGridViewTextBoxColumn
-            // 
-            this.hnoDataGridViewTextBoxColumn.DataPropertyName = "hno";
-            this.hnoDataGridViewTextBoxColumn.HeaderText = "hno";
-            this.hnoDataGridViewTextBoxColumn.Name = "hnoDataGridViewTextBoxColumn";
-            // 
-            // postcodeDataGridViewTextBoxColumn1
-            // 
-            this.postcodeDataGridViewTextBoxColumn1.DataPropertyName = "postcode";
-            this.postcodeDataGridViewTextBoxColumn1.HeaderText = "postcode";
-            this.postcodeDataGridViewTextBoxColumn1.Name = "postcodeDataGridViewTextBoxColumn1";
-            // 
-            // note1DataGridViewTextBoxColumn
-            // 
-            this.note1DataGridViewTextBoxColumn.DataPropertyName = "note1";
-            this.note1DataGridViewTextBoxColumn.HeaderText = "note1";
-            this.note1DataGridViewTextBoxColumn.Name = "note1DataGridViewTextBoxColumn";
-            // 
-            // createddate2DataGridViewTextBoxColumn
-            // 
-            this.createddate2DataGridViewTextBoxColumn.DataPropertyName = "created_date2";
-            this.createddate2DataGridViewTextBoxColumn.HeaderText = "created_date2";
-            this.createddate2DataGridViewTextBoxColumn.Name = "createddate2DataGridViewTextBoxColumn";
-            // 
-            // createdby2DataGridViewTextBoxColumn
-            // 
-            this.createdby2DataGridViewTextBoxColumn.DataPropertyName = "created_by2";
-            this.createdby2DataGridViewTextBoxColumn.HeaderText = "created_by2";
-            this.createdby2DataGridViewTextBoxColumn.Name = "createdby2DataGridViewTextBoxColumn";
-            // 
-            // updateddate2DataGridViewTextBoxColumn
-            // 
-            this.updateddate2DataGridViewTextBoxColumn.DataPropertyName = "updated_date2";
-            this.updateddate2DataGridViewTextBoxColumn.HeaderText = "updated_date2";
-            this.updateddate2DataGridViewTextBoxColumn.Name = "updateddate2DataGridViewTextBoxColumn";
-            // 
-            // updatedby2DataGridViewTextBoxColumn
-            // 
-            this.updatedby2DataGridViewTextBoxColumn.DataPropertyName = "updated_by2";
-            this.updatedby2DataGridViewTextBoxColumn.HeaderText = "updated_by2";
-            this.updatedby2DataGridViewTextBoxColumn.Name = "updatedby2DataGridViewTextBoxColumn";
-            // 
-            // isdeletedDataGridViewCheckBoxColumn
-            // 
-            this.isdeletedDataGridViewCheckBoxColumn.DataPropertyName = "isdeleted";
-            this.isdeletedDataGridViewCheckBoxColumn.HeaderText = "isdeleted";
-            this.isdeletedDataGridViewCheckBoxColumn.Name = "isdeletedDataGridViewCheckBoxColumn";
-            // 
-            // isDefaultDataGridViewCheckBoxColumn
-            // 
-            this.isDefaultDataGridViewCheckBoxColumn.DataPropertyName = "isDefault";
-            this.isDefaultDataGridViewCheckBoxColumn.HeaderText = "isDefault";
-            this.isDefaultDataGridViewCheckBoxColumn.Name = "isDefaultDataGridViewCheckBoxColumn";
-            // 
-            // id4DataGridViewTextBoxColumn
-            // 
-            this.id4DataGridViewTextBoxColumn.DataPropertyName = "id4";
-            this.id4DataGridViewTextBoxColumn.HeaderText = "id4";
-            this.id4DataGridViewTextBoxColumn.Name = "id4DataGridViewTextBoxColumn";
-            this.id4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // id5DataGridViewTextBoxColumn
-            // 
-            this.id5DataGridViewTextBoxColumn.DataPropertyName = "id5";
-            this.id5DataGridViewTextBoxColumn.HeaderText = "id5";
-            this.id5DataGridViewTextBoxColumn.Name = "id5DataGridViewTextBoxColumn";
-            this.id5DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // speciescategoryDataGridViewTextBoxColumn
-            // 
-            this.speciescategoryDataGridViewTextBoxColumn.DataPropertyName = "species_category";
-            this.speciescategoryDataGridViewTextBoxColumn.HeaderText = "species_category";
-            this.speciescategoryDataGridViewTextBoxColumn.Name = "speciescategoryDataGridViewTextBoxColumn";
-            // 
-            // id6DataGridViewTextBoxColumn
-            // 
-            this.id6DataGridViewTextBoxColumn.DataPropertyName = "id6";
-            this.id6DataGridViewTextBoxColumn.HeaderText = "id6";
-            this.id6DataGridViewTextBoxColumn.Name = "id6DataGridViewTextBoxColumn";
-            this.id6DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stageDataGridViewTextBoxColumn1
-            // 
-            this.stageDataGridViewTextBoxColumn1.DataPropertyName = "stage";
-            this.stageDataGridViewTextBoxColumn1.HeaderText = "stage";
-            this.stageDataGridViewTextBoxColumn1.Name = "stageDataGridViewTextBoxColumn1";
-            // 
-            // id7DataGridViewTextBoxColumn
-            // 
-            this.id7DataGridViewTextBoxColumn.DataPropertyName = "id7";
-            this.id7DataGridViewTextBoxColumn.HeaderText = "id7";
-            this.id7DataGridViewTextBoxColumn.Name = "id7DataGridViewTextBoxColumn";
-            this.id7DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // densitycategoryDataGridViewTextBoxColumn1
-            // 
-            this.densitycategoryDataGridViewTextBoxColumn1.DataPropertyName = "density_category";
-            this.densitycategoryDataGridViewTextBoxColumn1.HeaderText = "density_category";
-            this.densitycategoryDataGridViewTextBoxColumn1.Name = "densitycategoryDataGridViewTextBoxColumn1";
-            // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "code";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.exchangeSlidesIncomingDataTableBindingSource1.DataMember = "ExchangeSlidesIncomingDataTable";
+            this.exchangeSlidesIncomingDataTableBindingSource1.DataSource = this.sbmsDataSet;
             // 
             // ExchangedSlides
             // 
@@ -1090,11 +683,12 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_exchange_in)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_exchanged_out)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeCheckouReportTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exchangeCheckouReportTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exchangeSlidesIncomingDataTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exchangeSlidesIncomingDataTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1104,7 +698,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grd_exchange_in;
         private System.Windows.Forms.DataGridView grd_exchanged_out;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1139,21 +733,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn faxnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource exchangeCheckouReportTableBindingSource1;
+        private System.Windows.Forms.BindingSource exchangeSlidesIncomingDataTableBindingSource;
+        private sbmsDataSetTableAdapters.ExchangeSlidesIncomingDataTableTableAdapter exchangeSlidesIncomingDataTableTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn specificsDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slideidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn exchangecontactidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn exchangeddateDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn exchangedbyDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cabinetDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boxDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drawerDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specificsDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn densitycategoryDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sequenceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donoridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cabinetnumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn drawernumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn boxnumberDataGridViewTextBoxColumn;
@@ -1161,63 +748,20 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn isReservedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isBorrowedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isActiveDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updateddateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createddateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdbyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedbyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isReplacedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isOutExchangedDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcode1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countrycodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donorcodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speciesspecificidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speciesstageidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speciescatgeroyidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lowerdensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn averagedensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn upperdensityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn densitycategoryidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn owneridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acquireddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn validationidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdby1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedby1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createddate1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updateddate1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isWHODataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isActive1DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isExchangeDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn exchangeidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fnameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lnameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn jobtitleDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn organisationDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn officalemailDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personalemailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobilephoneDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn officephoneDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn faxnumberDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn postcodeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn note1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createddate2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdby2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updateddate2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedby2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isdeletedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isDefaultDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speciescategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id6DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stageDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id7DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn densitycategoryDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource exchangeSlidesIncomingDataTableBindingSource1;
     }
 }

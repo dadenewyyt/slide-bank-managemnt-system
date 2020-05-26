@@ -270,14 +270,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SBMS.exe" size="2646976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SBMS.exe" size="2810304">
       <assemblyIdentity name="SBMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>doABsq7mywD1Je1ExwR5win+U3VdXFd853cIoNL+eyY=</dsig:DigestValue>
+        <dsig:DigestValue>WFo/bvBktUQ2TyN84qXpD3Im3zvYFFK5RD/WKtPTTuQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

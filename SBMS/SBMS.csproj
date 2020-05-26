@@ -215,6 +215,18 @@
     <Compile Include="ReplacementHistory.Designer.cs">
       <DependentUpon>ReplacementHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\CrystalReports\AllGoingExchangeSlidesReportViewPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\AllGoingExchangeSlidesReportViewPort.Designer.cs">
+      <DependentUpon>AllGoingExchangeSlidesReportViewPort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\AllIncomingExchangeSlidesReportViewPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\AllIncomingExchangeSlidesReportViewPort.Designer.cs">
+      <DependentUpon>AllIncomingExchangeSlidesReportViewPort.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\CrystalReports\AllSlidesReportViewePort.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,8 +239,26 @@
     <Compile Include="Reports\CrystalReports\CheckOutReminderViewPort.Designer.cs">
       <DependentUpon>CheckOutReminderViewPort.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\CrystalReports\CrystalReportAllComingExchageSlides.cs">
+      <DependentUpon>CrystalReportAllComingExchageSlides.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\CrystalReports\CrystalReportAllSlides.cs">
       <DependentUpon>CrystalReportAllSlides.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\CrystalReportAllGoingExchangedSlides.cs">
+      <DependentUpon>CrystalReportAllGoingExchangedSlides.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\CrystalReports\CrystalReportIncomingExchangeCheckout.cs">
+      <DependentUpon>CrystalReportIncomingExchangeCheckout.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -455,15 +485,33 @@
     <EmbeddedResource Include="ReplacementHistory.resx">
       <DependentUpon>ReplacementHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\AllGoingExchangeSlidesReportViewPort.resx">
+      <DependentUpon>AllGoingExchangeSlidesReportViewPort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\AllIncomingExchangeSlidesReportViewPort.resx">
+      <DependentUpon>AllIncomingExchangeSlidesReportViewPort.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\AllSlidesReportViewePort.resx">
       <DependentUpon>AllSlidesReportViewePort.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\CheckOutReminderViewPort.resx">
       <DependentUpon>CheckOutReminderViewPort.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\CrystalReportAllComingExchageSlides.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportAllComingExchageSlides.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\CrystalReportAllSlides.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportAllSlides.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\CrystalReportAllGoingExchangedSlides.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportAllGoingExchangedSlides.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CrystalReports\CrystalReportIncomingExchangeCheckout.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportIncomingExchangeCheckout.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CrystalReports\CrystalReportRecentSlides.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -68,3 +68,5 @@ C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csp
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.exe
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.pdb
 C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.csprojAssemblyReference.cache
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Reports.CrystalReports.AllGoingExchangeSlidesReportViewPort.resources
+C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\obj\Debug\SBMS.Reports.CrystalReports.AllIncomingExchangeSlidesReportViewPort.resources

@@ -1,2 +1,52 @@
-2020-05-23 16:24:51.2953 SBMS.Program importing defaults
-2020-05-23 16:24:51.5958 SBMS.Program Default is found proceeding.
+2020-05-26 10:06:59.9191 SBMS.Program importing defaults
+2020-05-26 10:07:02.4932 SBMS.Program Default is found proceeding.
+2020-05-26 11:41:50.1696 SBMS.Program importing defaults
+2020-05-26 11:41:50.3132 SBMS.Program Default is found proceeding.
+2020-05-26 11:42:03.1311 SBMS.Reports.CrystalReports.AllIncomingExchangeSlidesReportViewPort Checkout Report generation has some expectionsSystem.Runtime.InteropServices.COMException (0x8002000B): Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+   at CrystalDecisions.ReportAppServer.DataDefModel.TablesClass.get_Item(Int32 Index)
+   at CrystalDecisions.CrystalReports.Engine.Tables.get_Item(String tableName)
+   at SBMS.Reports.CrystalReports.AllIncomingExchangeSlidesReportViewPort.AllIncomingExchangeSlidesReportViewPort_Load(Object sender, EventArgs e) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Reports\CrystalReports\AllIncomingExchangeSlidesReportViewPort.cs:line 35
+2020-05-26 11:46:13.8719 SBMS.Program importing defaults
+2020-05-26 11:46:14.0334 SBMS.Program Default is found proceeding.
+2020-05-26 11:46:20.3835 SBMS.Reports.CrystalReports.AllIncomingExchangeSlidesReportViewPort Checkout Report generation has some expectionsSystem.Runtime.InteropServices.COMException (0x8002000B): Invalid index. (Exception from HRESULT: 0x8002000B (DISP_E_BADINDEX))
+   at CrystalDecisions.ReportAppServer.DataDefModel.TablesClass.get_Item(Int32 Index)
+   at CrystalDecisions.CrystalReports.Engine.Tables.get_Item(String tableName)
+   at SBMS.Reports.CrystalReports.AllIncomingExchangeSlidesReportViewPort.AllIncomingExchangeSlidesReportViewPort_Load(Object sender, EventArgs e) in C:\Users\daniel\source\repos\slide-bank-managemnt-system\SBMS\Reports\CrystalReports\AllIncomingExchangeSlidesReportViewPort.cs:line 35
+2020-05-26 11:47:46.8949 SBMS.Program importing defaults
+2020-05-26 11:47:47.0385 SBMS.Program Default is found proceeding.
+2020-05-26 11:49:31.6456 SBMS.Program importing defaults
+2020-05-26 11:49:31.8112 SBMS.Program Default is found proceeding.
+2020-05-26 15:57:37.1068 SBMS.Program importing defaults
+2020-05-26 15:57:38.2947 SBMS.Program Default is found proceeding.
+2020-05-26 16:33:37.7523 SBMS.Program importing defaults
+2020-05-26 16:33:38.0266 SBMS.Program Default is found proceeding.
+2020-05-26 16:41:50.3270 SBMS.Program importing defaults
+2020-05-26 16:41:50.7859 SBMS.Program Default is found proceeding.
+2020-05-26 16:46:55.3413 SBMS.Program importing defaults
+2020-05-26 16:46:55.6645 SBMS.Program Default is found proceeding.
+2020-05-26 16:47:11.3587 SBMS.Program importing defaults
+2020-05-26 16:47:11.7137 SBMS.Program Default is found proceeding.
+2020-05-26 16:53:01.9315 SBMS.Program importing defaults
+2020-05-26 16:53:02.2207 SBMS.Program Default is found proceeding.
+2020-05-26 16:59:16.4997 SBMS.Program importing defaults
+2020-05-26 16:59:16.7177 SBMS.Program Default is found proceeding.
+2020-05-26 16:59:53.3307 SBMS.Program importing defaults
+2020-05-26 16:59:53.5750 SBMS.Program Default is found proceeding.
+2020-05-26 17:00:29.5526 SBMS.Program importing defaults
+2020-05-26 17:00:29.8279 SBMS.Program Default is found proceeding.
+2020-05-26 17:01:05.4432 SBMS.Program importing defaults
+2020-05-26 17:01:05.7224 SBMS.Program Default is found proceeding.
+2020-05-26 17:01:53.2394 SBMS.Program importing defaults
+2020-05-26 17:01:53.5605 SBMS.Program Default is found proceeding.
+2020-05-26 17:02:44.9041 SBMS.Program importing defaults
+2020-05-26 17:02:45.3968 SBMS.Program Default is found proceeding.
+2020-05-26 17:04:03.0526 SBMS.Program importing defaults
+2020-05-26 17:04:03.3418 SBMS.Program Default is found proceeding.
+2020-05-26 17:04:49.2369 SBMS.Program importing defaults
+2020-05-26 17:04:49.5181 SBMS.Program Default is found proceeding.
+2020-05-26 17:07:41.8513 SBMS.Program importing defaults
+2020-05-26 17:07:42.1675 SBMS.Program Default is found proceeding.
+2020-05-26 17:09:22.7010 SBMS.Program importing defaults
+2020-05-26 17:09:23.0511 SBMS.Program Default is found proceeding.
+2020-05-26 17:14:29.0956 SBMS.Program importing defaults
+2020-05-26 17:14:29.3220 SBMS.Program Default is found proceeding.

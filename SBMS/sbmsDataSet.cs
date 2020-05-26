@@ -4,6 +4,10 @@
 
     partial class sbmsDataSet
     {
+        partial class ExchangeSlidesIncomingDataTableDataTable
+        {
+        }
+
         partial class current_lending_historyDataTable
         {
         }
@@ -20,6 +24,10 @@
 
 namespace SBMS.sbmsDataSetTableAdapters
 {
+    partial class ExchangeSlidesIncomingDataTableAdapter
+    {
+    }
+
     partial class slide_reserved_for_replacementTableAdapter
     {
     }
