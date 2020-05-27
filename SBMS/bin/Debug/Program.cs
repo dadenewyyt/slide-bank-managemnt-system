@@ -33,7 +33,7 @@ namespace MSBMS
                     logger.Info("Default is found proceeding.");
                     StartupValueServices.Exchange_id_default = id;
 
-                    Application.Run(new MDIChild());
+                    Application.Run(new Splash());
 
                 }
                 else {

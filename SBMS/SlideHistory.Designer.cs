@@ -40,7 +40,6 @@
             this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgr_allslides = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.speciece_specifics_dataBindingSource = new MSBMS.speciece_specifics_dataBindingSource();
             this.speciesspecificsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -149,16 +148,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Slides Exchange History View";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(408, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Exchaged/checked out slides are not going to be returned on checkin work process." +
-    "";
-            // 
             // splitContainer1
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -170,7 +159,6 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             // 
             // splitContainer1.Panel2
@@ -393,7 +381,6 @@
         private System.Windows.Forms.BindingSource speciesspecificsBindingSource;
         private System.Windows.Forms.DataGridView dgr_allslides;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private speciece_specifics_dataBindingSource speciece_specifics_dataBindingSource;
         private System.Windows.Forms.BindingSource speciesspecificsBindingSource1;
