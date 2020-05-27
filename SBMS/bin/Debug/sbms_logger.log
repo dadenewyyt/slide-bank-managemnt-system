@@ -16,3 +16,62 @@ System.TypeInitializationException: The type initializer for 'MSBMS.Services.DBC
 2020-05-27 11:24:25.2987 MSBMS.Program Default is found proceeding.
 2020-05-27 11:52:27.1986 MSBMS.Program importing defaults
 2020-05-27 11:52:27.9915 MSBMS.Program Default is found proceeding.
+2020-05-27 14:01:51.0992 MSBMS.Program importing defaults
+2020-05-27 14:01:51.5301 MSBMS.Program Default is found proceeding.
+2020-05-27 14:07:39.3160 MSBMS.Program importing defaults
+2020-05-27 14:07:40.0134 MSBMS.Program Default is found proceeding.
+2020-05-27 14:09:20.6611 MSBMS.Program importing defaults
+2020-05-27 14:09:21.1718 MSBMS.Program Default is found proceeding.
+2020-05-27 14:10:11.5044 MSBMS.Donors Data is not saved. Please enter correct and valid value for all data elements
+2020-05-27 14:13:11.2100 MSBMS.Selection Search Result for daniel adenew count:1
+2020-05-27 14:13:38.7102 MSBMS.Selection checkout started ids are not null: daniel adenew
+2020-05-27 14:13:39.2419 MSBMS.Services.CheckinCheckoutService Commit:Both records are written to database.
+2020-05-27 14:14:05.7553 MSBMS.Selection Search Result for daniel adenew count:0
+2020-05-27 14:14:08.5337 MSBMS.Selection Search Result for daniel adenew count:0
+2020-05-27 14:14:10.0167 MSBMS.Selection Search Result for daniel adenew count:0
+2020-05-27 14:14:11.6560 MSBMS.Selection Search Result for daniel adenew count:2
+2020-05-27 14:14:44.5123 MSBMS.Services.CheckinCheckoutService Commit:Both records are written to database.
+2020-05-27 14:14:46.8586 MSBMS.Checkin Successs: Checkin completed
+2020-05-27 14:17:44.1109 MSBMS.Program see application log error for the cause of this error 
+System.InvalidCastException: Object cannot be cast from DBNull to other types.
+   at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at MSBMS.Checkout.button4_Click(Object sender, EventArgs e)
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   at System.Windows.Forms.Button.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.RunDialog(Form form)
+   at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at MSBMS.Login.timer1_Tick(Object sender, EventArgs e)
+   at System.Windows.Forms.Timer.OnTick(EventArgs e)
+   at System.Windows.Forms.Timer.TimerNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.RunDialog(Form form)
+   at System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   at System.Windows.Forms.Form.ShowDialog()
+   at MSBMS.Splash.timer1_Tick(Object sender, EventArgs e)
+   at System.Windows.Forms.Timer.OnTick(EventArgs e)
+   at System.Windows.Forms.Timer.TimerNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at MSBMS.Program.Main()
