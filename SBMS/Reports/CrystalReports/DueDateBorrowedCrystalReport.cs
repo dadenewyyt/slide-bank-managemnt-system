@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SBMS.Reports.CrystalReports {
+namespace MSBMS.Reports.CrystalReports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace SBMS.Reports.CrystalReports {
         
         public override string FullResourceName {
             get {
-                return "SBMS.Reports.CrystalReports.DueDateBorrowedCrystalReport.rpt";
+                return "MSBMS.Reports.CrystalReports.DueDateBorrowedCrystalReport.rpt";
             }
             set {
                 // Do nothing

@@ -1,4 +1,4 @@
-﻿using SBMS.Services;
+﻿using MSBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class Donors : Form
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SBMS.Enums
+namespace MSBMS.Enums
 {
     class Enums
     {

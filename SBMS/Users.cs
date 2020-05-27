@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class Users : Form
     {

@@ -1,4 +1,4 @@
-﻿using SBMS.Services;
+﻿using MSBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SBMS.Reports.CrystalReports
+namespace MSBMS.Reports.CrystalReports
 {
     public partial class AllIncomingExchangeSlidesReportViewPort : Form
     {

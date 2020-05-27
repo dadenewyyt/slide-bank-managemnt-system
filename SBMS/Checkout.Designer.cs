@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class Checkout
     {
@@ -67,7 +67,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_borrowers = new System.Windows.Forms.ComboBox();
             this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             this.label11 = new System.Windows.Forms.Label();
             this.grd_slides_for_checkout = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +76,7 @@
             this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet1 = new SBMS.sbmsDataSet1();
+            this.sbmsDataSet1 = new MSBMS.sbmsDataSet1();
             this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.speciescatgeroyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -89,11 +89,11 @@
             this.boxnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slidesforcheckoutBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.slidesCheckoutTableAdapter = new SBMS.sbmsDataSetTableAdapters.slidesCheckoutTableAdapter();
-            this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
-            this.density_categoryTableAdapter = new SBMS.sbmsDataSet1TableAdapters.density_categoryTableAdapter();
-            this.species_stagesTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_stagesTableAdapter();
-            this.species_categoryTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
+            this.slidesCheckoutTableAdapter = new MSBMS.sbmsDataSetTableAdapters.slidesCheckoutTableAdapter();
+            this.borrower_contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
+            this.density_categoryTableAdapter = new MSBMS.sbmsDataSet1TableAdapters.density_categoryTableAdapter();
+            this.species_stagesTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_stagesTableAdapter();
+            this.species_categoryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
             this.slidesforcheckoutBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();

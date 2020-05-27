@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     partial class DonorExchange
     {
@@ -62,7 +62,7 @@ namespace SBMS
             this.label12 = new System.Windows.Forms.Label();
             this.cmb_density_category = new System.Windows.Forms.ComboBox();
             this.densitycategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
+            this.desnityCat_bindingDataSource = new MSBMS.desnityCat_bindingDataSource();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_acquired_date = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -83,55 +83,55 @@ namespace SBMS
             this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.speciesspecificidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
+            this.speciece_specifics_dataBindingSource = new MSBMS.speciece_specifics_dataBindingSource();
             this.speciesstageidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stage_dataBindingSource = new SBMS.stage_dataBindingSource();
+            this.stage_dataBindingSource = new MSBMS.stage_dataBindingSource();
             this.SCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciceCatgeroyDataSet = new SBMS.speciceCatgeroyDataSet();
+            this.speciceCatgeroyDataSet = new MSBMS.speciceCatgeroyDataSet();
             this.lowerdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.averagedensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.upperdensityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.densitycategoryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.owneridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
+            this.ownerDataBindingSource = new MSBMS.ownerDataBindingSource();
             this.acquireddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.validationidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.validationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.validationDataBindingSource = new SBMS.validationDataBindingSource();
+            this.validationDataBindingSource = new MSBMS.validationDataBindingSource();
             this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_find = new System.Windows.Forms.Button();
             this.txt_search_box = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.donorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.species_categoryTableAdapter1 = new SBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
+            this.species_categoryTableAdapter1 = new MSBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
             this.speciescategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.donorsTableAdapter1 = new SBMS.donorsDataSetTableAdapters.donorsTableAdapter();
-            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
-            this.validationsTableAdapter = new SBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
-            this.species_stagesTableAdapter = new SBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
-            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
-            this.donorsTableAdapter = new SBMS.sbmsDataSetTableAdapters.donorsTableAdapter();
+            this.donorsTableAdapter1 = new MSBMS.donorsDataSetTableAdapters.donorsTableAdapter();
+            this.ownersTableAdapter = new MSBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
+            this.validationsTableAdapter = new MSBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
+            this.density_categoryTableAdapter = new MSBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
+            this.species_stagesTableAdapter = new MSBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
+            this.species_specificsTableAdapter = new MSBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
+            this.donorsTableAdapter = new MSBMS.sbmsDataSetTableAdapters.donorsTableAdapter();
             this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciceDataSet = new SBMS.speciceDataSet();
+            this.speciceDataSet = new MSBMS.speciceDataSet();
             this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.densitycategoryBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.donorsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.species_specificsTableAdapter1 = new SBMS.sbmsDataSetTableAdapters.species_specificsTableAdapter();
+            this.species_specificsTableAdapter1 = new MSBMS.sbmsDataSetTableAdapters.species_specificsTableAdapter();
             this.donorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.speciesspecificsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.species_categoryTableAdapter = new SBMS.speciceCatgeroyDataSetTableAdapters.species_categoryTableAdapter();
+            this.species_categoryTableAdapter = new MSBMS.speciceCatgeroyDataSetTableAdapters.species_categoryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();

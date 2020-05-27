@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class AllSlides
     {
@@ -34,9 +34,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             this.slidesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.slidesTableAdapter = new SBMS.sbmsDataSetTableAdapters.slidesTableAdapter();
+            this.slidesTableAdapter = new MSBMS.sbmsDataSetTableAdapters.slidesTableAdapter();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();

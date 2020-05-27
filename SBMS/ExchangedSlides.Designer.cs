@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class ExchangedSlides
     {
@@ -92,10 +92,10 @@
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exchangeCheckouReportTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.exchangeCheckoutReportTableAdapter = new SBMS.sbmsDataSetTableAdapters.exchangeCheckoutReportTableAdapter();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
+            this.exchangeCheckoutReportTableAdapter = new MSBMS.sbmsDataSetTableAdapters.exchangeCheckoutReportTableAdapter();
             this.exchangeSlidesIncomingDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.exchangeSlidesIncomingDataTableTableAdapter = new SBMS.sbmsDataSetTableAdapters.ExchangeSlidesIncomingDataTableTableAdapter();
+            this.exchangeSlidesIncomingDataTableTableAdapter = new MSBMS.sbmsDataSetTableAdapters.ExchangeSlidesIncomingDataTableTableAdapter();
             this.exchangeSlidesIncomingDataTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();

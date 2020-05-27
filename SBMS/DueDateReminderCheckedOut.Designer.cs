@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class DueDateReminderCheckedOut
     {
@@ -35,8 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.grd_currentLending = new System.Windows.Forms.DataGridView();
             this.currentlendingduedatepassedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.current_lending_duedate_passed_TableAdapter = new SBMS.sbmsDataSetTableAdapters.current_lending_duedate_passed_TableAdapter();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
+            this.current_lending_duedate_passed_TableAdapter = new MSBMS.sbmsDataSetTableAdapters.current_lending_duedate_passed_TableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();

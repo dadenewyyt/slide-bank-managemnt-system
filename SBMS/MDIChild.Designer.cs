@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class MDIChild
     {
@@ -346,7 +346,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::SBMS.Properties.Resources._2000px_Flag_of_Ethiopia_svg;
+            this.pictureBox3.Image = global::MSBMS.Properties.Resources._2000px_Flag_of_Ethiopia_svg;
             this.pictureBox3.Location = new System.Drawing.Point(244, 76);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(360, 113);
@@ -356,7 +356,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SBMS.Properties.Resources._27332741_1426914380750443_3640997397741266774_n;
+            this.pictureBox1.Image = global::MSBMS.Properties.Resources._27332741_1426914380750443_3640997397741266774_n;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(235, 228);
@@ -366,7 +366,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::SBMS.Properties.Resources.Usaid_Icap_logo;
+            this.pictureBox2.Image = global::MSBMS.Properties.Resources.Usaid_Icap_logo;
             this.pictureBox2.Location = new System.Drawing.Point(600, 76);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(658, 113);
@@ -376,7 +376,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::SBMS.Properties.Resources.click;
+            this.pictureBox4.Image = global::MSBMS.Properties.Resources.click;
             this.pictureBox4.Location = new System.Drawing.Point(-2, 14);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(275, 182);

@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
 
 
@@ -22,7 +22,7 @@
     }
 }
 
-namespace SBMS.sbmsDataSetTableAdapters
+namespace MSBMS.sbmsDataSetTableAdapters
 {
     partial class ExchangeSlidesIncomingDataTableAdapter
     {
@@ -40,6 +40,7 @@ namespace SBMS.sbmsDataSetTableAdapters
     {
     }
 
-    public partial class slide_searchTableAdapter {
+    public partial class slide_searchTableAdapter
+    {
     }
 }

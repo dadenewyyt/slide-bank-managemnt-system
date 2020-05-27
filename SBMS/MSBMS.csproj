@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{780CCD32-23BB-445C-8BA6-E5D1B9B04A16}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SBMS</RootNamespace>
-    <AssemblyName>SBMS</AssemblyName>
+    <RootNamespace>MSBMS</RootNamespace>
+    <AssemblyName>MSBMS</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\daniel\Desktop\Covid19\</PublishUrl>
@@ -23,7 +23,6 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -50,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>SBMS.Program</StartupObject>
+    <StartupObject>MSBMS.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
@@ -69,6 +68,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>istockphoto_821562926_612x612_YAs_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -430,6 +432,7 @@
     <None Include="Manual\Software User Manual-Draft-EPHI.docx" />
     <None Include="Resources\splash_SBMS.png" />
     <None Include="Resources\click.jpg" />
+    <Content Include="istockphoto_821562926_612x612_YAs_icon.ico" />
     <Content Include="SQL\FixUserAuthentication.txt" />
     <Content Include="SQL\revert.sql" />
     <Content Include="SQL\StoredProcedure_Critical_Update.txt" />

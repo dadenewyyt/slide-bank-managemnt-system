@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows;
 
-namespace SBMS.Services
+namespace MSBMS.Services
 {
     public class CheckinCheckoutService
     {

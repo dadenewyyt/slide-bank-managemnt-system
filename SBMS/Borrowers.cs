@@ -1,10 +1,10 @@
-﻿using SBMS.Services;
+﻿using MSBMS.Services;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class Borrowers : Form
     {

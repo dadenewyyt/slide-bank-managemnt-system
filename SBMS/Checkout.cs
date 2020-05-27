@@ -1,11 +1,11 @@
-﻿using SBMS.Services;
+﻿using MSBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class Checkout : Form
     {

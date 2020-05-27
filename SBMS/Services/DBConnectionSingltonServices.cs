@@ -2,11 +2,11 @@
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace SBMS.Services
+namespace MSBMS.Services
 {
     public static class DBConnectionSingltonServices
     {
-        public static String connectionString = ConfigurationManager.ConnectionStrings["SBMS.Properties.Settings.sbmsConnectionStringDaniel"].ConnectionString;
+        public static String connectionString = ConfigurationManager.ConnectionStrings["MSBMS.Properties.Settings.sbmsConnectionStringDaniel"].ConnectionString;
 
         //try singlton here
         public static SqlConnection con = null;

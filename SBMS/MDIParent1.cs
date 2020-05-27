@@ -1,8 +1,8 @@
-﻿using SBMS.Services;
+﻿using MSBMS.Services;
 using System;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class MDIParent1 : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace SBMS.Reports.CrystalReports
+﻿namespace MSBMS.Reports.CrystalReports
 {
     partial class PrintCurrentLendings
     {
@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.grd_currentLending_preview = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.currentLendingHisotryTableAdapter = new SBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
+            this.currentLendingHisotryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
             this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sequenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countrycodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();

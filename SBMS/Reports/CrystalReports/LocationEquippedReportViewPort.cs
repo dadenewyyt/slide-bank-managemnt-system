@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SBMS.Reports.CrystalReports
+namespace MSBMS.Reports.CrystalReports
 {
     public partial class LocationEquippedReportViewPort : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class Checkin
     {
@@ -70,12 +70,12 @@
             this.sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.species = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             this.species_catgeroy = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.density = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
+            this.desnityCat_bindingDataSource = new MSBMS.desnityCat_bindingDataSource();
             this.cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.box = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,11 +88,11 @@
             this.checked_out_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrowed_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.b_created_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sbmsDataSet1 = new SBMS.sbmsDataSet();
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
-            this.currentLendingHisotryTableAdapter = new SBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
-            this.species_categoryTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
-            this.species_specificsTableAdapter = new SBMS.sbmsDataSetTableAdapters.species_specificsTableAdapter();
+            this.sbmsDataSet1 = new MSBMS.sbmsDataSet();
+            this.density_categoryTableAdapter = new MSBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
+            this.currentLendingHisotryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
+            this.species_categoryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
+            this.species_specificsTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_specificsTableAdapter();
             this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();

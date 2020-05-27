@@ -1,4 +1,4 @@
-﻿namespace SBMS.Reports.CrystalReports
+﻿namespace MSBMS.Reports.CrystalReports
 {
     partial class SearchChekoutReportViewPort
     {

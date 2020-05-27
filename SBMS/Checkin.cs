@@ -1,11 +1,11 @@
-﻿using SBMS.Services;
+﻿using MSBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class Checkin : Form
     {
@@ -193,8 +193,11 @@ namespace SBMS
                 case 2: //Damaged
                     CheckinSlideDamaged("Damaged");
                     break;
+                case 3: //Missing
+                    CheckinSlideDamaged("Missing");
+                    break;
                 case 88: //Exchanage
-                    CheckinSlideDamaged("Exchange");
+                    CheckinSlideDamaged("Exchanage");
                     break;
                 default:
                     break;
@@ -232,6 +235,8 @@ namespace SBMS
                 MessageBox.Show("Successs: Checkin completed");
                 logger.Info("Successs: Checkin completed");
                 btnreload_data_Click(null,null); //refersh
+                txt_slide_scan_in_Click(null, null);
+
             }
 
             return result;
@@ -242,7 +247,7 @@ namespace SBMS
         {
             CheckinCheckoutService checkinCheckoutService = new CheckinCheckoutService();
 
-            bool result = checkinCheckoutService.CheckinSlidesDamaged("Damaged", Slide_Id_Checkin, CurrentLending_Id_Checkin);
+            bool result = checkinCheckoutService.CheckinSlidesDamaged(status, Slide_Id_Checkin, CurrentLending_Id_Checkin);
             if (result == false) {
                 MessageBox.Show("Damaged: Checkin was not succefull due some error, please try again");
                 return false;

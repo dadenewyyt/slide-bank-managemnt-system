@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class Slides
     {
@@ -44,35 +44,35 @@
             this.lbl_editing_status = new System.Windows.Forms.Label();
             this.validationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.validationDataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.validationDataBindingSource = new SBMS.validationDataBindingSource();
+            this.validationDataBindingSource = new MSBMS.validationDataBindingSource();
             this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.desnityCat_bindingDataSource = new SBMS.desnityCat_bindingDataSource();
+            this.desnityCat_bindingDataSource = new MSBMS.desnityCat_bindingDataSource();
             this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.specieCatgeoryDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.specieCatgeoryDataSet = new SBMS.specieCatgeoryDataSet();
+            this.specieCatgeoryDataSet = new MSBMS.specieCatgeoryDataSet();
             this.speciesstagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stagedataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stage_dataBindingSource = new SBMS.stage_dataBindingSource();
+            this.stage_dataBindingSource = new MSBMS.stage_dataBindingSource();
             this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.speciecespecificsdataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciece_specifics_dataBindingSource = new SBMS.speciece_specifics_dataBindingSource();
+            this.speciece_specifics_dataBindingSource = new MSBMS.speciece_specifics_dataBindingSource();
             this.ownersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ownerDataBindingSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ownerDataBindingSource = new SBMS.ownerDataBindingSource();
+            this.ownerDataBindingSource = new MSBMS.ownerDataBindingSource();
             this.recentslidedatasetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             this.slidesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.slidesTableAdapter = new SBMS.sbmsDataSetTableAdapters.slidesTableAdapter();
-            this.recent_slide_datasetTableAdapter = new SBMS.sbmsDataSetTableAdapters.recent_slide_datasetTableAdapter();
-            this.ownersTableAdapter = new SBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
-            this.species_specificsTableAdapter = new SBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
-            this.species_categoryTableAdapter = new SBMS.specieCatgeoryDataSetTableAdapters.species_categoryTableAdapter();
-            this.species_stagesTableAdapter = new SBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
-            this.validationsTableAdapter = new SBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
-            this.density_categoryTableAdapter = new SBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
+            this.slidesTableAdapter = new MSBMS.sbmsDataSetTableAdapters.slidesTableAdapter();
+            this.recent_slide_datasetTableAdapter = new MSBMS.sbmsDataSetTableAdapters.recent_slide_datasetTableAdapter();
+            this.ownersTableAdapter = new MSBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
+            this.species_specificsTableAdapter = new MSBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
+            this.species_categoryTableAdapter = new MSBMS.specieCatgeoryDataSetTableAdapters.species_categoryTableAdapter();
+            this.species_stagesTableAdapter = new MSBMS.stage_dataBindingSourceTableAdapters.species_stagesTableAdapter();
+            this.validationsTableAdapter = new MSBMS.validationDataBindingSourceTableAdapters.validationsTableAdapter();
+            this.density_categoryTableAdapter = new MSBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
             this.desnityCatbindingDataSourceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.speciece_specifics_dataBindingSource1 = new SBMS.speciece_specifics_dataBindingSource();
+            this.speciece_specifics_dataBindingSource1 = new MSBMS.speciece_specifics_dataBindingSource();
             this.speciectypeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.recentslidedatasetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -190,7 +190,7 @@
             this.btn_edit_update = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
-            this.locationDataAdapter = new SBMS.sbmsDataSetTableAdapters.locationDataAdapter();
+            this.locationDataAdapter = new MSBMS.sbmsDataSetTableAdapters.locationDataAdapter();
             this.IDallsldesGridViewColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barcodeallslidesGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donorallslidesGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();

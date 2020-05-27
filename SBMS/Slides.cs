@@ -1,5 +1,5 @@
-﻿using SBMS.Reports.CrystalReports;
-using SBMS.Services;
+﻿using MSBMS.Reports.CrystalReports;
+using MSBMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class Slides : Form
     {

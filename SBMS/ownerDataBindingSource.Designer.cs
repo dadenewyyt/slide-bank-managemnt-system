@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SBMS {
+namespace MSBMS {
     
     
     /// <summary>
@@ -638,7 +638,7 @@ namespace SBMS {
         }
     }
 }
-namespace SBMS.ownerDataBindingSourceTableAdapters {
+namespace MSBMS.ownerDataBindingSourceTableAdapters {
     
     
     /// <summary>
@@ -790,7 +790,7 @@ namespace SBMS.ownerDataBindingSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     partial class ReportViewRecentSlides
     {
@@ -32,7 +32,7 @@ namespace SBMS
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
             this.SuspendLayout();
             // 

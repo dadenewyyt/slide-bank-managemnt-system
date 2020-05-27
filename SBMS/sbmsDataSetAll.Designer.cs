@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SBMS {
+namespace MSBMS {
     
     
     /// <summary>
@@ -8408,7 +8408,7 @@ namespace SBMS {
         }
     }
 }
-namespace SBMS.sbmsDataSet1TableAdapters {
+namespace MSBMS.sbmsDataSet1TableAdapters {
     
     
     /// <summary>
@@ -8681,7 +8681,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9490,7 +9490,7 @@ SELECT id, cabinet_number, drawer_number, column_number, position_number FROM db
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9887,7 +9887,7 @@ SELECT id, borrower_id, slide_number, checked_out_date, due_date FROM dbo.curren
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10300,7 +10300,7 @@ SELECT id, density_category, code FROM dbo.density_category WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10748,7 +10748,7 @@ SELECT id, bar_code, country_code, donor_code, species_specific_id, species_stag
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11417,7 +11417,7 @@ SELECT id, borrower_id, slide_number, checked_out_on, checked_in_on, checkin_con
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11877,7 +11877,7 @@ SELECT id, borrower_id, slide_number, checked_out_on, checked_in_on, checkin_con
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12367,7 +12367,7 @@ SELECT id, bar_code, sequence, country_code, donor_Id, species_specific_id, spec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13193,7 +13193,7 @@ SELECT id, bar_code, sequence, country_code, donor_Id, species_specific_id, spec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13495,7 +13495,7 @@ SELECT id, bar_code, sequence, country_code, donor_Id, species_specific_id, spec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13797,7 +13797,7 @@ SELECT id, bar_code, sequence, country_code, donor_Id, species_specific_id, spec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14129,7 +14129,7 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14540,7 +14540,7 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

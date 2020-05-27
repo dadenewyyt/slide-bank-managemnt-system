@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
 
 
@@ -7,7 +7,7 @@
     }
 }
 
-namespace SBMS.speciece_specifics_dataBindingSourceTableAdapters
+namespace MSBMS.speciece_specifics_dataBindingSourceTableAdapters
 {
 
 

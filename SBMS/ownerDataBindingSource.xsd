@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sbmsConnectionStringDaniel" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sbmsConnectionStringDaniel (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SBMS.Properties.Settings.GlobalReference.Default.sbmsConnectionStringDaniel" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sbmsConnectionStringDaniel" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sbmsConnectionStringDaniel (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MSBMS.Properties.Settings.GlobalReference.Default.sbmsConnectionStringDaniel" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ownersTableAdapter" GeneratorDataComponentClassName="ownersTableAdapter" Name="owners" UserDataComponentName="ownersTableAdapter">
@@ -60,7 +60,7 @@ SELECT id, owner FROM dbo.owners WHERE (id = @id)</CommandText>
   <xs:element name="ownerDataBindingSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ownerDataBindingSource" msprop:Generator_UserDSName="ownerDataBindingSource">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="owners" msprop:Generator_TableClassName="ownersDataTable" msprop:Generator_TableVarName="tableowners" msprop:Generator_TablePropName="owners" msprop:Generator_RowDeletingName="ownersRowDeleting" msprop:Generator_RowChangingName="ownersRowChanging" msprop:Generator_RowEvHandlerName="ownersRowChangeEventHandler" msprop:Generator_RowDeletedName="ownersRowDeleted" msprop:Generator_UserTableName="owners" msprop:Generator_RowChangedName="ownersRowChanged" msprop:Generator_RowEvArgName="ownersRowChangeEvent" msprop:Generator_RowClassName="ownersRow">
+        <xs:element name="owners" msprop:Generator_TableClassName="ownersDataTable" msprop:Generator_TableVarName="tableowners" msprop:Generator_RowChangedName="ownersRowChanged" msprop:Generator_TablePropName="owners" msprop:Generator_RowDeletingName="ownersRowDeleting" msprop:Generator_RowChangingName="ownersRowChanging" msprop:Generator_RowEvHandlerName="ownersRowChangeEventHandler" msprop:Generator_RowDeletedName="ownersRowDeleted" msprop:Generator_RowClassName="ownersRow" msprop:Generator_UserTableName="owners" msprop:Generator_RowEvArgName="ownersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

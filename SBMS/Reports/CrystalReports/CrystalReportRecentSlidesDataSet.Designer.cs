@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SBMS.Reports.CrystalReports {
+namespace MSBMS.Reports.CrystalReports {
     
     
     /// <summary>
@@ -5720,7 +5720,7 @@ namespace SBMS.Reports.CrystalReports {
         }
     }
 }
-namespace SBMS.Reports.CrystalReports.RecentSlidesDataSetTableAdapters {
+namespace MSBMS.Reports.CrystalReports.RecentSlidesDataSetTableAdapters {
     
     
     /// <summary>
@@ -5880,7 +5880,7 @@ namespace SBMS.Reports.CrystalReports.RecentSlidesDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6084,7 +6084,7 @@ ORDER BY s.created_date DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6341,7 +6341,7 @@ ORDER BY s.id;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SBMS.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="MSBMS.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="istockphoto_821562926_612x612_YAs_icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="SBMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-    <commandLine file="SBMS.exe" parameters="" />
+    <assemblyIdentity name="MSBMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="MSBMS.exe" parameters="" />
   </entryPoint>
   <trustInfo>
     <security>
@@ -258,6 +259,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MSBMS.exe" size="2825152">
+      <assemblyIdentity name="MSBMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>XIvjUoWtnxw1T0oU1sUUVX2PM4qklSoY5TzpGoeTOy8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NLog.dll" size="860160">
       <assemblyIdentity name="NLog" version="4.0.0.0" publicKeyToken="5120E14C03D0593C" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -266,18 +279,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>1oRM96saQGYySzZ2nXtfZA15XEHMC7F1EplwTj6jO2Y=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SBMS.exe" size="2810304">
-      <assemblyIdentity name="SBMS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WFo/bvBktUQ2TyN84qXpD3Im3zvYFFK5RD/WKtPTTuQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -323,6 +324,24 @@
       <dsig:DigestValue>Sxs7MVdjOd7regqTsHyHa7IOTRtAirR8Tyxz8bfbh0Y=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="istockphoto_821562926_612x612_YAs_icon.ico" size="53451">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2S0PrfsBhX/WnlvHmo9yfs4Q68Fhi0ILeCLJL7ThGlE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MSBMS.exe.config" size="1350">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6WxAYX5HhNyubgQKZct65HAww7/QVuKH5Y/3Rj1eD8E=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="NLog.config" size="1213">
     <hash>
       <dsig:Transforms>
@@ -348,15 +367,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>76DO6eA6L1C9E2zaY+VHy0lP4JJ0XKA0qo7b82pSddI=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="SBMS.exe.config" size="1423">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>g4H1qOzXYBqV4m7iNNp/ixvSHQ1p/LI6p7VyN5WbHI4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SQL\FixUserAuthentication.txt" size="1073">

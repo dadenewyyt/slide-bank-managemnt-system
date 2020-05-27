@@ -1,5 +1,5 @@
-﻿using SBMS.Reports.CrystalReports;
-using SBMS.Services;
+﻿using MSBMS.Reports.CrystalReports;
+using MSBMS.Services;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 
 
-namespace SBMS
+namespace MSBMS
 {
     static class Program
     {

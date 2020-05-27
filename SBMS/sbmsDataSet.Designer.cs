@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SBMS {
+namespace MSBMS {
     
     
     /// <summary>
@@ -38061,7 +38061,7 @@ namespace SBMS {
         }
     }
 }
-namespace SBMS.sbmsDataSetTableAdapters {
+namespace MSBMS.sbmsDataSetTableAdapters {
     
     
     /// <summary>
@@ -38215,7 +38215,7 @@ namespace SBMS.sbmsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -38412,7 +38412,7 @@ order by d.created_date desc;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -38614,7 +38614,7 @@ ORDER BY  s.created_date desc;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -38809,7 +38809,7 @@ ORDER BY s.id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -39111,7 +39111,7 @@ ORDER BY s.id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -39413,7 +39413,7 @@ ORDER BY s.id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -39745,7 +39745,7 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -40156,7 +40156,7 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -40579,7 +40579,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41377,7 +41377,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41690,7 +41690,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -42509,7 +42509,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -42765,7 +42765,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -43024,7 +43024,7 @@ ORDER BY s.id;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -43264,7 +43264,7 @@ ORDER BY d.donor_code,s.created_date ASC;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -43455,7 +43455,7 @@ ORDER BY d.donor_code,s.created_date ASC;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -43696,7 +43696,7 @@ ORDER BY d.donor_code;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -43945,7 +43945,7 @@ ORDER BY d.donor_code,s.created_date ASC;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -44148,7 +44148,7 @@ ORDER BY d.donor_code,s.created_date ASC;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -44349,7 +44349,7 @@ ORDER BY s.id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -44600,7 +44600,7 @@ ORDER BY s.id";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -44872,7 +44872,7 @@ inner join density_category as dc on dc.id = d.density_category_id  ;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
+            this._connection.ConnectionString = global::MSBMS.Properties.Settings.Default.sbmsConnectionStringDaniel;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

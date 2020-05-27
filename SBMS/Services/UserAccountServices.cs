@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
 
-namespace SBMS.Services
+namespace MSBMS.Services
 {
     static class UserAccountServices
     {

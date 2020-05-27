@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class Login
     {
@@ -71,7 +71,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::SBMS.Properties.Resources.output_onlinepngtools;
+            this.pictureBox1.Image = global::MSBMS.Properties.Resources.output_onlinepngtools;
             this.pictureBox1.Location = new System.Drawing.Point(12, 219);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 120);
@@ -160,7 +160,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::SBMS.Properties.Resources.output_onlinepngtools;
+            this.pictureBox2.Image = global::MSBMS.Properties.Resources.output_onlinepngtools;
             this.pictureBox2.Location = new System.Drawing.Point(442, 285);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(101, 96);
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::SBMS.Properties.Resources.lock_4441691_960_720;
+            this.BackgroundImage = global::MSBMS.Properties.Resources.lock_4441691_960_720;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(549, 397);
             this.Controls.Add(this.label4);

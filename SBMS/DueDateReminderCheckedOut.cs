@@ -1,4 +1,4 @@
-﻿using SBMS.Reports.CrystalReports;
+﻿using MSBMS.Reports.CrystalReports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class DueDateReminderCheckedOut : Form
     {

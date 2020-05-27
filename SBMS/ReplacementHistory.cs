@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SBMS
+namespace MSBMS
 {
     public partial class ReplacementHistory : Form
     {

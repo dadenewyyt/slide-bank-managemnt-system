@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sbmsConnectionStringDaniel" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sbmsConnectionStringDaniel (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SBMS.Properties.Settings.GlobalReference.Default.sbmsConnectionStringDaniel" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="sbmsConnectionStringDaniel" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="sbmsConnectionStringDaniel (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MSBMS.Properties.Settings.GlobalReference.Default.sbmsConnectionStringDaniel" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="validationsTableAdapter" GeneratorDataComponentClassName="validationsTableAdapter" Name="validations" UserDataComponentName="validationsTableAdapter">
@@ -60,7 +60,7 @@ SELECT id, validation FROM dbo.validations WHERE (id = @id)</CommandText>
   <xs:element name="validationDataBindingSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="validationDataBindingSource" msprop:Generator_UserDSName="validationDataBindingSource">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="validations" msprop:Generator_TableClassName="validationsDataTable" msprop:Generator_TableVarName="tablevalidations" msprop:Generator_TablePropName="validations" msprop:Generator_RowDeletingName="validationsRowDeleting" msprop:Generator_RowChangingName="validationsRowChanging" msprop:Generator_RowEvHandlerName="validationsRowChangeEventHandler" msprop:Generator_RowDeletedName="validationsRowDeleted" msprop:Generator_UserTableName="validations" msprop:Generator_RowChangedName="validationsRowChanged" msprop:Generator_RowEvArgName="validationsRowChangeEvent" msprop:Generator_RowClassName="validationsRow">
+        <xs:element name="validations" msprop:Generator_TableClassName="validationsDataTable" msprop:Generator_TableVarName="tablevalidations" msprop:Generator_RowChangedName="validationsRowChanged" msprop:Generator_TablePropName="validations" msprop:Generator_RowDeletingName="validationsRowDeleting" msprop:Generator_RowChangingName="validationsRowChanging" msprop:Generator_RowEvHandlerName="validationsRowChangeEventHandler" msprop:Generator_RowDeletedName="validationsRowDeleted" msprop:Generator_RowClassName="validationsRow" msprop:Generator_UserTableName="validations" msprop:Generator_RowEvArgName="validationsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

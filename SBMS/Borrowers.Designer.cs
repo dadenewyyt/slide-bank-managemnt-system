@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class Borrowers
     {
@@ -93,8 +93,8 @@
             this.upatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isdeletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.borrowersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
-            this.borrowersTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrowersTableAdapter();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
+            this.borrowersTableAdapter = new MSBMS.sbmsDataSetTableAdapters.borrowersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();

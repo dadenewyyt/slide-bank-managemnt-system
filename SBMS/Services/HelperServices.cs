@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 
-namespace SBMS.Services
+namespace MSBMS.Services
 {
     class HelperServices
     {

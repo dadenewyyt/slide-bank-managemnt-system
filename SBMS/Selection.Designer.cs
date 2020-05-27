@@ -1,4 +1,4 @@
-﻿namespace SBMS
+﻿namespace MSBMS
 {
     partial class Selection
     {
@@ -98,7 +98,7 @@
             this.drawernumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boxnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slidesearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new SBMS.sbmsDataSet();
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.btn_Add_borrower = new System.Windows.Forms.Button();
             this.btn_dayCalculaor = new System.Windows.Forms.Button();
@@ -116,8 +116,8 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.borrower_contact_listTableAdapter = new SBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
-            this.slide_searchTableAdapter = new SBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
+            this.borrower_contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
+            this.slide_searchTableAdapter = new MSBMS.sbmsDataSetTableAdapters.slide_searchTableAdapter();
             this.txt_total_request = new System.Windows.Forms.TextBox();
             this.txt_found_in_bank = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
