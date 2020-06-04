@@ -93,7 +93,7 @@
             this.ownersTableAdapter = new MSBMS.ownerDataBindingSourceTableAdapters.ownersTableAdapter();
             this.species_specificsTableAdapter = new MSBMS.speciece_specifics_dataBindingSourceTableAdapters.species_specificsTableAdapter();
             this.currentLendingHisotryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
-            this.borrower_contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
+            this.borrower_contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.contact_listTableAdapter();
             this.species_stagesTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_stagesTableAdapter();
             this.current_lending_past_historyTableAdapter = new MSBMS.sbmsDataSetTableAdapters.current_lending_past_historyTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -711,7 +711,7 @@
         }
 
         #endregion
-        private sbmsDataSetTableAdapters.borrower_contact_listTableAdapter borrower_contact_listTableAdapter;
+        private sbmsDataSetTableAdapters.contact_listTableAdapter borrower_contact_listTableAdapter;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cmb_borrowers_full_name;

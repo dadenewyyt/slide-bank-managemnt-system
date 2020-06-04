@@ -30,7 +30,7 @@ namespace MSBMS
 
         private void bn_borrowers_Click(object sender, EventArgs e)
         {
-            Borrowers borrowers = new Borrowers();
+            Contacts borrowers = new Contacts();
             borrowers.MdiParent = this.ParentForm;
 
             borrowers.Show();

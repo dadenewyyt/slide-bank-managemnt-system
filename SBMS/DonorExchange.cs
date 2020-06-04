@@ -217,7 +217,7 @@ namespace MSBMS
                 //first  validate
 
                 dataFetchService = new DataFetchService();
-                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text,txt_country_code.Text);
 
                 if (donorFoundDuplicate == 1)
                 {
@@ -505,7 +505,7 @@ namespace MSBMS
                 txt_donor_code.Text = separated["DC"];
 
                 dataFetchService = new DataFetchService();
-                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text,txt_country_code.Text);
 
                 if (donorFoundDuplicate == 1)
                 {
@@ -584,7 +584,7 @@ namespace MSBMS
 
         private void btn_contact_Click(object sender, EventArgs e)
         {
-            Borrowers contact = new Borrowers();
+            Contacts contact = new Contacts();
             contact.MdiParent = this.MdiParent;
             contact.Show();
         }

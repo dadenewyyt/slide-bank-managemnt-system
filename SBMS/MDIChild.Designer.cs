@@ -31,7 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIChild));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btn_replacment_history = new System.Windows.Forms.Button();
             this.btn_alert = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_replace = new System.Windows.Forms.Button();
@@ -47,20 +52,15 @@
             this.bn_borrowers = new System.Windows.Forms.Button();
             this.btn_donors = new System.Windows.Forms.Button();
             this.btn_slides = new System.Windows.Forms.Button();
-            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.btn_replacment_history = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +89,36 @@
             this.label1.Size = new System.Drawing.Size(1002, 53);
             this.label1.TabIndex = 30;
             this.label1.Text = "National Archive of Malaria Slides - NAMS";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::MSBMS.Properties.Resources._2000px_Flag_of_Ethiopia_svg;
+            this.pictureBox3.Location = new System.Drawing.Point(244, 76);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(360, 113);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MSBMS.Properties.Resources._27332741_1426914380750443_3640997397741266774_n;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 228);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MSBMS.Properties.Resources.Usaid_Icap_logo;
+            this.pictureBox2.Location = new System.Drawing.Point(600, 76);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(658, 113);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // splitContainer1
             // 
@@ -124,6 +154,31 @@
             this.splitContainer1.Size = new System.Drawing.Size(1255, 551);
             this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 13;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 202);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(270, 305);
+            this.richTextBox1.TabIndex = 32;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // btn_replacment_history
+            // 
+            this.btn_replacment_history.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_replacment_history.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_replacment_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_replacment_history.ForeColor = System.Drawing.Color.MintCream;
+            this.btn_replacment_history.Location = new System.Drawing.Point(541, 236);
+            this.btn_replacment_history.Name = "btn_replacment_history";
+            this.btn_replacment_history.Size = new System.Drawing.Size(247, 74);
+            this.btn_replacment_history.TabIndex = 30;
+            this.btn_replacment_history.Text = "R&eplaced Slides History";
+            this.btn_replacment_history.UseVisualStyleBackColor = false;
+            this.btn_replacment_history.Click += new System.EventHandler(this.btn_replacment_history_Click);
             // 
             // btn_alert
             // 
@@ -234,6 +289,7 @@
             this.btn_all_slides.TabIndex = 18;
             this.btn_all_slides.Text = "All Slides";
             this.btn_all_slides.UseVisualStyleBackColor = false;
+            this.btn_all_slides.Visible = false;
             this.btn_all_slides.Click += new System.EventHandler(this.btn_all_slides_Click);
             // 
             // button6
@@ -259,6 +315,7 @@
             this.btn_checkout.TabIndex = 16;
             this.btn_checkout.Text = "Single Checkout";
             this.btn_checkout.UseVisualStyleBackColor = false;
+            this.btn_checkout.Visible = false;
             this.btn_checkout.Click += new System.EventHandler(this.btn_checkout_Click);
             // 
             // btn_checkin
@@ -311,69 +368,6 @@
             this.btn_slides.UseVisualStyleBackColor = false;
             this.btn_slides.Click += new System.EventHandler(this.btn_slides_Click);
             // 
-            // entityCommand1
-            // 
-            this.entityCommand1.CommandTimeout = 0;
-            this.entityCommand1.CommandTree = null;
-            this.entityCommand1.Connection = null;
-            this.entityCommand1.EnablePlanCaching = true;
-            this.entityCommand1.Transaction = null;
-            // 
-            // btn_replacment_history
-            // 
-            this.btn_replacment_history.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_replacment_history.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_replacment_history.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_replacment_history.ForeColor = System.Drawing.Color.MintCream;
-            this.btn_replacment_history.Location = new System.Drawing.Point(541, 236);
-            this.btn_replacment_history.Name = "btn_replacment_history";
-            this.btn_replacment_history.Size = new System.Drawing.Size(247, 74);
-            this.btn_replacment_history.TabIndex = 30;
-            this.btn_replacment_history.Text = "R&eplaced Slides History";
-            this.btn_replacment_history.UseVisualStyleBackColor = false;
-            this.btn_replacment_history.Click += new System.EventHandler(this.btn_replacment_history_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 202);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(270, 305);
-            this.richTextBox1.TabIndex = 32;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::MSBMS.Properties.Resources._2000px_Flag_of_Ethiopia_svg;
-            this.pictureBox3.Location = new System.Drawing.Point(244, 76);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(360, 113);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MSBMS.Properties.Resources._27332741_1426914380750443_3640997397741266774_n;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 228);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::MSBMS.Properties.Resources.Usaid_Icap_logo;
-            this.pictureBox2.Location = new System.Drawing.Point(600, 76);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(658, 113);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::MSBMS.Properties.Resources.click;
@@ -383,6 +377,14 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox4.TabIndex = 31;
             this.pictureBox4.TabStop = false;
+            // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
             // 
             // MDIChild
             // 
@@ -400,13 +402,13 @@
             this.Load += new System.EventHandler(this.MDIChild_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 

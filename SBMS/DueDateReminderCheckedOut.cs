@@ -40,5 +40,14 @@ namespace MSBMS
         {
             MessageBox.Show("Are you sure ?", "Reminder", MessageBoxButtons.YesNo);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            grd_currentLending.DataSource = null;
+            grd_currentLending.Refresh();
+
+            this.current_lending_duedate_passed_TableAdapter.Fill(this.sbmsDataSet.current_lending_duedate_passed);
+            grd_currentLending.DataSource = this.sbmsDataSet.current_lending_duedate_passed;
+        }
     }
 }

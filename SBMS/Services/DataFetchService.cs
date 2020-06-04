@@ -38,12 +38,12 @@ namespace MSBMS.Services
             }
             return slideFromDonorDataTable;
         }
-        public int CheckDuplicateDonorCode(string donorCode)
+        public int CheckDuplicateDonorCode(string donorCode,string contrycode)
         {
 
             if (String.IsNullOrEmpty(donorCode) == false)
             {
-                string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim();
+                string selectquery = "select donor_code from donors where donor_code=" + donorCode.Trim() + "and country_code="+contrycode;
                 using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
                 {
 
@@ -222,21 +222,19 @@ namespace MSBMS.Services
                 try
                 {
                     //con.Open();
-                    SqlDataReader cr = command2.ExecuteReader();
-                    while (cr.Read())
+                    SqlDataReader reader = command2.ExecuteReader();
+                    while (reader.Read())
                     {
-                        if (cr.HasRows == true)
+                        if (reader.HasRows == true)
                         {
-                            if (cr.GetInt32(0).ToString()==slide_id.ToString())
+                            if (reader.GetInt32(0)!=slide_id)
+                                return 1; //slide space is occupied
+                            if (reader.GetInt32(0) == slide_id)
                                 return -1; //slide space is occupied
                         }
-                        else {
-                            return 1; 
-                        }
-
                     }
-                    cr.Close();
-                    return -1; //not occupied
+                    reader.Close();
+                    return 1; // occupied
                 }
                 catch (Exception ex)
                 {

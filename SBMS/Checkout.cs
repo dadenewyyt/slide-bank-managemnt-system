@@ -29,14 +29,14 @@ namespace MSBMS
             // TODO: This line of code loads data into the 'sbmsDataSet1.density_category' table. You can move, or remove it, as needed.
             this.density_categoryTableAdapter.Fill(this.sbmsDataSet1.density_category);
             // TODO: This line of code loads data into the 'sbmsDataSet.borrower_contact_list' table. You can move, or remove it, as needed.
-            this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
+            this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.contact_list);
             // TODO: This line of code loads data into the 'sbmsDataSet.slides_for_checkout' table. You can move, or remove it, as needed.
             this.slidesCheckoutTableAdapter.Fill(this.sbmsDataSet.slides_for_checkout);
 
 
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
             borrowerDic.Add(0, "--Select Borrower/Contact---");
-            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
             {
                 borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   " + row["organisation"] + "  Position:  " + row["job_title"]);
             }
@@ -314,7 +314,7 @@ namespace MSBMS
 
         private void btn_Add_borrower_Click(object sender, EventArgs e)
         {
-            Borrowers b = new Borrowers();
+            Contacts b = new Contacts();
 
             b.MdiParent = this.ParentForm;
             b.Show();
@@ -327,7 +327,7 @@ namespace MSBMS
             cmb_borrowers.Items.Clear();
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
             borrowerDic.Add(0, "--Select Borrower/Contact---");
-            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
             {
                 borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Org:   " + row["organisation"] + "  Position:  " + row["job_title"]);
             }

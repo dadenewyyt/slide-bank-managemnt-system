@@ -6,11 +6,12 @@ using System.Windows.Forms;
 
 namespace MSBMS
 {
-    public partial class Borrowers : Form
+    public partial class Contacts : Form
     {
-        private int borrower_update_id = -1;
+        private int contact_update_id = -1;
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
 
-        public Borrowers()
+        public Contacts()
         {
             InitializeComponent();
         }
@@ -48,7 +49,7 @@ namespace MSBMS
         private void reload_data()
         {
 
-            this.borrowersTableAdapter.Fill(this.sbmsDataSet.borrowers);
+            this.borrowersTableAdapter.Fill(this.sbmsDataSet.contacts);
         }
 
         private void dgr_borrower_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,13 +79,19 @@ namespace MSBMS
                     txt_hno.Text = dgr_borrower.Rows[e.RowIndex].Cells["hnoDataGridViewTextBoxColumn"].Value.ToString();
                     txt_notes.Text = dgr_borrower.Rows[e.RowIndex].Cells["noteDataGridViewTextBoxColumn"].Value.ToString();
 
+                    if (Convert.ToBoolean(dgr_borrower.Rows[e.RowIndex].Cells["isExchange"].Value))
+                        rdo_exchange.Checked = true;
+                    else
+                        rdo_borrower.Checked = true;
+
+                   
                     //enable_disable_inputs(true); //enable for select
 
                     btn_update.Enabled = true;
                     btn_delete.Enabled = true;
                     //lbl_editing_status.Visible = true;
                     btn_save.Enabled = false;
-                    borrower_update_id = Convert.ToInt32(dgr_borrower.Rows[e.RowIndex].Cells["idDataGridViewTextBoxColumn"].Value.ToString());
+                    contact_update_id = Convert.ToInt32(dgr_borrower.Rows[e.RowIndex].Cells["idDataGridViewTextBoxColumn"].Value.ToString());
                 }
                 else
                 {
@@ -99,80 +106,7 @@ namespace MSBMS
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
-            {
-
-                using (SqlCommand command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    string insertDonorQuery = "INSERT into borrowers" +
-                        "(fname,lname,job_title,organisation,offical_email,personal_email,mobile_phone,office_phone," +
-                         "fax_number,country,city,hno,postcode,note,created_by) " +
-                         "VALUES (@fname,@lname,@job_title,@organisation,@offical_email,@personal_email,@mobile_phone,@office_phone," +
-                         "@fax_number,@country,@city,@hno,@postcode,@note,@created_by)";
-                    command.CommandType = CommandType.Text;
-                    command.CommandText = insertDonorQuery;
-                    command.Parameters.AddWithValue("@fname", txt_fname.Text.Trim());
-                    command.Parameters.AddWithValue("@lname", txt_lname.Text.Trim());
-                    command.Parameters.AddWithValue("@job_title", txt_jtitle.Text.Trim());
-                    command.Parameters.AddWithValue("@organisation", txt_org.Text.Trim());
-                    command.Parameters.AddWithValue("@offical_email", txt_oemail.Text.Trim());
-                    command.Parameters.AddWithValue("@personal_email", txt_pemail.Text.Trim());
-                    command.Parameters.AddWithValue("@mobile_phone", txt_mphone.Text.Trim());
-                    command.Parameters.AddWithValue("@office_phone", txt_ophone.Text.Trim());
-                    command.Parameters.AddWithValue("@fax_number", txt_fnum.Text.Trim());
-                    command.Parameters.AddWithValue("@country", txt_country.Text.Trim());
-                    command.Parameters.AddWithValue("@hno", txt_hno.Text.Trim());
-                    command.Parameters.AddWithValue("@note", txt_notes.Text.Trim());
-                    command.Parameters.AddWithValue("@city", txt_city.Text.Trim());
-                    command.Parameters.AddWithValue("@postcode", txt_pobox.Text.Trim());
-                    command.Parameters.AddWithValue("@created_by", "Daniel");
-
-
-                    try
-                    {
-
-                        if (connection.State == ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
-                        int recordsAffected = command.ExecuteNonQuery();
-
-                        if (recordsAffected > 0)
-                        {
-                            MessageBox.Show("Contact's Information Saved !", "Success");
-                            reload_data();
-                        }
-
-
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString(), "ERROR ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-
-                        clear();
-                        connection.Close();
-                    }
-
-                }
-            }
-        }
-
-        private void Borrowers_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'sbmsDataSet.borrowers' table. You can move, or remove it, as needed.
-            this.borrowersTableAdapter.Fill(this.sbmsDataSet.borrowers);
-            dgr_borrower.AllowUserToAddRows = false;
-
-        }
-
-        private void btn_update_Click(object sender, EventArgs e)
-        {
-
-            if (borrower_update_id != -1)
+            try
             {
 
                 using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
@@ -181,14 +115,101 @@ namespace MSBMS
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        string updateDonorQuery = "UPDATE borrowers " +
+                        string insertDonorQuery = "INSERT into contacts" +
+                            "(fname,lname,job_title,organisation,offical_email,personal_email,mobile_phone,office_phone," +
+                             "fax_number,country,city,hno,postcode,note,isExchange,created_by) " +
+                             "VALUES (@fname,@lname,@job_title,@organisation,@offical_email,@personal_email,@mobile_phone,@office_phone," +
+                             "@fax_number,@country,@city,@hno,@postcode,@note,@isexchange,@created_by)";
+                        command.CommandType = CommandType.Text;
+                        command.CommandText = insertDonorQuery;
+                        command.Parameters.AddWithValue("@fname", txt_fname.Text.Trim());
+                        command.Parameters.AddWithValue("@lname", txt_lname.Text.Trim());
+                        command.Parameters.AddWithValue("@job_title", txt_jtitle.Text.Trim());
+                        command.Parameters.AddWithValue("@organisation", txt_org.Text.Trim());
+                        command.Parameters.AddWithValue("@offical_email", txt_oemail.Text.Trim());
+                        command.Parameters.AddWithValue("@personal_email", txt_pemail.Text.Trim());
+                        command.Parameters.AddWithValue("@mobile_phone", txt_mphone.Text.Trim());
+                        command.Parameters.AddWithValue("@office_phone", txt_ophone.Text.Trim());
+                        command.Parameters.AddWithValue("@fax_number", txt_fnum.Text.Trim());
+                        command.Parameters.AddWithValue("@country", txt_country.Text.Trim());
+                        command.Parameters.AddWithValue("@hno", txt_hno.Text.Trim());
+                        command.Parameters.AddWithValue("@note", txt_notes.Text.Trim());
+                        command.Parameters.AddWithValue("@city", txt_city.Text.Trim());
+                        command.Parameters.AddWithValue("@postcode", txt_pobox.Text.Trim());
+                        command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+
+                        if (rdo_borrower.Checked)
+                            command.Parameters.AddWithValue("@isexchange", false);
+                        if (rdo_exchange.Checked)
+                            command.Parameters.AddWithValue("@isexchange", true);
+
+
+                        try
+                        {
+
+                            if (connection.State == ConnectionState.Closed)
+                            {
+                                connection.Open();
+                            }
+                            int recordsAffected = command.ExecuteNonQuery();
+
+                            if (recordsAffected > 0)
+                            {
+                                MessageBox.Show("Contact's Information Saved !", "Success");
+                                reload_data();
+                            }
+
+
+                        }
+                        catch (SqlException ex)
+                        {
+                            MessageBox.Show(ex.Message.ToString(), "ERROR ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+
+                            clear();
+                            connection.Close();
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex) {
+                logger.Error(ex, "Savec contact expection");
+            }
+        }
+
+        private void Borrowers_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sbmsDataSet.borrowers' table. You can move, or remove it, as needed.
+            this.borrowersTableAdapter.Fill(this.sbmsDataSet.contacts);
+            dgr_borrower.AllowUserToAddRows = false;
+
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                
+            if (contact_update_id != -1)
+            {
+
+                using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
+                {
+
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        string updateDonorQuery = "UPDATE contacts " +
                             "SET fname=@fname,lname=@lname,job_title=@job_title,organisation=@organisation," +
                                  "offical_email=@offical_email,personal_email=@personal_email,mobile_phone=@mobile_phone,office_phone=@office_phone," +
-                                 "fax_number=@fax_number,country=@country,city=@city,hno=@hno,postcode=@postcode,note=@note,updated_by=@updated_by WHERE id=@id";
+                                 "fax_number=@fax_number,country=@country,city=@city,hno=@hno,postcode=@postcode,isExchange=@isexchange,note=@note,updated_by=@updated_by WHERE id=@id";
 
                         command.CommandType = CommandType.Text;
                         command.CommandText = updateDonorQuery;
-                        command.Parameters.AddWithValue("@id", borrower_update_id);
+                        command.Parameters.AddWithValue("@id", contact_update_id);
                         command.Parameters.AddWithValue("@fname", txt_fname.Text.Trim());
                         command.Parameters.AddWithValue("@lname", txt_lname.Text.Trim());
                         command.Parameters.AddWithValue("@job_title", txt_jtitle.Text.Trim());
@@ -205,6 +226,10 @@ namespace MSBMS
                         command.Parameters.AddWithValue("@postcode", txt_pobox.Text.Trim());
                         command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
 
+                        if (rdo_borrower.Checked)
+                            command.Parameters.AddWithValue("@isexchange", false);
+                        if (rdo_exchange.Checked)
+                            command.Parameters.AddWithValue("@isexchange", true);
 
                         try
                         {
@@ -225,7 +250,7 @@ namespace MSBMS
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show(ex.Message.ToString(), "ERROR Updating Borrower ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ex.Message.ToString(), "ERROR Updating CONTACT ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         finally
@@ -238,20 +263,25 @@ namespace MSBMS
                     }
                 }
             }
-
         }
+            catch (Exception ex) {
+                logger.Error(ex, "Savec contact expection");
+            }
+}
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            try 
+            { 
 
-            DialogResult dialogResult = MessageBox.Show("Are you sure ?", "Delete Borrower", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Are you sure ?", "Delete Contact", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.No)
             {
                 return;
             }
 
-            if (borrower_update_id != -1)
+            if (contact_update_id != -1)
             {
 
                 using (SqlConnection connection = new SqlConnection(Services.DBConnectionSingltonServices.connectionString))
@@ -260,12 +290,12 @@ namespace MSBMS
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        string updateDonorQuery = "UPDATE borrowers " +
+                        string updateDonorQuery = "UPDATE contacts " +
                             "SET isdeleted=@deletedStatus ,updated_by=@updated_by WHERE id=@id";
 
                         command.CommandType = CommandType.Text;
                         command.CommandText = updateDonorQuery;
-                        command.Parameters.AddWithValue("@id", borrower_update_id);
+                        command.Parameters.AddWithValue("@id", contact_update_id);
                         command.Parameters.AddWithValue("@deletedStatus", true);
                         command.Parameters.AddWithValue("@updated_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username
 );
@@ -291,7 +321,7 @@ namespace MSBMS
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show(ex.Message.ToString(), "ERROR Deleting Borrower ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(ex.Message.ToString(), "ERROR Deleting Contacts ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         finally
@@ -304,8 +334,12 @@ namespace MSBMS
                     }
                 }
             }
-
         }
+            catch (Exception ex) {
+                logger.Error(ex, "Savec contact expection");
+            }
+
+}
 
         private void btn_find_Click(object sender, EventArgs e)
         {
@@ -364,8 +398,18 @@ namespace MSBMS
             btn_delete.Enabled = false;
             btn_save.Enabled = true;
             dgr_borrower.ClearSelection();
-            borrower_update_id = -1;
+            contact_update_id = -1;
             clear();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

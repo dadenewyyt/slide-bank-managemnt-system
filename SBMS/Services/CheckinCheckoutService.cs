@@ -378,7 +378,7 @@ namespace MSBMS.Services
 
     }
 
-    public bool CheckinSlideIsOkay(string status, int slide_id, int current_lending_id)
+    public bool CheckinSlideAsOkay(string status, int slide_id, int current_lending_id)
         {
 
             //first update the slide using slide id to be isBorrowed = 0 than isBorrowed=1
@@ -480,8 +480,18 @@ namespace MSBMS.Services
         }
        
 
-        public bool CheckinSlidesDamaged(string status, int slide_id, int current_lending_id)
+        public bool CheckinSlidesMissingOrDamaged(string status, int slide_id, int current_lending_id)
         {
+            int flagDamaged = 0;
+            int flagMissing = 0;
+
+            if (status == "Missing") {
+                flagMissing = 1;
+            }
+            if (status == "Damaged")
+            {
+                flagDamaged = 1;
+            }
 
             //first update the slide using slide id to be isBorrowed = 0 than isBorrowed=1
             using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
@@ -490,8 +500,7 @@ namespace MSBMS.Services
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    string updateCheckinQuery = "UPDATE slides " +
-                        "SET isBorrowed=0,isDamaged=1,updated_by=@updated_by WHERE id=@slide_id";
+                    string updateCheckinQuery = "UPDATE slides SET isBorrowed=0,isDamaged="+flagDamaged+",isMissing="+flagMissing+",updated_by=@updated_by WHERE id=@slide_id";
                     command.CommandText = updateCheckinQuery;
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@slide_id", slide_id);
@@ -510,7 +519,7 @@ namespace MSBMS.Services
                     catch (SqlException ex)
                     {
                         //MessageBox.Show("Checkin Database Error updating borrowed status:" + ex.Message);
-                        logger.Error(ex, "Checkin Database Error updating borrowed status");
+                        logger.Error(ex, "Checkin: Database Error updating borrowed status");
                         return false;
                     }
                 }

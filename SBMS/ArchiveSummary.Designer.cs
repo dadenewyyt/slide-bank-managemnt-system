@@ -468,7 +468,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(238, 24);
             this.label16.TabIndex = 35;
-            this.label16.Text = "Borrowers Contact Total:";
+            this.label16.Text = "Contacts Contact Total:";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // textBox16

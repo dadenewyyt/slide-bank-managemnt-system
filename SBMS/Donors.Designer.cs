@@ -136,7 +136,7 @@ namespace MSBMS
             this.speciesspecificsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.species_categoryTableAdapter = new MSBMS.speciceCatgeroyDataSetTableAdapters.species_categoryTableAdapter();
             this.borrowercontactlistBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.borrower_contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
+            this.contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.contact_listTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -278,8 +278,9 @@ namespace MSBMS
             this.btn_contact.Name = "btn_contact";
             this.btn_contact.Size = new System.Drawing.Size(192, 34);
             this.btn_contact.TabIndex = 43;
-            this.btn_contact.Text = "Add &New Contact";
+            this.btn_contact.Text = "Add Exchange Contact";
             this.btn_contact.UseVisualStyleBackColor = false;
+            this.btn_contact.Click += new System.EventHandler(this.btn_contact_Click_1);
             // 
             // label17
             // 
@@ -1107,12 +1108,12 @@ namespace MSBMS
             // 
             // borrowercontactlistBindingSource
             // 
-            this.borrowercontactlistBindingSource.DataMember = "borrower_contact_list";
+            this.borrowercontactlistBindingSource.DataMember = "contact_list";
             this.borrowercontactlistBindingSource.DataSource = this.sbmsDataSet;
             // 
-            // borrower_contact_listTableAdapter
+            // contact_listTableAdapter
             // 
-            this.borrower_contact_listTableAdapter.ClearBeforeFill = true;
+            this.contact_listTableAdapter.ClearBeforeFill = true;
             // 
             // Donors
             // 
@@ -1259,7 +1260,7 @@ namespace MSBMS
         internal RadioButton rdo_notexchange;
         internal RadioButton rdo_exchange;
         private BindingSource borrowercontactlistBindingSource;
-        private sbmsDataSetTableAdapters.borrower_contact_listTableAdapter borrower_contact_listTableAdapter;
+        private sbmsDataSetTableAdapters.contact_listTableAdapter contact_listTableAdapter;
         private ComboBox cmb_borrowers;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;

@@ -90,7 +90,7 @@
             this.slidesforcheckoutBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.slidesCheckoutTableAdapter = new MSBMS.sbmsDataSetTableAdapters.slidesCheckoutTableAdapter();
-            this.borrower_contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.borrower_contact_listTableAdapter();
+            this.borrower_contact_listTableAdapter = new MSBMS.sbmsDataSetTableAdapters.contact_listTableAdapter();
             this.density_categoryTableAdapter = new MSBMS.sbmsDataSet1TableAdapters.density_categoryTableAdapter();
             this.species_stagesTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_stagesTableAdapter();
             this.species_categoryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
@@ -549,7 +549,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 103;
-            this.label1.Text = "Borrowers:";
+            this.label1.Text = "Contacts:";
             // 
             // cmb_borrowers
             // 
@@ -849,7 +849,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource borrowercontactlistBindingSource;
-        private sbmsDataSetTableAdapters.borrower_contact_listTableAdapter borrower_contact_listTableAdapter;
+        private sbmsDataSetTableAdapters.contact_listTableAdapter borrower_contact_listTableAdapter;
         private System.Windows.Forms.DataGridView grd_slides_for_checkout;
         private sbmsDataSet1 sbmsDataSet1;
         private System.Windows.Forms.BindingSource densitycategoryBindingSource;

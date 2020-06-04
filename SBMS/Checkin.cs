@@ -144,9 +144,6 @@ namespace MSBMS
                     MessageBox.Show("NO Data to Select");
                 }
 
-            //set slideid based on row selected  barcode
-            //get side
-
         }
 
         public bool validateInputs() {
@@ -170,42 +167,52 @@ namespace MSBMS
                 else
                     return false;
             }
-
-            /*if(String.IsNullOrEmpty(txt_barcode.Text))
-            {
-                MessageBox.Show("Please , select valid value of Returned Status");
-                return false;
-            }*/
-
             return true;
         }
 
         private void btn_Checkin_Click(object sender, EventArgs e)
         {
-           
-            //validateInputs();
-            int caseValue = cmb_returned_status.SelectedIndex;
+            bool result = false;
+            validateInputs();
+            String caseValue = cmb_returned_status.SelectedItem.ToString();
             switch (caseValue) {
-                case 1: //OKAY
-                     Console.WriteLine("xx");
-                    CheckinSlideOkay("OKAY");
+                case "OKAY": //OKAY
+                     Console.WriteLine("caseValue");
+                    result = CheckinSlideAsOkay(caseValue);
                     break;
-                case 2: //Damaged
-                    CheckinSlideDamaged("Damaged");
+                case "Damaged": //Damaged
+                    result = CheckinSlidesMissingOrDamaged(caseValue);
                     break;
-                case 3: //Missing
-                    CheckinSlideDamaged("Missing");
-                    break;
-                case 88: //Exchanage
-                    CheckinSlideDamaged("Exchanage");
+                case "Missing": //Missing
+                    result = CheckinSlidesMissingOrDamaged(caseValue);
                     break;
                 default:
-                    break;
-            
+                    break;            
+            }
+
+            if (result==true && caseValue=="Damaged") {
+
+                MessageBox.Show("The selected slide has been checked-in succesfully as <Damaged>. \n Please , you can only use this slide until you replace it or change it as non damaged. See Replace slide Form for more.");
+            }
+
+            if (result == true && caseValue == "Missing") {
+
+                MessageBox.Show("The selected slide has been checked-in succesfully as <Missing>. \n Please , you can only use this slide until you replace it or change it as non damaged. See Replace slide Form for more.");
+            }
+
+            if (result == true && caseValue == "Okay") {
+
+                MessageBox.Show("The selected slide has been checked-in succesfully as <Okay>. \n Now you can search,select and borrow again this slide. Thankyou!");
+            }
+
+            if (result == false)
+            {
+
+                MessageBox.Show("The selected slide has not been checked-in. \n Please, reload the form or try again later. Thankyou!");
             }
         }
 
-        public bool CheckinSlideOkay(String status) {
+        public bool CheckinSlideAsOkay(String status) {
             bool result = true;
 
             MessageBox.Show(Slide_Id_Checkin.ToString());
@@ -214,10 +221,10 @@ namespace MSBMS
             try
             {
                 CheckinCheckoutService checkinCheckoutService = new CheckinCheckoutService();
-                result = checkinCheckoutService.CheckinSlideIsOkay("Okay", Slide_Id_Checkin, CurrentLending_Id_Checkin);
+                result = checkinCheckoutService.CheckinSlideAsOkay(status, Slide_Id_Checkin, CurrentLending_Id_Checkin);
                 if (result == false)
                 {
-                    MessageBox.Show("OKAY: Checkin was not succefull due some error, please try again");
+                    MessageBox.Show("Checkin was not succefull due some error, please try again");
                     
                     result = false;
                     txt_slide_scan_in_Click(null, null);
@@ -243,11 +250,11 @@ namespace MSBMS
         
         }
 
-        public bool CheckinSlideDamaged(String status)
+        public bool CheckinSlidesMissingOrDamaged(String status)
         {
             CheckinCheckoutService checkinCheckoutService = new CheckinCheckoutService();
 
-            bool result = checkinCheckoutService.CheckinSlidesDamaged(status, Slide_Id_Checkin, CurrentLending_Id_Checkin);
+            bool result = checkinCheckoutService.CheckinSlidesMissingOrDamaged(status, Slide_Id_Checkin, CurrentLending_Id_Checkin);
             if (result == false) {
                 MessageBox.Show("Damaged: Checkin was not succefull due some error, please try again");
                 return false;

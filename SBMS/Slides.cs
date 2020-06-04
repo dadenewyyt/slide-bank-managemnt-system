@@ -59,7 +59,8 @@ namespace MSBMS
             txt_cabinet_number.Text = "";
             txt_box_number.Text = "";
             txt_bar_code.Text = "";
-            txt_donor_code.BackColor = Color.Red;
+            //txt_donor_code.BackColor = Color.Red;
+            txt_donor_code.BackColor = SystemColors.Control;
 
 
         }
@@ -78,9 +79,9 @@ namespace MSBMS
             txt_acquired_date.Enabled = flag;
             cmb_validation.Enabled = flag;
             txt_comment.ReadOnly = flag; ;
-            txt_drawer_number.ReadOnly = !flag;
-            txt_cabinet_number.ReadOnly = !flag;
-            txt_box_number.ReadOnly = !flag;
+           // txt_drawer_number.ReadOnly = !flag;
+           // txt_cabinet_number.ReadOnly = !flag;
+           // txt_box_number.ReadOnly = !flag;
             //txt_bar_code.Enabled = flag;
 
 

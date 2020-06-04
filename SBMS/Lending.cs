@@ -39,10 +39,10 @@ namespace MSBMS
             // TODO: This line of code loads data into the 'sbmsDataSet.current_lending_history' table. You can move, or remove it, as needed.
             this.currentLendingHisotryTableAdapter.Fill(this.sbmsDataSet.current_lending_history);
             // TODO: This line of code loads data into the 'sbmsDataSet.borrower_contact_list' table. You can move, or remove it, as needed.
-            this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
+            this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.contact_list);
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
             borrowerDic.Add(-1, "--Select Full Name of the Borrower---");
-            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
             {
                 borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"]);
             }
@@ -56,7 +56,7 @@ namespace MSBMS
 
 
             borrowerOrgDic.Add(-1, "--Select Organisations---");
-            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
             {
                 borrowerOrgDic.Add(Convert.ToInt32(row["id"]), row["organisation"].ToString());
             }

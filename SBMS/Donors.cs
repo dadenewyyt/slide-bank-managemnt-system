@@ -194,13 +194,14 @@ namespace MSBMS
             // cmb_owners.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             // TODO: This line of code loads data into the 'sbmsDataSet.borrower_contact_list' table. You can move, or remove it, as needed.
-            this.borrower_contact_listTableAdapter.Fill(this.sbmsDataSet.borrower_contact_list);
+            this.contact_listTableAdapter.Fill(this.sbmsDataSet.contact_list);
 
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
             borrowerDic.Add(-1, "--Select Exchange Contact---");
-            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
             {
-                borrowerDic.Add(Convert.ToInt32(row["id"]), "Country:" + row["country"] + " Person:" + row["fname"] + " " + row["lname"]);
+                if(Boolean.Parse(row["isExchange"].ToString()))
+                borrowerDic.Add(Convert.ToInt32(row["id"]), "Country[ " + row["country"] + " ] Organisation [ " + row["country"]+ "] Person: [ " + row["fname"] + " " + row["lname"]+" ]");
             }
 
             cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
@@ -249,7 +250,7 @@ namespace MSBMS
                 //first  validate
 
                 dataFetchService = new DataFetchService();
-                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text, txt_country_code.Text);
 
                 if (donorFoundDuplicate == 1)
                 {
@@ -274,9 +275,9 @@ namespace MSBMS
                         command.Connection = connection;
                         string insertDonorQuery = "INSERT into donors" +
                             "(bar_code,country_code,donor_code,species_specific_id,species_stage_id,species_catgeroy_id,density_category_id,lower_density," +
-                             "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,isExchange,exchange_id) " +
+                             "average_density,upper_density,owner_id,acquired_date,validation_id,comment,created_by,isExchange,exchange_contact_id) " +
                              "VALUES (@bar_code,@country_code,@donor_code,@species_specific_id,@species_stage_id,@species_catgeroy_id,@density_category_id,@lower_density," +
-                             "@average_density,@upper_density,@owner_id,@acquired_date,@validation_id,@comment,@created_by,@isExchange,@exchange_id)";
+                             "@average_density,@upper_density,@owner_id,@acquired_date,@validation_id,@comment,@created_by,@isExchange,@exchange_contact_id)";
                         command.CommandType = CommandType.Text;
                         command.CommandText = insertDonorQuery;
                         command.Parameters.AddWithValue("@bar_code", txt_barcode_scan_in.Text.ToString());
@@ -294,17 +295,18 @@ namespace MSBMS
                         command.Parameters.AddWithValue("@validation_id", cmb_validation.SelectedIndex.ToString());
                         command.Parameters.AddWithValue("@comment", txt_comment.Text.ToString());
                         command.Parameters.AddWithValue("@created_by", "Full name=" + UserAccountServices.Full_name + "=Username=" + UserAccountServices.Username);
+                       
                         if (exchange_flag == true)
                         {
                             command.Parameters.AddWithValue("@isExchange", 1);
                             //OWNER IS SOME EXCHNAGE DONATOR
-                            command.Parameters.AddWithValue("@exchange_id", cmb_borrowers.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@exchange_contact_id", cmb_borrowers.SelectedValue);
                         }
                         else
                         {
                             command.Parameters.AddWithValue("@isExchange", 0);
                             //owner of slide is EPHI
-                            command.Parameters.AddWithValue("@exchange_id", StartupValueServices.Exchange_id_default);
+                            command.Parameters.AddWithValue("@exchange_contact_id", StartupValueServices.Exchange_id_default);
                         }
                         try
                         {
@@ -372,7 +374,7 @@ namespace MSBMS
                     cmb_validation.SelectedIndex = Convert.ToInt32(dgr_donors.Rows[e.RowIndex].Cells["validationidDataGridViewTextBoxColumn"].Value);
                     txt_comment.Text = dgr_donors.Rows[e.RowIndex].Cells["commentDataGridViewTextBoxColumn"].Value.ToString();
 
-                    MessageBox.Show("you selected row:" + dgr_donors.Rows[e.RowIndex].Cells["isExchangeDataGridViewColumn"].Value.ToString());
+                    //MessageBox.Show("you selected row:" + dgr_donors.Rows[e.RowIndex].Cells["isExchangeDataGridViewColumn"].Value.ToString());
                     if (Convert.ToBoolean(dgr_donors.Rows[e.RowIndex].Cells["isExchangeDataGridViewColumn"].Value))
                     {
                         rdo_exchange.Checked = true;
@@ -400,6 +402,8 @@ namespace MSBMS
             catch (Exception ex)
             {
                 //TODO}
+                MessageBox.Show(ex.Message);
+
             }
         }
 
@@ -481,7 +485,7 @@ namespace MSBMS
                             string updateDonorQuery = "UPDATE donors " +
                                 "SET bar_code=@bar_code,country_code=@country_code,donor_code=@donor_code,species_specific_id=@species_specific_id," +
                                 "species_stage_id=@species_stage_id,density_category_id=@density_category_id,lower_density=@lower_density,average_density=@average_density,upper_density=@upper_density," +
-                                "owner_id=@owner_id,acquired_date=@acquired_date,validation_id=@validation_id,comment=@comment,updated_by=@updated_by,isExchange=@isExchange,exchange_id=@exchange_id WHERE id=@id";
+                                "owner_id=@owner_id,acquired_date=@acquired_date,validation_id=@validation_id,comment=@comment,updated_by=@updated_by,isExchange=@isExchange,exchange_contact_id=@exchange_contact_id WHERE id=@id";
 
                             command.CommandType = CommandType.Text;
                             command.CommandText = updateDonorQuery;
@@ -505,13 +509,13 @@ namespace MSBMS
                             {
                                 command.Parameters.AddWithValue("@isExchange", 1);
                                 //OWNER IS SOME EXCHNAGE DONATOR
-                                command.Parameters.AddWithValue("@exchange_id", cmb_borrowers.SelectedIndex.ToString());
+                                command.Parameters.AddWithValue("@exchange_contact_id", cmb_borrowers.SelectedValue);
                             }
                             else
                             {
                                 command.Parameters.AddWithValue("@isExchange", 0);
                                 //owner of slide is EPHI
-                                command.Parameters.AddWithValue("@exchange_id", StartupValueServices.Exchange_id_default);
+                                command.Parameters.AddWithValue("@exchange_contact_id", StartupValueServices.Exchange_id_default);
                             }
                             try
                             {
@@ -531,6 +535,7 @@ namespace MSBMS
                             catch (SqlException ex)
                             {
                                 MessageBox.Show(ex.Message.ToString(), "ERROR Updating Donor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                logger.Error(ex,"Edit/Update Donor Info");
 
                             }
                             finally
@@ -585,7 +590,7 @@ namespace MSBMS
                 txt_donor_code.Text = separated["DC"];
 
                 dataFetchService = new DataFetchService();
-                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text);
+                int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text,txt_country_code.Text);
 
                 if (donorFoundDuplicate == 1)
                 {
@@ -616,6 +621,23 @@ namespace MSBMS
                 MessageBox.Show("Please, select exchange contact. If the donor is acquired by Exchange. Othewise press 'Not Exchange Button to Skio'", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+
+            if (txt_country_code.Text == "11" && exchange_flag==true)
+            {
+
+                MessageBox.Show("The Donor country code for Ethiopia . Are you sure it is Exchange Donor/Slide?", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
+
+            if (txt_country_code.Text != "11" && exchange_flag == false)
+            {
+
+                MessageBox.Show("Country code should be corrected if you want to register this Donor as Exchange. \n Canceling save.", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
             return true;
         }
 
@@ -645,7 +667,12 @@ namespace MSBMS
                 MessageBox.Show("You can not save a data with the value --Select-- choice?", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (exchange_flag==false && txt_country_code.Text!="11")            {
 
+                MessageBox.Show("The Donor country code is not sutiable for Exchange ? Are you sure it is Exchange ?", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+
+            }
             return true;
         }
 
@@ -675,7 +702,7 @@ namespace MSBMS
 
         private void btn_contact_Click(object sender, EventArgs e)
         {
-            Borrowers contact = new Borrowers();
+            Contacts contact = new Contacts();
             contact.MdiParent = this.MdiParent;
             contact.Show();
         }
@@ -714,15 +741,23 @@ namespace MSBMS
         {
             Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
             borrowerDic.Add(-1, "--Select Exchange Contact---");
-            foreach (DataRow row in this.sbmsDataSet.borrower_contact_list.Rows)
+            foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
             {
-                borrowerDic.Add(Convert.ToInt32(row["id"]),"Country:" + row["country"]+ " Person:" + row["fname"]+" "+row["lname"]);
+                if (Boolean.Parse(row["isExchange"].ToString()))
+                    borrowerDic.Add(Convert.ToInt32(row["id"]), "Country[ " + row["country"] + " ] Organisation [ " + row["country"] + "] Person: [ " + row["fname"] + " " + row["lname"] + " ]");
             }
 
             cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
 
             cmb_borrowers.DisplayMember = "Value";
             cmb_borrowers.ValueMember = "Key";
+        }
+
+        private void btn_contact_Click_1(object sender, EventArgs e)
+        {
+            Contacts b = new Contacts();
+            b.MdiParent = this.MdiParent;
+            b.Show();
         }
     }
 }

@@ -40,11 +40,11 @@ namespace MSBMS {
         
         private validationsDataTable tablevalidations;
         
-        private borrowersDataTable tableborrowers;
+        private contactsDataTable tablecontacts;
         
         private slides_for_checkoutDataTable tableslides_for_checkout;
         
-        private borrower_contact_listDataTable tableborrower_contact_list;
+        private contact_listDataTable tablecontact_list;
         
         private slide_historyDataTable tableslide_history;
         
@@ -138,14 +138,14 @@ namespace MSBMS {
                 if ((ds.Tables["validations"] != null)) {
                     base.Tables.Add(new validationsDataTable(ds.Tables["validations"]));
                 }
-                if ((ds.Tables["borrowers"] != null)) {
-                    base.Tables.Add(new borrowersDataTable(ds.Tables["borrowers"]));
+                if ((ds.Tables["contacts"] != null)) {
+                    base.Tables.Add(new contactsDataTable(ds.Tables["contacts"]));
                 }
                 if ((ds.Tables["slides_for_checkout"] != null)) {
                     base.Tables.Add(new slides_for_checkoutDataTable(ds.Tables["slides_for_checkout"]));
                 }
-                if ((ds.Tables["borrower_contact_list"] != null)) {
-                    base.Tables.Add(new borrower_contact_listDataTable(ds.Tables["borrower_contact_list"]));
+                if ((ds.Tables["contact_list"] != null)) {
+                    base.Tables.Add(new contact_listDataTable(ds.Tables["contact_list"]));
                 }
                 if ((ds.Tables["slide_history"] != null)) {
                     base.Tables.Add(new slide_historyDataTable(ds.Tables["slide_history"]));
@@ -282,9 +282,9 @@ namespace MSBMS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public borrowersDataTable borrowers {
+        public contactsDataTable contacts {
             get {
-                return this.tableborrowers;
+                return this.tablecontacts;
             }
         }
         
@@ -302,9 +302,9 @@ namespace MSBMS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public borrower_contact_listDataTable borrower_contact_list {
+        public contact_listDataTable contact_list {
             get {
-                return this.tableborrower_contact_list;
+                return this.tablecontact_list;
             }
         }
         
@@ -509,14 +509,14 @@ namespace MSBMS {
                 if ((ds.Tables["validations"] != null)) {
                     base.Tables.Add(new validationsDataTable(ds.Tables["validations"]));
                 }
-                if ((ds.Tables["borrowers"] != null)) {
-                    base.Tables.Add(new borrowersDataTable(ds.Tables["borrowers"]));
+                if ((ds.Tables["contacts"] != null)) {
+                    base.Tables.Add(new contactsDataTable(ds.Tables["contacts"]));
                 }
                 if ((ds.Tables["slides_for_checkout"] != null)) {
                     base.Tables.Add(new slides_for_checkoutDataTable(ds.Tables["slides_for_checkout"]));
                 }
-                if ((ds.Tables["borrower_contact_list"] != null)) {
-                    base.Tables.Add(new borrower_contact_listDataTable(ds.Tables["borrower_contact_list"]));
+                if ((ds.Tables["contact_list"] != null)) {
+                    base.Tables.Add(new contact_listDataTable(ds.Tables["contact_list"]));
                 }
                 if ((ds.Tables["slide_history"] != null)) {
                     base.Tables.Add(new slide_historyDataTable(ds.Tables["slide_history"]));
@@ -632,10 +632,10 @@ namespace MSBMS {
                     this.tablevalidations.InitVars();
                 }
             }
-            this.tableborrowers = ((borrowersDataTable)(base.Tables["borrowers"]));
+            this.tablecontacts = ((contactsDataTable)(base.Tables["contacts"]));
             if ((initTable == true)) {
-                if ((this.tableborrowers != null)) {
-                    this.tableborrowers.InitVars();
+                if ((this.tablecontacts != null)) {
+                    this.tablecontacts.InitVars();
                 }
             }
             this.tableslides_for_checkout = ((slides_for_checkoutDataTable)(base.Tables["slides_for_checkout"]));
@@ -644,10 +644,10 @@ namespace MSBMS {
                     this.tableslides_for_checkout.InitVars();
                 }
             }
-            this.tableborrower_contact_list = ((borrower_contact_listDataTable)(base.Tables["borrower_contact_list"]));
+            this.tablecontact_list = ((contact_listDataTable)(base.Tables["contact_list"]));
             if ((initTable == true)) {
-                if ((this.tableborrower_contact_list != null)) {
-                    this.tableborrower_contact_list.InitVars();
+                if ((this.tablecontact_list != null)) {
+                    this.tablecontact_list.InitVars();
                 }
             }
             this.tableslide_history = ((slide_historyDataTable)(base.Tables["slide_history"]));
@@ -751,12 +751,12 @@ namespace MSBMS {
             base.Tables.Add(this.tableusers);
             this.tablevalidations = new validationsDataTable();
             base.Tables.Add(this.tablevalidations);
-            this.tableborrowers = new borrowersDataTable();
-            base.Tables.Add(this.tableborrowers);
+            this.tablecontacts = new contactsDataTable();
+            base.Tables.Add(this.tablecontacts);
             this.tableslides_for_checkout = new slides_for_checkoutDataTable();
             base.Tables.Add(this.tableslides_for_checkout);
-            this.tableborrower_contact_list = new borrower_contact_listDataTable();
-            base.Tables.Add(this.tableborrower_contact_list);
+            this.tablecontact_list = new contact_listDataTable();
+            base.Tables.Add(this.tablecontact_list);
             this.tableslide_history = new slide_historyDataTable();
             base.Tables.Add(this.tableslide_history);
             this.tableslide_search = new slide_searchDataTable();
@@ -780,35 +780,35 @@ namespace MSBMS {
             this.tableExchangeSlidesIncomingDataTable = new ExchangeSlidesIncomingDataTableDataTable();
             base.Tables.Add(this.tableExchangeSlidesIncomingDataTable);
             this.relationFK_current_lending_borrowers = new global::System.Data.DataRelation("FK_current_lending_borrowers", new global::System.Data.DataColumn[] {
-                        this.tableborrowers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontacts.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecurrent_lending_duedate_passed.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers);
             this.relationFK_current_lending_borrowers1 = new global::System.Data.DataRelation("FK_current_lending_borrowers1", new global::System.Data.DataColumn[] {
-                        this.tableborrower_contact_list.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontact_list.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecurrent_lending_duedate_passed.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers1);
             this.relationFK_current_lending_borrowers2 = new global::System.Data.DataRelation("FK_current_lending_borrowers2", new global::System.Data.DataColumn[] {
-                        this.tableborrowers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontacts.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecurrent_lending_history.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers2);
             this.relationFK_current_lending_borrowers3 = new global::System.Data.DataRelation("FK_current_lending_borrowers3", new global::System.Data.DataColumn[] {
-                        this.tableborrower_contact_list.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontact_list.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecurrent_lending_history.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers3);
             this.relationFK_current_lending_borrowers4 = new global::System.Data.DataRelation("FK_current_lending_borrowers4", new global::System.Data.DataColumn[] {
-                        this.tableborrowers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontacts.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecurrent_lending_past_history.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers4);
             this.relationFK_current_lending_borrowers5 = new global::System.Data.DataRelation("FK_current_lending_borrowers5", new global::System.Data.DataColumn[] {
-                        this.tableborrower_contact_list.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontact_list.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecurrent_lending_past_history.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers5);
             this.relationFK_current_lending_borrowers6 = new global::System.Data.DataRelation("FK_current_lending_borrowers6", new global::System.Data.DataColumn[] {
-                        this.tableborrowers.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontacts.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecheckedout_slides_details.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers6);
             this.relationFK_current_lending_borrowers7 = new global::System.Data.DataRelation("FK_current_lending_borrowers7", new global::System.Data.DataColumn[] {
-                        this.tableborrower_contact_list.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecontact_list.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablecheckedout_slides_details.borrower_idColumn}, false);
             this.Relations.Add(this.relationFK_current_lending_borrowers7);
             this.relationdonors_slides = new global::System.Data.DataRelation("donors_slides", new global::System.Data.DataColumn[] {
@@ -867,7 +867,7 @@ namespace MSBMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeborrowers() {
+        private bool ShouldSerializecontacts() {
             return false;
         }
         
@@ -879,7 +879,7 @@ namespace MSBMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeborrower_contact_list() {
+        private bool ShouldSerializecontact_list() {
             return false;
         }
         
@@ -1029,13 +1029,13 @@ namespace MSBMS {
         public delegate void validationsRowChangeEventHandler(object sender, validationsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void borrowersRowChangeEventHandler(object sender, borrowersRowChangeEvent e);
+        public delegate void contactsRowChangeEventHandler(object sender, contactsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void slides_for_checkoutRowChangeEventHandler(object sender, slides_for_checkoutRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void borrower_contact_listRowChangeEventHandler(object sender, borrower_contact_listRowChangeEvent e);
+        public delegate void contact_listRowChangeEventHandler(object sender, contact_listRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void slide_historyRowChangeEventHandler(object sender, slide_historyRowChangeEvent e);
@@ -4608,7 +4608,7 @@ namespace MSBMS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class borrowersDataTable : global::System.Data.TypedTableBase<borrowersRow> {
+        public partial class contactsDataTable : global::System.Data.TypedTableBase<contactsRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -4646,14 +4646,18 @@ namespace MSBMS {
             
             private global::System.Data.DataColumn columnupdated_date;
             
-            private global::System.Data.DataColumn columnupated_by;
-            
             private global::System.Data.DataColumn columnisdeleted;
+            
+            private global::System.Data.DataColumn columnupdated_by;
+            
+            private global::System.Data.DataColumn columnisDefault;
+            
+            private global::System.Data.DataColumn columnisExchange;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersDataTable() {
-                this.TableName = "borrowers";
+            public contactsDataTable() {
+                this.TableName = "contacts";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -4661,7 +4665,7 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal borrowersDataTable(global::System.Data.DataTable table) {
+            internal contactsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -4678,7 +4682,7 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected borrowersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected contactsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -4829,17 +4833,33 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn upated_byColumn {
+            public global::System.Data.DataColumn isdeletedColumn {
                 get {
-                    return this.columnupated_by;
+                    return this.columnisdeleted;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn isdeletedColumn {
+            public global::System.Data.DataColumn updated_byColumn {
                 get {
-                    return this.columnisdeleted;
+                    return this.columnupdated_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isDefaultColumn {
+                get {
+                    return this.columnisDefault;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchangeColumn {
+                get {
+                    return this.columnisExchange;
                 }
             }
             
@@ -4854,33 +4874,33 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow this[int index] {
+            public contactsRow this[int index] {
                 get {
-                    return ((borrowersRow)(this.Rows[index]));
+                    return ((contactsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrowersRowChangeEventHandler borrowersRowChanging;
+            public event contactsRowChangeEventHandler contactsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrowersRowChangeEventHandler borrowersRowChanged;
+            public event contactsRowChangeEventHandler contactsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrowersRowChangeEventHandler borrowersRowDeleting;
+            public event contactsRowChangeEventHandler contactsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrowersRowChangeEventHandler borrowersRowDeleted;
+            public event contactsRowChangeEventHandler contactsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddborrowersRow(borrowersRow row) {
+            public void AddcontactsRow(contactsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow AddborrowersRow(
+            public contactsRow AddcontactsRow(
                         string fname, 
                         string lname, 
                         string job_title, 
@@ -4898,9 +4918,11 @@ namespace MSBMS {
                         System.DateTime created_date, 
                         string created_by, 
                         System.DateTime updated_date, 
-                        string upated_by, 
-                        bool isdeleted) {
-                borrowersRow rowborrowersRow = ((borrowersRow)(this.NewRow()));
+                        bool isdeleted, 
+                        string updated_by, 
+                        bool isDefault, 
+                        bool isExchange) {
+                contactsRow rowcontactsRow = ((contactsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         fname,
@@ -4920,24 +4942,26 @@ namespace MSBMS {
                         created_date,
                         created_by,
                         updated_date,
-                        upated_by,
-                        isdeleted};
-                rowborrowersRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowborrowersRow);
-                return rowborrowersRow;
+                        isdeleted,
+                        updated_by,
+                        isDefault,
+                        isExchange};
+                rowcontactsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcontactsRow);
+                return rowcontactsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow FindByid(int id) {
-                return ((borrowersRow)(this.Rows.Find(new object[] {
+            public contactsRow FindByid(int id) {
+                return ((contactsRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                borrowersDataTable cln = ((borrowersDataTable)(base.Clone()));
+                contactsDataTable cln = ((contactsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -4945,7 +4969,7 @@ namespace MSBMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new borrowersDataTable();
+                return new contactsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4969,8 +4993,10 @@ namespace MSBMS {
                 this.columncreated_date = base.Columns["created_date"];
                 this.columncreated_by = base.Columns["created_by"];
                 this.columnupdated_date = base.Columns["updated_date"];
-                this.columnupated_by = base.Columns["upated_by"];
                 this.columnisdeleted = base.Columns["isdeleted"];
+                this.columnupdated_by = base.Columns["updated_by"];
+                this.columnisDefault = base.Columns["isDefault"];
+                this.columnisExchange = base.Columns["isExchange"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5012,10 +5038,14 @@ namespace MSBMS {
                 base.Columns.Add(this.columncreated_by);
                 this.columnupdated_date = new global::System.Data.DataColumn("updated_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnupdated_date);
-                this.columnupated_by = new global::System.Data.DataColumn("upated_by", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnupated_by);
                 this.columnisdeleted = new global::System.Data.DataColumn("isdeleted", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnisdeleted);
+                this.columnupdated_by = new global::System.Data.DataColumn("updated_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_by);
+                this.columnisDefault = new global::System.Data.DataColumn("isDefault", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDefault);
+                this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -5044,34 +5074,35 @@ namespace MSBMS {
                 this.columnhno.MaxLength = 50;
                 this.columnpostcode.MaxLength = 50;
                 this.columnnote.MaxLength = 50;
+                this.columncreated_date.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 50;
-                this.columnupated_by.MaxLength = 50;
+                this.columnupdated_by.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow NewborrowersRow() {
-                return ((borrowersRow)(this.NewRow()));
+            public contactsRow NewcontactsRow() {
+                return ((contactsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new borrowersRow(builder);
+                return new contactsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(borrowersRow);
+                return typeof(contactsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.borrowersRowChanged != null)) {
-                    this.borrowersRowChanged(this, new borrowersRowChangeEvent(((borrowersRow)(e.Row)), e.Action));
+                if ((this.contactsRowChanged != null)) {
+                    this.contactsRowChanged(this, new contactsRowChangeEvent(((contactsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -5079,8 +5110,8 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.borrowersRowChanging != null)) {
-                    this.borrowersRowChanging(this, new borrowersRowChangeEvent(((borrowersRow)(e.Row)), e.Action));
+                if ((this.contactsRowChanging != null)) {
+                    this.contactsRowChanging(this, new contactsRowChangeEvent(((contactsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -5088,8 +5119,8 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.borrowersRowDeleted != null)) {
-                    this.borrowersRowDeleted(this, new borrowersRowChangeEvent(((borrowersRow)(e.Row)), e.Action));
+                if ((this.contactsRowDeleted != null)) {
+                    this.contactsRowDeleted(this, new contactsRowChangeEvent(((contactsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -5097,14 +5128,14 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.borrowersRowDeleting != null)) {
-                    this.borrowersRowDeleting(this, new borrowersRowChangeEvent(((borrowersRow)(e.Row)), e.Action));
+                if ((this.contactsRowDeleting != null)) {
+                    this.contactsRowDeleting(this, new contactsRowChangeEvent(((contactsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveborrowersRow(borrowersRow row) {
+            public void RemovecontactsRow(contactsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -5131,7 +5162,7 @@ namespace MSBMS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "borrowersDataTable";
+                attribute2.FixedValue = "contactsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5888,7 +5919,7 @@ namespace MSBMS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class borrower_contact_listDataTable : global::System.Data.TypedTableBase<borrower_contact_listRow> {
+        public partial class contact_listDataTable : global::System.Data.TypedTableBase<contact_listRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -5926,16 +5957,18 @@ namespace MSBMS {
             
             private global::System.Data.DataColumn columnupdated_date;
             
-            private global::System.Data.DataColumn columnupated_by;
-            
             private global::System.Data.DataColumn columnisdeleted;
             
             private global::System.Data.DataColumn columnupdated_by;
             
+            private global::System.Data.DataColumn columnisDefault;
+            
+            private global::System.Data.DataColumn columnisExchange;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listDataTable() {
-                this.TableName = "borrower_contact_list";
+            public contact_listDataTable() {
+                this.TableName = "contact_list";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -5943,7 +5976,7 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal borrower_contact_listDataTable(global::System.Data.DataTable table) {
+            internal contact_listDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -5960,7 +5993,7 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected borrower_contact_listDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected contact_listDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -6111,14 +6144,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn upated_byColumn {
-                get {
-                    return this.columnupated_by;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn isdeletedColumn {
                 get {
                     return this.columnisdeleted;
@@ -6135,6 +6160,22 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isDefaultColumn {
+                get {
+                    return this.columnisDefault;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchangeColumn {
+                get {
+                    return this.columnisExchange;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6144,33 +6185,33 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow this[int index] {
+            public contact_listRow this[int index] {
                 get {
-                    return ((borrower_contact_listRow)(this.Rows[index]));
+                    return ((contact_listRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrower_contact_listRowChangeEventHandler borrower_contact_listRowChanging;
+            public event contact_listRowChangeEventHandler contact_listRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrower_contact_listRowChangeEventHandler borrower_contact_listRowChanged;
+            public event contact_listRowChangeEventHandler contact_listRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrower_contact_listRowChangeEventHandler borrower_contact_listRowDeleting;
+            public event contact_listRowChangeEventHandler contact_listRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event borrower_contact_listRowChangeEventHandler borrower_contact_listRowDeleted;
+            public event contact_listRowChangeEventHandler contact_listRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Addborrower_contact_listRow(borrower_contact_listRow row) {
+            public void Addcontact_listRow(contact_listRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow Addborrower_contact_listRow(
+            public contact_listRow Addcontact_listRow(
                         string fname, 
                         string lname, 
                         string job_title, 
@@ -6188,10 +6229,11 @@ namespace MSBMS {
                         System.DateTime created_date, 
                         string created_by, 
                         System.DateTime updated_date, 
-                        string upated_by, 
                         bool isdeleted, 
-                        string updated_by) {
-                borrower_contact_listRow rowborrower_contact_listRow = ((borrower_contact_listRow)(this.NewRow()));
+                        string updated_by, 
+                        bool isDefault, 
+                        bool isExchange) {
+                contact_listRow rowcontact_listRow = ((contact_listRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         fname,
@@ -6211,25 +6253,26 @@ namespace MSBMS {
                         created_date,
                         created_by,
                         updated_date,
-                        upated_by,
                         isdeleted,
-                        updated_by};
-                rowborrower_contact_listRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowborrower_contact_listRow);
-                return rowborrower_contact_listRow;
+                        updated_by,
+                        isDefault,
+                        isExchange};
+                rowcontact_listRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcontact_listRow);
+                return rowcontact_listRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow FindByid(int id) {
-                return ((borrower_contact_listRow)(this.Rows.Find(new object[] {
+            public contact_listRow FindByid(int id) {
+                return ((contact_listRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                borrower_contact_listDataTable cln = ((borrower_contact_listDataTable)(base.Clone()));
+                contact_listDataTable cln = ((contact_listDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -6237,7 +6280,7 @@ namespace MSBMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new borrower_contact_listDataTable();
+                return new contact_listDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6261,9 +6304,10 @@ namespace MSBMS {
                 this.columncreated_date = base.Columns["created_date"];
                 this.columncreated_by = base.Columns["created_by"];
                 this.columnupdated_date = base.Columns["updated_date"];
-                this.columnupated_by = base.Columns["upated_by"];
                 this.columnisdeleted = base.Columns["isdeleted"];
                 this.columnupdated_by = base.Columns["updated_by"];
+                this.columnisDefault = base.Columns["isDefault"];
+                this.columnisExchange = base.Columns["isExchange"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6305,12 +6349,14 @@ namespace MSBMS {
                 base.Columns.Add(this.columncreated_by);
                 this.columnupdated_date = new global::System.Data.DataColumn("updated_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnupdated_date);
-                this.columnupated_by = new global::System.Data.DataColumn("upated_by", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnupated_by);
                 this.columnisdeleted = new global::System.Data.DataColumn("isdeleted", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnisdeleted);
                 this.columnupdated_by = new global::System.Data.DataColumn("updated_by", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnupdated_by);
+                this.columnisDefault = new global::System.Data.DataColumn("isDefault", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDefault);
+                this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -6341,34 +6387,33 @@ namespace MSBMS {
                 this.columnnote.MaxLength = 50;
                 this.columncreated_date.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 50;
-                this.columnupated_by.MaxLength = 50;
                 this.columnupdated_by.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow Newborrower_contact_listRow() {
-                return ((borrower_contact_listRow)(this.NewRow()));
+            public contact_listRow Newcontact_listRow() {
+                return ((contact_listRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new borrower_contact_listRow(builder);
+                return new contact_listRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(borrower_contact_listRow);
+                return typeof(contact_listRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.borrower_contact_listRowChanged != null)) {
-                    this.borrower_contact_listRowChanged(this, new borrower_contact_listRowChangeEvent(((borrower_contact_listRow)(e.Row)), e.Action));
+                if ((this.contact_listRowChanged != null)) {
+                    this.contact_listRowChanged(this, new contact_listRowChangeEvent(((contact_listRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6376,8 +6421,8 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.borrower_contact_listRowChanging != null)) {
-                    this.borrower_contact_listRowChanging(this, new borrower_contact_listRowChangeEvent(((borrower_contact_listRow)(e.Row)), e.Action));
+                if ((this.contact_listRowChanging != null)) {
+                    this.contact_listRowChanging(this, new contact_listRowChangeEvent(((contact_listRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6385,8 +6430,8 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.borrower_contact_listRowDeleted != null)) {
-                    this.borrower_contact_listRowDeleted(this, new borrower_contact_listRowChangeEvent(((borrower_contact_listRow)(e.Row)), e.Action));
+                if ((this.contact_listRowDeleted != null)) {
+                    this.contact_listRowDeleted(this, new contact_listRowChangeEvent(((contact_listRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6394,14 +6439,14 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.borrower_contact_listRowDeleting != null)) {
-                    this.borrower_contact_listRowDeleting(this, new borrower_contact_listRowChangeEvent(((borrower_contact_listRow)(e.Row)), e.Action));
+                if ((this.contact_listRowDeleting != null)) {
+                    this.contact_listRowDeleting(this, new contact_listRowChangeEvent(((contact_listRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removeborrower_contact_listRow(borrower_contact_listRow row) {
+            public void Removecontact_listRow(contact_listRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -6428,7 +6473,7 @@ namespace MSBMS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "borrower_contact_listDataTable";
+                attribute2.FixedValue = "contact_listDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -9613,6 +9658,20 @@ namespace MSBMS {
             
             private global::System.Data.DataColumn columncheckinStatus;
             
+            private global::System.Data.DataColumn columnisDefault;
+            
+            private global::System.Data.DataColumn columnisExchange;
+            
+            private global::System.Data.DataColumn columnisReplaced;
+            
+            private global::System.Data.DataColumn columnisOutExchanged;
+            
+            private global::System.Data.DataColumn columnisMissing;
+            
+            private global::System.Data.DataColumn columnisExchange1;
+            
+            private global::System.Data.DataColumn columnexchange_contact_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public current_lending_historyDataTable() {
@@ -10208,6 +10267,62 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isDefaultColumn {
+                get {
+                    return this.columnisDefault;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchangeColumn {
+                get {
+                    return this.columnisExchange;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isReplacedColumn {
+                get {
+                    return this.columnisReplaced;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isOutExchangedColumn {
+                get {
+                    return this.columnisOutExchanged;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isMissingColumn {
+                get {
+                    return this.columnisMissing;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchange1Column {
+                get {
+                    return this.columnisExchange1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn exchange_contact_idColumn {
+                get {
+                    return this.columnexchange_contact_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10271,7 +10386,7 @@ namespace MSBMS {
                         int donor_id, 
                         int species_catgeroy_id, 
                         string updated_by, 
-                        borrowersRow parentborrowersRowByFK_current_lending_borrowers2, 
+                        contactsRow parentcontactsRowByFK_current_lending_borrowers2, 
                         int slide_id, 
                         System.DateTime checked_out_date, 
                         System.DateTime due_date, 
@@ -10309,7 +10424,14 @@ namespace MSBMS {
                         string borrowed_by, 
                         System.DateTime b_created_date, 
                         bool isHistory, 
-                        string checkinStatus) {
+                        string checkinStatus, 
+                        bool isDefault, 
+                        bool isExchange, 
+                        bool isReplaced, 
+                        bool isOutExchanged, 
+                        bool isMissing, 
+                        bool isExchange1, 
+                        int exchange_contact_id) {
                 current_lending_historyRow rowcurrent_lending_historyRow = ((current_lending_historyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -10381,9 +10503,16 @@ namespace MSBMS {
                         borrowed_by,
                         b_created_date,
                         isHistory,
-                        checkinStatus};
-                if ((parentborrowersRowByFK_current_lending_borrowers2 != null)) {
-                    columnValuesArray[28] = parentborrowersRowByFK_current_lending_borrowers2[0];
+                        checkinStatus,
+                        isDefault,
+                        isExchange,
+                        isReplaced,
+                        isOutExchanged,
+                        isMissing,
+                        isExchange1,
+                        exchange_contact_id};
+                if ((parentcontactsRowByFK_current_lending_borrowers2 != null)) {
+                    columnValuesArray[28] = parentcontactsRowByFK_current_lending_borrowers2[0];
                 }
                 rowcurrent_lending_historyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcurrent_lending_historyRow);
@@ -10484,6 +10613,13 @@ namespace MSBMS {
                 this.columnb_created_date = base.Columns["b_created_date"];
                 this.columnisHistory = base.Columns["isHistory"];
                 this.columncheckinStatus = base.Columns["checkinStatus"];
+                this.columnisDefault = base.Columns["isDefault"];
+                this.columnisExchange = base.Columns["isExchange"];
+                this.columnisReplaced = base.Columns["isReplaced"];
+                this.columnisOutExchanged = base.Columns["isOutExchanged"];
+                this.columnisMissing = base.Columns["isMissing"];
+                this.columnisExchange1 = base.Columns["isExchange1"];
+                this.columnexchange_contact_id = base.Columns["exchange_contact_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10631,6 +10767,20 @@ namespace MSBMS {
                 base.Columns.Add(this.columnisHistory);
                 this.columncheckinStatus = new global::System.Data.DataColumn("checkinStatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncheckinStatus);
+                this.columnisDefault = new global::System.Data.DataColumn("isDefault", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDefault);
+                this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange);
+                this.columnisReplaced = new global::System.Data.DataColumn("isReplaced", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisReplaced);
+                this.columnisOutExchanged = new global::System.Data.DataColumn("isOutExchanged", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisOutExchanged);
+                this.columnisMissing = new global::System.Data.DataColumn("isMissing", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisMissing);
+                this.columnisExchange1 = new global::System.Data.DataColumn("isExchange1", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange1);
+                this.columnexchange_contact_id = new global::System.Data.DataColumn("exchange_contact_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexchange_contact_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -10701,6 +10851,7 @@ namespace MSBMS {
                 this.columnid2.AllowDBNull = false;
                 this.columnid2.ReadOnly = true;
                 this.columncreated_date1.AllowDBNull = false;
+                this.columncreated_by2.AllowDBNull = false;
                 this.columncreated_by2.MaxLength = 2147483647;
                 this.columnupdated_by2.MaxLength = 2147483647;
                 this.columnid3.AutoIncrement = true;
@@ -10712,8 +10863,15 @@ namespace MSBMS {
                 this.columnbar_code1.MaxLength = 2147483647;
                 this.columncreated_by3.MaxLength = 2147483647;
                 this.columnupdated_by3.MaxLength = 2147483647;
+                this.columncreated_date2.AllowDBNull = false;
+                this.columnupdated_date2.AllowDBNull = false;
+                this.columnisActive1.AllowDBNull = false;
                 this.columnborrowed_by.MaxLength = 50;
                 this.columncheckinStatus.MaxLength = 50;
+                this.columnisReplaced.AllowDBNull = false;
+                this.columnisOutExchanged.AllowDBNull = false;
+                this.columnisMissing.AllowDBNull = false;
+                this.columnisExchange1.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10975,13 +11133,41 @@ namespace MSBMS {
             
             private global::System.Data.DataColumn columnisActive1;
             
-            private global::System.Data.DataColumn columnborrowed_by;
-            
             private global::System.Data.DataColumn columncreated_date3;
             
             private global::System.Data.DataColumn columnupdated_date3;
             
-            private global::System.Data.DataColumn columnb_created_date;
+            private global::System.Data.DataColumn columnisHistory;
+            
+            private global::System.Data.DataColumn columncheckinStatus;
+            
+            private global::System.Data.DataColumn columnisDefault;
+            
+            private global::System.Data.DataColumn columnisExchange;
+            
+            private global::System.Data.DataColumn columnisReplaced;
+            
+            private global::System.Data.DataColumn columnisOutExchanged;
+            
+            private global::System.Data.DataColumn columnisMissing;
+            
+            private global::System.Data.DataColumn columnisExchange1;
+            
+            private global::System.Data.DataColumn columnexchange_contact_id;
+            
+            private global::System.Data.DataColumn columnid4;
+            
+            private global::System.Data.DataColumn columnspecies_category;
+            
+            private global::System.Data.DataColumn columnid5;
+            
+            private global::System.Data.DataColumn columnspecifics;
+            
+            private global::System.Data.DataColumn columnid6;
+            
+            private global::System.Data.DataColumn columndensity_category;
+            
+            private global::System.Data.DataColumn columncode;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -11530,14 +11716,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn borrowed_byColumn {
-                get {
-                    return this.columnborrowed_by;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn created_date3Column {
                 get {
                     return this.columncreated_date3;
@@ -11554,9 +11732,129 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn b_created_dateColumn {
+            public global::System.Data.DataColumn isHistoryColumn {
                 get {
-                    return this.columnb_created_date;
+                    return this.columnisHistory;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn checkinStatusColumn {
+                get {
+                    return this.columncheckinStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isDefaultColumn {
+                get {
+                    return this.columnisDefault;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchangeColumn {
+                get {
+                    return this.columnisExchange;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isReplacedColumn {
+                get {
+                    return this.columnisReplaced;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isOutExchangedColumn {
+                get {
+                    return this.columnisOutExchanged;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isMissingColumn {
+                get {
+                    return this.columnisMissing;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchange1Column {
+                get {
+                    return this.columnisExchange1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn exchange_contact_idColumn {
+                get {
+                    return this.columnexchange_contact_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id4Column {
+                get {
+                    return this.columnid4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn species_categoryColumn {
+                get {
+                    return this.columnspecies_category;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id5Column {
+                get {
+                    return this.columnid5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn specificsColumn {
+                get {
+                    return this.columnspecifics;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id6Column {
+                get {
+                    return this.columnid6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn density_categoryColumn {
+                get {
+                    return this.columndensity_category;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn codeColumn {
+                get {
+                    return this.columncode;
                 }
             }
             
@@ -11625,7 +11923,7 @@ namespace MSBMS {
                         int donor_id, 
                         int species_catgeroy_id, 
                         string updated_by, 
-                        borrowersRow parentborrowersRowByFK_current_lending_borrowers, 
+                        contactsRow parentcontactsRowByFK_current_lending_borrowers, 
                         int slide_id, 
                         System.DateTime checked_out_date, 
                         System.DateTime due_date, 
@@ -11658,10 +11956,21 @@ namespace MSBMS {
                         System.DateTime updated_date2, 
                         bool _isWHO_, 
                         bool isActive1, 
-                        string borrowed_by, 
                         System.DateTime created_date3, 
                         System.DateTime updated_date3, 
-                        System.DateTime b_created_date) {
+                        bool isHistory, 
+                        string checkinStatus, 
+                        bool isDefault, 
+                        bool isExchange, 
+                        bool isReplaced, 
+                        bool isOutExchanged, 
+                        bool isMissing, 
+                        bool isExchange1, 
+                        int exchange_contact_id, 
+                        string species_category, 
+                        string specifics, 
+                        string density_category, 
+                        string code) {
                 current_lending_duedate_passedRow rowcurrent_lending_duedate_passedRow = ((current_lending_duedate_passedRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -11728,12 +12037,26 @@ namespace MSBMS {
                         updated_date2,
                         _isWHO_,
                         isActive1,
-                        borrowed_by,
                         created_date3,
                         updated_date3,
-                        b_created_date};
-                if ((parentborrowersRowByFK_current_lending_borrowers != null)) {
-                    columnValuesArray[28] = parentborrowersRowByFK_current_lending_borrowers[0];
+                        isHistory,
+                        checkinStatus,
+                        isDefault,
+                        isExchange,
+                        isReplaced,
+                        isOutExchanged,
+                        isMissing,
+                        isExchange1,
+                        exchange_contact_id,
+                        null,
+                        species_category,
+                        null,
+                        specifics,
+                        null,
+                        density_category,
+                        code};
+                if ((parentcontactsRowByFK_current_lending_borrowers != null)) {
+                    columnValuesArray[28] = parentcontactsRowByFK_current_lending_borrowers[0];
                 }
                 rowcurrent_lending_duedate_passedRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcurrent_lending_duedate_passedRow);
@@ -11828,10 +12151,24 @@ namespace MSBMS {
                 this.columnupdated_date2 = base.Columns["updated_date2"];
                 this._columnisWHO_ = base.Columns["isWHO?"];
                 this.columnisActive1 = base.Columns["isActive1"];
-                this.columnborrowed_by = base.Columns["borrowed_by"];
                 this.columncreated_date3 = base.Columns["created_date3"];
                 this.columnupdated_date3 = base.Columns["updated_date3"];
-                this.columnb_created_date = base.Columns["b_created_date"];
+                this.columnisHistory = base.Columns["isHistory"];
+                this.columncheckinStatus = base.Columns["checkinStatus"];
+                this.columnisDefault = base.Columns["isDefault"];
+                this.columnisExchange = base.Columns["isExchange"];
+                this.columnisReplaced = base.Columns["isReplaced"];
+                this.columnisOutExchanged = base.Columns["isOutExchanged"];
+                this.columnisMissing = base.Columns["isMissing"];
+                this.columnisExchange1 = base.Columns["isExchange1"];
+                this.columnexchange_contact_id = base.Columns["exchange_contact_id"];
+                this.columnid4 = base.Columns["id4"];
+                this.columnspecies_category = base.Columns["species_category"];
+                this.columnid5 = base.Columns["id5"];
+                this.columnspecifics = base.Columns["specifics"];
+                this.columnid6 = base.Columns["id6"];
+                this.columndensity_category = base.Columns["density_category"];
+                this.columncode = base.Columns["code"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11967,14 +12304,42 @@ namespace MSBMS {
                 base.Columns.Add(this._columnisWHO_);
                 this.columnisActive1 = new global::System.Data.DataColumn("isActive1", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnisActive1);
-                this.columnborrowed_by = new global::System.Data.DataColumn("borrowed_by", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnborrowed_by);
                 this.columncreated_date3 = new global::System.Data.DataColumn("created_date3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreated_date3);
                 this.columnupdated_date3 = new global::System.Data.DataColumn("updated_date3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnupdated_date3);
-                this.columnb_created_date = new global::System.Data.DataColumn("b_created_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnb_created_date);
+                this.columnisHistory = new global::System.Data.DataColumn("isHistory", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisHistory);
+                this.columncheckinStatus = new global::System.Data.DataColumn("checkinStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncheckinStatus);
+                this.columnisDefault = new global::System.Data.DataColumn("isDefault", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDefault);
+                this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange);
+                this.columnisReplaced = new global::System.Data.DataColumn("isReplaced", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisReplaced);
+                this.columnisOutExchanged = new global::System.Data.DataColumn("isOutExchanged", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisOutExchanged);
+                this.columnisMissing = new global::System.Data.DataColumn("isMissing", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisMissing);
+                this.columnisExchange1 = new global::System.Data.DataColumn("isExchange1", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange1);
+                this.columnexchange_contact_id = new global::System.Data.DataColumn("exchange_contact_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexchange_contact_id);
+                this.columnid4 = new global::System.Data.DataColumn("id4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid4);
+                this.columnspecies_category = new global::System.Data.DataColumn("species_category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecies_category);
+                this.columnid5 = new global::System.Data.DataColumn("id5", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid5);
+                this.columnspecifics = new global::System.Data.DataColumn("specifics", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnspecifics);
+                this.columnid6 = new global::System.Data.DataColumn("id6", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid6);
+                this.columndensity_category = new global::System.Data.DataColumn("density_category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndensity_category);
+                this.columncode = new global::System.Data.DataColumn("code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncode);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -12045,6 +12410,7 @@ namespace MSBMS {
                 this.columnid2.AllowDBNull = false;
                 this.columnid2.ReadOnly = true;
                 this.columncreated_date1.AllowDBNull = false;
+                this.columncreated_by2.AllowDBNull = false;
                 this.columncreated_by2.MaxLength = 2147483647;
                 this.columnupdated_by2.MaxLength = 2147483647;
                 this.columnid3.AutoIncrement = true;
@@ -12056,7 +12422,33 @@ namespace MSBMS {
                 this.columnbar_code1.MaxLength = 2147483647;
                 this.columncreated_by3.MaxLength = 2147483647;
                 this.columnupdated_by3.MaxLength = 2147483647;
-                this.columnborrowed_by.MaxLength = 50;
+                this.columncreated_date2.AllowDBNull = false;
+                this.columnupdated_date2.AllowDBNull = false;
+                this.columnisActive1.AllowDBNull = false;
+                this.columncheckinStatus.MaxLength = 50;
+                this.columnisReplaced.AllowDBNull = false;
+                this.columnisOutExchanged.AllowDBNull = false;
+                this.columnisMissing.AllowDBNull = false;
+                this.columnisExchange1.AllowDBNull = false;
+                this.columnid4.AutoIncrement = true;
+                this.columnid4.AutoIncrementSeed = -1;
+                this.columnid4.AutoIncrementStep = -1;
+                this.columnid4.AllowDBNull = false;
+                this.columnid4.ReadOnly = true;
+                this.columnspecies_category.MaxLength = 2147483647;
+                this.columnid5.AutoIncrement = true;
+                this.columnid5.AutoIncrementSeed = -1;
+                this.columnid5.AutoIncrementStep = -1;
+                this.columnid5.AllowDBNull = false;
+                this.columnid5.ReadOnly = true;
+                this.columnspecifics.MaxLength = 2147483647;
+                this.columnid6.AutoIncrement = true;
+                this.columnid6.AutoIncrementSeed = -1;
+                this.columnid6.AutoIncrementStep = -1;
+                this.columnid6.AllowDBNull = false;
+                this.columnid6.ReadOnly = true;
+                this.columndensity_category.MaxLength = 2147483647;
+                this.columncode.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12882,6 +13274,20 @@ namespace MSBMS {
             
             private global::System.Data.DataColumn columncheckinStatus;
             
+            private global::System.Data.DataColumn columnisDefault;
+            
+            private global::System.Data.DataColumn columnisExchange;
+            
+            private global::System.Data.DataColumn columnisReplaced;
+            
+            private global::System.Data.DataColumn columnisOutExchanged;
+            
+            private global::System.Data.DataColumn columnisMissing;
+            
+            private global::System.Data.DataColumn columnisExchange1;
+            
+            private global::System.Data.DataColumn columnexchange_contact_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public current_lending_past_historyDataTable() {
@@ -13477,6 +13883,62 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isDefaultColumn {
+                get {
+                    return this.columnisDefault;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchangeColumn {
+                get {
+                    return this.columnisExchange;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isReplacedColumn {
+                get {
+                    return this.columnisReplaced;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isOutExchangedColumn {
+                get {
+                    return this.columnisOutExchanged;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isMissingColumn {
+                get {
+                    return this.columnisMissing;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchange1Column {
+                get {
+                    return this.columnisExchange1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn exchange_contact_idColumn {
+                get {
+                    return this.columnexchange_contact_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -13540,7 +14002,7 @@ namespace MSBMS {
                         int donor_id, 
                         int species_catgeroy_id, 
                         string updated_by, 
-                        borrowersRow parentborrowersRowByFK_current_lending_borrowers4, 
+                        contactsRow parentcontactsRowByFK_current_lending_borrowers4, 
                         int slide_id, 
                         System.DateTime checked_out_date, 
                         System.DateTime due_date, 
@@ -13578,7 +14040,14 @@ namespace MSBMS {
                         string borrowed_by, 
                         System.DateTime b_created_date, 
                         bool isHistory, 
-                        string checkinStatus) {
+                        string checkinStatus, 
+                        bool isDefault, 
+                        bool isExchange, 
+                        bool isReplaced, 
+                        bool isOutExchanged, 
+                        bool isMissing, 
+                        bool isExchange1, 
+                        int exchange_contact_id) {
                 current_lending_past_historyRow rowcurrent_lending_past_historyRow = ((current_lending_past_historyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -13650,9 +14119,16 @@ namespace MSBMS {
                         borrowed_by,
                         b_created_date,
                         isHistory,
-                        checkinStatus};
-                if ((parentborrowersRowByFK_current_lending_borrowers4 != null)) {
-                    columnValuesArray[28] = parentborrowersRowByFK_current_lending_borrowers4[0];
+                        checkinStatus,
+                        isDefault,
+                        isExchange,
+                        isReplaced,
+                        isOutExchanged,
+                        isMissing,
+                        isExchange1,
+                        exchange_contact_id};
+                if ((parentcontactsRowByFK_current_lending_borrowers4 != null)) {
+                    columnValuesArray[28] = parentcontactsRowByFK_current_lending_borrowers4[0];
                 }
                 rowcurrent_lending_past_historyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcurrent_lending_past_historyRow);
@@ -13753,6 +14229,13 @@ namespace MSBMS {
                 this.columnb_created_date = base.Columns["b_created_date"];
                 this.columnisHistory = base.Columns["isHistory"];
                 this.columncheckinStatus = base.Columns["checkinStatus"];
+                this.columnisDefault = base.Columns["isDefault"];
+                this.columnisExchange = base.Columns["isExchange"];
+                this.columnisReplaced = base.Columns["isReplaced"];
+                this.columnisOutExchanged = base.Columns["isOutExchanged"];
+                this.columnisMissing = base.Columns["isMissing"];
+                this.columnisExchange1 = base.Columns["isExchange1"];
+                this.columnexchange_contact_id = base.Columns["exchange_contact_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13900,6 +14383,20 @@ namespace MSBMS {
                 base.Columns.Add(this.columnisHistory);
                 this.columncheckinStatus = new global::System.Data.DataColumn("checkinStatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncheckinStatus);
+                this.columnisDefault = new global::System.Data.DataColumn("isDefault", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDefault);
+                this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange);
+                this.columnisReplaced = new global::System.Data.DataColumn("isReplaced", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisReplaced);
+                this.columnisOutExchanged = new global::System.Data.DataColumn("isOutExchanged", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisOutExchanged);
+                this.columnisMissing = new global::System.Data.DataColumn("isMissing", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisMissing);
+                this.columnisExchange1 = new global::System.Data.DataColumn("isExchange1", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange1);
+                this.columnexchange_contact_id = new global::System.Data.DataColumn("exchange_contact_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexchange_contact_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -13970,6 +14467,7 @@ namespace MSBMS {
                 this.columnid2.AllowDBNull = false;
                 this.columnid2.ReadOnly = true;
                 this.columncreated_date1.AllowDBNull = false;
+                this.columncreated_by2.AllowDBNull = false;
                 this.columncreated_by2.MaxLength = 2147483647;
                 this.columnupdated_by2.MaxLength = 2147483647;
                 this.columnid3.AutoIncrement = true;
@@ -13981,8 +14479,15 @@ namespace MSBMS {
                 this.columnbar_code1.MaxLength = 2147483647;
                 this.columncreated_by3.MaxLength = 2147483647;
                 this.columnupdated_by3.MaxLength = 2147483647;
+                this.columncreated_date2.AllowDBNull = false;
+                this.columnupdated_date2.AllowDBNull = false;
+                this.columnisActive1.AllowDBNull = false;
                 this.columnborrowed_by.MaxLength = 50;
                 this.columncheckinStatus.MaxLength = 50;
+                this.columnisReplaced.AllowDBNull = false;
+                this.columnisOutExchanged.AllowDBNull = false;
+                this.columnisMissing.AllowDBNull = false;
+                this.columnisExchange1.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14984,7 +15489,7 @@ namespace MSBMS {
                         int donor_id, 
                         int species_catgeroy_id, 
                         string updated_by, 
-                        borrowersRow parentborrowersRowByFK_current_lending_borrowers6, 
+                        contactsRow parentcontactsRowByFK_current_lending_borrowers6, 
                         int slide_id, 
                         System.DateTime checked_out_date, 
                         System.DateTime due_date, 
@@ -15105,8 +15610,8 @@ namespace MSBMS {
                         null,
                         density_category,
                         code};
-                if ((parentborrowersRowByFK_current_lending_borrowers6 != null)) {
-                    columnValuesArray[28] = parentborrowersRowByFK_current_lending_borrowers6[0];
+                if ((parentcontactsRowByFK_current_lending_borrowers6 != null)) {
+                    columnValuesArray[28] = parentcontactsRowByFK_current_lending_borrowers6[0];
                 }
                 rowcheckedout_slides_detailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcheckedout_slides_detailsRow);
@@ -16172,6 +16677,9 @@ namespace MSBMS {
                 this.columncabinet_number.AllowDBNull = false;
                 this.columndrawer_number.AllowDBNull = false;
                 this.columnbox_number.AllowDBNull = false;
+                this.columnupdated_date.AllowDBNull = false;
+                this.columncreated_date.AllowDBNull = false;
+                this.columncreated_by.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 2147483647;
                 this.columndonor_donor_id.AutoIncrement = true;
                 this.columndonor_donor_id.AutoIncrementSeed = -1;
@@ -22211,25 +22719,25 @@ namespace MSBMS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class borrowersRow : global::System.Data.DataRow {
+        public partial class contactsRow : global::System.Data.DataRow {
             
-            private borrowersDataTable tableborrowers;
+            private contactsDataTable tablecontacts;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal borrowersRow(global::System.Data.DataRowBuilder rb) : 
+            internal contactsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableborrowers = ((borrowersDataTable)(this.Table));
+                this.tablecontacts = ((contactsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tableborrowers.idColumn]));
+                    return ((int)(this[this.tablecontacts.idColumn]));
                 }
                 set {
-                    this[this.tableborrowers.idColumn] = value;
+                    this[this.tablecontacts.idColumn] = value;
                 }
             }
             
@@ -22237,10 +22745,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string fname {
                 get {
-                    return ((string)(this[this.tableborrowers.fnameColumn]));
+                    return ((string)(this[this.tablecontacts.fnameColumn]));
                 }
                 set {
-                    this[this.tableborrowers.fnameColumn] = value;
+                    this[this.tablecontacts.fnameColumn] = value;
                 }
             }
             
@@ -22248,10 +22756,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string lname {
                 get {
-                    return ((string)(this[this.tableborrowers.lnameColumn]));
+                    return ((string)(this[this.tablecontacts.lnameColumn]));
                 }
                 set {
-                    this[this.tableborrowers.lnameColumn] = value;
+                    this[this.tablecontacts.lnameColumn] = value;
                 }
             }
             
@@ -22260,14 +22768,14 @@ namespace MSBMS {
             public string job_title {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.job_titleColumn]));
+                        return ((string)(this[this.tablecontacts.job_titleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'job_title\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'job_title\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.job_titleColumn] = value;
+                    this[this.tablecontacts.job_titleColumn] = value;
                 }
             }
             
@@ -22275,10 +22783,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string organisation {
                 get {
-                    return ((string)(this[this.tableborrowers.organisationColumn]));
+                    return ((string)(this[this.tablecontacts.organisationColumn]));
                 }
                 set {
-                    this[this.tableborrowers.organisationColumn] = value;
+                    this[this.tablecontacts.organisationColumn] = value;
                 }
             }
             
@@ -22286,10 +22794,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string offical_email {
                 get {
-                    return ((string)(this[this.tableborrowers.offical_emailColumn]));
+                    return ((string)(this[this.tablecontacts.offical_emailColumn]));
                 }
                 set {
-                    this[this.tableborrowers.offical_emailColumn] = value;
+                    this[this.tablecontacts.offical_emailColumn] = value;
                 }
             }
             
@@ -22297,10 +22805,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string personal_email {
                 get {
-                    return ((string)(this[this.tableborrowers.personal_emailColumn]));
+                    return ((string)(this[this.tablecontacts.personal_emailColumn]));
                 }
                 set {
-                    this[this.tableborrowers.personal_emailColumn] = value;
+                    this[this.tablecontacts.personal_emailColumn] = value;
                 }
             }
             
@@ -22308,10 +22816,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string mobile_phone {
                 get {
-                    return ((string)(this[this.tableborrowers.mobile_phoneColumn]));
+                    return ((string)(this[this.tablecontacts.mobile_phoneColumn]));
                 }
                 set {
-                    this[this.tableborrowers.mobile_phoneColumn] = value;
+                    this[this.tablecontacts.mobile_phoneColumn] = value;
                 }
             }
             
@@ -22320,14 +22828,14 @@ namespace MSBMS {
             public string office_phone {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.office_phoneColumn]));
+                        return ((string)(this[this.tablecontacts.office_phoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'office_phone\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'office_phone\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.office_phoneColumn] = value;
+                    this[this.tablecontacts.office_phoneColumn] = value;
                 }
             }
             
@@ -22336,14 +22844,14 @@ namespace MSBMS {
             public string fax_number {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.fax_numberColumn]));
+                        return ((string)(this[this.tablecontacts.fax_numberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fax_number\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'fax_number\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.fax_numberColumn] = value;
+                    this[this.tablecontacts.fax_numberColumn] = value;
                 }
             }
             
@@ -22352,14 +22860,14 @@ namespace MSBMS {
             public string country {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.countryColumn]));
+                        return ((string)(this[this.tablecontacts.countryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'country\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'country\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.countryColumn] = value;
+                    this[this.tablecontacts.countryColumn] = value;
                 }
             }
             
@@ -22368,14 +22876,14 @@ namespace MSBMS {
             public string city {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.cityColumn]));
+                        return ((string)(this[this.tablecontacts.cityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'city\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'city\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.cityColumn] = value;
+                    this[this.tablecontacts.cityColumn] = value;
                 }
             }
             
@@ -22384,14 +22892,14 @@ namespace MSBMS {
             public string hno {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.hnoColumn]));
+                        return ((string)(this[this.tablecontacts.hnoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'hno\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'hno\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.hnoColumn] = value;
+                    this[this.tablecontacts.hnoColumn] = value;
                 }
             }
             
@@ -22400,14 +22908,14 @@ namespace MSBMS {
             public string postcode {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.postcodeColumn]));
+                        return ((string)(this[this.tablecontacts.postcodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'postcode\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'postcode\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.postcodeColumn] = value;
+                    this[this.tablecontacts.postcodeColumn] = value;
                 }
             }
             
@@ -22416,14 +22924,14 @@ namespace MSBMS {
             public string note {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.noteColumn]));
+                        return ((string)(this[this.tablecontacts.noteColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'note\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'note\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.noteColumn] = value;
+                    this[this.tablecontacts.noteColumn] = value;
                 }
             }
             
@@ -22431,15 +22939,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableborrowers.created_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date\' in table \'borrowers\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecontacts.created_dateColumn]));
                 }
                 set {
-                    this[this.tableborrowers.created_dateColumn] = value;
+                    this[this.tablecontacts.created_dateColumn] = value;
                 }
             }
             
@@ -22448,14 +22951,14 @@ namespace MSBMS {
             public string created_by {
                 get {
                     try {
-                        return ((string)(this[this.tableborrowers.created_byColumn]));
+                        return ((string)(this[this.tablecontacts.created_byColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'created_by\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.created_byColumn] = value;
+                    this[this.tablecontacts.created_byColumn] = value;
                 }
             }
             
@@ -22464,30 +22967,14 @@ namespace MSBMS {
             public System.DateTime updated_date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableborrowers.updated_dateColumn]));
+                        return ((global::System.DateTime)(this[this.tablecontacts.updated_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.updated_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string upated_by {
-                get {
-                    try {
-                        return ((string)(this[this.tableborrowers.upated_byColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'upated_by\' in table \'borrowers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableborrowers.upated_byColumn] = value;
+                    this[this.tablecontacts.updated_dateColumn] = value;
                 }
             }
             
@@ -22496,171 +22983,231 @@ namespace MSBMS {
             public bool isdeleted {
                 get {
                     try {
-                        return ((bool)(this[this.tableborrowers.isdeletedColumn]));
+                        return ((bool)(this[this.tablecontacts.isdeletedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isdeleted\' in table \'borrowers\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'isdeleted\' in table \'contacts\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrowers.isdeletedColumn] = value;
+                    this[this.tablecontacts.isdeletedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string updated_by {
+                get {
+                    try {
+                        return ((string)(this[this.tablecontacts.updated_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_by\' in table \'contacts\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontacts.updated_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isDefault {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecontacts.isDefaultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isDefault\' in table \'contacts\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontacts.isDefaultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecontacts.isExchangeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isExchange\' in table \'contacts\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontacts.isExchangeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isjob_titleNull() {
-                return this.IsNull(this.tableborrowers.job_titleColumn);
+                return this.IsNull(this.tablecontacts.job_titleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setjob_titleNull() {
-                this[this.tableborrowers.job_titleColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.job_titleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isoffice_phoneNull() {
-                return this.IsNull(this.tableborrowers.office_phoneColumn);
+                return this.IsNull(this.tablecontacts.office_phoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setoffice_phoneNull() {
-                this[this.tableborrowers.office_phoneColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.office_phoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isfax_numberNull() {
-                return this.IsNull(this.tableborrowers.fax_numberColumn);
+                return this.IsNull(this.tablecontacts.fax_numberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfax_numberNull() {
-                this[this.tableborrowers.fax_numberColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.fax_numberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscountryNull() {
-                return this.IsNull(this.tableborrowers.countryColumn);
+                return this.IsNull(this.tablecontacts.countryColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcountryNull() {
-                this[this.tableborrowers.countryColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.countryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscityNull() {
-                return this.IsNull(this.tableborrowers.cityColumn);
+                return this.IsNull(this.tablecontacts.cityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcityNull() {
-                this[this.tableborrowers.cityColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.cityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IshnoNull() {
-                return this.IsNull(this.tableborrowers.hnoColumn);
+                return this.IsNull(this.tablecontacts.hnoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SethnoNull() {
-                this[this.tableborrowers.hnoColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.hnoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IspostcodeNull() {
-                return this.IsNull(this.tableborrowers.postcodeColumn);
+                return this.IsNull(this.tablecontacts.postcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpostcodeNull() {
-                this[this.tableborrowers.postcodeColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.postcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnoteNull() {
-                return this.IsNull(this.tableborrowers.noteColumn);
+                return this.IsNull(this.tablecontacts.noteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetnoteNull() {
-                this[this.tableborrowers.noteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_dateNull() {
-                return this.IsNull(this.tableborrowers.created_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_dateNull() {
-                this[this.tableborrowers.created_dateColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.noteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Iscreated_byNull() {
-                return this.IsNull(this.tableborrowers.created_byColumn);
+                return this.IsNull(this.tablecontacts.created_byColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcreated_byNull() {
-                this[this.tableborrowers.created_byColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.created_byColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isupdated_dateNull() {
-                return this.IsNull(this.tableborrowers.updated_dateColumn);
+                return this.IsNull(this.tablecontacts.updated_dateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setupdated_dateNull() {
-                this[this.tableborrowers.updated_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupated_byNull() {
-                return this.IsNull(this.tableborrowers.upated_byColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupated_byNull() {
-                this[this.tableborrowers.upated_byColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.updated_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsisdeletedNull() {
-                return this.IsNull(this.tableborrowers.isdeletedColumn);
+                return this.IsNull(this.tablecontacts.isdeletedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisdeletedNull() {
-                this[this.tableborrowers.isdeletedColumn] = global::System.Convert.DBNull;
+                this[this.tablecontacts.isdeletedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isupdated_byNull() {
+                return this.IsNull(this.tablecontacts.updated_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setupdated_byNull() {
+                this[this.tablecontacts.updated_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisDefaultNull() {
+                return this.IsNull(this.tablecontacts.isDefaultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisDefaultNull() {
+                this[this.tablecontacts.isDefaultColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisExchangeNull() {
+                return this.IsNull(this.tablecontacts.isExchangeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisExchangeNull() {
+                this[this.tablecontacts.isExchangeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23215,25 +23762,25 @@ namespace MSBMS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class borrower_contact_listRow : global::System.Data.DataRow {
+        public partial class contact_listRow : global::System.Data.DataRow {
             
-            private borrower_contact_listDataTable tableborrower_contact_list;
+            private contact_listDataTable tablecontact_list;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal borrower_contact_listRow(global::System.Data.DataRowBuilder rb) : 
+            internal contact_listRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableborrower_contact_list = ((borrower_contact_listDataTable)(this.Table));
+                this.tablecontact_list = ((contact_listDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tableborrower_contact_list.idColumn]));
+                    return ((int)(this[this.tablecontact_list.idColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.idColumn] = value;
+                    this[this.tablecontact_list.idColumn] = value;
                 }
             }
             
@@ -23241,10 +23788,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string fname {
                 get {
-                    return ((string)(this[this.tableborrower_contact_list.fnameColumn]));
+                    return ((string)(this[this.tablecontact_list.fnameColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.fnameColumn] = value;
+                    this[this.tablecontact_list.fnameColumn] = value;
                 }
             }
             
@@ -23252,10 +23799,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string lname {
                 get {
-                    return ((string)(this[this.tableborrower_contact_list.lnameColumn]));
+                    return ((string)(this[this.tablecontact_list.lnameColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.lnameColumn] = value;
+                    this[this.tablecontact_list.lnameColumn] = value;
                 }
             }
             
@@ -23264,14 +23811,14 @@ namespace MSBMS {
             public string job_title {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.job_titleColumn]));
+                        return ((string)(this[this.tablecontact_list.job_titleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'job_title\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'job_title\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.job_titleColumn] = value;
+                    this[this.tablecontact_list.job_titleColumn] = value;
                 }
             }
             
@@ -23279,10 +23826,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string organisation {
                 get {
-                    return ((string)(this[this.tableborrower_contact_list.organisationColumn]));
+                    return ((string)(this[this.tablecontact_list.organisationColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.organisationColumn] = value;
+                    this[this.tablecontact_list.organisationColumn] = value;
                 }
             }
             
@@ -23290,10 +23837,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string offical_email {
                 get {
-                    return ((string)(this[this.tableborrower_contact_list.offical_emailColumn]));
+                    return ((string)(this[this.tablecontact_list.offical_emailColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.offical_emailColumn] = value;
+                    this[this.tablecontact_list.offical_emailColumn] = value;
                 }
             }
             
@@ -23301,10 +23848,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string personal_email {
                 get {
-                    return ((string)(this[this.tableborrower_contact_list.personal_emailColumn]));
+                    return ((string)(this[this.tablecontact_list.personal_emailColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.personal_emailColumn] = value;
+                    this[this.tablecontact_list.personal_emailColumn] = value;
                 }
             }
             
@@ -23312,10 +23859,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string mobile_phone {
                 get {
-                    return ((string)(this[this.tableborrower_contact_list.mobile_phoneColumn]));
+                    return ((string)(this[this.tablecontact_list.mobile_phoneColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.mobile_phoneColumn] = value;
+                    this[this.tablecontact_list.mobile_phoneColumn] = value;
                 }
             }
             
@@ -23324,14 +23871,14 @@ namespace MSBMS {
             public string office_phone {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.office_phoneColumn]));
+                        return ((string)(this[this.tablecontact_list.office_phoneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'office_phone\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'office_phone\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.office_phoneColumn] = value;
+                    this[this.tablecontact_list.office_phoneColumn] = value;
                 }
             }
             
@@ -23340,14 +23887,14 @@ namespace MSBMS {
             public string fax_number {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.fax_numberColumn]));
+                        return ((string)(this[this.tablecontact_list.fax_numberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'fax_number\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'fax_number\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.fax_numberColumn] = value;
+                    this[this.tablecontact_list.fax_numberColumn] = value;
                 }
             }
             
@@ -23356,14 +23903,14 @@ namespace MSBMS {
             public string country {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.countryColumn]));
+                        return ((string)(this[this.tablecontact_list.countryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'country\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'country\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.countryColumn] = value;
+                    this[this.tablecontact_list.countryColumn] = value;
                 }
             }
             
@@ -23372,14 +23919,14 @@ namespace MSBMS {
             public string city {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.cityColumn]));
+                        return ((string)(this[this.tablecontact_list.cityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'city\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'city\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.cityColumn] = value;
+                    this[this.tablecontact_list.cityColumn] = value;
                 }
             }
             
@@ -23388,14 +23935,14 @@ namespace MSBMS {
             public string hno {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.hnoColumn]));
+                        return ((string)(this[this.tablecontact_list.hnoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'hno\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'hno\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.hnoColumn] = value;
+                    this[this.tablecontact_list.hnoColumn] = value;
                 }
             }
             
@@ -23404,14 +23951,14 @@ namespace MSBMS {
             public string postcode {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.postcodeColumn]));
+                        return ((string)(this[this.tablecontact_list.postcodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'postcode\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'postcode\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.postcodeColumn] = value;
+                    this[this.tablecontact_list.postcodeColumn] = value;
                 }
             }
             
@@ -23420,14 +23967,14 @@ namespace MSBMS {
             public string note {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.noteColumn]));
+                        return ((string)(this[this.tablecontact_list.noteColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'note\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'note\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.noteColumn] = value;
+                    this[this.tablecontact_list.noteColumn] = value;
                 }
             }
             
@@ -23435,10 +23982,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableborrower_contact_list.created_dateColumn]));
+                    return ((global::System.DateTime)(this[this.tablecontact_list.created_dateColumn]));
                 }
                 set {
-                    this[this.tableborrower_contact_list.created_dateColumn] = value;
+                    this[this.tablecontact_list.created_dateColumn] = value;
                 }
             }
             
@@ -23447,14 +23994,14 @@ namespace MSBMS {
             public string created_by {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.created_byColumn]));
+                        return ((string)(this[this.tablecontact_list.created_byColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'created_by\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.created_byColumn] = value;
+                    this[this.tablecontact_list.created_byColumn] = value;
                 }
             }
             
@@ -23463,30 +24010,14 @@ namespace MSBMS {
             public System.DateTime updated_date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableborrower_contact_list.updated_dateColumn]));
+                        return ((global::System.DateTime)(this[this.tablecontact_list.updated_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.updated_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string upated_by {
-                get {
-                    try {
-                        return ((string)(this[this.tableborrower_contact_list.upated_byColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'upated_by\' in table \'borrower_contact_list\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableborrower_contact_list.upated_byColumn] = value;
+                    this[this.tablecontact_list.updated_dateColumn] = value;
                 }
             }
             
@@ -23495,14 +24026,14 @@ namespace MSBMS {
             public bool isdeleted {
                 get {
                     try {
-                        return ((bool)(this[this.tableborrower_contact_list.isdeletedColumn]));
+                        return ((bool)(this[this.tablecontact_list.isdeletedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isdeleted\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'isdeleted\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.isdeletedColumn] = value;
+                    this[this.tablecontact_list.isdeletedColumn] = value;
                 }
             }
             
@@ -23511,171 +24042,215 @@ namespace MSBMS {
             public string updated_by {
                 get {
                     try {
-                        return ((string)(this[this.tableborrower_contact_list.updated_byColumn]));
+                        return ((string)(this[this.tablecontact_list.updated_byColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_by\' in table \'borrower_contact_list\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_by\' in table \'contact_list\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableborrower_contact_list.updated_byColumn] = value;
+                    this[this.tablecontact_list.updated_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isDefault {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecontact_list.isDefaultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isDefault\' in table \'contact_list\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontact_list.isDefaultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecontact_list.isExchangeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isExchange\' in table \'contact_list\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecontact_list.isExchangeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isjob_titleNull() {
-                return this.IsNull(this.tableborrower_contact_list.job_titleColumn);
+                return this.IsNull(this.tablecontact_list.job_titleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setjob_titleNull() {
-                this[this.tableborrower_contact_list.job_titleColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.job_titleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isoffice_phoneNull() {
-                return this.IsNull(this.tableborrower_contact_list.office_phoneColumn);
+                return this.IsNull(this.tablecontact_list.office_phoneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setoffice_phoneNull() {
-                this[this.tableborrower_contact_list.office_phoneColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.office_phoneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isfax_numberNull() {
-                return this.IsNull(this.tableborrower_contact_list.fax_numberColumn);
+                return this.IsNull(this.tablecontact_list.fax_numberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfax_numberNull() {
-                this[this.tableborrower_contact_list.fax_numberColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.fax_numberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscountryNull() {
-                return this.IsNull(this.tableborrower_contact_list.countryColumn);
+                return this.IsNull(this.tablecontact_list.countryColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcountryNull() {
-                this[this.tableborrower_contact_list.countryColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.countryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IscityNull() {
-                return this.IsNull(this.tableborrower_contact_list.cityColumn);
+                return this.IsNull(this.tablecontact_list.cityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcityNull() {
-                this[this.tableborrower_contact_list.cityColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.cityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IshnoNull() {
-                return this.IsNull(this.tableborrower_contact_list.hnoColumn);
+                return this.IsNull(this.tablecontact_list.hnoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SethnoNull() {
-                this[this.tableborrower_contact_list.hnoColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.hnoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IspostcodeNull() {
-                return this.IsNull(this.tableborrower_contact_list.postcodeColumn);
+                return this.IsNull(this.tablecontact_list.postcodeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetpostcodeNull() {
-                this[this.tableborrower_contact_list.postcodeColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.postcodeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsnoteNull() {
-                return this.IsNull(this.tableborrower_contact_list.noteColumn);
+                return this.IsNull(this.tablecontact_list.noteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetnoteNull() {
-                this[this.tableborrower_contact_list.noteColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.noteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Iscreated_byNull() {
-                return this.IsNull(this.tableborrower_contact_list.created_byColumn);
+                return this.IsNull(this.tablecontact_list.created_byColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setcreated_byNull() {
-                this[this.tableborrower_contact_list.created_byColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.created_byColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isupdated_dateNull() {
-                return this.IsNull(this.tableborrower_contact_list.updated_dateColumn);
+                return this.IsNull(this.tablecontact_list.updated_dateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setupdated_dateNull() {
-                this[this.tableborrower_contact_list.updated_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupated_byNull() {
-                return this.IsNull(this.tableborrower_contact_list.upated_byColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupated_byNull() {
-                this[this.tableborrower_contact_list.upated_byColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.updated_dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsisdeletedNull() {
-                return this.IsNull(this.tableborrower_contact_list.isdeletedColumn);
+                return this.IsNull(this.tablecontact_list.isdeletedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisdeletedNull() {
-                this[this.tableborrower_contact_list.isdeletedColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.isdeletedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isupdated_byNull() {
-                return this.IsNull(this.tableborrower_contact_list.updated_byColumn);
+                return this.IsNull(this.tablecontact_list.updated_byColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setupdated_byNull() {
-                this[this.tableborrower_contact_list.updated_byColumn] = global::System.Convert.DBNull;
+                this[this.tablecontact_list.updated_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisDefaultNull() {
+                return this.IsNull(this.tablecontact_list.isDefaultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisDefaultNull() {
+                this[this.tablecontact_list.isDefaultColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisExchangeNull() {
+                return this.IsNull(this.tablecontact_list.isExchangeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisExchangeNull() {
+                this[this.tablecontact_list.isExchangeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27329,12 +27904,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string created_by2 {
                 get {
-                    try {
-                        return ((string)(this[this.tablecurrent_lending_history.created_by2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by2\' in table \'current_lending_history\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablecurrent_lending_history.created_by2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_history.created_by2Column] = value;
@@ -27415,13 +27985,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date2 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_date2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date2\' in table \'current_lending_history\' is DBNull" +
-                                ".", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecurrent_lending_history.created_date2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_history.created_date2Column] = value;
@@ -27432,13 +27996,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_date2 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_history.updated_date2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date2\' in table \'current_lending_history\' is DBNull" +
-                                ".", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecurrent_lending_history.updated_date2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_history.updated_date2Column] = value;
@@ -27465,12 +28023,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool isActive1 {
                 get {
-                    try {
-                        return ((bool)(this[this.tablecurrent_lending_history.isActive1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isActive1\' in table \'current_lending_history\' is DBNull.", e);
-                    }
+                    return ((bool)(this[this.tablecurrent_lending_history.isActive1Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_history.isActive1Column] = value;
@@ -27579,9 +28132,102 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow borrowersRow {
+            public bool isDefault {
                 get {
-                    return ((borrowersRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers2"])));
+                    try {
+                        return ((bool)(this[this.tablecurrent_lending_history.isDefaultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isDefault\' in table \'current_lending_history\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_history.isDefaultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecurrent_lending_history.isExchangeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isExchange\' in table \'current_lending_history\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_history.isExchangeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isReplaced {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_history.isReplacedColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_history.isReplacedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isOutExchanged {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_history.isOutExchangedColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_history.isOutExchangedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isMissing {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_history.isMissingColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_history.isMissingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange1 {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_history.isExchange1Column]));
+                }
+                set {
+                    this[this.tablecurrent_lending_history.isExchange1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int exchange_contact_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablecurrent_lending_history.exchange_contact_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'exchange_contact_id\' in table \'current_lending_history\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_history.exchange_contact_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public contactsRow borrowersRow {
+                get {
+                    return ((contactsRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers2"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers2"]);
@@ -27590,9 +28236,9 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow borrower_contact_listRow {
+            public contact_listRow borrower_contact_listRow {
                 get {
-                    return ((borrower_contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers3"])));
+                    return ((contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers3"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers3"]);
@@ -27877,18 +28523,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_by2Null() {
-                return this.IsNull(this.tablecurrent_lending_history.created_by2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_by2Null() {
-                this[this.tablecurrent_lending_history.created_by2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isupdated_by2Null() {
                 return this.IsNull(this.tablecurrent_lending_history.updated_by2Column);
             }
@@ -27925,30 +28559,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_date2Null() {
-                return this.IsNull(this.tablecurrent_lending_history.created_date2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_date2Null() {
-                this[this.tablecurrent_lending_history.created_date2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupdated_date2Null() {
-                return this.IsNull(this.tablecurrent_lending_history.updated_date2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupdated_date2Null() {
-                this[this.tablecurrent_lending_history.updated_date2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_isWHO_Null() {
                 return this.IsNull(this.tablecurrent_lending_history._isWHO_Column);
             }
@@ -27957,18 +28567,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_isWHO_Null() {
                 this[this.tablecurrent_lending_history._isWHO_Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsisActive1Null() {
-                return this.IsNull(this.tablecurrent_lending_history.isActive1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetisActive1Null() {
-                this[this.tablecurrent_lending_history.isActive1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28041,6 +28639,42 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcheckinStatusNull() {
                 this[this.tablecurrent_lending_history.checkinStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisDefaultNull() {
+                return this.IsNull(this.tablecurrent_lending_history.isDefaultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisDefaultNull() {
+                this[this.tablecurrent_lending_history.isDefaultColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisExchangeNull() {
+                return this.IsNull(this.tablecurrent_lending_history.isExchangeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisExchangeNull() {
+                this[this.tablecurrent_lending_history.isExchangeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexchange_contact_idNull() {
+                return this.IsNull(this.tablecurrent_lending_history.exchange_contact_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexchange_contact_idNull() {
+                this[this.tablecurrent_lending_history.exchange_contact_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -28791,13 +29425,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string created_by2 {
                 get {
-                    try {
-                        return ((string)(this[this.tablecurrent_lending_duedate_passed.created_by2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by2\' in table \'current_lending_duedate_passed\' is D" +
-                                "BNull.", e);
-                    }
+                    return ((string)(this[this.tablecurrent_lending_duedate_passed.created_by2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_duedate_passed.created_by2Column] = value;
@@ -28881,13 +29509,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date2 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_duedate_passed.created_date2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date2\' in table \'current_lending_duedate_passed\' is" +
-                                " DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecurrent_lending_duedate_passed.created_date2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_duedate_passed.created_date2Column] = value;
@@ -28898,13 +29520,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_date2 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_duedate_passed.updated_date2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date2\' in table \'current_lending_duedate_passed\' is" +
-                                " DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecurrent_lending_duedate_passed.updated_date2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_duedate_passed.updated_date2Column] = value;
@@ -28932,33 +29548,10 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool isActive1 {
                 get {
-                    try {
-                        return ((bool)(this[this.tablecurrent_lending_duedate_passed.isActive1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isActive1\' in table \'current_lending_duedate_passed\' is DBN" +
-                                "ull.", e);
-                    }
+                    return ((bool)(this[this.tablecurrent_lending_duedate_passed.isActive1Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_duedate_passed.isActive1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string borrowed_by {
-                get {
-                    try {
-                        return ((string)(this[this.tablecurrent_lending_duedate_passed.borrowed_byColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'borrowed_by\' in table \'current_lending_duedate_passed\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablecurrent_lending_duedate_passed.borrowed_byColumn] = value;
                 }
             }
             
@@ -28998,26 +29591,238 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime b_created_date {
+            public bool isHistory {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_duedate_passed.b_created_dateColumn]));
+                        return ((bool)(this[this.tablecurrent_lending_duedate_passed.isHistoryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'b_created_date\' in table \'current_lending_duedate_passed\' i" +
-                                "s DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'isHistory\' in table \'current_lending_duedate_passed\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tablecurrent_lending_duedate_passed.b_created_dateColumn] = value;
+                    this[this.tablecurrent_lending_duedate_passed.isHistoryColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow borrowersRow {
+            public string checkinStatus {
                 get {
-                    return ((borrowersRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers"])));
+                    try {
+                        return ((string)(this[this.tablecurrent_lending_duedate_passed.checkinStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'checkinStatus\' in table \'current_lending_duedate_passed\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.checkinStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isDefault {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecurrent_lending_duedate_passed.isDefaultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isDefault\' in table \'current_lending_duedate_passed\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.isDefaultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecurrent_lending_duedate_passed.isExchangeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isExchange\' in table \'current_lending_duedate_passed\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.isExchangeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isReplaced {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_duedate_passed.isReplacedColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.isReplacedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isOutExchanged {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_duedate_passed.isOutExchangedColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.isOutExchangedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isMissing {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_duedate_passed.isMissingColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.isMissingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange1 {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_duedate_passed.isExchange1Column]));
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.isExchange1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int exchange_contact_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablecurrent_lending_duedate_passed.exchange_contact_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'exchange_contact_id\' in table \'current_lending_duedate_pass" +
+                                "ed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.exchange_contact_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id4 {
+                get {
+                    return ((int)(this[this.tablecurrent_lending_duedate_passed.id4Column]));
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.id4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string species_category {
+                get {
+                    try {
+                        return ((string)(this[this.tablecurrent_lending_duedate_passed.species_categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'species_category\' in table \'current_lending_duedate_passed\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.species_categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id5 {
+                get {
+                    return ((int)(this[this.tablecurrent_lending_duedate_passed.id5Column]));
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.id5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string specifics {
+                get {
+                    try {
+                        return ((string)(this[this.tablecurrent_lending_duedate_passed.specificsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'specifics\' in table \'current_lending_duedate_passed\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.specificsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int id6 {
+                get {
+                    return ((int)(this[this.tablecurrent_lending_duedate_passed.id6Column]));
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.id6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string density_category {
+                get {
+                    try {
+                        return ((string)(this[this.tablecurrent_lending_duedate_passed.density_categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'density_category\' in table \'current_lending_duedate_passed\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.density_categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string code {
+                get {
+                    try {
+                        return ((string)(this[this.tablecurrent_lending_duedate_passed.codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'code\' in table \'current_lending_duedate_passed\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_duedate_passed.codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public contactsRow borrowersRow {
+                get {
+                    return ((contactsRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers"]);
@@ -29026,9 +29831,9 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow borrower_contact_listRow {
+            public contact_listRow borrower_contact_listRow {
                 get {
-                    return ((borrower_contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers1"])));
+                    return ((contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers1"]);
@@ -29313,18 +30118,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_by2Null() {
-                return this.IsNull(this.tablecurrent_lending_duedate_passed.created_by2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_by2Null() {
-                this[this.tablecurrent_lending_duedate_passed.created_by2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isupdated_by2Null() {
                 return this.IsNull(this.tablecurrent_lending_duedate_passed.updated_by2Column);
             }
@@ -29361,30 +30154,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_date2Null() {
-                return this.IsNull(this.tablecurrent_lending_duedate_passed.created_date2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_date2Null() {
-                this[this.tablecurrent_lending_duedate_passed.created_date2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupdated_date2Null() {
-                return this.IsNull(this.tablecurrent_lending_duedate_passed.updated_date2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupdated_date2Null() {
-                this[this.tablecurrent_lending_duedate_passed.updated_date2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_isWHO_Null() {
                 return this.IsNull(this.tablecurrent_lending_duedate_passed._isWHO_Column);
             }
@@ -29393,30 +30162,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_isWHO_Null() {
                 this[this.tablecurrent_lending_duedate_passed._isWHO_Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsisActive1Null() {
-                return this.IsNull(this.tablecurrent_lending_duedate_passed.isActive1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetisActive1Null() {
-                this[this.tablecurrent_lending_duedate_passed.isActive1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isborrowed_byNull() {
-                return this.IsNull(this.tablecurrent_lending_duedate_passed.borrowed_byColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setborrowed_byNull() {
-                this[this.tablecurrent_lending_duedate_passed.borrowed_byColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29445,14 +30190,110 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isb_created_dateNull() {
-                return this.IsNull(this.tablecurrent_lending_duedate_passed.b_created_dateColumn);
+            public bool IsisHistoryNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.isHistoryColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setb_created_dateNull() {
-                this[this.tablecurrent_lending_duedate_passed.b_created_dateColumn] = global::System.Convert.DBNull;
+            public void SetisHistoryNull() {
+                this[this.tablecurrent_lending_duedate_passed.isHistoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscheckinStatusNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.checkinStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcheckinStatusNull() {
+                this[this.tablecurrent_lending_duedate_passed.checkinStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisDefaultNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.isDefaultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisDefaultNull() {
+                this[this.tablecurrent_lending_duedate_passed.isDefaultColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisExchangeNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.isExchangeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisExchangeNull() {
+                this[this.tablecurrent_lending_duedate_passed.isExchangeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexchange_contact_idNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.exchange_contact_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexchange_contact_idNull() {
+                this[this.tablecurrent_lending_duedate_passed.exchange_contact_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isspecies_categoryNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.species_categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setspecies_categoryNull() {
+                this[this.tablecurrent_lending_duedate_passed.species_categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsspecificsNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.specificsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetspecificsNull() {
+                this[this.tablecurrent_lending_duedate_passed.specificsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdensity_categoryNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.density_categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdensity_categoryNull() {
+                this[this.tablecurrent_lending_duedate_passed.density_categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscodeNull() {
+                return this.IsNull(this.tablecurrent_lending_duedate_passed.codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcodeNull() {
+                this[this.tablecurrent_lending_duedate_passed.codeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -30522,13 +31363,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string created_by2 {
                 get {
-                    try {
-                        return ((string)(this[this.tablecurrent_lending_past_history.created_by2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by2\' in table \'current_lending_past_history\' is DBN" +
-                                "ull.", e);
-                    }
+                    return ((string)(this[this.tablecurrent_lending_past_history.created_by2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_past_history.created_by2Column] = value;
@@ -30612,13 +31447,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date2 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_past_history.created_date2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date2\' in table \'current_lending_past_history\' is D" +
-                                "BNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecurrent_lending_past_history.created_date2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_past_history.created_date2Column] = value;
@@ -30629,13 +31458,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_date2 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecurrent_lending_past_history.updated_date2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date2\' in table \'current_lending_past_history\' is D" +
-                                "BNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecurrent_lending_past_history.updated_date2Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_past_history.updated_date2Column] = value;
@@ -30662,13 +31485,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool isActive1 {
                 get {
-                    try {
-                        return ((bool)(this[this.tablecurrent_lending_past_history.isActive1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isActive1\' in table \'current_lending_past_history\' is DBNul" +
-                                "l.", e);
-                    }
+                    return ((bool)(this[this.tablecurrent_lending_past_history.isActive1Column]));
                 }
                 set {
                     this[this.tablecurrent_lending_past_history.isActive1Column] = value;
@@ -30779,9 +31596,104 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow borrowersRow {
+            public bool isDefault {
                 get {
-                    return ((borrowersRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers4"])));
+                    try {
+                        return ((bool)(this[this.tablecurrent_lending_past_history.isDefaultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isDefault\' in table \'current_lending_past_history\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_past_history.isDefaultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecurrent_lending_past_history.isExchangeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isExchange\' in table \'current_lending_past_history\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_past_history.isExchangeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isReplaced {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_past_history.isReplacedColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_past_history.isReplacedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isOutExchanged {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_past_history.isOutExchangedColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_past_history.isOutExchangedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isMissing {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_past_history.isMissingColumn]));
+                }
+                set {
+                    this[this.tablecurrent_lending_past_history.isMissingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange1 {
+                get {
+                    return ((bool)(this[this.tablecurrent_lending_past_history.isExchange1Column]));
+                }
+                set {
+                    this[this.tablecurrent_lending_past_history.isExchange1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int exchange_contact_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablecurrent_lending_past_history.exchange_contact_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'exchange_contact_id\' in table \'current_lending_past_history" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecurrent_lending_past_history.exchange_contact_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public contactsRow borrowersRow {
+                get {
+                    return ((contactsRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers4"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers4"]);
@@ -30790,9 +31702,9 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow borrower_contact_listRow {
+            public contact_listRow borrower_contact_listRow {
                 get {
-                    return ((borrower_contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers5"])));
+                    return ((contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers5"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers5"]);
@@ -31077,18 +31989,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_by2Null() {
-                return this.IsNull(this.tablecurrent_lending_past_history.created_by2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_by2Null() {
-                this[this.tablecurrent_lending_past_history.created_by2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isupdated_by2Null() {
                 return this.IsNull(this.tablecurrent_lending_past_history.updated_by2Column);
             }
@@ -31125,30 +32025,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_date2Null() {
-                return this.IsNull(this.tablecurrent_lending_past_history.created_date2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_date2Null() {
-                this[this.tablecurrent_lending_past_history.created_date2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupdated_date2Null() {
-                return this.IsNull(this.tablecurrent_lending_past_history.updated_date2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupdated_date2Null() {
-                this[this.tablecurrent_lending_past_history.updated_date2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_isWHO_Null() {
                 return this.IsNull(this.tablecurrent_lending_past_history._isWHO_Column);
             }
@@ -31157,18 +32033,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_isWHO_Null() {
                 this[this.tablecurrent_lending_past_history._isWHO_Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsisActive1Null() {
-                return this.IsNull(this.tablecurrent_lending_past_history.isActive1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetisActive1Null() {
-                this[this.tablecurrent_lending_past_history.isActive1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -31241,6 +32105,42 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcheckinStatusNull() {
                 this[this.tablecurrent_lending_past_history.checkinStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisDefaultNull() {
+                return this.IsNull(this.tablecurrent_lending_past_history.isDefaultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisDefaultNull() {
+                this[this.tablecurrent_lending_past_history.isDefaultColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisExchangeNull() {
+                return this.IsNull(this.tablecurrent_lending_past_history.isExchangeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisExchangeNull() {
+                this[this.tablecurrent_lending_past_history.isExchangeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexchange_contact_idNull() {
+                return this.IsNull(this.tablecurrent_lending_past_history.exchange_contact_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexchange_contact_idNull() {
+                this[this.tablecurrent_lending_past_history.exchange_contact_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -32330,9 +33230,9 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow borrowersRow {
+            public contactsRow borrowersRow {
                 get {
-                    return ((borrowersRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers6"])));
+                    return ((contactsRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers6"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers6"]);
@@ -32341,9 +33241,9 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow borrower_contact_listRow {
+            public contact_listRow borrower_contact_listRow {
                 get {
-                    return ((borrower_contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers7"])));
+                    return ((contact_listRow)(this.GetParentRow(this.Table.ParentRelations["FK_current_lending_borrowers7"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_current_lending_borrowers7"]);
@@ -32990,12 +33890,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_date {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableslide_to_replace.updated_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date\' in table \'slide_to_replace\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableslide_to_replace.updated_dateColumn]));
                 }
                 set {
                     this[this.tableslide_to_replace.updated_dateColumn] = value;
@@ -33006,12 +33901,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableslide_to_replace.created_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date\' in table \'slide_to_replace\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableslide_to_replace.created_dateColumn]));
                 }
                 set {
                     this[this.tableslide_to_replace.created_dateColumn] = value;
@@ -33022,12 +33912,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string created_by {
                 get {
-                    try {
-                        return ((string)(this[this.tableslide_to_replace.created_byColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by\' in table \'slide_to_replace\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableslide_to_replace.created_byColumn]));
                 }
                 set {
                     this[this.tableslide_to_replace.created_byColumn] = value;
@@ -33260,42 +34145,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisActiveNull() {
                 this[this.tableslide_to_replace.isActiveColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupdated_dateNull() {
-                return this.IsNull(this.tableslide_to_replace.updated_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupdated_dateNull() {
-                this[this.tableslide_to_replace.updated_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_dateNull() {
-                return this.IsNull(this.tableslide_to_replace.created_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_dateNull() {
-                this[this.tableslide_to_replace.created_dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_byNull() {
-                return this.IsNull(this.tableslide_to_replace.created_byColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_byNull() {
-                this[this.tableslide_to_replace.created_byColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37588,22 +38437,22 @@ namespace MSBMS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class borrowersRowChangeEvent : global::System.EventArgs {
+        public class contactsRowChangeEvent : global::System.EventArgs {
             
-            private borrowersRow eventRow;
+            private contactsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRowChangeEvent(borrowersRow row, global::System.Data.DataRowAction action) {
+            public contactsRowChangeEvent(contactsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrowersRow Row {
+            public contactsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -37656,22 +38505,22 @@ namespace MSBMS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class borrower_contact_listRowChangeEvent : global::System.EventArgs {
+        public class contact_listRowChangeEvent : global::System.EventArgs {
             
-            private borrower_contact_listRow eventRow;
+            private contact_listRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRowChangeEvent(borrower_contact_listRow row, global::System.Data.DataRowAction action) {
+            public contact_listRowChangeEvent(contact_listRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public borrower_contact_listRow Row {
+            public contact_listRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -38225,7 +39074,7 @@ namespace MSBMS.sbmsDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT d.id, bar_code, country_code, donor_code, species_catgeroy_id,species_specific_id, species_stage_id, density_category_id, lower_density, average_density, upper_density, owner_id, acquired_date, validation_id, comment, d.created_by, d.updated_by, d.created_date, d.updated_date, [isWHO?], isActive,b.country as CountryOfOrigin,d.isExchange FROM dbo.donors as d
-inner join borrowers b on b.id = d.exchange_id
+inner join contacts b on b.id = d.exchange_contact_id
 order by d.created_date desc;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -40318,7 +41167,7 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class borrowersTableAdapter : global::System.ComponentModel.Component {
+    public partial class contactsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -40332,7 +41181,7 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public borrowersTableAdapter() {
+        public contactsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -40429,7 +41278,7 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "borrowers";
+            tableMapping.DataSetTable = "contacts";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("fname", "fname");
             tableMapping.ColumnMappings.Add("lname", "lname");
@@ -40448,12 +41297,14 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
             tableMapping.ColumnMappings.Add("created_date", "created_date");
             tableMapping.ColumnMappings.Add("created_by", "created_by");
             tableMapping.ColumnMappings.Add("updated_date", "updated_date");
-            tableMapping.ColumnMappings.Add("upated_by", "upated_by");
             tableMapping.ColumnMappings.Add("isdeleted", "isdeleted");
+            tableMapping.ColumnMappings.Add("updated_by", "updated_by");
+            tableMapping.ColumnMappings.Add("isDefault", "isDefault");
+            tableMapping.ColumnMappings.Add("isExchange", "isExchange");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [borrowers] WHERE (([id] = @Original_id) AND ([offical_email] = @Original_offical_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS NULL) OR ([fax_number] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [country] IS NULL) OR ([country] = @Original_country)) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] IS NULL) OR ([hno] = @Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS NULL) OR ([postcode] = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = @Original_note)) AND ((@IsNull_created_date = 1 AND [created_date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = @Original_updated_date)) AND ((@IsNull_upated_by = 1 AND [upated_by] IS NULL) OR ([upated_by] = @Original_upated_by)) AND ((@IsNull_isdeleted = 1 AND [isdeleted] IS NULL) OR ([isdeleted] = @Original_isdeleted)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[contacts] WHERE (([id] = @Original_id) AND ([offical_email] = @Original_offical_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS NULL) OR ([fax_number] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [country] IS NULL) OR ([country] = @Original_country)) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] IS NULL) OR ([hno] = @Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS NULL) OR ([postcode] = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = @Original_note)) AND ([created_date] = @Original_created_date) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = @Original_updated_date)) AND ((@IsNull_updated_by = 1 AND [updated_by] IS NULL) OR ([updated_by] = @Original_updated_by)) AND ((@IsNull_isdeleted = 1 AND [isdeleted] IS NULL) OR ([isdeleted] = @Original_isdeleted)) AND ((@IsNull_isDefault = 1 AND [isDefault] IS NULL) OR ([isDefault] = @Original_isDefault)) AND ((@IsNull_isExchange = 1 AND [isExchange] IS NULL) OR ([isExchange] = @Original_isExchange)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_offical_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "offical_email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -40469,20 +41320,23 @@ SELECT id, username, password, created_date, dsiabled, [full name], postion, org
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_postcode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_note", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "note", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_note", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "note", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_updated_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_upated_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upated_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_upated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upated_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_updated_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isdeleted", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isDefault", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isExchange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [borrowers] ([fname], [lname], [job_title], [organisation], [offical_email], [personal_email], [mobile_phone], [office_phone], [fax_number], [country], [city], [hno], [postcode], [note], [created_date], [created_by], [updated_date], [upated_by], [isdeleted]) VALUES (@fname, @lname, @job_title, @organisation, @offical_email, @personal_email, @mobile_phone, @office_phone, @fax_number, @country, @city, @hno, @postcode, @note, @created_date, @created_by, @updated_date, @upated_by, @isdeleted);
-SELECT id, fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, upated_by, isdeleted FROM dbo.borrowers WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[contacts] ([fname], [lname], [job_title], [organisation], [offical_email], [personal_email], [mobile_phone], [office_phone], [fax_number], [country], [city], [hno], [postcode], [note], [created_date], [created_by], [updated_date], [updated_by], [isdeleted], [isDefault], [isExchange]) VALUES (@fname, @lname, @job_title, @organisation, @offical_email, @personal_email, @mobile_phone, @office_phone, @fax_number, @country, @city, @hno, @postcode, @note, @created_date, @created_by, @updated_date, @updated_by, @isdeleted, @isDefault, @isExchange);
+SELECT id, fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, updated_by, isdeleted, isDefault, isExchange FROM dbo.contacts WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -40501,33 +41355,38 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@upated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [borrowers] SET [fname] = @fname, [lname] = @lname, [job_title] = @job_tit" +
-                "le, [organisation] = @organisation, [offical_email] = @offical_email, [personal_" +
-                "email] = @personal_email, [mobile_phone] = @mobile_phone, [office_phone] = @offi" +
-                "ce_phone, [fax_number] = @fax_number, [country] = @country, [city] = @city, [hno" +
-                "] = @hno, [postcode] = @postcode, [note] = @note, [created_date] = @created_date" +
-                ", [created_by] = @created_by, [updated_date] = @updated_date, [upated_by] = @upa" +
-                "ted_by, [isdeleted] = @isdeleted WHERE (([id] = @Original_id) AND ([offical_emai" +
-                "l] = @Original_offical_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS N" +
-                "ULL) OR ([fax_number] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [co" +
-                "untry] IS NULL) OR ([country] = @Original_country)) AND ((@IsNull_city = 1 AND [" +
-                "city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] IS " +
-                "NULL) OR ([hno] = @Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS N" +
-                "ULL) OR ([postcode] = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] IS " +
-                "NULL) OR ([note] = @Original_note)) AND ((@IsNull_created_date = 1 AND [created_" +
-                "date] IS NULL) OR ([created_date] = @Original_created_date)) AND ((@IsNull_creat" +
-                "ed_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AN" +
-                "D ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = @O" +
-                "riginal_updated_date)) AND ((@IsNull_upated_by = 1 AND [upated_by] IS NULL) OR (" +
-                "[upated_by] = @Original_upated_by)) AND ((@IsNull_isdeleted = 1 AND [isdeleted] " +
-                "IS NULL) OR ([isdeleted] = @Original_isdeleted)));\r\nSELECT id, fname, lname, job" +
-                "_title, organisation, offical_email, personal_email, mobile_phone, office_phone," +
-                " fax_number, country, city, hno, postcode, note, created_date, created_by, updat" +
-                "ed_date, upated_by, isdeleted FROM dbo.borrowers WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[contacts] SET [fname] = @fname, [lname] = @lname, [job_title] = @jo" +
+                "b_title, [organisation] = @organisation, [offical_email] = @offical_email, [pers" +
+                "onal_email] = @personal_email, [mobile_phone] = @mobile_phone, [office_phone] = " +
+                "@office_phone, [fax_number] = @fax_number, [country] = @country, [city] = @city," +
+                " [hno] = @hno, [postcode] = @postcode, [note] = @note, [created_date] = @created" +
+                "_date, [created_by] = @created_by, [updated_date] = @updated_date, [updated_by] " +
+                "= @updated_by, [isdeleted] = @isdeleted, [isDefault] = @isDefault, [isExchange] " +
+                "= @isExchange WHERE (([id] = @Original_id) AND ([offical_email] = @Original_offi" +
+                "cal_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS NULL) OR ([fax_numbe" +
+                "r] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [country] IS NULL) OR " +
+                "([country] = @Original_country)) AND ((@IsNull_city = 1 AND [city] IS NULL) OR (" +
+                "[city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] IS NULL) OR ([hno] = @" +
+                "Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS NULL) OR ([postcode]" +
+                " = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = " +
+                "@Original_note)) AND ([created_date] = @Original_created_date) AND ((@IsNull_cre" +
+                "ated_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) " +
+                "AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = " +
+                "@Original_updated_date)) AND ((@IsNull_updated_by = 1 AND [updated_by] IS NULL) " +
+                "OR ([updated_by] = @Original_updated_by)) AND ((@IsNull_isdeleted = 1 AND [isdel" +
+                "eted] IS NULL) OR ([isdeleted] = @Original_isdeleted)) AND ((@IsNull_isDefault =" +
+                " 1 AND [isDefault] IS NULL) OR ([isDefault] = @Original_isDefault)) AND ((@IsNul" +
+                "l_isExchange = 1 AND [isExchange] IS NULL) OR ([isExchange] = @Original_isExchan" +
+                "ge)));\r\nSELECT id, fname, lname, job_title, organisation, offical_email, persona" +
+                "l_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, n" +
+                "ote, created_date, created_by, updated_date, updated_by, isdeleted, isDefault, i" +
+                "sExchange FROM dbo.contacts WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -40546,8 +41405,10 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@upated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_offical_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "offical_email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fax_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -40562,16 +41423,19 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_postcode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "postcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_note", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "note", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_note", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "note", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_updated_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_upated_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upated_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_upated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upated_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_updated_by", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isdeleted", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isDefault", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isExchange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -40588,7 +41452,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select * from borrowers where isdeleted=0;";
+            this._commandCollection[0].CommandText = "SELECT *FROM dbo.contacts WHERE (isdeleted = 0 and isDefault=0)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -40596,7 +41460,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(sbmsDataSet.borrowersDataTable dataTable) {
+        public virtual int Fill(sbmsDataSet.contactsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -40609,9 +41473,9 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual sbmsDataSet.borrowersDataTable GetData() {
+        public virtual sbmsDataSet.contactsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            sbmsDataSet.borrowersDataTable dataTable = new sbmsDataSet.borrowersDataTable();
+            sbmsDataSet.contactsDataTable dataTable = new sbmsDataSet.contactsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -40619,7 +41483,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sbmsDataSet.borrowersDataTable dataTable) {
+        public virtual int Update(sbmsDataSet.contactsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -40627,7 +41491,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(sbmsDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "borrowers");
+            return this.Adapter.Update(dataSet, "contacts");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -40643,580 +41507,6 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_offical_email, string Original_fax_number, string Original_country, string Original_city, string Original_hno, string Original_postcode, string Original_note, global::System.Nullable<global::System.DateTime> Original_created_date, string Original_created_by, global::System.Nullable<global::System.DateTime> Original_updated_date, string Original_upated_by, global::System.Nullable<bool> Original_isdeleted) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_offical_email == null)) {
-                throw new global::System.ArgumentNullException("Original_offical_email");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_offical_email));
-            }
-            if ((Original_fax_number == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_fax_number));
-            }
-            if ((Original_country == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_country));
-            }
-            if ((Original_city == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_city));
-            }
-            if ((Original_hno == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_hno));
-            }
-            if ((Original_postcode == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_postcode));
-            }
-            if ((Original_note == null)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_note));
-            }
-            if ((Original_created_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_created_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_created_by == null)) {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_created_by));
-            }
-            if ((Original_updated_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((System.DateTime)(Original_updated_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((Original_upated_by == null)) {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((string)(Original_upated_by));
-            }
-            if ((Original_isdeleted.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((bool)(Original_isdeleted.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string fname, 
-                    string lname, 
-                    string job_title, 
-                    string organisation, 
-                    string offical_email, 
-                    string personal_email, 
-                    string mobile_phone, 
-                    string office_phone, 
-                    string fax_number, 
-                    string country, 
-                    string city, 
-                    string hno, 
-                    string postcode, 
-                    string note, 
-                    global::System.Nullable<global::System.DateTime> created_date, 
-                    string created_by, 
-                    global::System.Nullable<global::System.DateTime> updated_date, 
-                    string upated_by, 
-                    global::System.Nullable<bool> isdeleted) {
-            if ((fname == null)) {
-                throw new global::System.ArgumentNullException("fname");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(fname));
-            }
-            if ((lname == null)) {
-                throw new global::System.ArgumentNullException("lname");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(lname));
-            }
-            if ((job_title == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(job_title));
-            }
-            if ((organisation == null)) {
-                throw new global::System.ArgumentNullException("organisation");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(organisation));
-            }
-            if ((offical_email == null)) {
-                throw new global::System.ArgumentNullException("offical_email");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(offical_email));
-            }
-            if ((personal_email == null)) {
-                throw new global::System.ArgumentNullException("personal_email");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(personal_email));
-            }
-            if ((mobile_phone == null)) {
-                throw new global::System.ArgumentNullException("mobile_phone");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(mobile_phone));
-            }
-            if ((office_phone == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(office_phone));
-            }
-            if ((fax_number == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(fax_number));
-            }
-            if ((country == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(country));
-            }
-            if ((city == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(city));
-            }
-            if ((hno == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(hno));
-            }
-            if ((postcode == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(postcode));
-            }
-            if ((note == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(note));
-            }
-            if ((created_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((System.DateTime)(created_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((created_by == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(created_by));
-            }
-            if ((updated_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((System.DateTime)(updated_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((upated_by == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(upated_by));
-            }
-            if ((isdeleted.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((bool)(isdeleted.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string fname, 
-                    string lname, 
-                    string job_title, 
-                    string organisation, 
-                    string offical_email, 
-                    string personal_email, 
-                    string mobile_phone, 
-                    string office_phone, 
-                    string fax_number, 
-                    string country, 
-                    string city, 
-                    string hno, 
-                    string postcode, 
-                    string note, 
-                    global::System.Nullable<global::System.DateTime> created_date, 
-                    string created_by, 
-                    global::System.Nullable<global::System.DateTime> updated_date, 
-                    string upated_by, 
-                    global::System.Nullable<bool> isdeleted, 
-                    int Original_id, 
-                    string Original_offical_email, 
-                    string Original_fax_number, 
-                    string Original_country, 
-                    string Original_city, 
-                    string Original_hno, 
-                    string Original_postcode, 
-                    string Original_note, 
-                    global::System.Nullable<global::System.DateTime> Original_created_date, 
-                    string Original_created_by, 
-                    global::System.Nullable<global::System.DateTime> Original_updated_date, 
-                    string Original_upated_by, 
-                    global::System.Nullable<bool> Original_isdeleted, 
-                    int id) {
-            if ((fname == null)) {
-                throw new global::System.ArgumentNullException("fname");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(fname));
-            }
-            if ((lname == null)) {
-                throw new global::System.ArgumentNullException("lname");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(lname));
-            }
-            if ((job_title == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(job_title));
-            }
-            if ((organisation == null)) {
-                throw new global::System.ArgumentNullException("organisation");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(organisation));
-            }
-            if ((offical_email == null)) {
-                throw new global::System.ArgumentNullException("offical_email");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(offical_email));
-            }
-            if ((personal_email == null)) {
-                throw new global::System.ArgumentNullException("personal_email");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(personal_email));
-            }
-            if ((mobile_phone == null)) {
-                throw new global::System.ArgumentNullException("mobile_phone");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(mobile_phone));
-            }
-            if ((office_phone == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(office_phone));
-            }
-            if ((fax_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(fax_number));
-            }
-            if ((country == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(country));
-            }
-            if ((city == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(city));
-            }
-            if ((hno == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(hno));
-            }
-            if ((postcode == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(postcode));
-            }
-            if ((note == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(note));
-            }
-            if ((created_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(created_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((created_by == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(created_by));
-            }
-            if ((updated_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(updated_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((upated_by == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(upated_by));
-            }
-            if ((isdeleted.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(isdeleted.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_id));
-            if ((Original_offical_email == null)) {
-                throw new global::System.ArgumentNullException("Original_offical_email");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_offical_email));
-            }
-            if ((Original_fax_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_fax_number));
-            }
-            if ((Original_country == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_country));
-            }
-            if ((Original_city == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_city));
-            }
-            if ((Original_hno == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_hno));
-            }
-            if ((Original_postcode == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_postcode));
-            }
-            if ((Original_note == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_note));
-            }
-            if ((Original_created_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(Original_created_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            if ((Original_created_by == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_created_by));
-            }
-            if ((Original_updated_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_updated_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            if ((Original_upated_by == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_upated_by));
-            }
-            if ((Original_isdeleted.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((bool)(Original_isdeleted.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string fname, 
-                    string lname, 
-                    string job_title, 
-                    string organisation, 
-                    string offical_email, 
-                    string personal_email, 
-                    string mobile_phone, 
-                    string office_phone, 
-                    string fax_number, 
-                    string country, 
-                    string city, 
-                    string hno, 
-                    string postcode, 
-                    string note, 
-                    global::System.Nullable<global::System.DateTime> created_date, 
-                    string created_by, 
-                    global::System.Nullable<global::System.DateTime> updated_date, 
-                    string upated_by, 
-                    global::System.Nullable<bool> isdeleted, 
-                    int Original_id, 
-                    string Original_offical_email, 
-                    string Original_fax_number, 
-                    string Original_country, 
-                    string Original_city, 
-                    string Original_hno, 
-                    string Original_postcode, 
-                    string Original_note, 
-                    global::System.Nullable<global::System.DateTime> Original_created_date, 
-                    string Original_created_by, 
-                    global::System.Nullable<global::System.DateTime> Original_updated_date, 
-                    string Original_upated_by, 
-                    global::System.Nullable<bool> Original_isdeleted) {
-            return this.Update(fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, upated_by, isdeleted, Original_id, Original_offical_email, Original_fax_number, Original_country, Original_city, Original_hno, Original_postcode, Original_note, Original_created_date, Original_created_by, Original_updated_date, Original_upated_by, Original_isdeleted, Original_id);
         }
     }
     
@@ -41430,7 +41720,7 @@ ORDER BY s.id";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class borrower_contact_listTableAdapter : global::System.ComponentModel.Component {
+    public partial class contact_listTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -41444,7 +41734,7 @@ ORDER BY s.id";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public borrower_contact_listTableAdapter() {
+        public contact_listTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -41541,7 +41831,7 @@ ORDER BY s.id";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "borrower_contact_list";
+            tableMapping.DataSetTable = "contact_list";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("fname", "fname");
             tableMapping.ColumnMappings.Add("lname", "lname");
@@ -41560,13 +41850,14 @@ ORDER BY s.id";
             tableMapping.ColumnMappings.Add("created_date", "created_date");
             tableMapping.ColumnMappings.Add("created_by", "created_by");
             tableMapping.ColumnMappings.Add("updated_date", "updated_date");
-            tableMapping.ColumnMappings.Add("upated_by", "upated_by");
             tableMapping.ColumnMappings.Add("isdeleted", "isdeleted");
             tableMapping.ColumnMappings.Add("updated_by", "updated_by");
+            tableMapping.ColumnMappings.Add("isDefault", "isDefault");
+            tableMapping.ColumnMappings.Add("isExchange", "isExchange");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [borrowers] WHERE (([id] = @Original_id) AND ([offical_email] = @Original_offical_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS NULL) OR ([fax_number] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [country] IS NULL) OR ([country] = @Original_country)) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] IS NULL) OR ([hno] = @Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS NULL) OR ([postcode] = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = @Original_note)) AND ([created_date] = @Original_created_date) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = @Original_updated_date)) AND ((@IsNull_updated_by = 1 AND [updated_by] IS NULL) OR ([updated_by] = @Original_updated_by)) AND ((@IsNull_isdeleted = 1 AND [isdeleted] IS NULL) OR ([isdeleted] = @Original_isdeleted)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[contacts] WHERE (([id] = @Original_id) AND ([offical_email] = @Original_offical_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS NULL) OR ([fax_number] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [country] IS NULL) OR ([country] = @Original_country)) AND ((@IsNull_city = 1 AND [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] IS NULL) OR ([hno] = @Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS NULL) OR ([postcode] = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = @Original_note)) AND ([created_date] = @Original_created_date) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = @Original_updated_date)) AND ((@IsNull_updated_by = 1 AND [updated_by] IS NULL) OR ([updated_by] = @Original_updated_by)) AND ((@IsNull_isdeleted = 1 AND [isdeleted] IS NULL) OR ([isdeleted] = @Original_isdeleted)) AND ((@IsNull_isDefault = 1 AND [isDefault] IS NULL) OR ([isDefault] = @Original_isDefault)) AND ((@IsNull_isExchange = 1 AND [isExchange] IS NULL) OR ([isExchange] = @Original_isExchange)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_offical_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "offical_email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -41591,10 +41882,14 @@ ORDER BY s.id";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isdeleted", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isDefault", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isExchange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [borrowers] ([fname], [lname], [job_title], [organisation], [offical_email], [personal_email], [mobile_phone], [office_phone], [fax_number], [country], [city], [hno], [postcode], [note], [created_date], [created_by], [updated_date], [updated_by], [isdeleted]) VALUES (@fname, @lname, @job_title, @organisation, @offical_email, @personal_email, @mobile_phone, @office_phone, @fax_number, @country, @city, @hno, @postcode, @note, @created_date, @created_by, @updated_date, @updated_by, @isdeleted);
-SELECT id, fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, updated_by, isdeleted FROM dbo.borrowers WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[contacts] ([fname], [lname], [job_title], [organisation], [offical_email], [personal_email], [mobile_phone], [office_phone], [fax_number], [country], [city], [hno], [postcode], [note], [created_date], [created_by], [updated_date], [updated_by], [isdeleted], [isDefault], [isExchange]) VALUES (@fname, @lname, @job_title, @organisation, @offical_email, @personal_email, @mobile_phone, @office_phone, @fax_number, @country, @city, @hno, @postcode, @note, @created_date, @created_by, @updated_date, @updated_by, @isdeleted, @isDefault, @isExchange);
+SELECT id, fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, updated_by, isdeleted, isDefault, isExchange FROM dbo.contacts WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -41615,31 +41910,36 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [borrowers] SET [fname] = @fname, [lname] = @lname, [job_title] = @job_tit" +
-                "le, [organisation] = @organisation, [offical_email] = @offical_email, [personal_" +
-                "email] = @personal_email, [mobile_phone] = @mobile_phone, [office_phone] = @offi" +
-                "ce_phone, [fax_number] = @fax_number, [country] = @country, [city] = @city, [hno" +
-                "] = @hno, [postcode] = @postcode, [note] = @note, [created_date] = @created_date" +
-                ", [created_by] = @created_by, [updated_date] = @updated_date, [updated_by] = @up" +
-                "dated_by, [isdeleted] = @isdeleted WHERE (([id] = @Original_id) AND ([offical_em" +
-                "ail] = @Original_offical_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS" +
-                " NULL) OR ([fax_number] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [" +
-                "country] IS NULL) OR ([country] = @Original_country)) AND ((@IsNull_city = 1 AND" +
-                " [city] IS NULL) OR ([city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] I" +
-                "S NULL) OR ([hno] = @Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS" +
-                " NULL) OR ([postcode] = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] I" +
-                "S NULL) OR ([note] = @Original_note)) AND ([created_date] = @Original_created_da" +
-                "te) AND ((@IsNull_created_by = 1 AND [created_by] IS NULL) OR ([created_by] = @O" +
-                "riginal_created_by)) AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) " +
-                "OR ([updated_date] = @Original_updated_date)) AND ((@IsNull_updated_by = 1 AND [" +
-                "updated_by] IS NULL) OR ([updated_by] = @Original_updated_by)) AND ((@IsNull_isd" +
-                "eleted = 1 AND [isdeleted] IS NULL) OR ([isdeleted] = @Original_isdeleted)));\r\nS" +
-                "ELECT id, fname, lname, job_title, organisation, offical_email, personal_email, " +
-                "mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, crea" +
-                "ted_date, created_by, updated_date, updated_by, isdeleted FROM dbo.borrowers WHE" +
-                "RE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[contacts] SET [fname] = @fname, [lname] = @lname, [job_title] = @jo" +
+                "b_title, [organisation] = @organisation, [offical_email] = @offical_email, [pers" +
+                "onal_email] = @personal_email, [mobile_phone] = @mobile_phone, [office_phone] = " +
+                "@office_phone, [fax_number] = @fax_number, [country] = @country, [city] = @city," +
+                " [hno] = @hno, [postcode] = @postcode, [note] = @note, [created_date] = @created" +
+                "_date, [created_by] = @created_by, [updated_date] = @updated_date, [updated_by] " +
+                "= @updated_by, [isdeleted] = @isdeleted, [isDefault] = @isDefault, [isExchange] " +
+                "= @isExchange WHERE (([id] = @Original_id) AND ([offical_email] = @Original_offi" +
+                "cal_email) AND ((@IsNull_fax_number = 1 AND [fax_number] IS NULL) OR ([fax_numbe" +
+                "r] = @Original_fax_number)) AND ((@IsNull_country = 1 AND [country] IS NULL) OR " +
+                "([country] = @Original_country)) AND ((@IsNull_city = 1 AND [city] IS NULL) OR (" +
+                "[city] = @Original_city)) AND ((@IsNull_hno = 1 AND [hno] IS NULL) OR ([hno] = @" +
+                "Original_hno)) AND ((@IsNull_postcode = 1 AND [postcode] IS NULL) OR ([postcode]" +
+                " = @Original_postcode)) AND ((@IsNull_note = 1 AND [note] IS NULL) OR ([note] = " +
+                "@Original_note)) AND ([created_date] = @Original_created_date) AND ((@IsNull_cre" +
+                "ated_by = 1 AND [created_by] IS NULL) OR ([created_by] = @Original_created_by)) " +
+                "AND ((@IsNull_updated_date = 1 AND [updated_date] IS NULL) OR ([updated_date] = " +
+                "@Original_updated_date)) AND ((@IsNull_updated_by = 1 AND [updated_by] IS NULL) " +
+                "OR ([updated_by] = @Original_updated_by)) AND ((@IsNull_isdeleted = 1 AND [isdel" +
+                "eted] IS NULL) OR ([isdeleted] = @Original_isdeleted)) AND ((@IsNull_isDefault =" +
+                " 1 AND [isDefault] IS NULL) OR ([isDefault] = @Original_isDefault)) AND ((@IsNul" +
+                "l_isExchange = 1 AND [isExchange] IS NULL) OR ([isExchange] = @Original_isExchan" +
+                "ge)));\r\nSELECT id, fname, lname, job_title, organisation, offical_email, persona" +
+                "l_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, n" +
+                "ote, created_date, created_by, updated_date, updated_by, isdeleted, isDefault, i" +
+                "sExchange FROM dbo.contacts WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -41660,6 +41960,8 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_offical_email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "offical_email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_fax_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fax_number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -41683,6 +41985,10 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_updated_by", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_by", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isdeleted", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isdeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isdeleted", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isDefault", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isDefault", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isDefault", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_isExchange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isExchange", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isExchange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -41699,7 +42005,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select * from borrowers where isdeleted=0;";
+            this._commandCollection[0].CommandText = @"SELECT id, fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, updated_by, isdeleted, isDefault, isExchange FROM dbo.contacts WHERE (isdeleted = 0 and isDefault=0)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -41707,7 +42013,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(sbmsDataSet.borrower_contact_listDataTable dataTable) {
+        public virtual int Fill(sbmsDataSet.contact_listDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -41720,9 +42026,9 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual sbmsDataSet.borrower_contact_listDataTable GetData() {
+        public virtual sbmsDataSet.contact_listDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            sbmsDataSet.borrower_contact_listDataTable dataTable = new sbmsDataSet.borrower_contact_listDataTable();
+            sbmsDataSet.contact_listDataTable dataTable = new sbmsDataSet.contact_listDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -41730,7 +42036,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(sbmsDataSet.borrower_contact_listDataTable dataTable) {
+        public virtual int Update(sbmsDataSet.contact_listDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -41738,7 +42044,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(sbmsDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "borrower_contact_list");
+            return this.Adapter.Update(dataSet, "contact_list");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41760,7 +42066,7 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_offical_email, string Original_fax_number, string Original_country, string Original_city, string Original_hno, string Original_postcode, string Original_note, System.DateTime Original_created_date, string Original_created_by, global::System.Nullable<global::System.DateTime> Original_updated_date, string Original_updated_by, global::System.Nullable<bool> Original_isdeleted) {
+        public virtual int Delete(int Original_id, string Original_offical_email, string Original_fax_number, string Original_country, string Original_city, string Original_hno, string Original_postcode, string Original_note, System.DateTime Original_created_date, string Original_created_by, global::System.Nullable<global::System.DateTime> Original_updated_date, string Original_updated_by, global::System.Nullable<bool> Original_isdeleted, global::System.Nullable<bool> Original_isDefault, global::System.Nullable<bool> Original_isExchange) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_offical_email == null)) {
                 throw new global::System.ArgumentNullException("Original_offical_email");
@@ -41849,6 +42155,22 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
+            if ((Original_isDefault.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((bool)(Original_isDefault.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_isExchange.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((bool)(Original_isExchange.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -41888,7 +42210,9 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
                     string created_by, 
                     global::System.Nullable<global::System.DateTime> updated_date, 
                     string updated_by, 
-                    global::System.Nullable<bool> isdeleted) {
+                    global::System.Nullable<bool> isdeleted, 
+                    global::System.Nullable<bool> isDefault, 
+                    global::System.Nullable<bool> isExchange) {
             if ((fname == null)) {
                 throw new global::System.ArgumentNullException("fname");
             }
@@ -41998,6 +42322,18 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
+            if ((isDefault.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((bool)(isDefault.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((isExchange.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((bool)(isExchange.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -42038,6 +42374,8 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
                     global::System.Nullable<global::System.DateTime> updated_date, 
                     string updated_by, 
                     global::System.Nullable<bool> isdeleted, 
+                    global::System.Nullable<bool> isDefault, 
+                    global::System.Nullable<bool> isExchange, 
                     int Original_id, 
                     string Original_offical_email, 
                     string Original_fax_number, 
@@ -42051,6 +42389,8 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
                     global::System.Nullable<global::System.DateTime> Original_updated_date, 
                     string Original_updated_by, 
                     global::System.Nullable<bool> Original_isdeleted, 
+                    global::System.Nullable<bool> Original_isDefault, 
+                    global::System.Nullable<bool> Original_isExchange, 
                     int id) {
             if ((fname == null)) {
                 throw new global::System.ArgumentNullException("fname");
@@ -42161,95 +42501,123 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_id));
+            if ((isDefault.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(isDefault.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((isExchange.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(isExchange.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_id));
             if ((Original_offical_email == null)) {
                 throw new global::System.ArgumentNullException("Original_offical_email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_offical_email));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_offical_email));
             }
             if ((Original_fax_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_fax_number));
-            }
-            if ((Original_country == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_country));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_fax_number));
             }
-            if ((Original_city == null)) {
+            if ((Original_country == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_city));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_country));
             }
-            if ((Original_hno == null)) {
+            if ((Original_city == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_hno));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_city));
             }
-            if ((Original_postcode == null)) {
+            if ((Original_hno == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_postcode));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_hno));
             }
-            if ((Original_note == null)) {
+            if ((Original_postcode == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_note));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_postcode));
             }
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((System.DateTime)(Original_created_date));
+            if ((Original_note == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_note));
+            }
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(Original_created_date));
             if ((Original_created_by == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_created_by));
-            }
-            if ((Original_updated_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_updated_date.Value));
-            }
-            else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((Original_updated_by == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_created_by));
+            }
+            if ((Original_updated_date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_updated_date.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_updated_by));
-            }
-            if ((Original_isdeleted.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((bool)(Original_isdeleted.Value));
-            }
-            else {
+            if ((Original_updated_by == null)) {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(id));
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_updated_by));
+            }
+            if ((Original_isdeleted.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((bool)(Original_isdeleted.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            if ((Original_isDefault.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((bool)(Original_isDefault.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            if ((Original_isExchange.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((bool)(Original_isExchange.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -42290,6 +42658,8 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
                     global::System.Nullable<global::System.DateTime> updated_date, 
                     string updated_by, 
                     global::System.Nullable<bool> isdeleted, 
+                    global::System.Nullable<bool> isDefault, 
+                    global::System.Nullable<bool> isExchange, 
                     int Original_id, 
                     string Original_offical_email, 
                     string Original_fax_number, 
@@ -42302,8 +42672,10 @@ SELECT id, fname, lname, job_title, organisation, offical_email, personal_email,
                     string Original_created_by, 
                     global::System.Nullable<global::System.DateTime> Original_updated_date, 
                     string Original_updated_by, 
-                    global::System.Nullable<bool> Original_isdeleted) {
-            return this.Update(fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, updated_by, isdeleted, Original_id, Original_offical_email, Original_fax_number, Original_country, Original_city, Original_hno, Original_postcode, Original_note, Original_created_date, Original_created_by, Original_updated_date, Original_updated_by, Original_isdeleted, Original_id);
+                    global::System.Nullable<bool> Original_isdeleted, 
+                    global::System.Nullable<bool> Original_isDefault, 
+                    global::System.Nullable<bool> Original_isExchange) {
+            return this.Update(fname, lname, job_title, organisation, offical_email, personal_email, mobile_phone, office_phone, fax_number, country, city, hno, postcode, note, created_date, created_by, updated_date, updated_by, isdeleted, isDefault, isExchange, Original_id, Original_offical_email, Original_fax_number, Original_country, Original_city, Original_hno, Original_postcode, Original_note, Original_created_date, Original_created_by, Original_updated_date, Original_updated_by, Original_isdeleted, Original_isDefault, Original_isExchange, Original_id);
         }
     }
     
@@ -43017,6 +43389,13 @@ ORDER BY s.id;";
             tableMapping.ColumnMappings.Add("b_created_date", "b_created_date");
             tableMapping.ColumnMappings.Add("isHistory", "isHistory");
             tableMapping.ColumnMappings.Add("checkinStatus", "checkinStatus");
+            tableMapping.ColumnMappings.Add("isDefault", "isDefault");
+            tableMapping.ColumnMappings.Add("isExchange", "isExchange");
+            tableMapping.ColumnMappings.Add("isReplaced", "isReplaced");
+            tableMapping.ColumnMappings.Add("isOutExchanged", "isOutExchanged");
+            tableMapping.ColumnMappings.Add("isMissing", "isMissing");
+            tableMapping.ColumnMappings.Add("isExchange1", "isExchange1");
+            tableMapping.ColumnMappings.Add("exchange_contact_id", "exchange_contact_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -43035,7 +43414,7 @@ ORDER BY s.id;";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date
 FROM  dbo.current_lending as l
-INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id
+INNER JOIN dbo.contacts AS b ON b.id = l.borrower_id
 INNER JOIN dbo.slides AS s ON s.id = l.slide_id
 INNER JOIN dbo.donors as d on d.id = s.donor_id
 WHERE isHistory=0 and s.isBorrowed=1 and isReserved=0 and s.isActive=1 and s.isDamaged=0
@@ -43253,10 +43632,24 @@ ORDER BY d.donor_code,s.created_date ASC;";
             tableMapping.ColumnMappings.Add("updated_date2", "updated_date2");
             tableMapping.ColumnMappings.Add("isWHO?", "isWHO?");
             tableMapping.ColumnMappings.Add("isActive1", "isActive1");
-            tableMapping.ColumnMappings.Add("borrowed_by", "borrowed_by");
             tableMapping.ColumnMappings.Add("created_date3", "created_date3");
             tableMapping.ColumnMappings.Add("updated_date3", "updated_date3");
-            tableMapping.ColumnMappings.Add("b_created_date", "b_created_date");
+            tableMapping.ColumnMappings.Add("isHistory", "isHistory");
+            tableMapping.ColumnMappings.Add("checkinStatus", "checkinStatus");
+            tableMapping.ColumnMappings.Add("isDefault", "isDefault");
+            tableMapping.ColumnMappings.Add("isExchange", "isExchange");
+            tableMapping.ColumnMappings.Add("isReplaced", "isReplaced");
+            tableMapping.ColumnMappings.Add("isOutExchanged", "isOutExchanged");
+            tableMapping.ColumnMappings.Add("isMissing", "isMissing");
+            tableMapping.ColumnMappings.Add("isExchange1", "isExchange1");
+            tableMapping.ColumnMappings.Add("exchange_contact_id", "exchange_contact_id");
+            tableMapping.ColumnMappings.Add("id4", "id4");
+            tableMapping.ColumnMappings.Add("species_category", "species_category");
+            tableMapping.ColumnMappings.Add("id5", "id5");
+            tableMapping.ColumnMappings.Add("specifics", "specifics");
+            tableMapping.ColumnMappings.Add("id6", "id6");
+            tableMapping.ColumnMappings.Add("density_category", "density_category");
+            tableMapping.ColumnMappings.Add("code", "code");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -43273,12 +43666,18 @@ ORDER BY d.donor_code,s.created_date ASC;";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date FROM  dbo.current_lending as l
-INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id
+            this._commandCollection[0].CommandText = @"SELECT * FROM dbo.current_lending as l
+INNER JOIN dbo.contacts AS b ON b.id = l.borrower_id
 INNER JOIN dbo.slides AS s ON s.id = l.slide_id
 INNER JOIN dbo.donors as d on d.id = s.donor_id
-WHERE l.due_date >= getdate() 
-ORDER BY d.donor_code,s.created_date ASC;";
+inner join dbo.species_category as sc on sc.id = d.species_catgeroy_id
+inner join dbo.species_specifics as ss on ss.id = d.species_specific_id
+inner join dbo.density_category as dc on dc.id = d.density_category_id
+where DATEDIFF(day, due_date,GETDATE()) > 0 and s.isBorrowed=1 and isDamaged=0 and isOutExchanged=0 and isMissing=0 and s.isActive=1
+ORDER BY d.donor_code,s.created_date ASC;
+
+
+";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -43689,6 +44088,13 @@ ORDER BY d.donor_code;";
             tableMapping.ColumnMappings.Add("b_created_date", "b_created_date");
             tableMapping.ColumnMappings.Add("isHistory", "isHistory");
             tableMapping.ColumnMappings.Add("checkinStatus", "checkinStatus");
+            tableMapping.ColumnMappings.Add("isDefault", "isDefault");
+            tableMapping.ColumnMappings.Add("isExchange", "isExchange");
+            tableMapping.ColumnMappings.Add("isReplaced", "isReplaced");
+            tableMapping.ColumnMappings.Add("isOutExchanged", "isOutExchanged");
+            tableMapping.ColumnMappings.Add("isMissing", "isMissing");
+            tableMapping.ColumnMappings.Add("isExchange1", "isExchange1");
+            tableMapping.ColumnMappings.Add("exchange_contact_id", "exchange_contact_id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -43707,7 +44113,7 @@ ORDER BY d.donor_code;";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date
 FROM  dbo.current_lending as l
-INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id
+INNER JOIN dbo.contacts AS b ON b.id = l.borrower_id
 INNER JOIN dbo.slides AS s ON s.id = l.slide_id
 INNER JOIN dbo.donors as d on d.id = s.donor_id
 WHERE isHistory=1 and s.isBorrowed=0
@@ -44162,7 +44568,7 @@ ORDER BY d.donor_code,s.created_date ASC;";
                          d.country_code, d.comment, d.validation_id
 FROM            dbo.slides AS s INNER JOIN
                          dbo.donors AS d ON d.id = s.donor_id
-WHERE    (s.isDamaged=1 and s.isActive=0)
+WHERE    (s.isDamaged=1 or s.isMissing=1 and s.isActive=1 and s.isOutExchanged=0 and s.isBorrowed=0)
 ORDER BY s.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -44957,9 +45363,9 @@ ORDER BY s.id;";
         
         private validationsTableAdapter _validationsTableAdapter;
         
-        private borrowersTableAdapter _borrowersTableAdapter;
+        private contactsTableAdapter _contactsTableAdapter;
         
-        private borrower_contact_listTableAdapter _borrower_contact_listTableAdapter;
+        private contact_listTableAdapter _contact_listTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -45051,12 +45457,12 @@ ORDER BY s.id;";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public borrowersTableAdapter borrowersTableAdapter {
+        public contactsTableAdapter contactsTableAdapter {
             get {
-                return this._borrowersTableAdapter;
+                return this._contactsTableAdapter;
             }
             set {
-                this._borrowersTableAdapter = value;
+                this._contactsTableAdapter = value;
             }
         }
         
@@ -45065,12 +45471,12 @@ ORDER BY s.id;";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public borrower_contact_listTableAdapter borrower_contact_listTableAdapter {
+        public contact_listTableAdapter contact_listTableAdapter {
             get {
-                return this._borrower_contact_listTableAdapter;
+                return this._contact_listTableAdapter;
             }
             set {
-                this._borrower_contact_listTableAdapter = value;
+                this._contact_listTableAdapter = value;
             }
         }
         
@@ -45113,13 +45519,13 @@ ORDER BY s.id;";
                             && (this._validationsTableAdapter.Connection != null))) {
                     return this._validationsTableAdapter.Connection;
                 }
-                if (((this._borrowersTableAdapter != null) 
-                            && (this._borrowersTableAdapter.Connection != null))) {
-                    return this._borrowersTableAdapter.Connection;
+                if (((this._contactsTableAdapter != null) 
+                            && (this._contactsTableAdapter.Connection != null))) {
+                    return this._contactsTableAdapter.Connection;
                 }
-                if (((this._borrower_contact_listTableAdapter != null) 
-                            && (this._borrower_contact_listTableAdapter.Connection != null))) {
-                    return this._borrower_contact_listTableAdapter.Connection;
+                if (((this._contact_listTableAdapter != null) 
+                            && (this._contact_listTableAdapter.Connection != null))) {
+                    return this._contact_listTableAdapter.Connection;
                 }
                 return null;
             }
@@ -45149,10 +45555,10 @@ ORDER BY s.id;";
                 if ((this._validationsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._borrowersTableAdapter != null)) {
+                if ((this._contactsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._borrower_contact_listTableAdapter != null)) {
+                if ((this._contact_listTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -45166,21 +45572,21 @@ ORDER BY s.id;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(sbmsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._borrowersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.borrowers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._contactsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.contacts.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._borrowersTableAdapter.Update(updatedRows));
+                    result = (result + this._contactsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._borrower_contact_listTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.borrower_contact_list.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._contact_listTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.contact_list.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._borrower_contact_listTableAdapter.Update(updatedRows));
+                    result = (result + this._contact_listTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -45239,19 +45645,19 @@ ORDER BY s.id;";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(sbmsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._borrowersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.borrowers.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._contactsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.contacts.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._borrowersTableAdapter.Update(addedRows));
+                    result = (result + this._contactsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._borrower_contact_listTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.borrower_contact_list.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._contact_listTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.contact_list.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._borrower_contact_listTableAdapter.Update(addedRows));
+                    result = (result + this._contact_listTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -45345,19 +45751,19 @@ ORDER BY s.id;";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._borrower_contact_listTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.borrower_contact_list.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._contact_listTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.contact_list.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._borrower_contact_listTableAdapter.Update(deletedRows));
+                    result = (result + this._contact_listTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._borrowersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.borrowers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._contactsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.contacts.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._borrowersTableAdapter.Update(deletedRows));
+                    result = (result + this._contactsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -45425,13 +45831,13 @@ ORDER BY s.id;";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._borrowersTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._borrowersTableAdapter.Connection) == false))) {
+            if (((this._contactsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._contactsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._borrower_contact_listTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._borrower_contact_listTableAdapter.Connection) == false))) {
+            if (((this._contact_listTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._contact_listTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -45512,22 +45918,22 @@ ORDER BY s.id;";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._validationsTableAdapter.Adapter);
                     }
                 }
-                if ((this._borrowersTableAdapter != null)) {
-                    revertConnections.Add(this._borrowersTableAdapter, this._borrowersTableAdapter.Connection);
-                    this._borrowersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._borrowersTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._borrowersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._borrowersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._borrowersTableAdapter.Adapter);
+                if ((this._contactsTableAdapter != null)) {
+                    revertConnections.Add(this._contactsTableAdapter, this._contactsTableAdapter.Connection);
+                    this._contactsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._contactsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._contactsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._contactsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._contactsTableAdapter.Adapter);
                     }
                 }
-                if ((this._borrower_contact_listTableAdapter != null)) {
-                    revertConnections.Add(this._borrower_contact_listTableAdapter, this._borrower_contact_listTableAdapter.Connection);
-                    this._borrower_contact_listTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._borrower_contact_listTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._borrower_contact_listTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._borrower_contact_listTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._borrower_contact_listTableAdapter.Adapter);
+                if ((this._contact_listTableAdapter != null)) {
+                    revertConnections.Add(this._contact_listTableAdapter, this._contact_listTableAdapter.Connection);
+                    this._contact_listTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._contact_listTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._contact_listTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._contact_listTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._contact_listTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -45608,13 +46014,13 @@ ORDER BY s.id;";
                     this._validationsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._validationsTableAdapter]));
                     this._validationsTableAdapter.Transaction = null;
                 }
-                if ((this._borrowersTableAdapter != null)) {
-                    this._borrowersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._borrowersTableAdapter]));
-                    this._borrowersTableAdapter.Transaction = null;
+                if ((this._contactsTableAdapter != null)) {
+                    this._contactsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._contactsTableAdapter]));
+                    this._contactsTableAdapter.Transaction = null;
                 }
-                if ((this._borrower_contact_listTableAdapter != null)) {
-                    this._borrower_contact_listTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._borrower_contact_listTableAdapter]));
-                    this._borrower_contact_listTableAdapter.Transaction = null;
+                if ((this._contact_listTableAdapter != null)) {
+                    this._contact_listTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._contact_listTableAdapter]));
+                    this._contact_listTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

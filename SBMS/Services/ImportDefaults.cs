@@ -23,7 +23,7 @@ namespace MSBMS.Services
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        string insertDonorQuery = "INSERT into borrowers" +
+                        string insertDonorQuery = "INSERT into contacts" +
                             "(fname,lname,job_title,organisation,offical_email,personal_email,mobile_phone,office_phone," +
                              "fax_number,country,city,hno,postcode,note,created_by,isDefault) " +
                              "VALUES (@fname,@lname,@job_title,@organisation,@offical_email,@personal_email,@mobile_phone,@office_phone," +
@@ -91,7 +91,7 @@ namespace MSBMS.Services
 
             DataTable searchResults = new DataTable();
             using (var con = new SqlConnection(DBConnectionSingltonServices.connectionString))
-            using (var cmd = new SqlCommand("SELECT id FROM borrowers where isDefault=@isDefault", con))
+            using (var cmd = new SqlCommand("SELECT id FROM contacts where isDefault=@isDefault", con))
             using (var da = new SqlDataAdapter(cmd))
             {
                 cmd.CommandType = CommandType.Text;

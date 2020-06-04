@@ -1,6 +1,6 @@
 ﻿namespace MSBMS
 {
-    partial class Borrowers
+    partial class Contacts
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label18 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdo_exchange = new System.Windows.Forms.RadioButton();
+            this.rdo_borrower = new System.Windows.Forms.RadioButton();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
@@ -72,6 +75,9 @@
             this.btn_find = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.dgr_borrower = new System.Windows.Forms.DataGridView();
+            this.borrowersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sbmsDataSet = new MSBMS.sbmsDataSet();
+            this.borrowersTableAdapter = new MSBMS.sbmsDataSetTableAdapters.contactsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,14 +93,12 @@
             this.hnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isExchange = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsBorrower = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.createddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updateddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.upatedbyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isdeletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.borrowersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sbmsDataSet = new MSBMS.sbmsDataSet();
-            this.borrowersTableAdapter = new MSBMS.sbmsDataSetTableAdapters.borrowersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -102,6 +106,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_borrower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
@@ -117,6 +122,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.label18);
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -143,6 +149,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
             this.splitContainer2.Panel1.Controls.Add(this.btn_delete);
             this.splitContainer2.Panel1.Controls.Add(this.btn_update);
             this.splitContainer2.Panel1.Controls.Add(this.btn_save);
@@ -186,14 +193,48 @@
             this.splitContainer2.Panel2.Controls.Add(this.btn_find);
             this.splitContainer2.Panel2.Controls.Add(this.txt_search);
             this.splitContainer2.Panel2.Controls.Add(this.dgr_borrower);
-            this.splitContainer2.Size = new System.Drawing.Size(1259, 534);
+            this.splitContainer2.Size = new System.Drawing.Size(1259, 566);
             this.splitContainer2.SplitterDistance = 369;
             this.splitContainer2.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdo_exchange);
+            this.groupBox1.Controls.Add(this.rdo_borrower);
+            this.groupBox1.Location = new System.Drawing.Point(123, 471);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(209, 44);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "type";
+            // 
+            // rdo_exchange
+            // 
+            this.rdo_exchange.AutoSize = true;
+            this.rdo_exchange.Location = new System.Drawing.Point(109, 19);
+            this.rdo_exchange.Name = "rdo_exchange";
+            this.rdo_exchange.Size = new System.Drawing.Size(73, 17);
+            this.rdo_exchange.TabIndex = 38;
+            this.rdo_exchange.TabStop = true;
+            this.rdo_exchange.Text = "Exchange";
+            this.rdo_exchange.UseVisualStyleBackColor = true;
+            // 
+            // rdo_borrower
+            // 
+            this.rdo_borrower.AutoSize = true;
+            this.rdo_borrower.Location = new System.Drawing.Point(18, 19);
+            this.rdo_borrower.Name = "rdo_borrower";
+            this.rdo_borrower.Size = new System.Drawing.Size(67, 17);
+            this.rdo_borrower.TabIndex = 37;
+            this.rdo_borrower.TabStop = true;
+            this.rdo_borrower.Text = "Borrower";
+            this.rdo_borrower.UseVisualStyleBackColor = true;
+            this.rdo_borrower.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // btn_delete
             // 
             this.btn_delete.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_delete.Location = new System.Drawing.Point(268, 485);
+            this.btn_delete.Location = new System.Drawing.Point(268, 521);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(64, 38);
             this.btn_delete.TabIndex = 35;
@@ -204,7 +245,7 @@
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_update.Location = new System.Drawing.Point(190, 485);
+            this.btn_update.Location = new System.Drawing.Point(190, 521);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(72, 38);
             this.btn_update.TabIndex = 34;
@@ -215,7 +256,7 @@
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_save.Location = new System.Drawing.Point(120, 485);
+            this.btn_save.Location = new System.Drawing.Point(120, 521);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(64, 38);
             this.btn_save.TabIndex = 33;
@@ -230,7 +271,7 @@
             this.txt_notes.MaxLength = 200;
             this.txt_notes.Multiline = true;
             this.txt_notes.Name = "txt_notes";
-            this.txt_notes.Size = new System.Drawing.Size(209, 42);
+            this.txt_notes.Size = new System.Drawing.Size(209, 28);
             this.txt_notes.TabIndex = 32;
             // 
             // label17
@@ -589,21 +630,36 @@
             this.hnoDataGridViewTextBoxColumn,
             this.postcodeDataGridViewTextBoxColumn,
             this.noteDataGridViewTextBoxColumn,
+            this.isExchange,
+            this.IsBorrower,
             this.createddateDataGridViewTextBoxColumn,
             this.createdbyDataGridViewTextBoxColumn,
             this.updateddateDataGridViewTextBoxColumn,
-            this.upatedbyDataGridViewTextBoxColumn,
             this.isdeletedDataGridViewCheckBoxColumn});
             this.dgr_borrower.DataSource = this.borrowersBindingSource;
             this.dgr_borrower.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgr_borrower.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgr_borrower.Location = new System.Drawing.Point(0, 50);
+            this.dgr_borrower.Location = new System.Drawing.Point(0, 82);
             this.dgr_borrower.MultiSelect = false;
             this.dgr_borrower.Name = "dgr_borrower";
             this.dgr_borrower.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgr_borrower.Size = new System.Drawing.Size(882, 480);
             this.dgr_borrower.TabIndex = 0;
             this.dgr_borrower.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgr_borrower_CellClick);
+            // 
+            // borrowersBindingSource
+            // 
+            this.borrowersBindingSource.DataMember = "contacts";
+            this.borrowersBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // borrowersTableAdapter
+            // 
+            this.borrowersTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -697,6 +753,17 @@
             this.noteDataGridViewTextBoxColumn.HeaderText = "Remark";
             this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
             // 
+            // isExchange
+            // 
+            this.isExchange.DataPropertyName = "isExchange";
+            this.isExchange.HeaderText = "isExchange";
+            this.isExchange.Name = "isExchange";
+            // 
+            // IsBorrower
+            // 
+            this.IsBorrower.HeaderText = "Borrower";
+            this.IsBorrower.Name = "IsBorrower";
+            // 
             // createddateDataGridViewTextBoxColumn
             // 
             this.createddateDataGridViewTextBoxColumn.DataPropertyName = "created_date";
@@ -715,12 +782,6 @@
             this.updateddateDataGridViewTextBoxColumn.HeaderText = "updated_date";
             this.updateddateDataGridViewTextBoxColumn.Name = "updateddateDataGridViewTextBoxColumn";
             // 
-            // upatedbyDataGridViewTextBoxColumn
-            // 
-            this.upatedbyDataGridViewTextBoxColumn.DataPropertyName = "upated_by";
-            this.upatedbyDataGridViewTextBoxColumn.HeaderText = "upated_by";
-            this.upatedbyDataGridViewTextBoxColumn.Name = "upatedbyDataGridViewTextBoxColumn";
-            // 
             // isdeletedDataGridViewCheckBoxColumn
             // 
             this.isdeletedDataGridViewCheckBoxColumn.DataPropertyName = "isdeleted";
@@ -728,30 +789,16 @@
             this.isdeletedDataGridViewCheckBoxColumn.Name = "isdeletedDataGridViewCheckBoxColumn";
             this.isdeletedDataGridViewCheckBoxColumn.Visible = false;
             // 
-            // borrowersBindingSource
-            // 
-            this.borrowersBindingSource.DataMember = "borrowers";
-            this.borrowersBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // borrowersTableAdapter
-            // 
-            this.borrowersTableAdapter.ClearBeforeFill = true;
-            // 
-            // Borrowers
+            // Contacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1261, 638);
+            this.ClientSize = new System.Drawing.Size(1261, 657);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.splitContainer1);
             this.MaximizeBox = false;
-            this.Name = "Borrowers";
+            this.Name = "Contacts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contacts Information";
             this.Load += new System.EventHandler(this.Borrowers_Load);
@@ -765,6 +812,8 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgr_borrower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.borrowersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
@@ -818,8 +867,12 @@
         private System.Windows.Forms.Label label19;
         private sbmsDataSet sbmsDataSet;
         private System.Windows.Forms.BindingSource borrowersBindingSource;
-        private sbmsDataSetTableAdapters.borrowersTableAdapter borrowersTableAdapter;
+        private sbmsDataSetTableAdapters.contactsTableAdapter borrowersTableAdapter;
         private System.Windows.Forms.Button btn_clear_selection;
+        private System.Windows.Forms.DataGridViewTextBoxColumn upatedbyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdo_exchange;
+        private System.Windows.Forms.RadioButton rdo_borrower;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lnameDataGridViewTextBoxColumn;
@@ -835,10 +888,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postcodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isExchange;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsBorrower;
         private System.Windows.Forms.DataGridViewTextBoxColumn createddateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdbyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updateddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn upatedbyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isdeletedDataGridViewCheckBoxColumn;
     }
 }
