@@ -139,7 +139,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.cmb_borrowers_full_name);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(1391, 153);
+            this.splitContainer1.Size = new System.Drawing.Size(1440, 153);
             this.splitContainer1.SplitterDistance = 58;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -236,7 +236,7 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 160);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1395, 495);
+            this.tabControl1.Size = new System.Drawing.Size(1440, 565);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -248,7 +248,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1387, 460);
+            this.tabPage1.Size = new System.Drawing.Size(1432, 530);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Active Lendings";
             // 
@@ -291,7 +291,7 @@
             this.grd_currentLending.DataSource = this.currentlendinghistoryBindingSource;
             this.grd_currentLending.Location = new System.Drawing.Point(9, 44);
             this.grd_currentLending.Name = "grd_currentLending";
-            this.grd_currentLending.Size = new System.Drawing.Size(1376, 460);
+            this.grd_currentLending.Size = new System.Drawing.Size(1425, 481);
             this.grd_currentLending.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -478,7 +478,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1387, 460);
+            this.tabPage2.Size = new System.Drawing.Size(1432, 530);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "All Lending History";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -509,7 +509,7 @@
             this.dataGridView1.DataSource = this.currentlendingpasthistoryBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1376, 460);
+            this.dataGridView1.Size = new System.Drawing.Size(1429, 530);
             this.dataGridView1.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -678,9 +678,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1395, 660);
+            this.ClientSize = new System.Drawing.Size(1439, 726);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.splitContainer1);
+            this.MaximizeBox = false;
             this.Name = "Lending";
             this.Text = "Lending";
             this.Load += new System.EventHandler(this.Lending_Load);

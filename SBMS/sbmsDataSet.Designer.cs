@@ -14775,6 +14775,20 @@ namespace MSBMS {
             
             private global::System.Data.DataColumn columncode;
             
+            private global::System.Data.DataColumn columnisReplaced;
+            
+            private global::System.Data.DataColumn columnisOutExchanged;
+            
+            private global::System.Data.DataColumn columnisMissing;
+            
+            private global::System.Data.DataColumn columnisExchange;
+            
+            private global::System.Data.DataColumn columnexchange_contact_id;
+            
+            private global::System.Data.DataColumn columnisDefault;
+            
+            private global::System.Data.DataColumn columnisExchange1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public checkedout_slides_detailsDataTable() {
@@ -15426,6 +15440,62 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isReplacedColumn {
+                get {
+                    return this.columnisReplaced;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isOutExchangedColumn {
+                get {
+                    return this.columnisOutExchanged;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isMissingColumn {
+                get {
+                    return this.columnisMissing;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchangeColumn {
+                get {
+                    return this.columnisExchange;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn exchange_contact_idColumn {
+                get {
+                    return this.columnexchange_contact_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isDefaultColumn {
+                get {
+                    return this.columnisDefault;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchange1Column {
+                get {
+                    return this.columnisExchange1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15530,7 +15600,14 @@ namespace MSBMS {
                         string species_category, 
                         string stage, 
                         string density_category, 
-                        string code) {
+                        string code, 
+                        bool isReplaced, 
+                        bool isOutExchanged, 
+                        bool isMissing, 
+                        bool isExchange, 
+                        int exchange_contact_id, 
+                        bool isDefault, 
+                        bool isExchange1) {
                 checkedout_slides_detailsRow rowcheckedout_slides_detailsRow = ((checkedout_slides_detailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -15609,7 +15686,14 @@ namespace MSBMS {
                         stage,
                         null,
                         density_category,
-                        code};
+                        code,
+                        isReplaced,
+                        isOutExchanged,
+                        isMissing,
+                        isExchange,
+                        exchange_contact_id,
+                        isDefault,
+                        isExchange1};
                 if ((parentcontactsRowByFK_current_lending_borrowers6 != null)) {
                     columnValuesArray[28] = parentcontactsRowByFK_current_lending_borrowers6[0];
                 }
@@ -15719,6 +15803,13 @@ namespace MSBMS {
                 this.columnid7 = base.Columns["id7"];
                 this.columndensity_category = base.Columns["density_category"];
                 this.columncode = base.Columns["code"];
+                this.columnisReplaced = base.Columns["isReplaced"];
+                this.columnisOutExchanged = base.Columns["isOutExchanged"];
+                this.columnisMissing = base.Columns["isMissing"];
+                this.columnisExchange = base.Columns["isExchange"];
+                this.columnexchange_contact_id = base.Columns["exchange_contact_id"];
+                this.columnisDefault = base.Columns["isDefault"];
+                this.columnisExchange1 = base.Columns["isExchange1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15880,6 +15971,20 @@ namespace MSBMS {
                 base.Columns.Add(this.columndensity_category);
                 this.columncode = new global::System.Data.DataColumn("code", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncode);
+                this.columnisReplaced = new global::System.Data.DataColumn("isReplaced", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisReplaced);
+                this.columnisOutExchanged = new global::System.Data.DataColumn("isOutExchanged", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisOutExchanged);
+                this.columnisMissing = new global::System.Data.DataColumn("isMissing", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisMissing);
+                this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange);
+                this.columnexchange_contact_id = new global::System.Data.DataColumn("exchange_contact_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexchange_contact_id);
+                this.columnisDefault = new global::System.Data.DataColumn("isDefault", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisDefault);
+                this.columnisExchange1 = new global::System.Data.DataColumn("isExchange1", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -15942,6 +16047,7 @@ namespace MSBMS {
                 this.columnhno.MaxLength = 50;
                 this.columnpostcode.MaxLength = 50;
                 this.columnnote.MaxLength = 50;
+                this.columncreated_by1.AllowDBNull = false;
                 this.columncreated_by1.MaxLength = 50;
                 this.columnupdated_by1.MaxLength = 50;
                 this.columnid2.AutoIncrement = true;
@@ -15949,6 +16055,8 @@ namespace MSBMS {
                 this.columnid2.AutoIncrementStep = -1;
                 this.columnid2.AllowDBNull = false;
                 this.columnid2.ReadOnly = true;
+                this.columnupdated_date1.AllowDBNull = false;
+                this.columncreated_date1.AllowDBNull = false;
                 this.columncreated_by2.MaxLength = 2147483647;
                 this.columnupdated_by2.MaxLength = 2147483647;
                 this.columnid3.AutoIncrement = true;
@@ -15960,6 +16068,7 @@ namespace MSBMS {
                 this.columnbar_code1.MaxLength = 2147483647;
                 this.columncreated_by3.MaxLength = 2147483647;
                 this.columnupdated_by3.MaxLength = 2147483647;
+                this.columnisActive1.AllowDBNull = false;
                 this.columncreated_date3.AllowDBNull = false;
                 this.columncheckinStatus.MaxLength = 50;
                 this.columnid4.AutoIncrement = true;
@@ -15987,6 +16096,10 @@ namespace MSBMS {
                 this.columnid7.ReadOnly = true;
                 this.columndensity_category.MaxLength = 2147483647;
                 this.columncode.MaxLength = 50;
+                this.columnisReplaced.AllowDBNull = false;
+                this.columnisOutExchanged.AllowDBNull = false;
+                this.columnisMissing.AllowDBNull = false;
+                this.columnisExchange.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -32794,13 +32907,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string created_by1 {
                 get {
-                    try {
-                        return ((string)(this[this.tablecheckedout_slides_details.created_by1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by1\' in table \'checkedout_slides_details\' is DBNull" +
-                                ".", e);
-                    }
+                    return ((string)(this[this.tablecheckedout_slides_details.created_by1Column]));
                 }
                 set {
                     this[this.tablecheckedout_slides_details.created_by1Column] = value;
@@ -32855,13 +32962,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime updated_date1 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecheckedout_slides_details.updated_date1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'updated_date1\' in table \'checkedout_slides_details\' is DBNu" +
-                                "ll.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecheckedout_slides_details.updated_date1Column]));
                 }
                 set {
                     this[this.tablecheckedout_slides_details.updated_date1Column] = value;
@@ -32872,13 +32973,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime created_date1 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablecheckedout_slides_details.created_date1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_date1\' in table \'checkedout_slides_details\' is DBNu" +
-                                "ll.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablecheckedout_slides_details.created_date1Column]));
                 }
                 set {
                     this[this.tablecheckedout_slides_details.created_date1Column] = value;
@@ -33029,12 +33124,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool isActive1 {
                 get {
-                    try {
-                        return ((bool)(this[this.tablecheckedout_slides_details.isActive1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isActive1\' in table \'checkedout_slides_details\' is DBNull.", e);
-                    }
+                    return ((bool)(this[this.tablecheckedout_slides_details.isActive1Column]));
                 }
                 set {
                     this[this.tablecheckedout_slides_details.isActive1Column] = value;
@@ -33225,6 +33315,100 @@ namespace MSBMS {
                 }
                 set {
                     this[this.tablecheckedout_slides_details.codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isReplaced {
+                get {
+                    return ((bool)(this[this.tablecheckedout_slides_details.isReplacedColumn]));
+                }
+                set {
+                    this[this.tablecheckedout_slides_details.isReplacedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isOutExchanged {
+                get {
+                    return ((bool)(this[this.tablecheckedout_slides_details.isOutExchangedColumn]));
+                }
+                set {
+                    this[this.tablecheckedout_slides_details.isOutExchangedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isMissing {
+                get {
+                    return ((bool)(this[this.tablecheckedout_slides_details.isMissingColumn]));
+                }
+                set {
+                    this[this.tablecheckedout_slides_details.isMissingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange {
+                get {
+                    return ((bool)(this[this.tablecheckedout_slides_details.isExchangeColumn]));
+                }
+                set {
+                    this[this.tablecheckedout_slides_details.isExchangeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int exchange_contact_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablecheckedout_slides_details.exchange_contact_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'exchange_contact_id\' in table \'checkedout_slides_details\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecheckedout_slides_details.exchange_contact_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isDefault {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecheckedout_slides_details.isDefaultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isDefault\' in table \'checkedout_slides_details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecheckedout_slides_details.isDefaultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange1 {
+                get {
+                    try {
+                        return ((bool)(this[this.tablecheckedout_slides_details.isExchange1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isExchange1\' in table \'checkedout_slides_details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablecheckedout_slides_details.isExchange1Column] = value;
                 }
             }
             
@@ -33480,18 +33664,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_by1Null() {
-                return this.IsNull(this.tablecheckedout_slides_details.created_by1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_by1Null() {
-                this[this.tablecheckedout_slides_details.created_by1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isupdated_by1Null() {
                 return this.IsNull(this.tablecheckedout_slides_details.updated_by1Column);
             }
@@ -33512,30 +33684,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisdeletedNull() {
                 this[this.tablecheckedout_slides_details.isdeletedColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isupdated_date1Null() {
-                return this.IsNull(this.tablecheckedout_slides_details.updated_date1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setupdated_date1Null() {
-                this[this.tablecheckedout_slides_details.updated_date1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_date1Null() {
-                return this.IsNull(this.tablecheckedout_slides_details.created_date1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_date1Null() {
-                this[this.tablecheckedout_slides_details.created_date1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -33620,18 +33768,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_isWHO_Null() {
                 this[this.tablecheckedout_slides_details._isWHO_Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsisActive1Null() {
-                return this.IsNull(this.tablecheckedout_slides_details.isActive1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetisActive1Null() {
-                this[this.tablecheckedout_slides_details.isActive1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -33728,6 +33864,42 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcodeNull() {
                 this[this.tablecheckedout_slides_details.codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexchange_contact_idNull() {
+                return this.IsNull(this.tablecheckedout_slides_details.exchange_contact_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexchange_contact_idNull() {
+                this[this.tablecheckedout_slides_details.exchange_contact_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisDefaultNull() {
+                return this.IsNull(this.tablecheckedout_slides_details.isDefaultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisDefaultNull() {
+                this[this.tablecheckedout_slides_details.isDefaultColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisExchange1Null() {
+                return this.IsNull(this.tablecheckedout_slides_details.isExchange1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisExchange1Null() {
+                this[this.tablecheckedout_slides_details.isExchange1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -44344,6 +44516,13 @@ ORDER BY d.donor_code,s.created_date ASC;";
             tableMapping.ColumnMappings.Add("id7", "id7");
             tableMapping.ColumnMappings.Add("density_category", "density_category");
             tableMapping.ColumnMappings.Add("code", "code");
+            tableMapping.ColumnMappings.Add("isReplaced", "isReplaced");
+            tableMapping.ColumnMappings.Add("isOutExchanged", "isOutExchanged");
+            tableMapping.ColumnMappings.Add("isMissing", "isMissing");
+            tableMapping.ColumnMappings.Add("isExchange", "isExchange");
+            tableMapping.ColumnMappings.Add("exchange_contact_id", "exchange_contact_id");
+            tableMapping.ColumnMappings.Add("isDefault", "isDefault");
+            tableMapping.ColumnMappings.Add("isExchange1", "isExchange1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -44363,12 +44542,12 @@ ORDER BY d.donor_code,s.created_date ASC;";
             this._commandCollection[0].CommandText = @"  SELECT * from current_lending c
   inner join slides as s on s.id = c.slide_id
   inner join donors as d on d.id = s.donor_id
-  inner join borrowers as b on b.id = c.borrower_id
+  inner join contacts as b on b.id = c.borrower_id
   inner join species_specifics as ss on ss.id = d.species_specific_id
   inner join species_category as sc on sc.id = d.species_catgeroy_id
   inner join species_stages as st on st.id = d.species_stage_id
-  inner join density_category as dc on dc.id = d.density_category_id;
-";
+  inner join density_category as dc on dc.id = d.density_category_id 
+  where c.isHistory=0 and c.reason <> 'Exchange' and isDefault=0 and b.isExchange=0;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -4,6 +4,10 @@
 
     partial class sbmsDataSet
     {
+        partial class checkedout_slides_detailsDataTable
+        {
+        }
+
         partial class current_lending_duedate_passedDataTable
         {
         }

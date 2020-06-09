@@ -33,7 +33,7 @@ namespace MSBMS
                     logger.Info("Default is found proceeding.");
                     StartupValueServices.Exchange_id_default = id;
 
-                    Application.Run(new Splash());
+                    Application.Run(new Lending());
 
                 }
                 else {
@@ -44,7 +44,7 @@ namespace MSBMS
                         Application.Exit();
                     }
                     else {
-                        Application.Run(new Splash());
+                        Application.Run(new Lending());
                     }
                 }
             }

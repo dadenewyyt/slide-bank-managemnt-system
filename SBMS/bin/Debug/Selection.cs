@@ -599,7 +599,7 @@ namespace MSBMS
             borrowerDic.Add(-1, "--Select Exchange---");
             foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
             {
-                if (Boolean.Parse(row["isExchange"].ToString()))
+                if (Boolean.Parse(row["isExchange"].ToString())==true)
                     borrowerDic.Add(Convert.ToInt32(row["id"]), "Country[ " + row["country"] + " ] Organisation [ " + row["country"] + "] Person: [ " + row["fname"] + " " + row["lname"] + " ]");
             }
 
@@ -668,10 +668,10 @@ namespace MSBMS
 
         private void cmb_reason_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_reason.SelectedItem.ToString()=="Exchange")
+            if (cmb_reason.SelectedItem.ToString() == "Exchange")
             {
                 DialogResult result = MessageBox.Show("You have selected : Checkout is as Exchange.\n Please , note that this sides will be returned back again \n in the normal checkin circulation", "Exchange", MessageBoxButtons.YesNo);
-               
+
                 if (result == DialogResult.Yes)
                 {
                     txt_from_date.Enabled = false;
@@ -684,7 +684,8 @@ namespace MSBMS
                     borrowerDic.Add(-1, "--Select Exchange Contacts---");
                     foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
                     {
-                        borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Country:   " + row["country"] + "  City:  " + row["city"]);
+                        if (Boolean.Parse(row["isExchange"].ToString()))
+                            borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Country:   " + row["country"] + "  City:  " + row["city"]);
                     }
 
                     cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
@@ -693,19 +694,35 @@ namespace MSBMS
                     cmb_borrowers.ValueMember = "Key";
                     cmb_borrowers.AutoCompleteMode = AutoCompleteMode.Suggest;
                     cmb_borrowers.AutoCompleteSource = AutoCompleteSource.ListItems;
-                    lbl_ont.Text = "Exchange Contacts";
+                    lbl_ont.Text = "Exchanger";
                 }
-                else {
-                    cmb_reason.SelectedIndex = 0;
-                    txt_from_date.Enabled = true;
-                    txt_due_date.Enabled = true;
-                    txt_days.Enabled = true;
-                    skip_days_validation = false;
-                    btn_dayCalculaor.Enabled = true;
-                    lbl_ont.Text = "Borrower Contacts";
+               
 
+            }
+            else
+            {
+             
+                Dictionary<int, string> borrowerDic = new Dictionary<int, string>();
+                borrowerDic.Add(-1, "--Select Borrower Contacts---");
+                foreach (DataRow row in this.sbmsDataSet.contact_list.Rows)
+                {
+                    if (Boolean.Parse(row["isExchange"].ToString())==false)
+                        borrowerDic.Add(Convert.ToInt32(row["id"]), row["fname"] + " " + row["lname"] + "  Country:   " + row["country"] + "  City:  " + row["city"]);
                 }
 
+                cmb_borrowers.DataSource = new BindingSource(borrowerDic, null);
+
+                cmb_borrowers.DisplayMember = "Value";
+                cmb_borrowers.ValueMember = "Key";
+                cmb_borrowers.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cmb_borrowers.AutoCompleteSource = AutoCompleteSource.ListItems;
+                cmb_reason.SelectedIndex = 0;
+                txt_from_date.Enabled = true;
+                txt_due_date.Enabled = true;
+                txt_days.Enabled = true;
+                skip_days_validation = false;
+                btn_dayCalculaor.Enabled = true;
+                lbl_ont.Text = "Borrowers";
             }
 
         }
