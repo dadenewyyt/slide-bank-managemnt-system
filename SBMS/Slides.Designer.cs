@@ -913,7 +913,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label24.Location = new System.Drawing.Point(6, 12);
+            this.label24.Location = new System.Drawing.Point(6, 16);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(108, 17);
             this.label24.TabIndex = 48;
@@ -922,7 +922,7 @@
             // btn_find_all
             // 
             this.btn_find_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_find_all.Location = new System.Drawing.Point(351, 9);
+            this.btn_find_all.Location = new System.Drawing.Point(351, 10);
             this.btn_find_all.Name = "btn_find_all";
             this.btn_find_all.Size = new System.Drawing.Size(100, 27);
             this.btn_find_all.TabIndex = 50;
@@ -934,7 +934,7 @@
             // 
             this.txt_search_all.BackColor = System.Drawing.SystemColors.Window;
             this.txt_search_all.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.txt_search_all.Location = new System.Drawing.Point(120, 9);
+            this.txt_search_all.Location = new System.Drawing.Point(120, 12);
             this.txt_search_all.MaxLength = 20;
             this.txt_search_all.Name = "txt_search_all";
             this.txt_search_all.Size = new System.Drawing.Size(225, 25);
@@ -996,14 +996,14 @@
             this.dataGridViewTextBoxColumn22});
             this.dgr_allslides.DataSource = this.slidesBindingSource;
             this.dgr_allslides.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgr_allslides.Location = new System.Drawing.Point(6, 33);
+            this.dgr_allslides.Location = new System.Drawing.Point(6, 46);
             this.dgr_allslides.Name = "dgr_allslides";
             this.dgr_allslides.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgr_allslides.ShowCellErrors = false;
             this.dgr_allslides.ShowCellToolTips = false;
             this.dgr_allslides.ShowEditingIcon = false;
             this.dgr_allslides.ShowRowErrors = false;
-            this.dgr_allslides.Size = new System.Drawing.Size(1029, 448);
+            this.dgr_allslides.Size = new System.Drawing.Size(1029, 438);
             this.dgr_allslides.TabIndex = 1;
             this.dgr_allslides.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selected_row_all_slides);
             // 

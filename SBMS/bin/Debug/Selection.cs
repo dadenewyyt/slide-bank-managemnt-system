@@ -83,7 +83,7 @@ namespace MSBMS
 
         private void Selection_Load(object sender, EventArgs e)
         {
-            logger.Trace(this.ToString());
+            //logger.Trace(this.ToString());
             grd_search_results.AllowUserToAddRows = false;
 
             // TODO: This line of code loads data into the 'sbmsDataSet.slide_search' table. You can move, or remove it, as needed.

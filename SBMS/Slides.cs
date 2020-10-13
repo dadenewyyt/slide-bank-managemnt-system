@@ -507,7 +507,7 @@ namespace MSBMS
             }//end of catch
             catch (Exception ex)
             {
-
+                logger.Error(ex, "Exception occured");
             }
         }
 
@@ -681,7 +681,7 @@ namespace MSBMS
             {
                 if (txt_search_all.Text.ToString() != "")
                 {
-                    int donor = Convert.ToInt32(txt_search_all.Text.ToString());
+                    string donor = txt_search_all.Text.ToString().Trim();
                     SearchAndFilterService searchAndFilterService = new SearchAndFilterService();
                     DataTable dt = searchAndFilterService.SearchSlideByDonor(donor);
 
@@ -704,8 +704,8 @@ namespace MSBMS
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show("Donorr number is empty or invalid,renter");
-                logger.Error(ex, "Slide Form");
+                MessageBox.Show(ex.Message+" Find by Donor Code");
+                logger.Error(ex, "Find by Donor Code");
             }
         }
 
@@ -768,8 +768,9 @@ namespace MSBMS
                     MessageBox.Show("NO Data to Select");
                 }
             }
-            catch (Exception ex) { 
-                //TODO
+            catch (Exception ex) {
+                logger.Error(ex, "Exception occured");
+
             }
 
         }
@@ -835,10 +836,12 @@ namespace MSBMS
                     MessageBox.Show("Slide number is empty or invalid,renter");
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show("Slide number is empty or invalid,renter");
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+                logger.Error(ex, "Exception occured");
+
             }
-}
+        }
 
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -868,7 +871,7 @@ namespace MSBMS
 
                 if (cabinet!=0 && drawer!=0 && box!=0)
                 {
-                    int number = Convert.ToInt32(txt_search_slide_recent.Text.ToString());
+                    //int number = Convert.ToInt32(txt_search_slide_recent.Text.ToString());
                     SearchAndFilterService searchAndFilterService = new SearchAndFilterService();
                     DataTable dt = searchAndFilterService.SearchLocationOccupied(cabinet,drawer,box);
                     if (dt.Rows.Count>0)
@@ -890,7 +893,8 @@ namespace MSBMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Slide number is empty or invalid,renter");
+                MessageBox.Show(ex.Message);
+                logger.Error(ex, "Exception occured");
             }
         }
 

@@ -87,7 +87,7 @@ namespace MSBMS
                             txt_contry_code.Text = row["country_code"].ToString();
                             txt_donor_code.Text = row["donor_code"].ToString();
                             txt_slide_number.Text = row["sequence"].ToString();
-                            txt_b_full_name.Text = row["sequence"].ToString() + " " + row["sequence"].ToString();
+                            txt_b_full_name.Text = row["fname"].ToString() + " " + row["lname"].ToString();
                             txt_org_borrower.Text = row["organisation"].ToString();
                             txt_due_Date.Text = row["due_date"].ToString();
                             txt_checked_out_date.Text = row["checked_out_date"].ToString();
@@ -130,7 +130,7 @@ namespace MSBMS
                     txt_contry_code.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["countrycode"].Value + string.Empty;
                     txt_donor_code.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["donorcode"].Value.ToString() + string.Empty;
                     txt_org_borrower.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["organisation"].Value.ToString();
-                    txt_b_full_name.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["fname"].ToString() + grd_checkin_borrowed.Rows[e.RowIndex].Cells["lname"].ToString();
+                    txt_b_full_name.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["fname"].Value.ToString() + " " + grd_checkin_borrowed.Rows[e.RowIndex].Cells["lname"].Value.ToString();
                     txt_checked_out_date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["checked_out_date"].Value + string.Empty;
                     txt_due_Date.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["duedate"].Value + string.Empty;
                     txt_reason.Text = grd_checkin_borrowed.Rows[e.RowIndex].Cells["reason"].Value + string.Empty;
@@ -294,6 +294,12 @@ namespace MSBMS
             this.currentLendingHisotryTableAdapter.Fill(this.sbmsDataSet1.current_lending_history);
             grd_checkin_borrowed.DataSource = this.sbmsDataSet1.current_lending_history;
              
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txt_slide_scan_in_Click(null,null);
+            btnreload_data_Click(null, null);
         }
     }
 }

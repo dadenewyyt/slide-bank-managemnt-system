@@ -23,7 +23,6 @@ namespace MSBMS
             Application.SetCompatibleTextRenderingDefault(false);
             ImportDefaultsService importDefaultsService = new ImportDefaultsService();
 
-
             try
              {
                 logger.Info("importing defaults");
@@ -33,7 +32,7 @@ namespace MSBMS
                     logger.Info("Default is found proceeding.");
                     StartupValueServices.Exchange_id_default = id;
 
-                    Application.Run(new Lending());
+                    Application.Run(new Login());
 
                 }
                 else {
@@ -41,17 +40,18 @@ namespace MSBMS
                     if (result == false)
                     {
                         logger.Error("Hi, the system is reporting problem importing Counry of Origin\n");
+                        NLog.LogManager.Shutdown(); // Flush and close down internal threads and timers
                         Application.Exit();
                     }
                     else {
-                        Application.Run(new Lending());
+                        Application.Run(new MDIChild());
                     }
                 }
             }
              catch (Exception ex) {
                  MessageBox.Show(ex.Message+"Hi, the system is reporting problem with SQL \n");
                  logger.Error(ex,"see application log error for the cause of this error \n");
- 
+                NLog.LogManager.Shutdown(); // Flush and close down internal threads and timers
             }
 
         }

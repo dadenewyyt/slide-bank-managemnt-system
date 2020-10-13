@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\daniel\source\repos\slide-bank-managemnt-system\Published\</PublishUrl>
+    <PublishUrl>C:\Users\daniel\Desktop\MSBMS 2.0.0.x\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,8 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>8</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -58,19 +58,22 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>21099F26E798C78BB5A7C3E66825DB8C72AABC60</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BE92CC9CC8E259D2921A5166A9AE16B04D73D0A8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SBMS_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>MSBMS_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>istockphoto_821562926_612x612_YAs_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -437,6 +440,7 @@
     </Compile>
     <Content Include="SQL\clear.txt" />
     <None Include="Manual\Software User Manual-Draft-EPHI.docx" />
+    <None Include="MSBMS_TemporaryKey.pfx" />
     <None Include="Resources\splash_SBMS.png" />
     <None Include="Resources\click.jpg" />
     <Content Include="istockphoto_821562926_612x612_YAs_icon.ico" />

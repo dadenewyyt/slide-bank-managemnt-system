@@ -60,52 +60,53 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_slide_scan_in = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnreload_data = new System.Windows.Forms.Button();
-            this.grd_checkin_borrowed = new System.Windows.Forms.DataGridView();
-            this.currentLendingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slideId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donorcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countrycode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.species = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciesspecificsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSet = new MSBMS.sbmsDataSet();
-            this.species_catgeroy = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.speciescategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.density = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.densitycategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.desnityCat_bindingDataSource = new MSBMS.desnityCat_bindingDataSource();
-            this.cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drawer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.box = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobtitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.organisation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duedate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checked_out_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowed_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b_created_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sbmsDataSet1 = new MSBMS.sbmsDataSet();
             this.density_categoryTableAdapter = new MSBMS.desnityCat_bindingDataSourceTableAdapters.density_categoryTableAdapter();
             this.currentLendingHisotryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.currentLendingHisotryTableAdapter();
             this.species_categoryTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_categoryTableAdapter();
             this.species_specificsTableAdapter = new MSBMS.sbmsDataSetTableAdapters.species_specificsTableAdapter();
-            this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.b_created_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowed_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checked_out_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duedate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.organisation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobtitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.box = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drawer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.density = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.species_catgeroy = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.species = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sequence = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countrycode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donorcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slideId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentLendingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grd_checkin_borrowed = new System.Windows.Forms.DataGridView();
+            this.btnreload_data = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grd_checkin_borrowed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_checkin_borrowed)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -150,15 +151,15 @@
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.txt_slide_scan_in);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(1321, 263);
-            this.splitContainer1.SplitterDistance = 59;
+            this.splitContainer1.Size = new System.Drawing.Size(1321, 257);
+            this.splitContainer1.SplitterDistance = 57;
             this.splitContainer1.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(460, 18);
+            this.label7.Location = new System.Drawing.Point(464, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(366, 33);
             this.label7.TabIndex = 1;
@@ -227,7 +228,7 @@
             this.txt_comment.Location = new System.Drawing.Point(1051, 52);
             this.txt_comment.Multiline = true;
             this.txt_comment.Name = "txt_comment";
-            this.txt_comment.Size = new System.Drawing.Size(198, 76);
+            this.txt_comment.Size = new System.Drawing.Size(259, 76);
             this.txt_comment.TabIndex = 21;
             // 
             // label13
@@ -251,7 +252,7 @@
             "Missing"});
             this.cmb_returned_status.Location = new System.Drawing.Point(1051, 24);
             this.cmb_returned_status.Name = "cmb_returned_status";
-            this.cmb_returned_status.Size = new System.Drawing.Size(198, 25);
+            this.cmb_returned_status.Size = new System.Drawing.Size(259, 25);
             this.cmb_returned_status.TabIndex = 19;
             // 
             // label10
@@ -266,11 +267,12 @@
             // 
             // btn_Checkin
             // 
-            this.btn_Checkin.BackColor = System.Drawing.Color.Chocolate;
+            this.btn_Checkin.BackColor = System.Drawing.Color.DimGray;
             this.btn_Checkin.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Checkin.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Checkin.Location = new System.Drawing.Point(1051, 134);
             this.btn_Checkin.Name = "btn_Checkin";
-            this.btn_Checkin.Size = new System.Drawing.Size(198, 42);
+            this.btn_Checkin.Size = new System.Drawing.Size(259, 55);
             this.btn_Checkin.TabIndex = 13;
             this.btn_Checkin.Text = "Checkin";
             this.btn_Checkin.UseVisualStyleBackColor = false;
@@ -448,15 +450,202 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Scan In:";
             // 
-            // btnreload_data
+            // speciesspecificsBindingSource
             // 
-            this.btnreload_data.Location = new System.Drawing.Point(1158, 272);
-            this.btnreload_data.Name = "btnreload_data";
-            this.btnreload_data.Size = new System.Drawing.Size(154, 29);
-            this.btnreload_data.TabIndex = 12;
-            this.btnreload_data.Text = "Refresh";
-            this.btnreload_data.UseVisualStyleBackColor = true;
-            this.btnreload_data.Click += new System.EventHandler(this.btnreload_data_Click);
+            this.speciesspecificsBindingSource.DataMember = "species_specifics";
+            this.speciesspecificsBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // sbmsDataSet
+            // 
+            this.sbmsDataSet.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // speciescategoryBindingSource
+            // 
+            this.speciescategoryBindingSource.DataMember = "species_category";
+            this.speciescategoryBindingSource.DataSource = this.sbmsDataSet;
+            // 
+            // densitycategoryBindingSource
+            // 
+            this.densitycategoryBindingSource.DataMember = "density_category";
+            this.densitycategoryBindingSource.DataSource = this.desnityCat_bindingDataSource;
+            // 
+            // desnityCat_bindingDataSource
+            // 
+            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
+            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // currentlendinghistoryBindingSource
+            // 
+            this.currentlendinghistoryBindingSource.DataMember = "current_lending_history";
+            this.currentlendinghistoryBindingSource.DataSource = this.sbmsDataSet1;
+            // 
+            // sbmsDataSet1
+            // 
+            this.sbmsDataSet1.DataSetName = "sbmsDataSet";
+            this.sbmsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // density_categoryTableAdapter
+            // 
+            this.density_categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // currentLendingHisotryTableAdapter
+            // 
+            this.currentLendingHisotryTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_categoryTableAdapter
+            // 
+            this.species_categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // species_specificsTableAdapter
+            // 
+            this.species_specificsTableAdapter.ClearBeforeFill = true;
+            // 
+            // b_created_date
+            // 
+            this.b_created_date.DataPropertyName = "b_created_date";
+            this.b_created_date.HeaderText = "Record_CreatedDate";
+            this.b_created_date.Name = "b_created_date";
+            // 
+            // borrowed_by
+            // 
+            this.borrowed_by.DataPropertyName = "borrowed_by";
+            this.borrowed_by.HeaderText = "BorrowedBy";
+            this.borrowed_by.Name = "borrowed_by";
+            // 
+            // checked_out_date
+            // 
+            this.checked_out_date.DataPropertyName = "checked_out_date";
+            this.checked_out_date.HeaderText = "CheckoutDate";
+            this.checked_out_date.Name = "checked_out_date";
+            // 
+            // duedate
+            // 
+            this.duedate.DataPropertyName = "due_date";
+            this.duedate.HeaderText = "DueDate";
+            this.duedate.Name = "duedate";
+            // 
+            // organisation
+            // 
+            this.organisation.DataPropertyName = "organisation";
+            this.organisation.HeaderText = "Organisation";
+            this.organisation.Name = "organisation";
+            // 
+            // jobtitle
+            // 
+            this.jobtitle.DataPropertyName = "job_title";
+            this.jobtitle.HeaderText = "Postion";
+            this.jobtitle.Name = "jobtitle";
+            // 
+            // lname
+            // 
+            this.lname.DataPropertyName = "lname";
+            this.lname.HeaderText = "BLastname";
+            this.lname.Name = "lname";
+            // 
+            // fname
+            // 
+            this.fname.DataPropertyName = "fname";
+            this.fname.HeaderText = "BFname";
+            this.fname.Name = "fname";
+            // 
+            // reason
+            // 
+            this.reason.DataPropertyName = "reason";
+            this.reason.HeaderText = "Reason";
+            this.reason.Name = "reason";
+            // 
+            // box
+            // 
+            this.box.DataPropertyName = "box_number";
+            this.box.HeaderText = "Box";
+            this.box.Name = "box";
+            // 
+            // drawer
+            // 
+            this.drawer.DataPropertyName = "drawer_number";
+            this.drawer.HeaderText = "Drawer";
+            this.drawer.Name = "drawer";
+            // 
+            // cabinet
+            // 
+            this.cabinet.DataPropertyName = "cabinet_number";
+            this.cabinet.HeaderText = "Cabinet";
+            this.cabinet.Name = "cabinet";
+            // 
+            // density
+            // 
+            this.density.DataPropertyName = "density_category_id";
+            this.density.DataSource = this.densitycategoryBindingSource;
+            this.density.DisplayMember = "density_category";
+            this.density.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.density.HeaderText = "Density";
+            this.density.Name = "density";
+            this.density.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.density.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.density.ValueMember = "id";
+            // 
+            // species_catgeroy
+            // 
+            this.species_catgeroy.DataPropertyName = "species_catgeroy_id";
+            this.species_catgeroy.DataSource = this.speciescategoryBindingSource;
+            this.species_catgeroy.DisplayMember = "species_category";
+            this.species_catgeroy.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.species_catgeroy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.species_catgeroy.HeaderText = "Category";
+            this.species_catgeroy.Name = "species_catgeroy";
+            this.species_catgeroy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.species_catgeroy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.species_catgeroy.ValueMember = "id";
+            // 
+            // species
+            // 
+            this.species.DataPropertyName = "species_specific_id";
+            this.species.DataSource = this.speciesspecificsBindingSource;
+            this.species.DisplayMember = "specifics";
+            this.species.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.species.HeaderText = "Speciecs";
+            this.species.Name = "species";
+            this.species.ValueMember = "id";
+            // 
+            // sequence
+            // 
+            this.sequence.DataPropertyName = "sequence";
+            this.sequence.HeaderText = "Sequence";
+            this.sequence.Name = "sequence";
+            // 
+            // countrycode
+            // 
+            this.countrycode.DataPropertyName = "country_code";
+            this.countrycode.HeaderText = "Country";
+            this.countrycode.Name = "countrycode";
+            // 
+            // donorcode
+            // 
+            this.donorcode.DataPropertyName = "donor_code";
+            this.donorcode.HeaderText = "Donor";
+            this.donorcode.Name = "donorcode";
+            // 
+            // barcode
+            // 
+            this.barcode.DataPropertyName = "bar_code";
+            this.barcode.HeaderText = "Barcode";
+            this.barcode.Name = "barcode";
+            // 
+            // slideId
+            // 
+            this.slideId.DataPropertyName = "slide_id";
+            this.slideId.HeaderText = "slideId";
+            this.slideId.Name = "slideId";
+            this.slideId.Visible = false;
+            // 
+            // currentLendingId
+            // 
+            this.currentLendingId.DataPropertyName = "id";
+            this.currentLendingId.HeaderText = "id";
+            this.currentLendingId.Name = "currentLendingId";
+            this.currentLendingId.ReadOnly = true;
+            this.currentLendingId.Visible = false;
             // 
             // grd_checkin_borrowed
             // 
@@ -485,215 +674,41 @@
             this.borrowed_by,
             this.b_created_date});
             this.grd_checkin_borrowed.DataSource = this.currentlendinghistoryBindingSource;
-            this.grd_checkin_borrowed.Location = new System.Drawing.Point(0, 301);
+            this.grd_checkin_borrowed.Location = new System.Drawing.Point(0, 314);
             this.grd_checkin_borrowed.Name = "grd_checkin_borrowed";
-            this.grd_checkin_borrowed.Size = new System.Drawing.Size(1321, 378);
+            this.grd_checkin_borrowed.Size = new System.Drawing.Size(1321, 427);
             this.grd_checkin_borrowed.TabIndex = 3;
             this.grd_checkin_borrowed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grd_checkin_borrowed_CellClick);
             // 
-            // currentLendingId
-            // 
-            this.currentLendingId.DataPropertyName = "id";
-            this.currentLendingId.HeaderText = "id";
-            this.currentLendingId.Name = "currentLendingId";
-            this.currentLendingId.ReadOnly = true;
-            this.currentLendingId.Visible = false;
-            // 
-            // slideId
-            // 
-            this.slideId.DataPropertyName = "slide_id";
-            this.slideId.HeaderText = "slideId";
-            this.slideId.Name = "slideId";
-            this.slideId.Visible = false;
-            // 
-            // barcode
-            // 
-            this.barcode.DataPropertyName = "bar_code";
-            this.barcode.HeaderText = "Barcode";
-            this.barcode.Name = "barcode";
-            // 
-            // donorcode
-            // 
-            this.donorcode.DataPropertyName = "donor_code";
-            this.donorcode.HeaderText = "Donor";
-            this.donorcode.Name = "donorcode";
-            // 
-            // countrycode
-            // 
-            this.countrycode.DataPropertyName = "country_code";
-            this.countrycode.HeaderText = "Country";
-            this.countrycode.Name = "countrycode";
-            // 
-            // sequence
-            // 
-            this.sequence.DataPropertyName = "sequence";
-            this.sequence.HeaderText = "Sequence";
-            this.sequence.Name = "sequence";
-            // 
-            // species
-            // 
-            this.species.DataPropertyName = "species_specific_id";
-            this.species.DataSource = this.speciesspecificsBindingSource;
-            this.species.DisplayMember = "specifics";
-            this.species.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.species.HeaderText = "Speciecs";
-            this.species.Name = "species";
-            this.species.ValueMember = "id";
-            // 
-            // speciesspecificsBindingSource
-            // 
-            this.speciesspecificsBindingSource.DataMember = "species_specifics";
-            this.speciesspecificsBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // sbmsDataSet
-            // 
-            this.sbmsDataSet.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // species_catgeroy
-            // 
-            this.species_catgeroy.DataPropertyName = "species_catgeroy_id";
-            this.species_catgeroy.DataSource = this.speciescategoryBindingSource;
-            this.species_catgeroy.DisplayMember = "species_category";
-            this.species_catgeroy.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.species_catgeroy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.species_catgeroy.HeaderText = "Category";
-            this.species_catgeroy.Name = "species_catgeroy";
-            this.species_catgeroy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.species_catgeroy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.species_catgeroy.ValueMember = "id";
-            // 
-            // speciescategoryBindingSource
-            // 
-            this.speciescategoryBindingSource.DataMember = "species_category";
-            this.speciescategoryBindingSource.DataSource = this.sbmsDataSet;
-            // 
-            // density
-            // 
-            this.density.DataPropertyName = "density_category_id";
-            this.density.DataSource = this.densitycategoryBindingSource;
-            this.density.DisplayMember = "density_category";
-            this.density.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.density.HeaderText = "Density";
-            this.density.Name = "density";
-            this.density.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.density.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.density.ValueMember = "id";
-            // 
-            // densitycategoryBindingSource
-            // 
-            this.densitycategoryBindingSource.DataMember = "density_category";
-            this.densitycategoryBindingSource.DataSource = this.desnityCat_bindingDataSource;
-            // 
-            // desnityCat_bindingDataSource
-            // 
-            this.desnityCat_bindingDataSource.DataSetName = "desnityCat_bindingDataSource";
-            this.desnityCat_bindingDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cabinet
-            // 
-            this.cabinet.DataPropertyName = "cabinet_number";
-            this.cabinet.HeaderText = "Cabinet";
-            this.cabinet.Name = "cabinet";
-            // 
-            // drawer
-            // 
-            this.drawer.DataPropertyName = "drawer_number";
-            this.drawer.HeaderText = "Drawer";
-            this.drawer.Name = "drawer";
-            // 
-            // box
-            // 
-            this.box.DataPropertyName = "box_number";
-            this.box.HeaderText = "Box";
-            this.box.Name = "box";
-            // 
-            // reason
-            // 
-            this.reason.DataPropertyName = "reason";
-            this.reason.HeaderText = "Reason";
-            this.reason.Name = "reason";
-            // 
-            // fname
-            // 
-            this.fname.DataPropertyName = "fname";
-            this.fname.HeaderText = "BFname";
-            this.fname.Name = "fname";
-            // 
-            // lname
-            // 
-            this.lname.DataPropertyName = "lname";
-            this.lname.HeaderText = "BLastname";
-            this.lname.Name = "lname";
-            // 
-            // jobtitle
-            // 
-            this.jobtitle.DataPropertyName = "job_title";
-            this.jobtitle.HeaderText = "Postion";
-            this.jobtitle.Name = "jobtitle";
-            // 
-            // organisation
-            // 
-            this.organisation.DataPropertyName = "organisation";
-            this.organisation.HeaderText = "Organisation";
-            this.organisation.Name = "organisation";
-            // 
-            // duedate
-            // 
-            this.duedate.DataPropertyName = "due_date";
-            this.duedate.HeaderText = "DueDate";
-            this.duedate.Name = "duedate";
-            // 
-            // checked_out_date
-            // 
-            this.checked_out_date.DataPropertyName = "checked_out_date";
-            this.checked_out_date.HeaderText = "CheckoutDate";
-            this.checked_out_date.Name = "checked_out_date";
-            // 
-            // borrowed_by
-            // 
-            this.borrowed_by.DataPropertyName = "borrowed_by";
-            this.borrowed_by.HeaderText = "BorrowedBy";
-            this.borrowed_by.Name = "borrowed_by";
-            // 
-            // b_created_date
-            // 
-            this.b_created_date.DataPropertyName = "b_created_date";
-            this.b_created_date.HeaderText = "Record_CreatedDate";
-            this.b_created_date.Name = "b_created_date";
-            // 
-            // sbmsDataSet1
-            // 
-            this.sbmsDataSet1.DataSetName = "sbmsDataSet";
-            this.sbmsDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // density_categoryTableAdapter
-            // 
-            this.density_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // currentLendingHisotryTableAdapter
-            // 
-            this.currentLendingHisotryTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_categoryTableAdapter
-            // 
-            this.species_categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // species_specificsTableAdapter
-            // 
-            this.species_specificsTableAdapter.ClearBeforeFill = true;
-            // 
-            // currentlendinghistoryBindingSource
-            // 
-            this.currentlendinghistoryBindingSource.DataMember = "current_lending_history";
-            this.currentlendinghistoryBindingSource.DataSource = this.sbmsDataSet1;
-            // 
-            // Checkin_Checkout
+            // btnreload_data
+            // 
+            this.btnreload_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreload_data.Location = new System.Drawing.Point(1199, 266);
+            this.btnreload_data.Name = "btnreload_data";
+            this.btnreload_data.Size = new System.Drawing.Size(117, 42);
+            this.btnreload_data.TabIndex = 12;
+            this.btnreload_data.Text = "Refresh";
+            this.btnreload_data.UseVisualStyleBackColor = true;
+            this.btnreload_data.Click += new System.EventHandler(this.btnreload_data_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 42);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Clear";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Checkin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1324, 683);
+            this.ClientSize = new System.Drawing.Size(1324, 743);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnreload_data);
             this.Controls.Add(this.grd_checkin_borrowed);
             this.Controls.Add(this.splitContainer1);
@@ -706,14 +721,14 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grd_checkin_borrowed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciesspecificsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speciescategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.densitycategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.desnityCat_bindingDataSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sbmsDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_checkin_borrowed)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -740,8 +755,6 @@
         private System.Windows.Forms.TextBox txt_org_borrower;
         private System.Windows.Forms.TextBox txt_b_full_name;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView grd_checkin_borrowed;
-        private System.Windows.Forms.Button btnreload_data;
         private System.Windows.Forms.TextBox txt_comment;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmb_returned_status;
@@ -763,27 +776,30 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_reason;
         private sbmsDataSet sbmsDataSet1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slideId;
-        private System.Windows.Forms.DataGridViewComboBoxColumn species;
-        private System.Windows.Forms.DataGridViewComboBoxColumn species_catgeroy;
-        private System.Windows.Forms.DataGridViewComboBoxColumn density;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checked_out_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrowed_by;
-        private System.Windows.Forms.DataGridViewTextBoxColumn b_created_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn currentLendingId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn donorcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countrycode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sequence;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cabinet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drawer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn box;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reason;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn organisation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duedate;
         private System.Windows.Forms.BindingSource currentlendinghistoryBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn b_created_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrowed_by;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checked_out_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duedate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn organisation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobtitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn box;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drawer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cabinet;
+        private System.Windows.Forms.DataGridViewComboBoxColumn density;
+        private System.Windows.Forms.DataGridViewComboBoxColumn species_catgeroy;
+        private System.Windows.Forms.DataGridViewComboBoxColumn species;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sequence;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countrycode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donorcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slideId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currentLendingId;
+        private System.Windows.Forms.DataGridView grd_checkin_borrowed;
+        private System.Windows.Forms.Button btnreload_data;
+        private System.Windows.Forms.Button button1;
     }
 }

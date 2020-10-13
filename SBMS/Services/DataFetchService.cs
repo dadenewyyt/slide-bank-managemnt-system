@@ -116,7 +116,7 @@ namespace MSBMS.Services
 
             if (String.IsNullOrEmpty(barcode) == false)
             {
-                string selectquery = "SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date FROM dbo.current_lending as l INNER JOIN dbo.borrowers AS b ON b.id = l.borrower_id INNER JOIN dbo.slides AS s ON s.id = l.slide_id INNER JOIN dbo.donors as d on d.id = s.donor_id WHERE (s.bar_code="+barcode+")ORDER BY d.donor_code,l.due_date ASC;";
+                string selectquery = "SELECT * , l.created_by as borrowed_by, l.created_date as b_created_date FROM dbo.current_lending as l INNER JOIN dbo.contacts AS b ON b.id = l.borrower_id INNER JOIN dbo.slides AS s ON s.id = l.slide_id INNER JOIN dbo.donors as d on d.id = s.donor_id WHERE (s.bar_code="+barcode+")ORDER BY d.donor_code,l.due_date ASC;";
                 using (SqlDataAdapter adapter = new SqlDataAdapter(selectquery, DBConnectionSingltonServices.con))
                 {
 

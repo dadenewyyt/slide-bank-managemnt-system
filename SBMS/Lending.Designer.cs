@@ -70,7 +70,7 @@
             this.duedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentlendinghistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grd_LendingHistor = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,7 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_LendingHistor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendingpasthistoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(437, 4);
+            this.label3.Location = new System.Drawing.Point(564, 1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 21);
             this.label3.TabIndex = 16;
@@ -170,7 +170,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(231, 58);
+            this.label1.Location = new System.Drawing.Point(358, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 21);
             this.label1.TabIndex = 15;
@@ -179,7 +179,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(722, 56);
+            this.button1.Location = new System.Drawing.Point(849, 53);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 26);
             this.button1.TabIndex = 14;
@@ -190,7 +190,7 @@
             // btn_find
             // 
             this.btn_find.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_find.Location = new System.Drawing.Point(722, 26);
+            this.btn_find.Location = new System.Drawing.Point(849, 23);
             this.btn_find.Name = "btn_find";
             this.btn_find.Size = new System.Drawing.Size(81, 26);
             this.btn_find.TabIndex = 13;
@@ -202,7 +202,7 @@
             // 
             this.cmb_borrowers_org.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
             this.cmb_borrowers_org.FormattingEnabled = true;
-            this.cmb_borrowers_org.Location = new System.Drawing.Point(346, 57);
+            this.cmb_borrowers_org.Location = new System.Drawing.Point(473, 54);
             this.cmb_borrowers_org.Name = "cmb_borrowers_org";
             this.cmb_borrowers_org.Size = new System.Drawing.Size(370, 25);
             this.cmb_borrowers_org.TabIndex = 11;
@@ -212,7 +212,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(253, 32);
+            this.label2.Location = new System.Drawing.Point(380, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 21);
             this.label2.TabIndex = 10;
@@ -222,7 +222,7 @@
             // 
             this.cmb_borrowers_full_name.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
             this.cmb_borrowers_full_name.FormattingEnabled = true;
-            this.cmb_borrowers_full_name.Location = new System.Drawing.Point(346, 28);
+            this.cmb_borrowers_full_name.Location = new System.Drawing.Point(473, 25);
             this.cmb_borrowers_full_name.Name = "cmb_borrowers_full_name";
             this.cmb_borrowers_full_name.Size = new System.Drawing.Size(370, 25);
             this.cmb_borrowers_full_name.TabIndex = 9;
@@ -474,7 +474,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.grd_LendingHistor);
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -483,12 +483,12 @@
             this.tabPage2.Text = "All Lending History";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // grd_LendingHistor
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grd_LendingHistor.AutoGenerateColumns = false;
+            this.grd_LendingHistor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.grd_LendingHistor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd_LendingHistor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -506,11 +506,11 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
-            this.dataGridView1.DataSource = this.currentlendingpasthistoryBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1429, 530);
-            this.dataGridView1.TabIndex = 1;
+            this.grd_LendingHistor.DataSource = this.currentlendingpasthistoryBindingSource;
+            this.grd_LendingHistor.Location = new System.Drawing.Point(3, 0);
+            this.grd_LendingHistor.Name = "grd_LendingHistor";
+            this.grd_LendingHistor.Size = new System.Drawing.Size(1429, 530);
+            this.grd_LendingHistor.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -705,7 +705,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ownerDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendinghistoryBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_LendingHistor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentlendingpasthistoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -761,7 +761,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource currentlendingpasthistoryBindingSource;
         private sbmsDataSetTableAdapters.current_lending_past_historyTableAdapter current_lending_past_historyTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grd_LendingHistor;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

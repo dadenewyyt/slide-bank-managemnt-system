@@ -25,7 +25,8 @@ namespace MSBMS
         private void Lending_Load(object sender, System.EventArgs e)
         {
             grd_currentLending.AllowUserToAddRows = false;
-            
+            grd_LendingHistor.AllowUserToAddRows = false;
+
             // TODO: This line of code loads data into the 'sbmsDataSet.current_lending_past_history' table. You can move, or remove it, as needed.
             this.current_lending_past_historyTableAdapter.Fill(this.sbmsDataSet.current_lending_past_history);
             // TODO: This line of code loads data into the 'speciece_specifics_dataBindingSource.species_specifics' table. You can move, or remove it, as needed.
