@@ -2,15 +2,15 @@
 
 ALTER AUTHORIZATION ON SCHEMA::db_owner TO dbo
 GO
-DROP USER USER_ID('daniel')
+DROP USER [daniel]
 
 ALTER AUTHORIZATION ON SCHEMA::db_datawriter TO dbo
 GO
-DROP USER  USER_ID('daniel')
+DROP USER [daniel]
 
 ALTER AUTHORIZATION ON SCHEMA::db_datareader TO dbo
 GO
-DROP USER  USER_ID('daniel')
+DROP USER [daniel]
 
 
 --///recrate user
@@ -40,6 +40,7 @@ GO
 CREATE USER [daniel] FOR LOGIN [daniel] WITH DEFAULT_SCHEMA=[db_owner]
 GO
 
+/***permission**/
 
-
-
+//add memebership of db_writer and db_redaer , db_woner to daniel on SBMS db ..login
+//add schema ownership the same as above
