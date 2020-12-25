@@ -196,12 +196,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(592, 494);
+            this.label2.Location = new System.Drawing.Point(723, 494);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(638, 13);
+            this.label2.Size = new System.Drawing.Size(530, 13);
             this.label2.TabIndex = 27;
-            this.label2.Text = "Software Developed by Daniel Adenew , PMI/MDTA Lead Software Engineer MDTA Projec" +
-    "t with PMI/USAID Cooperation, 2020 (C). ";
+            this.label2.Text = "Developed By - Daniel Adenew Wondyifraw , Lead Software Engineer 2020-2021(C).  M" +
+    "DTA ICAP ETHIOPIA. ";
             // 
             // btn_replace
             // 

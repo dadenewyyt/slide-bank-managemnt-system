@@ -2260,6 +2260,7 @@ namespace MSBMS {
                 this.columnbox_number.AllowDBNull = false;
                 this.columnupdated_date.AllowDBNull = false;
                 this.columncreated_date.AllowDBNull = false;
+                this.columncreated_by.AllowDBNull = false;
                 this.columncreated_by.MaxLength = 2147483647;
                 this.columndonor_code.AllowDBNull = false;
                 this.columndonor_code.MaxLength = 2147483647;
@@ -19331,8 +19332,6 @@ namespace MSBMS {
             
             private global::System.Data.DataColumn columnisExchange;
             
-            private global::System.Data.DataColumn columnexchange_id;
-            
             private global::System.Data.DataColumn columnid3;
             
             private global::System.Data.DataColumn columnfname;
@@ -19450,6 +19449,12 @@ namespace MSBMS {
             private global::System.Data.DataColumn columnspecifics1;
             
             private global::System.Data.DataColumn columnstage1;
+            
+            private global::System.Data.DataColumn columnisMissing;
+            
+            private global::System.Data.DataColumn columnexchange_contact_id;
+            
+            private global::System.Data.DataColumn columnisExchange1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -19817,14 +19822,6 @@ namespace MSBMS {
             public global::System.Data.DataColumn isExchangeColumn {
                 get {
                     return this.columnisExchange;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn exchange_idColumn {
-                get {
-                    return this.columnexchange_id;
                 }
             }
             
@@ -20302,6 +20299,30 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isMissingColumn {
+                get {
+                    return this.columnisMissing;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn exchange_contact_idColumn {
+                get {
+                    return this.columnexchange_contact_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn isExchange1Column {
+                get {
+                    return this.columnisExchange1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -20377,7 +20398,6 @@ namespace MSBMS {
                         bool _isWHO_, 
                         bool isActive1, 
                         bool isExchange, 
-                        int exchange_id, 
                         string fname, 
                         string lname, 
                         string job_title, 
@@ -20430,7 +20450,10 @@ namespace MSBMS {
                         string density_category1, 
                         string species_category1, 
                         string specifics1, 
-                        string stage1) {
+                        string stage1, 
+                        bool isMissing, 
+                        int exchange_contact_id, 
+                        bool isExchange1) {
                 ExchangeSlidesIncomingDataTableRow rowExchangeSlidesIncomingDataTableRow = ((ExchangeSlidesIncomingDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -20475,7 +20498,6 @@ namespace MSBMS {
                         _isWHO_,
                         isActive1,
                         isExchange,
-                        exchange_id,
                         null,
                         fname,
                         lname,
@@ -20534,7 +20556,10 @@ namespace MSBMS {
                         density_category1,
                         species_category1,
                         specifics1,
-                        stage1};
+                        stage1,
+                        isMissing,
+                        exchange_contact_id,
+                        isExchange1};
                 rowExchangeSlidesIncomingDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowExchangeSlidesIncomingDataTableRow);
                 return rowExchangeSlidesIncomingDataTableRow;
@@ -20606,7 +20631,6 @@ namespace MSBMS {
                 this._columnisWHO_ = base.Columns["isWHO?"];
                 this.columnisActive1 = base.Columns["isActive1"];
                 this.columnisExchange = base.Columns["isExchange"];
-                this.columnexchange_id = base.Columns["exchange_id"];
                 this.columnid3 = base.Columns["id3"];
                 this.columnfname = base.Columns["fname"];
                 this.columnlname = base.Columns["lname"];
@@ -20666,6 +20690,9 @@ namespace MSBMS {
                 this.columnspecies_category1 = base.Columns["species_category1"];
                 this.columnspecifics1 = base.Columns["specifics1"];
                 this.columnstage1 = base.Columns["stage1"];
+                this.columnisMissing = base.Columns["isMissing"];
+                this.columnexchange_contact_id = base.Columns["exchange_contact_id"];
+                this.columnisExchange1 = base.Columns["isExchange1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20757,8 +20784,6 @@ namespace MSBMS {
                 base.Columns.Add(this.columnisActive1);
                 this.columnisExchange = new global::System.Data.DataColumn("isExchange", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnisExchange);
-                this.columnexchange_id = new global::System.Data.DataColumn("exchange_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnexchange_id);
                 this.columnid3 = new global::System.Data.DataColumn("id3", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid3);
                 this.columnfname = new global::System.Data.DataColumn("fname", typeof(string), null, global::System.Data.MappingType.Element);
@@ -20877,6 +20902,12 @@ namespace MSBMS {
                 base.Columns.Add(this.columnspecifics1);
                 this.columnstage1 = new global::System.Data.DataColumn("stage1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstage1);
+                this.columnisMissing = new global::System.Data.DataColumn("isMissing", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisMissing);
+                this.columnexchange_contact_id = new global::System.Data.DataColumn("exchange_contact_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnexchange_contact_id);
+                this.columnisExchange1 = new global::System.Data.DataColumn("isExchange1", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisExchange1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -21018,6 +21049,7 @@ namespace MSBMS {
                 this.columnspecies_category1.MaxLength = 2147483647;
                 this.columnspecifics1.MaxLength = 2147483647;
                 this.columnstage1.MaxLength = 2147483647;
+                this.columnisMissing.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21860,12 +21892,7 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string created_by {
                 get {
-                    try {
-                        return ((string)(this[this.tablerecent_slide_dataset.created_byColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'created_by\' in table \'recent_slide_dataset\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tablerecent_slide_dataset.created_byColumn]));
                 }
                 set {
                     this[this.tablerecent_slide_dataset.created_byColumn] = value;
@@ -22002,18 +22029,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetisActiveNull() {
                 this[this.tablerecent_slide_dataset.isActiveColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Iscreated_byNull() {
-                return this.IsNull(this.tablerecent_slide_dataset.created_byColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setcreated_byNull() {
-                this[this.tablerecent_slide_dataset.created_byColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37144,23 +37159,6 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int exchange_id {
-                get {
-                    try {
-                        return ((int)(this[this.tableExchangeSlidesIncomingDataTable.exchange_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'exchange_id\' in table \'ExchangeSlidesIncomingDataTable\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableExchangeSlidesIncomingDataTable.exchange_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int id3 {
                 get {
                     return ((int)(this[this.tableExchangeSlidesIncomingDataTable.id3Column]));
@@ -37971,6 +37969,51 @@ namespace MSBMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isMissing {
+                get {
+                    return ((bool)(this[this.tableExchangeSlidesIncomingDataTable.isMissingColumn]));
+                }
+                set {
+                    this[this.tableExchangeSlidesIncomingDataTable.isMissingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int exchange_contact_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableExchangeSlidesIncomingDataTable.exchange_contact_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'exchange_contact_id\' in table \'ExchangeSlidesIncomingDataTa" +
+                                "ble\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeSlidesIncomingDataTable.exchange_contact_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool isExchange1 {
+                get {
+                    try {
+                        return ((bool)(this[this.tableExchangeSlidesIncomingDataTable.isExchange1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'isExchange1\' in table \'ExchangeSlidesIncomingDataTable\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExchangeSlidesIncomingDataTable.isExchange1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsspecificsNull() {
                 return this.IsNull(this.tableExchangeSlidesIncomingDataTable.specificsColumn);
             }
@@ -38135,18 +38178,6 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_isWHO_Null() {
                 this[this.tableExchangeSlidesIncomingDataTable._isWHO_Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isexchange_idNull() {
-                return this.IsNull(this.tableExchangeSlidesIncomingDataTable.exchange_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setexchange_idNull() {
-                this[this.tableExchangeSlidesIncomingDataTable.exchange_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -38471,6 +38502,30 @@ namespace MSBMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setstage1Null() {
                 this[this.tableExchangeSlidesIncomingDataTable.stage1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isexchange_contact_idNull() {
+                return this.IsNull(this.tableExchangeSlidesIncomingDataTable.exchange_contact_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setexchange_contact_idNull() {
+                this[this.tableExchangeSlidesIncomingDataTable.exchange_contact_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsisExchange1Null() {
+                return this.IsNull(this.tableExchangeSlidesIncomingDataTable.isExchange1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetisExchange1Null() {
+                this[this.tableExchangeSlidesIncomingDataTable.isExchange1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -39589,7 +39644,7 @@ order by d.created_date desc;";
 FROM              dbo.slides AS s INNER JOIN
                          dbo.donors AS d ON d.id = s.donor_id
 WHERE        (d.isActive = 1) AND (s.isActive=1) AND  (s.isBorrowed = 0)  
-ORDER BY  s.created_date desc;";
+ORDER BY s.id DESC;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -44183,7 +44238,7 @@ ORDER BY d.donor_code,s.created_date ASC;
 FROM            dbo.slides AS s INNER JOIN
                          dbo.donors AS d ON d.id = s.donor_id
 WHERE        (d.isActive = 1) and (s.cabinet_number!=0) and(s.drawer_number!=0)and (s.box_number!=0)
-ORDER BY d.donor_code;";
+ORDER BY s.cabinet_number,s.drawer_number,s.box_number ASC;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -45535,7 +45590,6 @@ inner join density_category as dc on dc.id = d.density_category_id  ;
             tableMapping.ColumnMappings.Add("isWHO?", "isWHO?");
             tableMapping.ColumnMappings.Add("isActive1", "isActive1");
             tableMapping.ColumnMappings.Add("isExchange", "isExchange");
-            tableMapping.ColumnMappings.Add("exchange_id", "exchange_id");
             tableMapping.ColumnMappings.Add("id3", "id3");
             tableMapping.ColumnMappings.Add("fname", "fname");
             tableMapping.ColumnMappings.Add("lname", "lname");
@@ -45595,6 +45649,9 @@ inner join density_category as dc on dc.id = d.density_category_id  ;
             tableMapping.ColumnMappings.Add("species_category1", "species_category1");
             tableMapping.ColumnMappings.Add("specifics1", "specifics1");
             tableMapping.ColumnMappings.Add("stage1", "stage1");
+            tableMapping.ColumnMappings.Add("isMissing", "isMissing");
+            tableMapping.ColumnMappings.Add("exchange_contact_id", "exchange_contact_id");
+            tableMapping.ColumnMappings.Add("isExchange1", "isExchange1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -45634,7 +45691,7 @@ FROM  slides AS s
 	  inner join species_category as sc on sc.id = d.species_catgeroy_id
 	  inner join species_specifics as ss on ss.id = d.species_specific_id
 	  inner join species_stages as st on st.id = d.species_stage_id
-	  inner join borrowers as b on b.id = d.exchange_id
+	  inner join contacts as b on b.id = exchange_contact_id
 WHERE d.isExchange=1
 ORDER BY s.id;";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;

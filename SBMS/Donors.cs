@@ -165,8 +165,8 @@ namespace MSBMS
             cmb_specice_stage.ValueMember = "Key";
             cmb_specice_stage.DisplayMember = "Value";
             cmb_specice_stage.SelectedIndex = 0;
-           cmb_specice_stage.AutoCompleteMode = AutoCompleteMode.Suggest;
-           cmb_specice_stage.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmb_specice_stage.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmb_specice_stage.AutoCompleteSource = AutoCompleteSource.ListItems;
             //get Speciece Specifics
             Dictionary<int, string> dictionaryDCatgerory = lookupServices.fetchLookupTables("density_category");
             cmb_density_category.DataSource = new BindingSource(dictionaryDCatgerory, null);
@@ -214,7 +214,7 @@ namespace MSBMS
         }
 
 
-    private void reload_data()
+        private void reload_data()
         {
             this.donorsTableAdapter.Fill(this.sbmsDataSet.donors);
         }
@@ -229,47 +229,37 @@ namespace MSBMS
             try
             {
                 bool isValid = ValidateBeforeSave();
-
                 if (isValid == false)
                 {
                     MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     logger.Info("Data is not saved. Please enter correct and valid value for all data elements") ;
-
                     return;
 
                 }
 
                 bool isExchangeInfoOkay = ValidateExchangeInfo();
-
                 if (isExchangeInfoOkay == false)
                 {
                     //validation message will be show on validateExchange method
                     return;
-
                 }
-                //first  validate
 
+                //first  validate
                 dataFetchService = new DataFetchService();
                 int donorFoundDuplicate = dataFetchService.CheckDuplicateDonorCode(txt_donor_code.Text, txt_country_code.Text);
 
                 if (donorFoundDuplicate == 1)
                 {
-
                     MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                     logger.Info("System can not save a donor twice with code:" + txt_donor_code.Text.Trim());
                     clear();
                 }
 
-
-
-
                 // MessageBox.Show("Saving");
                 DateTime dt = DateTime.Now;
-
                 using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                 {
-
                     using (SqlCommand command = new SqlCommand())
                     {
                         command.Connection = connection;
@@ -310,7 +300,6 @@ namespace MSBMS
                         }
                         try
                         {
-
                             if (connection.State == ConnectionState.Closed)
                             {
                                 connection.Open();
@@ -323,7 +312,6 @@ namespace MSBMS
                                 logger.Info("New Donor Saved");
                                 reload_data();
                             }
-
                         }
                         catch (SqlException ex)
                         {
@@ -335,7 +323,6 @@ namespace MSBMS
                             clear();
                             connection.Close();
                         }
-
                     }
 
                 }
@@ -358,7 +345,6 @@ namespace MSBMS
                 if (dgr_donors.Rows.Count > 0)
                 {
                     MessageBox.Show("you selected row:" + (rowIndex + 1).ToString());
-
                     txt_barcode_scan_in.Text = dgr_donors.Rows[e.RowIndex].Cells["barcodeDataGridViewTextBoxColumn"].Value + string.Empty;
                     txt_country_code.Text = dgr_donors.Rows[e.RowIndex].Cells["countrycodeDataGridViewTextBoxColumn"].Value + string.Empty;
                     txt_donor_code.Text = dgr_donors.Rows[e.RowIndex].Cells["donorcodeDataGridViewTextBoxColumn"].Value.ToString();
@@ -402,8 +388,8 @@ namespace MSBMS
             catch (Exception ex)
             {
                 //TODO}
-                MessageBox.Show(ex.Message);
-
+                logger.Error(ex, "Exception occured on select donor");
+               MessageBox.Show(ex.Message);
             }
         }
 
@@ -430,7 +416,6 @@ namespace MSBMS
             {
                 //MessageBox.Show(exc.Message);
                 logger.Error(exc,"find Donor ");
-
             }
 
             if (found == false)
@@ -448,7 +433,6 @@ namespace MSBMS
 
                 if (donorFoundDuplicate == 1)
                 {
-
                     MessageBox.Show("Donor with the Entered Code <" + txt_donor_code.Text.Trim() + "> already exists.", "Duplicate Entry no allowed!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     MessageBox.Show("System can not save a donor twice with code:" + txt_donor_code.Text.Trim(), "Duplicate Entry no allowed!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                     return;
@@ -462,13 +446,11 @@ namespace MSBMS
                 {
                     MessageBox.Show("Data is not saved. Please enter correct and valid value for all data elements", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
-
                 }
                 if (isExchangeInfoOkay == false)
                 {
                     //validation message will be show on validateExchange method
                     return;
-
                 }
 
                 if (Id_update != -1)
@@ -560,11 +542,7 @@ namespace MSBMS
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void enter_pressed(object sender, KeyPressEventArgs e)
         {
 
@@ -603,7 +581,6 @@ namespace MSBMS
                     txt_barcode_scan_in.Text = "";
                 }
             }
-
 
         }
 
@@ -661,11 +638,19 @@ namespace MSBMS
                 return false;
 
             }
-
-            if (cmb_specice_specifics.SelectedIndex == 0 || cmb_density_category.SelectedIndex == 0 || cmb_specice_category.SelectedIndex == 0 || cmb_specice_stage.SelectedIndex == 0 || cmb_validation.SelectedIndex == 0 || cmb_owners.SelectedIndex == 0)
+            if (cmb_specice_specifics.SelectedIndex != 1)
             {
-                MessageBox.Show("You can not save a data with the value --Select-- choice?", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                if (cmb_specice_specifics.SelectedIndex == 0 || cmb_density_category.SelectedIndex == 0 || cmb_specice_category.SelectedIndex == 0 || cmb_specice_stage.SelectedIndex == 0 || cmb_validation.SelectedIndex == 0 || cmb_owners.SelectedIndex == 0)
+                {
+                    MessageBox.Show("You can not save a data with the value --Select-- choice?", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            if (cmb_density_category.SelectedIndex == 6 && cmb_specice_specifics.SelectedIndex != 1 )
+            {
+               
+                    MessageBox.Show("You can only save negative slide with None Density Category,please change density category", "Validation ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
             }
             if (exchange_flag==false && txt_country_code.Text!="11")            {
 
@@ -758,6 +743,87 @@ namespace MSBMS
             Contacts b = new Contacts();
             b.MdiParent = this.MdiParent;
             b.Show();
+        }
+
+        private void cmb_density_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(cmb_density_category.SelectedIndex.ToString());
+
+            /*if (cmb_density_category_SelectedIndex.SelectedIndex != 1) {
+                txt_lower_density.Text = "100";
+                txt_average_density.Text = "0";
+                txt_upper_density.Text = "0";
+            }*/
+
+            /*if (cmb_density_category.SelectedIndex == 1) {
+                txt_lower_density.Text = "100";
+                txt_average_density.Text = "0";
+                txt_upper_density.Text = "0";
+            }
+            if (cmb_density_category.SelectedIndex == 2)
+            {
+                txt_lower_density.Text = "100";
+                txt_average_density.Text = "550";
+                txt_upper_density.Text ="1000" ;
+            }
+
+            if (cmb_density_category.SelectedIndex == 3)
+            {
+                txt_lower_density.Text = "1000";
+                txt_average_density.Text = "5500";
+                txt_upper_density.Text = "10000";
+            }
+
+            if (cmb_density_category.SelectedIndex == 4)
+            {
+                txt_lower_density.Text = "10000";
+                txt_average_density.Text = "50500";
+                txt_upper_density.Text = "100000";
+            }
+            if (cmb_density_category.SelectedIndex == 5)
+            {
+                txt_lower_density.Text = "100000";
+                txt_average_density.Text = "500500";
+                txt_upper_density.Text = "1000000";
+            }*/
+        }
+
+        private void cmb_specice_specifics_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_specice_specifics.SelectedIndex == 1)
+            {
+                cmb_specice_category.SelectedIndex = 11;
+                cmb_specice_category.Enabled = false;
+                cmb_specice_stage.Enabled = false;
+                cmb_specice_stage.SelectedIndex = 5;
+                cmb_density_category.SelectedIndex = 6;
+                cmb_density_category.Enabled = false;
+                txt_lower_density.Enabled = false;
+                txt_upper_density.Enabled = false;
+                txt_average_density.Enabled = false;
+                txt_lower_density.Text = "0";
+                txt_upper_density.Text = "0";
+                txt_average_density.Text = "0";
+
+
+            }
+            else {
+              
+                cmb_specice_category.Enabled = true;
+                cmb_specice_stage.Enabled = true;
+                cmb_density_category.Enabled = true;
+                txt_lower_density.Enabled = true;
+                txt_upper_density.Enabled = true;
+                txt_average_density.Enabled = true;
+                txt_lower_density.Text = "";
+                txt_upper_density.Text = "";
+                txt_average_density.Text = "";
+            }
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

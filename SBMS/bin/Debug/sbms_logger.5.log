@@ -1,0 +1,10 @@
+2020-11-12 15:36:07.3331 MSBMS.Program importing defaults
+2020-11-12 15:36:07.7340 MSBMS.Program Default is found proceeding.
+2020-11-12 15:38:30.7287 MSBMS.Program importing defaults
+2020-11-12 15:38:31.0569 MSBMS.Program Default is found proceeding.
+2020-11-12 15:39:00.6319 MSBMS.Slides Exception occuredSystem.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Windows.Forms.DataGridViewRowCollection.SharedRow(Int32 rowIndex)
+   at System.Windows.Forms.DataGridViewRowCollection.get_Item(Int32 index)
+   at MSBMS.Slides.selected_row(Object sender, DataGridViewCellEventArgs e) in C:\Users\INTuser\source\repos\dadenewyyt\slide-bank-managemnt-system\SBMS\Slides.cs:line 469

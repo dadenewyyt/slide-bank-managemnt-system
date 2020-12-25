@@ -363,7 +363,10 @@ namespace MSBMS
                 {
                     // MessageBox.Show("Saving");
                     DateTime dt = DateTime.Now;
-
+                    //empty cases EPHI
+                    if(String.IsNullOrEmpty(txt_slide_scan.Text) || String.IsNullOrEmpty(txt_slide_sequence.Text)) {
+                        return;
+                    }
                     using (SqlConnection connection = new SqlConnection(DBConnectionSingltonServices.connectionString))
                     {
 
@@ -819,10 +822,10 @@ namespace MSBMS
                     DataTable dt = searchAndFilterService.SearchSlideByNumber(number);
 
 
-                    if (dt == null)
+                    if (dt !=null)
                     {
 
-                        MessageBox.Show("Slide with that number" + number + " was not found! ");
+                        MessageBox.Show("Slide with that number" + number + " is found! ");
                     }
                     else
                     {
@@ -877,7 +880,7 @@ namespace MSBMS
                     if (dt.Rows.Count>0)
                     {
 
-                        MessageBox.Show("Location at Cabinet:"+cabinet+" Drawer: " +drawer+"Box:"+ box +"was not found! ");
+                        MessageBox.Show("Location at Cabinet:"+cabinet+" Drawer: " +drawer+"Box:"+ box +"is found! ");
                     }
                     else
                     {
@@ -901,6 +904,11 @@ namespace MSBMS
         private void button8_Click(object sender, EventArgs e)
         {
             this.dgr_locations.DataSource = this.slidesBindingSource;
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

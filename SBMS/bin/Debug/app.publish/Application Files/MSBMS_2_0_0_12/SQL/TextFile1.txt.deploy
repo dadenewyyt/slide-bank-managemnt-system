@@ -1,0 +1,5 @@
+﻿update donors set species_stage_id=5;
+DBCC CHECKIDENT (species_stages, RESEED, 5)
+
+
+rESSED AUTO INCREMENT !

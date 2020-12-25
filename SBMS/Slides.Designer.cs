@@ -189,12 +189,6 @@
             this.txt_acquired_date = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.cmb_density_category = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txt_lower_density = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_average_density = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_upper_density = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_validation = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -214,6 +208,12 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.txt_upper_density = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_average_density = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_lower_density = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btn_edit_update = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.locationDataAdapter = new MSBMS.sbmsDataSetTableAdapters.locationDataAdapter();
@@ -1617,7 +1617,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(15, 186);
+            this.label15.Location = new System.Drawing.Point(6, 109);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(116, 17);
             this.label15.TabIndex = 75;
@@ -1631,73 +1631,11 @@
             this.cmb_density_category.Enabled = false;
             this.cmb_density_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_density_category.FormattingEnabled = true;
-            this.cmb_density_category.Location = new System.Drawing.Point(145, 183);
+            this.cmb_density_category.Location = new System.Drawing.Point(145, 101);
             this.cmb_density_category.Name = "cmb_density_category";
             this.cmb_density_category.Size = new System.Drawing.Size(239, 25);
             this.cmb_density_category.TabIndex = 76;
             this.cmb_density_category.ValueMember = "id";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(24, 108);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 17);
-            this.label12.TabIndex = 79;
-            this.label12.Text = "Lower Density:";
-            // 
-            // txt_lower_density
-            // 
-            this.txt_lower_density.Enabled = false;
-            this.txt_lower_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lower_density.Location = new System.Drawing.Point(145, 103);
-            this.txt_lower_density.MaxLength = 30;
-            this.txt_lower_density.Name = "txt_lower_density";
-            this.txt_lower_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_lower_density.TabIndex = 77;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 134);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 17);
-            this.label13.TabIndex = 80;
-            this.label13.Text = "Average Density:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txt_average_density
-            // 
-            this.txt_average_density.Enabled = false;
-            this.txt_average_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_average_density.Location = new System.Drawing.Point(145, 129);
-            this.txt_average_density.MaxLength = 30;
-            this.txt_average_density.Name = "txt_average_density";
-            this.txt_average_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_average_density.TabIndex = 81;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(24, 160);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 17);
-            this.label14.TabIndex = 82;
-            this.label14.Text = "Upper Density:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txt_upper_density
-            // 
-            this.txt_upper_density.Enabled = false;
-            this.txt_upper_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_upper_density.Location = new System.Drawing.Point(145, 155);
-            this.txt_upper_density.MaxLength = 30;
-            this.txt_upper_density.Name = "txt_upper_density";
-            this.txt_upper_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_upper_density.TabIndex = 83;
             // 
             // label10
             // 
@@ -1855,11 +1793,12 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.label20.Location = new System.Drawing.Point(67, 76);
+            this.label20.Location = new System.Drawing.Point(52, 71);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 17);
+            this.label20.Size = new System.Drawing.Size(113, 17);
             this.label20.TabIndex = 62;
-            this.label20.Text = "Box Number:";
+            this.label20.Text = "Position Number:";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21
             // 
@@ -1909,6 +1848,12 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.txt_upper_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label14);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_average_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label13);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_lower_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label12);
             this.splitContainer2.Panel1.Controls.Add(this.location_panel);
             this.splitContainer2.Panel1.Controls.Add(this.btn_clear_selection);
             this.splitContainer2.Panel1.Controls.Add(this.btn_edit_update);
@@ -1919,12 +1864,6 @@
             this.splitContainer2.Panel1.Controls.Add(this.label9);
             this.splitContainer2.Panel1.Controls.Add(this.cmb_validation);
             this.splitContainer2.Panel1.Controls.Add(this.label10);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_upper_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label14);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_average_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label13);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_lower_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label12);
             this.splitContainer2.Panel1.Controls.Add(this.cmb_density_category);
             this.splitContainer2.Panel1.Controls.Add(this.label15);
             this.splitContainer2.Panel1.Controls.Add(this.txt_acquired_date);
@@ -1948,6 +1887,68 @@
             this.splitContainer2.SplitterDistance = 505;
             this.splitContainer2.TabIndex = 17;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
+            // 
+            // txt_upper_density
+            // 
+            this.txt_upper_density.Enabled = false;
+            this.txt_upper_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_upper_density.Location = new System.Drawing.Point(145, 181);
+            this.txt_upper_density.MaxLength = 30;
+            this.txt_upper_density.Name = "txt_upper_density";
+            this.txt_upper_density.Size = new System.Drawing.Size(241, 25);
+            this.txt_upper_density.TabIndex = 102;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(24, 186);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 17);
+            this.label14.TabIndex = 101;
+            this.label14.Text = "Upper Density:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txt_average_density
+            // 
+            this.txt_average_density.Enabled = false;
+            this.txt_average_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_average_density.Location = new System.Drawing.Point(145, 155);
+            this.txt_average_density.MaxLength = 30;
+            this.txt_average_density.Name = "txt_average_density";
+            this.txt_average_density.Size = new System.Drawing.Size(241, 25);
+            this.txt_average_density.TabIndex = 100;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(13, 160);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 17);
+            this.label13.TabIndex = 99;
+            this.label13.Text = "Average Density:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txt_lower_density
+            // 
+            this.txt_lower_density.Enabled = false;
+            this.txt_lower_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lower_density.Location = new System.Drawing.Point(145, 129);
+            this.txt_lower_density.MaxLength = 30;
+            this.txt_lower_density.Name = "txt_lower_density";
+            this.txt_lower_density.Size = new System.Drawing.Size(241, 25);
+            this.txt_lower_density.TabIndex = 97;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(24, 134);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 17);
+            this.label12.TabIndex = 98;
+            this.label12.Text = "Lower Density:";
             // 
             // btn_edit_update
             // 
@@ -1986,7 +1987,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.CancelButton = this.btn_clear_selection;
-            this.ClientSize = new System.Drawing.Size(1576, 710);
+            this.ClientSize = new System.Drawing.Size(1370, 723);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Slides";
@@ -2159,12 +2160,6 @@
         private System.Windows.Forms.DateTimePicker txt_acquired_date;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmb_density_category;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txt_lower_density;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_average_density;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_upper_density;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmb_validation;
         private System.Windows.Forms.Label label9;
@@ -2274,5 +2269,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.TextBox txt_upper_density;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txt_average_density;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt_lower_density;
+        private System.Windows.Forms.Label label12;
     }
 }

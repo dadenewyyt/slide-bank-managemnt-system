@@ -48,6 +48,12 @@ namespace MSBMS
             this.label4 = new System.Windows.Forms.Label();
             this.txt_country_code = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.txt_upper_density = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_average_density = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_lower_density = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.lbl_editing_status = new System.Windows.Forms.Label();
             this.txt_comment = new System.Windows.Forms.TextBox();
             this.btn_save_edit = new System.Windows.Forms.Button();
@@ -55,12 +61,6 @@ namespace MSBMS
             this.cmb_validation = new System.Windows.Forms.ComboBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_upper_density = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_average_density = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_lower_density = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.cmb_density_category = new System.Windows.Forms.ComboBox();
             this.densitycategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.desnityCat_bindingDataSource = new MSBMS.desnityCat_bindingDataSource();
@@ -206,6 +206,7 @@ namespace MSBMS
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.txt_country_code);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1248, 172);
             this.splitContainer1.SplitterDistance = 56;
             this.splitContainer1.TabIndex = 2;
@@ -364,6 +365,12 @@ namespace MSBMS
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.txt_upper_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label14);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_average_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label13);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_lower_density);
+            this.splitContainer2.Panel1.Controls.Add(this.label12);
             this.splitContainer2.Panel1.Controls.Add(this.lbl_editing_status);
             this.splitContainer2.Panel1.Controls.Add(this.txt_comment);
             this.splitContainer2.Panel1.Controls.Add(this.btn_save_edit);
@@ -371,12 +378,6 @@ namespace MSBMS
             this.splitContainer2.Panel1.Controls.Add(this.cmb_validation);
             this.splitContainer2.Panel1.Controls.Add(this.btn_save);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_upper_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label14);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_average_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label13);
-            this.splitContainer2.Panel1.Controls.Add(this.txt_lower_density);
-            this.splitContainer2.Panel1.Controls.Add(this.label12);
             this.splitContainer2.Panel1.Controls.Add(this.cmb_density_category);
             this.splitContainer2.Panel1.Controls.Add(this.label15);
             this.splitContainer2.Panel1.Controls.Add(this.txt_acquired_date);
@@ -402,6 +403,62 @@ namespace MSBMS
             this.splitContainer2.Size = new System.Drawing.Size(1248, 428);
             this.splitContainer2.SplitterDistance = 405;
             this.splitContainer2.TabIndex = 3;
+            // 
+            // txt_upper_density
+            // 
+            this.txt_upper_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_upper_density.Location = new System.Drawing.Point(147, 180);
+            this.txt_upper_density.Name = "txt_upper_density";
+            this.txt_upper_density.Size = new System.Drawing.Size(239, 25);
+            this.txt_upper_density.TabIndex = 45;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(26, 185);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 17);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "Upper Density:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txt_average_density
+            // 
+            this.txt_average_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_average_density.Location = new System.Drawing.Point(147, 154);
+            this.txt_average_density.Name = "txt_average_density";
+            this.txt_average_density.Size = new System.Drawing.Size(239, 25);
+            this.txt_average_density.TabIndex = 43;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(15, 159);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 17);
+            this.label13.TabIndex = 42;
+            this.label13.Text = "Average Density:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txt_lower_density
+            // 
+            this.txt_lower_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_lower_density.Location = new System.Drawing.Point(147, 128);
+            this.txt_lower_density.Name = "txt_lower_density";
+            this.txt_lower_density.Size = new System.Drawing.Size(239, 25);
+            this.txt_lower_density.TabIndex = 40;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(26, 133);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 17);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Lower Density:";
             // 
             // lbl_editing_status
             // 
@@ -485,72 +542,17 @@ namespace MSBMS
             this.label1.TabIndex = 34;
             this.label1.Text = "Validation:";
             // 
-            // txt_upper_density
-            // 
-            this.txt_upper_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_upper_density.Location = new System.Drawing.Point(147, 155);
-            this.txt_upper_density.Name = "txt_upper_density";
-            this.txt_upper_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_upper_density.TabIndex = 33;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(26, 160);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 17);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "Upper Density:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txt_average_density
-            // 
-            this.txt_average_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_average_density.Location = new System.Drawing.Point(147, 129);
-            this.txt_average_density.Name = "txt_average_density";
-            this.txt_average_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_average_density.TabIndex = 31;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 134);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 17);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Average Density:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txt_lower_density
-            // 
-            this.txt_lower_density.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_lower_density.Location = new System.Drawing.Point(147, 103);
-            this.txt_lower_density.Name = "txt_lower_density";
-            this.txt_lower_density.Size = new System.Drawing.Size(239, 25);
-            this.txt_lower_density.TabIndex = 28;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(26, 108);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 17);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Lower Density:";
-            // 
             // cmb_density_category
             // 
             this.cmb_density_category.DataSource = this.densitycategoryBindingSource1;
             this.cmb_density_category.DisplayMember = "id";
             this.cmb_density_category.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F);
-            this.cmb_density_category.Location = new System.Drawing.Point(147, 183);
+            this.cmb_density_category.Location = new System.Drawing.Point(147, 97);
             this.cmb_density_category.Name = "cmb_density_category";
             this.cmb_density_category.Size = new System.Drawing.Size(239, 25);
             this.cmb_density_category.TabIndex = 39;
             this.cmb_density_category.ValueMember = "id";
+            this.cmb_density_category.SelectedIndexChanged += new System.EventHandler(this.cmb_density_category_SelectedIndexChanged);
             // 
             // densitycategoryBindingSource1
             // 
@@ -566,7 +568,7 @@ namespace MSBMS
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft JhengHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(17, 186);
+            this.label15.Location = new System.Drawing.Point(17, 100);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(116, 17);
             this.label15.TabIndex = 26;
@@ -678,6 +680,7 @@ namespace MSBMS
             this.cmb_specice_specifics.Name = "cmb_specice_specifics";
             this.cmb_specice_specifics.Size = new System.Drawing.Size(239, 25);
             this.cmb_specice_specifics.TabIndex = 10;
+            this.cmb_specice_specifics.SelectedIndexChanged += new System.EventHandler(this.cmb_specice_specifics_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -1206,12 +1209,6 @@ namespace MSBMS
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmb_validation;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_upper_density;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_average_density;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_lower_density;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgr_donors;
         private BindingSource bindingSourceDonorsDataGrid;
         private SqlDataAdapter dataAdapterDonorsDataGridview;
@@ -1283,6 +1280,12 @@ namespace MSBMS
         private DataGridViewTextBoxColumn createddateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn updateddateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private TextBox txt_upper_density;
+        private Label label14;
+        private TextBox txt_average_density;
+        private Label label13;
+        private TextBox txt_lower_density;
+        private Label label12;
     }
 
 
