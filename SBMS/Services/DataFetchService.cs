@@ -211,14 +211,13 @@ namespace MSBMS.Services
             return -1;
         }
 
-        public int CheckDuplicateLocationUpdate(int cabinet, int drawer, int box, int slide_id)
+        public Boolean CheckDuplicateLocationUpdate(int cabinet, int drawer, int box, int slide_id)
         {
-
+            Boolean found = true;
 
             string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box ;
             using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
             {
-
                 try
                 {
                     //con.Open();
@@ -228,25 +227,26 @@ namespace MSBMS.Services
                         if (reader.HasRows == true)
                         {
                             if (reader.GetInt32(0)!=slide_id)
-                                return 1; //slide space is occupied
+                                return found; //slide space is occupied
                             if (reader.GetInt32(0) == slide_id)
-                                return -1; //slide space is occupied
+                                return false; //slide space is NOT occupied
                         }
                     }
+                    if(reader.HasRows==false)
+                        found = false; //No it is not occupied
                     reader.Close();
-                    return 1; // occupied
+                    return found; // yes its occupied
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     logger.Error(ex, "DataFetchService for Donor Location Data Exception");
-
-                    return 1;
+                    return false;
                 }
             }
           }
 
-        public int CheckIfLocationOccuiped(int cabinet, int drawer, int box)
+        public Boolean CheckIfLocationOccuiped(int cabinet, int drawer, int box)
         {
             string selectquery = "select id from slides where cabinet_number =" + cabinet + " and drawer_number = " + drawer + " and box_number=" + box;
             using (SqlCommand command2 = new SqlCommand(selectquery, DBConnectionSingltonServices.con))
@@ -261,7 +261,7 @@ namespace MSBMS.Services
                         if (cr.HasRows == true)
                         {
 
-                            return 1;
+                            return true;
                         }
 
                     }
@@ -270,10 +270,10 @@ namespace MSBMS.Services
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    return 1;
+                    return true;
                 }
             }
-            return -1;
+            return false;
         }
     }
 }

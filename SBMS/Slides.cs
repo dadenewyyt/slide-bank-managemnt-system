@@ -650,14 +650,14 @@ namespace MSBMS
             int drawer = Convert.ToInt32(txt_drawer_number.Text.ToString());
             int box = Convert.ToInt32(txt_box_number.Text.ToString());
 
-            int isLocationOccupied = 0;
+            Boolean isLocationOccupied = false;
             dataFetchService = new DataFetchService();
             if (cabinet > 0 && drawer > 0 && box > 0 && state=="save")
                 isLocationOccupied = dataFetchService.CheckIfLocationOccuiped(cabinet, drawer, box);
             if (cabinet > 0 && drawer > 0 && box > 0 && state == "update")
                 isLocationOccupied = dataFetchService.CheckDuplicateLocationUpdate(cabinet, drawer, box,Slides_Id_Update);
 
-            if (isLocationOccupied == 1)
+            if (isLocationOccupied == true)
             {
                 
                 MessageBox.Show("Slide exisit at [Cabinet = " + cabinet + " , Drawer = " + drawer + " , Box = " + box + "]. Please check for unoccupied slide location.", "Duplicate Location", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
